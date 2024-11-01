@@ -1,0 +1,250 @@
+""" Problema 2 """
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+
+
+## Metoda Newton-Rhapson
+
+def NewtonR(f, df, x0, eps):
+    """
+    Găsește o soluție a funcției f cu derivata df, aplicând metoda NR, 
+    pornind din punctul x0. Returnează x_aprox (soluția numerică) și N (nr de iterații necesare).
+    """
+
+    # Primul punct este cel primit ca parametru
+    x_precedent = x0
+
+    # Aplicăm prima iterație
+    x = x0 - f(x0) / df(x0)   # x1
+
+    # Continuăm să calculăm până avem precizia cerută.
+    N = 1  # nr de pași
+    while abs(x - x_precedent) / abs(x_precedent) > eps:
+        x, x_precedent = x - f(x) / df(x), x
+        N += 1
+
+    return x, N
+
+
+# Funcția pentru care vrem să găsim soluții.
+def f(x):
+  return x ** 3 + 3 * (x ** 2) + 2 * x
+
+# Derivata lui f.
+def df(x):
+  return 3 * (x ** 2) + 6 * x + 2
+
+# Eroarea
+eps = 10 ** (-3)
+
+
+# luăm intervalele de monotonie (df = 0)
+# punctele de start -> f(x)*f de doua ori derivat(x)>0 și între rădăcinile lui df
+s1, n1 = NewtonR(f, df, 10, eps)
+s2, n2 = NewtonR(f, df, -1.5, eps)
+s3, n3 = NewtonR(f, df, -10, eps)
+print("Soluția", s1, "după", n1, "pași")
+print("Soluția", s2, "după", n2, "pași")
+print("Soluția", s3, "după", n3, "pași")
+
+
+
+## Afișez rezultatul
+# Creez un nou plot cu rezoluție mare
+fig, ax = plt.subplots(1, dpi=200)
+
+# Pun un titlu
+plt.title('Metoda Newton-Rhapson')
+
+# Configurez axele
+ax.spines['bottom'].set_position('zero')
+ax.spines['top'].set_color('none')
+ax.spines['right'].set_color('none')
+
+# Generez punctele
+x = np.linspace(start=0, stop=5, num=1000)
+
+# Desenez graficul funcției
+plt.plot(x, f(x), '-.')
+
+# Desenez soluțiile
+plt.scatter([s1, s2, s3], [0, 0, 0], c='red')
+
+# Afișez legenda
+plt.legend(['f(x)', 'x_num'])
+
+# Etichetez axele
+plt.xlabel('x')
+plt.ylabel('y')
+
+plt.show()
+
+
+
+
+
+
+
+""" Problema 1 """
+import math
+import numpy as np
+
+
+# Funcție Auxiliară: Metodă Substituție Ascendentă
+def metSubAsc(A, b, tol):
+    """
+
+    Parameters
+    ----------
+    A : matrice inferior triunghiulară.
+    b : vectorul termenilor liberi.
+    tol : toleranța.
+
+    Returns
+    -------
+    soluția.
+
+    """
+    
+    # Verificăm dacă matricea este pătratică
+    m, n = np.shape(A)
+    if m!= n:
+        print("Matricea nu este pătratică. Introduceți altă matrice.")
+        x = None
+        return x
+    
+    # Verificăm dacă matricea este superior triunghiulară
+    for i in range(m):
+       for j in range(i):
+           if abs(A[j][i]) > tol:
+               print("Matricea nu este inferior triunghiulară.")
+               x = None
+               return x
+    
+    # Verificam dacă toate elementele de pe diagonala principală sunt nenule => Si. este compatibil ddeterminat (adică am soluție unică)
+    for i in range(n):
+        if abs(A[i][i]) <= tol:
+            print("Sistemul nu este compatibil determinat.")
+            x = None
+            return x
+    
+    x = np.zeros((m, 1))
+    x[0] = b[0] / A[0][0]
+    
+    for k in range(1, n):
+        
+        sum = 0
+        for j in range(k):
+            sum += A[k][j] * x[j]
+        
+        x[k] = (1 / A[k][k]) * (b[k] - sum)
+    
+    return x
+
+
+
+def metSubDesc(A, b, tol):
+    """
+
+    Parameters
+    ----------
+    A : matrice pătratică, superior triunghiulară, cu toate elementele de pe diagonala principală nenule.
+    b : vectorul termenilor liberi.
+    tol : toleranță = valoare numerică foarte mică în raport cu care vom compara numerele apropiate de 0.
+
+    Returns
+    -------
+    x = Soluția Sistemului.
+
+    """
+    
+    # Verificăm dacă matricea este pătratică
+    m, n = np.shape(A)
+    if m!= n:
+        print("Matricea nu este pătratică. Introduceți altă matrice.")
+        x = None
+        return x
+    
+    # Verificăm dacă matricea este superior triunghiulară
+    for i in range(m):
+       for j in range(i):
+           if abs(A[i][j] > tol):
+               print("Matricea nu este superior triunghiulară.")
+               x = None
+               return x
+    
+    # Verificam dacă toate elementele de pe diagonala principală sunt nenule => Si. este compatibil ddeterminat (adică am soluție unică)
+    for i in range(n):
+        if A[i][i] == 0:
+            print("Sistemul nu este compatibil determinat.")
+            x = None
+            return x
+    
+    x = np.zeros((n, 1))
+    x[n - 1] = b[n - 1] / A[n - 1][n - 1]
+    
+    k = n - 2
+    while k >= 0:
+        s = 0
+        for j in range(k + 1, n):
+            s += x[j] * A[k][j]
+            
+        x[k] = (1 / A[k][k]) * (b[k] - s)
+        k -= 1
+    
+    return x
+
+
+# Dacă este pozitiv definită
+def Sylvester(A):
+    ok = 0
+    n = len(A)
+    for i in range(1, n + 1):
+        aux = A[0:i, 0:i]
+        if np.linalg.det(aux) <= 0:
+            print("Matricea NU este Pozitiv Definită!")
+            ok = 1
+    
+    return ok
+
+def FactLLT(A):
+  # Verificăm dacă matricea este simetrică
+    A_transpus = np.transpose(A)
+    if not np.array_equal(A, A_transpus):
+        print("Matricea NU este Simetrică!")
+        return None
+    
+    # Verificăm dacă matricea este pozitiv definită
+    if Sylvester(A) == 1:
+        return None
+
+    # inițializări
+    S = np.copy(A)
+    n = len(A)
+    L = np.zeros((n, n))
+
+    for k in range(n - 2):
+      L[k][k] = math.sqrt(S[0][0])
+
+      for i in range(k, n):
+        L[i][k] = (S[i - k][0]) / math.sqrt(S[0][0])
+      
+      for i in range(k + 1, n):
+        for j in range(k + 1, n):
+          S[i-k][j-k] = S[i-k][j-k] - ((S[i-k][0] * S[0][j-k])/S[0][0])
+    
+
+    L[n-1][n-1] = math.sqrt(S[0][0])
+    return L
+
+
+
+A = np.array([[25.,15.,-5.],[15.,18.,0.],[-5.,0.,11.]])
+b= np.array([[1.],[2.],[3.]])
+L = FactLLT(A)
+print(L)
+y = metSubAsc(L, b, 10 ** (-10))
+x = metSubDesc(np.transpose(L), y, 10 ** (-10))
+print(x)
