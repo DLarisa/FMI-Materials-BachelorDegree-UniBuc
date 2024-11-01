@@ -1,0 +1,10 @@
+193.226.51.37
+http://193.226.51.37/web/bonus.php?m=bd
+
+vsl@fmi.unibuc.ro
+
+Connection Name: con
+User: grupa41
+Pass: bazededate
+Hostname: 193.226.51.37	
+SID: o11g

@@ -1,0 +1,168 @@
+﻿-- Ex3, Test Miercuri
+select department_id,department_name, count(employee_id)
+from employees right join departments using(department_id)
+group by department_id,department_name
+having count(employee_id)<4;
+
+
+
+
+-- Scrieti o cerere care afiseaza codurile angajatilor care au ocupat 3 joburi distincte in firma (fara a folosi functia count).
+select distinct e.employee_id
+from employees e join job_history j1 on (e.employee_id=j1.employee_id)
+join job_history j2 on (e.employee_id=j2.employee_id)
+where e.job_id<>j1.job_id and e.job_id<>j2.job_id;
+
+
+
+----------------------------------------------------------------------------------- 27.03 ----------------------------------
+-- Probleme Propuse
+
+
+
+-- Ex1
+/* Varianta muncitoreasca ar fi sa lucram cu LIKE si tot felul
+de combinatii de vocale (ie, ai, oi, ui...) */
+-- Functii Auxiliare ca sa Intelegem
+select translate('kerwrssass','#aeiou','#')
+from dual;
+
+select replace(1020301,'0')
+from dual;
+
+select greatest(2,4,5)
+from dual;
+
+select rpad(greatest(2,4,5),4,greatest(2,4,5))
+from dual;
+
+select rpad('e',4,'a')
+from dual;
+
+-- Rezolvare Propriu-zisa
+select first_name
+from 
+(select first_name,
+length(first_name)-length(translate(lower(first_name),'#a','#')) nra,
+length(first_name)-length(translate(lower(first_name),'#e','#')) nre,
+length(first_name)-length(translate(lower(first_name),'#i','#')) nri,
+length(first_name)-length(translate(lower(first_name),'#o','#')) nro,
+length(first_name)-length(translate(lower(first_name),'#u','#')) nru
+from employees)
+where case when nra>0 then 1 else 0 end +
+case when nre>0 then 1 else 0 end +
+case when nri>0 then 1 else 0 end +
+case when nro>0 then 1 else 0 end +
+case when nru>0 then 1 else 0 end>1  -- pana aici verifica ca avem 2 vocale distincte
+and replace(nra||nre||nri||nro||nru,'0') 
+=rpad(greatest(nra,nre,nri,nro,nru),
+case when nra>0 then 1 else 0 end +
+case when nre>0 then 1 else 0 end +
+case when nri>0 then 1 else 0 end +
+case when nro>0 then 1 else 0 end +
+case when nru>0 then 1 else 0 end, greatest(nra,nre,nri,nro,nru));
+
+
+-- Ex8
+/*  -- Am facut noi un tabel si am pus rezultate in el
+create table rezultate(
+id _concurent number,
+b1 number(2),
+b2 number(2),
+b3 number(2),
+b4 number(2),
+b5 number(2),
+b6 number(2),
+b7 number(2),
+b8 number(2),
+b9 number(2),
+b10 number(2))
+
+Insert into rezultate
+values(1,7,8,6,4,9,10,7,8,10,0);
+
+commit;
+*/
+
+select *
+from rezultate
+where 10-length(replace(b1||b2||b3||b4||b5||b6||b7||b8||b9||b10,'0')) =3;
+
+-- SAU
+/*
+0# vs 10# cand fac replace la ‘0#’
+
+In schimb 
+
+#0 vs #10 nu mai reprezinta acelasi lucru la replace de ‘#0’
+*/
+select *
+from rezultate
+where
+length('#'||b1||'#'||b2||'#'||b3||'#'||b4||'#'||b5||'#'||
+b6||'#'||b7||'#'||b8||'#'||b9||'#'||b10)-
+length(replace('#'||b1||'#'||b2||'#'||b3||'#'||b4||'#'||b5||'#'||
+b6||'#'||b7||'#'||b8||'#'||b9||'#'||b10,'#0'))=6;
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------- 3.04 ----------------------
+-- Propuse 
+
+-- Ex5
+select to_char(hire_date, 'year'), to_char(hire_date, 'yyyy')
+from employees;
+
+
+-- Ex9
+/*SELECT nume_promotie, vanzator, SUM(suma)
+FROM promotii JOIN vanzari ON (data_vanzare
+BETWEEN start_date AND end_date)
+GROUP BY vanzator, nume_promotie;*/
+
+select vanzator,nume_promotie, sum(suma) vsuma
+from promotii p join  vanzari on(data_vanzare
+between start_date and end_date)
+group by nume_promotie,vanzator
+having sum(suma)=(select  max(sum(suma)) 
+                  from promotii join  vanzari on(data_vanzare
+                  between start_date and end_date)
+                  where nume_promotie=p.nume_promotie
+                 group by nume_promotie,vanzator);
+
+
+-- Probleme Propuse, Ex16
+-- Pentru fiecare angajat sa se afiseze orasul in care a lucrat cele mai multe zile.
+with angzile as
+(select employee_id, department_id, 
+case
+ when exists(select 1
+             from job_history
+             where employee_id=ang.employee_id) 
+       then floor(sysdate-(select max(end_date)+1
+                     from job_history
+                     where employee_id=ang.employee_id))  
+ else 
+     floor(sysdate-hire_date)
+ end zile  
+from employees ang
+union all
+select employee_id, department_id, sum(end_date-start_date)
+from job_history
+group by employee_id, department_id),
+angtotal as
+ (select employee_id, city, sum(zile) nrzile
+  from angzile left join departments using(department_id)
+  left join locations using(location_id)
+    group by employee_id, city)
+select employee_id, city
+from angtotal ext
+where nrzile=(select max(nrzile)
+              from angtotal
+              where employee_id=ext.employee_id);
