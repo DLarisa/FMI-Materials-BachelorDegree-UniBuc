@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.multidimensional.Slice.SelectedLevel parentClass="java.lang.Object" innerClass="true">
+   <property name="dimension" dataType="oracle.dbtools.crest.model.design.multidimensional.Dimension" defaultValue="" xmlName="dimension" xmlType="element" getter="getDimension" setter="setDimension" reffered="true"/>
+   <property name="hierarchy" dataType="oracle.dbtools.crest.model.design.multidimensional.Hierarchy" defaultValue="" xmlName="hierarchy" xmlType="element" getter="getHierarchy" setter="setHierarchy" reffered="true"/>
+   <property name="level" dataType="oracle.dbtools.crest.model.design.multidimensional.Level" defaultValue="" xmlName="level" xmlType="element" getter="getLevel" setter="setLevel" reffered="true"/>
+   <property name="rollupLink" dataType="oracle.dbtools.crest.model.design.multidimensional.RollupLink" defaultValue="" xmlName="rollupLink" xmlType="element" getter="getRollupLink" setter="setRollupLink" reffered="true"/>
+   <property name="selAttrIDs" dataType="java.lang.String" defaultValue="" xmlName="selAttrIDs" xmlType="element" getter="getSelAttrIDs" setter="setSelAttrIDs" reffered="false"/>
+   <roproperty name="selectedAttributes" dataType="interface java.util.List" getter="getSelectedAttributes"/>
+</oracle.dbtools.crest.model.design.multidimensional.Slice.SelectedLevel>

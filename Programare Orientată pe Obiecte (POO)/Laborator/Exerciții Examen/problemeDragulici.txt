@@ -1,0 +1,212 @@
+// Nota pentru mine: nu uita de intrebarile aditionale.
+// Daca cititi aceasta nota, amintiti-mi.
+
+// Probleme astea sunt de la Dragulici, proceed with utmost care!
+// Nimic nu e ceea ce pare!
+
+1.
+
+#include<iostream>
+using namespace std;
+
+class B
+{
+protected:
+  static int x;
+  int i;
+public:
+  B() {x++; i = 1;}
+  ~B() {x--;}
+  static int get_x() {return x;}
+  int get_i() {return i;}
+};
+
+int B::x; //f important -> cand avem variabile statice, tb neaparat declarate in afara clasei (default static isi ia 0)
+
+class D: public B 
+{
+public:
+  D() {x++;}
+  ~D() {x--;}
+};
+
+int f(B *q)
+{
+    return (q->get_x())+1;
+}
+  
+int main(){
+  B *p = new B[10]; //new si delete cheama constructorii / destructorii 
+  cout << f(p) << " ";
+  delete []p;
+  p = new D; //cheama mai intai baza si dupa derivata -> 2
+  cout << f(p) << " ";
+  delete p; //face o singura decrementare pt ca nu avem destructor virtual in baza (p e pointer la baza) si o sa avem un memory leak pt ca nu va chema destructor derivata
+  cout << D::get_x() << " ";
+  return 0;
+}
+
+2.
+
+#include<iostream>
+using namespace std;
+
+class B
+{
+public:
+  int x;      
+  B(int i = 0) {x = i;} // merge sa pui in main: B b=5 <-> (va interpreta ca) B b(5) ----> de aceea merge la virtual (lui B ii atribui un int)
+  virtual B minus() {return (1 - x);} //aici nu crapa din cauza constructorului de mai sus
+};
+
+class D: public B 
+{
+public:
+  D(int i = 0) {x = i;}
+  ~D() {x--;}
+  void afisare() {cout << x;}
+};
+
+int main()
+{
+  B *p1 = new B(18);
+  *p1 = p1 -> minus();
+  dynamic_cast<D*> (p1) -> afisare(); //eroare (p1 e de baza si nu poti sa faci dynamic la derivata)
+  return 0;
+}
+
+3.
+
+#include<iostream>
+using namespace std;
+
+int f(float x) //functia e int
+{
+  if (x ++ == 2) throw x; //un return automat si cauta un catch in care sa intre (se returneaza un float)
+  return x/2;
+}
+
+int main()
+{
+  int x;
+  try 
+  {
+    cin >> x;
+    cout << f(x); //aici nu e eroare - implicit conversie de la int la float
+  } 
+  catch (int x) //catch-ul asta prinde doar int-uri, iar throw-ul arunca float-uri deci avem eroare
+  {
+    cout << (x + 1)/2;
+  }
+  return 0;
+}
+
+4.
+
+#include<iostream>
+using namespace std;
+
+template<class T>
+T f(T x, T y)
+{
+    return x + y;
+}
+
+int main()
+{
+  int *x = new int(5), *y = new int(4); //x arata spre memoria unde e 5, (*x)=5
+  //new int -> constructorul lui int
+  cout << f(x,y); //eroare pt ca nu poate sa adune pointeri
+  //fara eroare tb sa scrii f(*x, *y)
+  return 0;
+}
+
+
+5.
+
+#include<iostream>
+using namespace std;
+class A 
+{
+  int x;
+public:
+  A(int i = 5): x(i) {} // x(i) {} == {x=i}
+  int get_x() {return x;}
+  operator int () {return x;}
+  A operator+ (A);
+};
+
+ostream& operator<< (ostream &o, A a) 
+{
+  o << a.get_x();
+  return o;
+}
+
+A A::operator+ (A i) {return x + i.x;}
+//functie membra lucreaza cu this si modifica this-ul (in acest caz, ca avem return direct)
+//functie friend lucreaza cu 2 obiecte si nu modifica this-ul (in acest caz)
+
+int main()
+{
+  A a = 9; int b = 7;
+  cout << a + b << " " << b + a; //ambiguu (transforma b in obiect)
+  //eroare doar la a+b, pt ca pe b il poate transforma in obiect si compilatorul te intreaba: vrei int sau obiect?
+  //la b+a, pe b il transforma fortat in obiect si a e deja obiect, deci merge
+  return 0;
+}
+
+6.
+
+#include<iostream>
+using namespace std;
+
+class A 
+{
+protected:
+  int x;
+public:
+  A(int i): x(i) {}
+  virtual int f() {return x++;} //avem functie virtual
+};
+
+class B: public A {
+  int y;
+public:
+  B(int i, int j): y(i), A(j) {}
+  int f() {return x + y;}
+};
+
+int main()
+{
+  A *p = new B(7, -3);
+  cout << p -> f();
+  return 0;
+}
+
+7.
+
+#include<iostream>
+using namespace std;
+
+class A 
+{
+  static int x;
+public:
+  A(int i = 0) {x = i;}
+  int get_x() {return x;}
+  int & set_x(int i) {x = i;}
+  A operator= (A a1) {set_x(a1.get_x()); return a1;}
+};
+//ca sa rezolvi eroarea: int A::x
+
+int main()
+{
+  A a(212), b;
+  cout << (b = a).get_x(); //daca nu am avea eroare, ar returna 0
+  //dc? pt ca x este static si b-ul va modifica x=0
+  return 0;
+}
+
+
+
+

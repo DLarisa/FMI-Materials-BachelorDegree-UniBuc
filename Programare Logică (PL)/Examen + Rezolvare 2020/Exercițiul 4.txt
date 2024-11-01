@@ -1,0 +1,6 @@
+
+punvarctinfata([], []).
+punvarctinfata(Termen, Rez):- (not(is_list(Termen))), Rez = Termen.
+
+punvarctinfata(Termen, Rez):- nonvar(Termen), Termen =.. [Operator|Parametrii],
+    sort(0,  @<, Parametrii,  Sortat), Rez =..[Operator, Sortat].

@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.StoredProcedureSqlServer parentClass="oracle.dbtools.crest.model.design.storage.StoredProcedure">
+   <roproperty name="database" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.DataBaseSqlServer" getter="getDatabase"/>
+   <property name="owner" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.UserSqlServer" defaultValue="" xmlName="owner" xmlType="element" getter="getOwner" setter="setOwner" reffered="true"/>
+   <property name="schema" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.SchemaSqlServer" defaultValue="" xmlName="schema" xmlType="element" getter="getSchema" setter="setSchema" reffered="true"/>
+   <property name="database" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.DataBaseSqlServer" defaultValue="" xmlName="database" xmlType="element" getter="getDatabase" setter="setDatabase" reffered="true"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.StoredProcedureSqlServer>

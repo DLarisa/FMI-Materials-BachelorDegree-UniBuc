@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.db2.DistinctTypeDB2 parentClass="oracle.dbtools.crest.model.design.storage.db2.AbstractStorageObjectDB2">
+   <property name="domain" dataType="java.lang.String" defaultValue="" xmlName="domain" xmlType="element" getter="getDomain" setter="setDomain" reffered="false"/>
+   <property name="implementedDomain" dataType="oracle.dbtools.crest.model.design.Domain" defaultValue="" xmlName="implementedDomain" xmlType="element" getter="getImplementedDomain" setter="setImplementedDomain" reffered="true"/>
+   <roproperty name="dataType" dataType="interface oracle.dbtools.crest.model.datatype.MDDataType" getter="getDataType"/>
+</oracle.dbtools.crest.model.design.storage.db2.DistinctTypeDB2>

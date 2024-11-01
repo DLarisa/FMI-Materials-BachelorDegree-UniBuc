@@ -1,0 +1,30 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.process.DataFlowDesign parentClass="oracle.dbtools.crest.model.design.DesignPart">
+   <property name="process" dataType="oracle.dbtools.crest.model.design.process.Process" defaultValue="" xmlName="process" xmlType="element" getter="getProcess" setter="setProcess" reffered="true"/>
+   <property name="processModel" dataType="oracle.dbtools.crest.model.design.process.ProcessModel" defaultValue="" xmlName="processModel" xmlType="element" getter="getProcessModel" setter="setProcessModel" reffered="true"/>
+   <property name="topLevel" dataType="boolean" defaultValue="" xmlName="topLevel" xmlType="attribute" getter="isTopLevel" setter="setTopLevel" reffered="false"/>
+   <property name="processOrderString" dataType="java.lang.String" defaultValue="" xmlName="processOrderString" xmlType="element" getter="getProcessOrderString" setter="setProcessOrderString" reffered="false" listOfRefs="true"/>
+   <property name="parentDFD_ID" dataType="java.lang.String" defaultValue="" xmlName="parentDFD_ID" xmlType="attribute" getter="getParentDFD_ID" setter="setParentDFD_ID" reffered="false"/>
+   <collection external="true" name="ExternalAgents" dataType="oracle.dbtools.crest.model.design.process.ExternalAgentSet" xmlName="ExternalAgents" itemXmlName="ExternalAgent" getter="getOwnExternalAgentSet" createItem="createExternalAgent"/>
+   <collection external="true" name="Processes" dataType="oracle.dbtools.crest.model.design.process.ProcessSet" xmlName="Processes" itemXmlName="Process" getter="getProcessSet" createItem="createProcess"/>
+   <collection external="true" name="Flows" dataType="oracle.dbtools.crest.model.design.process.FlowSet" xmlName="Flows" itemXmlName="Flow" getter="getFlowSet" createItem="createFlow"/>
+   <collection external="true" name="NoteObjects" dataType="oracle.dbtools.crest.model.design.NoteSet" xmlName="NoteObjects" itemXmlName="NoteObject" getter="getNoteSet" createItem="createNote"/>
+   <roproperty name="clean" dataType="boolean" getter="isClean"/>
+   <roproperty name="agents" dataType="oracle.dbtools.crest.model.design.DesignObjectCollection" getter="getAgents"/>
+   <roproperty name="allFlows" dataType="interface java.util.List" getter="getAllFlows"/>
+   <roproperty name="allPrimitiveProcesses" dataType="interface java.util.List" getter="getAllPrimitiveProcesses"/>
+   <roproperty name="allProcesses" dataType="interface java.util.List" getter="getAllProcesses"/>
+   <roproperty name="componentFlowsFor" dataType="interface java.util.Collection" getter="getComponentFlowsFor"/>
+   <roproperty name="extProcesses" dataType="oracle.dbtools.crest.model.design.DesignObjectCollection" getter="getExtProcesses"/>
+   <roproperty name="externalAgentSet" dataType="oracle.dbtools.crest.model.design.process.ExternalAgentSet" getter="getExternalAgentSet"/>
+   <roproperty name="externalDataSet" dataType="oracle.dbtools.crest.model.design.process.ExternalDataSet" getter="getExternalDataSet"/>
+   <roproperty name="flowSet" dataType="oracle.dbtools.crest.model.design.process.FlowSet" getter="getFlowSet"/>
+   <roproperty name="flowsforProcessObject" dataType="interface java.util.Collection" getter="getFlowsForProcessObject"/>
+   <roproperty name="infoStoreSet" dataType="oracle.dbtools.crest.model.design.process.InfoStoreSet" getter="getInfoStoreSet"/>
+   <roproperty name="parentDataFlowdesign" dataType="oracle.dbtools.crest.model.design.process.DataFlowDesign" getter="getParentDataFlowdesign"/>
+   <roproperty name="processNumber" dataType="int" getter="getProcessNumber"/>
+   <roproperty name="processOrderList" dataType="interface java.util.List" getter="getProcessOrderList"/>
+   <roproperty name="processSet" dataType="oracle.dbtools.crest.model.design.process.ProcessSet" getter="getProcessSet"/>
+   <roproperty name="stores" dataType="oracle.dbtools.crest.model.design.DesignObjectCollection" getter="getStores"/>
+   <roproperty name="topLevelDataFlowDesign" dataType="oracle.dbtools.crest.model.design.process.DataFlowDesign" getter="getTopLevelDataFlowDesign"/>
+</oracle.dbtools.crest.model.design.process.DataFlowDesign>

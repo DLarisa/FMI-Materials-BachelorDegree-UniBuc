@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.db2.TableViewProxyDB2 parentClass="oracle.dbtools.crest.model.design.storage.TableViewProxy">
+   <property name="checkOptionScope" dataType="java.lang.String" defaultValue="" xmlName="checkOptionScope" xmlType="element" getter="getCheckOptionScope" setter="setCheckOptionScope" reffered="false"/>
+   <property name="labelOn" dataType="java.lang.String" defaultValue="" xmlName="labelOn" xmlType="element" getter="getLabelOn" setter="setLabelOn" reffered="false"/>
+   <property name="owner" dataType="oracle.dbtools.crest.model.design.storage.db2.Owner" defaultValue="" xmlName="owner" xmlType="element" getter="getOwner" setter="setOwner" reffered="true"/>
+   <roproperty name="synonyms" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getSynonyms"/>
+   <collection name="synonyms" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="synonyms" itemXmlName="Synonym" getter="getSynonyms" createItem="createSynonym" />
+</oracle.dbtools.crest.model.design.storage.db2.TableViewProxyDB2>

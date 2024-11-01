@@ -1,0 +1,78 @@
+﻿@model ProiectDAW.Models.Film
+@{
+    ViewBag.Title = "Detalii Film ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+<br />
+<br />
+<br />
+<h2 style="font-family: 'Adobe Devanagari'; border-bottom: 5px double aquamarine; display:inline">@ViewBag.Title: @Model.Nume</h2>
+
+@if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+{
+    using (Html.BeginForm(actionName: "Edit", controllerName: "Film", method: FormMethod.Get, routeValues: new { id = Model.FilmId }, htmlAttributes: new { style = "display:inline; float: right;" }))
+    {
+        <button class="btn btn-warning">Edit</button>
+    }
+}
+
+
+<blockquote>
+    @if (Model.Descriere == null)
+    {
+        <p style="font-family: Pristina; font-size: 25px;">Acest film nu are descriere!</p>
+    }
+    else
+    {
+        <p style="font-family: Pristina; font-size: 25px;">@Model.Descriere</p>
+        <small>@Html.Label("Summary", "Summary from: ")<cite title="Source Title">Imdb.com</cite></small>
+    }
+</blockquote>
+
+
+<div class="list-group">
+    <a class="list-group-item">
+        <h4 class="list-group-item-heading">@Html.Label("Nume Director", "Nume Director:")</h4>
+        <p class="list-group-item-text" style="color: white;">@Model.Director.Nume @Model.Director.Prenume</p>
+    </a>
+    <a class="list-group-item">
+        <h4 class="list-group-item-heading">@Html.Label("An", "An Apariție:")</h4>
+        <p class="list-group-item-text" style="color: white;">@Model.An</p>
+    </a>
+    <a class="list-group-item">
+        <h4 class="list-group-item-heading">@Html.Label("Limba", "Limbă Film:")</h4>
+        <p class="list-group-item-text" style="color: white;">@Model.LimbaFilm.Nume</p>
+    </a>
+    <a class="list-group-item">
+        <h4 class="list-group-item-heading">@Html.Label("NrPremii", "Număr Premii:")</h4>
+        <p class="list-group-item-text" style="color: white;">@Model.NrPremii</p>
+    </a>
+    <a class="list-group-item">
+        <h4 class="list-group-item-heading">@Html.Label("Genuri", "Genuri:")</h4>
+        <p class="list-group-item-text" style="color: white;">
+            @foreach (var gen in Model.GenFilme)
+            {
+                @gen.Nume
+                <br />
+            }
+        </p>
+    </a>
+</div>
+
+
+@using (Html.BeginForm(actionName: "Index", controllerName: "Film", method: FormMethod.Get, htmlAttributes: new { style = "display:inline" }))
+{
+    <button class="btn btn-primary">Înapoi</button>
+}
+
+@if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+{ 
+    using (Html.BeginForm(actionName: "Delete", controllerName: "Film", method: FormMethod.Post, routeValues: new { id = Model.FilmId }, htmlAttributes: new { style = "display:inline; float: right;" }))
+    {
+        @Html.HttpMethodOverride(HttpVerbs.Delete)
+        <button class="btn btn-danger" type="submit">Delete</button>
+    }
+}

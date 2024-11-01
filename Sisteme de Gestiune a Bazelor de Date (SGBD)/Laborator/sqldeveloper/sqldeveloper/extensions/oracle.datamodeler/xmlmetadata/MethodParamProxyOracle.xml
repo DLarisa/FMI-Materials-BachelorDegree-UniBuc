@@ -1,0 +1,5 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.MethodParamProxyOracle parentClass="oracle.dbtools.crest.model.design.storage.MethodParamProxy">
+   <property name="copyArgument" dataType="java.lang.String" defaultValue="YES" xmlName="copyArgument" xmlType="element" getter="getCopyArgument" setter="setCopyArgument" reffered="false"/>
+   <property name="directionType" dataType="java.lang.String" defaultValue="OUT" xmlName="directionType" xmlType="element" getter="getDirectionType" setter="setDirectionType" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.oracle.MethodParamProxyOracle>

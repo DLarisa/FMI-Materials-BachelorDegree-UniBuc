@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.constraint.AVT xmlName="rangeDef">
+   <property name="beginValue" dataType="java.lang.String" defaultValue="" xmlName="beginValue" xmlType="element" getter="getBeginValue" setter="setBeginValue" reffered="false"/>
+   <property name="endValue" dataType="java.lang.String" defaultValue="" xmlName="endValue" xmlType="element" getter="getEndValue" setter="setEndValue" reffered="false"/>
+   <property name="description" dataType="java.lang.String" defaultValue="" xmlName="description" xmlType="element" getter="getDescription" setter="setDescription" reffered="false"/>
+</oracle.dbtools.crest.model.design.constraint.AVT>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Fisier de baza</title>
+		<style>
+		</style>
+		<script>
+			function incrementeaza(btn){
+				btn.innerHTML=parseInt(btn.innerHTML)+1;
+			}
+		</script>
+	</head>
+	<body>
+		<p>Nota: in exercitiile de tip "corectati gresala", desi nu e recomandat, s-au pus css-ul si script-ul in fisierul html strict pentru simplitate (downloadarea unui singur fisier vs 3). Totusi retineti ca indicat este sa folositi fisiere externe in teme/proiecte/teste.</p>
+		<hr/>
+		<p>Butonul din pagina ar trebui sa isi incrementeze valoarea la fiecare click (din 0 in 1, din 1 in 2 si tot asa). De ce nu face asta? Corectati.</p>
+		<button onclick="incrementeaza(this)">0</button>
+	</body>
+</html>

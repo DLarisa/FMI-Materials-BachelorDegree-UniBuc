@@ -1,0 +1,17 @@
+p.x {
+    text-decoration: line-through;
+}
+
+p i + b:last-child {
+    background-color: purple;
+}
+
+li:not(.abc):after {
+    content: "nu au clasa abc";
+    color: green;
+    font-weight: bold;
+}
+
+p:hover + * {
+    display: none;
+}

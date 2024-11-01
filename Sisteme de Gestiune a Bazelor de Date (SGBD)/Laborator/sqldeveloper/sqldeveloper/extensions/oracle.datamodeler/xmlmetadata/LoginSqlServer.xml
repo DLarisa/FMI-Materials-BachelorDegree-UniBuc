@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.LoginSqlServer parentClass="oracle.dbtools.crest.model.design.storage.sqlserver.AbstractStorageObjectSqlServer">
+   <property name="authentication" dataType="java.lang.String" defaultValue="SQL Server" xmlName="authentication" xmlType="element" getter="getAuthentication" setter="setAuthentication" reffered="false"/>
+   <property name="defaultDatabase" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.DataBaseSqlServer" defaultValue="" xmlName="defaultDatabase" xmlType="element" getter="getDefaultDatabase" setter="setDefaultDatabase" reffered="true"/>
+   <property name="language" dataType="java.lang.String" defaultValue="English" xmlName="language" xmlType="element" getter="getLanguage" setter="setLanguage" reffered="false"/>
+   <property name="password" dataType="java.lang.String" defaultValue="" xmlName="password" xmlType="element" getter="getPassword" setter="setPassword" reffered="false"/>
+   <property name="users" dataType="java.lang.String" defaultValue="" xmlName="users" xmlType="element" getter="getUsers" setter="setUsers" reffered="false" listOfRefs="true"/>
+   <bb_roproperty name="userSet" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.LoginSqlServer$UserSet" getter="getUserSet"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.LoginSqlServer>

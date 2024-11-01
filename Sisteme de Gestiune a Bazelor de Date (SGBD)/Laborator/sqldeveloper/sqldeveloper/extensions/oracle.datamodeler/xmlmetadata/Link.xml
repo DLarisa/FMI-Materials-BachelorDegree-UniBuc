@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.multidimensional.Link parentClass="oracle.dbtools.crest.model.design.multidimensional.AbstractMDObject">
+   <aa_property name="destination" dataType="oracle.dbtools.crest.model.design.multidimensional.AbstractMDObject" defaultValue="" xmlName="destination" xmlType="element" getter="getDestination" setter="setDestination" reffered="true"/>
+   <property name="rollupLink" dataType="oracle.dbtools.crest.model.design.multidimensional.RollupLink" defaultValue="" xmlName="rollupLink" xmlType="element" getter="getRollupLink" setter="setRollupLink" reffered="true"/>
+   <aa_property name="source" dataType="oracle.dbtools.crest.model.design.multidimensional.AbstractMDObject" defaultValue="" xmlName="source" xmlType="element" getter="getSource" setter="setSource" reffered="true"/>
+   <property name="sourceMDObject" dataType="oracle.dbtools.crest.model.design.multidimensional.AbstractMDObject" defaultValue="" xmlName="sourceMDObject" xmlType="element" getter="getSourceMDObject" setter="setSourceMDObject" reffered="true"/>
+   <aa_property name="sourceTV" dataType="oracle.dbtools.crest.swingui.multidimensional.AbstractMDTV" defaultValue="" xmlName="sourceTV" xmlType="element" getter="getSourceTV" setter="setSourceTV" reffered="true"/>
+   <aa_property name="sourceTopView" dataType="oracle.dbtools.crest.swingui.TopView" defaultValue="" xmlName="sourceTopView" xmlType="element" getter="getSourceTopView" setter="setSourceTopView" reffered="true"/>
+   <property name="targetMDObject" dataType="oracle.dbtools.crest.model.design.multidimensional.AbstractMDObject" defaultValue="" xmlName="targetMDObject" xmlType="element" getter="getTargetMDObject" setter="setTargetMDObject" reffered="true"/>
+   <aa_property name="targettV" dataType="oracle.dbtools.crest.swingui.multidimensional.AbstractMDTV" defaultValue="" xmlName="targettV" xmlType="element" getter="getTargetTV" setter="setTargetTV" reffered="true"/>
+   <aa_property name="targettopView" dataType="oracle.dbtools.crest.swingui.TopView" defaultValue="" xmlName="targettopView" xmlType="element" getter="getTargetTopView" setter="setTargetTopView" reffered="true"/>
+   <roproperty name="valid" dataType="boolean" getter="isValid"/>
+   <roproperty name="connection" dataType="oracle.dbtools.crest.model.design.multidimensional.Link$Connection" getter="getConnection"/>
+   <roproperty name="dpVInfoFor" dataType="oracle.dbtools.crest.model.design.multidimensional.Link$dpvInfo" getter="getDPVInfoFor"/>
+   <roproperty name="mdObject" dataType="oracle.dbtools.crest.model.design.multidimensional.AbstractMDObject" getter="getMDObject"/>
+   <roproperty name="object" dataType="oracle.dbtools.crest.model.design.DesignObject" getter="getObject"/>
+   <roproperty name="sourceConnection" dataType="oracle.dbtools.crest.model.design.multidimensional.Link$Connection" getter="getSourceConnection"/>
+   <roproperty name="sourceObject" dataType="oracle.dbtools.crest.model.design.DesignObject" getter="getSourceObject"/>
+   <roproperty name="targetConnection" dataType="oracle.dbtools.crest.model.design.multidimensional.Link$Connection" getter="getTargetConnection"/>
+   <roproperty name="targetObject" dataType="oracle.dbtools.crest.model.design.DesignObject" getter="getTargetObject"/>
+   <roproperty name="viewFor" dataType="oracle.dbtools.crest.swingui.TopView" getter="getViewFor"/>
+</oracle.dbtools.crest.model.design.multidimensional.Link>

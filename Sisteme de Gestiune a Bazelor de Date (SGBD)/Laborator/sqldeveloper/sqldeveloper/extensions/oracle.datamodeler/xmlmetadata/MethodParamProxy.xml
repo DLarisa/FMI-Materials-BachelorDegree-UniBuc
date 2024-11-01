@@ -1,0 +1,5 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.MethodParamProxy parentClass="oracle.dbtools.crest.model.design.storage.RelationalObjectProxy">
+   <roproperty name="datatype" dataType="java.lang.String" getter="getDatatype"/>
+   <roproperty name="methodParam" dataType="oracle.dbtools.crest.model.design.datatypes.MethodParam" getter="getMethodParam"/>
+</oracle.dbtools.crest.model.design.storage.MethodParamProxy>

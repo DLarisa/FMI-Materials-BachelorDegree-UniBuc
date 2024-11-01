@@ -1,0 +1,12 @@
+html{
+	font-size:10px;
+}
+
+section{
+	border:1px solid black;
+	margin-bottom:5px;
+}
+
+p{
+	margin:0;
+}

@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v10g.SnapshotOraclev10g parentClass="oracle.dbtools.crest.model.design.storage.oracle.SnapshotOracle">
+   <property name="usingConstraint" dataType="java.lang.String" defaultValue="ENFORCED" xmlName="usingConstraint" xmlType="element" getter="getUsingConstraint" setter="setUsingConstraint" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v10g.SnapshotOraclev10g>

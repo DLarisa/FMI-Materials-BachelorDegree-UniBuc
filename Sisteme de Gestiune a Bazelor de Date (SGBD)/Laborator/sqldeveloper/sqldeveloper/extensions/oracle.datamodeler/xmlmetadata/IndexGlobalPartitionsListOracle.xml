@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.IndexGlobalPartitionsListOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="globalPartColumns" dataType="java.lang.String" defaultValue="" xmlName="globalPartColumns" xmlType="element" getter="getGlobalPartColumns" setter="setGlobalPartColumns" reffered="false" listOfRefs="true"/>
+   <roproperty name="index" dataType="oracle.dbtools.crest.model.design.storage.IndexProxy" getter="getIndex"/>
+   <roproperty name="allGlobalPartColumns" dataType="java.lang.String" getter="getAllGlobalPartColumns"/>
+   <bb_roproperty name="columnSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.IndexGlobalPartitionsListOracle$InlineList" getter="getColumnSet"/>
+</oracle.dbtools.crest.model.design.storage.oracle.IndexGlobalPartitionsListOracle>

@@ -1,0 +1,28 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.swingui.TVConnector parentClass="oracle.dbtools.crest.swingui.TopView"  isConnector="true">
+   <property name="useDefaultColor" dataType="boolean" defaultValue="true" xmlName="useDefaultColor" xmlType="element" getter="useDefaultColor" setter="setUseDefaultColor" reffered="false"/>
+   <property name="backgroundColor" dataType="java.awt.Color" defaultValue="" xmlName="backgroundColor" xmlType="element" getter="getBackgroundColor" setter="setBackgroundColor" reffered="false"/>
+   <not_uesd_property name="foregroundColor" dataType="java.awt.Color" defaultValue="" xmlName="foregroundColor" xmlType="element" getter="getForegroundColor" setter="setForegroundColor" reffered="false"/>
+   <aa_property name="labelBounds" dataType="java.awt.Rectangle" defaultValue="" xmlName="labelBounds" xmlType="element" getter="getLabelBounds" setter="setLabelBounds" reffered="false"/>
+   <aa_property name="sourceLabelBounds" dataType="java.awt.Rectangle" defaultValue="" xmlName="sourceLabelBounds" xmlType="element" getter="getSourceLabelBounds" setter="setSourceLabelBounds" reffered="false"/>
+   <aa_property name="targetLabelBounds" dataType="java.awt.Rectangle" defaultValue="" xmlName="targetLabelBounds" xmlType="element" getter="getTargetLabelBounds" setter="setTargetLabelBounds" reffered="false"/>
+   <property name="lineWidth" dataType="int" defaultValue="" xmlName="lineWidth" xmlType="element" getter="getLineWidth" setter="setLineWidth" reffered="false"/>
+   <property name="centerLabel" dataType="oracle.dbtools.crest.model.design.Label" defaultValue="" xmlName="centerLabel" xmlType="element" getter="getCenterLabel" createItem="getTempCenterLabel" removeItem="clearCenterLabel" reffered="false"/>
+   <property name="sourceLabel" dataType="oracle.dbtools.crest.model.design.Label" defaultValue="" xmlName="sourceLabel" xmlType="element" getter="getSourceLabel" createItem="getTempSourceLabel" removeItem="clearSourceLabel" reffered="false"/>
+   <property name="targetLabel" dataType="oracle.dbtools.crest.model.design.Label" defaultValue="" xmlName="targetLabel" xmlType="element" getter="getTargetLabel" createItem="getTempTargetLabel" removeItem="clearTargetLabel" reffered="false"/>
+   <bb_collection name="fonts" dataType="java.util.List" xmlName="fonts" itemXmlName="FontObject" getter="getFontObjectWrappers" />
+   <roproperty name="centerLabelPosition" dataType="java.awt.geom.Point2D" getter="getCenterLabelPosition"/>
+   <roproperty name="centerPoint" dataType="java.awt.geom.Point2D" getter="getCenterPoint"/>
+   <roproperty name="edge" dataType="oracle.dbtools.crest.swingui.diagram.graph.DefaultEdge" getter="getEdge"/>
+   <roproperty name="edgePoints" dataType="interface java.util.List" getter="getEdgePoints"/>
+   <roproperty name="edgeView" dataType="oracle.dbtools.crest.swingui.diagram.graph.EdgeView" getter="getEdgeView"/>
+   <roproperty name="edgeViewPoints" dataType="interface java.util.List" getter="getEdgeViewPoints"/>
+   <roproperty name="label" dataType="oracle.dbtools.crest.model.design.Label" getter="getLabel"/>
+   <roproperty name="labelBoundsFor" dataType="java.awt.Rectangle" getter="getLabelBoundsFor"/>
+   <roproperty name="labels" dataType="interface java.util.List" getter="getLabels"/>
+   <roproperty name="sourceTopView" dataType="oracle.dbtools.crest.swingui.TopView" getter="getSourceTopView"/>
+   <roproperty name="targettopView" dataType="oracle.dbtools.crest.swingui.TopView" getter="getTargetTopView"/>
+   <roproperty name="tempCenterLabel" dataType="oracle.dbtools.crest.model.design.Label" getter="getTempCenterLabel"/>
+   <roproperty name="tempSourceLabel" dataType="oracle.dbtools.crest.model.design.Label" getter="getTempSourceLabel"/>
+   <roproperty name="temptargetLabel" dataType="oracle.dbtools.crest.model.design.Label" getter="getTempTargetLabel"/>
+</oracle.dbtools.crest.swingui.TVConnector>

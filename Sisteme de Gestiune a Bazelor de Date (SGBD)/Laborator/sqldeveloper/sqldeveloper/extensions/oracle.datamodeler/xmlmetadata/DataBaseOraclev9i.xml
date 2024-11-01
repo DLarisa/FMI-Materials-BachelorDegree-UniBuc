@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v9i.DataBaseOraclev9i parentClass="oracle.dbtools.crest.model.design.storage.oracle.DataBaseOracle">
+   <property name="extentManagement" dataType="java.lang.String" defaultValue="Dictionary" xmlName="extentManagement" xmlType="element" getter="getExtentManagement" setter="setExtentManagement" reffered="false"/>
+   <property name="forceLogging" dataType="java.lang.String" defaultValue="NO" xmlName="forceLogging" xmlType="element" getter="getForceLogging" setter="setForceLogging" reffered="false"/>
+   <property name="passForSYS" dataType="java.lang.String" defaultValue="" xmlName="passForSYS" xmlType="element" getter="getPassForSYS" setter="setPassForSYS" reffered="false"/>
+   <property name="passForSYSTEM" dataType="java.lang.String" defaultValue="" xmlName="passForSYSTEM" xmlType="element" getter="getPassForSYSTEM" setter="setPassForSYSTEM" reffered="false"/>
+   <property name="tempTablespace" dataType="oracle.dbtools.crest.model.design.storage.oracle.v9i.TemporaryTablespaceOraclev9i" defaultValue="" xmlName="tempTablespace" xmlType="element" getter="getTempTablespace" setter="setTempTablespace" reffered="true"/>
+   <property name="timeZone" dataType="java.lang.String" defaultValue="" xmlName="timeZone" xmlType="element" getter="getTimeZone" setter="setTimeZone" reffered="false"/>
+   <property name="undoTablespace" dataType="oracle.dbtools.crest.model.design.storage.oracle.v9i.UndoTablespaceOraclev9i" defaultValue="" xmlName="undoTablespace" xmlType="element" getter="getUndoTablespace" setter="setUndoTablespace" reffered="true"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v9i.DataBaseOraclev9i>

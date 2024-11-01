@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Fisier de baza</title>
+		<style>
+		</style>
+		<script>
+		window.onload=function(){
+			var btn=document.getElementById("bau");
+			btn.onclick=function(){
+				<!-- document.write("Bau!");-->
+				document.body.appendChild(document.createTextNode("bau"));
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<p>Nota: in exercitiile de tip "corectati gresala", desi nu e recomandat, s-au pus css-ul si script-ul in fisierul html strict pentru simplitate (downloadarea unui singur fisier vs 3). Totusi retineti ca indicat este sa folositi fisiere separate in teme/proiecte/teste.</p>
+		<p>La click pe buton dorim sa adaugam la finalul paginii textul "Bau!". Totusi tot continutul paginii dispare. De ce? Corectati astfel incat la fiecare click pe buton sa apara un nou text "Bau!" la finalul documentului (fara a afecta restul elementelor din pagina).</p>
+		<button id="bau">Scrie "Bau!"</button>
+	</body>
+</html>

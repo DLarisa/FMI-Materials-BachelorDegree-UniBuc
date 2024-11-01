@@ -1,0 +1,23 @@
+p{
+	color:green;
+}
+
+h1+p{
+	color:red;
+}
+
+div~p{
+	color:red;
+}
+
+#pgf{
+	color:red;
+}
+
+.c1{
+	color:red;
+}
+
+.c2{
+	color:grey;
+}

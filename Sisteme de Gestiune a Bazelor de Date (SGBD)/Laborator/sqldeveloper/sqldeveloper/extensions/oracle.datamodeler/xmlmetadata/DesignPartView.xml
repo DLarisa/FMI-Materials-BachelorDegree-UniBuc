@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.swingui.DesignPartView xmlName="Diagram">
+   <property name="name" dataType="java.lang.String" defaultValue="" xmlName="name" xmlType="attribute" getter="getName" setter="setName" reffered="false"/>
+   <aa_property name="addViewafterUserInput" dataType="boolean" defaultValue="" xmlName="addViewafterUserInput" xmlType="element" getter="getAddViewAfterUserInput" setter="setAddViewAfterUserInput" reffered="false"/>
+   <property name="createdBy" dataType="java.lang.String" defaultValue="" xmlName="createdBy" xmlType="element" getter="getCreatedBy" setter="setCreatedBy" loggingProp="true" reffered="false"/>
+   <property name="createdTime" dataType="java.lang.String" defaultValue="" xmlName="createdTime" xmlType="element" getter="getCreatedTime" setter="setCreatedTime" loggingProp="true" reffered="false"/>
+   <aa_property name="changedBy" dataType="java.lang.String" defaultValue="" xmlName="changedBy" xmlType="element" getter="getChangedBy" setter="setChangedBy" loggingProp="true" reffered="false"/>
+   <aa_property name="changedTime" dataType="java.lang.String" defaultValue="" xmlName="changedTime" xmlType="element" getter="getChangedTime" setter="setChangedTime" loggingProp="true" reffered="false"/>
+   <property name="autoRoute" dataType="boolean" defaultValue="" xmlName="autoRoute" xmlType="element" getter="isAutoRoute" setter="setAutoRoute" reffered="false"/>
+   <property name="boxInbox" dataType="boolean" defaultValue="" xmlName="boxInbox" xmlType="element" getter="isBoxInBox" setter="setBoxInBox" reffered="false"/>
+   <property name="showLegend" dataType="boolean" defaultValue="" xmlName="showLegend" xmlType="element" getter="showLegend" setter="setShowLegend" reffered="false"/>
+   <property name="showLabels" dataType="boolean" defaultValue="" xmlName="showLabels" xmlType="element" getter="showLabels" setter="setShowLabels" reffered="false"/>
+   <property name="showGrid" dataType="boolean" defaultValue="" xmlName="showGrid" xmlType="element" getter="showGrid" setter="setShowGrid" reffered="false"/>
+   <property name="diagramColor" dataType="java.awt.Color" defaultValue="" xmlName="diagramColor" xmlType="element" getter="getDiagramColor" setter="setDiagramColor" reffered="false"/>
+   <property name="legendPosX" dataType="int" defaultValue="10" xmlName="legendPosX" xmlType="element" getter="getLegendPosX" setter="setLegendPosX" reffered="false"/>
+   <property name="legendPosY" dataType="int" defaultValue="10" xmlName="legendPosY" xmlType="element" getter="getLegendPosY" setter="setLegendPosY" reffered="false"/>
+   <property name="legendAttributes" dataType="int" defaultValue="126" xmlName="legendAttributes" xmlType="element" getter="getLegendAttributes" setter="setLegendAttributes" reffered="false"/>
+   <aa_property name="checkedOut" dataType="boolean" defaultValue="" xmlName="checkedOut" xmlType="element" getter="isCheckedOut" setter="setCheckedOut" reffered="false"/>
+   <aa_property name="checkedOutBy" dataType="java.lang.String" defaultValue="" xmlName="checkedOutBy" xmlType="element" getter="getCheckedOutBy" setter="setCheckedOutBy" reffered="false"/>
+   <aa_property name="checkedOutByMe" dataType="boolean" defaultValue="" xmlName="checkedOutByMe" xmlType="element" getter="isCheckedOutByMe" setter="setCheckedOutByMe" reffered="false"/>
+   <aa_property name="commandInProgress" dataType="boolean" defaultValue="" xmlName="commandInProgress" xmlType="element" getter="isCommandInProgress" setter="setCommandInProgress" reffered="false"/>
+   <aa_property name="context" dataType="oracle.ide.Context" defaultValue="" xmlName="context" xmlType="element" getter="getContext" setter="setContext" reffered="false"/>
+   <aa_property name="currentSelection" dataType="interface oracle.dbtools.crest.swingui.SelectableObject" defaultValue="" xmlName="currentSelection" xmlType="element" getter="getCurrentSelection" setter="setCurrentSelection" reffered="false"/>
+   <property name="comment" dataType="java.lang.String" defaultValue="" xmlName="comment" xmlType="element" getter="getComment" setter="setComment" reffered="false"/>
+   <property name="notes" dataType="java.lang.String" defaultValue="" xmlName="notes" xmlType="element" getter="getNotes" setter="setNotes" reffered="false"/>
+   <property name="dpVId" dataType="java.lang.String" defaultValue="" xmlName="id" xmlType="attribute" getter="getDPVId" setter="setDPVId" reffered="false"/>
+   <aa_property name="dirty" dataType="boolean" defaultValue="" xmlName="dirty" xmlType="element" getter="isDirty" setter="setDirty" reffered="false"/>
+   <property name="display" dataType="boolean" defaultValue="" xmlName="display" xmlType="element" getter="isDisplay" setter="setDisplay" reffered="false"/>
+   <property name="generatorId" dataType="java.lang.String" defaultValue="" xmlName="generatorId" xmlType="element" getter="getGeneratorId" setter="setGeneratorId" reffered="false"/>
+   <property name="importedid" dataType="java.lang.String" defaultValue="" xmlName="importedid" xmlType="element" getter="getImportedId" setter="setImportedId" reffered="false"/>
+   <aa_property name="lastContainerDiagram" dataType="oracle.dbtools.crest.swingui.DesignPartView" defaultValue="" xmlName="lastContainerDiagram" xmlType="element" getter="getLastContainerDiagram" setter="setLastContainerDiagram" reffered="true"/>
+   <property name="masterDPV" dataType="oracle.dbtools.crest.swingui.DesignPartView" defaultValue="" xmlName="masterDPV" xmlType="element" getter="getMasterDPV" setter="setMasterDPV" reffered="true"/>
+   <property name="notation" dataType="int" defaultValue="" xmlName="notation" xmlType="element" getter="getNotation" setter="setNotation" reffered="false"/>
+   <aa_property name="paC_Element" dataType="interface oracle.dbtools.crest.model.persistence.db.RepositoryObject" defaultValue="" xmlName="paC_Element" xmlType="element" getter="getPAC_Element" setter="setPAC_Element" reffered="false"/>
+   <aa_property name="placeHolder" dataType="oracle.dbtools.crest.model.placeholder.PlaceHolder" defaultValue="" xmlName="placeHolder" xmlType="element" getter="getPlaceHolder" setter="setPlaceHolder" reffered="true"/>
+   <property name="repositoryOID" dataType="java.lang.String" defaultValue="" xmlName="repositoryOID" xmlType="element" getter="getRepositoryOID" setter="setRepositoryOID" reffered="false"/>
+   <property name="repositoryOVID" dataType="java.lang.String" defaultValue="" xmlName="repositoryOVID" xmlType="element" getter="getRepositoryOVID" setter="setRepositoryOVID" reffered="false"/>
+   <aa_property name="selectedTopView" dataType="oracle.dbtools.crest.swingui.TopView" defaultValue="" xmlName="selectedTopView" xmlType="element" getter="getSelectedTopView" setter="setSelectedTopView" reffered="true"/>
+   <property name="showAllDetails" dataType="boolean" defaultValue="true" xmlName="showAllDetails" xmlType="element" getter="showAllDetails" setter="setShowAllDetails" reffered="false"/>
+   <property name="showSchemaName" dataType="boolean" defaultValue="true" xmlName="showSchemaName" xmlType="element" getter="showSchemaName" setter="setShowSchemaName" reffered="false"/>
+   <property name="showNamesOnly" dataType="boolean" defaultValue="false" xmlName="showNamesOnly" xmlType="element" getter="isShowNamesOnly" setter="setShowNamesOnly" reffered="false"/>
+   <property name="showElements" dataType="boolean" defaultValue="false" xmlName="showElements" xmlType="element" getter="showElements" setter="setShowElements" reffered="false"/>
+   <property name="showKeyElements" dataType="boolean" defaultValue="false" xmlName="showKeyElements" xmlType="element" getter="showKeyElements" setter="setShowKeyElements" reffered="false"/>
+   <property name="showDatatype" dataType="boolean" defaultValue="false" xmlName="showDatatype" xmlType="element" getter="showDatatype" setter="setShowDatatype" reffered="false"/>
+   <property name="showKeys" dataType="boolean" defaultValue="false" xmlName="showKeys" xmlType="element" getter="showKeys" setter="setShowKeys" reffered="false"/>
+   <property name="showIndexes" dataType="boolean" defaultValue="false" xmlName="showIndexes" xmlType="element" getter="showIndexes" setter="setShowIndexes" reffered="false"/>
+   <property name="showKeyAndIndexColumns" dataType="boolean" defaultValue="false" xmlName="showKeyAndIndexColumns" xmlType="element" getter="showKeyAndIndexColumns" setter="setShowKeyAndIndexColumns" reffered="false"/>
+   <property name="schemaObject" dataType="oracle.dbtools.crest.model.design.relational.SchemaObject" defaultValue="" xmlName="schemaObject" xmlType="element" getter="getSchemaObject" setter="setSchemaObject" reffered="true"/>
+   <collection name="objectViews" dataType="java.util.List" xmlName="objectViews" itemXmlName="OView" getter="getTVShapes" objectViewItem="true" />
+   <collection name="connectors" dataType="java.util.List" xmlName="connectors" itemXmlName="Connector" getter="getTVConnectors" tvConnectorItem="true" />
+   <collection name="arcs" dataType="java.util.List" xmlName="arcs" itemXmlName="Arc" getter="getTVArcs" objectViewItem="true" />
+   <collection name="diagramViews" dataType="java.util.List" xmlName="diagramViews" itemXmlName="DiagramView" getter="getTVDiagramViews" diagramViewItem="true" />
+   <collection name="displays" dataType="java.util.List" xmlName="displays" itemXmlName="Display" getter="getSubordinateViews" createItem="addSubordinateView" removeItem="removeDisplay" getItemByID="getDisplayByID" moveMethod="moveSubordinateView"/>
+   <roproperty name="currentDPV" dataType="boolean" getter="isCurrentDPV"/>
+   <roproperty name="editorVisible" dataType="boolean" getter="isEditorVisible"/>
+   <roproperty name="leaf" dataType="boolean" getter="isLeaf"/>
+   <roproperty name="mainDiagram" dataType="boolean" getter="isMainDiagram"/>
+   <roproperty name="readOnly" dataType="boolean" getter="isReadOnly"/>
+   <roproperty name="storable" dataType="boolean" getter="isStorable"/>
+   <roproperty name="child" dataType="oracle.dbtools.crest.model.ModelObject" getter="getChild"/>
+   <roproperty name="controller" dataType="oracle.dbtools.crest.swingui.AbstractController" getter="getController"/>
+   <roproperty name="designPart" dataType="oracle.dbtools.crest.model.design.DesignPart" getter="getDesignPart"/>
+   <roproperty name="detailsMenu" dataType="javax.swing.JMenu" getter="getDetailsMenu"/>
+   <roproperty name="displayByName" dataType="oracle.dbtools.crest.swingui.DesignPartView" getter="getDisplayByName"/>
+   <roproperty name="displays" dataType="oracle.dbtools.crest.model.SubViewObjectSet" getter="getDisplays"/>
+   <roproperty name="glassPane" dataType="oracle.dbtools.crest.swingui.GlassComponent" getter="getGlassPane"/>
+   <roproperty name="goToDiagramMenu" dataType="javax.swing.JMenu" getter="getGoToDiagramMenu"/>
+   <roproperty name="indexForChild" dataType="int" getter="getIndexForChild"/>
+   <roproperty name="navigatorPanel" dataType="javax.swing.JPanel" getter="getNavigatorPanel"/>
+   <roproperty name="numberOfChildren" dataType="int" getter="getNumberOfChildren"/>
+   <roproperty name="popupMenu" dataType="javax.swing.JPopupMenu" getter="getPopupMenu"/>
+   <roproperty name="selectedObjects" dataType="[Ljava.lang.Object" getter="getSelectedObjects"/>
+   <roproperty name="selectedTVConnectors" dataType="[Ljava.lang.Object" getter="getSelectedTVConnectors"/>
+   <roproperty name="selectedTopViews" dataType="[Ljava.lang.Object" getter="getSelectedTopViews"/>
+   <roproperty name="subordinateViews" dataType="interface java.util.List" getter="getSubordinateViews"/>
+   <roproperty name="tvConnectorsFor" dataType="interface java.util.List" getter="getTVConnectorsFor"/>
+   <roproperty name="tabbedPane" dataType="oracle.dbtools.crest.swingui.DesignPartView$NamedTabbedPane" getter="getTabbedPane"/>
+   <roproperty name="topViews" dataType="interface java.util.List" getter="getTopViews"/>
+   <roproperty name="topviewsList" dataType="interface java.util.List" getter="getTopviewsList"/>
+   <roproperty name="undoManager" dataType="oracle.dbtools.crest.model.design.undo.DP_UndoManager" getter="getUndoManager"/>
+   <roproperty name="viewFor" dataType="oracle.dbtools.crest.swingui.TopView" getter="getViewFor"/>
+   <roproperty name="workSpace" dataType="oracle.dbtools.crest.swingui.diagram.Diagram" getter="getWorkSpace"/>
+   <roproperty name="workSpaceUsedSize" dataType="java.awt.Dimension" getter="getWorkSpaceUsedSize"/>
+</oracle.dbtools.crest.swingui.DesignPartView>

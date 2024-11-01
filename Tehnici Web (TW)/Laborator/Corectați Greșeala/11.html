@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Fisier de baza</title>
+		<style>
+			#pgf{
+				border:1px solid black;
+			}
+		</style>
+		<script>
+			
+			window.onload=function(){
+				var pg=document.getElementById("pgf");
+				pg.onclick=function(e){
+					alert(e.currentTarget.innerText);
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<p>Nota: in exercitiile de tip "corectati gresala", desi nu e recomandat, s-au pus css-ul si script-ul in fisierul html strict pentru simplitate (downloadarea unui singur fisier vs 3). Totusi retineti ca indicat este sa folositi fisiere externe in teme/proiecte/teste.</p>
+		<hr/>
+		<p>La click pe paragraful (cu border negru) din pagina dorim sa dea un alert cu continutul lui. Totusi nu se intampla asta in cazul in care dam click pe cuvantul scris cu litere aldine. De ce? Corectati. Rezolvarea trebuie sa includa folosirea unei proprietatii a evenimentului click (variabila <i>e</i> din functie).</p>
+		<p id="pgf"><strong>Atentie!</strong> Acesta este un paragraf!</p>
+	</body>
+</html>

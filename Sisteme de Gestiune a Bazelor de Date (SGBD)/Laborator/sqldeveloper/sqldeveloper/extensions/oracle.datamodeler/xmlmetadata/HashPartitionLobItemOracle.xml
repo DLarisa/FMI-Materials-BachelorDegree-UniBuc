@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.HashPartitionLobItemOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <roproperty name="hashPartition" dataType="oracle.dbtools.crest.model.design.storage.oracle.HashPartitionOracle" getter="getHashPartition"/>
+   <roproperty name="listTemplatePartition" dataType="oracle.dbtools.crest.model.design.storage.oracle.ListStorageTemplatePartitionOracle" getter="getListTemplatePartition"/>
+   <property name="lobColumn" dataType="oracle.dbtools.crest.model.design.storage.ColumnProxy" defaultValue="" xmlName="lobColumn" xmlType="element" getter="getLobColumn" setter="setLobColumn" reffered="true"/>
+   <roproperty name="rangePartition" dataType="oracle.dbtools.crest.model.design.storage.oracle.PartitionOracle" getter="getRangePartition"/>
+   <property name="tableSpace" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle" defaultValue="" xmlName="tableSpace" xmlType="element" getter="getTableSpace" setter="setTableSpace" reffered="true"/>
+</oracle.dbtools.crest.model.design.storage.oracle.HashPartitionLobItemOracle>

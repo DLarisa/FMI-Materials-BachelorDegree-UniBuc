@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.udb.v81.TriggerUDBv81 parentClass="oracle.dbtools.crest.model.design.storage.udb.TriggerUDB">
+   <property name="view" dataType="oracle.dbtools.crest.model.design.storage.udb.v81.TableViewProxyUDBv81" defaultValue="" xmlName="view" xmlType="element" getter="getView" setter="setView" reffered="true"/>
+</oracle.dbtools.crest.model.design.storage.udb.v81.TriggerUDBv81>

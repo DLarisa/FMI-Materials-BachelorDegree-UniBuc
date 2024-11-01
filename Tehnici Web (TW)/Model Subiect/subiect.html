@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Subiect</title>
+		<style>
+			body>ol>li{border:1px solid grey;}
+			html{font-size:14px;}
+		</style>
+	</head>
+	<body>
+
+
+		<ol>
+			<li>
+				Realizati urmatoarele cerinte folosind doar CSS, fara a modifica deloc html-ul (Puteti verifica daca ati selectat si stilizat toate elementele urmarind si indicatiile din html (elementele care ar trebui stilizate sunt marcate prin paranteze)
+				<ol>
+					<li> Paragrafele care se afla in interiorul unei liste sa fie scrise cu culoare verde  </li>
+					<li> Toate elementele de dupa paragraful cu id-ul "xyz" din pagina, atat frati cat si elementele din subarborii fratilor care au clasa "ceva" sa aiba font-size-ul dublu fata de container (folositi unitati relative) </li>
+					<li> la finalul fiecarui paragraf sa se genereze un patratel de dimensiune 10*10px, de culoare albastra. Proprietatea content va fi setata la sirul vid. </li>
+					<li> cand se vine cu cursorul pe un li dintr-o sublista. Daca li-ul e pe o pozitie para, isi schimba culoarea de background treptat pe parcursul a 2 secunde de la transparent la rosu (si invers, cand se ia cursorul de pe li) )</li> 
+
+				</ol>
+			</li>
+			<li>
+				<ol>
+					<li>Scrieti cod css astfel incat cele 5 divuri se se afiseze ca in imagine:<br/>
+					<img src="printscr_ex2_a.png">
+					</li>
+					<li>Cand micsoram pagina astfel incat latimea sa fie mai mica de 500px, divurile trebuie sa se aseze unele sub altele si sa aiba latimea egala cu jumatate din latimea viewportului (nu a containerului). De asemenea divul d3 trebuie sa dispara.<br/>
+					<img src="printscr_ex2_b.png">
+					</li>
+				</ol>
+			</li>
+			
+			<li>
+				<ol>
+					<li>Context: In pagina exista un input de tip range a carui valoare max se schimba aleator la fiecare incarcare de pagina. Valorile min si max sunt afisate in stanga si dreapta inputului.<br/>
+					Scrieti cod astfel incat, la setarea inputului de tip range, dimensiunea literelor din pagina sa fie egala cu valoarea inputului. De asemenea, cand valoarea inputului trece de jumatatea intervalului, culoarea literelor din pagina sa se schimbe in rosu (redevine negru daca trecem in stanga de jumatatea intervalului). </li>
+					<li>La incarcarea paginii, setati prin javascript atributul necesar astfel incat cele 3 radiobutton-uri sa se comporte ca un grup (sa nu poata fi bifat decat unul la un moment dat). In plus, la click pe butonul OK, textul din buton se schimba astfel incat sa fie egal cu eticheta butonului radio bifat.</li>
+				</ol>
+			</li>
+			<li>
+				La apasarea tastei q, divurile din clasa d1 vor creste in inaltime (in jos) cu un pixel. Trebuie sa creasca in continuu daca se tine apasata tasta. La apasarea tastei w, scad toate in inaltime (dar, evident, nu mai mult de 0)</li>
+
+			</li>
+			<li>
+				La click oriunde in pagina se va crea un div cu clasa "animat", centrat pe coordonatele clickului, si i se va asocia aleator una din animatiile din css: miscare1 sau miscare2. Daca se da click pe un div, nu se va crea un alt div.
+			</li>
+			<li>Scrieti cod javascript astfel incat, la click pe orice paragraf care se afla <strong>imediat sub un div</strong> se afiseaza in el numarul total de elemente insumate din toate listele (ordonate si neordonate) din div (din subarborele divului). De exemplu la click pe paragraful abc se va afisa 0. La click pe paragraful xyz se va afisa 17.
+			</li>
+			
+			<li>La 1.5 secunde dupa intrarea in pagina generati 10 butoane. Initial textul lor va fi "0" si despre toate spunem ca sunt "in pauza"<br/>
+			La click pe orice buton "in pauza", spunem ca devine "activ" si numarul din el trebuie sa creasca cu 1 la fiecare secunda. Daca se face click pe un buton "activ" cresterea numarului sa fie oprita, revenind "in pauza" (dar poate fi repornit).
+			</li>
+			<li>
+				Observatie: in dreptul fiecarui buton se afiseaza deja prin css clasele pe care le are.
+				<ol><li>Scrieti cod javascript astfel incat la click pe butoanele care au clasele a si b (in acelasi timp) dar nu au niciuna din clasele c sau d, sa se adauge clasa zzz (o sa apara o aura rosie).</li>
+				<li>Pentru butonul cu id-ul "clase_multe", la click pe el sa se stearga toate clasele care se termina cu numar par </li>
+				</ol>
+			</li>
+			<li>
+				Context: in pagina se genereaza cate un numar aleator la fiecare  jumatate de secunda (e deja implementat).<br/>
+				Scrieti cod astfel incat la click pe butonul "salveaza", la refresh pe pagina sa se reafiseze numerele generate pana in momentul clickului. Iar la click pe butonul "sterge tot" sa se stearga toate numerele (si sa nu mai apara nici la refresh).
+			</li>
+			<li>Completati in app.js astfel incat, la submit pe formularul dat, pentru cheia oferita sa se afiseze (in orice format doriti), in locul paginii cu formularul, toate numele complete asociate prenumelui/numelui(conform select) respectiv</li>
+		
+		
+	</body>
+</html>

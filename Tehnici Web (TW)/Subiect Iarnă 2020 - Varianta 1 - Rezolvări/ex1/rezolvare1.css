@@ -1,0 +1,23 @@
+p:not([title])
+{
+	background-color: green;
+}
+
+.c1 > b:nth-child(odd), .c2 > b:nth-child(odd)
+{
+	text-decoration: underline;
+}
+
+div:last-of-type ~ p:before
+{
+	content: "final";
+	color: red;
+	font-size: 2.5em;
+}
+
+div *:hover
+{
+	border-color: green;
+	border-style: dotted;
+	border-width: 2px;
+}

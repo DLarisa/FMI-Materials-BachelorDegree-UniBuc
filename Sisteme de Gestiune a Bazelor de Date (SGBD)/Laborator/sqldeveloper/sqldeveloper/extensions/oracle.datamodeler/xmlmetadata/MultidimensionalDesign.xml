@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.multidimensional.MultidimensionalDesign parentClass="oracle.dbtools.crest.model.design.DesignPart">
+   <collection external="true" name="Levels" dataType="oracle.dbtools.crest.model.design.multidimensional.LevelSet" xmlName="Levels" itemXmlName="Level" getter="getLevelSet" createItem="createLevel"/>
+   <collection external="true" name="RaggedHLinks" dataType="oracle.dbtools.crest.model.design.multidimensional.RaggedHLinkSet" xmlName="RaggedHLinks" itemXmlName="RaggedHLink" getter="getRaggedHLinkSet" createItem="createRaggedHLink"/>
+   <collection external="true" name="Dimensions" dataType="oracle.dbtools.crest.model.design.multidimensional.DimensionSet" xmlName="Dimensions" itemXmlName="Dimension" getter="getDimensionSet" createItem="createDimension"/>
+   <collection external="true" name="Slices" dataType="oracle.dbtools.crest.model.design.multidimensional.SliceSet" xmlName="Slices" itemXmlName="Slice" getter="getSliceSet" createItem="createSlice"/>
+   <collection external="true" name="Cubes" dataType="oracle.dbtools.crest.model.design.multidimensional.CubeSet" xmlName="Cube" itemXmlName="Cube" getter="getCubeSet" createItem="createCube"/>
+   <collection external="true" name="RollupLinks" dataType="oracle.dbtools.crest.model.design.multidimensional.RollupLinkSet" xmlName="RollupLinks" itemXmlName="RollupLink" getter="getRollupLinkSet" createItem="createRollupLink"/>
+   <collection external="true" name="Hierarchies" dataType="oracle.dbtools.crest.model.design.multidimensional.HierarchySet" xmlName="Hierarchies" itemXmlName="Hierarchy" getter="getHierarchySet" createItem="createHierarchy"/>
+   <collection external="true" name="MeasureFolders" dataType="oracle.dbtools.crest.model.design.multidimensional.MeasureFolderSet" xmlName="MeasureFolders" itemXmlName="MeasureFolder" getter="getMeasureFolderSet" createItem="createMeasureFolder"/>
+   <collection external="true" name="SQLAccessToAWobjects" dataType="oracle.dbtools.crest.model.design.multidimensional.SQLAccessToAWSet" xmlName="SQLAccessToAWobjects" itemXmlName="SQLAccessToAW" getter="getSQLAccessToAWSet" createItem="createSQLAccessToAW"/>
+   <collection external="true" name="NoteObjects" dataType="oracle.dbtools.crest.model.design.NoteSet" xmlName="NoteObjects" itemXmlName="NoteObject" getter="getNoteSet" createItem="createNote"/>
+   <collection external="true" preProcessMethod="executeTasks" name="Diagrams" dataType="java.util.List" xmlName="Diagrams" itemXmlName="Diagram" getter="getListOfSubviews" createItem="createDesignPartSubView" getItemByID="getSubViewByID"/>
+   <roproperty name="compactDiagramVisible" dataType="boolean" getter="isCompactDiagramVisible"/>
+   <roproperty name="compactDiagram" dataType="oracle.dbtools.crest.swingui.multidimensional.DPVCompactMultidimentional" getter="getCompactDiagram"/>
+   <roproperty name="compactDiagramPlaceHolder" dataType="oracle.dbtools.crest.model.placeholder.DesignPartViewPlaceHolder" getter="getCompactDiagramPlaceHolder"/>
+   <roproperty name="cubeOnEntity" dataType="oracle.dbtools.crest.model.design.multidimensional.Cube" getter="getCubeOnEntity"/>
+   <roproperty name="cubeSet" dataType="oracle.dbtools.crest.model.design.multidimensional.CubeSet" getter="getCubeSet"/>
+   <roproperty name="dimensionSet" dataType="oracle.dbtools.crest.model.design.multidimensional.DimensionSet" getter="getDimensionSet"/>
+   <roproperty name="factEntitiesJoinSet" dataType="oracle.dbtools.crest.model.design.multidimensional.FactEntitiesJoinSet" getter="getFactEntitiesJoinSet"/>
+   <roproperty name="firstHierarchyDefinedByLinkToDimension" dataType="oracle.dbtools.crest.model.design.multidimensional.Hierarchy" getter="getFirstHierarchyDefinedByLinkToDimension"/>
+   <roproperty name="hierarchyDefinedByLevels" dataType="oracle.dbtools.crest.model.design.multidimensional.Hierarchy" getter="getHierarchyDefinedByLevels"/>
+   <roproperty name="hierarchySet" dataType="oracle.dbtools.crest.model.design.multidimensional.HierarchySet" getter="getHierarchySet"/>
+   <roproperty name="levelSet" dataType="oracle.dbtools.crest.model.design.multidimensional.LevelSet" getter="getLevelSet"/>
+   <roproperty name="linkSet" dataType="oracle.dbtools.crest.model.design.multidimensional.LinkSet" getter="getLinkSet"/>
+   <roproperty name="measureFolderSet" dataType="oracle.dbtools.crest.model.design.multidimensional.MeasureFolderSet" getter="getMeasureFolderSet"/>
+   <roproperty name="measureSet" dataType="oracle.dbtools.crest.model.design.multidimensional.MeasureSet" getter="getMeasureSet"/>
+   <roproperty name="raggedHLinkSet" dataType="oracle.dbtools.crest.model.design.multidimensional.RaggedHLinkSet" getter="getRaggedHLinkSet"/>
+   <roproperty name="rollupLinkSet" dataType="oracle.dbtools.crest.model.design.multidimensional.RollupLinkSet" getter="getRollupLinkSet"/>
+   <roproperty name="sqLAccessToAWset" dataType="oracle.dbtools.crest.model.design.multidimensional.SQLAccessToAWSet" getter="getSQLAccessToAWSet"/>
+   <roproperty name="selectionCriteriaset" dataType="oracle.dbtools.crest.model.design.multidimensional.SelectionCriteriaSet" getter="getSelectionCriteriaSet"/>
+   <roproperty name="sliceset" dataType="oracle.dbtools.crest.model.design.multidimensional.SliceSet" getter="getSliceSet"/>
+</oracle.dbtools.crest.model.design.multidimensional.MultidimensionalDesign>

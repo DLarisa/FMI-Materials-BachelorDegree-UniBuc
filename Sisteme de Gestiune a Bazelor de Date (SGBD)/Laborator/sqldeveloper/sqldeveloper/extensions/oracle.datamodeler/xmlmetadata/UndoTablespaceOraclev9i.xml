@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v9i.UndoTablespaceOraclev9i parentClass="oracle.dbtools.crest.model.design.storage.oracle.UndoTablespaceOracle">
+   <collection name="dataFiles" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="dataFiles" itemXmlName="DataFile" getter="getDfiles" createItem="createDataFile"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v9i.UndoTablespaceOraclev9i>

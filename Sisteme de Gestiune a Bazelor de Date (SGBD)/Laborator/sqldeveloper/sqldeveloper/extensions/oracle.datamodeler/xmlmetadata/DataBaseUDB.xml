@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.udb.DataBaseUDB parentClass="oracle.dbtools.crest.model.design.storage.StorageObject">
+   <property name="alias" dataType="java.lang.String" defaultValue="" xmlName="alias" xmlType="element" getter="getAlias" setter="setAlias" reffered="false"/>
+   <property name="catalogTableSpace" dataType="oracle.dbtools.crest.model.design.storage.udb.TableSpaceUDB" defaultValue="" xmlName="catalogTableSpace" xmlType="element" getter="getCatalogTableSpace" setter="setCatalogTableSpace" reffered="true"/>
+   <property name="codeSet" dataType="java.lang.String" defaultValue="" xmlName="codeSet" xmlType="element" getter="getCodeSet" setter="setCodeSet" reffered="false"/>
+   <property name="collatingSequence" dataType="java.lang.String" defaultValue="" xmlName="collatingSequence" xmlType="element" getter="getCollatingSequence" setter="setCollatingSequence" reffered="false"/>
+   <property name="defaultExtentSize" dataType="int" defaultValue="0" xmlName="defaultExtentSize" xmlType="element" getter="getDefaultExtentSize" setter="setDefaultExtentSize" reffered="false"/>
+   <property name="instance" dataType="oracle.dbtools.crest.model.design.storage.udb.InstanceUDB" defaultValue="" xmlName="instance" xmlType="element" getter="getInstance" setter="setInstance" reffered="true"/>
+   <property name="onPath" dataType="java.lang.String" defaultValue="" xmlName="onPath" xmlType="element" getter="getOnPath" setter="setOnPath" reffered="false"/>
+   <property name="segmentNumber" dataType="int" defaultValue="0" xmlName="segmentNumber" xmlType="element" getter="getSegmentNumber" setter="setSegmentNumber" reffered="false"/>
+   <property name="temporarytableSpace" dataType="oracle.dbtools.crest.model.design.storage.udb.TableSpaceUDB" defaultValue="" xmlName="temporarytableSpace" xmlType="element" getter="getTemporaryTableSpace" setter="setTemporaryTableSpace" reffered="true"/>
+   <property name="territory" dataType="java.lang.String" defaultValue="" xmlName="territory" xmlType="element" getter="getTerritory" setter="setTerritory" reffered="false"/>
+   <property name="userTableSpace" dataType="oracle.dbtools.crest.model.design.storage.udb.TableSpaceUDB" defaultValue="" xmlName="userTableSpace" xmlType="element" getter="getUserTableSpace" setter="setUserTableSpace" reffered="true"/>
+</oracle.dbtools.crest.model.design.storage.udb.DataBaseUDB>

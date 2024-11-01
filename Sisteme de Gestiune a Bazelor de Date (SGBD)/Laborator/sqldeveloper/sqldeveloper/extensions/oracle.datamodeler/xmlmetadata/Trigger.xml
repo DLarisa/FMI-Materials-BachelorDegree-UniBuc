@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.Trigger parentClass="oracle.dbtools.crest.model.design.storage.StorageObject">
+   <property name="actions" dataType="java.lang.String" defaultValue="" xmlName="actions" xmlType="element" getter="getActions" setter="setActions" reffered="false" listOfRefs="true"/>
+   <property name="body" dataType="java.lang.String" defaultValue="" xmlName="body" xmlType="element" getter="getBody" setter="setBody" reffered="false"/>
+   <property name="cwdGenerated" dataType="boolean" defaultValue="false" xmlName="cwdGenerated" xmlType="element" getter="isCWDGenerated" setter="setCWDGenerated" reffered="false"/>
+   <property name="triggerTime" dataType="java.lang.String" defaultValue="" xmlName="triggerTime" xmlType="element" getter="getTriggerTime" setter="setTriggerTime" reffered="false"/>
+   <bb_roproperty name="actionSet" dataType="oracle.dbtools.crest.model.design.storage.Trigger$ArraySet" getter="getActionSet"/>
+</oracle.dbtools.crest.model.design.storage.Trigger>

@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.datatypes.DataTypesDesign parentClass="oracle.dbtools.crest.model.design.DesignPart">
+   <property name="collectionOfRefsPrefix" dataType="java.lang.String" defaultValue="" xmlName="collectionOfRefsPrefix" xmlType="element" getter="getCollectionOfRefsPrefix" setter="setCollectionOfRefsPrefix" reffered="false"/>
+   <property name="collectionPrefix" dataType="java.lang.String" defaultValue="" xmlName="collectionPrefix" xmlType="element" getter="getCollectionPrefix" setter="setCollectionPrefix" reffered="false"/>
+   <property name="defaultArrayLimit" dataType="int" defaultValue="" xmlName="defaultArrayLimit" xmlType="element" getter="getDefaultArrayLimit" setter="setDefaultArrayLimit" reffered="false"/>
+   <property name="defaultCollectionType_Kind" dataType="java.lang.String" defaultValue="" xmlName="defaultCollectionType_Kind" xmlType="element" getter="getDefaultCollectionType_Kind" setter="setDefaultCollectionType_Kind" reffered="false"/>
+   <property name="defaultCollectionType_Suffix" dataType="java.lang.String" defaultValue="" xmlName="defaultCollectionType_Suffix" xmlType="element" getter="getDefaultCollectionType_Suffix" setter="setDefaultCollectionType_Suffix" reffered="false"/>
+   <property name="embeddedStructuredTypePrefix" dataType="java.lang.String" defaultValue="" xmlName="embeddedStructuredTypePrefix" xmlType="element" getter="getEmbeddedStructuredTypePrefix" setter="setEmbeddedStructuredTypePrefix" reffered="false"/>
+   <property name="referencePrefix" dataType="java.lang.String" defaultValue="" xmlName="referencePrefix" xmlType="element" getter="getReferencePrefix" setter="setReferencePrefix" reffered="false"/>
+   <property name="useRoleInAssociationEndAsName" dataType="boolean" defaultValue="" xmlName="useRoleInAssociationEndAsName" xmlType="element" getter="isUseRoleInAssociationEndAsName" setter="setUseRoleInAssociationEndAsName" reffered="false"/>
+   <collection external="true" name="DistinctTypes" dataType="oracle.dbtools.crest.model.design.datatypes.DistinctTypeSet" xmlName="DistinctTypes" itemXmlName="DistinctType" getter="getDistinctTypeSet" createItem="createDistinctType"/>
+   <collection external="true" name="CollectionTypes" dataType="oracle.dbtools.crest.model.design.datatypes.CollectionTypeSet" xmlName="CollectionTypes" itemXmlName="CollectionType" getter="getCollectionTypeSet" createItem="createCollectionType"/>
+   <collection external="true" name="StructuredTypes" dataType="oracle.dbtools.crest.model.design.datatypes.StructuredTypeSet" xmlName="StructuredTypes" itemXmlName="StructuredType" getter="getStructuredTypeSet" createItem="createStructuredType"/>
+   <collection external="true" name="NoteObjects" dataType="oracle.dbtools.crest.model.design.NoteSet" xmlName="NoteObjects" itemXmlName="NoteObject" getter="getNoteSet" createItem="createNote"/>
+   <collection external="true" preProcessMethod="executeTasks" name="Diagrams" dataType="java.util.List" xmlName="Diagrams" itemXmlName="Diagram" getter="getListOfSubviews" createItem="createDesignPartSubView" getItemByID="getSubViewByID"/>
+   <roproperty name="collectionTypeSet" dataType="oracle.dbtools.crest.model.design.datatypes.CollectionTypeSet" getter="getCollectionTypeSet"/>
+   <roproperty name="ctcollection" dataType="oracle.dbtools.crest.model.design.DesignObjectCollection" getter="getCtCollection"/>
+   <roproperty name="dtInheritanceSet" dataType="oracle.dbtools.crest.model.design.datatypes.DTInheritanceSet" getter="getDTInheritanceSet"/>
+   <roproperty name="dtReferenceSet" dataType="oracle.dbtools.crest.model.design.datatypes.DTReferenceSet" getter="getDTReferenceSet"/>
+   <roproperty name="dataTypesdesignSubViews" dataType="oracle.dbtools.crest.model.SubViewObjectSet" getter="getDataTypesDesignSubViews"/>
+   <roproperty name="distinctTypeSet" dataType="oracle.dbtools.crest.model.design.datatypes.DistinctTypeSet" getter="getDistinctTypeSet"/>
+   <roproperty name="methodParamSet" dataType="oracle.dbtools.crest.model.design.datatypes.MethodParamSet" getter="getMethodParamSet"/>
+   <roproperty name="methodSet" dataType="oracle.dbtools.crest.model.design.datatypes.MethodSet" getter="getMethodSet"/>
+   <roproperty name="notMarkedGenerateObjects" dataType="interface java.util.List" getter="getNotMarkedGenerateObjects"/>
+   <roproperty name="predefinedCtCollection" dataType="oracle.dbtools.crest.model.design.DesignObjectCollection" getter="getPredefinedCtCollection"/>
+   <roproperty name="predefinedStCollection" dataType="oracle.dbtools.crest.model.design.DesignObjectCollection" getter="getPredefinedStCollection"/>
+   <roproperty name="structureTypeCollection" dataType="oracle.dbtools.crest.model.design.DesignObjectCollection" getter="getStructureTypeCollection"/>
+   <roproperty name="structuredTypeset" dataType="oracle.dbtools.crest.model.design.datatypes.StructuredTypeSet" getter="getStructuredTypeSet"/>
+   <roproperty name="structuredTypesOrderedByParent" dataType="interface java.util.List" getter="getStructuredTypesOrderedByParent"/>
+   <roproperty name="typeElementSet" dataType="oracle.dbtools.crest.model.design.datatypes.TypeElementSet" getter="getTypeElementSet"/>
+   <roproperty name="typeSize" dataType="java.awt.Dimension" getter="getTypeSize"/>
+</oracle.dbtools.crest.model.design.datatypes.DataTypesDesign>

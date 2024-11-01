@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rulesfile 
+    version="1.0" name="Rules for SQL DML"
+	description="Search rules to identify SQL in a file" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	>
+	<ruleset name="DML" description="Find the DML in a file" 
+	     type="SYBASE" 
+	     source="ANY" 
+	     target="ORACLE" 
+	     enable="true" 
+	     codetype="sql">
+		<required>
+		    <regex>
+				<expression><![CDATA[select|delete|insert|update|create|alter|drop]]></expression>
+			</regex>
+		</required>
+		<rules>
+		<regex codetype="sql" name="select statement" description="select statement" >
+			<example><![CDATA[select 1 from dual where 1=1;]]></example>
+			<expression><![CDATA[select ?.+? ?from ?\w+]]></expression>
+			<replacement translator="true"/>
+		</regex>
+		<regex codetype="sql" name="delete statement" description="delete statement">
+			<example><![CDATA[delete from mytable where id = 3829;]]></example>
+			<expression><![CDATA[([Dd][Ee][Ll][Ee][Tt][Ee](.+[Ff][Rr][Oo][Mm])? +.+;)]]></expression>
+			<replacement translator="true"/>
+		</regex>
+		<regex codetype="sql" name="insert statement" description="insert statement">
+			<example><![CDATA[insert in mytable values (1,2,3);]]></example>
+			<expression><![CDATA[([Ii][Nn][Ss][Ee][Rr][Tt](.+[Ii][Nn][Tt][Oo])? +.+;)]]></expression>
+			<replacement translator="true"/>
+		</regex>
+		<regex codetype="sql" name="update statement" description="update statement">
+			<example><![CDATA[insert in mytable values (1,2,3);]]></example>
+			<expression><![CDATA[([Uu][Pp][Dd][Aa][Tt][Ee] +.+ +[Ww][Hh][Ee][Rr][Ee].+;)]]></expression>
+			<replacement translator="true"/>
+		</regex>
+		</rules>
+	</ruleset>
+</rulesfile>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.datatypes.TypeElement parentClass="oracle.dbtools.crest.model.design.DesignObject">
+   <property name="mandatory" dataType="boolean" defaultValue="" xmlName="mandatory" xmlType="element" getter="isMandatory" setter="setMandatory" reffered="false"/>
+   <property name="precision" dataType="int" defaultValue="" xmlName="precision" xmlType="element" getter="getPrecision" setter="setPrecision" reffered="false"/>
+   <property name="reference" dataType="boolean" defaultValue="" xmlName="reference" xmlType="element" getter="isReference" setter="setReference" reffered="false"/>
+   <property name="referencerelation" dataType="oracle.dbtools.crest.model.design.datatypes.DTReference" defaultValue="" xmlName="referencerelation" xmlType="element" getter="getReferenceRelation" setter="setReferenceRelation" reffered="true"/>
+   <property name="scale" dataType="int" defaultValue="" xmlName="scale" xmlType="element" getter="getScale" setter="setScale" reffered="false"/>
+   <property name="size" dataType="java.lang.String" defaultValue="" xmlName="size" xmlType="element" getter="getSize" setter="setSize" reffered="false"/>
+   <property name="units" dataType="java.lang.String" defaultValue="" xmlName="units" xmlType="element" getter="getUnits" setter="setUnits" reffered="false"/>
+   <property name="domain" dataType="oracle.dbtools.crest.model.design.Domain" defaultValue="DOM3000004" xmlName="domain" xmlType="element" getter="getDomain" setter="setDomain" reffered="true"/>
+   <aa_property name="structuredType" dataType="oracle.dbtools.crest.model.design.datatypes.StructuredType" defaultValue="" xmlName="structuredType" xmlType="element" getter="getStructuredType" setter="setStructuredType" reffered="true"/>
+   <property name="typeID" dataType="java.lang.String" defaultValue="" xmlName="type" xmlType="element" getter="getTypeID" setter="setTypeID" reffered="false"/>
+   <property name="referenceID" dataType="java.lang.String" defaultValue="" xmlName="referenceID" xmlType="element" getter="getReferenceRelationID" setter="setReferenceRelationID" reffered="false"/>
+   <aa_property name="type" dataType="oracle.dbtools.crest.model.design.DesignObject" defaultValue="" xmlName="type" xmlType="element" getter="getType" setter="setType" reffered="true"/>
+   <roproperty name="dataType" dataType="java.lang.String" getter="getDataType"/>
+   <roproperty name="datatypedescriptor" dataType="int" getter="getDatatypeDescriptor"/>
+</oracle.dbtools.crest.model.design.datatypes.TypeElement>

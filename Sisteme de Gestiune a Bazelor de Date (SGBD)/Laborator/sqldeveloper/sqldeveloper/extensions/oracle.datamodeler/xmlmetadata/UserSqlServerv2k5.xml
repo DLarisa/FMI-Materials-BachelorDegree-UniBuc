@@ -1,0 +1,2 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.UserSqlServerv2k5 parentClass="oracle.dbtools.crest.model.design.storage.sqlserver.UserSqlServer"/>

@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.QuotaItemOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="size" dataType="java.lang.String" defaultValue="UNLIMITED" xmlName="size" xmlType="element" getter="getSize" setter="setSize" reffered="false"/>
+   <property name="tableSpace" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle" defaultValue="" xmlName="tableSpace" xmlType="element" getter="getTableSpace" setter="setTableSpace" reffered="true"/>
+   <roproperty name="user" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserOracle" getter="getUser"/>
+</oracle.dbtools.crest.model.design.storage.oracle.QuotaItemOracle>

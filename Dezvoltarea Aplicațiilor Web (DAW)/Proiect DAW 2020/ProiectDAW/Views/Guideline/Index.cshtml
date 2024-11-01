@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Index Age Restrictions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<h2 style="text-align: center;
+        color: aquamarine;
+        font-family: Castellar;
+        border-bottom: 5px double aquamarine;
+">
+    @ViewBag.Title
+</h2>
+
+
+<table class="table table-striped table-hover ">
+    <thead class="panel panel-success">
+    <th>Id</th>
+    <th>Vârstă Recomandată</th>
+    <th>Observații</th>
+    <th>Update</th>
+    <th>Delete</th>
+    </thead>
+
+    <tbody>
+        @foreach (var l in ViewBag.Guidelines)
+        {
+            <tr>
+                <td>@l.Id</td>
+                <td>@l.Varsta</td>
+                @if (@l.Mesaj == null)
+                {
+                    <td>Nu există observații.</td>
+                }
+                else
+                {
+                    <td>@l.Mesaj</td>
+                }
+                <td>
+                    @using (Html.BeginForm(actionName: "Edit", controllerName: "Guideline", method: FormMethod.Get, routeValues: new { id = l.Id }))
+                    {
+                        <button type="submit" class="btn btn-link col-lg-3">Update</button>
+                    }
+                </td>
+                <td>
+                    @using (Html.BeginForm(actionName: "Delete", controllerName: "Guideline", method: FormMethod.Post, routeValues: new { id = l.Id }))
+                    {
+                        @Html.HttpMethodOverride(HttpVerbs.Delete)
+                        <button type="submit" class="btn btn-link col-lg-3">Delete</button>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<button class="btn btn-primary col-lg-1" type="submit">@Html.ActionLink("Add Guide", "New")</button>
+
+<br />
+<br />

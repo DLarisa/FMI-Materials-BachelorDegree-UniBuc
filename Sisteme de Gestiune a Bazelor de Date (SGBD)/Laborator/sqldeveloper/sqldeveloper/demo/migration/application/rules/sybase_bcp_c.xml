@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rulesfile version="1.0"
+	name="Rules for Sybase 12.5 Server-Library Migrations"
+	description="Search rules to identify Sybase Open Server 12.5 Server-Library calls in C applications"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<ruleset name="ctlib" description="ctlib calls" type="SYBASE"
+		target="ORACLE" enable="false" source="C" codetype="bcp">
+				<required>
+			<regex>
+				<expression><![CDATA[bkpublic\.h]]></expression>
+			</regex>
+		</required>
+		<rules>
+		<regex codetype="bcp" name="Bulk Copy Routine" description="Bulk Copy Routines"
+			recognizer="true"
+			helpurl="http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.help.ocs_12.5.1.comlib/html/comlib/X10539.htm">
+			<example><![CDATA[CS_RETCODE blk_bind(blkdesc, colnum, datafmt, buffer, datalen, indicator)]]></example>
+			<expression><![CDATA[blk_alloc|blk_bind|blk_bcp_indicator|blk_colval|blk_default|blk_describe|blk_done|blk_drop|blk_getrow|blk_gettext|blk_init|blk_props|blk_rowalloc|blk_rowdrop|blk_rowxfer|blk_rowxfer_mult|blk_sendrow|blk_sendtext|blk_srvinit|blk_textxfer]]></expression>
+		</regex>
+		</rules>
+	</ruleset>
+</rulesfile>
+		

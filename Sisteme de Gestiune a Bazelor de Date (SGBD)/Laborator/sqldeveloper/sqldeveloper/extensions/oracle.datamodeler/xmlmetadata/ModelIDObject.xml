@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.ModelIDObject parentClass="oracle.dbtools.crest.model.ModelObject" isPropertyMap="true">
+   <property name="createdBy" dataType="java.lang.String" defaultValue="" xmlName="createdBy" xmlType="element" getter="getCreatedBy" setter="setCreatedBy" loggingProp="true" createdTimeProp="true" reffered="false"/>
+   <property name="createdTime" dataType="java.lang.String" defaultValue="" xmlName="createdTime" xmlType="element" getter="getCreatedTime" setter="setCreatedTime" loggingProp="true" createdTimeProp="true" reffered="false"/>
+   <aa_property name="changedBy" dataType="java.lang.String" defaultValue="" xmlName="changedBy" xmlType="element" getter="getChangedBy" setter="setChangedBy" loggingProp="true" reffered="false"/>
+   <aa_property name="changedTime" dataType="java.lang.String" defaultValue="" xmlName="changedTime" xmlType="element" getter="getChangedTime" setter="setChangedTime" loggingProp="true" reffered="false"/>
+   <aa_property name="changer" dataType="oracle.dbtools.crest.model.MDUser" defaultValue="" xmlName="changer" xmlType="element" getter="getChanger" setter="setChanger" reffered="true"/>
+   <aa_property name="checkedOut" dataType="boolean" defaultValue="false" xmlName="checkedOut" xmlType="element" getter="isCheckedOut" setter="setCheckedOut" reffered="false"/>
+   <aa_property name="checkedOutBy" dataType="java.lang.String" defaultValue="" xmlName="checkedOutBy" xmlType="element" getter="getCheckedOutBy" setter="setCheckedOutBy" reffered="false"/>
+   <aa_property name="checkedOutByMe" dataType="boolean" defaultValue="false" xmlName="checkedOutByMe" xmlType="element" getter="isCheckedOutByMe" setter="setCheckedOutByMe" reffered="false"/>
+   <property name="comment" dataType="java.lang.String" defaultValue="" xmlName="comment" xmlType="element" getter="getComment" setter="setComment" reffered="false" mergeCompare="true"/>
+   <property name="commentInRDBMS" dataType="java.lang.String" defaultValue="" xmlName="commentInRDBMS" xmlType="element" getter="getCommentInRDBMS" setter="setCommentInRDBMS" reffered="false" mergeCompare="true"/>
+   <aa_property name="creator" dataType="oracle.dbtools.crest.model.MDUser" defaultValue="" xmlName="creator" xmlType="element" getter="getCreator" setter="setCreator" reffered="true"/>
+   <aa_property name="dirty" dataType="boolean" defaultValue="" xmlName="dirty" xmlType="element" getter="isDirty" setter="setDirty" reffered="false"/>
+   <aa_property name="dropEnabled" dataType="boolean" defaultValue="" xmlName="dropEnabled" xmlType="element" getter="isDropEnabled" setter="setDropEnabled" reffered="false"/>
+   <aa_property name="filePath" dataType="java.lang.String" defaultValue="" xmlName="filePath" xmlType="element" getter="getFilePath" setter="setFilePath" reffered="false"/>
+   <property name="generatorID" dataType="java.lang.String" defaultValue="User generated" xmlName="generatorID" xmlType="element" getter="getGeneratorID" setter="setGeneratorID" reffered="false"/>
+   <aa_persisted_in_separate_file_property name="markedGenerate" dataType="boolean" defaultValue="true" xmlName="markedGenerate" xmlType="element" getter="isMarkedGenerate" setter="setMarkedGenerate" reffered="false"/>
+   <property name="nameFixed" dataType="boolean" defaultValue="false" xmlName="nameFixed" xmlType="element" getter="isNameFixed" setter="setNameFixed" reffered="false"/>
+   <property name="notes" dataType="java.lang.String" defaultValue="" xmlName="notes" xmlType="element" getter="getNotes" setter="setNotes" reffered="false" mergeCompare="true"/>
+   <aa_property name="numID" dataType="int" defaultValue="" xmlName="numID" xmlType="element" getter="getNumID" setter="setNumID" reffered="false"/>
+   <property name="objectID" dataType="java.lang.String" defaultValue="" xmlName="id" xmlType="attribute" getter="getObjectID" setter="setObjectID" reffered="false"/>
+   <property name="ownerDesignName" dataType="java.lang.String" defaultValue="" xmlName="ownerDesignName" xmlType="element" getter="getOwnerDesignName" setter="setOwnerDesignName" reffered="false"/>
+   <aa_property name="paC_Element" dataType="interface oracle.dbtools.crest.model.persistence.db.RepositoryObject" defaultValue="" xmlName="paC_Element" xmlType="element" getter="getPAC_Element" setter="setPAC_Element" reffered="false"/>
+   <aa_property name="pathID" dataType="int" defaultValue="" xmlName="pathID" xmlType="element" getter="getPathID" setter="setPathID" reffered="false"/>
+   <aa_property name="persisted" dataType="boolean" defaultValue="" xmlName="persisted" xmlType="element" getter="getPersisted" setter="setPersisted" reffered="false"/>
+   <aa_property name="readOnly" dataType="boolean" defaultValue="false" xmlName="readOnly" xmlType="element" getter="isReadOnly" setter="setReadOnly" reffered="false"/>
+   <property name="repositoryOID" dataType="java.lang.String" defaultValue="" xmlName="repositoryOID" xmlType="element" getter="getRepositoryOID" setter="setRepositoryOID" reffered="false"/>
+   <property name="repositoryOVID" dataType="java.lang.String" defaultValue="" xmlName="repositoryOVID" xmlType="element" getter="getRepositoryOVID" setter="setRepositoryOVID" reffered="false"/>
+   <property name="shouldEngineer" dataType="boolean" defaultValue="true" xmlName="shouldEngineer" xmlType="element" getter="getShouldEngineer" setter="setShouldEngineer" reffered="false"/>
+   <aa_property name="temporaryWriteable" dataType="boolean" defaultValue="" xmlName="temporaryWriteable" xmlType="element" getter="isTemporaryWriteable" setter="setTemporaryWriteable" reffered="false"/>
+   <property name="directorySegmentName" dataType="java.lang.String" defaultValue="" xmlName="directorySegmentName" xmlType="attribute" getter="getDirectorySegmentName" setter="setDirectorySegmentName" loggingProp="true" reffered="false"/>
+   <roproperty name="dialogVisible" dataType="boolean" getter="isDialogVisible"/>
+   <roproperty name="systemObject" dataType="boolean" getter="isSystemObject"/>
+   <roproperty name="change" dataType="oracle.dbtools.crest.model.ObjectChange" getter="getChange"/>
+   <roproperty name="changeTime" dataType="java.lang.String" getter="getChangeTime"/>
+   <roproperty name="creation" dataType="oracle.dbtools.crest.model.ObjectChange" getter="getCreation"/>
+   <roproperty name="creationTime" dataType="java.lang.String" getter="getCreationTime"/>
+   <roproperty name="generator" dataType="oracle.dbtools.crest.model.design.DesignObject" getter="getGenerator"/>
+   <roproperty name="idPrefix" dataType="java.lang.String" getter="getIDPrefix"/>
+   <roproperty name="maxNameLength" dataType="int" getter="getMaxNameLength"/>
+   <roproperty name="objectTypeName" dataType="java.lang.String" getter="getObjectTypeName"/>
+   <roproperty name="oldobjectTypeName" dataType="java.lang.String" getter="getOldObjectTypeName"/>
+   <roproperty name="pathIDString" dataType="java.lang.String" getter="getPathIDString"/>
+   <roproperty name="propertiesDialog" dataType="javax.swing.JDialog" getter="getPropertiesDialog"/>
+   <roproperty name="property" dataType="java.lang.String" getter="getProperty"/>
+   <roproperty name="propertyNames" dataType="interface java.util.Iterator" getter="getPropertyNames"/>
+   <collectionOrder context="compare/v">
+    <collectionOrd name="columns"/>
+    <collectionOrd name="indexes"/>
+    <collectionOrd name="attributes"/>
+    <collectionOrd name="identifiers"/>
+    <collectionOrd name="tableCheckConstraints"/>
+    <collectionOrd name="columnGroups"/>
+    <collectionOrd name="spatialDefinitions"/>
+  </collectionOrder>
+</oracle.dbtools.crest.model.ModelIDObject>

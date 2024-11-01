@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.multidimensional.Dimension.PermanentCalcMember parentClass="java.lang.Object" innerClass="true">
+   <property name="expression" dataType="java.lang.String" defaultValue="" xmlName="expression" xmlType="element" getter="getExpression" setter="setExpression" reffered="false"/>
+   <property name="name" dataType="java.lang.String" defaultValue="" xmlName="name" xmlType="attribute" getter="getName" setter="setName" reffered="false"/>
+   <property name="id" dataType="java.lang.String" defaultValue="" xmlName="id" xmlType="attribute" getter="getId" setter="setId" reffered="false"/>
+</oracle.dbtools.crest.model.design.multidimensional.Dimension.PermanentCalcMember>

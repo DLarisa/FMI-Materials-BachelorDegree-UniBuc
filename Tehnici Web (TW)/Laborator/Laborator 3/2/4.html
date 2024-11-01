@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		div#soare 
+		{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+			border-radius: 50%;
+			position: absolute;
+			top: 200px;
+			animation-name: rasarit, raze;
+			animation-duration: 10s, 10s;
+			animation-iteration-count: infinite, infinite;
+			animation-timing-function: ease-in-out, linear;
+		}
+		div#fereastra
+		{
+			width: 500px;
+			height: 250px;
+			background: skyblue;
+			border: 7px inset brown;
+			position: relative;
+			overflow: hidden;
+			animation-name: cer;
+			animation-duration: 5s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+			animation-direction: alternate;
+		}
+		@keyframes rasarit
+		{
+			0% 
+			{
+				left: -100px;
+				transform: rotate(0deg);
+			}
+			50%
+			{
+				top: 0px;
+			}
+			100% 
+			{
+				left: 500px;
+				transform: rotate(360deg);
+			}
+		}
+		@keyframes cer
+		{
+			0%
+			{
+				background: black;
+			}
+			25%
+			{
+				background: navy;
+			}
+			100%
+			{
+				background: lightblue;
+			}
+		}
+		div#linie
+		{
+			width: 200px;
+			height: 10px;
+			background: yellow;
+			position: absolute;
+			transform: rotate(30deg);
+			animation-name: raze;
+			animation-duration: 10s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+		@keyframes raze
+		{
+			0% 
+			{
+				background: red;
+			}
+			50%
+			{
+				background: yellow;
+			}
+			100% 
+			{
+				background: red;
+			}
+		}
+		div#linii
+		{
+			top: 50px;
+			left: -50px;
+			position: absolute;
+		}
+	</style>
+	<title>Animație 4</title>
+</head>
+<body>
+
+<div id="fereastra">
+<div id="soare">
+<div id="linii">
+<div id="linie">
+	<div id="linie">
+		<div id="linie">
+			<div id="linie">
+				<div id="linie">
+					<div id="linie">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

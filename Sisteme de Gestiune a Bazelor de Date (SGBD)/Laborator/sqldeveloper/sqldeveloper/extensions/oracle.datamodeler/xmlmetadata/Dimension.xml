@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.multidimensional.Dimension parentClass="oracle.dbtools.crest.model.design.multidimensional.AbstractMDObject">
+   <property name="timeDimension" dataType="boolean" defaultValue="false" xmlName="timeDimension" xmlType="element" getter="isTimeDimension" setter="setTimeDimension" reffered="false"/>
+   <property name="useNaturalKeys" dataType="boolean" defaultValue="true" xmlName="useNaturalKeys" xmlType="element" getter="isUseNaturalKeys" setter="setUseNaturalKeys" reffered="false"/>
+   <collection name="calculatedMembers" dataType="java.util.List" xmlName="calculatedMembers" itemXmlName="calculatedMember" getter="getPermanentCalcMembers" createItem="createPermanentCalcMember" getItemByID="getPermanentCalcMemberByID" nativeList="true" orderTheList="true"/>
+   <roproperty name="allattributes" dataType="interface java.util.List" getter="getAllAttributes"/>
+   <roproperty name="allLevels" dataType="interface java.util.List" getter="getAllLevels"/>
+   <roproperty name="baseEntity" dataType="oracle.dbtools.crest.model.design.logical.Entity" getter="getBaseEntity"/>
+   <roproperty name="baseLevel" dataType="oracle.dbtools.crest.model.design.multidimensional.Level" getter="getBaseLevel"/>
+   <roproperty name="editableFonts" dataType="interface java.util.List" getter="getEditableFonts"/>
+   <roproperty name="fontObject" dataType="oracle.dbtools.crest.model.design.FontObject" getter="getFontObject"/>
+   <roproperty name="hierarchies" dataType="oracle.dbtools.crest.model.design.DesignObjectCollection" getter="getHierarchies"/>
+   <roproperty name="hierarchyDefinedByLevels" dataType="oracle.dbtools.crest.model.design.multidimensional.Hierarchy" getter="getHierarchyDefinedByLevels"/>
+   <roproperty name="oracleAWAttributes" dataType="interface java.util.List" getter="getOracleAWAttributes"/>
+   <roproperty name="permanentCalcMembers" dataType="interface java.util.List" getter="getPermanentCalcMembers"/>
+   <roproperty name="whereClauseFor" dataType="java.lang.String" getter="getWhereClauseFor"/>
+</oracle.dbtools.crest.model.design.multidimensional.Dimension>

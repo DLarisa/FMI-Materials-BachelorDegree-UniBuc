@@ -1,0 +1,937 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rulesfile version="1.0" name="Rules for Sybase DB Library Migrations"
+	description="Search rules to identify Sybase Open Server 12.5 Server-Library calls in C applications"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="scanner.xsd"
+>
+	<ruleset name="dblib" description="dblib data Types" type="SYBASE"
+		target="ORACLE" enable="true" source="c" codetype="dblib"
+	>
+	
+		<required>
+			<regex>
+				<expression><![CDATA[bkpublic\.h|cspublic\.h|mcconfig\.h|sqlca\.h|sybdbn\.h|sybfront\.h|sybhstmt\.h|sybtesql\.h|cstypes\.h|mcpublic\.h|sqlda\.h|syberror\.h|syblogin\.h|csconfig\.h|ctpublic\.h|mctypes\.h|sybdb\.h|sybesql.c|sybhesql\.h]]></expression>
+			</regex>
+		</required>
+		<rules>
+			<regex codetype="ctlib" name="sybfront.h include"
+				description="sybfront.h and sybdb.h, are required in all source files that contain calls to DB-Library/C routines"
+			>
+				<example />
+				<expression><![CDATA[sybfront\.h]]></expression>
+				<replacement type="regex"><![CDATA[dblibdrv\.h]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="sybdb include"
+				description="sybfront.h and sybdb.h, are required in all source files that contain calls to DB-Library/C routines"
+			>
+				<example />
+				<expression><![CDATA[sybdb\.h]]></expression>
+				<replacement type="regex"><![CDATA[dblibdrv\.h]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBPROCESS">
+				<expression><![CDATA[DBPROCESS]]></expression>
+				<replacement type="regex"><![CDATA[OraConn]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="LOGINREC">
+				<expression><![CDATA[LOGINREC]]></expression>
+				<replacement type="regex"><![CDATA[OraLoginInfo]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="NTBSTRINGBIND">
+				<expression><![CDATA[NTBSTRINGBIND]]></expression>
+				<replacement type="regex"><![CDATA[SQLT_STR]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="INTBIND">
+				<expression><![CDATA[INTBIND]]></expression>
+				<replacement type="regex"><![CDATA[SQLT_INT]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBCHAR">
+				<expression><![CDATA[DBCHAR]]></expression>
+				<replacement type="regex"><![CDATA[ORACHAR]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBBINARY">
+				<expression><![CDATA[DBBINARY]]></expression>
+				<replacement type="regex"><![CDATA[ORABINARY]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBTINYINT">
+				<expression><![CDATA[DBTINYINT]]></expression>
+				<replacement type="regex"><![CDATA[ORATINYINT]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBSMALLINT">
+				<expression><![CDATA[DBSMALLINT]]></expression>
+				<replacement type="regex"><![CDATA[ORASMALLINT]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBUSMALLINT">
+				<expression><![CDATA[DBUSMALLINT]]></expression>
+				<replacement type="regex"><![CDATA[ORAUSMALLINT]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBINT">
+				<expression><![CDATA[DBINT]]></expression>
+				<replacement type="regex"><![CDATA[ORAINT]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBREAL">
+				<expression><![CDATA[DBREAL]]></expression>
+				<replacement type="regex"><![CDATA[ORAREAL]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBNUMERIC">
+				<expression><![CDATA[DBNUMERIC]]></expression>
+				<replacement type="regex"><![CDATA[ORANUMERIC]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBDECIMAL">
+				<expression><![CDATA[DBDECIMAL]]></expression>
+				<replacement type="regex"><![CDATA[ORADECIMAL]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBFLT8">
+				<expression><![CDATA[DBFLT8]]></expression>
+				<replacement type="regex"><![CDATA[ORAFLT8]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBBIT">
+				<expression><![CDATA[DBBIT]]></expression>
+				<replacement type="regex"><![CDATA[ORABIT]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBDATETIME">
+				<expression><![CDATA[DBDATETIME]]></expression>
+				<replacement type="regex"><![CDATA[ORADATETIME]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBDATETIME4">
+				<expression><![CDATA[DBDATETIME4]]></expression>
+				<replacement type="regex"><![CDATA[ORADATETIME4]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBBDATEREC">
+				<expression><![CDATA[DBBDATEREC]]></expression>
+				<replacement type="regex"><![CDATA[ORABDATEREC]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBMONEY">
+				<expression><![CDATA[DBMONEY]]></expression>
+				<replacement type="regex"><![CDATA[ORAMONEY]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBMONEY4">
+				<expression><![CDATA[DBMONEY4]]></expression>
+				<replacement type="regex"><![CDATA[ORAMONEY4]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBVARYCHAR">
+				<expression><![CDATA[DBVARYCHAR]]></expression>
+				<replacement type="regex"><![CDATA[ORAVARYCHAR]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBVARYBIN">
+				<expression><![CDATA[DBVARYBIN]]></expression>
+				<replacement type="regex"><![CDATA[ORAVARYBIN]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBINDICATOR">
+				<expression><![CDATA[DBINDICATOR]]></expression>
+				<replacement type="regex"><![CDATA[ORAINDICATOR]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbresults">
+				<expression><![CDATA[dbresults]]></expression>
+				<replacement type="regex"><![CDATA[oraResults]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbsqlexec">
+				<expression><![CDATA[dbsqlexec]]></expression>
+				<replacement type="regex"><![CDATA[oraSqlExec]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="db12hour">
+				<expression><![CDATA[db12hour]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbadata">
+				<expression><![CDATA[dbadata]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbadlen">
+				<expression><![CDATA[dbadlen]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbaltbind">
+				<expression><![CDATA[dbaltbind]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbaltbind_ps">
+				<expression><![CDATA[dbaltbind_ps]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbaltcolid">
+				<expression><![CDATA[dbaltcolid]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbaltlen">
+				<expression><![CDATA[dbaltlen]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbaltop">
+				<expression><![CDATA[dbaltop]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbalttype">
+				<expression><![CDATA[dbalttype]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbaltutype">
+				<expression><![CDATA[dbaltutype]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbanullbind">
+				<expression><![CDATA[dbanullbind]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbbind">
+				<expression><![CDATA[dbbind]]></expression>
+				<replacement type="regex"><![CDATA[oraBind]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbbind_ps">
+				<expression><![CDATA[dbbind_ps]]></expression>
+				<replacement type="regex"><![CDATA[oraBind_ps]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbbufsize">
+				<expression><![CDATA[dbbufsize]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbbylist">
+				<expression><![CDATA[dbbylist]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbcancel">
+				<expression><![CDATA[dbcancel]]></expression>
+				<replacement type="regex"><![CDATA[oraCancel]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbcanquery">
+				<expression><![CDATA[dbcanquery]]></expression>
+				<replacement type="regex"><![CDATA[oraCanQuery]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbchange">
+				<expression><![CDATA[dbchange]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbcharsetconv">
+				<expression><![CDATA[dbcharsetconv]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbclose">
+				<expression><![CDATA[dbclose]]></expression>
+				<replacement type="regex"><![CDATA[oraClose]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbclrbuf">
+				<expression><![CDATA[dbclrbuf]]></expression>
+				<replacement type="regex"><![CDATA[oraClrBuf]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbclropt">
+				<expression><![CDATA[dbclropt]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbcmd">
+				<expression><![CDATA[dbcmd]]></expression>
+				<replacement type="regex"><![CDATA[oraCmd]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBCMDROW">
+				<expression><![CDATA[DBCMDROW]]></expression>
+				<replacement type="regex"><![CDATA[oraCmdRow]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbcolbrowse">
+				<expression><![CDATA[dbcolbrowse]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbcollen">
+				<expression><![CDATA[dbcollen]]></expression>
+				<replacement type="regex"><![CDATA[oraColLen]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbcolname">
+				<expression><![CDATA[dbcolname]]></expression>
+				<replacement type="regex"><![CDATA[oraColName]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbcolsource">
+				<expression><![CDATA[dbcolsource]]></expression>
+				<replacement type="regex"><![CDATA[oraBind]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbcoltype">
+				<expression><![CDATA[dbcoltype]]></expression>
+				<replacement type="regex"><![CDATA[oraColType]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbcoltypeinfo">
+				<expression><![CDATA[dbcoltypeinfo]]></expression>
+				<replacement type="regex"><![CDATA[oraColTypeInfo]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbcolutype">
+				<expression><![CDATA[dbcolutype]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbconvert">
+				<expression><![CDATA[dbconvert]]></expression>
+				<replacement type="regex"><![CDATA[oraConvert]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbconvert_ps">
+				<expression><![CDATA[dbconvert_ps]]></expression>
+				<replacement type="regex"><![CDATA[oraConvert_ps]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBCOUNT">
+				<expression><![CDATA[DBCOUNT]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="DBCURCMD">
+				<expression><![CDATA[DBCURCMD]]></expression>
+				<replacement type="regex"><![CDATA[oraCurCmd]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBCURROW">
+				<expression><![CDATA[DBCURROW]]></expression>
+				<replacement type="regex"><![CDATA[oraCurRow]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbcursor">
+				<expression><![CDATA[dbcursor]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbcursorbind">
+				<expression><![CDATA[dbcursorbind]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbcursorclose">
+				<expression><![CDATA[dbcursorclose]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbcursorcolinfo">
+				<expression><![CDATA[dbcursorcolinfo]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbcursorfetch">
+				<expression><![CDATA[dbcursorfetch]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbcursorinfo">
+				<expression><![CDATA[dbcursorinfo]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbcursoropen">
+				<expression><![CDATA[dbcursoropen]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbdata">
+				<expression><![CDATA[dbdata]]></expression>
+				<replacement type="regex"><![CDATA[oraData]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbdate4cmp">
+				<expression><![CDATA[dbdate4cmp]]></expression>
+				<replacement type="regex"><![CDATA[oraDate4Cmp]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbdate4zero">
+				<expression><![CDATA[dbdate4zero]]></expression>
+				<replacement type="regex"><![CDATA[oraDate4Zero]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbdatechar">
+				<expression><![CDATA[dbdatechar]]></expression>
+				<replacement type="regex"><![CDATA[oraDateChar]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbdatecmp">
+				<expression><![CDATA[dbdatecmp]]></expression>
+				<replacement type="regex"><![CDATA[oraDateCmp]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbdatecrack">
+				<expression><![CDATA[dbdatecrack]]></expression>
+				<replacement type="regex"><![CDATA[oraDateCrack]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbdatename">
+				<expression><![CDATA[dbdatename]]></expression>
+				<replacement type="regex"><![CDATA[oraDateLen]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbdateorder">
+				<expression><![CDATA[dbdateorder]]></expression>
+				<replacement type="regex"><![CDATA[oraDateOrder]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbdatepart">
+				<expression><![CDATA[dbdatepart]]></expression>
+				<replacement type="regex"><![CDATA[oraDatePart]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbdatezero">
+				<expression><![CDATA[dbdatezero]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbdatlen">
+				<expression><![CDATA[dbdatelen]]></expression>
+				<replacement type="regex"><![CDATA[oraDateLen]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbdayname">
+				<expression><![CDATA[dbdayname]]></expression>
+				<replacement type="regex"><![CDATA[oraDateName]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBDEAD">
+				<expression><![CDATA[DBDEAD]]></expression>
+				<replacement type="regex"><![CDATA[oraDead]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dberrhandle">
+				<expression><![CDATA[dberrhandle]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbexit">
+				<expression><![CDATA[dbexit]]></expression>
+				<replacement type="regex"><![CDATA[oraExit]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbfcmd">
+				<expression><![CDATA[dbfcmd]]></expression>
+				<replacement type="regex"><![CDATA[oraFCmd]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBFIRSTROW">
+				<expression><![CDATA[DBFIRSTROW]]></expression>
+				<replacement type="regex"><![CDATA[oraFirstRow]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbfree_xlate">
+				<expression><![CDATA[dbfree_xlate]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbfreebuf">
+				<expression><![CDATA[dbfreebuf]]></expression>
+				<replacement type="regex"><![CDATA[oraFreeBuf]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbfreequal">
+				<expression><![CDATA[dbfreequal]]></expression>
+				<replacement type="regex"><![CDATA[oraFreeEqual]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbfreesort">
+				<expression><![CDATA[dbfreesort]]></expression>
+				<replacement type="regex"><![CDATA[oraFreeSort]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbgetchar">
+				<expression><![CDATA[dbgetchar]]></expression>
+				<replacement type="regex"><![CDATA[oraGetChar]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbgetcharset">
+				<expression><![CDATA[dbgetcharset]]></expression>
+				<replacement type="regex"><![CDATA[oraGetCharSet]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbgetloginfo">
+				<expression><![CDATA[dbgetloginfo]]></expression>
+				<replacement type="regex"><![CDATA[oraGetLogInfo]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbgetlusername">
+				<expression><![CDATA[dbgetlusername]]></expression>
+				<replacement type="regex"><![CDATA[oraGetlUserName]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbgetmaxprocs">
+				<expression><![CDATA[dbgetmaxprocs]]></expression>
+				<replacement type="regex"><![CDATA[oraGetMaxProcs]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbgetnatlang">
+				<expression><![CDATA[dbgetnatlang]]></expression>
+				<replacement type="regex"><![CDATA[oraGetNatLang]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbgetoff">
+				<expression><![CDATA[dbgetoff]]></expression>
+				<replacement type="regex"><![CDATA[oraGetOff]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbgetpacket">
+				<expression><![CDATA[dbgetpacket]]></expression>
+				<replacement type="regex"><![CDATA[oraGetPacket]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbgetrow">
+				<expression><![CDATA[dbgetrow]]></expression>
+				<replacement type="regex"><![CDATA[oraGetRow]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBGETTIME">
+				<expression><![CDATA[DBGETTIME]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbgetuserdata">
+				<expression><![CDATA[dbgetuserdata]]></expression>
+				<replacement type="regex"><![CDATA[oraGetUserData]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbhasretstat">
+				<expression><![CDATA[dbhasretstat]]></expression>
+				<replacement type="regex"><![CDATA[oraHasRetStat]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbinit" description="Initialize DB-Library">
+				<expression><![CDATA[dbinit]]></expression>
+				<replacement type="regex"><![CDATA[oraInitialize]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBIORDESC">
+				<expression><![CDATA[DBIORDESC]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="DBIOWDESC">
+				<expression><![CDATA[DBIOWDESC]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="DBISAVAIL">
+				<expression><![CDATA[DBISAVAIL]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbisopt">
+				<expression><![CDATA[dbisopt]]></expression>
+				<replacement type="regex"><![CDATA[oraIsOpt]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBLASTROW">
+				<expression><![CDATA[DBLASTROW]]></expression>
+				<replacement type="regex"><![CDATA[oraLastRow]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbload_xlate">
+				<expression><![CDATA[dbload_xlate]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbloadsort">
+				<expression><![CDATA[dbloadsort]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbloginfree">
+				<expression><![CDATA[dbloginfree]]></expression>
+				<replacement type="regex"><![CDATA[oraLoginFree]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dblogin">
+				<expression><![CDATA[dblogin]]></expression>
+				<replacement type="regex"><![CDATA[oraLogin]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmny4add">
+				<expression><![CDATA[dbmny4add]]></expression>
+				<replacement type="regex"><![CDATA[oraMny4Add]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmny4cmp">
+				<expression><![CDATA[dbmny4cmp]]></expression>
+				<replacement type="regex"><![CDATA[oraMny4Cmp]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmny4copy">
+				<expression><![CDATA[dbmny4copy]]></expression>
+				<replacement type="regex"><![CDATA[oraMny4Copy]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmny4divide">
+				<expression><![CDATA[dbmny4divide]]></expression>
+				<replacement type="regex"><![CDATA[oraMny4Divide]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmny4minus">
+				<expression><![CDATA[dbmny4minus]]></expression>
+				<replacement type="regex"><![CDATA[oraMny4Minus]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmny4mul">
+				<expression><![CDATA[dbmny4mul]]></expression>
+				<replacement type="regex"><![CDATA[oraMny4Mul]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmny4sub">
+				<expression><![CDATA[dbmny4sub]]></expression>
+				<replacement type="regex"><![CDATA[oraMny4Sub]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmny4zero">
+				<expression><![CDATA[dbmny4zero]]></expression>
+				<replacement type="regex"><![CDATA[oraMny4Zero]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmnyadd">
+				<expression><![CDATA[dbmnyadd]]></expression>
+				<replacement type="regex"><![CDATA[oraMnyAdd]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmnycmp">
+				<expression><![CDATA[dbmnycmp]]></expression>
+				<replacement type="regex"><![CDATA[oraMnyCmp]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmnycopy">
+				<expression><![CDATA[dbmnycopy]]></expression>
+				<replacement type="regex"><![CDATA[oraMnyCopy]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmnydec">
+				<expression><![CDATA[dbmnydec]]></expression>
+				<replacement type="regex"><![CDATA[oraMnyDec]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmnydivide">
+				<expression><![CDATA[dbmnydivide]]></expression>
+				<replacement type="regex"><![CDATA[oraMnyDivide]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmnydown">
+				<expression><![CDATA[dbmnydown]]></expression>
+				<replacement type="regex"><![CDATA[oraMnyDown]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmnyinc">
+				<expression><![CDATA[dbmnyinc]]></expression>
+				<replacement type="regex"><![CDATA[oraMnyInc]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmnyinit">
+				<expression><![CDATA[dbmnyinit]]></expression>
+				<replacement type="regex"><![CDATA[oraMnyInit]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmnymaxneg">
+				<expression><![CDATA[dbmnymaxneg]]></expression>
+				<replacement type="regex"><![CDATA[oraMnyMaxNeg]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmnymaxpos">
+				<expression><![CDATA[dbmnymaxpos]]></expression>
+				<replacement type="regex"><![CDATA[oraMnyMaxPos]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmnyminus">
+				<expression><![CDATA[dbmnyminus]]></expression>
+				<replacement type="regex"><![CDATA[oraMnyMinus]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmnymul">
+				<expression><![CDATA[dbmnymul]]></expression>
+				<replacement type="regex"><![CDATA[oraMnyMul]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmnyndigit">
+				<expression><![CDATA[dbmnyndigit]]></expression>
+				<replacement type="regex"><![CDATA[oraMnyDigit]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmnyscale">
+				<expression><![CDATA[dbmnyscale]]></expression>
+				<replacement type="regex"><![CDATA[oraMnyScale]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmnysub">
+				<expression><![CDATA[dbmnysub]]></expression>
+				<replacement type="regex"><![CDATA[oraMnySub]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmnyzero">
+				<expression><![CDATA[dbmnyzero]]></expression>
+				<replacement type="regex"><![CDATA[oraMnyZero]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmonthname">
+				<expression><![CDATA[dbmonthname]]></expression>
+				<replacement type="regex"><![CDATA[oraMonthName]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBMORECMDS">
+				<expression><![CDATA[DBMORECMDS]]></expression>
+				<replacement type="regex"><![CDATA[oraMoreCMDS]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmoretext">
+				<expression><![CDATA[dbmoretext]]></expression>
+				<replacement type="regex"><![CDATA[oraMoreText]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbmsghandle">
+				<expression><![CDATA[dbmsghandle]]></expression>
+				<replacement type="regex"><![CDATA[oraMsgHandle]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbname">
+				<expression><![CDATA[dbname]]></expression>
+				<replacement type="regex"><![CDATA[oraName]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbnextrow">
+				<expression><![CDATA[dbnextrow]]></expression>
+				<replacement type="regex"><![CDATA[oraNextRow]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbnpcreate">
+				<expression><![CDATA[dbnpcreate]]></expression>
+				<replacement type="regex"><![CDATA[oraNpCreate]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbnpdefine">
+				<expression><![CDATA[dbnpdefine]]></expression>
+				<replacement type="regex"><![CDATA[oraNpDefine]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbnullbind">
+				<expression><![CDATA[dbnullbind]]></expression>
+				<replacement type="regex"><![CDATA[oraNullBind]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbnumalts">
+				<expression><![CDATA[dbnumalts]]></expression>
+				<replacement type="regex"><![CDATA[oraNumAlts]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbnumcols">
+				<expression><![CDATA[dbnumcols]]></expression>
+				<replacement type="regex"><![CDATA[oraNumCols]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbnumcompute">
+				<expression><![CDATA[dbnumcompute]]></expression>
+				<replacement type="regex"><![CDATA[oraNumcompute]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBNUMORDERS">
+				<expression><![CDATA[DBNUMORDERS]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbnumrets">
+				<expression><![CDATA[dbnumrets]]></expression>
+				<replacement type="regex"><![CDATA[oraNumRets]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbopen">
+				<expression><![CDATA[dbopen]]></expression>
+				<replacement type="regex"><![CDATA[oraConnect]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbordercol">
+				<expression><![CDATA[dbordercol]]></expression>
+				<replacement type="regex"><![CDATA[oraOrderCol]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbpoll">
+				<expression><![CDATA[dbpoll]]></expression>
+				<replacement type="regex"><![CDATA[oraPoll]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbprhead">
+				<expression><![CDATA[dbprhead]]></expression>
+				<replacement type="regex"><![CDATA[oraPrHead]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbprrow">
+				<expression><![CDATA[dbprrow]]></expression>
+				<replacement type="regex"><![CDATA[oraPrRow]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbprtype">
+				<expression><![CDATA[dbprtype]]></expression>
+				<replacement type="regex"><![CDATA[oraPrType]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbqual">
+				<expression><![CDATA[dbqual]]></expression>
+				<replacement type="regex"><![CDATA[oraQual]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBRBUF">
+				<expression><![CDATA[DBRBUF]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbreadpage">
+				<expression><![CDATA[dbreadpage]]></expression>
+				<replacement type="regex"><![CDATA[oraReadPage]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbreadtext">
+				<expression><![CDATA[dbreadtext]]></expression>
+				<replacement type="regex"><![CDATA[oraReadText]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbrecftos">
+				<expression><![CDATA[dbrecftos]]></expression>
+				<replacement type="regex"><![CDATA[oraRecfTos]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbrecvpassthru">
+				<expression><![CDATA[dbrecvpassthru]]></expression>
+				<replacement type="regex"><![CDATA[oraRecvPassThru]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbregdrop">
+				<expression><![CDATA[dbregdrop]]></expression>
+				<replacement type="regex"><![CDATA[oraRegDrop]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbregexec">
+				<expression><![CDATA[dbregexec]]></expression>
+				<replacement type="regex"><![CDATA[oraRegExec]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbreghandle">
+				<expression><![CDATA[dbreghandle]]></expression>
+				<replacement type="regex"><![CDATA[oraRegHandle]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbreginit">
+				<expression><![CDATA[dbreginit]]></expression>
+				<replacement type="regex"><![CDATA[oraRegInit]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbreglist">
+				<expression><![CDATA[dbreglist]]></expression>
+				<replacement type="regex"><![CDATA[oraRegList]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbregnowatch">
+				<expression><![CDATA[dbregnowatch]]></expression>
+				<replacement type="regex"><![CDATA[oraregnowatch]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbregparam">
+				<expression><![CDATA[dbregparam]]></expression>
+				<replacement type="regex"><![CDATA[oraRegParam]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbregwatch">
+				<expression><![CDATA[dbregwatch]]></expression>
+				<replacement type="regex"><![CDATA[oraRegWatch]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbregwatchlist">
+				<expression><![CDATA[dbregwatchlist]]></expression>
+				<replacement type="regex"><![CDATA[oraRegWatchList]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbretdata">
+				<expression><![CDATA[dbretdata]]></expression>
+				<replacement type="regex"><![CDATA[oraRetData]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbretlen">
+				<expression><![CDATA[dbretlen]]></expression>
+				<replacement type="regex"><![CDATA[oraRetLen]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbretname">
+				<expression><![CDATA[dbretname]]></expression>
+				<replacement type="regex"><![CDATA[oraRetName]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbretstatus">
+				<expression><![CDATA[dbretstatus]]></expression>
+				<replacement type="regex"><![CDATA[oraretStatus]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbrettype">
+				<expression><![CDATA[dbrettype]]></expression>
+				<replacement type="regex"><![CDATA[oraRetType]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBROWS">
+				<expression><![CDATA[DBROWS]]></expression>
+				<replacement type="regex"><![CDATA[oraRows]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBROWTYPE">
+				<expression><![CDATA[DBROWTYPE]]></expression>
+				<replacement type="regex"><![CDATA[oraRowType]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbrpcinit">
+				<expression><![CDATA[dbrpcinit]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbrpcparam">
+				<expression><![CDATA[dbrpcparam]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbrpcsend">
+				<expression><![CDATA[dbrpcsend]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbrpwclr">
+				<expression><![CDATA[dbrpwclr]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbrpwset">
+				<expression><![CDATA[dbrpwset]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbsafestr">
+				<expression><![CDATA[dbsafestr]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbsechandle">
+				<expression><![CDATA[dbsechandle]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbsendpassthru">
+				<expression><![CDATA[dbsendpassthru]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbservcharset">
+				<expression><![CDATA[dbservcharset]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbsetavail">
+				<expression><![CDATA[dbsetavail]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbsetbusy">
+				<expression><![CDATA[dbsetbusy]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbsetconnect">
+				<expression><![CDATA[dbsetconnect]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbsetdefcharset">
+				<expression><![CDATA[dbsetdefcharset]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbsetdeflang">
+				<expression><![CDATA[dbsetdeflang]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbsetidle">
+				<expression><![CDATA[dbsetidle]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbsetifile">
+				<expression><![CDATA[dbsetifile]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbsetinterrupt">
+				<expression><![CDATA[dbsetinterrupt]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="DBSETLAPP">
+				<expression><![CDATA[DBSETLAPP]]></expression>
+				<replacement type="regex"><![CDATA[oraSetLApp]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBSETLCHARSET">
+				<expression><![CDATA[DBSETLCHARSET]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="DBSETLENCRYPT">
+				<expression><![CDATA[DBSETLENCRYPT]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="DBSETLHOST">
+				<expression><![CDATA[DBSETLHOST]]></expression>
+				<replacement type="regex"><![CDATA[oraSetLHost]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBSETLMUTUALAUTH">
+				<expression><![CDATA[DBSETLMUTUALAUTH]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="DBSETLNATLANG">
+				<expression><![CDATA[DBSETLNATLANG]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="DBSETLNETWORKAUTH">
+				<expression><![CDATA[DBSETLNETWORKAUTH]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbsetloginfo">
+				<expression><![CDATA[dbsetloginfo]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbsetlogintime">
+				<expression><![CDATA[dbsetlogintime]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="DBSETLPACKET">
+				<expression><![CDATA[DBSETLPACKET]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="DBSETLPWD">
+				<expression><![CDATA[DBSETLPWD]]></expression>
+				<replacement type="regex"><![CDATA[oraSetLPWD]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="DBSETLSERVERPRINCIPAL">
+				<expression><![CDATA[DBSETLSERVERPRINCIPAL]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="DBSETLUSER">
+				<expression><![CDATA[DBSETLUSER]]></expression>
+				<replacement type="regex"><![CDATA[oraSetLUser]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbsetmaxprocs">
+				<expression><![CDATA[dbsetmaxprocs]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbsetnull">
+				<expression><![CDATA[dbsetnull]]></expression>
+				<replacement type="regex"><![CDATA[oraSetNull]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbsetopt">
+				<expression><![CDATA[dbsetopt]]></expression>
+				<replacement type="regex"><![CDATA[oraSetOpt]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbsetrow">
+				<expression><![CDATA[dbsetrow]]></expression>
+				<replacement type="regex"><![CDATA[oraSetRow]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbsettime">
+				<expression><![CDATA[dbsettime]]></expression>
+				<replacement type="regex"><![CDATA[oraSetTime]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbsetuserdata">
+				<expression><![CDATA[dbsetuserdata]]></expression>
+				<replacement type="regex"><![CDATA[oraSetUserData]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbsetversion">
+				<expression><![CDATA[dbsetversion]]></expression>
+				<replacement type="regex"><![CDATA[oraSetVersion]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbspid">
+				<expression><![CDATA[dbspid]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbspr1row">
+				<expression><![CDATA[dbspr1row]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbspr1rowlen">
+				<expression><![CDATA[dbspr1rowlen]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbsprhead">
+				<expression><![CDATA[dbsprhead]]></expression>
+				<replacement type="regex"><![CDATA[oraSprHead]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbsprline">
+				<expression><![CDATA[dbsprline]]></expression>
+				<replacement type="regex"><![CDATA[oraSprLine]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbsqlok">
+				<expression><![CDATA[dbsqlok]]></expression>
+				<replacement type="regex"><![CDATA[oraSqlOK]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbsqlsend">
+				<expression><![CDATA[dbsqlsend]]></expression>
+				<replacement type="regex"><![CDATA[oraSqlSend]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbstrbuild">
+				<expression><![CDATA[dbstrbuild]]></expression>
+				<replacement type="regex"><![CDATA[oraStrBuild]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbstrcmp">
+				<expression><![CDATA[dbstrcmp]]></expression>
+				<replacement type="regex"><![CDATA[oraStrCmp]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbstrcpy">
+				<expression><![CDATA[dbstrcpy]]></expression>
+				<replacement type="regex"><![CDATA[oraStrCpy]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbstrlen">
+				<expression><![CDATA[dbstrlen]]></expression>
+				<replacement type="text"><![CDATA[oraStrLen]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbstrsort">
+				<expression><![CDATA[dbstrsort]]></expression>
+				<replacement type="text"><![CDATA[oraStrSort]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbtabbrowse">
+				<expression><![CDATA[dbtabbrowse]]></expression>
+				<replacement type="text"><![CDATA[oraTabBrowse]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbtabcount">
+				<expression><![CDATA[dbtabcount]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbtabname">
+				<expression><![CDATA[dbtabname]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbtabsource">
+				<expression><![CDATA[dbtabsource]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="DBTDS">
+				<expression><![CDATA[DBTDS]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbtextsize">
+				<expression><![CDATA[dbtextsize]]></expression>
+				<replacement type="text"><![CDATA[oraTextSize]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbtsnewlen">
+				<expression><![CDATA[dbtsnewlen]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbtsnewval">
+				<expression><![CDATA[dbtsnewval]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbtsput">
+				<expression><![CDATA[dbtsput]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbtxptr">
+				<expression><![CDATA[dbtxtptr]]></expression>
+				<replacement type="text"><![CDATA[oraTxtPtr]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbtxtimestamp">
+				<expression><![CDATA[dbtxtimestamp]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbtxtsnewval">
+				<expression><![CDATA[dbtxtsnewval]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbtxtsput">
+				<expression><![CDATA[dbtxtsput]]></expression>
+				<replacement type="text"><![CDATA[oraTxtSput]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbuse">
+				<expression><![CDATA[dbuse]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbvarylen">
+				<expression><![CDATA[dbvarylen]]></expression>
+				<replacement type="text"><![CDATA[oraVaryLen]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbversion">
+				<expression><![CDATA[dbversion]]></expression>
+				<replacement type="text"><![CDATA[oraVersion]]></replacement>
+			</regex>
+			<regex codetype="ctlib" name="dbwillconvert">
+				<expression><![CDATA[dbwillconvert]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbwritepage">
+				<expression><![CDATA[dbwritepage]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbwritetext">
+				<expression><![CDATA[dbwritetext]]></expression>
+			</regex>
+			<regex codetype="ctlib" name="dbxlate">
+				<expression><![CDATA[dbxlate]]></expression>
+			</regex>
+			<!-- -->
+		</rules>
+	</ruleset>
+</rulesfile>

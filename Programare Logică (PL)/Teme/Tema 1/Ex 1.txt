@@ -1,0 +1,33 @@
+% Cerinta 1
+natural(K) :- number(K), K>=0, K is floor(K).
+
+concat([], L, L).
+concat([H|T], L, [H|M]) :- concat(T, L, M).
+
+reverse([], []).  
+reverse([H|T], RevList) :- reverse(T, RevT), concat(RevT, [H], RevList).  
+
+%lista puteri inversa
+lista_puteri(_, 0, [1]).
+lista_puteri(N, K, [H|T]) :- H is N**K, K1 is K-1, lista_puteri(N, K1, T), !.
+
+puteri(_, 0, [1]).
+puteri(N, K, L) :- number(N), natural(K), reverse(L, M), lista_puteri(N, K, M), !.
+
+
+
+% Cerinta 2
+nrmultlist(_, [], []) :- !.
+nrmultlist(X, L, M) :- number(X), L = [H|T], number(H), H1 is H * X, nrmultlist(X, T, M1), M = [H1|M1].
+
+
+
+% Cerinta 3
+inmultliste([], _, []).
+inmultliste([H|T], M, N) :- inmultliste(T, M, N1), nrmultlist(H, M, DupaInmultire), concat(DupaInmultire, N1, N).
+
+
+
+% Cerinta 4
+puteri23(N, K, ListaRezultat) :- puteri(2, N, Lista2), puteri(3, K, Lista3), 
+      							 inmultliste(Lista2, Lista3, ListaRezultat).

@@ -1,0 +1,5 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.IndexColumnUsage xmlName="indColUsage">
+   <property name="columnID" dataType="java.lang.String" defaultValue="" xmlName="columnID" xmlType="attribute" getter="getColumnID" setter="setColumnID" reffered="false"/>
+   <property name="sortOrder" dataType="java.lang.String" defaultValue="ASC" xmlName="endValue" xmlType="attribute" getter="getSortOrder" setter="setSortOrder" reffered="false"/>
+</oracle.dbtools.crest.model.design.relational.IndexColumnUsage>

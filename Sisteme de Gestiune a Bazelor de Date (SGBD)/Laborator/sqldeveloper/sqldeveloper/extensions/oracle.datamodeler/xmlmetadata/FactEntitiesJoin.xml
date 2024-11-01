@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.multidimensional.FactEntitiesJoin parentClass="oracle.dbtools.crest.model.design.DesignObject">
+   <property name="cardinality" dataType="java.lang.String" defaultValue="" xmlName="cardinality" xmlType="element" getter="getCardinality" setter="setCardinality" reffered="false"/>
+   <aa_property name="cube" dataType="oracle.dbtools.crest.model.design.multidimensional.Cube" defaultValue="" xmlName="cube" xmlType="element" getter="getCube" setter="setCube" reffered="true"/>
+   <property name="leftEntity" dataType="oracle.dbtools.crest.model.design.logical.Entity" defaultValue="" xmlName="leftEntity" xmlType="element" getter="getLeftEntity" setter="setLeftEntity" reffered="true"/>
+   <property name="rightEntity" dataType="oracle.dbtools.crest.model.design.logical.Entity" defaultValue="" xmlName="rightEntity" xmlType="element" getter="getRightEntity" setter="setRightEntity" reffered="true"/>
+   <property name="dominantEntity" dataType="oracle.dbtools.crest.model.design.logical.Entity" defaultValue="" xmlName="dominantEntity" xmlType="element" getter="getDominantEntity" setter="setDominantEntity" reffered="true"/>
+   <property name="usedRelation" dataType="oracle.dbtools.crest.model.design.logical.Relation" defaultValue="" xmlName="usedRelation" xmlType="element" getter="getUsedRelation" setter="setUsedRelation" reffered="true"/>
+   <collection name="leftAttributes" dataType="java.util.List" xmlName="leftAttributes" itemXmlName="attribute" itemIsRef="true" getter="getLeftAttributes" nativeList="true" orderTheList="true"/>
+   <collection name="rightAttributes" dataType="java.util.List" xmlName="rightAttributes" itemXmlName="attribute" itemIsRef="true" getter="getRightAttributes" nativeList="true" orderTheList="true"/>
+   <roproperty name="leftAttributes" dataType="interface java.util.List" getter="getLeftAttributes"/>
+   <roproperty name="multidimensionalDesign" dataType="oracle.dbtools.crest.model.design.multidimensional.MultidimensionalDesign" getter="getMultidimensionalDesign"/>
+   <roproperty name="rightAttributes" dataType="interface java.util.List" getter="getRightAttributes"/>
+</oracle.dbtools.crest.model.design.multidimensional.FactEntitiesJoin>

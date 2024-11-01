@@ -1,0 +1,17 @@
+<search
+ version="7.1"
+ name="Metalink"
+ description="Metalink search" 
+ action="http://metalink.oracle.com/metalink/plsql/ml2_gui.handleSearchRequest"
+ searchForm="http://metalink.oracle.com/"
+ method="GET" >
+
+<input name="p_text" user>
+
+<interpret 
+ resultListStart="<!-- RESULT LIST START -->"
+ resultListEnd="<!-- RESULT LIST END -->"
+ resultItemStart="<!-- RESULT ITEM START -->"
+ resultItemEnd="<!-- RESULT ITEM END -->"
+>
+</search>

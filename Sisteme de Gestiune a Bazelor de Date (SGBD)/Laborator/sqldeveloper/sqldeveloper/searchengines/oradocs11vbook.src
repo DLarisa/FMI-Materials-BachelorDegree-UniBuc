@@ -1,0 +1,17 @@
+<search
+ version="7.1"
+ name="11.1 docs"
+ description="11.1 documentation search - virtual book" 
+ action="http://www.oracle.com/pls/db111/db111.vbook"
+ searchForm="http://tahiti.oracle.com/"
+ method="GET" >
+
+<input name="search" user>
+
+<interpret 
+ resultListStart="<!-- RESULT LIST START -->"
+ resultListEnd="<!-- RESULT LIST END -->"
+ resultItemStart="<!-- RESULT ITEM START -->"
+ resultItemEnd="<!-- RESULT ITEM END -->"
+>
+</search>

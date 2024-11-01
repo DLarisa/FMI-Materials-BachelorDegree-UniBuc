@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<!-- http://www.useragentman.com/blog/2013/03/03/animating-circular-paths-using-css3-transitions/ 
+-->
+<html lang="ro"> 
+<head> 
+<style text="text/css">
+
+
+figure{ width:50px; height:50px;
+position:absolute; left:300px; top:300px;
+animation: orbit 5s infinite;
+-moz-animation: orbit 5s infinite;
+}
+img{width: 100%; height:auto;}
+
+@keyframes orbit {
+	from { 	-moz-transform: rotate(0deg) translateX(150px); }
+	to   {  -moz-transform: rotate(360deg) translateX(150px); }
+}
+@-moz-keyframes orbit {
+	from { 	-moz-transform: rotate(0deg) translateX(150px);  }
+	to   {  -moz-transform: rotate(360deg) translateX(150px) ; }
+}
+
+/*
+@keyframes orbit {
+	from { 	-moz-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+	to   {  -moz-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+@-moz-keyframes orbit {
+	from { 	-moz-transform: rotate(0deg) translateX(150px);  }
+	to   {  -moz-transform: rotate(360deg) translateX(150px) ; }
+}
+*/
+
+</style>
+<meta charset="utf-8">
+<title> transform,transition, animation </title>
+<link href="favi.png" type="image/png" rel="shortcut icon" />
+ </head>
+<body> 
+
+<div>
+<figure>
+<img src="smiley.gif" alt="smiley"></figure>
+ 
+</div>
+
+ 
+</body>
+</html>
+
+

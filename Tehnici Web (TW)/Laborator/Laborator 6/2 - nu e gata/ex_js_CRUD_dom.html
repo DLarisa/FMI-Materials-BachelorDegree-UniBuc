@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="utf-8" />
+		<title>Studenti</title>
+		<style>
+
+			*{
+				margin:0;
+				padding:0;
+			}
+			th,td{
+				border:1px solid black;
+				padding:5px;
+			}
+			th{
+				text-transform: capitalize;
+			}
+			table{
+				border-collapse:collapse;
+				empty-cells:show;
+			}
+			.selectat{
+				background:#e6fcec;
+			}
+			.A{color:fuchsia;}
+			
+			.B{color:blue;}
+			
+			.C{color:green;}
+			
+			.D{color:red;}
+			
+			#info{
+				overflow-y:scroll;
+				height:300px;
+				width:50%;
+				border:1px solid black;
+			}
+		</style>
+		<script src="ex_js_CRUD_dom.js">
+		</script>
+	</head>
+	<body>
+		<h1>Tabel elevi</h1>
+		<div id="container_tabel"></div>
+		<button id="add_inceput">Adauga elev inceput</button>
+		<button id="add_sfarsit">Adauga elev sfarsit</button>
+		<button id="deselectare">Deselecteaza toti elevii</button>		
+		<button id="sterge">Sterge elevii din clasa ...</button>
+		<button id="sorteaza_nume">Sorteaza elevi dupa nume</button>
+		<button id="sorteaza_medie">Sorteaza elevi dupa medie</button>
+		<button id="select_elevi">Selecteaza elevi admisi</button>
+		<button id="gaseste_elev">Gaseste elev</button>
+		<button id="inverseaza">Inverseaza randuri</button>
+		<button id="goleste_tabel">Goleste tabel</button>
+		<button id="toggle_info">Ascunde info</button>
+		<div id="info"></div>
+	</body>
+</html>

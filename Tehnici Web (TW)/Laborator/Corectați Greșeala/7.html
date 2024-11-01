@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Fisier de baza</title>
+		<style>
+			div.dreptunghi{
+				margin-top:10px;
+				height:20px;
+				width:0px;
+				background: url("http://www.irinaciocan.ro/imagini/apa.png");
+			}
+		</style>
+		<script>
+			var dimensiune;
+			var id_interval;
+			
+			window.onload=function(){
+				var btn=document.getElementById("porneste_animatie");
+				btn.onclick=function() {
+					btn.disabled=true; // functioneaza si true si "true"
+					var dr = document.createElement("div");
+					dr.className="dreptunghi";
+					document.body.appendChild(dr);
+					dimensiune=parseInt(document.getElementById("v_min").value);
+					val_max=parseInt(document.getElementById("v_max").value);
+					
+					dr.style.width=dimensiune+"px";
+					id_interval=setInterval(function(dreptunghi,max,bt){
+						dreptunghi.style.width=dimensiune+"px";
+						console.log(dreptunghi.style.width);
+						dimensiune++;
+						if(dimensiune>max){
+							clearInterval(id_interval);
+							bt.disabled=false;
+						}
+					},25,dr,val_max,btn);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p>Nota: in exercitiile de tip "corectati gresala", desi nu e recomandat, s-au pus css-ul si script-ul in fisierul html strict pentru simplitate (downloadarea unui singur fisier vs 3). Totusi retineti ca indicat este sa folositi fisiere externe in teme/proiecte/teste.</p>
+		<hr/>
+		<p>La click pe butonul din pagina, se creeaza un div nou la finalul paginii. Divul ar trebui sa aiba initial latimea data in primul input si sa creasca in latime treptat cu cate 1px pana la valoarea data in inputul al doilea (pentru simplitate, vom presupune ca inputurile au intotdeauna valori corecte: ambele valori sunt numere naturale si primul input contine o valoare mai mica decat valoarea din al doilea). De ce nu functioneaza conform enuntului? Corectati.</p>
+		<input type="number" id="v_min" value="20"/>
+		<input type="number" id="v_max" value="200"/>
+		<button id="porneste_animatie">Porneste animatia</button>
+	</body>
+</html>

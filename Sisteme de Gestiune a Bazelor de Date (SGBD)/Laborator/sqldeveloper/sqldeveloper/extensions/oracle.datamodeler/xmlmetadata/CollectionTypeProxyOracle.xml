@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.CollectionTypeProxyOracle parentClass="oracle.dbtools.crest.model.design.storage.CollectionTypeProxy">
+   <property name="owner" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserOracle" defaultValue="" xmlName="owner" xmlType="element" getter="getOwner" setter="setOwner" reffered="true"/>
+   <roproperty name="arrayType" dataType="boolean" getter="isArrayType"/>
+   <roproperty name="dataType" dataType="java.lang.String" getter="getDataType"/>
+   <roproperty name="maxElement" dataType="int" getter="getMaxElement"/>
+   <roproperty name="type" dataType="java.lang.String" getter="getType"/>
+</oracle.dbtools.crest.model.design.storage.oracle.CollectionTypeProxyOracle>

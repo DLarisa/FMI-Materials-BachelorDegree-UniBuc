@@ -1,0 +1,44 @@
+﻿@model ProiectDAW.Models.GenFilm
+@{
+    ViewBag.Title = "Editare Informații Gen Film ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<h2 style="font-family: 'Adobe Devanagari';">@ViewBag.Title</h2>
+
+@using (Html.BeginForm(actionName: "Edit", controllerName: "GenFilm", method: FormMethod.Post, htmlAttributes: new { style = "display:inline" }))
+{
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+    @Html.HiddenFor(f => f.GenId)
+    @Html.HiddenFor(f => f.Guideline.Id)
+
+
+    @Html.Label("Nume", "Gen Film:")
+    @Html.EditorFor(f => f.Nume, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(f => f.Nume, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.LabelFor(f => f.Guideline.Varsta, "Vârstă Recomandată Film:")
+    @Html.EditorFor(f => f.Guideline.Varsta, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(f => f.Guideline.Varsta, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.LabelFor(f => f.Guideline.Mesaj, "Observații:")
+    @Html.TextAreaFor(f => f.Guideline.Mesaj, new { @class = "form-control", @rows = "10" })
+    @Html.ValidationMessageFor(f => f.Guideline.Mesaj, "", new { @class = "text-danger" })
+    <br />
+
+
+
+    <button class="btn btn-success" type="submit">Update</button>
+}
+
+
+@using (Html.BeginForm(actionName: "Index", controllerName: "GenFilm", method: FormMethod.Get, htmlAttributes: new { style = "display:inline; float: right" }))
+{
+    <button class="btn btn-primary">Înapoi</button>
+}

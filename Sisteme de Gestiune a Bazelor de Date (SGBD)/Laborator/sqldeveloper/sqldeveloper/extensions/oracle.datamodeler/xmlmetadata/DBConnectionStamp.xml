@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.imports.DBConnectionStamp>
+   <property name="connName" dataType="java.lang.String" defaultValue="" xmlName="connName" xmlType="element" getter="getConnName" setter="setConnName" reffered="false"/>
+   <property name="connUrl" dataType="java.lang.String" defaultValue="" xmlName="connUrl" xmlType="element" getter="getConnUrl" setter="setConnUrl" reffered="false"/>
+   <property name="connUser" dataType="java.lang.String" defaultValue="" xmlName="connUser" xmlType="element" getter="getConnUser" setter="setConnUser" reffered="false"/>
+   <property name="connType" dataType="int" defaultValue="-1" xmlName="connType" xmlType="element" getter="getConnType" setter="setConnType" reffered="false"/>
+</oracle.dbtools.crest.imports.DBConnectionStamp>

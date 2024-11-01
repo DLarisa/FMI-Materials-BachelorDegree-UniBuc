@@ -1,0 +1,31 @@
+#container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+#d1, #d4 {
+    grid-row: 1/5;
+}
+
+#d2 {
+    grid-row: 2/3;
+}
+
+#d3 {
+    grid-column: 3/4;
+    grid-row: 3/4;
+}
+
+@media screen and (min-width: 250px) and (max-width: 700px) {
+    #container {
+        display: block;
+    }
+
+    #d3, #d4 {
+        display: none;
+    }
+
+    #d1, #d2 {
+        width: 25vw;
+    }
+}

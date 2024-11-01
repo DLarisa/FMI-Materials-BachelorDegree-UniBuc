@@ -1,0 +1,89 @@
+LISTE
+--------------------------------------------------------------
+Preliminarii
+
+struct pereche
+{
+    int a, b;
+};
+int main()
+{
+    pereche *p;
+    p.a; ---> nu functioneaza
+    (*p).a; ---> ca sa poti accesa campul cand e pointer
+    p->a; ---> ca sa poti accesa
+
+    return 0;
+}
+
+--------------------------------------------------------------
+
+#include <iostream> //LISTE
+using namespace std;
+
+struct nod //Declaram Structura unui Nod
+{
+    int info;
+    nod *next;
+} *prim, *ultim;
+void add_f(int x) //Inserare Nod la Finalul Listei
+{
+    if(prim==NULL)
+    {
+        prim=ultim=new nod; //Alocare Adresa Nod Nou
+        prim->info=x;
+        prim->next=NULL;
+    }
+    else //Exista cel putin un nod in lista
+    {
+        nod *p=new nod;
+        p->info=x; //sau mai poti scrie   (*p).info=x
+        p->next=NULL;
+        ultim->next=p; //Legam ultimul nod de cel nou inserat
+        ultim=p; //Ultimul nod devine p
+    }
+}
+void sters(int x) //Stergere de X
+{
+    nod *p=prim;
+    nod *last;
+    while(p!=NULL && p->info!=x)
+    {
+        last=p; //last ia valoarea de dinaintea lui p
+        p=p->next;
+    }
+    if(p==NULL) {cout<<"Nu exista valoarea "<<x<<endl; return;}
+    //return ca un fel de break
+    if(p==prim) //Primul Nod
+    {
+        prim=prim->next;
+        if(prim==ultim) ultim=NULL;
+        delete p; return;
+    }
+    if(p==ultim) //Ultimul Nod
+    {
+        last->next=NULL;
+        ultim=last;
+        delete p; return;
+    }
+    //Un Nod din mijloc
+    last->next=p->next;
+    delete p;
+}
+void afisare() //Afisare Lista
+{
+    nod *p=prim;
+    while(p!=NULL)
+    {
+        cout<<p->info<<" ";
+        p=p->next;
+    }
+    cout<<endl;
+}
+int main()
+{
+    add_f(3);add_f(11);add_f(0);add_f(7);sters(3);sters(7);add_f(8);sters(0);
+    afisare();
+
+    return 0;
+}

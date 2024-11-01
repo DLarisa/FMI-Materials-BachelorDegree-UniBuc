@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.xtdmapping.XtdMapping parentClass="java.lang.Object">
+   <property name="mappingID" dataType="java.lang.String" defaultValue="" xmlName="id" xmlType="attribute" getter="getID" setter="setID" reffered="false"/>
+   <property name="creationTime" dataType="long" defaultValue="" xmlName="cTime" oldXmlName="creationTime" xmlType="attribute" getter="getCreationTime" setter="setCreationTime" reffered="false"/>
+   <property name="deletedId" dataType="java.lang.String" defaultValue="" xmlName="delID" oldXmlName="deletedId" xmlType="attribute" getter="getDeletedID" setter="setDeletedID" reffered="false"/>
+   <aa_property name="design" dataType="oracle.dbtools.crest.model.design.Design" defaultValue="" xmlName="design" xmlType="element" getter="getDesign" setter="setDesign" reffered="true"/>
+   <aa_property name="dirty" dataType="boolean" defaultValue="" xmlName="dirty" xmlType="element" getter="isDirty" setter="setDirty" reffered="false"/>
+   <aa_property name="fwEngineer" dataType="boolean" defaultValue="true" xmlName="fEng" oldXmlName="fwEngineer" xmlType="attribute" getter="isFwEngineer" setter="setFwEngineer" reffered="false"/>
+   <property name="inheritanceType" dataType="int" defaultValue="0" xmlName="inhType" oldXmlName="inheritanceType" xmlType="attribute" getter="getInheritanceType" setter="setInheritanceType" reffered="false"/>
+   <property name="ownerContainerID" dataType="java.lang.String" defaultValue="" xmlName="oCont" oldXmlName="ownerContainerID" xmlType="attribute" getter="getOwnerContainerID" setter="setOwnerContainerID" reffered="false"/>
+   <property name="ownerDesignPartID" dataType="java.lang.String" defaultValue="" xmlName="oDP" oldXmlName="ownerDesignPartID" xmlType="attribute" getter="getOwnerDesignPartID" setter="setOwnerDesignPartID" reffered="false"/>
+   <aa_property name="ownerDesignPartName" dataType="java.lang.String" defaultValue="" xmlName="ownerDesignPartName" xmlType="attribute" getter="getOwnerDesignPartName" setter="setOwnerDesignPartName" reffered="false"/>
+   <property name="ownerID" dataType="java.lang.String" defaultValue="" xmlName="oID" oldXmlName="ownerID" xmlType="attribute" getter="getOwnerID" setter="setOwnerID" reffered="false"/>
+   <aa_property name="ownerName" dataType="java.lang.String" defaultValue="" xmlName="ownerName" xmlType="attribute" getter="getOwnerName" setter="setOwnerName" reffered="false"/>
+   <aa_property name="ownerRepoID" dataType="java.lang.String" defaultValue="" xmlName="ownerRepoID" xmlType="element" getter="getOwnerRepOID" setter="setOwnerRepOID" reffered="false"/>
+   <property name="ownerType" dataType="int" defaultValue="1" xmlName="oType" oldXmlName="ownerType" xmlType="attribute" getter="getOwnerType" setter="setOwnerType" reffered="false"/>
+   <aa_property name="paC_Element" dataType="interface oracle.dbtools.crest.model.persistence.db.RepositoryObject" defaultValue="" xmlName="paC_Element" xmlType="element" getter="getPAC_Element" setter="setPAC_Element" reffered="false"/>
+   <aa_property name="propagateName" dataType="boolean" defaultValue="" xmlName="propagateName" xmlType="attribute" getter="isPropagateName" setter="setPropagateName" reffered="false"/>
+   <property name="realSourceEntityID" dataType="java.lang.String" defaultValue="" xmlName="rSEnt" oldXmlName="realSourceEntityID" xmlType="attribute" getter="getRealSourceEntityID" setter="setRealSourceEntityID" reffered="false"/>
+   <property name="realTargetEntityID" dataType="java.lang.String" defaultValue="" xmlName="rTEnt" oldXmlName="realTargetEntityID" xmlType="attribute" getter="getRealTargetEntityID" setter="setRealTargetEntityID" reffered="false"/>
+   <property name="recreatedContainerID" dataType="java.lang.String" defaultValue="" xmlName="recrCont" oldXmlName="recreatedContainerID" xmlType="element" getter="getRecreatedContainerID" setter="setRecreatedContainerID" reffered="false"/>
+   <aa_property name="repositoryOID" dataType="java.lang.String" defaultValue="" xmlName="repositoryOID" xmlType="element" getter="getRepositoryOID" setter="setRepositoryOID" reffered="false"/>
+   <aa_property name="repositoryOVID" dataType="java.lang.String" defaultValue="" xmlName="repositoryOVID" xmlType="element" getter="getRepositoryOVID" setter="setRepositoryOVID" reffered="false"/>
+   <aa_property name="revEngineer" dataType="boolean" defaultValue="true" xmlName="revEng" oldXmlName="revEngineer" xmlType="attribute" getter="isRevEngineer" setter="setRevEngineer" reffered="false"/>
+   <property name="targetContainerID" dataType="java.lang.String" defaultValue="" xmlName="tCont" oldXmlName="targetContainerID" xmlType="attribute" getter="getTargetContainerID" setter="setTargetContainerID" reffered="false"/>
+   <property name="targetDesignPartID" dataType="java.lang.String" defaultValue="" xmlName="tDP" oldXmlName="targetDesignPartID" xmlType="attribute" getter="getTargetDesignPartID" setter="setTargetDesignPartID" reffered="false"/>
+   <aa_property name="targetDesignPartName" dataType="java.lang.String" defaultValue="" xmlName="targetDesignPartName" xmlType="attribute" getter="getTargetDesignPartName" setter="setTargetDesignPartName" reffered="false"/>
+   <property name="targetID" dataType="java.lang.String" defaultValue="" xmlName="tID" oldXmlName="targetID" xmlType="attribute" getter="getTargetID" setter="setTargetID" reffered="false"/>
+   <aa_property name="targetName" dataType="java.lang.String" defaultValue="" xmlName="targetName" xmlType="attribute" getter="getTargetName" setter="setTargetName" reffered="false"/>
+   <aa_property name="targetRepOID" dataType="java.lang.String" defaultValue="" xmlName="targetRepOID" xmlType="element" getter="getTargetRepOID" setter="setTargetRepOID" reffered="false"/>
+   <property name="targettype" dataType="int" defaultValue="5" xmlName="tType" oldXmlName="targettype" xmlType="attribute" getter="getTargetType" setter="setTargetType" reffered="false"/>
+   <roproperty name="deleted" dataType="boolean" getter="isDeleted"/>
+   <roproperty name="mappingForContainer" dataType="boolean" getter="isMappingForContainer"/>
+   <roproperty name="ownerDesignPartLoaded" dataType="boolean" getter="isOwnerDesignPartLoaded"/>
+   <roproperty name="targetDesignPartLoaded" dataType="boolean" getter="isTargetDesignPartLoaded"/>
+   <roproperty name="name" dataType="java.lang.String" getter="getName"/>
+   <roproperty name="nameFor" dataType="java.lang.String" getter="getNameFor"/>
+   <roproperty name="nameForOtherID" dataType="java.lang.String" getter="getNameForOtherID"/>
+   <roproperty name="noneDeletedObject" dataType="oracle.dbtools.crest.model.design.DesignObject" getter="getNoneDeletedObject"/>
+   <roproperty name="objectMappedTo" dataType="oracle.dbtools.crest.model.design.DesignObject" getter="getObjectMappedTo"/>
+   <roproperty name="otherID" dataType="java.lang.String" getter="getOtherID"/>
+   <roproperty name="otherName" dataType="java.lang.String" getter="getOtherName"/>
+   <roproperty name="ownerDesignPart" dataType="oracle.dbtools.crest.model.design.DesignPart" getter="getOwnerDesignPart"/>
+   <roproperty name="ownerID" dataType="java.lang.String" getter="getOwnerID"/>
+   <roproperty name="ownerobject" dataType="oracle.dbtools.crest.model.design.DesignObject" getter="getOwnerObject"/>
+   <roproperty name="targetDesignPart" dataType="oracle.dbtools.crest.model.design.DesignPart" getter="getTargetDesignPart"/>
+   <roproperty name="targetID" dataType="java.lang.String" getter="getTargetID"/>
+   <roproperty name="targetObject" dataType="oracle.dbtools.crest.model.design.DesignObject" getter="getTargetObject"/>
+   <roproperty name="typeOfObjectMappedto" dataType="int" getter="getTypeOfObjectMappedTo"/>
+</oracle.dbtools.crest.model.xtdmapping.XtdMapping>

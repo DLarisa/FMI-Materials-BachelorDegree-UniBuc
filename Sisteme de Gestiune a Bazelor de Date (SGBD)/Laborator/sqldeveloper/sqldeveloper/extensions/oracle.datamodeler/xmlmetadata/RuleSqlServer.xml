@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.RuleSqlServer parentClass="oracle.dbtools.crest.model.design.storage.sqlserver.AbstractStorageObjectSqlServer">
+   <property name="columns" dataType="java.lang.String" defaultValue="" xmlName="columns" xmlType="element" getter="getColumns" setter="setColumns" reffered="false" listOfRefs="true"/>
+   <property name="expression" dataType="java.lang.String" defaultValue="" xmlName="expression" xmlType="element" getter="getExpression" setter="setExpression" reffered="false"/>
+   <property name="owner" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.UserSqlServer" defaultValue="" xmlName="owner" xmlType="element" getter="getOwner" setter="setOwner" reffered="true"/>
+   <property name="schema" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.SchemaSqlServer" defaultValue="" xmlName="schema" xmlType="element" getter="getSchema" setter="setSchema" reffered="true"/>
+   <bb_roproperty name="columnSet" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.RuleSqlServer$ColumnSet" getter="getColumnSet"/>
+   <property name="database" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.DataBaseSqlServer" defaultValue="" xmlName="database" xmlType="element" getter="getDatabase" setter="setDatabase" reffered="true"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.RuleSqlServer>

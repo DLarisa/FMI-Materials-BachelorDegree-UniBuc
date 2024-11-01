@@ -1,0 +1,17 @@
+<search
+ version="7.1"
+ name="9.2 docs"
+ description="9.2 documentation search - virtual book" 
+ action="http://otn.oracle.com/pls/db92/db92.vbook"
+ searchForm="http://tahiti.oracle.com/"
+ method="GET" >
+
+<input name="search" user>
+
+<interpret 
+ resultListStart="<!-- RESULT LIST START -->"
+ resultListEnd="<!-- RESULT LIST END -->"
+ resultItemStart="<!-- RESULT ITEM START -->"
+ resultItemEnd="<!-- RESULT ITEM END -->"
+>
+</search>

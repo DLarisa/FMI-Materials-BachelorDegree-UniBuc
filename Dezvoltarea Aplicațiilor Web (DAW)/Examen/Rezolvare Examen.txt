@@ -1,0 +1,651 @@
+
+
+Web.config
+(am adaugat doar)
+---------------------------------
+<connectionStrings>
+    <add name="DbConnectionString" providerName="System.Data.SqlClient" connectionString="Data Source=(LocalDB)\MSSQLLocalDB;
+		 AttachDbFilename=C:\Users\...\Desktop\Examen\Examen\App_Data\BD.mdf;Integrated Security=True"/>
+  </connectionStrings>
+  
+  
+
+
+  
+Poezie.cs
+------------------
+using Microsoft.SqlServer.Server;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace Examen.Models
+{
+    public class Poezie
+    {
+        [Key]
+        public int Id { get; set; }
+
+        [Required,
+         MinLength(3, ErrorMessage = "Titlul Poeziei trebuie să aibă cel puțin 3 caractere!"),
+         MaxLength(150, ErrorMessage = "Titlul Poeziei nu poate avea mai mult de 150 de caractere!"),
+         RegularExpression(@"^(?=.{1,50}$)[A-Z]([a-z]+)+(?:[-'\s][a-zA-Z]+)*$",
+         ErrorMessage = "Titlul Poeziei trebuie să înceapă cu majusculă și să conțină doar litere și/sau: ' - ")]
+        public string Titlu { get; set; }
+
+        [Required,
+         MinLength(3, ErrorMessage = "Numele Autorului trebuie să aibă cel puțin 3 caractere!"),
+         MaxLength(150, ErrorMessage = "Numele Autorului nu poate avea mai mult de 150 de caractere!"),
+         RegularExpression(@"^(?=.{1,150}$)[A-Z]([a-z]+)+(?:[-'\s][a-zA-Z]+)*$",
+         ErrorMessage = "Numele Autorului trebuie să înceapă cu majusculă și să conțină doar litere și/sau: ' - ")]
+        public string Autor { get; set; }
+
+        [Required, RegularExpression(@"^\d{1,2}$",
+         ErrorMessage = "Numărul de Strofe trebuie să fie între 0-99")]
+        public int NrStrofe { get; set; }
+
+
+        //// one-to-many(1 Poezie -> 1 Volum & 1 Volum -> n Poezii)
+        [ForeignKey("Volum")]
+        public int VolumId { get; set; }
+        public virtual Volum Volum { get; set; }
+        [NotMapped]   // dropdown list
+        public IEnumerable<SelectListItem> VolumList { get; set; }
+    }
+
+
+    public class DbCtx : DbContext
+    {
+        public DbCtx() : base("DbConnectionString")
+        {
+            Database.SetInitializer<DbCtx>(new Initp());
+        }
+
+        public DbSet<Poezie> Poezii { get; set; }
+        public DbSet<Volum> Volume { get; set; }
+    }
+
+    public class Initp : DropCreateDatabaseAlways<DbCtx>
+    {
+        protected override void Seed(DbCtx ctx)
+        {
+            ctx.Poezii.Add(new Poezie
+            {
+                Titlu = "Laaa",
+                Autor = "Rasa",
+                NrStrofe = 3,
+                Volum = new Volum { Denumire = "Vvvv" }
+            });
+            ctx.Poezii.Add(new Poezie
+            {
+                Titlu = "Dadad",
+                Autor = "Anaca",
+                NrStrofe = 5,
+                Volum = new Volum { Denumire = "Xyzzzzzz" }
+            });
+            ctx.Poezii.Add(new Poezie
+            {
+                Titlu = "Qsaff",
+                Autor = "Qreeee",
+                NrStrofe = 7,
+                Volum = new Volum { Denumire = "Vol" }
+            });
+            ctx.Poezii.Add(new Poezie
+            {
+                Titlu = "Buna",
+                Autor = "Paaaaaaaaa",
+                NrStrofe = 10,
+                Volum = new Volum { Denumire = "Papa" }
+            });
+            ctx.Poezii.Add(new Poezie
+            {
+                Titlu = "Raza",
+                Autor = "Eroare",
+                NrStrofe = 20,
+                Volum = new Volum { Denumire = "Www" }
+            });
+            ctx.Poezii.Add(new Poezie
+            {
+                Titlu = "Larson",
+                Autor = "Vreau",
+                NrStrofe = 11,
+                Volum = new Volum { Denumire = "Trecere" }
+            });
+            ctx.Poezii.Add(new Poezie
+            {
+                Titlu = "Site",
+                Autor = "Autor",
+                NrStrofe = 1,
+                Volum = new Volum { Denumire = "Denumire" }
+            });
+
+            ctx.SaveChanges();
+            base.Seed(ctx);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+Volum.cs
+------------------------------------------------------
+using Microsoft.SqlServer.Server;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace Examen.Models
+{
+    public class Volum
+    {
+        [Key]
+        public int Id { get; set; }
+
+        [Required,
+         MinLength(3, ErrorMessage = "Titlul Volumului trebuie să aibă cel puțin 3 caractere!"),
+         MaxLength(150, ErrorMessage = "Titlul Volumului nu poate avea mai mult de 150 de caractere!"),
+         RegularExpression(@"^(?=.{1,150}$)[A-Z]([a-z]+)+(?:[-'\s][a-zA-Z]+)*$",
+         ErrorMessage = "Titlul Volumului trebuie să înceapă cu majusculă și să conțină doar litere și/sau: ' - ")]
+        public string Denumire { get; set; }
+
+
+        // one-to-many (1 Volum -> n Poezii & 1 Poezie -> 1 Volum)
+        public virtual ICollection<Poezie> Poezii { get; set; }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+PoezieController.cs
+--------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using Examen.Models;
+
+namespace Examen.Controllers
+{
+    public class PoezieController : Controller
+    {
+        private DbCtx db = new DbCtx();
+
+        // GET: Poezie
+        public ActionResult Index()
+        {
+            List<Poezie> poezii = db.Poezii.ToList();
+            ViewBag.Poezii = poezii;
+
+            return View();
+        }
+
+
+        public ActionResult Search(string titlu, string volum)
+        {
+            var poezii = db.Poezii.ToList();
+
+            if (!String.IsNullOrEmpty(titlu) && !String.IsNullOrEmpty(volum))
+            {
+                poezii = poezii.Where(s => s.Titlu.Contains(titlu));
+                poezii = poezii.Where(s => s.Volum.Denumire.Contains(volum));
+            }
+
+            return View(poezii);
+        }
+
+
+        // Create
+        [HttpGet]
+        public ActionResult New()
+        {
+            Poezie poezie = new Poezie();
+            poezie.VolumList = GetAllVolume();
+            return View(poezie);
+        }
+        [HttpPost]
+        public ActionResult New(Poezie poezie)
+        {
+            try
+            {
+                poezie.VolumList = GetAllVolume();
+                if (ModelState.IsValid)
+                {
+                    poezie.Volum = db.Volume.FirstOrDefault(p => p.Id.Equals(1));
+                    db.Poezii.Add(poezie);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                return View(poezie);
+            }
+            catch (Exception e) { return View(poezie); }
+        }
+        // Iau Toate Volumele
+        [NonAction]
+        public IEnumerable<SelectListItem> GetAllVolume()
+        {
+            var selectList = new List<SelectListItem>();
+
+            foreach (var vol in db.Volume.ToList())
+            {
+                selectList.Add(new SelectListItem
+                {
+                    Value = vol.Id.ToString(),
+                    Text = vol.Denumire
+                });
+            }
+            return selectList;
+        }
+
+
+
+        // Delete
+        [HttpDelete]
+        public ActionResult Delete(int? id)
+        {
+            if (id.HasValue)
+            {
+                Poezie p = db.Poezii.Find(id);
+                if (p == null)
+                {
+                    return HttpNotFound("Nu s-a găsit Poezia cu id-ul " + id.ToString() + "!");
+                }
+                db.Poezii.Remove(p);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return HttpNotFound("Lipsește parametrul id al Poeziei!");
+        }
+
+
+
+        // Edit
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+            if (id.HasValue)
+            {
+                Poezie poezie = db.Poezii.Find(id);
+                if (poezie == null) return HttpNotFound("Nu am putut găsi poezia cu Id-ul " + id.ToString());
+
+                poezie.VolumList = GetAllVolume();
+
+                return View(poezie);
+            }
+            return HttpNotFound("Lipseste parametrul Id al Poeziei!");
+        }
+        [HttpPut]
+        public ActionResult Edit(int id, Poezie poezieR)
+        {
+            try
+            {
+                poezieR.VolumList = GetAllVolume();
+                Poezie poezie = db.Poezii.Include("Volum").SingleOrDefault(f => f.Id.Equals(id));
+
+                if (ModelState.IsValid)
+                {
+                    if (TryUpdateModel(poezie))
+                    {
+                        poezie.Titlu = poezieR.Titlu;
+                        poezie.Autor = poezieR.Autor;
+                        poezie.NrStrofe = poezieR.NrStrofe;
+                        poezie.VolumId = poezieR.VolumId;
+
+                        db.SaveChanges();
+                    }
+                    return RedirectToAction("Index");
+                }
+                return View(poezieR);
+            }
+            catch (Exception e)
+            {
+                return View(poezieR);
+            }
+        }
+
+
+
+        public ActionResult SearchTitle(string cuvant)
+        {
+            List<Poezie> poezii = db.Poezii.ToList();
+            List<string> Titluri = new List<string>();
+
+            if (cuvant != null)
+            {
+                foreach (var p in poezii)
+                    if (p.Titlu.Contains(cuvant))
+                        Titluri.Add(p.Titlu);
+
+                ViewBag.Titluri = Titluri;
+                return View(Titluri);
+            }
+
+            return Content("Lipsește Substring-ul!");
+        }
+
+        public ActionResult SearchVolume(string cuvant)
+        {
+            List<Poezie> poezii = db.Poezii.ToList();
+            List<string> Volume = new List<string>();
+
+            if (cuvant != null)
+            {
+                foreach (var p in poezii)
+                    if (p.Volum.Denumire.Contains(cuvant))
+                        Volume.Add(p.Volum.Denumire);
+
+                ViewBag.Volume = Volume;
+                return View(ViewBag.Volume);
+            }
+
+            return Content("Lipsește Substring-ul!");
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+RouteConfig.cs
+---------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.Routing;
+
+namespace Examen
+{
+    public class RouteConfig
+    {
+        public static void RegisterRoutes(RouteCollection routes)
+        {
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            routes.MapRoute(
+                name: "SearchTitle",
+                url: "Poezie/SearchTitle/{cuvant}",
+                defaults: new { controller = "Poezie", action = "SearchTitle", cuvant = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "SearchVolume",
+                url: "Poezie/SearchVolume/{cuvant}",
+                defaults: new { controller = "Poezie", action = "SearchVolume", cuvant = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index.cshtml
+----------------------------------------------------
+
+@{
+    ViewBag.Title = "---  Index Poezii  ---";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+@if (ViewBag.Poezii.Count == 0)
+{
+    <p>Nu există poezii momentan.</p>
+}
+else
+{
+    foreach (var poezie in ViewBag.Poezii)
+    {
+        <div>
+            <p>Titlu: @poezie.Titlu</p>
+            <p>Autor: @poezie.Autor</p>
+            <p>Număr Strofe: @poezie.NrStrofe</p>
+            <p>Volum: @poezie.Volum.Denumire</p>
+            <p>
+                @using (Html.BeginForm(actionName: "Edit", controllerName: "Poezie", method: FormMethod.Get, routeValues: new { id = poezie.Id }))
+                {
+                    <button class="btn btn-warning">Edit</button>
+                }
+            </p>
+            <p>
+                @using (Html.BeginForm(actionName: "Delete", controllerName: "Poezie", method: FormMethod.Post, routeValues: new { id = poezie.Id }))
+                {
+                    @Html.HttpMethodOverride(HttpVerbs.Delete)
+                    <button class="btn btn-danger" type="submit">Delete</button>
+                }
+            </p>
+            <br /><br />
+        </div>
+    }
+}
+
+@Html.ActionLink("Add Poezie", "New")
+
+
+
+@using (Html.BeginForm("Index", "Movies", FormMethod.Get))
+{
+    <p>
+        Volum: @Html.TextBox("volum")
+        Title: @Html.TextBox("titlu")
+        <input type="submit" value="Filter" />
+    </p>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+New.cshtml
+-----------------------------------------------------
+@model Examen.Models.Poezie
+@{
+    ViewBag.Title = "Adăugare Poezie Nouă";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm(actionName: "New", controllerName: "Poezie", method: FormMethod.Post))
+{
+    @Html.Label("Titlu", "Titlu: ");
+    @Html.TextBoxFor(f => f.Titlu, null, new { placeholder = "Scrie Titlul Poeziei...", @class = "form-control" });
+    @Html.ValidationMessageFor(f => f.Titlu, "", new { @class = "text-danger" });
+    <br />
+
+    @Html.Label("Autor", "Autor:");
+    @Html.TextBoxFor(f => f.Autor, null, new { placeholder = "Scrie Autorul Poeziei...", @class = "form-control" });
+    @Html.ValidationMessageFor(f => f.Autor, "", new { @class = "text-danger" });
+    <br />
+
+    @Html.Label("NrStrofe", "Număr Strofe:");
+    @Html.TextBoxFor(f => f.NrStrofe, null, new { placeholder = "Numărul de Strofe...", @class = "form-control" })
+    @Html.ValidationMessageFor(f => f.NrStrofe, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("Volum", "Volum Poezie: ")
+    @Html.DropDownListFor(f => f.VolumId, new SelectList(Model.VolumList, "Value", "Text"), "Alege un Volum", new { @class = "form-control" })
+    @Html.ValidationMessageFor(f => f.VolumId, "", new { @class = "text-danger" })
+    <br />
+
+    <button class="btn btn-primary" type="submit">Create</button>
+}
+
+
+@using (Html.BeginForm(actionName: "Index", controllerName: "Poezie", method: FormMethod.Get))
+{
+    <button class="btn btn-primary">Înapoi</button>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+Edit.cshtml
+------------------------------------------------------------
+@model Examen.Models.Poezie
+@{
+    ViewBag.Title = "Editare Informații Poezie ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title: @Model.Titlu</h2>
+
+@using (Html.BeginForm(actionName: "Edit", controllerName: "Poezie", method: FormMethod.Post))
+{
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+    @Html.HiddenFor(f => f.Id)
+
+
+    @Html.Label("Titlu", "Titlu:")
+    @Html.EditorFor(f => f.Titlu, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(f => f.Titlu, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("Autor", "Autor:")
+    @Html.EditorFor(f => f.Autor, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(f => f.Autor, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("NrStrofe", "Număr Premii:")
+    @Html.EditorFor(f => f.NrStrofe, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(f => f.NrStrofe, "", new { @class = "text-danger" })
+
+    @Html.Label("Volum", "Volum: ")
+    @Html.DropDownListFor(f => f.VolumId, new SelectList(Model.VolumList, "Value", "Text"), "Alege un Volum", new { @class = "form-control" })
+    @Html.ValidationMessageFor(f => f.VolumId, "", new { @class = "text-danger" })
+    <br />
+    <br />
+
+    <button class="btn btn-success" type="submit">Update</button>
+}
+
+
+@using (Html.BeginForm(actionName: "Index", controllerName: "Poezie", method: FormMethod.Get))
+{
+    <button class="btn btn-primary">Înapoi</button>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+SearchTitle.cshtml
+------------------------------------------------
+
+@{
+    ViewBag.Title = "SearchTitle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SearchTitle</h2>
+
+@foreach(var t in ViewBag.Titluri)
+{
+    <p>@t</p>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SearchVolume.cshtml
+---------------------------------------------------
+
+@{
+    ViewBag.Title = "SearchVolume";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SearchVolume</h2>
+
+@foreach (var t in ViewBag.Volume)
+{
+    <p>@t</p>
+}

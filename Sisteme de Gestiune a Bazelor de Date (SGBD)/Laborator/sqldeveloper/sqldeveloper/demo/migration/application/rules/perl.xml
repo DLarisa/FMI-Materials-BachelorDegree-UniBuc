@@ -1,0 +1,362 @@
+<rulesfile version="1.0" name="Rules for perl dbi calls" description="Search rules to identify perl dbi calls"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:noNamespaceSchemaLocation="scanner.xsd"
+>
+  <ruleset name="Perl DBI Calls" description="Perl DB" type="SYBASE" target="ORACLE" codetype="ctlib"
+    enable="true" source="perl"
+  >
+    <required>
+      <regex>
+        <expression><![CDATA[CTlib]]></expression>
+      </regex>
+    </required>
+    <rules>
+    <regex name="selectall_arrayref" description="This returns the results of the SELECT as an array of arrays">
+      <example><![CDATA[my $results = $dbh->selectall_arrayref(<<SQL);]]></example>
+      <expression><![CDATA[\$.*\-\>selectall_arrayref *\(.*\)]]></expression>
+    </regex>
+    <regex name="do" description="executes a statement when you don't care about the return value">
+      <example><![CDATA[$dbh->do("delete from mytable where duration < 5");]]></example>
+      <expression><![CDATA[\$.*\->do *\(.*\)]]></expression>
+    </regex>
+    <regex name="execute" description="">
+      <example><![CDATA[$sth->execute($recipient, $date, $time, $duration);]]></example>
+      <expression><![CDATA[\$.*\-\>execute *\(.*\)]]></expression>
+    </regex>
+    <regex name="prepare" description="">
+      <example><![CDATA[my $sth = $dbh->prepare(<<SQL);]]></example>
+      <expression><![CDATA[\$.*\-\>prepare *\(.*\)]]></expression>
+    </regex>
+    <regex name="ct_send" description="Send current command buffer to server">
+      <example><![CDATA[$status = $dbh->ct_send]]></example>
+      <expression><![CDATA[\$.*\-\>ct_send]]></expression>
+    </regex>
+    <regex name="fetch" description="fetch row array">
+      <example><![CDATA[while (my @row = $sth->fetchrow_array()) {   my ($recipient, $calldate, $calltime, $duration) = @row;   $calls{$recipient} += $duration;   print "Called $recipient on $calldate\n";}]]></example>
+      <expression><![CDATA[\$.*\-\>fetchrow_array *\(\)]]></expression>
+    </regex>
+    <regex name="append command to current buffer" description="">
+      <example><![CDATA[$status = $dbh->ct_command(type, buffer, len, option)]]></example>
+      <expression><![CDATA[\$.*\-\>command]]></expression>
+    </regex>
+    <regex name="connect" description="">
+      <example><![CDATA[my $dbh = DBI->connect("dbi:sybase:mydatabase", $user, $password);]]></example>
+      <expression><![CDATA[DBI\-\>connect *\(.*\)]]></expression>
+    </regex>
+    <regex name="ct_results" description="">
+      <example><![CDATA[$status = $dbh->ct_results($res_type [, $textBind])]]></example>
+      <expression><![CDATA[\$.*\-\>ct_results]]></expression>
+    </regex>
+    <regex name="connect" description="">
+      <example><![CDATA[DBI->trace(1);]]></example>
+      <expression><![CDATA[DBI\-\>trace *\(.*\)]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_HOSTNAME]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_ANSI_BINDS]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_PACKETSIZE]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_SEC_APPDEFINED]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_SEC_CHALLENGE]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_SEC_ENCRYPTION]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_SEC_NEGOTIATE]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_HAFAILOVER]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_SYB_LANG]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_SYB_CHARSET]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_SUCCEED]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_FAIL]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_CANCELED]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$dbh2 = $dbh->ct_cmd_alloc]]></example>
+      <expression><![CDATA[\$.*\-\>ct_cmd_alloc]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$dbh->ct_cancel($type)]]></example>
+      <expression><![CDATA[\$.*\-\>ct_cancel]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[\$.*\-\>ct_col_names]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[\$.*\-\>ct_col_types]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[\$.*\-\>ct_describe]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$old_cb = ct_callback($type, $cb_func)]]></example>
+      <expression><![CDATA[\$.*\-\>ct_callback]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$ret = $dbh->ct_param(%datafmt)]]></example>
+      <expression><![CDATA[\$.*\-\>ct_param]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[\$.*\-\>ct_cmd_alloc]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[\$.*\-\>ct_cancel]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$res_info = $dbh->ct_res_info($info_type)]]></example>
+      <expression><![CDATA[\$.*\-\>ct_res_info]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$rc = $dbh->ct_cmd_realloc]]></example>
+      <expression><![CDATA[\$.*\-\>ct_cmd_realloc]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[\$.*\-\>ct_options]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$ret = $dbh->ct_cursor($type, $name, $text, $option)]]></example>
+      <expression><![CDATA[\$.*\-\>ct_cursor]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$ret = $dbh->ct_dyn_prepare($sql)]]></example>
+      <expression><![CDATA[\$.*\-\>ct_dyn_prepare]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$ret = $dbh->ct_dyn_execute($arrayref);]]></example>
+      <expression><![CDATA[\$.*\-\>ct_dyn_execute]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$ret = $dbh->ct_dyn_dealloc();]]></example>
+      <expression><![CDATA[\$.*\-\>ct_dyn_dealloc]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$ret = cs_dt_info($action, $type, $item, $buf)]]></example>
+      <expression><![CDATA[\$.*\-\>cs_dt_info]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[($ret, $data) = $dbh->ct_get_data($colnum [, $maxsize])]]></example>
+      <expression><![CDATA[\$.*\-\>ct_get_data]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$ret = $dbh->ct_send_data($data, $size)]]></example>
+      <expression><![CDATA[\$.*\-\>ct_send_data]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$ret = $dbh->ct_data_info($action, $colnum [, %attr [, $dbh_2]])]]></example>
+      <expression><![CDATA[\$.*\-\>ct_data_info]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[@ret = $dbh->nsql($sql [, "ARRAY" | "HASH" ] [, &subroutine ]);]]></example>
+      <expression><![CDATA[\$.*\-\>nsql]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$ret = $dbh->ct_fetchable($restype)]]></example>
+      <expression><![CDATA[\$.*\-\>ct_fetchable]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$ret = $dbh->blk_init($table, $num_cols, $has_identity, $id_column)]]></example>
+      <expression><![CDATA[\$.*\-\>blk_init]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$ret = $dbh->blk_rowxfer($data)]]></example>
+      <expression><![CDATA[\$.*\-\>blk_rowxfer]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$ret = $dbh->blk_done($type, $rows)]]></example>
+      <expression><![CDATA[\$.*\-\>blk_done]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$dbh->blk_drop()]]></example>
+      <expression><![CDATA[\$.*\-\>blk_drop]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$dbh->ct_con_props(CS_SET, CS_NETIO, CS_DEFER_IO, CS_INT_TYPE);]]></example>
+      <expression><![CDATA[\$.*\-\>ct_con_props]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$ret = $dbh->as_describe($restype)]]></example>
+      <expression><![CDATA[\$.*\-\>as_describe]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$ret = $dbh->as_fetch]]></example>
+      <expression><![CDATA[\$.*\-\>as_fetch]]></expression>
+    </regex>
+    <regex>
+      <example><![CDATA[$ret = $dbh->as_fetchrow([$doAssoc])]]></example>
+      <expression><![CDATA[\$.*\-\>as_fetchrow]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_MESSAGE_CB]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_SERVERMSV_CB]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[DB_ERROR]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_IODESC]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_CANBENULL]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_HIDDEN]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_IDENTITY]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_INPUTVALUE]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_KEY]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_DATAFMT]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_VERSION_KEY]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_TIMESTAMP]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_UPDATEABLE]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_SET]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_GET]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_CLEAR]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_PENDING]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_NO_LIMIT]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_END_RESULTS]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_END_DATA]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_NUM_COMPUTES]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_NUMDATA]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_NUMORDERCOLS]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_ROW_COUNT]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_UNUSED]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_TIMEOUT]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_PENDING]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_COMPLETION_CB]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_CHAR_TYPE]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_FLOAT_TYPE]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_DATETIME_TYPE]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_MONEY_TYPE]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_ASYNC_IO]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_INT_TYPE]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_COMMAND]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_NETIO]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_DT_CONVFMT]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_DATES_LONG]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_MONTH]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_END_DATA]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_END_ITEM]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_BULK_LOGIN]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_BLK_ALL]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_BLK_BATCH]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_BLK_CANCEL]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_NETIO]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[CS_DEFER_IO]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[\$Sybase\:\:CTlib\:\:nsql_deadlock_retrycount]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[\$Sybase\:\:CTlib\:\:nsql_deadlock_retrysleep]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[\$Sybase\:\:CTlib\:\:nsql_deadlock_verbose]]></expression>
+    </regex>
+    <regex>
+      <expression><![CDATA[\$Sybase\:\:CTlib\:\:Att]]></expression>
+    </regex>
+    </rules>
+  </ruleset>
+</rulesfile>

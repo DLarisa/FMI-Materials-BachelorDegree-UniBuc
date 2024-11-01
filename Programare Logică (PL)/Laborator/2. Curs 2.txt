@@ -1,0 +1,26 @@
+tabul(0).
+tabul(N) :- N>0, write(' '), K is N-1, tabul(K).
+
+linie(0).
+linie(N) :- N>0, write(*), write(' '), K is N-1, linie(K).
+
+bradaux(0, _).
+bradaux(N, S) :- N>0, K is N-1, T is S+1, bradaux(K, T), nl, tabul(S), linie(N).
+
+brad(N) :- bradaux(N, 0).
+
+% Arbore
+vizual(nil, _).
+vizual(arb(R, S, D), N) :- K is N+2, vizual(D, K), tabul(N), write(R), nl, vizual(S, K).
+
+concat([], L, L).
+concat([H|T], L, [H|M]) :- concat(T, L, M).
+
+rsd(nil, []).
+rsd(arb(R, S, D), L) :- rsd(S, M), rsd(D, N), concat(M, N, K), L=[R|K].
+
+srd(nil, []).
+srd(arb(R, S, D), L) :- srd(S, M), srd(D, N), K=[R|N], concat(M, K, L).
+
+sdr(nil, []).
+sdr(arb(R, S, D), L) :- sdr(S, M), sdr(D, N), concat(M, N, K), concat(K, [R], L).

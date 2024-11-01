@@ -1,0 +1,5 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.businessinfo.BIResourceLocator parentClass="oracle.dbtools.crest.model.design.DesignObject">
+   <property name="url" dataType="java.lang.String" defaultValue="" xmlName="url" xmlType="element" getter="getUrl" setter="setUrl" reffered="false"/>
+   <roproperty name="contacts" dataType="interface java.util.List" getter="getContacts"/>
+</oracle.dbtools.crest.model.businessinfo.BIResourceLocator>

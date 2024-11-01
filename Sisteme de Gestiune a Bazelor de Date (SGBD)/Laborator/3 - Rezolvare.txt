@@ -1,0 +1,912 @@
+-- Laboratorul 3
+
+set serveroutput on;
+set echo off;
+set verify off;
+
+
+-- EXERCIȚII REZOLVATE PDF --
+-- Ex1 -> Cursor cu Variabile Simple
+DECLARE
+  v_nr    NUMBER(4);
+  v_nume  departments.department_name%TYPE;
+  
+  CURSOR c IS
+    SELECT department_name nume, COUNT(employee_id) nr
+    FROM departments d, employees e
+    WHERE d.department_id = e.department_id(+)
+    GROUP BY department_name;
+    
+BEGIN
+  OPEN c;
+  
+  LOOP
+    FETCH c INTO v_nume, v_nr;
+    EXIT WHEN c%NOTFOUND;
+    
+    IF v_nr = 0 THEN
+      DBMS_OUTPUT.PUT_LINE('In departamentul '|| v_nume|| ' nu lucreaza angajati');
+    ELSIF v_nr = 1 THEN
+      DBMS_OUTPUT.PUT_LINE('In departamentul '|| v_nume|| ' lucreaza un angajat');
+    ELSE
+      DBMS_OUTPUT.PUT_LINE('In departamentul '|| v_nume|| ' lucreaza '|| v_nr||' angajati');
+    END IF;
+    
+  END LOOP;
+  
+  CLOSE c;
+END;
+/
+
+
+-- Ex2 -> Cursor cu Structuri de Date Compuse
+DECLARE
+
+  TYPE tab_nume IS TABLE OF departments.department_name%TYPE;
+  TYPE tab_nr IS TABLE OF NUMBER(4);
+  
+  t_nr   tab_nr;
+  t_nume tab_nume;
+  
+  CURSOR c IS
+    SELECT department_name nume, COUNT(employee_id) nr
+    FROM departments d, employees e
+    WHERE d.department_id = e.department_id(+)
+    GROUP BY department_name;
+    
+BEGIN
+  OPEN c;
+  FETCH c BULK COLLECT INTO t_nume, t_nr;
+  CLOSE c;
+  
+  FOR i IN t_nume.FIRST..t_nume.LAST LOOP
+    IF t_nr(i) = 0 THEN
+      DBMS_OUTPUT.PUT_LINE('In departamentul '|| t_nume(i)|| ' nu lucreaza angajati');
+    ELSIF t_nr(i) = 1 THEN
+      DBMS_OUTPUT.PUT_LINE('In departamentul '||t_nume(i)|| ' lucreaza un angajat');
+    ELSE
+      DBMS_OUTPUT.PUT_LINE('In departamentul '|| t_nume(i)|| ' lucreaza '|| t_nr(i)||' angajati');
+    END IF;
+  END LOOP;
+  
+END; 
+/
+
+
+-- Ex3 -> Ciclu Cursor
+DECLARE
+  CURSOR c IS
+    SELECT department_name nume, COUNT(employee_id) nr
+    FROM departments d, employees e
+    WHERE d.department_id = e.department_id(+)
+    GROUP BY department_name;
+BEGIN
+  FOR i IN c LOOP
+    IF i.nr=0 THEN
+      DBMS_OUTPUT.PUT_LINE('In departamentul '|| i.nume || ' nu lucreaza angajati');
+    ELSIF i.nr=1 THEN
+      DBMS_OUTPUT.PUT_LINE('In departamentul '|| i.nume || ' lucreaza un angajat');
+    ELSE
+      DBMS_OUTPUT.PUT_LINE('In departamentul '|| i.nume|| ' lucreaza '|| i.nr||' angajati');
+    END IF;
+  END LOOP;
+END; 
+/
+
+
+-- Ex4 -> Ciclu Cursor cu Subcereri
+BEGIN
+  FOR i IN (SELECT department_name nume, COUNT(employee_id) nr
+            FROM departments d, employees e
+            WHERE d.department_id = e.department_id(+)
+            GROUP BY department_name) 
+  LOOP
+    IF i.nr = 0 THEN
+      DBMS_OUTPUT.PUT_LINE('In departamentul '|| i.nume || ' nu lucreaza angajati');
+    ELSIF i.nr = 1 THEN
+      DBMS_OUTPUT.PUT_LINE('In departamentul '|| i.nume || ' lucreaza un angajat');
+    ELSE
+      DBMS_OUTPUT.PUT_LINE('In departamentul '|| i.nume|| ' lucreaza '|| i.nr||' angajati');
+    END IF;
+  END LOOP;
+END; 
+/
+
+
+-- Ex5
+DECLARE
+  v_cod    employees.employee_id%TYPE;
+  v_nume   employees.last_name%TYPE;
+  v_nr     NUMBER(4);
+  
+  CURSOR c IS
+    SELECT sef.employee_id cod, MAX(sef.last_name) nume,
+           COUNT(*) nr
+    FROM employees sef, employees ang
+    WHERE ang.manager_id = sef.employee_id
+    GROUP BY sef.employee_id
+    ORDER BY nr DESC;
+    
+BEGIN
+  OPEN c;
+  
+  LOOP
+    FETCH c INTO v_cod, v_nume, v_nr;
+    EXIT WHEN c%ROWCOUNT > 3 OR c%NOTFOUND;
+    DBMS_OUTPUT.PUT_LINE('Managerul '|| v_cod || ' avand numele ' || v_nume || 
+                         ' conduce ' || v_nr ||' angajati');
+  END LOOP;
+  
+  CLOSE c;
+END; 
+/
+
+
+-- Ex6 -> Ciclu Cursor
+DECLARE
+  cursor c is
+    select sef.employee_id cod, max(sef.last_name) nume,
+           count(*) nr
+    from employees sef, employees ang
+    where ang.manager_id = sef.employee_id
+    group by sef.employee_id
+    order by nr desc;
+BEGIN
+  for i in c loop
+    exit when c%rowcount > 3 or c%notfound;
+    dbms_output.put_line('Managerul '|| i.cod || ' avand numele ' || i.nume || 
+                         ' conduce ' || i.nr ||' angajati');
+  end loop;
+END;
+/
+
+
+-- Ex7 -> Ciclu Cursor cu Subcereri
+DECLARE
+  poz number := 0;
+BEGIN
+  for i in (select sef.employee_id cod, max(sef.last_name) nume,
+                   count(*) nr
+            from employees sef join employees ang
+            on sef.employee_id = ang.manager_id
+            group by sef.employee_id
+            order by nr desc)
+  loop
+    dbms_output.put_line('Managerul '|| i.cod || ' avand numele ' || i.nume || 
+                         ' conduce ' || i.nr ||' angajati');
+    poz := poz + 1;
+    exit when poz = 3;
+  end loop;
+END;
+/
+
+
+-- Ex8 -> Cursor cu Parametru
+--- a) Cursor Simplu
+DECLARE
+  cursor c (parametru number) is 
+    select department_name nume, count(*) nr
+    from departments join employees using (department_id)
+    group by department_name
+    having count(*) > parametru;
+  
+  x        number := &nr_angajati;
+  v_nume   departments.department_name%type;
+  v_nr     number;  
+BEGIN
+  open c(x);
+  
+  loop
+    fetch c into v_nume, v_nr;
+    exit when c%notfound;
+    
+    dbms_output.put_line('In departamentul ' || v_nume || 
+                         ' lucreaza ' || v_nr || ' angajati.');
+
+  end loop;
+  
+END;
+/
+
+--- b) Ciclu Cursor
+DECLARE
+  cursor c (parametru number) is
+    select department_name nume, count(*) nr
+    from departments join employees using (department_id)
+    group by department_name
+    having count(*) > parametru;
+    
+  x number := &nr_ang;
+BEGIN
+  for i in c(x) loop
+    dbms_output.put_line('In departamentul ' || i.nume || 
+                         ' lucreaza ' || i.nr || ' angajati.');
+  end loop;
+END;
+/
+
+--- c) Ciclu Cursor cu Subcereri
+DECLARE
+  x number := &nr_ang;
+BEGIN
+  for i in (select department_name nume, count(*) nr
+            from departments join employees using (department_id)
+            group by department_name
+            having count(*) > x)
+  loop
+    dbms_output.put_line('In departamentul ' || i.nume || 
+                         ' lucreaza ' || i.nr || ' angajati.');
+  end loop;
+END;
+/
+
+
+-- Ex9 -> SELECT FOR UPDATE
+SELECT last_name, hire_date, salary
+FROM emp_lgd
+WHERE TO_CHAR(hire_date, 'yyyy') = 2000;
+
+DECLARE
+  CURSOR c IS
+    SELECT     *
+    FROM emp_lgd
+    WHERE TO_CHAR(hire_date, 'YYYY') = 2000 
+    FOR UPDATE OF salary NOWAIT;
+BEGIN
+  FOR i IN c LOOP
+    UPDATE emp_lgd 
+    SET salary = salary + 1000 
+    WHERE CURRENT OF c;
+  END LOOP;
+END; 
+/
+
+SELECT last_name, hire_date, salary
+FROM emp_lgd
+WHERE TO_CHAR(hire_date, 'yyyy') = 2000;
+
+ROLLBACK;
+
+
+-- Ex10
+--- a) Cursor Ciclu cu Subcereri
+BEGIN
+  FOR v_dept IN (SELECT department_id, department_name
+                 FROM departments
+                 WHERE department_id IN (10, 20, 30, 40))
+  LOOP
+    DBMS_OUTPUT.PUT_LINE('-------------------------------------');
+    DBMS_OUTPUT.PUT_LINE ('DEPARTAMENT '||v_dept.department_name);
+    DBMS_OUTPUT.PUT_LINE('-------------------------------------');
+    
+    FOR v_emp IN (SELECT last_name 
+                  FROM employees 
+                  WHERE department_id = v_dept.department_id)
+    LOOP
+      DBMS_OUTPUT.PUT_LINE (v_emp.last_name);
+    END LOOP;
+    
+    DBMS_OUTPUT.NEW_LINE;
+  END LOOP;
+END;
+/
+
+-- b) Expresii Cursor
+DECLARE
+  TYPE refcursor IS REF CURSOR; -- expresie cursor
+  CURSOR c_dept IS
+    SELECT department_name,
+           CURSOR (SELECT last_name 
+                   FROM employees e 
+                   WHERE e.department_id = d.department_id)
+    FROM departments d
+    WHERE department_id IN (10, 20, 30, 40);
+    
+  v_nume_dept   departments.department_name%TYPE;
+  v_cursor      refcursor;
+  v_nume_emp    employees.last_name%TYPE;
+BEGIN
+  OPEN c_dept;
+  
+  LOOP
+    FETCH c_dept INTO v_nume_dept, v_cursor;
+    EXIT WHEN c_dept%NOTFOUND;
+    
+    DBMS_OUTPUT.PUT_LINE('-------------------------------------');
+    DBMS_OUTPUT.PUT_LINE ('DEPARTAMENT ' || v_nume_dept);
+    DBMS_OUTPUT.PUT_LINE('-------------------------------------');
+      
+    LOOP
+      FETCH v_cursor INTO v_nume_emp;
+      EXIT WHEN v_cursor%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE (v_nume_emp);
+      END LOOP;
+    DBMS_OUTPUT.NEW_LINE;
+    END LOOP;
+    
+    CLOSE c_dept;
+END;
+/
+
+
+-- Ex11 -> Cursor Dinamic
+DECLARE
+  TYPE emp_tip IS REF CURSOR RETURN employees%ROWTYPE; 
+  -- sau --> TYPE emp_tip IS REF CURSOR; 
+  
+  v_emp      emp_tip;
+  v_optiune  NUMBER := &p_optiune;
+  v_ang      employees%ROWTYPE;
+BEGIN
+  IF v_optiune = 1 THEN
+    OPEN v_emp FOR 
+      SELECT * 
+      FROM employees;
+      
+  ELSIF v_optiune = 2 THEN
+    OPEN v_emp FOR 
+      SELECT * 
+      FROM employees 
+      WHERE salary 
+      BETWEEN 10000 AND 20000;
+      
+  ELSIF v_optiune = 3 THEN
+    OPEN v_emp FOR 
+      SELECT * 
+      FROM employees 
+      WHERE TO_CHAR(hire_date, 'YYYY') = 2000;
+      
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('Optiune incorecta.');
+  END IF;
+  
+  IF v_emp%ISOPEN THEN
+    LOOP
+      FETCH v_emp INTO v_ang;
+      EXIT WHEN v_emp%NOTFOUND;
+      DBMS_OUTPUT.PUT_LINE(v_ang.last_name);
+    END LOOP;
+  END IF;
+  
+  DBMS_OUTPUT.PUT_LINE('Au fost procesate '||v_emp%ROWCOUNT || ' linii');
+  CLOSE v_emp;
+END;
+/
+
+
+-- Ex12 -> Cursor Deschis cu Șir Dinamic
+DECLARE
+  TYPE empref IS REF CURSOR;
+  
+  v_emp    empref;
+  v_nr     INTEGER := &n;
+  v_cod    employees.employee_id%TYPE;
+  v_sal    employees.salary%TYPE;
+  v_comm   employees.commission_pct%TYPE;
+
+BEGIN
+  OPEN v_emp FOR 
+    'SELECT employee_id, salary, commission_pct ' || 
+    'FROM employees WHERE salary > :bind_var' 
+    USING v_nr; 
+  
+  LOOP
+    FETCH v_emp INTO v_cod, v_sal, v_comm;
+    EXIT WHEN v_emp%NOTFOUND;
+    IF v_comm IS NOT NULL THEN
+        DBMS_OUTPUT.PUT_LINE(v_cod||' ' ||v_sal||' '||v_comm);
+    ELSE
+        DBMS_OUTPUT.PUT_LINE(v_cod||' ' ||v_sal);
+    END IF;
+  END LOOP;
+  CLOSE v_emp;
+
+END; 
+/
+
+
+
+
+
+-- EXERCIȚII PROPUSE --
+-- Ex1
+--- a) Cursor Clasic
+DECLARE
+  cursor c1 is 
+    select job_title, job_id
+    from jobs;
+  
+  cursor c2 (param jobs.job_id%type) is 
+    select last_name, salary
+    from employees
+    where job_id = param;
+  
+  v_titlu    jobs.job_title%type;
+  v_id       jobs.job_id%type;
+  v_nume     employees.last_name%type;
+  v_salary   employees.salary%type;
+  nr         number := 0;
+BEGIN
+  open c1;
+  
+  loop
+    fetch c1 into v_titlu, v_id;
+    exit when c1%notfound;
+    
+    dbms_output.put_line('Jobul: ' || v_titlu);
+    dbms_output.put_line('----------------------------');
+    
+    nr := 0;
+    open c2(v_id);
+    loop
+      fetch c2 into v_nume, v_salary;
+      exit when c2%notfound;
+      dbms_output.put_line('Angajat: ' || v_nume ||
+                           ', ' || v_salary);
+      nr := nr + 1;
+    end loop;
+    close c2;
+    
+    if nr = 0 then
+      dbms_output.put_line('Nu exista Angajati.');
+    end if;
+    dbms_output.new_line;
+    
+  end loop;
+  
+  close c1;
+END;
+/
+
+
+--- b) Ciclu Cursor
+DECLARE
+  cursor c1 is 
+    select job_title, job_id
+    from jobs;
+  
+  cursor c2 (param jobs.job_id%type) is 
+    select last_name, salary
+    from employees
+    where job_id = param;
+  
+  nr         number := 0;
+BEGIN
+  for i in c1 loop
+    dbms_output.put_line('Jobul: ' || i.job_title);
+    dbms_output.put_line('----------------------------');
+    
+    nr := 0;
+    for j in c2(i.job_id) loop
+      dbms_output.put_line('Angajat: ' || j.last_name ||
+                           ', ' || j.salary);
+      nr := nr + 1;
+    end loop;
+    
+    if nr = 0 then
+      dbms_output.put_line('Nu exista Angajati.');
+    end if;
+    dbms_output.new_line;
+    
+  end loop;
+END;
+/
+
+
+--- c) Ciclu Cursor cu Subcereri
+DECLARE
+  v_titlu     jobs.job_title%type;
+  v_nume      employees.last_name%type;
+  v_salariu   employees.salary%type;
+  v_nr        number := 0;
+BEGIN
+  for i in (select job_title, job_id
+            from jobs)
+  loop
+    dbms_output.put_line('Jobul: ' || i.job_title);
+    dbms_output.put_line('----------------------------');
+    
+    for j in (select last_name, salary
+              from employees
+              where i.job_id = job_id)
+    loop
+      dbms_output.put_line('Angajat: ' || j.last_name ||
+                           ', ' || j.salary);
+      v_nr := v_nr + 1;
+    end loop;
+    
+    if v_nr = 0 then
+      dbms_output.put_line('Nu exista Angajati.');
+    end if;
+    
+    v_nr := 0;
+    dbms_output.new_line;
+  end loop;
+END;
+/
+
+
+--- d)Expresii Cursor
+DECLARE
+  type refcursor is ref cursor;
+  cursor c is 
+    select job_title, cursor (select last_name, salary
+                              from employees e
+                              where e.job_id = j.job_id)
+    from jobs j;
+    
+  type angajat is record (nume employees.last_name%type,
+                          salariu employees.salary%type); 
+  
+  type tablou is table of angajat
+  index by binary_integer;
+  
+  rc            refcursor;
+  titlu         jobs.job_title%type;
+  tablou_ang    tablou;
+BEGIN
+  open c;
+
+  loop 
+    fetch c into titlu, rc;
+    exit when c%notfound;
+    
+    dbms_output.put_line('Jobul: ' || titlu);
+    dbms_output.put_line('----------------------------');
+    
+    loop
+      fetch rc bulk collect into tablou_ang;
+      
+      if tablou_ang.count = 0 then
+       dbms_output.put_line('Nu exista Angajati.');
+      else
+        for i in tablou_ang.first..tablou_ang.last loop
+          dbms_output.put_line('Angajat: ' || tablou_ang(i).nume ||
+                               ', ' || tablou_ang(i).salariu);
+        end loop;
+      end if;
+      
+      exit when rc%notfound;
+    end loop;
+    dbms_output.new_line;
+  end loop;
+  
+  close c;
+END;
+/
+
+
+
+-- Ex2
+DECLARE
+  cursor c1 is 
+    select job_title, job_id
+    from jobs;
+  
+  cursor c2 (param jobs.job_id%type) is 
+    select last_name, salary, commission_pct
+    from employees
+    where job_id = param;
+  
+  nr           number := 0;
+  v_luna       number := 0;
+  
+  total_ang    number := 0;
+  total_luna   number := 0;
+BEGIN
+  for i in c1 loop
+    dbms_output.put_line('Jobul: ' || i.job_title);
+    dbms_output.put_line('----------------------------');
+    
+    nr := 0;
+    v_luna := 0;
+    for j in c2(i.job_id) loop
+      nr := nr + 1;
+      dbms_output.put_line(nr || '. Angajat: ' || 
+                           j.last_name || ', ' || j.salary);
+      v_luna := v_luna + j.salary * (1 + nvl(j.commission_pct, 0));
+    end loop;
+    
+    if nr = 0 then
+      dbms_output.put_line('Nu exista Angajati.');
+    else
+      dbms_output.put_line('----------------------------');
+      dbms_output.put_line('Jobul are: ' || nr || ' angajati.');
+      dbms_output.put_line('Venituri Lunare: ' || v_luna);
+      dbms_output.put_line('Medie Lunara: ' || v_luna / nr);
+      
+      total_ang := total_ang + nr;
+      total_luna := total_luna + v_luna;
+    end if;
+    dbms_output.new_line;
+    
+  end loop;
+  
+  dbms_output.new_line;
+  dbms_output.put_line('Total Angajati: ' || total_ang);
+  dbms_output.put_line('Venituri Totale: ' || total_luna);
+  dbms_output.put_line('Medie Totala: ' || total_luna / total_ang);
+END;
+/
+
+
+
+-- Ex3
+DECLARE
+  cursor c_job is 
+    select job_title, job_id
+    from jobs;
+    
+  cursor c_emp (cod employees.job_id%type) is 
+    select last_name, salary, commission_pct
+    from employees
+    where cod = job_id;
+    
+  cursor c_sal is 
+    select sum(salary)
+    from employees;
+    
+  cursor c_com is 
+    select sum(nvl(commission_pct, 0))
+    from employees;
+    
+  job_t            jobs.job_title%type;
+  job_cod          jobs.job_id%type;
+  nume             employees.last_name%type;
+  salariu          employees.salary%type;
+  com              employees.commission_pct%type;
+  
+  v_ord            number := 1;
+  v_venit_job      number := 0;
+  v_nr_ang         number := 0;
+  v_venit_tot      number := 0;
+  v_salariu_job    number := 0;
+  v_comision_job   number := 0;
+  v_salariu_tot    number := 0;
+  v_comision_tot   number := 0;
+BEGIN
+  open c_job;
+  loop
+    fetch c_job into job_t, job_cod;
+    exit when c_job%notfound;
+    
+    v_ord := 1;
+    v_venit_job := 0;
+    dbms_output.put_line('Jobul: '|| job_t);
+    dbms_output.put_line('----------------------------');
+    
+    open c_emp(job_cod);
+    if c_emp%notfound 
+      then dbms_output.put_line('Nu sunt angajati.');
+    else
+      open c_sal;
+      fetch c_sal into v_salariu_tot;
+      close c_sal;
+      
+      open c_com;
+      fetch c_com into v_comision_tot;
+      close c_com;
+      
+      loop
+        fetch c_emp into nume, salariu, com;
+        exit when c_emp%notfound;
+  	
+        dbms_output.put_line(v_ord || '. Angajatul: '||
+                             nume || ' are salariul '||
+                             salariu || ' si comisionul ' ||
+                             nvl(com, 0)||', iar salariul reprezinta '
+                             || round(salariu / v_salariu_tot, 2) || 
+                             ' comisionul reprezinta '|| 
+                             round(nvl(com, 0) / v_comision_tot, 2));
+  	
+        v_ord := v_ord + 1;
+        v_venit_job := v_venit_job + salariu * (1 + nvl(com, 0));
+        v_nr_ang := v_nr_ang + 1;
+        v_venit_tot := v_venit_tot + v_venit_job;
+      end loop;
+      
+      v_ord := v_ord - 1;
+      dbms_output.put_line('Numarul Ang: '|| v_ord || 
+                          '. Valoare veniturilor lunare: ' 
+                          || v_venit_job || '. Media este ' 
+                          || round(v_venit_job / v_ord, 2));
+      dbms_output.put_line('-----------------------------------------------------------');
+      close c_emp;
+    end if;
+    
+  end loop;
+  close c_job;
+  dbms_output.put_line('Numarul total de angajatii: ' || v_nr_ang 
+                       || '. Venitul total: ' || v_venit_tot || 
+                       '. Valoarea medie a veniturilor: ' || 
+                       round(v_venit_tot / v_nr_ang, 2));
+END;
+/
+
+
+
+-- Ex4
+DECLARE
+  cursor c1 is 
+    select job_title, job_id
+    from jobs;
+  
+  cursor c2 (param jobs.job_id%type) is 
+    select last_name, salary
+    from employees
+    where job_id = param
+    order by salary desc;
+  
+  v_titlu    jobs.job_title%type;
+  v_id       jobs.job_id%type;
+  v_nume     employees.last_name%type;
+  v_salary   employees.salary%type;
+  nr         number := 0;
+BEGIN
+  open c1;
+  
+  loop
+    fetch c1 into v_titlu, v_id;
+    exit when c1%notfound;
+    
+    dbms_output.put_line('Jobul: ' || v_titlu);
+    dbms_output.put_line('----------------------------');
+    
+    nr := 0;
+    open c2(v_id);
+    loop
+      fetch c2 into v_nume, v_salary;
+      exit when c2%notfound;
+      dbms_output.put_line('Angajat: ' || v_nume ||
+                           ', ' || v_salary);
+      nr := nr + 1;
+      exit when nr = 5;
+    end loop;
+    close c2;
+    
+    if nr < 5 then
+      dbms_output.put_line('Mai Putin de 5 Angajati');
+    end if;
+    dbms_output.new_line;
+    
+  end loop;
+  
+  close c1;
+END;
+/
+
+
+
+-- Ex5
+DECLARE
+  cursor c1 is 
+    select job_title, job_id
+    from jobs;
+  
+  cursor c2 (param jobs.job_id%type) is 
+    select last_name, salary
+    from employees
+    where job_id = param
+    order by salary desc;
+  
+  v_titlu      jobs.job_title%type;
+  v_id         jobs.job_id%type;
+  v_nume       employees.last_name%type;
+  v_salary     employees.salary%type;
+  v_sal_vechi  v_salary%type := 0;
+  nr           number := 0;
+BEGIN
+  open c1;
+  
+  loop
+    fetch c1 into v_titlu, v_id;
+    exit when c1%notfound;
+    
+    dbms_output.put_line('Jobul: ' || v_titlu);
+    dbms_output.put_line('----------------------------');
+    
+    nr := 0;
+    v_sal_vechi := 0;
+    open c2(v_id);
+    loop
+      fetch c2 into v_nume, v_salary;
+      exit when c2%notfound;
+      dbms_output.put_line('Angajat: ' || v_nume ||
+                           ', ' || v_salary);
+      if v_sal_vechi != v_salary then
+        nr := nr + 1;
+        v_sal_vechi := v_salary;
+      end if;
+      exit when nr = 5;
+    end loop;
+    close c2;
+    
+    dbms_output.new_line;
+    
+  end loop;
+  
+  close c1;
+END;
+/
+
+
+
+
+
+-- TIPUL OBIECT --
+/*
+  Să se adauge o coloană "info" de tip tablou imbricat în
+  tabelul DEPT_***. Acest tablou are 2 componente în care,
+  pentru fiecare departament, sunt depuse codul unui angajat
+  și job-ul acestuia. Să se insereze o linie în tabelul imbricat.
+  Să se listeze codurile departamentelor și colecția angajaților
+  corespunzători.
+*/
+CREATE OR REPLACE TYPE rec_info_LGD 
+  IS OBJECT (cod_ang NUMBER(4), job VARCHAR2(35));
+/
+
+CREATE OR REPLACE TYPE dept_info_LGD 
+  IS TABLE OF rec_info_LGD;
+/
+
+CREATE TABLE dept_LGD AS
+  SELECT *
+  FROM departments;
+  
+ALTER TABLE dept_LGD
+ADD (info dept_info_LGD)
+NESTED TABLE info STORE AS info_tab;
+
+SET DESCRIBE DEPTH ALL LINENUM ON INDENT ON;
+
+DESC dept_LGD;
+
+UPDATE dept_LGD
+SET info = dept_info_LGD()
+WHERE department_id = 90;
+
+SELECT * FROM dept_spr0;
+
+INSERT INTO TABLE (SELECT info
+                   FROM dept_LGD
+                   WHERE department_id = 90)
+VALUES (100, 'MyEmp');
+
+SELECT d.department_id, t.*
+FROM dept_LGD d, TABLE (d.info) t;
+
+DECLARE
+  TYPE tip_tablou_index IS TABLE OF departments.department_id%type 
+    INDEX BY PLS_INTEGER;
+    
+  v_tabindex_deps    tip_tablou_index;
+  v_tabnest          dept_info_LGD;
+BEGIN
+  v_tabnest := dept_info_LGD();
+  SELECT department_id
+  BULK COLLECT INTO v_tabindex_deps
+  FROM dept_LGD;
+  
+  FOR i IN v_tabindex_deps.FIRST..v_tabindex_deps.LAST LOOP
+    IF v_tabindex_deps.EXISTS(i) THEN
+      DBMS_OUTPUT.PUT_LINE('Prelucram departamentul'
+                           || v_tabindex_deps(i));
+                             
+      SELECT rec_info_LGD(e.employee_id,j.job_title)
+      BULK COLLECT INTO v_tabnest
+      FROM employees e, jobs j
+      WHERE e.department_id = v_tabindex_deps(i)
+      AND e.job_id = j.job_id;
+
+      UPDATE dept_LGD
+      SET info = v_tabnest
+      WHERE department_id = v_tabindex_deps(i);
+    END IF;
+  END LOOP;
+COMMIT;
+END;
+/
+
+SELECT d.department_id, t.*
+FROM dept_LGD d, TABLE (d.info) t;

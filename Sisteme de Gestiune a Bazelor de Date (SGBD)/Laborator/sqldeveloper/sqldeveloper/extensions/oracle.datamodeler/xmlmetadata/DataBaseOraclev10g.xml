@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v10g.DataBaseOraclev10g parentClass="oracle.dbtools.crest.model.design.storage.oracle.v9i.DataBaseOraclev9i">
+   <collection name="sysAuxFiles" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="sysAuxFiles" itemXmlName="SysAuxFile" getter="getSysAuxFiles" createItem="createSysAuxFile"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v10g.DataBaseOraclev10g>

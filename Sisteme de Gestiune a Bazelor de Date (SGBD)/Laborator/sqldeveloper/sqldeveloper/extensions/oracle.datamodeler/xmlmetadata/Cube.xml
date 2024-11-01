@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.multidimensional.Cube parentClass="oracle.dbtools.crest.model.design.multidimensional.AbstractMDObject">
+   <property name="compressedcomposites" dataType="boolean" defaultValue="" xmlName="compressedcomposites" xmlType="element" getter="isCompressedComposites" setter="setCompressedComposites" reffered="false"/>
+   <property name="factEntity" dataType="oracle.dbtools.crest.model.design.ContainerObject" defaultValue="" xmlName="factEntity" xmlType="element" getter="getFactEntity" setter="setFactEntity" reffered="true"/>
+   <property name="fullCubeMaterialization" dataType="oracle.dbtools.crest.model.design.multidimensional.Slice" defaultValue="" xmlName="fullCubeMaterialization" xmlType="element" getter="getFullCubeMaterialization" setter="setFullCubeMaterialization" reffered="true"/>
+   <property name="partDimension" dataType="oracle.dbtools.crest.model.design.multidimensional.Dimension" defaultValue="" xmlName="partDimension" xmlType="element" getter="getPartDimension" setter="setPartDimension" reffered="true"/>
+   <property name="partHierarchy" dataType="oracle.dbtools.crest.model.design.multidimensional.Hierarchy" defaultValue="" xmlName="partHierarchy" xmlType="element" getter="getPartHierarchy" setter="setPartHierarchy" reffered="true"/>
+   <property name="partLevel" dataType="oracle.dbtools.crest.model.design.multidimensional.Level" defaultValue="" xmlName="partLevel" xmlType="element" getter="getPartLevel" setter="setPartLevel" reffered="true"/>
+   <property name="partitioned" dataType="boolean" defaultValue="" xmlName="partitioned" xmlType="element" getter="isPartitioned" setter="setPartitioned" reffered="false"/>
+   <property name="partitioningDescription" dataType="java.lang.String" defaultValue="" xmlName="partitioningDescription" xmlType="element" getter="getPartitioningDescription" setter="setPartitioningDescription" reffered="false"/>
+   <property name="useGlobalComposites" dataType="boolean" defaultValue="" xmlName="useGlobalComposites" xmlType="element" getter="isUseGlobalComposites" setter="setUseGlobalComposites" reffered="false"/>
+   <property name="virtual" dataType="boolean" defaultValue="" xmlName="virtual" xmlType="element" getter="isVirtual" setter="setVirtual" reffered="false"/>
+   <collection name="dimensions" dataType="java.util.List" xmlName="dimensions" itemXmlName="dimension" itemIsRef="true" getter="getDimensions" removeItem="removeDimension" addItem="addDimension" moveMethod="moveDimensionToIndex" />
+   <collection name="measures" dataType="java.util.List" xmlName="measures" itemXmlName="measure" getter="getMeasures" createItem="createAndAddMeasure" removeItem="removeMeasure" addItem="addMeasure" nativeList="true" orderTheList="true"/>
+   <removed_from_cube_collection name="slices" dataType="java.util.List" xmlName="slices" itemXmlName="slice" getter="getPrecalculatedSlices" createItem="createAndAddSlice" removeItem="removePrecalculatedSlice" addItem="addPrecalculatedSlice" nativeList="true" orderTheList="true"/>
+   <collection name="slices" dataType="java.util.List" xmlName="slices" itemXmlName="slice" getter="getPrecalculatedSlices" itemIsRef="true"  removeItem="removePrecalculatedSlice" addItem="addPrecalculatedSlice" nativeList="true" orderTheList="true"/>
+   <collection name="factContainers" dataType="java.util.List" xmlName="factContainers" itemXmlName="container" itemIsRef="true" getter="getFactEntities" nativeList="true" orderTheList="true"/>
+   <collection name="joins" dataType="java.util.List" xmlName="joins" itemXmlName="containerJoin" getter="getJoins" createItem="createAndAddFactEntitiesJoin" nativeList="true" orderTheList="true"/>
+   <roproperty name="allJoinattributes" dataType="interface java.util.List" getter="getAllJoinAttributes"/>
+   <roproperty name="dimensions" dataType="interface java.util.List" getter="getDimensions"/>
+   <roproperty name="dimensionsOrderList" dataType="interface java.util.List" getter="getDimensionsOrderList"/>
+   <roproperty name="editableFonts" dataType="interface java.util.List" getter="getEditableFonts"/>
+   <roproperty name="factEntities" dataType="interface java.util.List" getter="getFactEntities"/>
+   <roproperty name="fontObject" dataType="oracle.dbtools.crest.model.design.FontObject" getter="getFontObject"/>
+   <roproperty name="joins" dataType="interface java.util.List" getter="getJoins"/>
+   <roproperty name="measureByName" dataType="oracle.dbtools.crest.model.design.multidimensional.Measure" getter="getMeasureByName"/>
+   <roproperty name="measureForAttribute" dataType="oracle.dbtools.crest.model.design.multidimensional.Measure" getter="getMeasureForAttribute"/>
+   <roproperty name="measures" dataType="interface java.util.List" getter="getMeasures"/>
+   <roproperty name="precalculatedSlices" dataType="interface java.util.List" getter="getPrecalculatedSlices"/>
+   <roproperty name="rollUpLink" dataType="oracle.dbtools.crest.model.design.multidimensional.RollupLink" getter="getRollUpLink"/>
+   <roproperty name="sqLDefinitions" dataType="interface java.util.List" getter="getSQLDefinitions"/>
+</oracle.dbtools.crest.model.design.multidimensional.Cube>

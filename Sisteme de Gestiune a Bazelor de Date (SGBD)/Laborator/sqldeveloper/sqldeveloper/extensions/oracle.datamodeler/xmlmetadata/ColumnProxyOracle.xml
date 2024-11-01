@@ -1,0 +1,26 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.ColumnProxyOracle parentClass="oracle.dbtools.crest.model.design.storage.ColumnProxy">
+   <property name="defaultValue" dataType="java.lang.String" defaultValue="" xmlName="defaultValue" xmlType="element" getter="getDefaultValue" setter="setDefaultValue" reffered="false"/>
+   <property name="deferrable" dataType="java.lang.String" defaultValue="NO" xmlName="deferrable" xmlType="element" getter="getDeferrable" setter="setDeferrable" reffered="false"/>
+   <property name="enable" dataType="java.lang.String" defaultValue="YES" xmlName="enable" xmlType="element" getter="getEnable" setter="setEnable" reffered="false"/>
+   <property name="exceptionsTable" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableProxyOracle" defaultValue="" xmlName="exceptionsTable" xmlType="element" getter="getExceptionsTable" setter="setExceptionsTable" reffered="true"/>
+   <property name="initially" dataType="java.lang.String" defaultValue="IMMEDIATE" xmlName="initially" xmlType="element" getter="getInitially" setter="setInitially" reffered="false"/>
+   <property name="nncDeferrable" dataType="java.lang.String" defaultValue="NO" xmlName="nncDeferrable" xmlType="element" getter="getNncDeferrable" setter="setNncDeferrable" reffered="false"/>
+   <property name="nncEnable" dataType="java.lang.String" defaultValue="YES" xmlName="nncEnable" xmlType="element" getter="getNncEnable" setter="setNncEnable" reffered="false"/>
+   <property name="nncExceptionsTable" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableProxyOracle" defaultValue="" xmlName="nncExceptionsTable" xmlType="element" getter="getNncExceptionsTable" setter="setNncExceptionsTable" reffered="true"/>
+   <property name="nncInitially" dataType="java.lang.String" defaultValue="IMMEDIATE" xmlName="nncInitially" xmlType="element" getter="getNncInitially" setter="setNncInitially" reffered="false"/>
+   <property name="nncname" dataType="java.lang.String" defaultValue="" xmlName="nncname" xmlType="element" getter="getNncName" setter="setNncName" reffered="false"/>
+   <property name="nncRely" dataType="java.lang.String" defaultValue="NO" xmlName="nncRely" xmlType="element" getter="getNncRely" setter="setNncRely" reffered="false"/>
+   <property name="nncValidate" dataType="java.lang.String" defaultValue="YES" xmlName="nncValidate" xmlType="element" getter="getNncValidate" setter="setNncValidate" reffered="false"/>
+   <property name="notnullConstraintnameChanged" dataType="boolean" defaultValue="false" xmlName="notnullConstraintnameChanged" xmlType="element" getter="isNotNullConstraintNameChanged" setter="setNotNullConstraintNameChanged" reffered="false"/>
+   <aa_property name="notnullConstraintOracle" dataType="oracle.dbtools.crest.model.design.storage.oracle.NotNullConstraintOracle" defaultValue="" xmlName="notnullConstraintOracle" xmlType="element" getter="getNotNullConstraintOracle" setter="setNotNullConstraintOracle" reffered="true"/>
+   <property name="validate" dataType="java.lang.String" defaultValue="YES" xmlName="validate" xmlType="element" getter="getValidate" setter="setValidate" reffered="false"/>
+   <property name="withRowId" dataType="java.lang.String" defaultValue="NO" xmlName="withRowId" xmlType="element" getter="getWithRowId" setter="setWithRowId" reffered="false"/>
+   <property name="autoIncrementUser" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserOracle" defaultValue="" xmlName="autoIncrementUser" xmlType="element" getter="getAutoIncrementUser" setter="setAutoIncrementUser" reffered="true"/>
+   <roproperty name="cluster" dataType="java.lang.String" getter="getCluster"/>
+   <roproperty name="colno" dataType="int" getter="getColno"/>
+   <roproperty name="comments" dataType="java.lang.String" getter="getComments"/>
+   <roproperty name="nullsAllowed" dataType="boolean" getter="getNullsAllowed"/>
+   <roproperty name="positionInCluster" dataType="int" getter="getPositionInCluster"/>
+   <roproperty name="tableProxy" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableProxyOracle" getter="getTableProxy"/>
+</oracle.dbtools.crest.model.design.storage.oracle.ColumnProxyOracle>

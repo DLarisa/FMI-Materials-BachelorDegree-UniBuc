@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.SynonymSqlServer parentClass="oracle.dbtools.crest.model.design.storage.sqlserver.AbstractStorageObjectSqlServer">
+   <roproperty name="procedure" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.StoredProcedureSqlServer" getter="getProcedure"/>
+   <property name="schema" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.SchemaSqlServer" defaultValue="" xmlName="schema" xmlType="element" getter="getSchema" setter="setSchema" reffered="true"/>
+   <roproperty name="table" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.TableProxySqlServer" getter="getTable"/>
+   <roproperty name="view" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.TableViewProxySqlServer" getter="getView"/>
+   <roproperty name="database" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.DataBaseSqlServer" getter="getDatabase"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.SynonymSqlServer>

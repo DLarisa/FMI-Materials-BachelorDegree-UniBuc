@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.multidimensional.Slice parentClass="oracle.dbtools.crest.model.design.multidimensional.AbstractMDObject">
+   <aa_property name="cube" dataType="oracle.dbtools.crest.model.design.multidimensional.Cube" defaultValue="" xmlName="cube" xmlType="element" getter="getCube" setter="setCube" reffered="true"/>
+   <property name="entity" dataType="oracle.dbtools.crest.model.design.logical.Entity" defaultValue="" xmlName="entity" xmlType="element" getter="getEntity" setter="setEntity" reffered="true"/>
+   <property name="fullyRealized" dataType="boolean" defaultValue="" xmlName="fullyRealized" xmlType="element" getter="isFullyRealized" setter="setFullyRealized" reffered="false"/>
+   <property name="readOnlySlice" dataType="boolean" defaultValue="" xmlName="readOnlySlice" xmlType="element" getter="isReadOnlySlice" setter="setReadOnlySlice" reffered="false"/>
+   <collection name="selectedMeasureWrappers" dataType="java.util.List" xmlName="selectedMeasureWrappers" itemXmlName="selectedMeasureWrapper" getter="getSelectedMeasureWrappers" createItem="createMeasureWrapper" applyList="applyMeasureWrappers"/>
+   <collection name="selectionCriterias" dataType="java.util.List" xmlName="selectionCriterias" itemXmlName="measureSelCriteria" getter="getSelectionCriterias" createItem="createSelectionCriteria" nativeList="true" orderTheList="true"/>
+   <collection name="selectedLevels" dataType="java.util.List" xmlName="selectedLevels" itemXmlName="selectedLevel" getter="getSelectedLevels" createItem="createSelectedLevel" applyList="applySelectedLevels" />
+   <roproperty name="allMeasureWrappers" dataType="interface java.util.List" getter="getAllMeasureWrappers"/>
+   <roproperty name="levels" dataType="interface java.util.List" getter="getLevels"/>
+   <roproperty name="sqLDefinitions" dataType="interface java.util.List" getter="getSQLDefinitions"/>
+   <roproperty name="selectedLevels" dataType="interface java.util.List" getter="getSelectedLevels"/>
+   <roproperty name="selectedMeasureWrappers" dataType="interface java.util.List" getter="getSelectedMeasureWrappers"/>
+   <roproperty name="selectionCriterias" dataType="interface java.util.List" getter="getSelectionCriterias"/>
+   <roproperty name="sliceMappings" dataType="interface java.util.List" getter="getSliceMappings"/>
+   <roproperty name="usedDimensions" dataType="interface java.util.List" getter="getUsedDimensions"/>
+   <roproperty name="whereClauseFor" dataType="java.lang.String" getter="getWhereClauseFor"/>
+</oracle.dbtools.crest.model.design.multidimensional.Slice>

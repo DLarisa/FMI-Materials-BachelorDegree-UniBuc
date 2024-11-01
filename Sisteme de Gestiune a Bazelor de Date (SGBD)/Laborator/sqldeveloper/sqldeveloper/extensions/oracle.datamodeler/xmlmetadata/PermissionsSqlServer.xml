@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.PermissionsSqlServer parentClass="oracle.dbtools.crest.model.design.storage.sqlserver.AbstractStorageObjectSqlServer">
+   <property name="asRole" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.RoleSqlServer" defaultValue="" xmlName="asRole" xmlType="element" getter="getAsRole" setter="setAsRole" reffered="true"/>
+   <property name="columnList" dataType="java.lang.String" defaultValue="" xmlName="columnList" xmlType="element" getter="getColumnList" setter="setColumnList" reffered="false" listOfRefs="true"/>
+   <property name="privileges" dataType="java.lang.String" defaultValue="" xmlName="privileges" xmlType="element" getter="getPrivileges" setter="setPrivileges" reffered="false" listOfRefs="true"/>
+   <property name="privilegesWithGrantOption" dataType="java.lang.String" defaultValue="" xmlName="privilegesWithGrantOption" xmlType="element" getter="getPrivilegesWithGrantOption" setter="setPrivilegesWithGrantOption" reffered="false" listOfRefs="true"/>
+   <roproperty name="role" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.RoleSqlServer" getter="getRole"/>
+   <property name="table" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.TableProxySqlServer" defaultValue="" xmlName="table" xmlType="element" getter="getTable" setter="setTable" reffered="true"/>
+   <roproperty name="user" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.UserSqlServer" getter="getUser"/>
+   <property name="view" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.TableViewProxySqlServer" defaultValue="" xmlName="view" xmlType="element" getter="getView" setter="setView" reffered="true"/>
+   <roproperty name="columns" dataType="java.util.ArrayList" getter="getColumns"/>
+   <bb_roproperty name="privilegesSet" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.PermissionsSqlServer$InlineList" getter="getPrivilegesSet"/>
+   <bb_roproperty name="privilegesWithGrantOptionSet" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.PermissionsSqlServer$InlineList" getter="getPrivilegesWithGrantOptionSet"/>
+   <roproperty name="privs" dataType="java.lang.String" getter="getPrivs"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.PermissionsSqlServer>

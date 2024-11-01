@@ -1,0 +1,26 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.multidimensional.SQLAttribute parentClass="java.lang.Object">
+   <property name="attrType" dataType="java.lang.String" defaultValue="" xmlName="attrType" xmlType="element" getter="getType" setter="setType" reffered="false"/>
+   <aa_property name="cube" dataType="oracle.dbtools.crest.model.design.multidimensional.Cube" defaultValue="" xmlName="cube" xmlType="element" getter="getCube" setter="setCube" reffered="true"/>
+   <property name="dataType" dataType="java.lang.String" defaultValue="" xmlName="dataType" xmlType="element" getter="getDataType" setter="setDataType" reffered="false"/>
+   <aa_property name="dimension" dataType="oracle.dbtools.crest.model.design.multidimensional.Dimension" defaultValue="" xmlName="dimension" xmlType="element" getter="getDimension" setter="setDimension" reffered="true"/>
+   <property name="hierarchy" dataType="oracle.dbtools.crest.model.design.multidimensional.Hierarchy" defaultValue="" xmlName="hierarchy" xmlType="element" getter="getHierarchy" setter="setHierarchy" reffered="true"/>
+   <property name="level" dataType="oracle.dbtools.crest.model.design.multidimensional.Level" defaultValue="" xmlName="level" xmlType="element" getter="getLevel" setter="setLevel" reffered="true"/>
+   <property name="measure" dataType="oracle.dbtools.crest.model.design.multidimensional.Measure" defaultValue="" xmlName="measure" xmlType="element" getter="getMeasure" setter="setMeasure" reffered="true"/>
+   <property name="name" dataType="java.lang.String" defaultValue="" xmlName="name" xmlType="element" getter="getName" setter="setName" reffered="false"/>
+   <property name="nameEditable" dataType="boolean" defaultValue="" xmlName="nameEditable" xmlType="element" getter="isNameEditable" setter="setNameEditable" reffered="false"/>
+   <property name="outPosition" dataType="int" defaultValue="" xmlName="outPosition" xmlType="element" getter="getOutPosition" setter="setOutPosition" reffered="false"/>
+   <aa_property name="slice" dataType="oracle.dbtools.crest.model.design.multidimensional.Slice" defaultValue="" xmlName="slice" xmlType="element" getter="getSlice" setter="setSlice" reffered="true"/>
+   <aa_property name="slowChangingAttribute" dataType="oracle.dbtools.crest.model.design.multidimensional.SlowChangingAttribute" defaultValue="" xmlName="slowChangingAttribute" xmlType="element" getter="getSlowChangingAttribute" setter="setSlowChangingAttribute" reffered="true"/>
+   <property name="sca_AttributeName" dataType="java.lang.String" defaultValue="" xmlName="sca_AttributeName" xmlType="element" getter="getSca_AttributeName" setter="setSca_AttributeName" reffered="false"/>
+   <property name="sca_AttributeID" dataType="java.lang.String" defaultValue="" xmlName="sca_AttributeID" xmlType="element" getter="getSca_AttributeID" setter="setSca_AttributeID" reffered="false"/>
+   <property name="mw_FunctID" dataType="java.lang.String" defaultValue="" xmlName="mw_FunctID" xmlType="element" getter="getMw_FunctID" setter="setMw_FunctID" reffered="false"/>
+   <property name="mw_measureID" dataType="java.lang.String" defaultValue="" xmlName="mw_measureID" xmlType="element" getter="getMw_MeasureID" setter="setMw_MeasureID" reffered="false"/>
+   <roproperty name="dataTypePreset" dataType="boolean" getter="isDataTypePreset"/>
+   <roproperty name="dimensionName" dataType="java.lang.String" getter="getDimensionName"/>
+   <roproperty name="idProvider" dataType="interface oracle.dbtools.crest.model.metadata.ID_ObjectPropertyTranslator" getter="getIdProvider"/>
+   <roproperty name="levelName" dataType="java.lang.String" getter="getLevelName"/>
+   <roproperty name="measureWrapper" dataType="oracle.dbtools.crest.model.design.multidimensional.Slice$MeasureWrapper" getter="getMeasureWrapper"/>
+   <roproperty name="sqLAWName" dataType="java.lang.String" getter="getSQLAWName"/>
+   <roproperty name="type" dataType="java.lang.String" getter="getType"/>
+</oracle.dbtools.crest.model.design.multidimensional.SQLAttribute>

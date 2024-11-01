@@ -1,0 +1,496 @@
+-- Laboratorul 1
+
+
+
+SET serveroutput ON;  -- pt afișare dbms
+SET echo OFF;         -- pt a nu se afișa codul la rularea unui script
+
+
+
+-- EXERCIȚII REZOLVATE PDF --
+-- Ex2
+<<principal>>
+DECLARE
+  v_client_id     NUMBER(4)   := 1600;
+  v_client_nume   VARCHAR2(50):= 'N1';
+  v_nou_client_id NUMBER(3)   := 500;
+BEGIN
+  <<secundar>>
+  DECLARE
+    v_client_id       NUMBER(4)    := 0;
+    v_client_nume     VARCHAR2(50) := 'N2';
+    v_nou_client_id   NUMBER(3)    := 300;
+    v_nou_client_nume VARCHAR2(50) := 'N3';
+  BEGIN
+    v_client_id            := v_nou_client_id;
+    principal.v_client_nume:= v_client_nume ||' '|| v_nou_client_nume; 
+    --poziția 1 
+  END; 
+  v_client_id:= (v_client_id *12)/10; 
+  --poziția 2 
+END; 
+/
+
+/* 
+  Rezolvare:
+  
+  v_client_id (poz1) = 300
+  v_client_nume (poz1) = 'N2'
+  v_nou_client_id (poz1) = 300
+  v_client_id (poz2) = 1920
+  v_client_nume (poz2) = 'N2 N3'
+*/
+
+
+
+-- Ex3
+-- a) Variabilă de Legătură
+variable var varchar2(20);
+BEGIN
+  :var := 'Invat PL/SQL.';
+END;
+/
+print var;
+
+-- b) Procedură din Pachet DBMS_OUTPUT
+BEGIN 
+  DBMS_OUTPUT.PUT_LINE('Invat PL/SQL'); 
+END;
+/
+
+
+
+-- Ex4
+DECLARE
+  v_dep departments.department_name%type;
+BEGIN
+  select department_name
+  into v_dep
+  from employees e, departments d 
+  where e.department_id = d.department_id
+  group by department_name
+  having count(*) = (select max(count(*))
+                     from employees
+                     group by department_id);
+  dbms_output.put_line('Departament: ' || v_dep);
+END;
+/
+
+
+
+-- Ex5
+VARIABLE var_dep varchar2(20);
+DECLARE
+  v_dep departments.department_name%type;
+BEGIN
+  select department_name
+  into v_dep
+  from employees e, departments d 
+  where e.department_id = d.department_id
+  group by department_name
+  having count(*) = (select max(count(*))
+                     from employees
+                     group by department_id);
+  dbms_output.put_line('Departament: ' || v_dep);
+  :var_dep := v_dep;
+END;
+/
+print var_dep;
+
+
+
+-- Ex6
+VARIABLE var_dep varchar2(20);
+DECLARE
+  v_numar number(3);
+BEGIN
+  select department_name, count(*)
+  into :var_dep, v_numar
+  from employees e, departments d 
+  where e.department_id = d.department_id
+  group by department_name
+  having count(*) = (select max(count(*))
+                     from employees
+                     group by department_id);
+  dbms_output.put_line('Departament: ' || :var_dep);
+  dbms_output.put_line('Nr Angajati: ' || v_numar);
+END;
+/
+
+
+
+-- Ex7
+SET VERIFY OFF    -- pt a nu se afișa codul la rulare atunci când acesta conține o variabilă declarată de la tastatură
+DECLARE
+  v_cod employees.employee_id%TYPE:=&p_cod;
+  v_bonus         NUMBER(8);
+  v_salariu_anual NUMBER(8);
+BEGIN
+  SELECT salary*12
+  INTO v_salariu_anual
+  FROM employees
+  WHERE employee_id  = v_cod;
+  
+  IF v_salariu_anual>=200001 THEN
+    v_bonus         :=20000;
+  ELSIF v_salariu_anual BETWEEN 100001 AND 200000 THEN
+    v_bonus:=10000;
+  ELSE
+    v_bonus:=5000;
+  END IF;
+  
+  DBMS_OUTPUT.PUT_LINE('Bonusul este ' || v_bonus);
+END;
+/ 
+
+
+
+-- Ex8
+DECLARE
+  var_cod    employees.employee_id%type := &var;
+  var_sal    employees.salary%type;
+  var_bonus  number(10);
+BEGIN
+  select salary*12
+  into var_sal
+  from employees
+  where employee_id = var_cod;
+  
+  case 
+    when var_sal >= 200001 then var_bonus := 20000;
+    when var_sal between 100001 and 200000 then var_bonus := 10000;
+    else var_bonus := 5000;
+  end case;
+  
+  dbms_output.put_line('Bonusul este ' || var_bonus);
+END;
+/
+
+
+
+-- Ex9
+-- CREATE TABLE EMP_LGD AS SELECT * FROM employees;
+DECLARE
+  v_cod_sal   emp_lgd.employee_id%TYPE   := &p_cod_sal;
+  v_cod_dept  emp_lgd.department_id%TYPE := &p_cod_dept;
+  v_procent   NUMBER(8)                  := &p_procent;
+BEGIN
+  UPDATE emp_lgd
+  SET department_id = v_cod_dept,
+      salary = salary + (salary * (v_procent / 100))
+  WHERE employee_id = v_cod_sal;
+  
+  IF SQL%ROWCOUNT = 0 THEN
+    DBMS_OUTPUT.PUT_LINE('Nu exista un angajat cu acest cod');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('Actualizare realizata');
+  END IF;
+
+END;
+/ 
+
+/*
+select *
+from emp_lgd
+where employee_id = 120;
+*/
+
+ROLLBACK;
+
+
+
+-- Ex10
+create table zile_lgd(id number(2) PRIMARY KEY, data DATE, nume_zi varchar(10));
+DECLARE
+  contor number(3) := 1;
+  v_data date;
+  maxim  number(2) := last_day(sysdate) - sysdate;
+BEGIN
+  LOOP
+    v_data := sysdate + contor;
+    insert into zile_lgd values(contor, v_data, to_char(v_data, 'Day'));
+    contor := contor + 1;
+    EXIT WHEN contor > maxim;
+  END LOOP;
+END;
+/
+
+select * 
+from zile_lgd;
+
+drop table zile_lgd;
+
+
+
+-- Ex11
+create table zile_lgd(id number(2) PRIMARY KEY, data DATE, nume_zi varchar(10));
+DECLARE
+  contor number(3) := 1;
+  v_data date;
+  maxim  number(2) := last_day(sysdate) - sysdate;
+BEGIN
+  WHILE contor <= maxim
+    v_data := sysdate + contor;
+    insert into zile_lgd values(contor, v_data, to_char(v_data, 'Day'));
+    contor := contor + 1;
+  END LOOP;
+END;
+/
+
+select * 
+from zile_lgd;
+
+drop table zile_lgd;
+
+
+
+-- Ex12
+create table zile_lgd(id number(2) PRIMARY KEY, data DATE, nume_zi varchar(10));
+DECLARE
+  v_data date;
+  maxim  number(2) := last_day(sysdate) - sysdate;
+BEGIN
+  FOR i in 1..maxim LOOP
+    v_data := sysdate + i;
+    insert into zile_lgd values(i, v_data, to_char(v_data, 'Day'));
+  END LOOP;
+END;
+/
+
+select * 
+from zile_lgd;
+
+drop table zile_lgd;
+
+
+
+-- Ex13
+-- Varianta 1
+DECLARE
+  i           positive := 1;
+  max_loop    positive := 10;
+BEGIN
+  LOOP
+    i := i + 1;
+    exit when i > max_loop;
+  END LOOP;
+  
+  i := 1;
+  dbms_output.put_line(i);
+END;
+/
+
+-- Varianta 2
+DECLARE
+  i           positive := 1;
+  max_loop    positive := 10;
+BEGIN
+  LOOP
+    i := i + 1;
+    if i > max_loop then goto eticheta1;
+    end if;
+  END LOOP;
+  
+  <<eticheta1>>
+  i := 1;
+  dbms_output.put_line(i);
+END;
+/
+
+
+
+-- EXERCIȚII PROPUSE --
+-- Ex2
+-- b)
+create table noiembrie_lgd (id number, data date);
+
+DECLARE
+  v_nr    number := 0;
+  v_data  date := to_date('1/10/2020', 'dd/mm/yyyy');
+BEGIN
+  for i in 1..30 loop  -- pt fiecare zi a lunii nov
+  
+    select count(*) -- selectez nr de împrumuturi pe fiecare zi
+    into v_nr
+    from rental
+    where i = to_char(book_date, 'dd');
+    
+    insert into noiembrie_lgd values(v_nr, v_data + i - 1);
+  end loop;
+END;
+/
+
+select *
+from noiembrie_lgd;
+
+drop table noiembrie_lgd;
+
+
+
+-- Ex3
+DECLARE
+  v_nume     varchar2(30) := '&nume';
+  nr_membrii number;
+  v_nr_film  number;
+BEGIN
+  select count(*)  
+  into nr_membrii
+  from member
+  where lower(last_name) = lower(v_nume);
+  
+  if nr_membrii = 0 
+    then RAISE_APPLICATION_ERROR(-20000, 'Nu exista membru cu numele dat');
+  elsif nr_membrii > 1
+    then RAISE_APPLICATION_ERROR(-20002, 'Exista mai multi membri cu acelasi nume');
+  else 
+      select count(*)
+      into v_nr_film
+      from rental r, member m
+      where lower(m.last_name) = lower(v_nume) and m.member_id = r.member_id;
+      
+      dbms_output.put_line(initcap(v_nume) || ' a imprumutat ' || v_nr_film || ' filme.');
+  end if;
+/*
+EXCEPTION    --> nu merge aici pt că sql ia prima chestie pe care o găsește
+  when too_many_rows THEN
+  RAISE_APPLICATION_ERROR(-20002, 'Exista mai multi membri cu acelasi nume');
+*/
+END;
+/
+
+
+
+-- Ex4
+DECLARE
+  v_nume     varchar2(30) := '&nume';
+  v_nr_nume  number;
+  nr_filme   number;
+  v_filme    number;
+  v_id       member.member_id%type;
+  nr_membrii number;
+  v_nr_film  number;
+BEGIN
+  select count(*)  
+  into nr_membrii
+  from member
+  where lower(last_name) = lower(v_nume);
+  
+  if nr_membrii > 1
+    then RAISE_APPLICATION_ERROR(-20000, 'Exista mai multi membri cu acelasi nume');
+  else 
+    select member_id  -- tb să am un singur om, iau id-ul
+    into v_id
+    from member
+    where lower(last_name) = lower(v_nume);
+  
+    select count(distinct title_id)   -- câte filme distincte sunt în total
+    into nr_filme
+    from rental;
+  
+    select count(distinct title_id)   -- câte filme distincte a împrumutat o persoană
+    into v_filme
+    from rental
+    where member_id = v_id;
+  
+    select count(*)       -- nr filme împrumutate în total de o persoană
+    into v_nr_film
+    from rental
+    where member_id = v_id;
+      
+    dbms_output.put_line(initcap(v_nume) || ' a imprumutat ' || v_nr_film || ' filme.');
+      
+    case
+      when 0.75 * nr_filme < v_filme 
+        then dbms_output.put_line('Categoria 1');
+      when 0.5 * nr_filme < v_filme and 0.75 * nr_filme > v_filme 
+        then dbms_output.put_line('Categoria 2');
+      when 0.25 * nr_filme < v_filme and 0.5 * nr_filme > v_filme 
+        then dbms_output.put_line('Categoria 3');
+      else dbms_output.put_line('Categoria 4');
+    end case;
+
+  end if;
+
+EXCEPTION 
+  WHEN NO_DATA_FOUND THEN
+    DBMS_OUTPUT.PUT_LINE('Nu exista un membru cu numele '|| v_nume);
+END;
+/
+
+/*
+insert into member values(12, 'Ngao', 'Ana', '', '', 0, '01-01-2000');
+rollback;
+*/
+
+
+
+-- Ex5
+create table member_lgd as select * from member;
+
+alter table member_lgd
+add DISCOUNT number;
+
+select *
+from member_lgd;
+
+DECLARE
+  v_cod        member.member_id%type := &cod_membru;
+  v_nr_nume    number;
+  nr_filme     number;
+  v_filme      number;
+  nr_membrii   number;
+  v_nr_film    number;
+BEGIN
+  select count(*)  
+  into nr_membrii
+  from member
+  where member_id = v_cod;
+  
+  if nr_membrii > 1
+    then RAISE_APPLICATION_ERROR(-20000, 'Exista mai multi membri cu acest cod.');
+  elsif nr_membrii = 0
+    then RAISE_APPLICATION_ERROR(-20001, 'Nu exista niciun membru cu acest cod.');
+  else 
+  
+    select count(distinct title_id)   -- câte filme distincte sunt în total
+    into nr_filme
+    from rental;
+  
+    select count(distinct title_id)   -- câte filme distincte a împrumutat o persoană
+    into v_filme
+    from rental
+    where member_id = v_cod;
+  
+    select count(*)   -- nr filme împrumutate în total de o persoană
+    into v_nr_film
+    from rental
+    where member_id = v_cod;
+      
+    dbms_output.put_line(v_cod || ' a imprumutat ' || v_nr_film || ' filme.');
+      
+    case
+      when 0.75 * nr_filme < v_filme 
+        then dbms_output.put_line('Categoria 1');
+        update member_lgd set discount = 0.1
+        where member_id = v_cod;
+      when 0.5 * nr_filme < v_filme and 0.75 * nr_filme > v_filme 
+        then dbms_output.put_line('Categoria 2');
+        update member_lgd set discount = 0.05
+        where member_id = v_cod;
+      when 0.25 * nr_filme < v_filme and 0.5 * nr_filme > v_filme 
+        then dbms_output.put_line('Categoria 3');
+        update member_lgd set discount = 0.03
+        where member_id = v_cod;
+      else dbms_output.put_line('Categoria 4');
+    end case;
+
+  end if;
+/*
+EXCEPTION   --> NU MERGE AICI (probabil pt că am cod, în loc de nume)
+  WHEN NO_DATA_FOUND THEN
+    DBMS_OUTPUT.PUT_LINE('Nu exista un membru cu codul '|| v_cod);
+*/
+END;
+/
+
+drop table member_lgd;

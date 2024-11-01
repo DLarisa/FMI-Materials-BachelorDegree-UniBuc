@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v10g.TemporaryTablespaceOraclev10g parentClass="oracle.dbtools.crest.model.design.storage.oracle.v9i.TemporaryTablespaceOraclev9i">
+   <property name="fileType" dataType="java.lang.String" defaultValue="" xmlName="fileType" xmlType="element" getter="getFileType" setter="setFileType" reffered="false"/>
+   <property name="oracleManagedFiles" dataType="java.lang.String" defaultValue="NO" xmlName="oracleManagedFiles" xmlType="element" getter="getOracleManagedFiles" setter="setOracleManagedFiles" reffered="false"/>
+   <property name="tableSpaceGroup" dataType="java.lang.String" defaultValue="" xmlName="tableSpaceGroup" xmlType="element" getter="getTableSpaceGroup" setter="setTableSpaceGroup" reffered="false"/>
+   <collection name="dataFiles" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="dataFiles" itemXmlName="DataFile" getter="getDFiles" createItem="createDataFile"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v10g.TemporaryTablespaceOraclev10g>

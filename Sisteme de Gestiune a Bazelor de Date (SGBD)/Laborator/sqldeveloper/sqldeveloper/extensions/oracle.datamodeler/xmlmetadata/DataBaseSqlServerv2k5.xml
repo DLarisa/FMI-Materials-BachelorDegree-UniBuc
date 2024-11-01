@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.DataBaseSqlServerv2k5 parentClass="oracle.dbtools.crest.model.design.storage.sqlserver.DataBaseSqlServer">
+   <roproperty name="partitionFunctions" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getPartitionFunction"/>
+   <roproperty name="tablesList" dataType="interface java.util.List" getter="getTablesList"/>
+   <collection name="usedDistinctTypes" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="usedDistinctTypes" itemXmlName="UsedDistinctType" getter="getUsedDistinctTypes" createItem="createUsedDistinctType"/>
+   <collection name="userDefinedDomains" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="userDefinedDomains" itemXmlName="UserDefinedDomain" getter="getUserDefinedDomains" createItem="createUserDefinedDomain"/>
+   <roproperty name="xmlSchemaCollections" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getXmlSchemaCollection"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.DataBaseSqlServerv2k5>

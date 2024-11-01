@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.ClusterOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="cache" dataType="java.lang.String" defaultValue="NO" xmlName="cache" xmlType="element" getter="getCache" setter="setCache" reffered="false"/>
+   <property name="degree" dataType="int" defaultValue="0" xmlName="degree" xmlType="element" getter="getDegree" setter="setDegree" reffered="false"/>
+   <property name="hashExpression" dataType="java.lang.String" defaultValue="" xmlName="hashExpression" xmlType="element" getter="getHashExpression" setter="setHashExpression" reffered="false"/>
+   <property name="hashKeys" dataType="int" defaultValue="0" xmlName="hashKeys" xmlType="element" getter="getHashKeys" setter="setHashKeys" reffered="false"/>
+   <property name="indexed" dataType="java.lang.String" defaultValue="YES" xmlName="indexed" xmlType="element" getter="getIndexed" setter="setIndexed" reffered="false"/>
+   <property name="measureUnit" dataType="java.lang.String" defaultValue="" xmlName="measureUnit" xmlType="element" getter="getMeasureUnit" setter="setMeasureUnit" reffered="false"/>
+   <property name="parallel" dataType="java.lang.String" defaultValue="NO" xmlName="parallel" xmlType="element" getter="getParallel" setter="setParallel" reffered="false"/>
+   <property name="rowDependency" dataType="java.lang.String" defaultValue="NO" xmlName="rowDependency" xmlType="element" getter="getRowDependency" setter="setRowDependency" reffered="false"/>
+   <property name="segment" dataType="oracle.dbtools.crest.model.design.storage.oracle.SegmentOracle" defaultValue="" xmlName="segment" xmlType="element" getter="getSegment" setter="setSegment" reffered="true"/>
+   <property name="singleTable" dataType="java.lang.String" defaultValue="NO" xmlName="singleTable" xmlType="element" getter="getSingleTable" setter="setSingleTable" reffered="false"/>
+   <property name="size" dataType="int" defaultValue="0" xmlName="size" xmlType="element" getter="getSize" setter="setSize" reffered="false"/>
+   <property name="tableSpace" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle" defaultValue="" xmlName="tableSpace" xmlType="element" getter="getTableSpace" setter="setTableSpace" reffered="true"/>
+   <property name="user" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserOracle" defaultValue="" xmlName="user" xmlType="element" getter="getUser" setter="setUser" reffered="true"/>
+   <roproperty name="columns" dataType="interface java.util.List" getter="getColumns"/>
+   <collection name="columnsCollection" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="columnsCollection" itemXmlName="Column" getter="getColumnsCollection" createItem="createColumn"/>
+   <roproperty name="indexes" dataType="interface java.util.List" getter="getIndexes"/>
+   <collection name="indexesCollection" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="indexesCollection" itemXmlName="Index" getter="getIndexesCollection" createItem="createIndex"/>
+</oracle.dbtools.crest.model.design.storage.oracle.ClusterOracle>

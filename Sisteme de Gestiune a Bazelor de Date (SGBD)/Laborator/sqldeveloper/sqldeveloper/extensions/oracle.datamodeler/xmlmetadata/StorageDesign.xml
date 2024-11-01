@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.StorageDesign parentClass="oracle.dbtools.crest.model.AbstractDesign">
+   <aa_property name="cloneOperation" dataType="boolean" defaultValue="" xmlName="cloneOperation" xmlType="element" getter="isCloneOperation" setter="setCloneOperation" reffered="false"/>
+   <aa_property name="clonedSite" dataType="oracle.dbtools.crest.model.design.storage.RDBMSSite" defaultValue="" xmlName="clonedSite" xmlType="element" getter="getClonedSite" setter="setClonedSite" reffered="true"/>
+   <aa_property name="initialReadBackDone" dataType="boolean" defaultValue="" xmlName="initialReadBackDone" xmlType="element" getter="isInitialReadBackDone" setter="setInitialReadBackDone" reffered="false"/>
+   <aa_property name="loadedVersion" dataType="float" defaultValue="" xmlName="loadedVersion" xmlType="element" getter="getLoadedVersion" setter="setLoadedVersion" reffered="false"/>
+   <aa_property name="loading" dataType="boolean" defaultValue="" xmlName="loading" xmlType="element" getter="isLoading" setter="setLoading" reffered="false"/>
+   <aa_property name="objectListChanged" dataType="boolean" defaultValue="" xmlName="objectListChanged" xmlType="element" getter="isObjectListChanged" setter="setObjectListChanged" reffered="false"/>
+   <aa_property name="open" dataType="boolean" defaultValue="" xmlName="open" xmlType="element" getter="isOpen" setter="setOpen" reffered="false"/>
+   <aa_property name="rdBMSSite" dataType="oracle.dbtools.crest.model.design.storage.RDBMSSite" defaultValue="" xmlName="rdBMSSite" xmlType="element" getter="getRDBMSSite" setter="setRDBMSSite" reffered="true"/>
+   <property name="siteID" dataType="java.lang.String" defaultValue="" xmlName="siteID" xmlType="element" getter="getSiteID" setter="setSiteID" reffered="false"/>
+   <property name="siteName" dataType="java.lang.String" defaultValue="" xmlName="siteName" xmlType="element" getter="getSiteName" setter="setSiteName" reffered="false"/>
+   <property name="siteType" dataType="int" defaultValue="" xmlName="siteType" xmlType="element" getter="getSiteType" setter="setSiteType" reffered="false"/>
+   <aa_property name="tempModel" dataType="boolean" defaultValue="" xmlName="tempModel" xmlType="element" getter="isTempModel" setter="setTempModel" reffered="false"/>
+   <processing beforeTransformExt="openStorageDesign" createAllExtItemsFirst="true"/>   
+   <roproperty name="closing" dataType="boolean" getter="isClosing"/>
+   <roproperty name="nameSubstitutionTypeSelected" dataType="boolean" getter="isNameSubstitutionTypeSelected"/>
+   <roproperty name="nullInstance" dataType="boolean" getter="isNullInstance"/>
+   <roproperty name="allSetsList" dataType="interface java.util.List" getter="getAllSetsList"/>
+   <roproperty name="collectionTypeProxySet" dataType="oracle.dbtools.crest.model.design.storage.CollectionTypeProxySet" getter="getCollectionTypeProxySet"/>
+   <roproperty name="columnProxySet" dataType="oracle.dbtools.crest.model.design.storage.ColumnProxySet" getter="getColumnProxySet"/>
+   <roproperty name="correspondenceMap" dataType="interface java.util.Map" getter="getCorrespondenceMap"/>
+   <roproperty name="ddLAutoIncrementColumnGenerator" dataType="oracle.dbtools.crest.exports.ddl.DDLGenerator" getter="getDDLAutoIncrementColumnGenerator"/>
+   <roproperty name="ddLCollectionTypeGenerator" dataType="oracle.dbtools.crest.exports.ddl.DDLGenerator" getter="getDDLCollectionTypeGenerator"/>
+   <roproperty name="ddLCompileTypeGenerator" dataType="oracle.dbtools.crest.exports.ddl.DDLGenerator" getter="getDDLCompileTypeGenerator"/>
+   <roproperty name="ddLdropGenerator" dataType="oracle.dbtools.crest.exports.ddl.DDLGenerator" getter="getDDLDropGenerator"/>
+   <roproperty name="ddLEndScriptGenerators" dataType="interface java.util.List" getter="getDDLEndScriptGenerators"/>
+   <roproperty name="ddLGenerator" dataType="oracle.dbtools.crest.exports.ddl.DDLGenerator" getter="getDDLGenerator"/>
+   <roproperty name="ddLIncompleteTypeGenerator" dataType="oracle.dbtools.crest.exports.ddl.DDLGenerator" getter="getDDLIncompleteTypeGenerator"/>
+   <roproperty name="ddLScopeGenerator" dataType="oracle.dbtools.crest.exports.ddl.DDLGenerator" getter="getDDLScopeGenerator"/>
+   <roproperty name="ddLSelectionSetsList" dataType="interface java.util.List" getter="getDDLSelectionSetsList"/>
+   <roproperty name="ddLTriggerGenerator" dataType="oracle.dbtools.crest.exports.ddl.DDLGenerator" getter="getDDLTriggerGenerator"/>
+   <roproperty name="ddLTypeGenerator" dataType="oracle.dbtools.crest.exports.ddl.DDLGenerator" getter="getDDLTypeGenerator"/>
+   <roproperty name="ddLUserGenerator" dataType="oracle.dbtools.crest.exports.ddl.DDLGenerator" getter="getDDLUserGenerator"/>
+   <roproperty name="dataTypeFactory" dataType="oracle.dbtools.crest.model.datatype.MDDataTypeFactory" getter="getDataTypeFactory"/>
+   <roproperty name="dropableSets" dataType="interface java.util.List" getter="getDropableSets"/>
+   <roproperty name="fkProxyList" dataType="interface java.util.List" getter="getFKProxyList"/>
+   <roproperty name="folderToTypeMap" dataType="interface java.util.Map" getter="getFolderToTypeMap"/>
+   <roproperty name="formatedName" dataType="java.lang.String" getter="getFormatedName"/>
+   <roproperty name="functionalities" dataType="interface java.util.Map" getter="getFunctionalities"/>
+   <roproperty name="indexProxySet" dataType="oracle.dbtools.crest.model.design.storage.IndexProxySet" getter="getIndexProxySet"/>
+   <roproperty name="methodParamProxySet" dataType="oracle.dbtools.crest.model.design.storage.MethodParamProxySet" getter="getMethodParamProxySet"/>
+   <roproperty name="methodProxySet" dataType="oracle.dbtools.crest.model.design.storage.MethodProxySet" getter="getMethodProxySet"/>
+   <roproperty name="modelIDObject" dataType="oracle.dbtools.crest.model.ModelIDObject" getter="getModelIDObject"/>
+   <roproperty name="nameSubstituionTypes" dataType="interface java.util.Map" getter="getNameSubstituionTypes"/>
+   <roproperty name="nameSubstitutionTypesList" dataType="interface java.util.List" getter="getNameSubstitutionTypesList"/>
+   <roproperty name="notMarkedGenerateObjects" dataType="interface java.util.List" getter="getNotMarkedGenerateObjects"/>
+   <roproperty name="object" dataType="oracle.dbtools.crest.model.design.storage.RelationalObjectProxy" getter="getObject"/>
+   <roproperty name="objectsToDeleteFromRepository" dataType="interface java.util.List" getter="getObjectsToDeleteFromRepository"/>
+   <roproperty name="orderedTypes" dataType="interface java.util.List" getter="getOrderedTypes"/>
+   <roproperty name="pkproxyList" dataType="interface java.util.List" getter="getPKProxyList"/>
+   <roproperty name="physicalDesign" dataType="oracle.dbtools.crest.model.design.relational.RelationalDesign" getter="getPhysicalDesign"/>
+   <roproperty name="physicalObject" dataType="oracle.dbtools.crest.model.design.storage.RelationalObjectProxy" getter="getPhysicalObject"/>
+   <roproperty name="propertyHolder" dataType="oracle.dbtools.crest.model.propertyholder.PropertyHolder" getter="getPropertyHolder"/>
+   <roproperty name="propertyTranslators" dataType="[Loracle.dbtools.crest.util.propertymap.PropertyTranslator" getter="getPropertyTranslators"/>
+   <roproperty name="proxy" dataType="oracle.dbtools.crest.model.design.storage.RelationalObjectProxy" getter="getProxy"/>
+   <roproperty name="rdBMSType" dataType="oracle.dbtools.crest.model.design.storage.RDBMSType" getter="getRDBMSType"/>
+   <roproperty name="rdBMSTypeSet" dataType="oracle.dbtools.crest.model.design.storage.RDBMSTypeSet" getter="getRDBMSTypeSet"/>
+   <roproperty name="rdBMSTypesForClone" dataType="interface java.util.List" getter="getRDBMSTypesForClone"/>
+   <roproperty name="readrequestFor" dataType="oracle.dbtools.crest.model.design.storage.ReadRequest" getter="getReadRequestFor"/>
+   <roproperty name="readrequestQueue" dataType="oracle.dbtools.crest.model.design.storage.ReadRequestQueue" getter="getReadRequestQueue"/>
+   <roproperty name="readrequests" dataType="[Loracle.dbtools.crest.model.design.storage.ReadRequest" getter="getReadRequests"/>
+   <roproperty name="reverseMap" dataType="interface java.util.Map" getter="getReverseMap"/>
+   <roproperty name="ruleHandler" dataType="oracle.dbtools.crest.model.designrules.RuleHandler" getter="getRuleHandler"/>
+   <roproperty name="schemaImplementationNane" dataType="java.lang.String" getter="getSchemaImplementationNane"/>
+   <roproperty name="storableObjects" dataType="interface java.util.List" getter="getStorableObjects"/>
+   <roproperty name="storablesetsList" dataType="interface java.util.List" getter="getStorableSetsList"/>
+   <roproperty name="storageObject" dataType="oracle.dbtools.crest.model.design.storage.StorageObject" getter="getStorageObject"/>
+   <roproperty name="storageObjectsetForType" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectSet" getter="getStorageObjectSetForType"/>
+   <roproperty name="structuredTypeProxyset" dataType="oracle.dbtools.crest.model.design.storage.StructuredTypeProxySet" getter="getStructuredTypeProxySet"/>
+   <roproperty name="structuredTypesOrderedByParent" dataType="interface java.util.List" getter="getStructuredTypesOrderedByParent"/>
+   <roproperty name="tableProxySet" dataType="oracle.dbtools.crest.model.design.storage.TableProxySet" getter="getTableProxySet"/>
+   <roproperty name="tableViewProxySet" dataType="oracle.dbtools.crest.model.design.storage.TableViewProxySet" getter="getTableViewProxySet"/>
+   <roproperty name="typeElementProxySet" dataType="oracle.dbtools.crest.model.design.storage.TypeElementProxySet" getter="getTypeElementProxySet"/>
+   <roproperty name="typeOrder" dataType="interface java.util.List" getter="getTypeOrder"/>
+   <roproperty name="uniqueList" dataType="interface java.util.List" getter="getUniqueList"/>
+   <roproperty name="userSchemaSet" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectSet" getter="getUserSchemaSet"/>
+   <roproperty name="version" dataType="float" getter="getVersion"/>
+</oracle.dbtools.crest.model.design.storage.StorageDesign>

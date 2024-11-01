@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.SpatialColumnDefObject.TableDimension parentClass="java.lang.Object" innerClass="true">
+   <property name="name" dataType="java.lang.String" defaultValue="" xmlName="name" xmlType="element" getter="getName" setter="setName" reffered="false"/>
+   <property name="lowBoundary" dataType="java.lang.String" defaultValue="" xmlName="lowBoundary" xmlType="element" getter="getLowBoundary" setter="setLowBoundary" reffered="false"/>
+   <property name="upperBoundary" dataType="java.lang.String" defaultValue="" xmlName="upperBoundary" xmlType="element" getter="getUpperBoundary" setter="setUpperBoundary" reffered="false"/>
+   <property name="tolerance" dataType="java.lang.String" defaultValue="" xmlName="tolerance" xmlType="element" getter="getTolerance" setter="setTolerance" reffered="false"/>
+   <roproperty name="empty" dataType="boolean" getter="isEmpty"/>
+</oracle.dbtools.crest.model.design.relational.SpatialColumnDefObject.TableDimension>

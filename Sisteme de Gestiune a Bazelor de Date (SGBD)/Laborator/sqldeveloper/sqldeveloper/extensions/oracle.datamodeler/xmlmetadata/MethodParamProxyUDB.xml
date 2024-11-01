@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.udb.MethodParamProxyUDB parentClass="oracle.dbtools.crest.model.design.storage.MethodParamProxy">
+   <property name="asLocator" dataType="boolean" defaultValue="" xmlName="asLocator" xmlType="element" getter="isAsLocator" setter="setAsLocator" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.udb.MethodParamProxyUDB>

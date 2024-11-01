@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.Entity parentClass="oracle.dbtools.crest.model.design.ContainerWithKeyObject">
+   <property name="adequatelyNormalized" dataType="java.lang.String" defaultValue="" xmlName="adequatelyNormalized" xmlType="element" getter="getAdequatelyNormalized" setter="setAdequatelyNormalized" reffered="false"/>
+   <property name="expectedVolumes" dataType="java.lang.String" defaultValue="" xmlName="expectedVolumes" xmlType="element" getter="getExpectedVolumes" setter="setExpectedVolumes" reffered="false"/>
+   <property name="fwdEngineeringStrategyName" dataType="java.lang.String" defaultValue="" xmlName="fwdEngineeringStrategyName" xmlType="element" getter="getFwdEngineeringStrategyName" setter="setFwdEngineeringStrategyName" reffered="false"/>
+   <property name="growthPercent" dataType="java.lang.String" defaultValue="" xmlName="growthPercent" xmlType="element" getter="getGrowthPercent" setter="setGrowthPercent" reffered="false"/>
+   <property name="growthType" dataType="java.lang.String" defaultValue="" xmlName="growthType" xmlType="element" getter="getGrowthType" setter="setGrowthType" reffered="false"/>
+   <should_be_set_whenInheritance_is_created_property name="hierarchicalParent" dataType="oracle.dbtools.crest.model.design.logical.Entity" defaultValue="" xmlName="hierarchicalParent" xmlType="element" getter="getHierarchicalParent" setter="setHierarchicalParent" reffered="true"/>
+   <property name="hierarchicalParent" dataType="java.lang.String" defaultValue="" xmlName="hierarchicalParent" xmlType="element" getter="getHierarchicalParentID" setter="setHierarchicalParentID" reffered="false"/>
+   <property name="maxVolumes" dataType="java.lang.String" defaultValue="" xmlName="maxVolumes" xmlType="element" getter="getMaxVolumes" setter="setMaxVolumes" reffered="false"/>
+   <property name="minVolumes" dataType="java.lang.String" defaultValue="" xmlName="minVolumes" xmlType="element" getter="getMinVolumes" setter="setMinVolumes" reffered="false"/>
+   <property name="normalForm" dataType="java.lang.String" defaultValue="" xmlName="normalForm" xmlType="element" getter="getNormalForm" setter="setNormalForm" reffered="false"/>
+   <property name="owner" dataType="java.lang.String" defaultValue="" xmlName="owner" xmlType="element" getter="getOwner" setter="setOwner" reffered="false"/>
+   <property name="preferredAbbreviation" dataType="java.lang.String" defaultValue="" xmlName="preferredAbbreviation" xmlType="element" getter="getPreferredAbbreviation" setter="setPreferredAbbreviation" reffered="false"/>
+   <property name="scope" dataType="java.lang.String" defaultValue="" xmlName="scope" xmlType="element" getter="getScope" setter="setScope" reffered="false"/>
+   <property name="shortName" dataType="java.lang.String" defaultValue="" xmlName="shortName" xmlType="element" getter="getShortName" setter="setShortName" reffered="false"/>
+   <property name="source" dataType="java.lang.String" defaultValue="" xmlName="source" xmlType="element" getter="getSource" setter="setSource" reffered="false"/>
+   <property name="synonym" dataType="java.lang.String" defaultValue="" xmlName="synonym" xmlType="element" getter="getSynonym" setter="setSynonym" reffered="false"/>
+   <property name="synonymToDisplay" dataType="java.lang.String" defaultValue="" xmlName="synonymToDisplay" xmlType="element" getter="getSynonymToDisplay" setter="setSynonymToDisplay" reffered="false"/>
+   <property name="foldedAttributesMap" dataType="java.util.Map" defaultValue="" xmlName="foldedAttributesMap" xmlType="element" getter="getFoldedAttributesMap" reffered="false"/>
+   <collection name="attributes" dataType="java.util.Collection" xmlName="attributes" itemXmlName="Attribute" getter="getElementsCollection" createItem="createAttribute" getItemByID="getElementByID" moveMethod="moveToIndex"/>
+   <collection name="identifiers" dataType="java.util.List" xmlName="identifiers" itemXmlName="identifier" getter="getUniqueIdentifiers" createItem="createCandidateKey" getItemByID="getKeyObject" applyList="applyKeyOrderFromList"/>
+   <roproperty name="hierarchicalAncestorOf" dataType="boolean" getter="isHierarchicalAncestorOf"/>
+   <roproperty name="hierarchicalEntityType" dataType="boolean" getter="isHierarchicalEntityType"/>
+   <roproperty name="hierarchicalRoot" dataType="boolean" getter="isHierarchicalRoot"/>
+   <roproperty name="inheriting" dataType="boolean" getter="isInheriting"/>
+   <roproperty name="allElementsList" dataType="interface java.util.List" getter="getAllElementsList"/>
+   <roproperty name="allMappedtables" dataType="interface java.util.List" getter="getAllMappedtables"/>
+   <roproperty name="allRelationsTo" dataType="interface java.util.List" getter="getAllRelationsTo"/>
+   <roproperty name="arcs" dataType="interface java.util.List" getter="getArcs"/>
+   <roproperty name="attributeForDelegate" dataType="oracle.dbtools.crest.model.design.logical.Attribute" getter="getAttributeForDelegate"/>
+   <roproperty name="attributeReferingDelegate" dataType="oracle.dbtools.crest.model.design.logical.Attribute" getter="getAttributeReferingDelegate"/>
+   <roproperty name="attributeSet" dataType="oracle.dbtools.crest.model.design.logical.AttributeSet" getter="getAttributeSet"/>
+   <roproperty name="attributes" dataType="interface java.util.List" getter="getAttributes"/>
+   <roproperty name="deletedMapping" dataType="oracle.dbtools.crest.model.xtdmapping.XtdMapping" getter="getDeletedMapping"/>
+   <roproperty name="editableFonts" dataType="interface java.util.List" getter="getEditableFonts"/>
+   <roproperty name="engTable" dataType="oracle.dbtools.crest.model.design.relational.Table" getter="getEngTable"/>
+   <roproperty name="engTables" dataType="interface java.util.List" getter="getEngTables"/>
+   <roproperty name="expectedVolumesInt" dataType="int" getter="getExpectedVolumesInt"/>
+   <roproperty name="fkAttributeByDelegateGenerator" dataType="oracle.dbtools.crest.model.design.logical.Attribute" getter="getFKAttributeByDelegateGenerator"/>
+   <roproperty name="fkAttributeforOriginating" dataType="oracle.dbtools.crest.model.design.logical.Attribute" getter="getFKAttributeForOriginating"/>
+   <roproperty name="fontObject" dataType="oracle.dbtools.crest.model.design.FontObject" getter="getFontObject"/>
+   <roproperty name="growthPercentInt" dataType="int" getter="getGrowthPercentInt"/>
+   <roproperty name="hierarchicalChild" dataType="oracle.dbtools.crest.model.design.logical.Entity" getter="getHierarchicalChild"/>
+   <roproperty name="hierarchicalChildrenCount" dataType="int" getter="getHierarchicalChildrenCount"/>
+   <roproperty name="hierarchicalFK" dataType="oracle.dbtools.crest.model.design.KeyObject" getter="getHierarchicalFK"/>
+   <roproperty name="hierarchicalLeaves" dataType="interface java.util.List" getter="getHierarchicalLeaves"/>
+   <roproperty name="hierarchicalPK" dataType="oracle.dbtools.crest.model.design.KeyObject" getter="getHierarchicalPK"/>
+   <roproperty name="hierarchicalRoot" dataType="oracle.dbtools.crest.model.design.logical.Entity" getter="getHierarchicalRoot"/>
+   <roproperty name="inheritanceRelation" dataType="oracle.dbtools.crest.model.design.logical.Relation" getter="getInheritanceRelation"/>
+   <roproperty name="mappingFor" dataType="oracle.dbtools.crest.model.xtdmapping.XtdMapping" getter="getMappingFor"/>
+   <roproperty name="maxVolumesInt" dataType="int" getter="getMaxVolumesInt"/>
+   <roproperty name="minVolumesInt" dataType="int" getter="getMinVolumesInt"/>
+   <roproperty name="numberOfnormalRelationConnections" dataType="int" getter="getNumberOfNormalRelationConnections"/>
+   <roproperty name="numberOfRelationConnections" dataType="int" getter="getNumberOfRelationConnections"/>
+   <roproperty name="pkproviderRelations" dataType="interface java.util.List" getter="getPKProviderRelations"/>
+   <roproperty name="relationConnections" dataType="[Loracle.dbtools.crest.model.design.logical.Relation$Connection" getter="getRelationConnections"/>
+   <roproperty name="relationTo" dataType="oracle.dbtools.crest.model.design.logical.Relation" getter="getRelationTo"/>
+   <roproperty name="relations" dataType="interface java.util.List" getter="getRelations"/>
+</oracle.dbtools.crest.model.design.logical.Entity>

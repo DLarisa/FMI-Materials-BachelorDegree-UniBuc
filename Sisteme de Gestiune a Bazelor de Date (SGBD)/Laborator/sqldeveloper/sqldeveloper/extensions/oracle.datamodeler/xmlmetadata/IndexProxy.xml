@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.IndexProxy parentClass="oracle.dbtools.crest.model.design.storage.RelationalContainerProxy">
+   <property name="clustered" dataType="boolean" defaultValue="false" xmlName="clustered" xmlType="element" getter="isClustered" setter="setClustered" reffered="false"/>
+   <aa_property name="markGenerateIfFK" dataType="boolean" defaultValue="true" xmlName="markGenerateIfFK" xmlType="element" getter="getMarkGenerateIfFK" setter="setMarkGenerateIfFK" reffered="false"/>
+   <property name="partitioned" dataType="boolean" defaultValue="false" xmlName="partitioned" xmlType="element" getter="isPartitioned" setter="setPartitioned" reffered="false"/>
+   <roproperty name="index" dataType="boolean" getter="isIndex"/>
+   <roproperty name="unique" dataType="boolean" getter="isUnique"/>
+   <roproperty name="columnProxies" dataType="[Loracle.dbtools.crest.model.design.storage.ColumnProxy" getter="getColumnProxies"/>
+   <roproperty name="index" dataType="oracle.dbtools.crest.model.design.relational.Index" getter="getIndex"/>
+   <roproperty name="table" dataType="oracle.dbtools.crest.model.design.relational.Table" getter="getTable"/>
+   <roproperty name="tableProxy" dataType="oracle.dbtools.crest.model.design.storage.TableProxy" getter="getTableProxy"/>
+</oracle.dbtools.crest.model.design.storage.IndexProxy>

@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.udb.TableSpaceUDB parentClass="oracle.dbtools.crest.model.design.storage.db2.AbstractStorageObjectDB2">
+   <property name="bufferPool" dataType="oracle.dbtools.crest.model.design.storage.udb.BufferPoolUDB" defaultValue="IBMDEFAULTBP" xmlName="bufferPool" xmlType="element" getter="getBufferPool" setter="setBufferPool" reffered="true"/>
+   <property name="dbdefOnly" dataType="boolean" defaultValue="false" xmlName="dbdefOnly" xmlType="element" getter="getDBDefOnly" setter="setDBDefOnly" reffered="false"/>
+   <property name="dataType" dataType="java.lang.String" defaultValue="REGULAR" xmlName="dataType" xmlType="element" getter="getDataType" setter="setDataType" reffered="false"/>
+   <property name="droppedTableRecovery" dataType="boolean" defaultValue="false" xmlName="droppedTableRecovery" xmlType="element" getter="getDroppedTableRecovery" setter="setDroppedTableRecovery" reffered="false"/>
+   <property name="extentSize" dataType="java.lang.String" defaultValue="" xmlName="extentSize" xmlType="element" getter="getExtentSize" setter="setExtentSize" reffered="false"/>
+   <property name="grantOption" dataType="java.lang.String" defaultValue="NO" xmlName="grantOption" xmlType="element" getter="getGrantOption" setter="setGrantOption" reffered="false"/>
+   <property name="groups" dataType="java.lang.String" defaultValue="" xmlName="groups" xmlType="element" getter="getGroups" setter="setGroups" reffered="false"/>
+   <property name="managedBy" dataType="java.lang.String" defaultValue="SYSTEM" xmlName="managedBy" xmlType="element" getter="getManagedBy" setter="setManagedBy" reffered="false"/>
+   <property name="nodeGroup" dataType="oracle.dbtools.crest.model.design.storage.udb.NodeGroupUDB" defaultValue="IBMDEFAULTGROUP" xmlName="nodeGroup" xmlType="element" getter="getNodeGroup" setter="setNodeGroup" reffered="true"/>
+   <property name="overhead" dataType="float" defaultValue="0.0" xmlName="overhead" xmlType="element" getter="getOverhead" setter="setOverhead" reffered="false"/>
+   <property name="pageSize" dataType="java.lang.Integer" defaultValue="4" xmlName="pageSize" xmlType="element" getter="getPageSize" setter="setPageSize" reffered="false"/>
+   <property name="prefetchSize" dataType="java.lang.String" defaultValue="" xmlName="prefetchSize" xmlType="element" getter="getPrefetchSize" setter="setPrefetchSize" reffered="false"/>
+   <property name="transferRate" dataType="float" defaultValue="0.0" xmlName="transferRate" xmlType="element" getter="getTransferRate" setter="setTransferRate" reffered="false"/>
+   <property name="users" dataType="java.lang.String" defaultValue="" xmlName="users" xmlType="element" getter="getUsers" setter="setUsers" reffered="false" listOfRefs="true"/>
+   <roproperty name="allNodes" dataType="interface java.util.List" getter="getAllNodes"/>
+   <roproperty name="containers" dataType="[Loracle.dbtools.crest.model.design.storage.udb.ContainerUDB" getter="getContainers"/>
+   <roproperty name="containersForNode" dataType="[Loracle.dbtools.crest.model.design.storage.udb.ContainerUDB" getter="getContainersForNode"/>
+   <roproperty name="propertyWrapperList" dataType="interface java.util.List" getter="getPropertyWrapperList"/>
+   <roproperty name="tableProxies" dataType="[Loracle.dbtools.crest.model.design.storage.udb.TableProxyUDB" getter="getTableProxies"/>
+   <roproperty name="userGroupSet" dataType="oracle.dbtools.crest.model.design.storage.udb.TableSpaceUDB$UserSet" getter="getUserGroupSet"/>
+   <roproperty name="userSet" dataType="oracle.dbtools.crest.model.design.storage.udb.TableSpaceUDB$UserSet" getter="getUserSet"/>
+</oracle.dbtools.crest.model.design.storage.udb.TableSpaceUDB>

@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.db2.StorageTemplateDB2 parentClass="oracle.dbtools.crest.model.design.storage.db2.AbstractStorageObjectDB2">
+   <property name="define" dataType="boolean" defaultValue="true" xmlName="define" xmlType="element" getter="isDefine" setter="setDefine" reffered="false"/>
+   <property name="freePage" dataType="int" defaultValue="0" xmlName="freePage" xmlType="element" getter="getFreePage" setter="setFreePage" reffered="false"/>
+   <property name="gbCache" dataType="java.lang.String" defaultValue="" xmlName="gbCache" xmlType="element" getter="getGbCache" setter="setGbCache" reffered="false"/>
+   <property name="pctFree" dataType="int" defaultValue="5" xmlName="pctFree" xmlType="element" getter="getPctFree" setter="setPctFree" reffered="false"/>
+   <property name="sgErase" dataType="boolean" defaultValue="false" xmlName="sgErase" xmlType="element" getter="isSgErase" setter="setSgErase" reffered="false"/>
+   <property name="sgPriqty" dataType="int" defaultValue="0" xmlName="sgPriqty" xmlType="element" getter="getSgPriqty" setter="setSgPriqty" reffered="false"/>
+   <property name="sgseqty" dataType="int" defaultValue="0" xmlName="sgseqty" xmlType="element" getter="getSgSeqty" setter="setSgSeqty" reffered="false"/>
+   <property name="storageGroup" dataType="oracle.dbtools.crest.model.design.storage.db2.StorageGroupDB2" defaultValue="" xmlName="storageGroup" xmlType="element" getter="getStorageGroup" setter="setStorageGroup" reffered="true"/>
+   <property name="trackMode" dataType="boolean" defaultValue="true" xmlName="trackMode" xmlType="element" getter="isTrackMode" setter="setTrackMode" reffered="false"/>
+   <property name="vcat" dataType="oracle.dbtools.crest.model.design.storage.db2.VCatDB2" defaultValue="" xmlName="vcat" xmlType="element" getter="getVCat" setter="setVCat" reffered="true"/>
+   <roproperty name="usedInOtherDefinitions" dataType="boolean" getter="isUsedInOtherDefinitions"/>
+</oracle.dbtools.crest.model.design.storage.db2.StorageTemplateDB2>

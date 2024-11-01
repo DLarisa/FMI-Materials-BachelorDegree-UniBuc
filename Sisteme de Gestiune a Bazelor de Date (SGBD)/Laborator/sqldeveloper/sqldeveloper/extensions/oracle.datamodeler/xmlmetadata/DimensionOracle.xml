@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.DimensionOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="user" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserOracle" defaultValue="" xmlName="user" xmlType="element" getter="getUser" setter="setUser" reffered="true"/>
+   <roproperty name="attributeSet" dataType="[Ljava.lang.Object" getter="getAttributeSet"/>
+   <roproperty name="hierarchySet" dataType="[Ljava.lang.Object" getter="getHierarchySet"/>
+   <roproperty name="levelByName" dataType="oracle.dbtools.crest.model.design.storage.oracle.LevelOracle" getter="getLevelByName"/>
+   <collection name="levels" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="levels" itemXmlName="Level" getter="getLevelCollection" createItem="createLevel"/>
+   <roproperty name="levelSet" dataType="[Ljava.lang.Object" getter="getLevelSet"/>
+   <collection name="hierarchies" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="hierarchies" itemXmlName="Hierarchy" getter="getHierarchyCollection" createItem="createHierarchy"/>
+   <collection name="attributes" dataType="interface java.util.List" xmlName="attributes" itemXmlName="Attribute" getter="getAttributeList" createItem="createAttribute"/>
+</oracle.dbtools.crest.model.design.storage.oracle.DimensionOracle>

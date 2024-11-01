@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.udb.TableCheckConstraintProxyUDB parentClass="oracle.dbtools.crest.model.design.storage.db2.AbstractStorageObjectDB2">
+   <xx_property name="constraintName" dataType="java.lang.String" defaultValue="" xmlName="constraintName" xmlType="element" getter="getConstraintName" setter="setConstraintName" reffered="false"/>
+   <property name="queryOptimization" dataType="java.lang.String" defaultValue="ENABLE" xmlName="queryOptimization" xmlType="element" getter="getQueryOptimization" setter="setQueryOptimization" reffered="false"/>
+   <property name="table" dataType="oracle.dbtools.crest.model.design.storage.udb.TableProxyUDB" defaultValue="" xmlName="table" xmlType="element" getter="getTable" setter="setTable" reffered="true"/>
+   <property name="validation" dataType="java.lang.String" defaultValue="ENFORCED" xmlName="validation" xmlType="element" getter="getValidation" setter="setValidation" reffered="false"/>
+   <roproperty name="tableConstraint" dataType="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint" getter="getTableConstraint"/>
+</oracle.dbtools.crest.model.design.storage.udb.TableCheckConstraintProxyUDB>

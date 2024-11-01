@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.process.InOutParams>
+   <property name="useDefaultColor" dataType="boolean" defaultValue="true" xmlName="useDefaultColor" xmlType="element" getter="useDefaultColor" setter="setUseDefaultColor" reffered="false"/>
+   <property name="backgroundColor" dataType="java.awt.Color" defaultValue="" xmlName="backgroundColor" xmlType="element" getter="getBackgroundColor" setter="setBackgroundColor" reffered="false"/>
+   <property name="foregroundColor" dataType="java.awt.Color" defaultValue="" xmlName="foregroundColor" xmlType="element" getter="getForegroundColor" setter="setForegroundColor" reffered="false"/>
+   <property name="objectID" dataType="java.lang.String" defaultValue="" xmlName="id" xmlType="attribute" getter="getObjectID" setter="setObjectID" reffered="false"/>
+   <property name="comment" dataType="java.lang.String" defaultValue="" xmlName="comment" xmlType="element" getter="getComment" setter="setComment" reffered="false"/>
+   <property name="notes" dataType="java.lang.String" defaultValue="" xmlName="notes" xmlType="element" getter="getNotes" setter="setNotes" reffered="false"/>
+   <property name="parametersMultiplicity" dataType="java.lang.String" defaultValue="" xmlName="parametersMultiplicity" xmlType="element" getter="getParametersMultiplicity" setter="setParametersMultiplicity" reffered="false"/>
+   <property name="systemObjective" dataType="java.lang.String" defaultValue="" xmlName="systemObjective" xmlType="element" getter="getSystemObjective" setter="setSystemObjective" reffered="false"/>
+   <collection name="fonts" dataType="java.util.List" xmlName="fonts" itemXmlName="FontObject" getter="getFontObjectWrappers" createItem="createFontObjectWr" addItem="addFontObjectWrapper" />
+   <collection name="parameters" dataType="java.util.List" xmlName="parameters" itemXmlName="parameter" getter="getParams" createItem="createParameter" nativeList="true" orderTheList="true"/>
+   <roproperty name="attributes" dataType="interface java.util.List" getter="getAttributes"/>
+   <roproperty name="editableFonts" dataType="interface java.util.List" getter="getEditableFonts"/>
+   <roproperty name="elementByID" dataType="oracle.dbtools.crest.model.design.DesignObject" getter="getElementByID"/>
+   <roproperty name="fontObject" dataType="oracle.dbtools.crest.model.design.FontObject" getter="getFontObject"/>
+   <roproperty name="inOutType" dataType="java.lang.String" getter="getInOutType"/>
+   <roproperty name="params" dataType="interface java.util.List" getter="getParams"/>
+   <roproperty name="processes" dataType="interface java.util.List" getter="getProcesses"/>
+</oracle.dbtools.crest.model.design.process.InOutParams>

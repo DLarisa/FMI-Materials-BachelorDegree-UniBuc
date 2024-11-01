@@ -1,0 +1,25 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.UserOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="accountLock" dataType="java.lang.String" defaultValue="NO" xmlName="accountLock" xmlType="element" getter="getAccountLock" setter="setAccountLock" reffered="false"/>
+   <property name="adminOption" dataType="java.lang.String" defaultValue="NO" xmlName="adminOption" xmlType="element" getter="getAdminOption" setter="setAdminOption" reffered="false"/>
+   <property name="authType" dataType="java.lang.String" defaultValue="BY_PASSWORD" xmlName="authType" xmlType="element" getter="getAuthType" setter="setAuthType" reffered="false"/>
+   <property name="defTableSpace" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle" defaultValue="" xmlName="defTableSpace" xmlType="element" getter="getDefTableSpace" setter="setDefTableSpace" reffered="true"/>
+   <property name="externalName" dataType="java.lang.String" defaultValue="" xmlName="externalName" xmlType="element" getter="getExternalName" setter="setExternalName" reffered="false"/>
+   <property name="identifier" dataType="java.lang.String" defaultValue="" xmlName="identifier" xmlType="element" getter="getIdentifier" setter="setIdentifier" reffered="false"/>
+   <property name="passwordExpire" dataType="java.lang.String" defaultValue="NO" xmlName="passwordExpire" xmlType="element" getter="getPasswordExpire" setter="setPasswordExpire" reffered="false"/>
+   <property name="privileges" dataType="java.lang.String" defaultValue="" xmlName="privileges" xmlType="element" getter="getPrivileges" setter="setPrivileges" reffered="false" listOfRefs="false"/>
+   <property name="privilegesWithAdminOption" dataType="java.lang.String" defaultValue="" xmlName="privilegesWithAdminOption" xmlType="element" getter="getPrivilegesWithAdminOption" setter="setPrivilegesWithAdminOption" reffered="false" listOfRefs="false"/>
+   <property name="profile" dataType="java.lang.String" defaultValue="" xmlName="profile" xmlType="element" getter="getProfile" setter="setProfile" reffered="false"/>
+   <property name="roles" dataType="java.lang.String" defaultValue="" xmlName="roles" xmlType="element" getter="getRoles" setter="setRoles" reffered="false" listOfRefs="true"/>
+   <property name="rolesWithAdminOption" dataType="java.lang.String" defaultValue="" xmlName="rolesWithAdminOption" xmlType="element" getter="getRolesWithAdminOption" setter="setRolesWithAdminOption" reffered="false" listOfRefs="true"/>
+   <property name="temptableSpace" dataType="oracle.dbtools.crest.model.design.storage.oracle.TemporaryTablespaceOracle" defaultValue="" xmlName="temptableSpace" xmlType="element" getter="getTempTableSpace" setter="setTempTableSpace" reffered="true"/>
+   <collection name="permissions" dataType="interface java.util.List" xmlName="permissions" itemXmlName="Permission" getter="getPermissions" createItem="createPermission"/>
+   <bb_roproperty name="privilegesSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserOracle$InlineList" getter="getPrivilegesSet"/>
+   <bb_roproperty name="privilegesWithAdminOptionSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserOracle$InlineList" getter="getPrivilegesWithAdminOptionSet"/>
+   <roproperty name="quotaItems" dataType="interface java.util.List" getter="getQuotaItems"/>
+   <collection name="quotaItemsCollection" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="quotaItems" itemXmlName="QuotaItem" getter="getQuotaItemsCollection" createItem="createQuotaItem"/>
+   <roproperty name="rolesNames" dataType="java.lang.String" getter="getRolesNames"/>
+   <bb_roproperty name="rolesSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserOracle$InlineList" getter="getRolesSet"/>
+   <roproperty name="rolesWithAdminOptionNames" dataType="java.lang.String" getter="getRolesWithAdminOptionNames"/>
+   <bb_roproperty name="rolesWithAdminOptionSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserOracle$InlineList" getter="getRolesWithAdminOptionSet"/>
+</oracle.dbtools.crest.model.design.storage.oracle.UserOracle>

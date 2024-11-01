@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.StoredProcedure parentClass="oracle.dbtools.crest.model.design.storage.StorageObject">
+   <property name="body" dataType="java.lang.String" defaultValue="" xmlName="body" xmlType="element" getter="getBody" setter="setBody" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.StoredProcedure>

@@ -1,0 +1,26 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign parentClass="oracle.dbtools.crest.model.design.DesignPart">
+   <aa_property name="subviewToNewDesign" dataType="boolean" defaultValue="" xmlName="subviewToNewDesign" xmlType="element" getter="isSubviewToNewDesign" setter="setSubviewToNewDesign" reffered="false"/>
+   <collection external="true" name="Entities" dataType="oracle.dbtools.crest.model.design.logical.EntitySet" xmlName="Entities" itemXmlName="Entity" getter="getEntitySet" createItem="createEntity"/>
+   <collection external="true" name="Relationships" dataType="oracle.dbtools.crest.model.design.logical.RelationSet" xmlName="Relationships" itemXmlName="Relationship" getter="getRelationSet" createItem="createRelation"/>
+   <collection external="true" name="Inheritances" dataType="oracle.dbtools.crest.model.design.logical.InheritanceRelationSet" xmlName="Inheritances" itemXmlName="Inheritance" getter="getInheritanceRelationSet" createItem="createInheritanceRelation"/>
+   <collection external="true" name="EntityViews" dataType="oracle.dbtools.crest.model.design.logical.EntityViewSet" xmlName="EntityViews" itemXmlName="EntityView" getter="getEntityViewSet" createItem="createEntityView"/>
+   <collection external="true" name="Arcs" dataType="oracle.dbtools.crest.model.design.logical.ArcSet" xmlName="Arcs" itemXmlName="Arc" getter="getArcSet" createItem="createArc"/>
+   <collection external="true" name="NoteObjects" dataType="oracle.dbtools.crest.model.design.NoteSet" xmlName="NoteObjects" itemXmlName="NoteObject" getter="getNoteSet" createItem="createNote"/>
+   <collection external="true" preProcessMethod="executeTasks" name="Diagrams" dataType="java.util.List" xmlName="Diagrams" itemXmlName="Diagram" getter="getListOfSubviews" createItem="createDesignPartSubView" getItemByID="getSubViewByID"/>
+   <processing beforeTransformExt="openLogicalModel" />   
+   <roproperty name="arcSet" dataType="oracle.dbtools.crest.model.design.logical.ArcSet" getter="getArcSet"/>
+   <roproperty name="attributePlaceHolderSet" dataType="oracle.dbtools.crest.model.design.DesignObjectCollection" getter="getAttributePlaceHolderSet"/>
+   <roproperty name="attributeSet" dataType="oracle.dbtools.crest.model.design.logical.AttributeSet" getter="getAttributeSet"/>
+   <roproperty name="attributeViewSet" dataType="oracle.dbtools.crest.model.design.logical.AttributeViewSet" getter="getAttributeViewSet"/>
+   <roproperty name="entitiesWuthOverlappingKeys" dataType="interface java.util.List" getter="getEntitiesWuthOverlappingKeys"/>
+   <roproperty name="entitySet" dataType="oracle.dbtools.crest.model.design.logical.EntitySet" getter="getEntitySet"/>
+   <roproperty name="entityViewSet" dataType="oracle.dbtools.crest.model.design.logical.EntityViewSet" getter="getEntityViewSet"/>
+   <roproperty name="globalCandidateKeySet" dataType="oracle.dbtools.crest.model.design.logical.GlobalCandidateKeySet" getter="getGlobalCandidateKeySet"/>
+   <roproperty name="inheritanceRelationSet" dataType="oracle.dbtools.crest.model.design.logical.RelationSet" getter="getInheritanceRelationSet"/>
+   <roproperty name="logicalDesignSubviews" dataType="oracle.dbtools.crest.model.SubViewObjectSet" getter="getLogicalDesignSubviews"/>
+   <roproperty name="logicalTypeSet" dataType="oracle.dbtools.crest.model.design.LogicalDatatypeSet" getter="getLogicalTypeSet"/>
+   <roproperty name="measurementSet" dataType="oracle.dbtools.crest.model.design.MeasurementSet" getter="getMeasurementSet"/>
+   <roproperty name="relationSet" dataType="oracle.dbtools.crest.model.design.logical.RelationSet" getter="getRelationSet"/>
+   <roproperty name="typeSubstitutionSet" dataType="oracle.dbtools.crest.model.TypeSubstitutionSet" getter="getTypeSubstitutionSet"/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>

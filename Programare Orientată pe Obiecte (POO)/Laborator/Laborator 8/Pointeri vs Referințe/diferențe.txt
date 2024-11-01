@@ -1,0 +1,89 @@
+1. Initializare
+
+Pointeri:
+
+int a = 10;        
+int *p = &a;    
+
+// De asemenea, se poate si:
+
+int *p;
+p = &a;
+
+Referinte:
+
+int a=10;
+int &p=a; // merge
+
+int &p;
+p=a; // cum am zis, referintele sunt ca niste pointer const si ca la orice const, trebuie asignat din prima.
+
+2. Reasignare
+
+Pointeri:
+
+int a = 5;
+int b = 6;
+int *p;
+p =  &a;
+p = &b; // este normal si normal sa reasignam pointeri. structurile de date se bazeaza pe asta (listele).
+
+Referinte:
+
+int a = 5;
+int b = 6;
+int &p = a;
+&p = b;  // Nu se pot reasigna, din nou, pentru ca sunt const.
+int &q=p; // asta totusi merge.
+
+3. Memorie
+
+// Nu prea putem pune mana pe adresa unei referinte, desi ea ocupa loc pe stiva;
+
+#include <iostream>
+
+int main()
+{
+    int a = 5;
+    int *p = &a;
+    int &r = a;
+    std::cout << sizeof(p) << std::endl;
+    std::cout << sizeof(r) << std::endl;
+    
+    std::cout << p << std::endl;
+    std::cout << &r;
+}
+
+4. Asignarea cu NULL. Pointerii pot fi NULL, referintele nu.
+
+5. Niveluri de indirectie
+
+Pointeri: 
+int a = 10;
+int *p;
+int **q;  // evident, merge.
+p = &a;
+q = &p;
+
+Referinte:
+int &p = a;
+int &&q = p; // referinta la referinta...nope.
+
+6. Aritmetica pointerilor nu se aplica pe referinte. Totusi, daca avem o referinta la un pointer, atunci evident merge.
+
+#include <iostream>
+
+int main()
+{
+    int a[] = {1,2,3,4};
+    int &ref = a[2];
+    std::cout << *(&ref + 1);
+}
+
+Cand folosim ce? In general, ca si performanta, sunt echivalente pentru ca referintele sunt implementate ca si pointeri. 
+
+Folosim referinte in parametri si tipuri de return.
+Folosim pointeri cand avem nevoie de aritmetica pointerilor sau daca trebuie sa putem trimite NULL ca parametru. De asemenea, nu putem 
+implementa structuri de date care au nevoie de pointeri reasignabili cu referinte.
+
+

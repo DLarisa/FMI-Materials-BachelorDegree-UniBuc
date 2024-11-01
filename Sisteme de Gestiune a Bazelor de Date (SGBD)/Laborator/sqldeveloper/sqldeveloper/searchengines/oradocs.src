@@ -1,0 +1,17 @@
+<search
+ version="7.1"
+ name="Docs"
+ description="Documentation search" 
+ action="http://www.oracle.com/pls/db92/print_hit_summary"
+ searchForm="http://tahiti.oracle.com/"
+ method="GET" >
+
+<input name="search_string" user>
+
+<interpret 
+ resultListStart="<!-- RESULT LIST START -->"
+ resultListEnd="<!-- RESULT LIST END -->"
+ resultItemStart="<!-- RESULT ITEM START -->"
+ resultItemEnd="<!-- RESULT ITEM END -->"
+>
+</search>

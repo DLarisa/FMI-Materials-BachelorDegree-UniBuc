@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oracle.dbtools.crest.model.xtdmapping.ContainerMapping parentClass="oracle.dbtools.crest.model.xtdmapping.RelMapping">
+   <collection name="containedMappings" dataType="java.util.List" xmlName="containedMappings" itemXmlName="Mg" getter="getContainedMappings" createItem="createRelMapping" getItemByID="getRelMappingByID" addItem="addRelMapping" orderImportant="false"/>
+</oracle.dbtools.crest.model.xtdmapping.ContainerMapping>

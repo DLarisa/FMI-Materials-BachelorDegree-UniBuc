@@ -1,0 +1,28 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.PermissionsOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="columnList" dataType="java.lang.String" defaultValue="" xmlName="columnList" xmlType="element" getter="getColumnList" setter="setColumnList" reffered="false" listOfRefs="true"/>
+   <property name="columnWithGrantOptionList" dataType="java.lang.String" defaultValue="" xmlName="columnWithGrantOptionList" xmlType="element" getter="getColumnWithGrantOptionList" setter="setColumnListWithGrantOption" reffered="false" listOfRefs="true"/>
+   <property name="columnsTable" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableProxyOracle" defaultValue="" xmlName="columnsTable" xmlType="element" getter="getColumnsTable" setter="setColumnsTable" reffered="true"/>
+   <property name="package" dataType="oracle.dbtools.crest.model.design.storage.oracle.PackageOracle" defaultValue="" xmlName="package" xmlType="element" getter="getPackage" setter="setPackage" reffered="true"/>
+   <property name="privileges" dataType="java.lang.String" defaultValue="" xmlName="privileges" xmlType="element" getter="getPrivileges" setter="setPrivileges" reffered="false" listOfRefs="true"/>
+   <property name="privilegesWithGrantOption" dataType="java.lang.String" defaultValue="" xmlName="privilegesWithGrantOption" xmlType="element" getter="getPrivilegesWithGrantOption" setter="setPrivilegesWithGrantOption" reffered="false" listOfRefs="true"/>
+   <property name="privilegesWithHierarchyOption" dataType="java.lang.String" defaultValue="" xmlName="privilegesWithHierarchyOption" xmlType="element" getter="getPrivilegesWithHierarchyOption" setter="setPrivilegesWithHierarchyOption" reffered="false" listOfRefs="true"/>
+   <property name="proc" dataType="oracle.dbtools.crest.model.design.storage.oracle.StoredProcedureOracle" defaultValue="" xmlName="proc" xmlType="element" getter="getProc" setter="setProc" reffered="true"/>
+   <property name="function" dataType="oracle.dbtools.crest.model.design.storage.oracle.FunctionOracle" defaultValue="" xmlName="function" xmlType="element" getter="getFunctionOracle" setter="setFunctionOracle" reffered="true"/>
+   <property name="directoryOracle" dataType="oracle.dbtools.crest.model.design.storage.oracle.DirectoryOracle" defaultValue="" xmlName="directoryOracle" xmlType="element" getter="getDirectoryOracle" setter="setDirectoryOracle" reffered="true"/>
+   <property name="structuredTypeOracle" dataType="oracle.dbtools.crest.model.design.storage.oracle.StructuredTypeProxyOracle" defaultValue="" xmlName="structuredTypeOracle" xmlType="element" getter="getStructuredTypeOracle" setter="setStructuredTypeOracle" reffered="true"/>
+   <property name="collectionTypeOracle" dataType="oracle.dbtools.crest.model.design.storage.oracle.CollectionTypeProxyOracle" defaultValue="" xmlName="collectionTypeOracle" xmlType="element" getter="getCollectionTypeOracle" setter="setCollectionTypeOracle" reffered="true"/>
+   <property name="externalTableOracle" dataType="oracle.dbtools.crest.model.design.storage.oracle.ExternalTableOracle" defaultValue="" xmlName="externalTableOracle" xmlType="element" getter="getExternalTableOracle" setter="setExternalTableOracle" reffered="true"/>
+   <property name="public" dataType="java.lang.String" defaultValue="NO" xmlName="public" xmlType="element" getter="getPublic" setter="setPublic" reffered="false"/>
+   <roproperty name="role" dataType="oracle.dbtools.crest.model.design.storage.oracle.RoleOracle" getter="getRole"/>
+   <property name="sequence" dataType="oracle.dbtools.crest.model.design.storage.oracle.SequenceOracle" defaultValue="" xmlName="sequence" xmlType="element" getter="getSequence" setter="setSequence" reffered="true"/>
+   <property name="materializedView" dataType="oracle.dbtools.crest.model.design.storage.oracle.SnapshotOracle" defaultValue="" xmlName="materializedView" xmlType="element" getter="getSnapshot" setter="setSnapshot" reffered="true"/>
+   <property name="table" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableProxyOracle" defaultValue="" xmlName="table" xmlType="element" getter="getTable" setter="setTable" reffered="true"/>
+   <roproperty name="user" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserOracle" getter="getUser"/>
+   <property name="view" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableViewProxyOracle" defaultValue="" xmlName="view" xmlType="element" getter="getView" setter="setView" reffered="true"/>
+   <roproperty name="columns" dataType="java.util.ArrayList" getter="getColumns"/>
+   <bb_roproperty name="privilegesSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.PermissionsOracle$PermissionsSet" getter="getPrivilegesSet"/>
+   <bb_roproperty name="privilegesWithGrantOptionSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.PermissionsOracle$PermissionsSet" getter="getPrivilegesWithGrantOptionSet"/>
+   <bb_roproperty name="privilegesWithHierarchyOptionSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.PermissionsOracle$PermissionsSet" getter="getPrivilegesWithHierarchyOptionSet"/>
+   <roproperty name="privs" dataType="java.lang.String" getter="getPrivs"/>
+</oracle.dbtools.crest.model.design.storage.oracle.PermissionsOracle>

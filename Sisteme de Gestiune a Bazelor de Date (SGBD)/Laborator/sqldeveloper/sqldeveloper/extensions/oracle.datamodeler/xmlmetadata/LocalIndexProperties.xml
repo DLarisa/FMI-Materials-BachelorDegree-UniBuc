@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.LocalIndexProperties parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="hashSubPartitionsTableSpaces" dataType="java.lang.String" defaultValue="" xmlName="hashSubPartitionsTableSpaces" xmlType="element" getter="getHashSubPartitionsTableSpaces" setter="setHashSubPartitionsTableSpaces" reffered="false" listOfRefs="true"/>
+   <property name="index" dataType="oracle.dbtools.crest.model.design.storage.StorageObject" defaultValue="" xmlName="index" xmlType="element" getter="getIndex" setter="setIndex" reffered="true"/>
+   <property name="keyCompression" dataType="int" defaultValue="0" xmlName="keyCompression" xmlType="element" getter="getKeyCompression" setter="setKeyCompression" reffered="false"/>
+   <property name="layerType" dataType="java.lang.String" defaultValue="" xmlName="layerType" xmlType="element" getter="getLayerType" setter="setLayerType" reffered="false"/>
+   <property name="logging" dataType="java.lang.String" defaultValue="" xmlName="logging" xmlType="element" getter="getLogging" setter="setLogging" reffered="false"/>
+   <roproperty name="partition" dataType="oracle.dbtools.crest.model.design.storage.StorageObject" getter="getPartition"/>
+   <property name="partitionName" dataType="java.lang.String" defaultValue="" xmlName="partitionName" xmlType="element" getter="getPartitionName" setter="setPartitionName" reffered="false"/>
+   <property name="segment" dataType="oracle.dbtools.crest.model.design.storage.oracle.SegmentOracle" defaultValue="" xmlName="segment" xmlType="element" getter="getSegment" setter="setSegment" reffered="true"/>
+   <property name="tableSpace" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle" defaultValue="" xmlName="tableSpace" xmlType="element" getter="getTableSpace" setter="setTableSpace" reffered="true"/>
+   <property name="workTablespace" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle" defaultValue="" xmlName="workTablespace" xmlType="element" getter="getWorkTablespace" setter="setWorkTablespace" reffered="true"/>
+   <roproperty name="spatialIndex" dataType="boolean" getter="isSpatialIndex"/>
+   <bb_roproperty name="indexHashSubPartTSSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.LocalIndexProperties$InlineList" getter="getIndexHashSubPartTSSet"/>
+</oracle.dbtools.crest.model.design.storage.oracle.LocalIndexProperties>

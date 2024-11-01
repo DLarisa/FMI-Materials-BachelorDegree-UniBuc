@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.Arc parentClass="oracle.dbtools.crest.model.design.ContainerObject">
+   <property name="entity" dataType="oracle.dbtools.crest.model.design.logical.Entity" defaultValue="" xmlName="entity" xmlType="element" getter="getEntity" setter="setEntity" reffered="true"/>
+   <aa_property name="sizeIndex" dataType="int" defaultValue="" xmlName="sizeIndex" xmlType="element" getter="getSizeIndex" setter="setSizeIndex" reffered="false"/>
+   <collection name="relations" dataType="java.util.List" xmlName="relations" itemXmlName="relationID" getter="getRelations" itemIsRef="true" removeItem="removeRelation" addItem="addRelation" nativeList="true" orderTheList="true"/>
+   <roproperty name="relations" dataType="interface java.util.List" getter="getRelations"/>
+</oracle.dbtools.crest.model.design.logical.Arc>

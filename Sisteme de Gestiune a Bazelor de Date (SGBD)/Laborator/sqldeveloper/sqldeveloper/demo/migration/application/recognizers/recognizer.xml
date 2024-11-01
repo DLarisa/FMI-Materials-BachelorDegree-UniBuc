@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rulesfile version="1.0" name="Default file types recognizers" description="sss"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./scanner.xsd"
+>
+  <!-- 
+  Copyright 2011 by Oracle Corporation,
+  500 Oracle Parkway, Redwood Shores, California, 94065, U.S.A.
+  All rights reserved.
+ 
+  This software is the confidential and proprietary information
+  of Oracle Corporation.
+   -->
+  <recognizer name="specialized" description="specialized recognizer" enabled="true">
+    <fileExtension extension="example" />
+    <comments single="" startMulti="/*" endMulti="*/" />
+  </recognizer>
+  <recognizer name="c" description="C recognizer" enabled="true">
+    <fileExtension extension="c,h" />
+    <comments single="" startMulti="/*" endMulti="*/" />
+  </recognizer>
+  <recognizer name="ksh" description="ksh recognizer" enabled="true">
+    <fileExtension extension="ksh" />
+    <expression><![CDATA[#!/usr/bin/ksh]]></expression>
+    <comments single="#" startMulti="" endMulti="" />
+  </recognizer>
+  <recognizer name="java" description="Java recogniser" enabled="true">
+    <fileExtension extension="java" />
+    <comments single="//" startMulti="/*" endMulti="*/" />
+  </recognizer>
+    <recognizer name="PHP" description="PHP recognizer" enabled="true">
+    <fileExtension extension="php" />
+    <comments startMulti="/*"  endMulti="*/"/>
+  </recognizer>
+    <recognizer name="powerbuilder" description="PowerBuilder recognizer" enabled="true">
+    <fileExtension extension="pbl,PBL" />
+  </recognizer>
+     <recognizer name="asp" description="" enabled="true">
+    <fileExtension extension="asp" />
+  </recognizer>
+  <recognizer name="SQL" description="SQL files">
+  <fileExtension extension="sql,tsql,pks"/></recognizer>
+  <recognizer name="perl" description="Perl recognizer" enabled="true">
+    <fileExtension extension="pl,perl" />
+    <expression><![CDATA[\#\!.*\/perl]]></expression>
+    <comments single="--" />
+  </recognizer>
+</rulesfile>

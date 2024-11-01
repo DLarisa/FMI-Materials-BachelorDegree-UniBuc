@@ -1,0 +1,160 @@
+set serveroutput on;
+set echo off;
+set verify off;
+
+
+/* Să se implementeze un trigger prin care să se adauge constrângerea 
+ca într-un departament să nu existe mai mulți de 30 de angajați */
+
+drop trigger t1;
+
+
+-- COMPOUND TRIGGER (TRIGGER COMPUS)
+CREATE OR REPLACE TRIGGER t1
+FOR INSERT OR UPDATE OF department_id
+ON emp_lgd
+COMPOUND TRIGGER
+
+---- Zona Declarativă (se declară, deobicei, un vector aici) 
+-- Creez un record care va reține nr_ang și 'info' (inițial 0) care poate deveni 1
+-- Acel info nu ajung să îl folosesc vreodată. Deci nush ce vrea Vasile
+TYPE pereche IS RECORD(nr_ang NUMBER, info NUMBER);
+-- Creez un vector: indicii -> dept_id, info -> 1, dacă este vorba de departamentul modificat
+TYPE vector IS TABLE OF pereche INDEX BY PLS_INTEGER;
+v     vector; -- am definit variabila de tip vector
+poz   number;
+
+---- Zona Executată Înainte de Comanda LMD 
+BEFORE STATEMENT IS
+-- Inițializez v
+BEGIN
+  for i in (select department_id, count(*) nr
+            from emp_lgd join departments   -- pt că pot exista departamente fără niciun angajat
+            using (department_id)
+            group by department_id)
+  loop
+    v(i.department_id).nr_ang := i.nr; -- rețin dept_id ca indici vector
+    v(i.department_id).info := 0; -- ințial, toate 0 (nush care urmează să fie modificate)
+  end loop;
+END BEFORE STATEMENT;
+
+---- Zona Executată Înainte de modificarea fiecărui rând (:new, :old -> avaible)
+BEFORE EACH ROW IS
+-- Actualizez nr_ang (2 cazuri: inserting și updating)
+BEGIN
+  if inserting then
+    /*dbms_output.put_line(nvl(:new.department_id, 0));  -- la insert, am new (la before)
+    dbms_output.put_line(nvl(:old.department_id, 0));  -- la insert, nu am old (la before)
+    dbms_output.put_line('insert');*/
+    
+    v(:new.department_id).nr_ang := v(:new.department_id).nr_ang + 1;
+    v(:new.department_id).info := 1;  -- am marcat că acest departament a fost modificat
+  
+    dbms_output.put_line(v(:new.department_id).nr_ang);
+    if v(:new.department_id).nr_ang > 40 then 
+      raise_application_error(-20000, 'Prea multi Angajati la Insert!');
+    end if;
+  end if;
+  
+  if updating then -- atunci tb să scad nr_ang din departamentul vechi
+    /*dbms_output.put_line(nvl(:new.department_id, 0));  -- la update, nu am new (la before)
+    dbms_output.put_line(nvl(:old.department_id, 0));  -- la update, am old (la before)
+    dbms_output.put_line('update');*/
+
+    v(:old.department_id).nr_ang := v(:old.department_id).nr_ang - 1;
+  end if;
+END BEFORE EACH ROW;
+
+---- Zona Executată După Fiecare Rând Modificat (:new, :old) 
+AFTER EACH ROW IS
+BEGIN
+  /*dbms_output.put_line(nvl(:new.department_id, 0));  -- la insert și update am new
+  dbms_output.put_line(nvl(:old.department_id, 0));  -- la update am old*/
+  
+  if v(:new.department_id).nr_ang > 40 then 
+    raise_application_error(-20001, 'Prea multi Angajati la Update!');
+  end if;
+END AFTER EACH ROW;
+
+---- Zona Executată După Comanda LMD 
+AFTER STATEMENT IS
+BEGIN
+  /*   -- Nu ajung niciodată aici, din testele mele... deci nush
+  poz := v.first;
+  for i in 1..v.count loop
+    if v(poz).info = 1 and v(poz).nr_ang > 40 then
+      raise_application_error(-20010, 'Prea multi Angajati!');
+    end if;
+    poz := v.next(poz);
+  end loop;
+  */
+  NULL;
+END AFTER STATEMENT;
+
+END t1;
+/
+
+
+
+
+update emp_lgd
+set department_id = 110;
+-- where department_id = 50;
+
+insert into emp_lgd values(789, null, 'anaaa', 'asantest', null, sysdate, 'AC_ACCOUNT', 100000, null, null, 80);
+insert into emp_lgd select * from employees;
+
+rollback;
+
+select department_id, count(*)
+from emp_lgd join dept_lgd using(department_id)
+group by department_id;
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------
+/* Cerință: Implementați un trigger conform căruia un angajat să aibă întotdeauna
+un salariu valid (între min_salary și max_salary). */
+
+-- Dacă se fac modificări în tabelul employees
+CREATE OR REPLACE TRIGGER t1
+BEFORE INSERT OR UPDATE OF salary
+ON employees
+FOR EACH ROW
+DECLARE
+  mini     jobs.min_salary%type;
+  maxi     jobs.min_salary%type;
+BEGIN
+  select min_salary, max_salary
+  into mini, maxi
+  from jobs
+  where job_id = :new.job_id;
+  
+  if :new.salary not between mini and maxi then
+    raise_application_error(-20000, 'Salariul nu se incadreaza in limitele jobului!');
+  end if;
+END t1;
+/
+
+-- Dacă se fac update-uri în tabelul jobs, tb să verificăm slariul ang din nou
+-- Dacă încerc să iau mini și maxi din jobs, voi avea mutating tables.
+CREATE OR REPLACE TRIGGER t2
+BEFORE UPDATE
+ON jobs
+FOR EACH ROW
+BEGIN
+  for i in (select * from employees where job_id = :new.job_id) loop
+    if i.salary not between :new.min_salary and :new.max_salary then
+      raise_application_error(-20001, 'Limitele salariului nu se potrivesc');
+    end if;
+  end loop;
+END t2;
+/
+
+insert into employees values(789, null, 'anaaa', 'asantest', null, sysdate, 'AC_ACCOUNT', 100000, null, null, 80);
+update jobs
+set min_salary = 100000;

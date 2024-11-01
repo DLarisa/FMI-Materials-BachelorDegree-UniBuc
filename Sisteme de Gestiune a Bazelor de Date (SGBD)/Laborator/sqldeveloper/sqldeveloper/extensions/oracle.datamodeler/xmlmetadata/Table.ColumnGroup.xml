@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.Table.ColumnGroup parentClass="java.lang.Object" innerClass="true">
+   <property name="name" dataType="java.lang.String" defaultValue="" xmlName="name" xmlType="attribute" getter="getName" setter="setName" reffered="false"/>
+   <property name="objectID" dataType="java.lang.String" defaultValue="" xmlName="objectID" xmlType="attribute" getter="getObjectID" setter="setObjectID" reffered="false"/>
+   <property name="note" dataType="java.lang.String" defaultValue="" xmlName="note" xmlType="element" getter="getNote" setter="setNote" reffered="false"/>
+   <property name="columnRefs" dataType="java.lang.String" defaultValue="" xmlName="columns" xmlType="element" getter="getColumnRefs" setter="setColumnRefs" reffered="false" listOfRefs="true"/>
+</oracle.dbtools.crest.model.design.relational.Table.ColumnGroup>

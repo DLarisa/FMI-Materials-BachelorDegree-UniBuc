@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.MethodProxy parentClass="oracle.dbtools.crest.model.design.storage.RelationalObjectProxy">
+   <property name="bodyChanged" dataType="boolean" defaultValue="" xmlName="bodyChanged" xmlType="element" getter="isBodyChanged" setter="setBodyChanged" reffered="false"/>
+   <roproperty name="method" dataType="oracle.dbtools.crest.model.design.datatypes.Method" getter="getMethod"/>
+   <collection name="parameters" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="parameters" itemXmlName="Parameter" getter="getParams" proxyItem="true" />
+   <roproperty name="structuredType" dataType="oracle.dbtools.crest.model.design.datatypes.StructuredType" getter="getStructuredType"/>
+</oracle.dbtools.crest.model.design.storage.MethodProxy>

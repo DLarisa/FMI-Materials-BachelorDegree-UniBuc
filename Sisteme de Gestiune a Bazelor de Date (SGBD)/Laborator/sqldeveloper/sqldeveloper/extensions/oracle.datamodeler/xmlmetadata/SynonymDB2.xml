@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.db2.SynonymDB2 parentClass="oracle.dbtools.crest.model.design.storage.db2.AbstractStorageObjectDB2">
+   <aa_property name="alias" dataType="oracle.dbtools.crest.model.design.storage.db2.AliasDB2" defaultValue="" xmlName="alias" xmlType="element" getter="getAlias" setter="setAlias" reffered="true"/>
+   <property name="owner" dataType="oracle.dbtools.crest.model.design.storage.db2.Owner" defaultValue="" xmlName="owner" xmlType="element" getter="getOwner" setter="setOwner" reffered="true"/>
+   <aa_property name="table" dataType="oracle.dbtools.crest.model.design.storage.db2.TableProxyDB2" defaultValue="" xmlName="table" xmlType="element" getter="getTable" setter="setTable" reffered="true"/>
+   <aa_property name="view" dataType="oracle.dbtools.crest.model.design.storage.db2.TableViewProxyDB2" defaultValue="" xmlName="view" xmlType="element" getter="getView" setter="setView" reffered="true"/>
+</oracle.dbtools.crest.model.design.storage.db2.SynonymDB2>

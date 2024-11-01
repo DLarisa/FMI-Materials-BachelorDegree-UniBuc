@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html lang="ro"> 
+<head>		
+<title>Evenimente</title>
+<script>
+window.onload=function()
+{
+var par=document.getElementById("par");
+document.body.onkeyup=function(event)
+{  
+ 
+switch (event.key) {
+     case "r":
+      par.style.color="red";
+      break;
+    case "g":
+      par.style.color="green";
+      break;
+    case "b":
+      par.style.color="blue";
+      break;
+    default:
+      alert("Alta tasta"); return; 
+  
+                    }
+document.getElementById("tasta").innerHTML=event.key;   
+}
+}
+</script>
+</head>
+<body>
+<p id="par">Ati apasat tasta:</p>
+<p id="tasta"><p>
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v9i.TableProxyOraclev9i parentClass="oracle.dbtools.crest.model.design.storage.oracle.TableProxyOracle">
+   <property name="iotMappingTable" dataType="java.lang.String" defaultValue="NO" xmlName="iotMappingTable" xmlType="element" getter="getIOTMappingTable" setter="setIOTMappingTable" reffered="false"/>
+   <property name="supplementalLogColumns" dataType="java.lang.String" defaultValue="" xmlName="supplementalLogColumns" xmlType="element" getter="getSuplementalLogColumns" setter="setSuplementalLogColumns" reffered="false" listOfRefs="true"/>
+   <property name="supplementalLogConditions" dataType="java.lang.String" defaultValue="ON UPDATE" xmlName="supplementalLogConditions" xmlType="element" getter="getSuplementalLogConditions" setter="setSuplementalLogConditions" reffered="false"/>
+   <property name="supplementalLogGroupName" dataType="java.lang.String" defaultValue="" xmlName="supplementalLogGroupName" xmlType="element" getter="getSuplementalLogGroupName" setter="setSuplementalLogGroupName" reffered="false"/>
+   <roproperty name="allSupplementalLogColumns" dataType="java.lang.String" getter="getAllSupplementalLogColumns"/>
+   <bb_roproperty name="suplementalLogColumnset" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableProxyOracle$InlineList" getter="getSuplementalLogColumnSet"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v9i.TableProxyOraclev9i>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rulesfile version="1.0" name="Example of Specialized Rules"
+	description="Example rules "
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<ruleset name="Specialized rules set"
+		description="This example shows two parts.  The required section and the rules section.  The required section defines a regular expression which must be satisfied before searching the files."
+		type="SYBASE" target="ORACLE" enable="true" source="example">
+		<required>
+			<regex>
+				<expression><![CDATA[my_specialized_string]]></expression>
+			</regex>
+		</required>
+		<rules>
+		<regex name="Hello World" description="Look for Hello world in any line"
+			casesensitive="false">
+			<example><![CDATA[Hello\ *World]]></example>
+			<expression><![CDATA[Hello\ *World]]></expression>
+			<replacement><![CDATA[Goodbye World]]></replacement>
+		</regex>
+		</rules>
+	</ruleset>
+</rulesfile>

@@ -1,0 +1,109 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x,y,i; float z;
+    char v[100];
+    scanf("%d",&x); //citire
+    //  %d = int  (tipul datelor)
+    // %f = float   %s = char    %c = un singur caracter
+    /*scanf("%d%f",&y,&z);  // afisare
+    printf("%.2f,%d,%d",z,y,x);
+    printf("%.2f", z);  // %.(nr zecimale)f --- pt a afisa cu un anumit nr de zecimale   */
+    for(i=0; i<x; i++) scanf("%c",&v[i]);
+    for(i=0; i<x; i++) printf("%c ",v[i]);
+
+    return 0;
+}
+
+---------------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float x, y, s=0;
+    int nr=1, zile=1;
+    scanf("%f%f",&x,&y);
+    while(y!=0)
+    {
+        s=s+y;zile++;
+        if(s<x) nr++;
+        scanf("%f",&y);
+    }
+    printf("%d %.2f",nr,s/zile);
+
+    return 0;
+}
+
+
+------------------------------------------------------------------
+https://codeshare.io/29ZE4M
+------------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int nr1, nr2, x;
+    scanf("%d",&x); nr1=nr2=x;
+    while(x!=0)
+    {
+        if(x>nr1) nr2=nr1, nr1=x;
+        else if(x>nr2 && x!=nr1) nr2=x;
+        scanf("%d",&x);
+    }
+    printf("%d %d",nr1,nr2);
+
+    return 0;
+}
+
+--------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a, b, c, maxi;
+    scanf("%d%d%d", &a, &b, &c);
+    maxi=(a>b && a>c)?a:((b>c)?b:c); //Operator Decizional
+    // Operatorul decizional    
+                        (expresie logica)?Adevarat:Fals;
+    printf("%d", maxi);
+
+    int x;
+    scanf("%d",&x);
+    x=x<<3;  //x<<nr=x*(2^nr)
+    printf("%d\n",x);
+    x=x>>2;  //x>>nr=x/(2^nr)
+    printf("%d\n",x);
+    x=(x<<3)+(x<<1); //x*10=(x<<3)+(x<<1);
+
+    int y;scanf("%d",&y);
+    if((y&1)==1) printf("Impar\n");
+    else printf("Par\n");
+	
+
+    return 0;
+}
+
+
+
+-----------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main()
+{
+    int xa,ya,xb,yb,xc,yc;
+    scanf("%d%d%d%d%d%d",&xa, &ya, &xb, &yb, &xc, &yc);
+    float L=sqrt((xb-xa)*(xb-xa)+(yb-ya)*(yb-ya));
+    printf("%.2f\n", L);
+    float A=abs(xa*yb+xb*yc+ya*xc-xc*yb-xa*yc-xb*ya);
+    printf("%f", A/2.0);
+
+    return 0;
+}

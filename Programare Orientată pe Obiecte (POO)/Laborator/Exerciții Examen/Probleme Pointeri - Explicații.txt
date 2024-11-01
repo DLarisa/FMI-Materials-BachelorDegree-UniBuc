@@ -1,0 +1,23 @@
+int v[]={1, 2};
+int *p=v; //p=1
+cout << *p++; //se incrementeaza dupa ce se afiseaza (p=2)
+cout << *p;
+
+--------------------------------------
+Rãspuns: 1, 2
+
+
+1. 20 (lipseste referinta din functie)
+2. 150 (variabile din scop inferior aka ce e intre 2 acolade, nu influenteaza scopul superior - main... deci x-ul din scopul main-ului nu e afectat de x-ul din for)
+3. 5 4 3 2 1 (pointer + nr = merge prin vector, nu se modifica valoarea adresei)
+4. 10 500 
+   11 500 (adresa nu este afectata, doar valoarea)
+5. adresa lui a, adresa lui a (int *p=&a ---> p retine adresa lui a; * si & se anuleaza)
+6. 14
+7. eroare ca incearca sa modifice valoarea lui ptr const
+8. 21, 504, 504
+9.  129, ce e in ASCII pt 97(=a)
+10. 10 20 30 40 50
+11. 10 50 40 0
+12. BBB
+    

@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.udb.v81.TableProxyUDBv81 parentClass="oracle.dbtools.crest.model.design.storage.udb.TableProxyUDB">
+   <property name="dimensions" dataType="java.lang.String" defaultValue="" xmlName="dimensions" xmlType="element" getter="getDimensions" setter="setDimensions" reffered="false"/>
+   <property name="organizeByDimensions" dataType="boolean" defaultValue="false" xmlName="organizeByDimensions" xmlType="element" getter="getOrganizeByDimensions" setter="setOrganizeByDimensions" reffered="false"/>
+   <property name="queryOptimization" dataType="java.lang.String" defaultValue="ENABLE" xmlName="queryOptimization" xmlType="element" getter="getQueryOptimization" setter="setQueryOptimization" reffered="false"/>
+   <property name="restrictOnDrop" dataType="java.lang.String" defaultValue="NO" xmlName="restrictOnDrop" xmlType="element" getter="getRestrictOnDrop" setter="setRestrictOnDrop" reffered="false"/>
+   <property name="roremoteSchema" dataType="java.lang.String" defaultValue="" xmlName="roremoteSchema" xmlType="element" getter="getRoRemoteSchema" setter="setRoRemoteSchema" reffered="false"/>
+   <property name="roremoteServer" dataType="java.lang.String" defaultValue="" xmlName="roremoteServer" xmlType="element" getter="getRoRemoteServer" setter="setRoRemoteServer" reffered="false"/>
+   <property name="roremoteTabName" dataType="java.lang.String" defaultValue="" xmlName="roremoteTabName" xmlType="element" getter="getRoRemoteTabName" setter="setRoRemoteTabName" reffered="false"/>
+   <property name="useRemoteOptions" dataType="boolean" defaultValue="false" xmlName="useRemoteOptions" xmlType="element" getter="getUseRemoteOptions" setter="setUseRemoteOptions" reffered="false"/>
+   <property name="validation" dataType="java.lang.String" defaultValue="ENFORCED" xmlName="validation" xmlType="element" getter="getValidation" setter="setValidation" reffered="false"/>
+   <property name="valueCompression" dataType="java.lang.String" defaultValue="NO" xmlName="valueCompression" xmlType="element" getter="getValueCompression" setter="setValueCompression" reffered="false"/>
+   <roproperty name="stagingTables" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getStagingTables"/>
+   <roproperty name="tableCheckConstraints" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getTableCheckConstraints"/>
+   <collection name="tableCheckConstraints" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="tableCheckConstraints" itemXmlName="TableCheckConstraint" getter="getTableCheckConstraints" proxyItem="true" />
+</oracle.dbtools.crest.model.design.storage.udb.v81.TableProxyUDBv81>

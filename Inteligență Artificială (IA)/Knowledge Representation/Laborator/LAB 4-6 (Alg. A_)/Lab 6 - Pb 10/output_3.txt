@@ -1,0 +1,80 @@
+Input 3
+
+
+Euristica 1 (Nu e Admisibilă):
+Cost Total: 3.0.
+
+aaaa
+abbb
+cccc
+aaaa
+
+aaaa
+abbb
+aaaa
+Cost Mutare: 1.0.
+
+bbb
+Cost Mutare: 1.0.
+
+
+Cost Mutare: 1.0.
+
+
+Algoritmul A* s-a terminat în: 0.04 secunde.
+
+
+
+Euristica 2:
+Cost Total: 3.0.
+
+aaaa
+abbb
+cccc
+aaaa
+
+a###
+aaaa
+cccc
+aaaa
+Cost Mutare: 1.0.
+
+a###
+aaaa
+aaaa
+Cost Mutare: 1.0.
+
+
+Cost Mutare: 1.0.
+
+
+Algoritmul A* s-a terminat în: 0.05 secunde.
+
+
+
+Euristica 3:
+Cost Total: 3.0.
+
+aaaa
+abbb
+cccc
+aaaa
+
+aaaa
+abbb
+aaaa
+Cost Mutare: 1.0.
+
+a###
+aaaa
+aaaa
+Cost Mutare: 1.0.
+
+
+Cost Mutare: 1.0.
+
+
+Algoritmul A* s-a terminat în: 0.16 secunde.
+
+
+

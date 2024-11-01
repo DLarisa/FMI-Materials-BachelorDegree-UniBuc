@@ -1,0 +1,66 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.Table parentClass="oracle.dbtools.crest.model.design.ContainerWithKeyObject">
+   <property name="abbreviation" dataType="java.lang.String" defaultValue="" xmlName="abbreviation" xmlType="element" getter="getAbbreviation" setter="setAbbreviation" reffered="false"/>
+   <property name="adequatelyNormalized" dataType="java.lang.String" defaultValue="NO" xmlName="adequatelyNormalized" xmlType="element" getter="getAdequatelyNormalized" setter="setAdequatelyNormalized" reffered="false"/>
+   <aa_property name="beingRecreated" dataType="boolean" defaultValue="" xmlName="beingRecreated" xmlType="element" getter="isBeingRecreated" setter="setBeingRecreated" reffered="false"/>
+   <property name="expectedVolumes" dataType="java.lang.String" defaultValue="0" xmlName="expectedVolumes" xmlType="element" getter="getExpectedVolumes" setter="setExpectedVolumes" reffered="false"/>
+   <property name="growthPercent" dataType="java.lang.String" defaultValue="0" xmlName="growthPercent" xmlType="element" getter="getGrowthPercent" setter="setGrowthPercent" reffered="false"/>
+   <property name="growthType" dataType="java.lang.String" defaultValue="Year" xmlName="growthType" xmlType="element" getter="getGrowthType" setter="setGrowthType" reffered="false"/>
+   <property name="maxVolumes" dataType="java.lang.String" defaultValue="9999999" xmlName="maxVolumes" xmlType="element" getter="getMaxVolumes" setter="setMaxVolumes" reffered="false"/>
+   <property name="minVolumes" dataType="java.lang.String" defaultValue="0" xmlName="minVolumes" xmlType="element" getter="getMinVolumes" setter="setMinVolumes" reffered="false"/>
+   <property name="normalForm" dataType="java.lang.String" defaultValue="Third" xmlName="normalForm" xmlType="element" getter="getNormalForm" setter="setNormalForm" reffered="false"/>
+   <bb_property name="primaryKey" dataType="oracle.dbtools.crest.model.design.relational.Index" defaultValue="" xmlName="primaryKey" xmlType="element" getter="getPK" setter="setPK" reffered="false"/>
+   <property name="oidIsPK" dataType="boolean" defaultValue="false" xmlName="oidIsPK" xmlType="element" getter="isOidIsPK" setter="setOidIsPK" reffered="false"/>
+   <aa_property name="oidPKColumns" dataType="interface java.util.List" defaultValue="" xmlName="oidPKColumns" xmlType="element" getter="getOidPKColumns" setter="setOidPKColumns" reffered="false"/>
+   <property name="scope" dataType="java.lang.String" defaultValue="" xmlName="scope" xmlType="element" getter="getScope" setter="setScope" reffered="false"/>
+   <aa_property name="spatialDefinitions" dataType="interface java.util.List" defaultValue="" xmlName="spatialDefinitions" xmlType="element" getter="getSpatialDefinitions" setter="setSpatialDefinitions" reffered="false"/>
+   <property name="spatialTable" dataType="boolean" defaultValue="false" xmlName="spatialTable" xmlType="element" getter="isSpatialTable" setter="setSpatialTable" reffered="false"/>
+   <property name="splittedTableID" dataType="java.lang.String" defaultValue="" xmlName="splittedTableID" xmlType="element" getter="getSplittedTableID" setter="setSplittedTableID" reffered="false"/>
+   <property name="userDefinedOid" dataType="boolean" defaultValue="true" xmlName="userDefinedOid" xmlType="element" getter="isUserDefinedOid" setter="setUserDefinedOid" reffered="false"/>
+   <property_moved_to_ContainerObject name="schemaObject" dataType="oracle.dbtools.crest.model.design.relational.SchemaObject" defaultValue="" xmlName="schemaObject" xmlType="element" getter="getSchemaObject" setter="setSchemaObject" reffered="true"/>
+   <collection name="columns" dataType="java.util.Collection" xmlName="columns" itemXmlName="Column" getter="getElementsCollection" createItem="createColumn" getItemByID="getElementByID" moveMethod="moveToIndex"/>
+   <collection name="indexes" dataType="java.util.List" xmlName="indexes" itemXmlName="ind_PK_UK" getter="getAllInds_FKeyInds" createItem="createIndex" getItemByID="getKeyObject" applyList="applyIndexOrderFromList"/>
+   <collection name="tableCheckConstraints" dataType="java.util.List" xmlName="tableCheckConstraints" itemXmlName="tableCheckConstraint" getter="getCheckConstraints" createItem="createCheckConstraint" getItemByID="getCheckConstraintByID" removeItem="removeCheckConstraint" addItem="addCheckConstraint" nativeList="true" orderTheList="true"/>
+   <collection name="columnGroups" dataType="java.util.List" xmlName="columnGroups" itemXmlName="columnGroup" getter="getColumnGroupsSet" createItem="createColumnGroup" getItemByID="getColumnGroupByID" removeItem="removeColumnGroup"  nativeList="true" orderTheList="true"/>
+   <collection name="spatialDefinitions" dataType="java.util.List" xmlName="spatialDefinitions" itemXmlName="spatialColumnDefinition" getter="getSpatialDefinitions" createItem="createSpatialDefinition" removeItem="removeSpatialDefinition" getItemByID="getSpatialDefinitionByID" />
+   <roproperty name="associated" dataType="boolean" getter="isAssociated"/>
+   <roproperty name="mtoNjoinCandidate" dataType="boolean" getter="isMtoNjoinCandidate"/>
+   <roproperty name="referencedByFKs" dataType="boolean" getter="isReferencedByFKs"/>
+   <roproperty name="allFKColumns" dataType="[Loracle.dbtools.crest.model.design.relational.Column" getter="getAllFKColumns"/>
+   <roproperty name="allFKPlaceHolderColumns" dataType="[Loracle.dbtools.crest.model.design.relational.Column" getter="getAllFKPlaceHolderColumns"/>
+   <roproperty name="allInds_PK_UK_NoFKeys" dataType="interface java.util.List" getter="getAllInds_PK_UK_NoFKeys"/>
+   <roproperty name="allNestedElements" dataType="interface java.util.List" getter="getAllNestedElements"/>
+   <roproperty name="allPossibleElements" dataType="interface java.util.List" getter="getAllPossibleElements"/>
+   <roproperty name="allSubstitutionTables" dataType="interface java.util.List" getter="getAllSubstitutionTables"/>
+   <roproperty name="allowedStrTypeInstances" dataType="interface java.util.List" getter="getAllowedStrTypeInstances"/>
+   <roproperty name="arcs" dataType="interface java.util.List" getter="getArcs"/>
+   <roproperty name="byteSize" dataType="int" getter="getByteSize"/>
+   <roproperty name="checkconstraints" dataType="interface java.util.List" getter="getCheckConstraints"/>
+   <roproperty name="columnForDelegate" dataType="oracle.dbtools.crest.model.design.relational.Column" getter="getColumnForDelegate"/>
+   <roproperty name="columnGroupsSet" dataType="interface java.util.List" getter="getColumnGroupsSet"/>
+   <roproperty name="columnSet" dataType="oracle.dbtools.crest.model.design.relational.ColumnSet" getter="getColumnSet"/>
+   <roproperty name="deletedMapping" dataType="oracle.dbtools.crest.model.xtdmapping.XtdMapping" getter="getDeletedMapping"/>
+   <roproperty name="editableFonts" dataType="interface java.util.List" getter="getEditableFonts"/>
+   <roproperty name="engentity" dataType="oracle.dbtools.crest.model.design.logical.Entity" getter="getEngEntity"/>
+   <roproperty name="engRelation" dataType="oracle.dbtools.crest.model.design.logical.Relation" getter="getEngRelation"/>
+   <roproperty name="expectedVolumesInt" dataType="int" getter="getExpectedVolumesInt"/>
+   <roproperty name="fkAssociations" dataType="[Loracle.dbtools.crest.model.design.relational.FKIndexAssociation" getter="getFKAssociations"/>
+   <roproperty name="fkAssociationsCount" dataType="int" getter="getFKAssociationsCount"/>
+   <roproperty name="fkAssociationsList" dataType="interface java.util.List" getter="getFKAssociationsList"/>
+   <roproperty name="fkIndexAssociationfor" dataType="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" getter="getFKIndexAssociationFor"/>
+   <roproperty name="fkIndexAssociationsWith" dataType="[Loracle.dbtools.crest.model.design.relational.FKIndexAssociation" getter="getFKIndexAssociationsWith"/>
+   <roproperty name="fkeysOnColumn" dataType="interface java.util.List" getter="getFKeysOnColumn"/>
+   <roproperty name="fontObject" dataType="oracle.dbtools.crest.model.design.FontObject" getter="getFontObject"/>
+   <roproperty name="growthPercentInt" dataType="int" getter="getGrowthPercentInt"/>
+   <roproperty name="indexByName" dataType="oracle.dbtools.crest.model.design.relational.Index" getter="getIndexByName"/>
+   <roproperty name="indexes" dataType="oracle.dbtools.crest.model.design.DesignObjectCollection" getter="getIndexes"/>
+   <roproperty name="mappingsToEntities" dataType="interface java.util.List" getter="getMappingsToEntities"/>
+   <roproperty name="maxVolumesInt" dataType="int" getter="getMaxVolumesInt"/>
+   <roproperty name="minVolumesInt" dataType="int" getter="getMinVolumesInt"/>
+   <roproperty name="nonStructuredElements" dataType="interface java.util.List" getter="getNonStructuredElements"/>
+   <roproperty name="numberOfFKAssociationFor" dataType="int" getter="getNumberOfFKAssociationFor"/>
+   <roproperty name="pkandUkConstraints" dataType="interface java.util.List" getter="getPKandUKConstraints"/>
+   <roproperty name="pkeys" dataType="oracle.dbtools.crest.model.design.DesignObjectCollection" getter="getPKeys"/>
+   <roproperty name="possibleSplits" dataType="interface java.util.List" getter="getPossibleSplits"/>
+   <roproperty name="ukeys" dataType="oracle.dbtools.crest.model.design.DesignObjectCollection" getter="getUKeys"/>
+</oracle.dbtools.crest.model.design.relational.Table>

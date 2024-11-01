@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Fisier de baza</title>
+		<style>
+
+		</style>
+		<script>
+			function f(){
+				alert(this.innerHTML);
+				console.log(this);
+			}
+			function f1(b){
+				alert(b.innerHTML);
+				console.log(b);
+			}
+			window.onload=function(){
+				var btn1=document.getElementById("alerta1");
+				btn1.onclick=f;
+				var btn2=document.getElementById("alerta2");
+				btn2.addEventListener("click",f);
+				var btn4=document.getElementById("alerta4");
+				btn4.setAttribute("onclick","f1(this)");
+			}
+		</script>
+	</head>
+	<body>
+		<p>Nota: in exercitiile de tip "corectati greseala", desi nu e recomandat, s-au pus css-ul si script-ul in fisierul html strict pentru simplitate (downloadarea unui singur fisier vs 3). Totusi retineti ca indicat este sa folositi fisiere externe in teme/proiecte/teste.</p>
+		<hr/>
+		<p>La click pe oricare dintre butoane dorim sa apara o alerta cu continutul (textul) butonului. Totusi la click pe al treilea buton nu se intampla asta. De ce? Observati ce se afiseaza in consola si corectati (de exemplu facand o functie f1 cu continut asemanator cu al lui f si apeland functia asa cum trebuie pentru butoanele 3 si 4). </p>
+		<button id="alerta1">Alert cu innerHTML-ul butonului (1)</button>
+		<button id="alerta2">Alert cu innerHTML-ul butonului (2)</button>
+		<button id="alerta3" onclick="f1(this)">Alert cu innerHTML-ul butonului (3)</button>
+		<button id="alerta4" >Alert cu innerHTML-ul butonului (4)</button>
+	</body>
+</html>

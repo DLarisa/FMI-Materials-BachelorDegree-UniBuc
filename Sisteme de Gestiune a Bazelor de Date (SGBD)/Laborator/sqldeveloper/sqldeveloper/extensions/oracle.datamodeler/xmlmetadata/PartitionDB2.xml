@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.db2.PartitionDB2 parentClass="oracle.dbtools.crest.model.design.storage.db2.AbstractPartitionDB2">
+   <property name="compress" dataType="boolean" defaultValue="" xmlName="compress" xmlType="element" getter="isCompress" setter="setCompress" reffered="false"/>
+   <property name="partNumber" dataType="int" defaultValue="" xmlName="partNumber" xmlType="element" getter="getPartNumber" setter="setPartNumber" reffered="false"/>
+   <property name="storageTemplate" dataType="oracle.dbtools.crest.model.design.storage.db2.StorageTemplateDB2" defaultValue="" xmlName="storageTemplate" xmlType="element" getter="getStorageTemplate" setter="setStorageTemplate" reffered="true"/>
+   <property name="tableSpace" dataType="oracle.dbtools.crest.model.design.storage.db2.TableSpaceDB2" defaultValue="" xmlName="tableSpace" xmlType="element" getter="getTableSpace" setter="setTableSpace" reffered="true"/>
+</oracle.dbtools.crest.model.design.storage.db2.PartitionDB2>

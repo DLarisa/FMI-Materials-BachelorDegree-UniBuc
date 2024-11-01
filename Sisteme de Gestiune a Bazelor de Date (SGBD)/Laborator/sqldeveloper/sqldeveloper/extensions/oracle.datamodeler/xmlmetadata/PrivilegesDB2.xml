@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.db2.PrivilegesDB2 parentClass="oracle.dbtools.crest.model.design.storage.StorageObject">
+   <property name="db" dataType="oracle.dbtools.crest.model.design.storage.db2.DataBaseDB2" defaultValue="" xmlName="db" xmlType="element" getter="getDb" setter="setDb" reffered="true"/>
+   <property name="grantOption" dataType="java.lang.String" defaultValue="NO" xmlName="grantOption" xmlType="element" getter="getGrantOption" setter="setGrantOption" reffered="false"/>
+   <property name="systemPrivileges" dataType="java.lang.String" defaultValue="" xmlName="systemPrivileges" xmlType="element" getter="getSystemPrivileges" setter="setSystemPrivileges" reffered="false" listOfRefs="true"/>
+   <aa_property name="user" dataType="oracle.dbtools.crest.model.design.storage.db2.Owner" defaultValue="" xmlName="user" xmlType="element" getter="getUser" setter="setUser" reffered="true"/>
+   <roproperty name="systemPrivilegesset" dataType="oracle.dbtools.crest.model.design.storage.db2.PrivilegesDB2$PrivilegesSet" getter="getSystemPrivilegesSet"/>
+</oracle.dbtools.crest.model.design.storage.db2.PrivilegesDB2>

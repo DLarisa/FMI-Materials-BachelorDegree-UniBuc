@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v10g.StorageDesignOraclev10g parentClass="oracle.dbtools.crest.model.design.storage.oracle.StorageDesignOracle">
+   <collection external="true" name="OracleDiskGroups" dataType="oracle.dbtools.crest.model.design.storage.oracle.v10g.DiskGroupSetOraclev10g" xmlName="OracleDiskGroups" itemXmlName="OracleDiskGroup" getter="getDiskGroupSet"  createItem="createDiskGroupOracle"/>
+   <roproperty name="asMDiskset" dataType="oracle.dbtools.crest.model.design.storage.oracle.v10g.ASMDiskSetOraclev10g" getter="getASMDiskSet"/>
+   <roproperty name="diskGroupSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.v10g.DiskGroupSetOraclev10g" getter="getDiskGroupSet"/>
+   <roproperty name="externalColumnSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.ExternalTableColumnSetOracle" getter="getExternalColumnSet"/>
+   <roproperty name="externalTableSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.ExternalTableSetOracle" getter="getExternalTableSet"/>
+   <roproperty name="failGroupSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.v10g.FailGroupSetOraclev10g" getter="getFailGroupSet"/>
+   <roproperty name="indexHashPartitionLobitemSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.IndexHashPartitionLobItemSetOracle" getter="getIndexHashPartitionLobItemSet"/>
+   <roproperty name="indexHashPartitionSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.IndexHashPartitionSetOracle" getter="getIndexHashPartitionSet"/>
+   <roproperty name="rollbackSegmentSetOracle" dataType="oracle.dbtools.crest.model.design.storage.oracle.RollbackSegmentSetOracle" getter="getRollbackSegmentSetOracle"/>
+   <roproperty name="undoTablespaceSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.UndoTablespaceSetOracle" getter="getUndoTablespaceSet"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v10g.StorageDesignOraclev10g>

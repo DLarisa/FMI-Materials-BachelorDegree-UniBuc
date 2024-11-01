@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.datatypes.Method parentClass="oracle.dbtools.crest.model.design.DesignObject">
+   <property name="body" dataType="java.lang.String" defaultValue="" xmlName="body" xmlType="element" getter="getBody" setter="setBody" reffered="false"/>
+   <property name="constructor" dataType="boolean" defaultValue="false" xmlName="constructor" xmlType="element" getter="isConstructor" setter="setConstructor" reffered="false"/>
+   <property name="number" dataType="int" defaultValue="" xmlName="number" xmlType="element" getter="getNumber" setter="setNumber" reffered="false"/>
+   <property name="overridedMethod" dataType="oracle.dbtools.crest.model.design.datatypes.Method" defaultValue="" xmlName="overridedMethod" xmlType="element" getter="getOverridedMethod" setter="setOverridedMethod" reffered="true"/>
+   <property name="overriding" dataType="boolean" defaultValue="false" xmlName="overriding" xmlType="element" getter="isOverriding" setter="setOverriding" reffered="false"/>
+   <collection name="parameters" dataType="java.util.List" xmlName="parameters" itemXmlName="Parameter" getter="getParameters" createItem="createParameter"/>
+   <property name="returnValue" dataType="oracle.dbtools.crest.model.design.datatypes.MethodParam" defaultValue="" xmlName="returnValue" xmlType="element" getter="getReturnValue" createItem="createReturnValue" removeItem="clearReturnValue" setter="setReturnValue" reffered="false"/>
+   <aa_property name="structuredType" dataType="oracle.dbtools.crest.model.design.datatypes.StructuredType" defaultValue="" xmlName="structuredType" xmlType="element" getter="getStructuredType" setter="setStructuredType" reffered="true"/>
+   <roproperty name="localIDGenerator" dataType="oracle.dbtools.crest.model.IDGenerator" getter="getLocalIDGenerator"/>
+   <roproperty name="paramClass" dataType="java.lang.Class" getter="getParamClass"/>
+   <roproperty name="paramSet" dataType="oracle.dbtools.crest.model.design.datatypes.MethodParamSet" getter="getParamSet"/>
+</oracle.dbtools.crest.model.design.datatypes.Method>

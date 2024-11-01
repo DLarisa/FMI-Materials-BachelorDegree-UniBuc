@@ -1,0 +1,106 @@
+#!/bin/bash
+
+#=============================================================================
+#  Launcher for Oracle JDeveloper Index Migrator 11.1.1.4.0
+# Copyright (c) 2005, 2010, Oracle and/or its affiliates. All rights reserved. 
+#=============================================================================
+
+#-----------------------------------------------------------------------------
+#  toAbsPath() takes two arguments
+#    1) a pathname (assumed to point to a file)
+#    2) a directory that the pathname is relative to
+#
+#  and converts the pathname to an absolute path (if necessary), resolving
+#  any "." or ".." in the absolute path.  The result is echoed to STDOUT.
+#-----------------------------------------------------------------------------
+toAbsPath()
+{
+    local pathname="$1"
+    local rawAbsPath
+
+    #  Test if $arg starts with '/'.
+    if [ "X`expr \"${pathname}\" : '\(/\).*'`" = "X/" ]
+    then
+    rawAbsPath="${pathname}"
+    else
+        local relativeTo="$2"
+        rawAbsPath="${relativeTo}/${pathname}"
+    fi
+
+    #  Resolve any "." and ".." in $rawAbsPath.
+    local cwd=`pwd`
+    local rawAbsDir=`dirname "$rawAbsPath"`
+    local basename=`basename "$rawAbsPath"`
+    cd "${rawAbsDir}"
+    local dir=`pwd -P`
+    cd "${cwd}"
+    echo "${dir}/${basename}"
+}
+
+#-----------------------------------------------------------------------------
+#  getSymlinkTarget() takes one argument
+#    1) a pathname
+#
+#  If the pathname is a symlink, the symlink target is echoed to STDOUT.
+#  If the pathname is not a symlink, the pathname itself is echoed.
+#-----------------------------------------------------------------------------
+getSymlinkTarget()
+{
+    local pathname="$1"
+    while [ -h "$pathname" ] ; do
+        local ls=`ls -ld "$pathname"`
+        local link=`expr "$ls" : '.*-> \(.*\)$'`
+        if expr "$link" : '.*/.*' > /dev/null
+        then
+            pathname="$link"
+        else
+            pathname="`dirname \"$pathname\"`/$link"
+        fi
+    done
+    echo "$pathname"
+}
+
+#-----------------------------------------------------------------------------
+#  main
+#-----------------------------------------------------------------------------
+STARTING_CWD=`pwd`
+readonly STARTING_CWD
+
+#  INVOKED_AS contains the absolute path of the script invocation.
+INVOKED_AS=`toAbsPath "$0" "\`pwd\`"`
+readonly INVOKED_AS
+
+#  SCRIPT contains the absolute path of the actual (symlink-resolved) script.
+SCRIPT=`toAbsPath "\`getSymlinkTarget \"${INVOKED_AS}\"\`" "\`dirname \"${INVOKED_AS}\"\`"`
+readonly SCRIPT
+
+#  PRODUCT_HANDLES_HELP should be 1 if the java part of this product handles help argument
+PRODUCT_HANDLES_HELP=0
+
+#  PRODUCT_HANDLES_VERBOSE should be 1 if the java part of this product handles verbose argument
+PRODUCT_HANDLES_VERBOSE=0
+
+#  PRODUCT_DISPLAYS_BANNER should be 1 if the java part of this product displays the banner
+PRODUCT_DISPLAYS_BANNER=0
+
+. "`dirname "${SCRIPT}"`/../../ide/bin/launcher.sh"
+
+#  A segmentation fault or other core dump at startup can occur if
+#  the shell's stack size limit is too small.  Uncomment the following
+#  line to raise the stack size to 4MB or more.
+#ulimit -s 4096
+
+#-----------------------------------------------------------------------------
+#  product-specific function overrides
+#-----------------------------------------------------------------------------
+GetFullProductName()
+{
+    echo "Oracle JDeveloper Index Migrator 11.1.1.4.0"
+}
+
+GetShortProductName()
+{
+    echo "IndexMigrator"
+}
+
+LaunchIDE "$@"

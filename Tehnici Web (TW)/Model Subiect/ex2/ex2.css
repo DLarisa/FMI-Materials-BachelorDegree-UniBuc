@@ -1,0 +1,8 @@
+#container{
+	border:1px solid black;
+	width:70%;
+	padding:2px;
+}
+#container div{
+	border:1px solid blue;
+}

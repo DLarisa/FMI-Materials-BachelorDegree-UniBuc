@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.SubsetCO parentClass="oracle.dbtools.crest.model.design.ContainerObject">
+   <aa_property name="containerObject" dataType="oracle.dbtools.crest.model.design.ContainerObject" defaultValue="" xmlName="containerObject" xmlType="element" getter="getContainerObject" setter="setContainerObject" reffered="true"/>
+</oracle.dbtools.crest.model.SubsetCO>

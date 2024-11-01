@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.DomainFileWrapper parentClass="java.lang.Object" xmlName="DomainFile">
+   <property name="fileName" dataType="java.lang.String" defaultValue="" xmlName="fileName" xmlType="attribute" getter="getFileName" setter="setFileName" reffered="false"/>
+   <collection name="domains" dataType="java.util.List" xmlName="domains" itemXmlName="Domain" getter="getIDSortedDomains" createItem="createDomain" removeItem="removeDomain" getItemByID="getDomainByID"  nativeList="true" orderTheList="true"/>
+   <roproperty name="domainById" dataType="oracle.dbtools.crest.model.design.Domain" getter="getDomainByID"/>
+   <roproperty name="domains" dataType="interface java.util.List" getter="getDomains"/>
+   <roproperty name="idSorteddomains" dataType="interface java.util.List" getter="getIDSortedDomains"/>
+</oracle.dbtools.crest.model.design.DomainFileWrapper>

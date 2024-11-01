@@ -1,0 +1,38 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.process.Flow parentClass="oracle.dbtools.crest.model.design.process.AbstractProcessObject">
+   <property name="destination" dataType="oracle.dbtools.crest.model.design.process.AbstractProcessObject" defaultValue="" xmlName="destination" xmlType="element" getter="getDestination" setter="setDestination" reffered="true"/>
+   <property name="event" dataType="oracle.dbtools.crest.model.design.process.Event" defaultValue="" xmlName="event" xmlType="element" getter="getEvent" setter="setEvent" reffered="true"/>
+   <property name="logging" dataType="boolean" defaultValue="" xmlName="logging" xmlType="element" getter="isLogging" setter="setLogging" reffered="false"/>
+   <property name="opCreate" dataType="boolean" defaultValue="" xmlName="opCreate" xmlType="element" getter="isOpCreate" setter="setOpCreate" reffered="false"/>
+   <property name="opDelete" dataType="boolean" defaultValue="" xmlName="opDelete" xmlType="element" getter="isOpDelete" setter="setOpDelete" reffered="false"/>
+   <property name="opRead" dataType="boolean" defaultValue="" xmlName="opRead" xmlType="element" getter="isOpRead" setter="setOpRead" reffered="false"/>
+   <property name="opUpdate" dataType="boolean" defaultValue="" xmlName="opUpdate" xmlType="element" getter="isOpUpdate" setter="setOpUpdate" reffered="false"/>
+   <property name="parentObject" dataType="oracle.dbtools.crest.model.design.process.AbstractProcessObject" defaultValue="" xmlName="parentObject" xmlType="element" getter="getParentObject" setter="setParentObject" reffered="true"/>
+   <aa_property name="source" dataType="oracle.dbtools.crest.model.design.process.AbstractProcessObject" defaultValue="" xmlName="source" xmlType="element" getter="getSource" setter="setSource" reffered="true"/>
+   <property name="sourceProcessObject" dataType="oracle.dbtools.crest.model.design.process.AbstractProcessObject" defaultValue="" xmlName="sourceProcessObject" xmlType="element" getter="getSourceProcessObject" setter="setSourceProcessObject" reffered="true"/>
+   <aa_property name="sourceTV" dataType="oracle.dbtools.crest.swingui.process.AbstractDataFlowTV" defaultValue="" xmlName="sourceTV" xmlType="element" getter="getSourceTV" setter="setSourceTV" reffered="true"/>
+   <aa_property name="sourceTopView" dataType="oracle.dbtools.crest.swingui.TopView" defaultValue="" xmlName="sourceTopView" xmlType="element" getter="getSourceTopView" setter="setSourceTopView" reffered="true"/>
+   <property name="systemObjective" dataType="java.lang.String" defaultValue="" xmlName="systemObjective" xmlType="element" getter="getSystemObjective" setter="setSystemObjective" reffered="false"/>
+   <property name="targetProcessObject" dataType="oracle.dbtools.crest.model.design.process.AbstractProcessObject" defaultValue="" xmlName="targetProcessObject" xmlType="element" getter="getTargetProcessObject" setter="setTargetProcessObject" reffered="true"/>
+   <aa_property name="targettV" dataType="oracle.dbtools.crest.swingui.process.AbstractDataFlowTV" defaultValue="" xmlName="targettV" xmlType="element" getter="getTargetTV" setter="setTargetTV" reffered="true"/>
+   <aa_property name="targettopView" dataType="oracle.dbtools.crest.swingui.TopView" defaultValue="" xmlName="targettopView" xmlType="element" getter="getTargetTopView" setter="setTargetTopView" reffered="true"/>
+   <collection name="infoStructures" dataType="java.util.List" xmlName="infoStructures" itemXmlName="infoStructureRef" getter="getInfoStructures" itemIsRef="true" listOfRefs="false" refsXMLName="infoStructureRefs" removeItem="removeInfoStructure" addItem="addInfoStructure" getItemByID="getInfoStructureByID" nativeList="true" orderTheList="true"/>
+   <roproperty name="balanced" dataType="boolean" getter="isBalanced"/>
+   <roproperty name="connecedTotcompositeProc" dataType="boolean" getter="isConnecedTotCompositeProc"/>
+   <roproperty name="connectedToExternaAgent" dataType="boolean" getter="isConnectedToExternaAgent"/>
+   <roproperty name="connectedToInfoStore" dataType="boolean" getter="isConnectedToInfoStore"/>
+   <roproperty name="valid" dataType="boolean" getter="isValid"/>
+   <roproperty name="componentFlows" dataType="interface java.util.List" getter="getComponentFlows"/>
+   <roproperty name="connection" dataType="oracle.dbtools.crest.model.design.process.Flow$Connection" getter="getConnection"/>
+   <roproperty name="dpVInfoFor" dataType="oracle.dbtools.crest.model.design.process.Flow$dpvInfo" getter="getDPVInfoFor"/>
+   <roproperty name="externalData" dataType="interface java.util.List" getter="getExternalData"/>
+   <roproperty name="infoStructures" dataType="interface java.util.List" getter="getInfoStructures"/>
+   <roproperty name="object" dataType="oracle.dbtools.crest.model.design.DesignObject" getter="getObject"/>
+   <roproperty name="possibleparentFlows" dataType="interface java.util.List" getter="getPossibleParentFlows"/>
+   <roproperty name="processObject" dataType="oracle.dbtools.crest.model.design.process.AbstractProcessObject" getter="getProcessObject"/>
+   <roproperty name="sourceConnection" dataType="oracle.dbtools.crest.model.design.process.Flow$Connection" getter="getSourceConnection"/>
+   <roproperty name="sourceObject" dataType="oracle.dbtools.crest.model.design.DesignObject" getter="getSourceObject"/>
+   <roproperty name="targetConnection" dataType="oracle.dbtools.crest.model.design.process.Flow$Connection" getter="getTargetConnection"/>
+   <roproperty name="targetObject" dataType="oracle.dbtools.crest.model.design.DesignObject" getter="getTargetObject"/>
+   <roproperty name="viewFor" dataType="oracle.dbtools.crest.swingui.TopView" getter="getViewFor"/>
+</oracle.dbtools.crest.model.design.process.Flow>

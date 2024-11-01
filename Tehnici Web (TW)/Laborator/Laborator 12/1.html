@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Fisier de baza</title>
+		<style>
+			#container{
+				background-image:url("http://irinaciocan.ro/imagini/apa.png");
+				width:100px;
+				height:100px;
+			}
+		</style>
+		<script>
+			function rand_int(a,b){
+				return Math.floor(a+Math.random()*(b-a));
+			}
+		
+			window.onload=function(){
+				var btn=document.getElementById("schimba");
+				btn.onclick=function(){
+					var dv=document.getElementById("container");
+					r=rand_int(0,256);
+					g=rand_int(0,256);
+					b=rand_int(0,256);
+					dv.style.backgroundColor=`rgb(${r},${g},${b})`;
+					dv.style.backgroundImage="none";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p>Nota: in exercitiile de tip "corectati greseala", desi nu e recomandat, s-au pus css-ul si script-ul in fisierul html strict pentru simplitate (downloadarea unui singur fisier vs 3). Totusi retineti ca indicat este sa folositi fisiere externe in teme/proiecte/teste.</p>
+		<hr/>
+		<p>La click pe buton dorim sa vedem in div o culoare random (in locul imaginii de background). De asemenea, si la clickuri ulterioare dorim sa se schimbe culoarea de background a divului intr-o culoare random. Totusi la click pe buton nu se intampla asta. De ce? Corectati. </p>
+		<div id="container">
+		</div>
+		<button id="schimba">Schimba intr-o culoare random</button>
+	</body>
+</html>

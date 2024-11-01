@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.SynonymOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="dbLink" dataType="java.lang.String" defaultValue="" xmlName="dbLink" xmlType="element" getter="getDBLink" setter="setDBLink" reffered="false"/>
+   <property name="object" dataType="java.lang.String" defaultValue="" xmlName="object" xmlType="element" getter="getObject" setter="setObject" reffered="false"/>
+   <property name="objectUser" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserOracle" defaultValue="" xmlName="objectUser" xmlType="element" getter="getObjectUser" setter="setObjectUser" reffered="true"/>
+   <property name="public" dataType="java.lang.String" defaultValue="NO" xmlName="public" xmlType="element" getter="getPublic" setter="setPublic" reffered="false"/>
+   <property name="user" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserOracle" defaultValue="" xmlName="user" xmlType="element" getter="getUser" setter="setUser" reffered="true"/>
+</oracle.dbtools.crest.model.design.storage.oracle.SynonymOracle>

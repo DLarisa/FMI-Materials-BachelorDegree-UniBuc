@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.udb.StagingTableUDB parentClass="oracle.dbtools.crest.model.design.storage.db2.AbstractStorageObjectDB2">
+   <property name="columns" dataType="java.lang.String" defaultValue="" xmlName="columns" xmlType="element" getter="getColumns" setter="setColumns" reffered="false" listOfRefs="true"/>
+   <property name="defineColumnNames" dataType="boolean" defaultValue="" xmlName="defineColumnNames" xmlType="element" getter="getDefineColumnNames" setter="setDefineColumnNames" reffered="false"/>
+   <property name="generateSIC" dataType="java.lang.String" defaultValue="" xmlName="generateSIC" xmlType="element" getter="getGenerateSIC" setter="setGenerateSIC" reffered="false"/>
+   <property name="table" dataType="oracle.dbtools.crest.model.design.storage.udb.TableProxyUDB" defaultValue="" xmlName="table" xmlType="element" getter="getTable" setter="setTable" reffered="true"/>
+   <roproperty name="columnSet" dataType="oracle.dbtools.crest.model.design.storage.udb.StagingTableUDB$ColumnSet" getter="getColumnSet"/>
+   <roproperty name="tableColumnNames" dataType="java.util.ArrayList" getter="getTableColumnNames"/>
+</oracle.dbtools.crest.model.design.storage.udb.StagingTableUDB>

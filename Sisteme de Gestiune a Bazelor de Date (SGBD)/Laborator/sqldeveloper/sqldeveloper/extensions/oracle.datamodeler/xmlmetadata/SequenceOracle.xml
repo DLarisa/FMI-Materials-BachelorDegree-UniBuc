@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.SequenceOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="cache" dataType="java.lang.String" defaultValue="" xmlName="cache" xmlType="element" getter="getCache" setter="setCache" reffered="false"/>
+   <property name="cycle" dataType="java.lang.String" defaultValue="NO" xmlName="cycle" xmlType="element" getter="getCycle" setter="setCycle" reffered="false"/>
+   <property name="incrementBy" dataType="java.lang.String" defaultValue="" xmlName="incrementBy" xmlType="element" getter="getIncrementBy" setter="setIncrementBy" reffered="false"/>
+   <property name="maxValue" dataType="java.lang.String" defaultValue="" xmlName="maxValue" xmlType="element" getter="getMaxValue" setter="setMaxValue" reffered="false"/>
+   <property name="minValue" dataType="java.lang.String" defaultValue="" xmlName="minValue" xmlType="element" getter="getMinValue" setter="setMinValue" reffered="false"/>
+   <property name="noCache" dataType="java.lang.String" defaultValue="NO" xmlName="noCache" xmlType="element" getter="getNoCache" setter="setNoCache" reffered="false"/>
+   <property name="order" dataType="java.lang.String" defaultValue="NO" xmlName="order" xmlType="element" getter="getOrder" setter="setOrder" reffered="false"/>
+   <property name="startWith" dataType="java.lang.String" defaultValue="" xmlName="startWith" xmlType="element" getter="getStartWith" setter="setStartWith" reffered="false"/>
+   <property name="user" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserOracle" defaultValue="" xmlName="user" xmlType="element" getter="getUser" setter="setUser" reffered="true"/>
+   <bb_roproperty name="propertyWrapperList" dataType="interface java.util.List" getter="getPropertyWrapperList"/>
+</oracle.dbtools.crest.model.design.storage.oracle.SequenceOracle>

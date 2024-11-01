@@ -1,0 +1,631 @@
+-- Laboratorul 5
+
+set serveroutput on;
+set echo off;
+set verify off;
+
+
+-- EXERCIȚII REZOLVATE PDF --
+-- Ex1 -> Pachet Utilizator (Funcții)
+
+-- Specificația Pachetului
+CREATE OR REPLACE PACKAGE p1 AS
+  FUNCTION f1_numar(cod departments.department_id%type)
+    RETURN NUMBER;
+  FUNCTION f1_suma(cod departments.department_id%type)
+    RETURN NUMBER;
+END p1;
+/
+-- Corpul Pachetului
+CREATE OR REPLACE PACKAGE BODY p1 AS
+  FUNCTION f1_numar(cod departments.department_id%type)
+    RETURN NUMBER IS
+  nr_ang   number;
+  BEGIN
+    select count(employee_id)
+    into nr_ang
+    from employees
+    where department_id = cod;
+      
+    return nr_ang;
+  END f1_numar;
+  
+  FUNCTION f1_suma(cod departments.department_id%type)
+    RETURN NUMBER IS
+  suma    number;
+  BEGIN
+    select sum(salary + salary * nvl(commission_pct, 0))
+    into suma
+    from employees
+    where department_id = cod;
+      
+    return suma;
+  END f1_suma;
+END p1;
+/
+
+DROP PACKAGE p1;
+
+
+-- METODE DE APELARE
+--- a) SQL
+select p1.f1_numar(80)
+from dual;
+
+select p1.f1_suma(80)
+from dual;
+
+--- b) PL/SQL
+BEGIN
+  dbms_output.put_line('Numar Salariati: ' || p1.f1_numar(80));
+  dbms_output.put_line('Suma Alocata: ' || p1.f1_suma(80));
+END;
+/
+
+
+
+-- Ex2 -> Pachet Utilizator (Proceduri)
+create table dept_lgd as select * from departments;
+
+-- Specificația/Interfața Pachetului
+CREATE OR REPLACE PACKAGE p2 AS
+  PROCEDURE p_dept(v_cod departments.department_id%TYPE,
+                   v_nume departments.department_name%TYPE,
+                   v_manager departments.manager_id%TYPE,
+                   v_loc departments.location_id%TYPE);
+  PROCEDURE p_emp(v_first_name employees.first_name%TYPE,
+                  v_last_name employees.last_name%TYPE,
+                  v_email employees.email%TYPE,
+                  v_phone_number employees.phone_number%TYPE:=NULL,
+                  v_hire_date employees.hire_date%TYPE :=SYSDATE,
+                  v_job_id employees.job_id%TYPE,
+                  v_salary employees.salary%TYPE :=0,
+                  v_commission_pct employees.commission_pct%TYPE:=0,
+                  v_manager_id employees.manager_id%TYPE,
+                  v_department_id employees.department_id%TYPE);
+END p2;
+/
+-- Corpul Pachetului
+CREATE OR REPLACE PACKAGE BODY p2 AS
+  FUNCTION exista(cod employees.manager_id%type,
+                  locatie departments.location_id%type)
+    RETURN BOOLEAN IS
+    
+  rezultat  boolean := True;
+  rez_loc   number;
+  rez_cod   number;
+  BEGIN
+    select count(*)
+    into rez_loc
+    from locations 
+    where location_id = locatie;
+      
+    select count(*)
+    into rez_cod
+    from employees
+    where employee_id = cod;
+      
+    if rez_loc = 0 or rez_cod = 0 
+      then rezultat := false;
+    end if;
+      
+    return rezultat;
+  END exista;
+  
+  
+  PROCEDURE p_dept(v_cod departments.department_id%TYPE,
+                   v_nume departments.department_name%TYPE,
+                   v_manager departments.manager_id%TYPE,
+                   v_loc departments.location_id%TYPE) IS
+  BEGIN
+    if exista(v_manager, v_loc) = false
+      then dbms_output.put_line('Nu s-au introdus date corecte!');
+    else
+      insert into dept_lgd values(v_cod, v_nume, v_manager, v_loc);
+    end if;
+  END p_dept;
+  
+  
+  PROCEDURE p_emp(v_first_name employees.first_name%TYPE,
+                  v_last_name employees.last_name%TYPE,
+                  v_email employees.email%TYPE,
+                  v_phone_number employees.phone_number%TYPE:=NULL,
+                  v_hire_date employees.hire_date%TYPE :=SYSDATE,
+                  v_job_id employees.job_id%TYPE,
+                  v_salary employees.salary%TYPE :=0,
+                  v_commission_pct employees.commission_pct%TYPE:=0,
+                  v_manager_id employees.manager_id%TYPE,
+                  v_department_id employees.department_id%TYPE) AS
+  BEGIN
+    insert into emp_lgd values(280, v_first_name, v_last_name, v_email,
+                               v_phone_number, v_hire_date, v_job_id, 
+                               v_salary, v_commission_pct, v_manager_id,
+                               v_department_id);
+  END p_emp;
+END p2;
+/
+
+DROP PACKAGE p2;
+
+
+-- METODE DE APELARE
+--- a) SQL
+EXECUTE p2.p_dept(50, 'Economic', 200, 2000);
+
+SELECT * 
+FROM dept_lgd 
+WHERE department_id = 50;
+
+ROLLBACK;
+
+--- b) PL/SQL
+BEGIN
+  p2.p_dept(50, 'Economic', 200, 2000);
+END;
+/
+
+SELECT * 
+FROM dept_lgd;
+
+ROLLBACK;
+
+
+
+-- Ex3
+CREATE OR REPLACE PACKAGE p3_lgd AS
+  CURSOR c_emp(nr NUMBER) RETURN employees%ROWTYPE;
+  FUNCTION f_max(v_oras locations.city%TYPE) RETURN NUMBER;
+END p3_lgd;
+/
+CREATE OR REPLACE PACKAGE BODY p3_lgd AS
+  CURSOR c_emp(nr NUMBER) RETURN employees%ROWTYPE IS
+    SELECT * 
+    FROM employees 
+    WHERE salary >= nr;
+    
+  FUNCTION f_max(v_oras locations.city%TYPE)
+    RETURN NUMBER IS
+  maxim NUMBER;
+  BEGIN
+    SELECT MAX(salary)
+    INTO maxim
+    FROM employees e, departments d, locations l
+    WHERE e.department_id = d.department_id 
+          AND d.location_id = l.location_id
+          AND UPPER(city) = UPPER(v_oras);
+          
+    RETURN maxim;
+  END f_max;
+END p3_lgd;
+/
+
+DECLARE
+  oras      locations.city%TYPE := 'Toronto';
+  val_max   NUMBER;
+  lista     employees%ROWTYPE;
+BEGIN
+  val_max := p3_lgd.f_max(oras);
+  FOR v_cursor IN p3_lgd.c_emp(val_max) LOOP
+    DBMS_OUTPUT.PUT_LINE(v_cursor.last_name||' '|| v_cursor.salary);
+  END LOOP;
+END;
+/
+
+drop package p3_lgd;
+
+
+
+-- Ex4
+CREATE OR REPLACE PACKAGE p4 IS
+  PROCEDURE p_verific(e_id employees.employee_id%type,
+                      j_id jobs.job_id%type);
+END p4;
+/
+CREATE OR REPLACE PACKAGE BODY p4 IS
+  PROCEDURE p_verific(e_id employees.employee_id%type,
+                      j_id jobs.job_id%type) IS
+  gasit  boolean := false;
+  BEGIN
+    for i in (select * from employees) loop
+      if i.employee_id = e_id and i.job_id = j_id then
+        gasit := true;
+      end if;
+    end loop;
+    
+    if gasit = true then
+      dbms_output.put_line('Combinatia exista.');
+    else dbms_output.put_line('Combinatia NU exista.');
+    end if;
+  END p_verific;
+END p4;
+
+execute p4.p_verific(200, 'AD_ASST');
+drop package p4;
+
+
+
+
+
+-- EXERCIȚII PROPUSE --
+-- Ex1
+
+-- Fac Tabele Auxiliare (Le Distrug la Final)
+create table job_history_lgd as select * from job_history;
+drop table job_history_lgd;
+
+--- a) Cod Angajat, generat automat cu o Secvență
+CREATE SEQUENCE emp 
+MINVALUE 1000 
+MAXVALUE 9000 
+START WITH 1000 
+INCREMENT BY 1 
+CACHE 20;
+DROP SEQUENCE emp;
+
+CREATE OR REPLACE PACKAGE gestiune IS
+  -- a)
+  PROCEDURE add_ang(nume employees.last_name%type, prenume employees.last_name%type,
+                    telefon employees.phone_number%type, email employees.email%type,
+                    nume_manager employees.last_name%type, prenume_manager employees.last_name%type,
+                    nume_departament varchar2, nume_job varchar2);
+  FUNCTION get_salariu(cod_dept employees.department_id%type, 
+                       cod_job employees.job_id%type)
+    RETURN employees.salary%type;
+  FUNCTION get_cod_manager(nume varchar2, prenume varchar2)
+    RETURN employees.manager_id%type;
+  FUNCTION get_cod_dept(nume_dept departments.department_name%type)
+    RETURN employees.department_id%type;
+  FUNCTION get_cod_job(nume_job jobs.job_title%type)
+    RETURN employees.job_id%type;
+  
+  -- b)
+  PROCEDURE mutare_ang(nume employees.last_name%type, prenume employees.last_name%type,
+                       nume_manager employees.last_name%type, 
+                       prenume_manager employees.last_name%type,
+                       nume_departament varchar2, nume_job varchar2);
+  FUNCTION get_comision(cod_dept employees.department_id%type, 
+                        cod_job employees.job_id%type)
+    RETURN employees.commission_pct%type;
+  
+  -- c)
+  FUNCTION nr_subalterni(nume employees.last_name%type, 
+                         prenume employees.last_name%type)
+    RETURN NUMBER;
+  
+  -- d)
+  PROCEDURE promoveaza(cod_ang employees.employee_id%type);
+  
+  -- e)
+  PROCEDURE salariu_actualizare(nr number, nume varchar2);
+  
+  -- f)
+  CURSOR lista_ang_job(cod_job employees.job_id%type)
+    RETURN employees%rowtype;
+  
+  -- g)
+  CURSOR lista_joburi RETURN jobs%rowtype IS
+    select *
+    from jobs;
+  
+  -- h)
+  PROCEDURE info_joburi;
+  
+END gestiune;
+/
+
+CREATE OR REPLACE PACKAGE BODY gestiune IS
+  -- f)
+  CURSOR lista_ang_job(cod_job employees.job_id%type)
+    RETURN employees%rowtype IS
+    select *
+    from employees
+    where job_id = cod_job;
+    
+  -- a)
+  FUNCTION get_salariu(cod_dept employees.department_id%type, 
+                       cod_job employees.job_id%type)
+    RETURN employees.salary%type IS
+  salariu    employees.salary%type;
+  BEGIN
+    select min(salary)
+    into salariu
+    from employees
+    where department_id = cod_dept and job_id = cod_job;
+    
+    if salariu is null then
+      raise_application_error(-20000, 'Nu exista angajati cu datele introduse.');
+    end if;
+    
+    return salariu;
+  END get_salariu;
+  
+  -- a)
+  FUNCTION get_cod_manager(nume varchar2, prenume varchar2)
+    RETURN employees.manager_id%type IS
+  cod    employees.manager_id%type;
+  BEGIN
+    select employee_id
+    into cod
+    from employees
+    where upper(last_name) = upper(nume) and 
+          upper(first_name) = upper(prenume);
+    
+    if cod is null then
+      raise_application_error(-20001, 'Nu exista manager cu datele introduse.');
+    end if;
+    
+    return cod;
+  END get_cod_manager;
+  
+  -- a)
+  FUNCTION get_cod_dept(nume_dept departments.department_name%type)
+    RETURN employees.department_id%type IS
+  cod  employees.department_id%type;
+  BEGIN
+    select department_id
+    into cod
+    from departments 
+    where upper(department_name) = upper(nume_dept);
+    
+    if cod is null then
+      raise_application_error(-20002, 'Nu exista departament cu datele introduse.');
+    end if;
+    
+    return cod;
+  END get_cod_dept;
+  
+  -- a)
+  FUNCTION get_cod_job(nume_job jobs.job_title%type)
+    RETURN employees.job_id%type IS
+  cod  employees.job_id%type;
+  BEGIN
+    select job_id
+    into cod
+    from jobs
+    where upper(job_title) = upper(nume_job);
+    
+    if cod is null then
+      raise_application_error(-20003, 'Nu exista job cu datele introduse.');
+    end if;
+    
+    return cod;
+  END get_cod_job;
+  
+  -- a)
+  PROCEDURE add_ang(nume employees.last_name%type, prenume employees.last_name%type,
+                    telefon employees.phone_number%type, email employees.email%type,
+                    nume_manager employees.last_name%type, prenume_manager employees.last_name%type,
+                    nume_departament varchar2, nume_job varchar2)
+  IS
+    cod_dept    employees.department_id%type;
+    cod_job     employees.job_id%type;
+    cod_man     employees.manager_id%type;
+    salariu     employees.salary%type;
+  BEGIN
+    cod_dept := gestiune.get_cod_dept(nume_departament);
+    cod_job := gestiune.get_cod_job(nume_job);
+    cod_man := gestiune.get_cod_manager(nume_manager, prenume_manager);
+    salariu := gestiune.get_salariu(cod_dept, cod_job);
+    
+    insert into emp_lgd values(emp.nextval, prenume, nume, email, telefon, 
+                               sysdate, cod_job, salariu, 0, cod_man, cod_dept);
+  END add_ang;
+  
+  -- b) 
+  FUNCTION get_comision(cod_dept employees.department_id%type, 
+                        cod_job employees.job_id%type)
+    RETURN employees.commission_pct%type IS
+  comision   employees.commission_pct%type;
+  BEGIN
+    select min(commission_pct)
+    into comision 
+    from employees
+    where department_id = cod_dept and job_id = cod_job;
+    
+    if comision is null then
+      comision := 0;
+    end if;
+    
+    return comision;
+  END get_comision;
+  
+  -- b)
+  PROCEDURE mutare_ang(nume employees.last_name%type, prenume employees.last_name%type,
+                       nume_manager employees.last_name%type, 
+                       prenume_manager employees.last_name%type,
+                       nume_departament varchar2, nume_job varchar2)
+  IS
+  cod_ang         employees.employee_id%type;
+  cod_dept        employees.department_id%type;
+  cod_job         employees.job_id%type;
+  cod_man         employees.manager_id%type;
+  data_ang        employees.hire_date%type;
+  comision        employees.commission_pct%type;
+  salariu_nou     employees.salary%type;
+  salariu_curr    employees.salary%type;
+  BEGIN
+    cod_dept := get_cod_dept(nume_departament);
+    cod_job := get_cod_job(nume_job);
+    cod_man := get_cod_manager(nume_manager, prenume_manager);
+    salariu_nou := get_salariu(cod_dept, cod_job);
+    
+    select salary, employee_id, hire_date
+    into salariu_curr, cod_ang, data_ang
+    from emp_lgd
+    where upper(last_name) = upper(nume) and 
+          upper(first_name) = upper(prenume);
+    
+    if salariu_nou < salariu_curr then
+      salariu_nou := salariu_curr;
+    end if;
+    
+    comision := get_comision(cod_dept, cod_job);
+    
+    
+    -- Înregistrez Vechiul Job în Istoric
+    insert into job_history_lgd values(cod_ang, data_ang, sysdate, cod_job, cod_dept);
+    -- Mut Angajatul în Noul Departament
+    update emp_lgd 
+    set hire_date = sysdate, job_id = cod_job, salary = salariu_nou,
+        commission_pct = comision, manager_id = cod_man, department_id = cod_dept
+    where employee_id = cod_ang;
+    
+  END mutare_ang;
+  
+  -- c)
+  FUNCTION nr_subalterni(nume employees.last_name%type, 
+                         prenume employees.last_name%type)
+    RETURN NUMBER IS
+  nr_subalterni    number := 0;
+  cod_ang          employees.employee_id%type;
+  BEGIN
+    select employee_id
+    into cod_ang
+    from employees
+    where upper(last_name) = upper(nume) and
+          upper(first_name) = upper(prenume);
+    
+    if cod_ang is null then
+      raise_application_error(-20004, 'Nu exista angajat cu datele introduse.');
+    end if;
+    
+    select count(*)
+    into nr_subalterni
+    from emp_lgd
+    start with employee_id = cod_ang
+    connect by prior employee_id = manager_id;
+    
+    return nr_subalterni;
+  END nr_subalterni;
+  
+  -- d)
+  PROCEDURE promoveaza(cod_ang employees.employee_id%type) IS
+  cod_man      employees.manager_id%type;
+  cod_man1     employees.manager_id%type;
+  BEGIN
+    select manager_id
+    into cod_man
+    from employees
+    where employee_id = cod_ang;
+    
+    if cod_man is null
+      then dbms_output.put_line('Nu mai poate fi promovat');
+    else 
+      select manager_id
+      into cod_man1
+      from employees
+      where employee_id = cod_man;
+      
+      if cod_man1 is null then 
+        update emp_lgd
+        set manager_id = null 
+        where employee_id = cod_ang;
+      else
+        update emp_lgd
+        set manager_id = cod_man1
+        where employee_id = cod_ang;
+      end if;
+      
+      dbms_output.put_line('Promovare Realizata.');
+    end if;
+  END promoveaza;
+  
+  -- e)
+  PROCEDURE salariu_actualizare(nr number, nume varchar2) IS
+  nr_ang       number;
+  cod_job      employees.job_id%type;
+  cod_ang      employees.employee_id%type;
+  minim        number;
+  maxim        number;
+  prenume      employees.last_name%type;
+  BEGIN
+    select count(*)
+    into nr_ang
+    from employees
+    where upper(last_name) = upper(nume);
+    
+    if nr_ang = 1 then
+      select job_id, employee_id
+      into cod_job, cod_ang
+      from employees
+      where upper(last_name) = upper(nume);
+    
+      select min_salary, max_salary
+      into minim, maxim
+      from jobs
+      where job_id = cod_job;
+      
+      if nr >= minim and nr <= maxim then
+        update emp_lgd
+        set salary = nr
+        where employee_id = cod_ang;
+      else
+        dbms_output.put_line('Salariul Nou nu corespunde limitelor.');
+      end if;
+      
+    elsif nr_ang = 0 then
+      dbms_output.put_line('Nu exista angajati cu numele dat.');
+    else
+      dbms_output.put_line('Exista mai multi angajati cu numele dat: ');
+      for i in (select * from employees
+                where upper(last_name) = upper(nume))
+      loop
+        dbms_output.put_line(i.first_name || ' ' || i.last_name);
+      end loop;
+    end if;
+  END salariu_actualizare;
+  
+  -- h)
+  PROCEDURE info_joburi IS
+  nr_joburi    number;
+  BEGIN
+    for i in gestiune.lista_joburi loop
+      dbms_output.put_line(i.job_title || ': ');
+      
+      for j in gestiune.lista_ang_job(i.job_id) loop
+        select count(*)
+        into nr_joburi
+        from job_history_lgd
+        where employee_id = j.employee_id and job_id = j.job_id;
+        
+        dbms_output.put_line(j.last_name || j.first_name || ': ' || nr_joburi); 
+          
+      end loop;
+      dbms_output.new_line;
+    end loop;
+  END info_joburi;
+  
+END gestiune;
+/
+
+
+
+-- a)
+execute gestiune.add_ang('Floroiu', 'Vasile', null, 'fv', 'King', 'Steven', 'Marketing', 'Marketing Representative');
+select *
+from emp_lgd;
+
+-- b)
+select * 
+from job_history_lgd;
+execute gestiune.mutare_ang('Chen', 'John', 'King', 'Steven', 'Marketing', 'Marketing Representative');
+
+-- c)
+select gestiune.nr_subalterni('King', 'Steven')
+from dual;
+
+-- d)
+execute gestiune.promoveaza(100);
+execute gestiune.promoveaza(101);
+execute gestiune.promoveaza(107);
+
+-- e)
+execute gestiune.salariu_actualizare(5000, 'Austin');
+execute gestiune.salariu_actualizare(5000, 'King');
+execute gestiune.salariu_actualizare(5000, 'Romanov');
+execute gestiune.salariu_actualizare(500000, 'Austin');
+
+-- h)
+execute gestiune.info_joburi;
+
+drop package gestiune;

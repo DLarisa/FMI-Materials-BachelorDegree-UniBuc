@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Books";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table id="books" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Details</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            var table = $("#books").DataTable({
+                ajax: { url: "/api/books", dataSrc: "" },
+                columns: [
+                    { data: "Title" },
+                    {
+                        data: "Title",
+                        render: function (data, type, row) {
+                            return "<a href='/books/details/" +
+                                row.BookId + "'>More about " +
+                                row.Title + "</a>";
+                        }
+                    },
+                    {
+                        data: "BookId", render: function (data) {
+                            return "<button class='bt-delete' data-id=" +
+                                data + ">Delete item</button>";
+                        }
+                    }
+                ]
+            });
+
+            $("#books").on("click", ".bt-delete",
+                function () {
+                    var but = $(this);
+                    if (confirm("Are you sure?")) {
+                        $.ajax({
+                            url: "/api/books/" + $(this).attr("data-id"),
+                            method: "DELETE",
+                            success: function () {
+                                console.log("Success");
+                                table.row(but.parents("tr")).remove().draw();
+                                but.attr("data-id");
+                            }
+                        });
+                    }
+                });
+        });
+    </script>
+}

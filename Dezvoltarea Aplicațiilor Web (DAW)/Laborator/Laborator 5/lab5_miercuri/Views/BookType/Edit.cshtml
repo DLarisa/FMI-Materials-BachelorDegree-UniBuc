@@ -1,0 +1,21 @@
+﻿@model lab3_miercuri.Models.BookType
+@{
+    ViewBag.Title = "Update book type";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm(actionName: "Edit", controllerName: "BookType", method: FormMethod.Post))
+{
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+    @Html.HiddenFor(b => b.BookTypeId)
+  
+
+    @Html.LabelFor(bt => bt.Name, "Name:")
+    <br />
+    @Html.EditorFor(bt => bt.Name, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(bt => bt.Name, "", new { @class = "text-danger" })
+    <br /><br />
+
+    <button class="btn btn-primary" type="submit">Update</button>
+}

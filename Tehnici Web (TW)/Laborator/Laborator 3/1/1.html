@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+	<meta charset="UTF-8">
+	<style>
+	/* a */
+	body {counter-reset: section 3 /* Pornește de la 4 acum*/ /* NU PUNEM , PT CĂ EFECT CASCADĂ */
+	    elemente 0;} /* f: nu putem pune alt counter pt că efectul de cascadă */
+		
+	h1 {counter-reset: subsection; /* e: la fiecare h1, numărătoarea va începe de la 1 */
+	/* d */
+	    color: green; } /* acum și titlul și selectorii sunt verzi */
+		
+	h1::before {counter-increment: section; content: "Section " counter(section) ". ";} /* incrementează variabila numită section; section=0 (inițial)*/
+	
+	/* b */
+	h2::before {counter-increment: subsection 2; /* acum crește din 2 în 2 */
+	content: counter(section) "." counter(subsection) " ";
+	/* c */
+	color: blue;}
+	
+	/* f */
+	body * {counter-increment: elemente;}
+	body::after {content: "Nr. " counter(elemente);}
+	</style>
+	<title>EX 1</title>
+	</head>
+<body>
+
+
+<h1>HTML tutorials:</h1>
+<h2>HTML Tutorial</h2>
+<h2>CSS Tutorial</h2>
+
+<h1>Scripting tutorials:</h1>
+<h2>JavaScript</h2>
+<h2>VBScript</h2>
+
+<h1>XML tutorials:</h1>
+<h2>XML</h2>
+<h2>XSL</h2>
+
+<p><b>Note:</b> IE8 supports these properties only if a !DOCTYPE is specified.</p>
+
+</body>
+</html>

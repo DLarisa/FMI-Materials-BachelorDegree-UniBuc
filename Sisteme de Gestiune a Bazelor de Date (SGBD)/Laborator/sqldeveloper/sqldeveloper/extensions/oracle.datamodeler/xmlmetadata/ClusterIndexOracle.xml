@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.ClusterIndexOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <roproperty name="cluster" dataType="oracle.dbtools.crest.model.design.storage.oracle.ClusterOracle" getter="getCluster"/>
+   <property name="compress" dataType="int" defaultValue="0" xmlName="compress" xmlType="element" getter="getCompress" setter="setCompress" reffered="false"/>
+   <property name="computeStatistics" dataType="java.lang.String" defaultValue="NO" xmlName="computeStatistics" xmlType="element" getter="getComputeStatistics" setter="setComputeStatistics" reffered="false"/>
+   <property name="degree" dataType="java.lang.String" defaultValue="" xmlName="degree" xmlType="element" getter="getDegree" setter="setDegree" reffered="false"/>
+   <property name="logging" dataType="java.lang.String" defaultValue="YES" xmlName="logging" xmlType="element" getter="getLogging" setter="setLogging" reffered="false"/>
+   <property name="online" dataType="java.lang.String" defaultValue="NO" xmlName="online" xmlType="element" getter="getOnline" setter="setOnline" reffered="false"/>
+   <property name="parallel" dataType="java.lang.String" defaultValue="NO" xmlName="parallel" xmlType="element" getter="getParallel" setter="setParallel" reffered="false"/>
+   <property name="reverse" dataType="java.lang.String" defaultValue="NO" xmlName="reverse" xmlType="element" getter="getReverse" setter="setReverse" reffered="false"/>
+   <property name="segment" dataType="oracle.dbtools.crest.model.design.storage.oracle.SegmentOracle" defaultValue="" xmlName="segment" xmlType="element" getter="getSegment" setter="setSegment" reffered="true"/>
+   <property name="tableSpace" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle" defaultValue="" xmlName="tableSpace" xmlType="element" getter="getTableSpace" setter="setTableSpace" reffered="true"/>
+   <property name="user" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserOracle" defaultValue="" xmlName="user" xmlType="element" getter="getUser" setter="setUser" reffered="true"/>
+   <roproperty name="clusterUser" dataType="java.lang.String" getter="getClusterUser"/>
+</oracle.dbtools.crest.model.design.storage.oracle.ClusterIndexOracle>

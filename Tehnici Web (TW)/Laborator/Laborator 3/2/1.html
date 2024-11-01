@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		div#soare 
+		{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+			border-radius: 50%;
+			position: absolute;
+			top: 0px;
+			animation-name: rasarit;
+			animation-duration: 10s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+		div#fereastra
+		{
+			width: 500px;
+			height: 250px;
+			background: skyblue;
+			border: 7px inset brown;
+			position: relative;
+			overflow: hidden;
+			animation-name: cer;
+			animation-duration: 5s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+			animation-direction: alternate;
+		}
+		@keyframes rasarit
+		{
+			0% 
+			{
+				left: -100px;
+				background: red;
+			}
+			50%
+			{
+				left: 200px;
+				background: yellow;
+			}
+			100% 
+			{
+				left: 500px;
+				background: red;
+			}
+		}
+		@keyframes cer
+		{
+			0%
+			{
+				background: black;
+			}
+			25%
+			{
+				background: navy;
+			}
+			100%
+			{
+				background: lightblue;
+			}
+		}
+	</style>
+	<title>Animație 1</title>
+</head>
+<body>
+
+<div id="fereastra">
+<div id="soare"></div>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.RoleSqlServer parentClass="oracle.dbtools.crest.model.design.storage.sqlserver.AbstractStorageObjectSqlServer">
+   <property name="isApplicationRole" dataType="boolean" defaultValue="false" xmlName="isApplicationRole" xmlType="element" getter="getIsApplicationRole" setter="setIsApplicationRole" reffered="false"/>
+   <property name="owner" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.UserSqlServer" defaultValue="" xmlName="owner" xmlType="element" getter="getOwner" setter="setOwner" reffered="true"/>
+   <property name="password" dataType="java.lang.String" defaultValue="" xmlName="password" xmlType="element" getter="getPassword" setter="setPassword" reffered="false"/>
+   <property name="systemPrivileges" dataType="java.lang.String" defaultValue="" xmlName="systemPrivileges" xmlType="element" getter="getSystemPrivileges" setter="setSystemPrivileges" reffered="false" listOfRefs="false"/>
+   <property name="users" dataType="java.lang.String" defaultValue="" xmlName="users" xmlType="element" getter="getUsers" setter="setUsers" reffered="false" listOfRefs="true"/>
+   <collection name="permissions" dataType="interface java.util.List" xmlName="permissions" itemXmlName="Permission" getter="getPermissions" createItem="createPermission"/>
+   <bb_roproperty name="privilegesSet" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.RoleSqlServer$InlineList" getter="getPrivilegesSet"/>
+   <bb_roproperty name="userSet" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.RoleSqlServer$UserSet" getter="getUserSet"/>
+   <property name="database" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.DataBaseSqlServer" defaultValue="" xmlName="database" xmlType="element" getter="getDatabase" setter="setDatabase" reffered="true"/>
+   <propertyDependency propDef="name" dependOnProperty="database" />
+</oracle.dbtools.crest.model.design.storage.sqlserver.RoleSqlServer>

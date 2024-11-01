@@ -1,0 +1,22 @@
+div
+{
+	display: inline;
+}
+span /* Nu se aplică width și height pentru că inline nu permite acest lucru. */
+{
+	background-color: red;
+	width: 70px;
+	height: 50px;
+}
+p#a span /* Acum se aplică width și height și se afișează pe rând nou. */
+{
+	display: block;
+}
+p#b span /* Se comportă ca un element de tip block, dar permite să nu mai fie așezat pe o linie separată, exact ca un element inline. */
+{
+	display: inline-block;
+}
+p#c span
+{
+	display: none;
+}

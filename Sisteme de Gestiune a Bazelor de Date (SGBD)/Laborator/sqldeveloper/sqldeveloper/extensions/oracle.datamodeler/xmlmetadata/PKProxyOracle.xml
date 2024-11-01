@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.PKProxyOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.IndexProxyOracle">
+   <property name="deferrable" dataType="java.lang.String" defaultValue="NO" xmlName="deferrable" xmlType="element" getter="getDeferrable" setter="setDeferrable" reffered="false"/>
+   <property name="enable" dataType="java.lang.String" defaultValue="YES" xmlName="enable" xmlType="element" getter="getEnable" setter="setEnable" reffered="false"/>
+   <property name="exceptionsTable" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableProxyOracle" defaultValue="" xmlName="exceptionsTable" xmlType="element" getter="getExceptionsTable" setter="setExceptionsTable" reffered="true"/>
+   <property name="existingIndex" dataType="oracle.dbtools.crest.model.design.storage.oracle.IndexProxyOracle" defaultValue="" xmlName="existingIndex" xmlType="element" getter="getExistingIndex" setter="setExistingIndex" reffered="true"/>
+   <!-- "indexGlobalPL" property moved so that it is reloaded after "usingIndex" -->
+   <property name="indexSegment" dataType="oracle.dbtools.crest.model.design.storage.oracle.SegmentOracle" defaultValue="" xmlName="indexSegment" xmlType="element" getter="getIndexSegment" setter="setIndexSegment" reffered="true"/>
+   <property name="indexSort" dataType="java.lang.String" defaultValue="YES" xmlName="indexSort" xmlType="element" getter="getIndexSort" setter="setIndexSort" reffered="false"/>
+   <property name="initially" dataType="java.lang.String" defaultValue="IMMEDIATE" xmlName="initially" xmlType="element" getter="getInitially" setter="setInitially" reffered="false"/>
+   <property name="usingIndex" dataType="java.lang.String" defaultValue="NO" xmlName="usingIndex" xmlType="element" getter="getUsingIndex" setter="setUsingIndex" reffered="false"/>
+   <property name="validate" dataType="java.lang.String" defaultValue="YES" xmlName="validate" xmlType="element" getter="getValidate" setter="setValidate" reffered="false"/>
+   <property name="indexGlobalPL" dataType="oracle.dbtools.crest.model.design.storage.oracle.IndexGlobalPartitionsListOracle" defaultValue="" xmlName="indexGlobalPL" xmlType="element" getter="getIndexGlobalPL" setter="setIndexGlobalPL" createItem="createIndexGlobalPL" removeItem="clearIndexGlobalPL" reffered="false"/>
+   <roproperty name="pkConstraint" dataType="boolean" getter="isPKConstraint"/>
+   <roproperty name="columns" dataType="java.lang.String" getter="getColumns"/>
+   <roproperty name="existingIndexName" dataType="java.lang.String" getter="getExistingIndexName"/>
+</oracle.dbtools.crest.model.design.storage.oracle.PKProxyOracle>

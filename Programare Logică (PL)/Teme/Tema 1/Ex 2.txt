@@ -1,0 +1,25 @@
+% Puzzle Einstein
+
+% adiacent = B e direct la dreapta lui A SAU A e direct la dreapta lui B
+adiacent(A, B, Lista) :- nextto(A, B, Lista); nextto(B, A, Lista).
+
+rezolva(BeaApa, DetineZebra, CuloareCasa, NrCasa) :-
+  length(Case, 5),                       % numar de elemente dintr-o lista                                                      
+  member(casa(rosu, englez, _, _, _), Case),   % member = element al unei liste                           
+  member(casa(_, spaniol, caine, _, _), Case),                              
+  member(casa(verde, _, _, cafea, _), Case),                             
+  member(casa(_, ucrainian, _, ceai, _), Case),                             
+  nextto(casa(alb, _, _, _, _), casa(verde, _, _, _, _), Case),        
+  member(casa(_, _, melc, _, old_gold), Case),                           
+  member(casa(galben, _, _, _, kool), Case),                             
+  nth1(3, Case, casa(_, _, _, lapte, _)),    % e pe pozitia 3 in lista (lista incepe de la 1, nu de la 0)                                
+  nth1(1, Case, casa(_, norvegian, _, _, _)),                              
+  adiacent(casa(_, _, _, _, chesterfield), casa(_, _, vulpe, _, _), Case),
+  adiacent(casa(_, _, _, _, kool), casa(_, _, cal, _, _), Case),     
+  member(casa(_, _, _, vin, gitanes), Case),                 
+  member(casa(_, japonez, _, _, craven), Case),                    
+  adiacent(casa(_, norvegian, _, _, _), casa(albastru, _, _, _, _), Case),   
+  member(casa(_, BeaApa, _, water, _), Case),                        
+  member(casa(_, DetineZebra, zebra, _, _), Case),
+  member(casa(CuloareCasa, _, zebra, _, _), Case),
+  nth1(NrCasa, Case, casa(_, _, zebra, _, _)).

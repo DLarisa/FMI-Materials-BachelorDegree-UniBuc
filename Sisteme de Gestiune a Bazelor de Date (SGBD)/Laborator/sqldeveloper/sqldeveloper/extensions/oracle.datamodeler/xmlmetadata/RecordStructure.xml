@@ -1,0 +1,5 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.process.RecordStructure parentClass="oracle.dbtools.crest.model.design.process.AbstractProcessObject">
+   <collection name="extDatas" dataType="java.util.List" xmlName="extDatas" itemXmlName="extData" getter="getExtDatas" createItem="createExternalData" getItemByID="getExternalDataByID" removeItem="removeExtData" nativeList="true" orderTheList="true"/>
+   <roproperty name="extDatas" dataType="interface java.util.List" getter="getExtDatas"/>
+</oracle.dbtools.crest.model.design.process.RecordStructure>

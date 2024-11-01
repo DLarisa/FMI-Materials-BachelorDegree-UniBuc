@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle parentClass="oracle.dbtools.crest.model.design.storage.StorageObject">
+   <roproperty name="storageDesignOracle" dataType="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageDesignOracle" getter="getStorageDesignOracle"/>
+</oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle>

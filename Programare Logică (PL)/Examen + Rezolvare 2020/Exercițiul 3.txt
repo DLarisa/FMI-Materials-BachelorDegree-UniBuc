@@ -1,0 +1,3 @@
+
+acopdom([], L) :- L = [].
+acopdom([H|T], L) :- L = [H|T].

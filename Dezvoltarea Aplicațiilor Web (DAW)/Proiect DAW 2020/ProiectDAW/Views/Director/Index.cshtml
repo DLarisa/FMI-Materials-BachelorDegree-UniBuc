@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "---  Index Directori  ---";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<h2 style="text-align: center;
+        color: aquamarine;
+        font-family: Castellar;
+        border-bottom: 5px double aquamarine;
+">
+    @ViewBag.Title
+</h2>
+
+
+@if (ViewBag.Directori.Count == 0)
+{
+    <p>Nu există directori momentan.</p>
+}
+else
+{
+    foreach (var director in ViewBag.Directori)
+    {
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                @Html.Label("Nume", "Nume Director: ")
+                <h3 class="panel-title" style="color: black; text-shadow: 2px 2px #947fff; font-style: italic">
+                    @director.Nume @director.Prenume
+                </h3>
+            </div>
+
+            <div class="panel-body">
+                <ul style="list-style-type:disc;">
+                    <li>
+                        Vârstă:
+                        <p style="color: white; text-shadow: 2px 2px #947fff; font-style: italic; display: inline;">@director.Varsta</p>
+                    </li>
+                </ul>
+
+                @using (Html.BeginForm(actionName: "Detalii", controllerName: "Director", method: FormMethod.Get, routeValues: new { id = director.DirectorId }))
+                {
+                    <button style="margin-right:5px" class="btn btn-primary" type="submit">Detalii</button>
+                }
+            </div>
+        </div>
+    }
+}
+
+
+<button class="btn btn-primary col-lg-1" type="submit">@Html.ActionLink("Add D", "New")</button>
+
+<br />
+<br />

@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.udb.TriggerUDB parentClass="oracle.dbtools.crest.model.design.storage.Trigger">
+   <property name="columns" dataType="java.lang.String" defaultValue="" xmlName="columns" xmlType="element" getter="getColumns" setter="setColumns" reffered="false" listOfRefs="true"/>
+   <property name="condition" dataType="java.lang.String" defaultValue="" xmlName="condition" xmlType="element" getter="getCondition" setter="setCondition" reffered="false"/>
+   <property name="neW_TABLe_AS" dataType="java.lang.String" defaultValue="" xmlName="neW_TABLe_AS" xmlType="element" getter="getNEW_TABLE_AS" setter="setNEW_TABLE_AS" reffered="false"/>
+   <property name="olD_TABlE_AS" dataType="java.lang.String" defaultValue="" xmlName="olD_TABlE_AS" xmlType="element" getter="getOLD_TABLE_AS" setter="setOLD_TABLE_AS" reffered="false"/>
+   <property name="order" dataType="int" defaultValue="" xmlName="order" xmlType="element" getter="getOrder" setter="setOrder" reffered="false"/>
+   <property name="owner" dataType="oracle.dbtools.crest.model.design.storage.udb.OwnerUDB" defaultValue="" xmlName="owner" xmlType="element" getter="getOwner" setter="setOwner" reffered="true"/>
+   <property name="ref_NEW_AS" dataType="java.lang.String" defaultValue="" xmlName="ref_NEW_AS" xmlType="element" getter="getRef_NEW_AS" setter="setRef_NEW_AS" reffered="false"/>
+   <property name="ref_OLD_AS" dataType="java.lang.String" defaultValue="" xmlName="ref_OLD_AS" xmlType="element" getter="getRef_OLD_AS" setter="setRef_OLD_AS" reffered="false"/>
+   <property name="schema" dataType="oracle.dbtools.crest.model.design.storage.udb.SchemaUDB" defaultValue="" xmlName="schema" xmlType="element" getter="getSchema" setter="setSchema" reffered="true"/>
+   <property name="scope" dataType="java.lang.String" defaultValue="" xmlName="scope" xmlType="element" getter="getScope" setter="setScope" reffered="false"/>
+   <property name="table" dataType="oracle.dbtools.crest.model.design.storage.udb.TableProxyUDB" defaultValue="" xmlName="table" xmlType="element" getter="getTable" setter="setTable" reffered="true"/>
+   <roproperty name="columnSet" dataType="oracle.dbtools.crest.model.design.storage.udb.TriggerUDB$ColumnSet" getter="getColumnSet"/>
+   <roproperty name="triggertimes" dataType="[Ljava.lang.String" getter="getTriggerTimes"/>
+</oracle.dbtools.crest.model.design.storage.udb.TriggerUDB>

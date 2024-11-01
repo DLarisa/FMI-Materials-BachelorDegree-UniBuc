@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Fisier de baza</title>
+		<style>
+		</style>
+		<script>
+		window.onload=function(){
+			var btn=document.getElementById("muta");
+			btn.onclick=function(){
+				this.onclick=null; <!-- sterge evenimentul onclick de pe buton-->
+				this.disabled=true;
+				var l_noua=document.createElement("ol");
+				document.body.appendChild(l_noua);
+				var lst=document.getElementById("lista");
+				var liuri=lst.querySelectorAll("li"); 
+				// pentru get...className("clasa"): .querySelectorAll(".li"); 
+				//  pentru get...tagName(p):  .querySelectorAll("p");
+				//	..................id("abc"):.............(("#abc")[0])			
+				// ...................Name("rad"): ...........("[name = rad]")
+				for (var i=0;i<liuri.length;i+=2){
+					l_noua.appendChild(liuri[i]);
+				}
+			}
+
+		}
+		</script>
+	</head>
+	<body>
+		<p>Nota: in exercitiile de tip "corectati gresala", desi nu e recomandat, s-au pus css-ul si script-ul in fisierul html strict pentru simplitate (downloadarea unui singur fisier vs 3). Totusi retineti ca indicat este sa folositi fisiere separate in teme/proiecte/teste.</p>
+		<p>La click pe buton dorim sa cream la finalul documentului o noua lista in care s-au mutat elementele aflate pe pozitii pare din lista. Ca sa nu existe confuzii intre indicii afisati si cei din colectia de li-uri a listei, am facut ca afisajul sa inceapa de la 0. astfel in noua lista dorim sa se mute elementele: Gigel, papagali, pe, albastra, soarele. Totusi nu se intampla asta. De ce? Corectati.</p>
+		<ol id="lista" start="0">
+			<li>Gigel</li>
+			<li>cauta</li>
+			<li>papagali</li>
+			<li>mov</li>
+			<li>pe</li>
+			<li>campia</li>
+			<li>albastra</li>
+			<li>sub</li>
+			<li>soarele</li>
+			<li>verde</li>
+		</ol>
+		<button id="muta">Muta elementele de pe pozitiile pare</button> (butonul e cu efect unic - la al doilea click nu se va mai intampla nimic)
+	</body>
+</html>

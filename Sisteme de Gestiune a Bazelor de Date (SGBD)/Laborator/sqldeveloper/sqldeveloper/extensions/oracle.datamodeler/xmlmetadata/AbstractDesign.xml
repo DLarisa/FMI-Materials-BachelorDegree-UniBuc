@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.AbstractDesign parentClass="oracle.dbtools.crest.model.ModelIDObject">
+   <aa_property name="visible" dataType="boolean" defaultValue="" xmlName="visible" xmlType="element" getter="isVisible" setter="setVisible" reffered="false"/>
+   <roproperty name="design" dataType="boolean" getter="isDesign"/>
+   <roproperty name="storageDesign" dataType="boolean" getter="isStorageDesign"/>
+   <roproperty name="allTopLevelObjects" dataType="interface java.util.Collection" getter="getAllTopLevelObjects"/>
+   <roproperty name="fileName" dataType="java.lang.String" getter="getFileName"/>
+   <roproperty name="importedDesignNames" dataType="[Ljava.lang.String" getter="getImportedDesignNames"/>
+</oracle.dbtools.crest.model.AbstractDesign>

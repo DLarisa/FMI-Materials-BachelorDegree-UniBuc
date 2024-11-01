@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://xmlns.oracle.com/jdeveloper/update"
+            targetNamespace="http://xmlns.oracle.com/jdeveloper/update"
+            elementFormDefault="qualified">
+  <xsd:complexType name="updateType">
+    <xsd:all>
+      <xsd:element name="name" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>
+            The name of this update. This will be used to display the name of
+            the update in Check for Updates.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="version" type="versionNumber">
+        <xsd:annotation>
+          <xsd:documentation>
+            The version number of this update. This *must* match the version
+            number of the extension being installed.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="author" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            The name of the author of this update. This wil be displayed in
+            check for updates.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="author-url" type="xsd:anyURI" maxOccurs="1"
+                   minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            The URL of a webpage for the update author. A link will be created
+            to this page from Check for Updates.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="description" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            A description of the update. This should be a short (1-2 line)
+            overview of the functionality provided by the update.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="requirements" minOccurs="0" type="requirementsType">
+        <xsd:annotation>
+          <xsd:documentation>
+            Specifies requirements that must be satisfied before this update can
+            be installed.
+          </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+
+
+
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="bundle-url" type="xsd:anyURI" minOccurs="0"/>
+      <xsd:element name="destination" type="destinationType" minOccurs="0"/>
+      <xsd:element name="post-startup-hook" type="fullyQualifiedClassName"
+                   minOccurs="0"/>
+    </xsd:all>
+    <xsd:attribute name="id" use="required"/>
+    <xsd:attribute name="type" type="updateKind"/>
+  </xsd:complexType>
+  
+
+  
+  <xsd:simpleType name="destinationType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="${oracle.home}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:simpleType name="versionNumber">
+    <xsd:restriction base="xsd:token">
+      <xsd:pattern value="[\.0-9]+" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  
+  <xsd:simpleType name="fullyQualifiedClassName">
+    <xsd:restriction base="xsd:normalizedString" />
+  </xsd:simpleType>
+  
+  
+  <xsd:simpleType name="updateKind">
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="patch" />
+      <xsd:enumeration value="extension" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:complexType name="messageType">
+    <xsd:sequence>
+      <xsd:element name="requirements" type="requirementsType" maxOccurs="1"
+                   minOccurs="0"/>
+      <xsd:element name="message" type="xsd:string"/>
+    </xsd:sequence>
+    <xsd:attribute name="id" use="required" type="xsd:token"/>
+    <xsd:attribute name="title" use="required" type="xsd:string"/>
+    <xsd:attribute name="link"/>
+    <xsd:attribute name="linkText"/>
+  </xsd:complexType>
+  
+  <xsd:complexType name="requirementsType">
+            <xsd:sequence>
+            <xsd:element name="requires-extension" maxOccurs="unbounded"
+                         minOccurs="0">
+              <xsd:annotation>
+                <xsd:documentation>
+                  A requirement that an extension must be present or available
+                  for install at the same time as this update.
+                </xsd:documentation>
+              </xsd:annotation>
+              <xsd:complexType>
+                <xsd:attribute name="id" use="required" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:documentation>
+                      The id of the required extension.
+                    </xsd:documentation>
+                  </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute name="minVersion" type="versionNumber">
+                  <xsd:annotation>
+                    <xsd:documentation>
+                      The minimum acceptable version of the required extension.
+                    </xsd:documentation>
+                  </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute name="maxVersion" type="versionNumber">
+                  <xsd:annotation>
+                    <xsd:documentation>
+                      The maximum acceptable version of the required extension.
+                    </xsd:documentation>
+                  </xsd:annotation>
+                </xsd:attribute>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="requires-agreement" minOccurs="0">
+              <xsd:annotation>
+                <xsd:documentation>
+                  Specifies that the user must agree to a license before
+                  installing this update.
+                </xsd:documentation>
+              </xsd:annotation>
+              <xsd:complexType>
+                <xsd:attribute name="url" use="required" type="xsd:anyURI">
+                  <xsd:annotation>
+                    <xsd:documentation>
+                      The url of the license for this update. This can be a
+                      relative or absolute URL.
+                    </xsd:documentation>
+                  </xsd:annotation>
+                </xsd:attribute>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+
+  </xsd:complexType>
+</xsd:schema>

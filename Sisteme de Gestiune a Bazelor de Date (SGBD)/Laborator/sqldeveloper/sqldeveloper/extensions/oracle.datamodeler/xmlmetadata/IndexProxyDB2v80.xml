@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.db2.v80.IndexProxyDB2v80 parentClass="oracle.dbtools.crest.model.design.storage.db2.IndexProxyDB2">
+   <property name="padded" dataType="java.lang.String" defaultValue="" xmlName="padded" xmlType="element" getter="getPadded" setter="setPadded" reffered="false"/>
+   <property name="clusteredDB2" dataType="java.lang.String"  defaultValue="NO" xmlName="clusteredDB2" xmlType="element" getter="getClusteredDB2" setter="setClusteredDB2" reffered="false"/>
+   <roproperty name="partitioned" dataType="java.lang.String" getter="getPartitioned"/>
+</oracle.dbtools.crest.model.design.storage.db2.v80.IndexProxyDB2v80>

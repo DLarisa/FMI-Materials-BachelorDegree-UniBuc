@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Fisier de baza</title>
+		<style>
+			button{
+				width:50px;
+			}
+		</style>
+		<script>
+			window.onload=function() {
+				var cont = document.getElementById("container");
+				var butoane=cont.querySelectorAll("button");
+				for (let i=0;i<butoane.length;i++)
+				{
+					butoane[i].onclick=function(){
+						this.innerHTML=0;
+						prev=this.previousElementSibling;
+						<!--butoanele in html sunt cu un enter intre ele, enterul este previousSibling, deci trebuie sa aiba previousElementSibling-->
+						nr=0;
+						while(prev){
+							nr--;
+							prev.innerHTML=nr;
+							prev=prev.previousElementSibling;
+						}
+						nxt=this.nextElementSibling;
+						nr=0;
+						while(nxt){
+							nr++;
+							nxt.innerHTML=nr;
+							nxt=nxt.nextElementSibling;
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p>Nota: in exercitiile de tip "corectati gresala", desi nu e recomandat, s-au pus css-ul si script-ul in fisierul html strict pentru simplitate (downloadarea unui singur fisier vs 3). Totusi retineti ca indicat este sa folositi fisiere externe in teme/proiecte/teste.</p>
+		<p>In cadrul acestui exercitiu se doreste ca atunci cand se face click pe un buton (oricare dintre cele aflate in divul cu id-ul "container"), butonul respectiv sa isi schimbe continutul (textul) in 0. De asemenea, butoanele din stanga lui sa aiba tot un continut numeric. Vor fi numerele -1, -2, -3 etc in aceasta ordine de la dreapta la stanga pana la ultimul buton. La fel, butoanele din dreapta butonului pe care s-a apasat, vor avea drept text 1,2,3,4 ... in aceasta ordine, de la stanga la dreapta.</p>
+		<div id="container">
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+			<button>OK</button>
+		</div>
+	</body>
+</html>

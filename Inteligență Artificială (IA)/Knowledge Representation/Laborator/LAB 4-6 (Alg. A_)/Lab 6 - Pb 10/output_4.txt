@@ -1,0 +1,162 @@
+Input 4
+
+
+Euristica 1 (Nu e Admisibilă):
+Cost Total: 9.44.
+
+aaaaa
+ebbbd
+eaaad
+ecccd
+ebbbb
+eaaaa
+
+ebbbd
+eaaad
+ecccd
+ebbbb
+eaaaa
+Cost Mutare: 1.58.
+
+bbbd
+aaad
+cccd
+bbbb
+aaaa
+Cost Mutare: 1.0.
+
+bbbd
+aaad
+cccd
+aaaa
+Cost Mutare: 1.43.
+
+bbbd
+aaad
+cccd
+Cost Mutare: 1.43.
+
+bbb
+aaa
+ccc
+Cost Mutare: 1.0.
+
+aaa
+ccc
+Cost Mutare: 1.0.
+
+ccc
+Cost Mutare: 1.0.
+
+
+Cost Mutare: 1.0.
+
+
+Algoritmul A* s-a terminat în: 0.14 secunde.
+
+
+
+Euristica 2:
+Cost Total: 6.43.
+
+aaaaa
+ebbbd
+eaaad
+ecccd
+ebbbb
+eaaaa
+
+aaaa#
+ebbb#
+eaaa#
+eccca
+ebbbb
+eaaaa
+Cost Mutare: 1.0.
+
+a####
+eaaa#
+ebbb#
+eaaaa
+ebbbb
+eaaaa
+Cost Mutare: 1.0.
+
+#aaa#
+#bbb#
+#aaaa
+#bbbb
+aaaaa
+Cost Mutare: 1.0.
+
+#aaa#
+#bbb#
+#aaaa
+aaaaa
+Cost Mutare: 1.43.
+
+#aaa#
+#aaaa
+aaaaa
+Cost Mutare: 1.0.
+
+
+Cost Mutare: 1.0.
+
+
+Algoritmul A* s-a terminat în: 0.83 secunde.
+
+
+
+Euristica 3:
+Cost Total: 6.43.
+
+aaaaa
+ebbbd
+eaaad
+ecccd
+ebbbb
+eaaaa
+
+aaaa#
+ebbb#
+eaaa#
+eccca
+ebbbb
+eaaaa
+Cost Mutare: 1.0.
+
+#aaa#
+#bbb#
+#aaa#
+#ccca
+#bbbb
+aaaaa
+Cost Mutare: 1.0.
+
+#aaa#
+#bbb#
+#aaaa
+#bbbb
+aaaaa
+Cost Mutare: 1.0.
+
+#aaa#
+#bbb#
+#aaaa
+aaaaa
+Cost Mutare: 1.43.
+
+#aaa#
+#aaaa
+aaaaa
+Cost Mutare: 1.0.
+
+
+Cost Mutare: 1.0.
+
+
+Algoritmul A* s-a terminat în: 73.93 secunde.
+
+
+

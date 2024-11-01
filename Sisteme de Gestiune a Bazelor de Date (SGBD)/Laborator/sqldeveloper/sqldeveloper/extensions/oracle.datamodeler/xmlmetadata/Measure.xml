@@ -1,0 +1,40 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.multidimensional.Measure parentClass="oracle.dbtools.crest.model.design.multidimensional.AbstractMDObject">
+   <property name="actasFactDimension" dataType="boolean" defaultValue="" xmlName="actasFactDimension" xmlType="element" getter="isActAsFactDimension" setter="setActAsFactDimension" reffered="false"/>
+   <property name="additivity" dataType="java.lang.String" defaultValue="" xmlName="additivity" xmlType="element" getter="getAdditivity" setter="setAdditivity" reffered="false"/>
+   <property name="aggregationFunctionID" dataType="java.lang.String" defaultValue="" xmlName="aggregationFunctionID" xmlType="element" getter="getAggregationFunctionID" setter="setAggregationFunctionID" reffered="false"/>
+   <property name="cube" dataType="oracle.dbtools.crest.model.design.multidimensional.Cube" defaultValue="" xmlName="cube" xmlType="element" getter="getCube" setter="setCube" reffered="true"/>
+   <property name="isformula" dataType="boolean" defaultValue="" xmlName="isformula" xmlType="element" getter="isFormula" setter="setFormula" reffered="false"/>
+   <property name="iscustomFormula" dataType="boolean" defaultValue="" xmlName="iscustomFormula" xmlType="element" getter="isCustomFormula" setter="setCustomFormula" reffered="false"/>
+   <property name="defaultAggregationFunction" dataType="oracle.dbtools.crest.model.design.multidimensional.Measure$AggregateFunction" defaultValue="" xmlName="defaultAggregationFunction" xmlType="element" getter="getDefaultAggregationFunction" setter="setDefaultAggregationFunction" reffered="true"/>
+   <property name="formula" dataType="java.lang.String" defaultValue="" xmlName="formula" xmlType="element" getter="getFormula" setter="setFormula" reffered="false"/>
+   <property name="measureFact" dataType="oracle.dbtools.crest.model.design.ContainedObject" defaultValue="" xmlName="measureFact" xmlType="element" getter="getMeasureFact" setter="setMeasureFact" reffered="true"/>
+   <property name="olAPDimension" dataType="oracle.dbtools.crest.model.design.multidimensional.Dimension" defaultValue="" xmlName="olAPDimension" xmlType="element" getter="getOLAPDimension" setter="setOLAPDimension" reffered="true"/>
+   <property name="olAPHierarchy" dataType="oracle.dbtools.crest.model.design.multidimensional.Hierarchy" defaultValue="" xmlName="olAPHierarchy" xmlType="element" getter="getOLAPHierarchy" setter="setOLAPHierarchy" reffered="true"/>
+   <property name="olAPlevel" dataType="oracle.dbtools.crest.model.design.multidimensional.Level" defaultValue="" xmlName="olAPlevel" xmlType="element" getter="getOLAPLevel" setter="setOLAPLevel" reffered="true"/>
+   <property name="olAPoffset" dataType="int" defaultValue="" xmlName="olAPoffset" xmlType="element" getter="getOLAPOffset" setter="setOLAPOffset" reffered="false"/>
+   <property name="olAPoperator" dataType="java.lang.String" defaultValue="" xmlName="olAPoperator" xmlType="element" getter="getOLAPOperator" setter="setOLAPOperator" reffered="false"/>
+   <property name="olAPPeriodToDateoperation" dataType="java.lang.String" defaultValue="" xmlName="olAPPeriodToDateoperation" xmlType="element" getter="getOLAPPeriodToDateOperation" setter="setOLAPPeriodToDateOperation" reffered="false"/>
+   <property name="olAPStart" dataType="int" defaultValue="" xmlName="olAPStart" xmlType="element" getter="getOLAPStart" setter="setOLAPStart" reffered="false"/>
+   <property name="olAPStep" dataType="int" defaultValue="" xmlName="olAPStep" xmlType="element" getter="getOLAPStep" setter="setOLAPStep" reffered="false"/>
+   <property name="olAPStop" dataType="int" defaultValue="" xmlName="olAPStop" xmlType="element" getter="getOLAPStop" setter="setOLAPStop" reffered="false"/>
+   <property name="oracleAWFormulaType" dataType="java.lang.String" defaultValue="" xmlName="oracleAWFormulaType" xmlType="element" getter="getOracleAWFormulaType" setter="setOracleAWFormulaType" reffered="false"/>
+   <property name="rankDirectionCode" dataType="java.lang.String" defaultValue="" xmlName="rankDirectionCode" xmlType="element" getter="getRankDirectionCode" setter="setRankDirectionCode" reffered="false"/>
+   <property name="rankDirectionName" dataType="java.lang.String" defaultValue="" xmlName="rankDirectionName" xmlType="element" getter="getRankDirectionName" setter="setRankDirectionName" reffered="false"/>
+   <property name="usedOLAPMeasure" dataType="oracle.dbtools.crest.model.design.multidimensional.Measure" defaultValue="" xmlName="usedOLAPMeasure" xmlType="element" getter="getUsedOLAPMeasure" setter="setUsedOLAPMeasure" reffered="true"/>
+   <property name="whereClause" dataType="java.lang.String" defaultValue="" xmlName="whereClause" xmlType="element" getter="getWhereClause" setter="setWhereClause" reffered="false"/>
+   <collection name="aggregationFunctions" dataType="java.util.List" xmlName="aggregationFunctions" itemXmlName="function" getter="getAggregateFunctions" addItem="addAggregateFunction" createItem="createAggregateFunction" getItemByID="getAggregateFunctionById" nativeList="true" orderTheList="true"/>
+   <collection name="attributesList" dataType="java.util.List" xmlName="attributesList" itemXmlName="attribute" itemIsRef="true" getter="getAttributes" nativeList="true" orderTheList="true"/>
+   <roproperty name="additive" dataType="boolean" getter="isAdditive"/>
+   <roproperty name="definedAsOracleAWCalculated" dataType="boolean" getter="isDefinedAsOracleAWCalculated"/>
+   <roproperty name="factDimension" dataType="boolean" getter="isFactDimension"/>
+   <roproperty name="nonAdditive" dataType="boolean" getter="isNonAdditive"/>
+   <roproperty name="semiAdditive" dataType="boolean" getter="isSemiAdditive"/>
+   <roproperty name="aggregateFunctionById" dataType="oracle.dbtools.crest.model.design.multidimensional.Measure$AggregateFunction" getter="getAggregateFunctionById"/>
+   <roproperty name="aggregateFunctions" dataType="interface java.util.List" getter="getAggregateFunctions"/>
+   <roproperty name="attributes" dataType="interface java.util.List" getter="getAttributes"/>
+   <roproperty name="candidateFactsAndNull" dataType="interface java.util.List" getter="getCandidateFactsAndNull"/>
+   <roproperty name="factEntities" dataType="interface java.util.List" getter="getFactEntities"/>
+   <roproperty name="factEntity" dataType="oracle.dbtools.crest.model.design.ContainerObject" getter="getFactEntity"/>
+   <roproperty name="measureExpression" dataType="java.lang.String" getter="getMeasureExpression"/>
+</oracle.dbtools.crest.model.design.multidimensional.Measure>

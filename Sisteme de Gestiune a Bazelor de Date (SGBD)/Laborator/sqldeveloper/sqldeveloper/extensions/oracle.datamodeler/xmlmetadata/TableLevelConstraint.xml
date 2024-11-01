@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.constraint.TableLevelConstraint parentClass="oracle.dbtools.crest.model.design.DesignObject">
+   <aa_property name="id" dataType="java.lang.String" defaultValue="" xmlName="id" xmlType="attribute" getter="getID" setter="setID" reffered="false"/>
+   <aa_property name="name" dataType="java.lang.String" defaultValue="" xmlName="name" xmlType="element" getter="getName" setter="setName" reffered="false"/>
+   <property name="rule" dataType="java.lang.String" defaultValue="" xmlName="rule" xmlType="element" getter="getRule" setter="setRule" reffered="false"/>
+   <aa_property name="table" dataType="oracle.dbtools.crest.model.design.relational.Table" defaultValue="" xmlName="table" xmlType="element" getter="getTable" setter="setTable" reffered="true"/>
+   <roproperty name="objectTypeName" dataType="java.lang.String" getter="getObjectTypeName"/>
+</oracle.dbtools.crest.model.design.constraint.TableLevelConstraint>

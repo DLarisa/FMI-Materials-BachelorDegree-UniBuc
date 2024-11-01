@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.swingui.TVDiagramView parentClass="oracle.dbtools.crest.swingui.ContainerView" >
+   <property name="rdiagramName" dataType="java.lang.String" defaultValue="" xmlName="rdiagramName" xmlType="element" getter="getDPVName" setter="setDPVName" reffered="false"/>
+   <property name="rdiagramID" dataType="java.lang.String" defaultValue="" xmlName="rdiagramID" xmlType="element" getter="getDPV_ID" setter="setDPV_ID" reffered="false"/>
+   <property name="compositeView" dataType="boolean" defaultValue="true" xmlName="compositeView" xmlType="element" getter="isCompositeView" setter="setCompositeView" reffered="false"/>
+</oracle.dbtools.crest.swingui.TVDiagramView>   

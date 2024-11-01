@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html lang="ro"> 
+<head> 
+<meta charset="utf-8">
+<title>Evenimente</title>
+<style>
+.abc{color:blue;}
+</style>
+
+<script>
+window.onload=function()
+{
+var pl=document.getElementsByTagName("p");
+for(var i=0;i<pl.length;i++)
+  setTimeout(function(culoare,ob){ ob.style.color=culoare;},3000*(i+1),"red",pl[i]);
+//for(let i=0;i<pl.length;i++)
+  //setTimeout(function(){colorare("red",pl[i]);},3000*(i+1));
+
+function colorare(culoare,ob)
+{
+ ob.style.color=culoare;
+}
+}
+</script>
+</head>
+<body>
+<p>Paragraful 1</p>
+<p>Paragraful 2</p>
+<p>Paragraful 3</p>
+<p>Paragraful 4</p>
+<p>Paragraful 5</p>
+<p>Paragraful 6</p>
+<p>Paragraful 7</p>
+<p>Paragraful 8</p>
+
+
+</body>
+</html>

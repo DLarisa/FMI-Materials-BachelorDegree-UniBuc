@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rulesfile version="1.0" name="Tom"
+	description="Search rules to identify Sybase  jdbc calls in java applications"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<ruleset name="Drivers and Connection"
+		description="Find the driver and replace it with the oracle version.  If there is a complete match, replace it, otherwise, we're going to flag it as something to fix"
+		type="SYBASE" target="ORACLE" enable="true" source="tom">
+		<required>
+			<regex>
+				<expression><![CDATA[imtom]]></expression>
+			</regex>
+		</required>
+		<rules>
+		<regex name="Sybase JDBC Driver" description="Sybase JDBC Driver"
+			casesensitive="true">
+			<example><![CDATA[Hello]]></example>
+			<expression><![CDATA[Hello]]></expression>
+			<replacement><![CDATA[oracle.jdbc.driver.OracleDriver]]></replacement>
+		</regex>
+		</rules>
+	</ruleset>
+</rulesfile>

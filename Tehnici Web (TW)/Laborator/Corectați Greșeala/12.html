@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Fisier de baza</title>
+		<style>
+			.patrat{
+				width:20px;
+				height:20px;
+				display:inline-block;
+				border:1px solid black;
+			}
+			.rosu{
+				background-color:red;
+			}
+			.verde{
+				background-color:green;
+			}
+			#c_r{
+				background-color:red;
+			}
+		</style>
+		<script>
+			
+			window.onload=function(){
+				var btn=document.getElementById("intrebare");
+				btn.onclick=function(e){
+					var patrate=document.querySelectorAll(".patrat");
+					var nr=0;
+					for (var i=0;i<patrate.length;i++){
+						let stil=getComputedStyle(patrate[i]);
+						console.log(stil.backgroundColor);
+						if (stil.backgroundColor=="rgb(255, 0, 0)")
+							nr++;
+					}
+					alert("Nr patrare rosii: "+nr);
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<p>Nota: in exercitiile de tip "corectati gresala", desi nu e recomandat, s-au pus css-ul si script-ul in fisierul html strict pentru simplitate (downloadarea unui singur fisier vs 3). Totusi retineti ca indicat este sa folositi fisiere externe in teme/proiecte/teste.</p>
+		<hr/>
+		<p>La click pe buton dorim sa se dea un alert cu cate patrate de culoare rosie exista in pagina (E vorba de divurile cu clasa "patrat" care au background rosu). Nu putem sa returnam numarul de divuri care au clasa rosu, deoarece unele fac parte din mai multe clase sau au un stil inline care suprascrie culoarea de background sau primesc culoarea rosie datorita altor selectori. Astfel in script s-au selectat toate divurile din clasa "patrat" incercand sa se numere cate au background rosu. Totusi nu se obtine rezultatul corect. De ce? Corectati. </p>
+		<div class="patrat rosu"></div>
+		<div class="patrat"></div>
+		<div class="patrat rosu verde"></div>
+		<div class="patrat rosu"></div>
+		<div class="patrat verde" style="background-color:red;"></div>
+		<div id="c_r" class="patrat verde"></div>
+		<div class="patrat verde"></div>
+		<div class="patrat verde rosu"></div>
+		<div class="patrat rosu"></div>
+		<button id="intrebare">Cate patrate rosii sunt in pagina?</button>
+	</body>
+</html>

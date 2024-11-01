@@ -1,0 +1,642 @@
+-- Laboratorul 4
+
+set serveroutput on;
+set echo off;
+set verify off;
+
+
+-- EXERCIȚII REZOLVATE PDF --
+-- Ex1 -> Funcție Locală
+DECLARE
+  v_nume employees.last_name%TYPE := Initcap('&p_nume');
+  
+  FUNCTION f1 RETURN NUMBER IS
+    salariu employees.salary%type;
+  BEGIN
+    SELECT salary 
+    INTO salariu 
+    FROM employees 
+    WHERE last_name = v_nume;
+    
+    RETURN salariu;
+    
+  EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      DBMS_OUTPUT.PUT_LINE('Nu exista angajati cu numele dat');
+    WHEN TOO_MANY_ROWS THEN
+      DBMS_OUTPUT.PUT_LINE('Exista mai multi angajati '|| 
+                           'cu numele dat');
+    WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE('Alta eroare!');
+  END f1;
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('Salariul este '|| f1);
+--EXCEPTION
+-- WHEN OTHERS THEN
+-- DBMS_OUTPUT.PUT_LINE('Eroarea are codul = '||SQLCODE
+-- || ' si mesajul = ' || SQLERRM);
+END;
+/
+
+
+
+
+-- Ex2 -> Funcție Stocată
+CREATE OR REPLACE FUNCTION f2_lgd (v_nume employees.last_name%TYPE DEFAULT 'Bell')
+  RETURN NUMBER IS 
+  
+  salariu employees.salary%type;
+  
+BEGIN
+  SELECT salary 
+  INTO salariu 
+  FROM employees 
+  WHERE last_name = v_nume;
+    
+  RETURN salariu;
+  
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+    RAISE_APPLICATION_ERROR(-20000, 'Nu exista angajati cu numele dat');
+  WHEN TOO_MANY_ROWS THEN
+    RAISE_APPLICATION_ERROR(-20001, 'Exista mai multi angajati cu numele dat');
+  WHEN OTHERS THEN
+    RAISE_APPLICATION_ERROR(-20002,'Alta eroare!');
+END f2_lgd;
+/
+
+
+-- METODE DE APELARE
+--- a) Bloc PL/SQL
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('Salariul este '|| f2_lgd);
+END;
+/
+
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('Salariul este '|| f2_lgd('King'));
+END;
+/
+
+
+--- b) SQL
+SELECT f2_lgd 
+FROM DUAL;
+
+SELECT f2_lgd ('King') 
+FROM DUAL;
+
+
+--- c) SQL*PLUS cu Variabila HOST
+VARIABLE nr NUMBER
+EXECUTE :nr := f2_lgd('King');
+PRINT nr;
+
+drop function f2_lgd;
+
+
+
+
+-- Ex3 -> Procedură Locală
+--- Varianta 1
+DECLARE
+  v_nume employees.last_name%TYPE := Initcap('&p_nume');
+  
+  PROCEDURE p3 IS 
+  salariu employees.salary%TYPE;
+  
+  BEGIN
+    SELECT salary 
+    INTO salariu 
+    FROM employees 
+    WHERE last_name = v_nume;
+    
+    DBMS_OUTPUT.PUT_LINE('Salariul este ' || salariu);
+  
+  EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      DBMS_OUTPUT.PUT_LINE('Nu exista angajati cu numele dat');
+    WHEN TOO_MANY_ROWS THEN
+      DBMS_OUTPUT.PUT_LINE('Exista mai multi angajati '|| 'cu numele dat');
+    WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE('Alta eroare!');
+  END p3;
+BEGIN
+  p3;
+END;
+/
+
+
+--- Varianta 2
+DECLARE
+  v_nume     employees.last_name%TYPE := Initcap('&p_nume');
+  v_salariu  employees.salary%type;
+  
+  PROCEDURE p3(salariu OUT employees.salary%type)
+  IS
+  BEGIN
+    SELECT salary 
+    INTO salariu 
+    FROM employees 
+    WHERE last_name = v_nume;
+  EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      RAISE_APPLICATION_ERROR(-20000, 'Nu exista angajati cu numele dat');
+    WHEN TOO_MANY_ROWS THEN
+      RAISE_APPLICATION_ERROR(-20001, 'Exista mai multi angajati cu numele dat');
+    WHEN OTHERS THEN
+      RAISE_APPLICATION_ERROR(-20002,'Alta eroare!');
+  END p3;
+BEGIN
+  p3(v_salariu);
+  DBMS_OUTPUT.PUT_LINE('Salariul este ' || v_salariu);
+END;
+/
+
+
+
+
+-- Ex4 -> Procedură Stocată
+--- Varianta 1
+CREATE OR REPLACE PROCEDURE p4_lgd (v_nume employees.last_name%TYPE DEFAULT 'Bell')
+  IS
+  salariu employees.salary%type;  
+BEGIN
+  select salary
+  into salariu
+  from employees
+  where last_name = v_nume;
+  
+  dbms_output.put_line('Salariul este ' || salariu);
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+    DBMS_OUTPUT.PUT_LINE('Nu exista angajati cu numele dat');
+  WHEN TOO_MANY_ROWS THEN
+    DBMS_OUTPUT.PUT_LINE('Exista mai multi angajati '|| 'cu numele dat');
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('Alta eroare!');
+END p4_lgd;
+/
+
+
+-- Metode de Apelare
+--- a) Bloc PL/SQL
+BEGIN
+  p4_lgd('King');
+END;
+/
+
+
+--- b) SQL*PLUS
+EXECUTE p4_lgd;
+EXECUTE p4_lgd ('King');
+EXECUTE p4_lgd ('Kimball');
+
+
+drop procedure p4_lgd;
+
+
+
+--- Variant 2
+CREATE OR REPLACE PROCEDURE p4_lgd (v_nume employees.last_name%TYPE,
+  salariu out employees.salary%type) IS
+BEGIN
+  select salary
+  into salariu
+  from employees
+  where last_name = v_nume;
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+    RAISE_APPLICATION_ERROR(-20000, 'Nu exista angajati cu numele dat');
+  WHEN TOO_MANY_ROWS THEN
+    RAISE_APPLICATION_ERROR(-20001, 'Exista mai multi angajati cu numele dat');
+  WHEN OTHERS THEN
+    RAISE_APPLICATION_ERROR(-20002,'Alta eroare!');
+END p4_lgd;
+/
+
+
+-- Metode de Aplicare
+--- a) Bloc PL/SQL
+DECLARE
+  v_nume employees.last_name%type := initcap('&p_nume');
+  v_sal  employees.salary%type;
+BEGIN
+  p4_lgd(v_nume, v_sal);
+  dbms_output.put_line('Salariul este ' || v_sal);
+END;
+/
+
+
+--- b)SQL*PLUS
+VARIABLE v_sal NUMBER
+EXECUTE p4_lgd ('Bell', :v_sal);
+PRINT v_sal;
+
+
+drop procedure p4_lgd;
+
+
+
+
+-- Ex5 -> Procedură Stocată cu Parametru IN/OUT
+VARIABLE ang_man NUMBER
+BEGIN
+  :ang_man := 200;
+END;
+/
+
+CREATE OR REPLACE PROCEDURE p5_lgd (cod IN OUT employees.manager_id%type) IS
+BEGIN
+  select manager_id
+  into cod
+  from employees
+  where employee_id = cod;
+END p5_lgd;
+/
+
+EXECUTE p5_lgd (:ang_man);
+PRINT ang_man;
+
+drop procedure p5_lgd;
+
+
+
+
+-- Ex6 -> Procedură Locală
+DECLARE
+  nume employees.last_name%type;
+  
+  PROCEDURE p6 (rezultat OUT employees.last_name%type,
+    comision IN employees.commission_pct%type DEFAULT NULL,
+    cod IN employees.employee_id%type DEFAULT NULL) IS
+  BEGIN
+    if comision is not null then
+      select last_name
+      into rezultat
+      from employees
+      where commission_pct = comision;
+      
+      dbms_output.put_line('Salariatul cu comisionul' || comision
+                           || ' are numele: ' || rezultat);
+    else
+      select last_name
+      into rezultat
+      from employees
+      where employee_id = cod;
+      
+      dbms_output.put_line('Salariatul cu codul ' || cod
+                           || ' are numele: ' || rezultat);
+    end if;
+  END p6;
+BEGIN
+  p6(nume, 0.4);
+  p6(nume, cod => 200); -- ca să sar peste comision, am folosit '=>'
+END;
+/
+
+
+
+
+-- Ex7 -> Overload Funcții Locale (același nume)
+DECLARE
+  medie1 number(10, 2);
+  medie2 number(10, 2);
+  
+  FUNCTION medie(cod employees.department_id%type)
+  RETURN NUMBER IS
+  
+  v_medie number(10, 2);
+  BEGIN
+    select avg(salary)
+    into v_medie
+    from employees
+    where department_id = cod;
+    
+    return v_medie;
+  END medie;
+  
+  FUNCTION medie(cod employees.department_id%type, 
+    job employees.job_id%type) 
+  RETURN NUMBER IS
+  
+  v_medie number(10, 2);
+  BEGIN
+    select avg(salary)
+    into v_medie
+    from employees
+    where department_id = cod and job_id = job;
+    
+    return v_medie;
+  END medie;
+
+BEGIN
+  medie1 := medie(80);
+  medie2 := medie(80, 'SA_MAN');
+  
+  dbms_output.put_line('Medie Salarii din Departament 80: ' ||
+                       medie1);
+  dbms_output.put_line('Medie Salarii din Departament 80 si job SA_MAN: ' ||
+                       medie2);
+END;
+/
+
+
+
+
+-- Ex8 -> Funcție Recursivă
+CREATE OR REPLACE FUNCTION factorial(nr number)
+  RETURN INTEGER IS
+BEGIN
+  if nr = 0 then RETURN 1;
+  else RETURN nr * factorial(nr - 1);
+  end if;
+END factorial;
+/
+
+VARIABLE nr NUMBER
+EXECUTE :nr := factorial(5);
+PRINT nr;
+
+drop function factorial;
+
+
+
+
+-- Ex9 -> Funcție Stocată
+CREATE OR REPLACE FUNCTION medie RETURN NUMBER IS
+  rezultat number(10, 2);
+BEGIN
+  select avg(salary)
+  into rezultat
+  from employees;
+  
+  return rezultat;
+END medie;
+/
+
+select last_name, salary
+from employees
+where salary >= medie;
+
+drop function medie;
+
+
+
+
+
+-- EXERCIȚII PROPUSE --
+-- Ex1
+create table info_lgd(utilizator varchar2(100),
+                      data date,
+                      comanda varchar2(100),
+                      nr_linii int,
+                      eroare varchar2(100));
+
+
+
+-- Ex2 (doar Funcție)
+CREATE OR REPLACE FUNCTION f2_lgd(nume employees.last_name%type)
+RETURN NUMBER IS
+  salariu          number(10, 2);
+  data1            date;
+  utilizator       varchar2(100);
+  eroare           varchar2(100);
+  nr_linii         number(5);
+BEGIN
+  select user
+  into utilizator
+  from dual;
+  
+  select sysdate
+  into data1
+  from dual;
+  
+  select count(*)
+  into nr_linii
+  from emp_lgd
+  where last_name = nume;
+  
+  select salary
+  into salariu
+  from employees
+  where lower(last_name) = lower(nume);
+  
+  insert into info_lgd values(utilizator, data1, 'select',
+                              1, 'succes');
+  
+  return salariu;
+EXCEPTION
+  when NO_DATA_FOUND then
+    eroare := substr(SQLERRM, 1, 90); -- EROARE SQL
+    insert into info_lgd values(utilizator, data1, 'select',
+                              0, eroare);
+    dbms_output.put_line('Niciun Angajat cu Numele dat.');
+    return -1;
+    
+  when TOO_MANY_ROWS then
+    eroare := substr(SQLERRM, 1, 90); -- EROARE SQL
+    insert into info_lgd values(utilizator, data1, 'select',
+                                nr_linii, eroare);
+    -- RAISE_APPLICATION_ERROR(-20000, 'Exista mai multi angajati cu numele dat');
+    return -2;
+  
+  when OTHERS then
+    eroare := substr(SQLERRM, 1, 90); -- EROARE SQL
+    insert into info_lgd values(utilizator, data1, 'select',
+                                nr_linii, eroare);
+    RAISE_APPLICATION_ERROR(-20001, 'Alta eroare');
+END f2_lgd;
+/
+
+variable x number
+execute :x := f2_lgd('Bell');
+execute :x := f2_lgd('King');
+execute :x := f2_lgd('Asd');
+execute :x := f2_lgd('');
+
+drop function f2_lgd;
+
+
+
+-- Ex3
+CREATE OR REPLACE FUNCTION f3_lgd (oras locations.city%type default 'Seattle')
+RETURN NUMBER IS
+
+  v_num    number;
+  v_2jobs  number;
+BEGIN
+  select count(*)
+  into v_num
+  from locations
+  where lower(city) = lower(oras);
+    
+  if v_num = 0 then 
+    insert into info_lgd values(user, sysdate, 'select count(*)',
+                                v_num, 'NU exista Oras!');
+  else
+    select count(employee_id)
+    into v_num
+    from emp_lgd join departments using(department_id)
+         join locations using(location_id)
+    where lower(city) = lower(oras);
+      
+    if v_num = 0 then 
+      insert into info_lgd values(user, sysdate, 'select count(employee_id)',
+                                  v_num, 'NU exista Angajati in Oras.');
+    else
+      select count(count(*))
+      into v_2jobs
+      from emp_lgd join departments using(department_id)
+           join locations using(location_id) 
+           join job_history using(employee_id)
+      where lower(city) = lower(oras)
+      group by employee_id
+      having count(job_history.job_id) >= 2;
+      
+      insert into info_lgd values(user, sysdate, 'select count(count(*))',
+                                  v_2jobs, 'SUCCESS');
+    end if;
+  end if;
+  
+  return v_2jobs;
+END f3_lgd;
+/
+
+variable x number
+execute :x := f3_lgd('New York');
+execute :x := f3_lgd('London');
+execute :x := f3_lgd('Bucuresti');
+execute :x := f3_lgd('Oradea');
+execute :x := f3_lgd('Beijing');
+
+drop function f3_lgd;
+
+
+
+
+-- Ex4
+CREATE OR REPLACE PROCEDURE pb4(p_cod employees.employee_id%TYPE)
+IS  
+
+  v_nr         number(5);
+  v_nr_linii   number;
+BEGIN
+  select count (*) 
+  into v_nr
+  from emp_lgd
+  where employee_id = p_cod;
+    
+  if v_nr = 0 then
+    insert into info_lgd values(user, sysdate, 'nothing', 
+                                v_nr, 'Nu exista manager cu codul dat!');
+  else
+    update emp_lgd
+    set salary = salary * 1.1
+    where manager_id in (select employee_id
+                         from employees
+                         start with employee_id = p_cod
+                         connect by prior employee_id = manager_id);
+    v_nr_linii := sql%rowcount;
+        
+    rollback;
+        
+    insert into info_lgd values(user, sysdate, 'update', 
+                                v_nr_linii, 'no error');
+  end if;
+END pb4;
+/
+
+
+
+
+-- Ex5
+--- Varianta 1
+CREATE OR REPLACE PROCEDURE p5_1 IS
+  CURSOR c_dept IS 
+    SELECT department_name, zi, nr_ang
+    FROM departments LEFT JOIN (SELECT department_id, TO_CHAR(hire_date, 'D') zi, 
+                                       COUNT(*) nr_ang
+                                FROM employees e
+                                GROUP BY department_id, TO_CHAR(hire_date, 'D')
+                                HAVING COUNT(*) = (SELECT MAX(COUNT(*))
+                                                   FROM employees
+                                                   GROUP BY employees.department_id, TO_CHAR(hire_date, 'D')
+                                                   HAVING department_id = e.department_id)
+                                ) USING (department_id);
+BEGIN
+  FOR linie IN c_dept LOOP
+    IF linie.zi IS NULL THEN
+      dbms_output.put_line('In departamentul ' || linie.department_name || 
+                           ' nu exista angajati');
+    ELSE
+      dbms_output.put_line('In departamentul ' || linie.department_name ||
+                           ', cele mai multe angajari au avut loc in ziua ' ||
+                           linie.zi || ' a saptamanii, in numar de ' || 
+                           linie.nr_ang || ', dupa cum urmeaza: ');
+
+      FOR angajat IN (SELECT first_name || ' ' || last_name nume,
+                             ROUND(SYSDATE - hire_date) vechime,
+                             salary * (1 + NVL(commission_pct, 0)) venit
+                      FROM employees JOIN departments USING (department_id)
+                      WHERE department_name = linie.department_name 
+                            AND TO_CHAR(hire_date, 'D') = linie.zi)
+      LOOP
+        dbms_output.put_line(angajat.nume || ' ' || angajat.vechime 
+                             || ' ' || angajat.venit);
+     END LOOP;
+     
+    END IF;
+  END LOOP;
+END;
+/
+
+
+--- Varianta 2
+CREATE OR REPLACE PROCEDURE p5_2 IS
+  CURSOR c_dept IS
+    SELECT department_name, zi, nr_ang
+    FROM departments LEFT JOIN (SELECT department_id,
+                                       TO_CHAR(hire_date, 'D') zi,
+                                       COUNT(*) nr_ang
+                                FROM employees e
+                                GROUP BY department_id, TO_CHAR(hire_date, 'D')
+                                HAVING COUNT(*) = (SELECT MAX(COUNT(*))
+                                                   FROM employees
+                                                   GROUP BY employees.department_id,
+                                                            TO_CHAR(hire_date, 'D')
+                                                   HAVING department_id = e.department_id)
+                                ) USING (department_id);
+
+BEGIN
+  FOR linie IN c_dept LOOP
+    IF linie.zi IS NULL THEN
+      dbms_output.put_line('In departamentul ' || linie.department_name || 
+                           ' nu exista angajati');
+    ELSE
+      dbms_output.put_line('In departamentul ' || linie.department_name || 
+                           ', cele mai multe angajari au avut loc in ziua ' 
+                           || linie.zi || ' a saptamanii, in numar de ' || 
+                           linie.nr_ang || ', dupa cum urmeaza: ');
+      FOR angajat IN (SELECT first_name || ' ' || last_name nume,
+                             ROUND(SYSDATE - NVL((SELECT MIN(start_date) 
+                                                  FROM job_history 
+                                                  WHERE employee_id = e.employee_id), hire_date))                        AS vechime,
+                             salary * (1 + NVL(commission_pct, 0)) venit
+                      FROM employees e JOIN departments d
+                           ON (e.department_id = d.department_id)
+                      WHERE department_name = linie.department_name
+                            AND TO_CHAR(hire_date, 'D') = linie.zi)
+      LOOP
+        dbms_output.put_line( angajat.nume || ', cu salariul ' || angajat.vechime || ' si vechimea ' || angajat.venit);
+      END LOOP;
+    END IF;
+  END LOOP;
+END;
+/
+
+
+BEGIN
+    p5_2;
+END;
+/

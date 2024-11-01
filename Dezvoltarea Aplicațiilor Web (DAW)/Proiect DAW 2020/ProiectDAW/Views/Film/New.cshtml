@@ -1,0 +1,63 @@
+﻿@model ProiectDAW.Models.Film
+@{
+    ViewBag.Title = "Adăugare Film Nou";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm(actionName: "New", controllerName: "Film", method: FormMethod.Post, htmlAttributes: new { style = "display:inline" }))
+{
+    @Html.Label("Nume", "Nume: ");
+    @Html.TextBoxFor(f => f.Nume, null, new { placeholder = "Scrie Titlul Filmului...", @class = "form-control" });
+    @Html.ValidationMessageFor(f => f.Nume, "", new { @class = "text-danger" });
+    <br />
+
+    @Html.Label("An", "An:");
+    @Html.TextBoxFor(f => f.An, null, new { placeholder = "Anul Lansarii (1920 - 2019)...", @class = "form-control" });
+    @Html.ValidationMessageFor(f => f.An, "", new { @class = "text-danger" });
+    <br />
+
+    @Html.Label("Summary", "Summary:");
+    @Html.TextAreaFor(f => f.Descriere, new { placeholder = "Summary...", @class = "form-control", @rows = "10" })
+    @Html.ValidationMessageFor(f => f.Descriere, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("NrPremii", "Număr Premii:");
+    @Html.TextBoxFor(f => f.NrPremii, null, new { placeholder = "Numărul de Premii câștigate... (0 - 999)", @class = "form-control" })
+    @Html.ValidationMessageFor(f => f.NrPremii, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("Limba", "Limbă Film: ")
+    @Html.DropDownListFor(f => f.LimbaId, new SelectList(Model.LimbaFilmList, "Value", "Text"), "Alege o Limbă", new { @class = "form-control" })
+    @Html.ValidationMessageFor(f => f.LimbaId, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("Director", "Director Film: ")
+    @Html.DropDownListFor(f => f.DirectorId, new SelectList(Model.DirectorList, "Value", "Text"), "Alege un Director", new { @class = "form-control" })
+    @Html.ValidationMessageFor(f => f.DirectorId, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.LabelFor(f => f.GenFilmList, "Alege Genurile Filmului (! Obligatoriu): ")
+    <br />
+    for (int i = 0; i < Model.GenFilmList.Count(); i++)
+    {
+        @Html.HiddenFor(f => f.GenFilmList[i].Id)
+        @Html.HiddenFor(f => f.GenFilmList[i].Nume)
+        @Html.CheckBoxFor(f => f.GenFilmList[i].Checked)
+        @Html.DisplayFor(f => f.GenFilmList[i].Nume)
+        <br />
+    }
+
+    <button class="btn btn-primary" type="submit">Create</button>
+}
+
+
+@using (Html.BeginForm(actionName: "Index", controllerName: "Film", method: FormMethod.Get, htmlAttributes: new { style = "display:inline; float: right;" }))
+{
+    <button class="btn btn-primary">Înapoi</button>
+}

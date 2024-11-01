@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.multidimensional.AbstractMDObject parentClass="oracle.dbtools.crest.model.design.DesignObject">
+   <property name="description" dataType="java.lang.String" defaultValue="" xmlName="description" xmlType="element" getter="getDescription" setter="setDescription" reffered="false" mergeCompare="true"/>
+   <property name="nameInOracleAW" dataType="java.lang.String" defaultValue="" xmlName="nameInOracleAW" xmlType="element" getter="getNameInOracleAW" setter="setNameInOracleAW" reffered="false"/>
+   <property name="oracleLongName" dataType="java.lang.String" defaultValue="" xmlName="oracleLongName" xmlType="element" getter="getOracleLongName" setter="setOracleLongName" reffered="false"/>
+   <property name="oraclePluralName" dataType="java.lang.String" defaultValue="" xmlName="oraclePluralName" xmlType="element" getter="getOraclePluralName" setter="setOraclePluralName" reffered="false"/>
+   <property name="oracleShortName" dataType="java.lang.String" defaultValue="" xmlName="oracleShortName" xmlType="element" getter="getOracleShortName" setter="setOracleShortName" reffered="false"/>
+   <roproperty name="allLinks" dataType="[Loracle.dbtools.crest.model.design.multidimensional.Link$Connection" getter="getAllLinks"/>
+   <roproperty name="allLinksToTarget" dataType="interface java.util.List" getter="getAllLinksToTarget"/>
+   <roproperty name="allRaggedHLinks" dataType="[Loracle.dbtools.crest.model.design.multidimensional.RaggedHLink$Connection" getter="getAllRaggedHLinks"/>
+   <roproperty name="allRollupLinksToTarget" dataType="interface java.util.List" getter="getAllRollupLinksToTarget"/>
+   <roproperty name="allViews" dataType="interface java.util.Collection" getter="getAllViews"/>
+   <roproperty name="firstLinkToTarget" dataType="oracle.dbtools.crest.model.design.multidimensional.Link" getter="getFirstLinkToTarget"/>
+   <roproperty name="incomingLinks" dataType="interface java.util.List" getter="getIncomingLinks"/>
+   <roproperty name="multidimensionalDesign" dataType="oracle.dbtools.crest.model.design.multidimensional.MultidimensionalDesign" getter="getMultidimensionalDesign"/>
+   <roproperty name="outgoingLinks" dataType="interface java.util.List" getter="getOutgoingLinks"/>
+</oracle.dbtools.crest.model.design.multidimensional.AbstractMDObject>

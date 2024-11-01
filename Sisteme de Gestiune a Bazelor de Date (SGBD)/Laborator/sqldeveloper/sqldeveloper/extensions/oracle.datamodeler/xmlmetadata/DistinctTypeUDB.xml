@@ -1,0 +1,5 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.udb.DistinctTypeUDB parentClass="oracle.dbtools.crest.model.design.storage.db2.AbstractStorageObjectDB2">
+   <property name="domain" dataType="java.lang.String" defaultValue="" xmlName="domain" xmlType="element" getter="getDomain" setter="setDomain" reffered="false"/>
+   <roproperty name="dataType" dataType="interface oracle.dbtools.crest.model.datatype.MDDataType" getter="getDataType"/>
+</oracle.dbtools.crest.model.design.storage.udb.DistinctTypeUDB>

@@ -1,0 +1,24 @@
+Comentariile în CSS: /* ... */
+Imaginile (toate elementele) se suprapun în cascadã; deci editorul va lua în considerare ultimul element.
+
+body
+{
+	background-color: #(EE)(EE)(EE); /*fãrã paranteze; prima parantezã=R, II=G, III=B**/
+	background-color: rgb(12, 25, 36); /* altã metodã */ 
+	background-image: url(""), url(""), ...;
+	padding-left/right/top/bottom: ...;
+	background-repeat: repeat-y, repeat, ...;
+	background-position: 40px 0, 10px 50px, 0 0, ...;
+}
+
+h3 + p ---> h3 ?i p sunt fra?i ?i sunt unul dupã altul (paragraful imediat dupã h3)
+h3 ~ p ---> ia to?i fra?ii paragraf, chiar dacã nu sunt unul dupã altul 
+section > p ---> fiu direct, nu selecteazã paragraful din sec?iunea sec?iunii
+section p ---> selecteazã toate paragrafele 
+
+nth-child ---> vrea al n-lea copil indiferent de tipul lui (3n -> toate cele divizibile cu 3 / odd / even)
+nth-of-type ---> vrea al n-lea copil de un anumit tip
+
+p + p ---> selecteazã doar paragrafele care au un paragraf în fa?ã
+
+Orice e static, mereu z-index=0. 

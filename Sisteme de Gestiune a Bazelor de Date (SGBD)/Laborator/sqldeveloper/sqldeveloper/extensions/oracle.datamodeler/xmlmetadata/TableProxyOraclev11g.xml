@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g parentClass="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableProxyOraclev10g">
+   <property name="allowAnySchema" dataType="java.lang.String" defaultValue="" xmlName="allowAnySchema" xmlType="element" getter="getAllowAnySchema" setter="setAllowAnySchema" reffered="false"/>
+   <property name="allowNonSchema" dataType="java.lang.String" defaultValue="" xmlName="allowNonSchema" xmlType="element" getter="getAllowNonSchema" setter="setAllowNonSchema" reffered="false"/>
+   <property name="storeAs" dataType="java.lang.String" defaultValue="BINARY XML" xmlName="storeAs" xmlType="element" getter="getStoreAs" setter="setStoreAs" reffered="false"/>
+   <property name="lobStorageType" dataType="java.lang.String" defaultValue="" xmlName="lobStorageType" xmlType="element" getter="getLobStorageType" setter="setLobStorageType" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g>

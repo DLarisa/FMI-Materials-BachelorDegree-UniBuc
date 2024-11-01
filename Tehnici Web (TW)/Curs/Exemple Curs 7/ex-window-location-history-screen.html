@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html lang="ro"> 
+<head>  
+
+
+
+<meta charset="utf-8">
+<title> blabla </title>
+<link href="favi.png" type="image/png" rel="shortcut icon" />
+<script type="text/javascript" >
+window.onload = function () { 
+document.getElementById("b1").addEventListener("click", function(){  document.getElementById("p1").innerHTML += "<br>"  +
+                                                                     window.location.href;});
+document.getElementById("b2").addEventListener("click", function(){location.href="http://fmi.unibuc.ro";});
+document.getElementById("b3").addEventListener("click", function(){ history.go(1);});
+document.getElementById("b4").addEventListener("click", function(){history.go(-1);});
+document.getElementById("b5").addEventListener("click", function(){document.getElementById("p2").innerHTML += "<br>" + screen.availWidth + " " + screen.availHeight + '<br>' + screen.width + " "  + screen.height + '<br>' + screen.colorDepth + " " + screen.pixelDepth;});
+  }
+
+</script>
+ </head>
+<body> 
+<button id="b1"> Arata locatia </button> 
+<button id="b2"> Schimba locatia</button> 
+<button id="b3"> History -> </button> 
+<button id="b4"">History <- </button> 
+<button id="b5"> Screen </button> 
+ 
+<p id="p1"><b>Location:</b></p>
+<p id="p2"><b>Screen:</b></p>
+ 
+</body>
+</html>
+
+
+

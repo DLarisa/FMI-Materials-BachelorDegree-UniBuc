@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rulesfile name="ksh" version="0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="scanner.xsd"
+>
+  <ruleset name="test" enable="true" type="SYBASE" description="xxxxxxxx" source="ksh"
+    codetype="bcp"
+  >
+    <required>
+      <regex>
+        <expression><![CDATA[bcp]]></expression>
+      </regex>
+    </required>
+    <rules>
+    <regex name="priya">
+    <example></example><expression><![CDATA[priya]]></expression></regex>
+      <regex name="bcp" description="find a bcp call in a ksh" codetype="ksh">
+        <expression><![CDATA[bcp.*]]></expression>
+      </regex>
+      <regex codetype="ksh" name="isql" description="Find an isql call">
+      <expression><![CDATA[isql.*]]></expression>
+      </regex>
+    </rules>
+  </ruleset>
+</rulesfile>

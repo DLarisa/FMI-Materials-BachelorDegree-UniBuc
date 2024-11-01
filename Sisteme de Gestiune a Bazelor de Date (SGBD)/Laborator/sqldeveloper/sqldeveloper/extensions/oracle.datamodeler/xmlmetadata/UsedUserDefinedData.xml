@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.UsedUserDefinedData parentClass="oracle.dbtools.crest.model.design.storage.sqlserver.AbstractStorageObjectSqlServer">
+   <property name="comments" dataType="java.lang.String" defaultValue="" xmlName="comments" xmlType="element" getter="getComments" setter="setComments" reffered="false"/>
+   <property name="commentsInRDBMS" dataType="java.lang.String" defaultValue="" xmlName="commentsInRDBMS" xmlType="element" getter="getCommentsInRDBMS" setter="setCommentsInRDBMS" reffered="false"/>
+   <property name="defaultObject" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.DefaultSqlServer" defaultValue="" xmlName="defaultObject" xmlType="element" getter="getDefaultObject" setter="setDefaultObject" reffered="true"/>
+   <property name="distinctTypeProxy" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.DistinctTypeProxySqlServer" defaultValue="" xmlName="distinctTypeProxy" xmlType="element" getter="getDistinctTypeProxy" setter="setDistinctTypeProxy" reffered="true"/>
+   <property name="props" dataType="java.lang.String" defaultValue="" xmlName="props" xmlType="element" getter="getProps" setter="setProps" reffered="false" listOfRefs="true"/>
+   <property name="ruleObject" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.RuleSqlServer" defaultValue="" xmlName="ruleObject" xmlType="element" getter="getRuleObject" setter="setRuleObject" reffered="true"/>
+   <property name="schema" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.SchemaSqlServer" defaultValue="" xmlName="schema" xmlType="element" getter="getSchema" setter="setSchema" reffered="true"/>
+   <property name="userDefinedType" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.UserDefinedTypeSqlServer" defaultValue="" xmlName="userDefinedType" xmlType="element" getter="getUserDefinedType" setter="setUserDefinedType" reffered="true"/>
+   <roproperty name="baseOnDistinctType" dataType="boolean" getter="isBaseOnDistinctType"/>
+   <roproperty name="dataType" dataType="java.lang.String" getter="getDataType"/>
+   <roproperty name="dataTypeString" dataType="java.lang.String" getter="getDataTypeString"/>
+   <bb_roproperty name="extPropsSet" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.UsedUserDefinedData$InlineList" getter="getExtPropsSet"/>
+   <roproperty name="nullType" dataType="java.lang.String" getter="getNullType"/>
+   <roproperty name="database" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.DataBaseSqlServer" getter="getDatabase"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.UsedUserDefinedData>

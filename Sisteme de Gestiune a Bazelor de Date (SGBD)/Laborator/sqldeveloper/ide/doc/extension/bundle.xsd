@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://xmlns.oracle.com/jdeveloper/update"
+            targetNamespace="http://xmlns.oracle.com/jdeveloper/update"
+            elementFormDefault="qualified">
+  <xsd:import namespace="http://xmlns.oracle.com/jdeveloper/update"
+              schemaLocation="update.xsd"/>
+  <xsd:element name="bundle" type="bundleType">
+    <xsd:annotation>
+      <xsd:documentation>
+        Represents a collection of updates.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="bundleType">
+      <xsd:sequence>
+        <xsd:element name="name" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>
+              The name of the collection of updates.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="bundle-url" minOccurs="0" type="xsd:anyURI">
+          <xsd:annotation>
+            <xsd:documentation>
+              The url of the zip file containing the updates. This does not need
+              to be specified if the bundle is inside a bundle.xml file inside a
+              zip file. If used on a center.xml, it can be a relative or
+              absolute URL.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="destination" minOccurs="0" type="destinationType">
+          <xsd:annotation>
+            <xsd:documentation>
+              The location to install the bundle. Only one value is currently
+              supported, "${oracle.home}". If not specified, the bundle will be
+              installed into the extensions directory.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="update" minOccurs="0" maxOccurs="unbounded"
+                     type="updateType">
+          <xsd:annotation>
+            <xsd:documentation>
+              Represents a single update.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType/>
+        </xsd:element>
+      </xsd:sequence>
+      <xsd:attribute name="type" type="updateKind" default="extension">
+        <xsd:annotation>
+          <xsd:documentation>
+            Whether this update is a patch or an extension.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="version" use="required" fixed="2.0"/>
+  
+  </xsd:complexType>
+</xsd:schema>

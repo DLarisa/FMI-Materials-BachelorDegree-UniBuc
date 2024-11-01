@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.SegmentOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="initrans" dataType="int" defaultValue="1" xmlName="initrans" xmlType="element" getter="getInitrans" setter="setInitrans" reffered="false"/>
+   <property name="maxTrans" dataType="int" defaultValue="1" xmlName="maxTrans" xmlType="element" getter="getMaxTrans" setter="setMaxTrans" reffered="false"/>
+   <property name="pcTFree" dataType="int" defaultValue="10" xmlName="pcTFree" xmlType="element" getter="getPCTFree" setter="setPCTFree" reffered="false"/>
+   <property name="pcTUsed" dataType="int" defaultValue="40" xmlName="pcTUsed" xmlType="element" getter="getPCTUsed" setter="setPCTUsed" reffered="false"/>
+   <property name="scBufferPool" dataType="java.lang.String" defaultValue="DEFAULT" xmlName="scBufferPool" xmlType="element" getter="getSCBufferPool" setter="setSCBufferPool" reffered="false"/>
+   <property name="scFreeLists" dataType="int" defaultValue="1" xmlName="scFreeLists" xmlType="element" getter="getSCFreeLists" setter="setSCFreeLists" reffered="false"/>
+   <property name="scFreelistGroups" dataType="int" defaultValue="1" xmlName="scFreelistGroups" xmlType="element" getter="getSCFreelistGroups" setter="setSCFreelistGroups" reffered="false"/>
+   <property name="scInitialExtent" dataType="long" defaultValue="0" xmlName="scInitialExtent" xmlType="element" getter="getSCInitialExtent" setter="setSCInitialExtent" reffered="false"/>
+   <property name="scMaxExtents" dataType="java.lang.String" defaultValue="UNLIMITED" xmlName="scMaxExtents" xmlType="element" getter="getSCMaxExtents" setter="setSCMaxExtents" reffered="false"/>
+   <property name="scMinExtents" dataType="int" defaultValue="1" xmlName="scMinExtents" xmlType="element" getter="getSCMinExtents" setter="setSCMinExtents" reffered="false"/>
+   <property name="scNextExtent" dataType="long" defaultValue="0" xmlName="scNextExtent" xmlType="element" getter="getSCNextExtent" setter="setSCNextExtent" reffered="false"/>
+   <property name="scPctIncrease" dataType="int" defaultValue="0" xmlName="scPctIncrease" xmlType="element" getter="getSCPctIncrease" setter="setSCPctIncrease" reffered="false"/>
+   <property name="tableSpace" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle" defaultValue="" xmlName="tableSpace" xmlType="element" getter="getTableSpace" setter="setTableSpace" reffered="true"/>
+   <bb_roproperty name="equalTo" dataType="boolean" getter="isEqualTo"/>
+</oracle.dbtools.crest.model.design.storage.oracle.SegmentOracle>

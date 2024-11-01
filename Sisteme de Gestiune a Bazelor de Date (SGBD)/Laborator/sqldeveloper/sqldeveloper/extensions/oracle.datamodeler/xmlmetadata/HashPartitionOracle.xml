@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.HashPartitionOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="iotOverflowTablespace" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle" defaultValue="" xmlName="iotOverflowTablespace" xmlType="element" getter="getIotOverflowTablespace" setter="setIotOverflowTablespace" reffered="true"/>
+   <roproperty name="partOfStorageTable" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableProxyOracle" getter="getPartOfStorageTable"/>
+   <roproperty name="partitionList" dataType="oracle.dbtools.crest.model.design.storage.oracle.PartitionListOracle" getter="getPartitionList"/>
+   <roproperty name="subPartitionOf" dataType="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle" getter="getSubPartitionOf"/>
+   <property name="tableSpace" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle" defaultValue="" xmlName="tableSpace" xmlType="element" getter="getTableSpace" setter="setTableSpace" reffered="true"/>
+   <bb_roproperty name="lobItems" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getLobItems"/>
+   <collection name="lobStorages" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="lobStorages" itemXmlName="LobStorage" getter="getLobItems" createItem="createLobItem"/>
+   <collection name="localIndexProperties" dataType="interface java.util.List" xmlName="localIndexProperties" itemXmlName="LocalIndexProperties" getter="getLocalIndexProperties" createItem="createLocalIndexProperties"/>
+</oracle.dbtools.crest.model.design.storage.oracle.HashPartitionOracle>

@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.PartitionListOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="columnIDs" dataType="java.lang.String" defaultValue="" xmlName="columnIDs" xmlType="element" getter="getColumnIDs" setter="setColumnIDs" reffered="false" listOfRefs="true"/>
+   <roproperty name="columnList" dataType="java.lang.String" getter="getColumnList"/>
+   <property name="hashPQuantity" dataType="int" defaultValue="1" xmlName="hashPQuantity" xmlType="element" getter="getHashPQuantity" setter="setHashPQuantity" reffered="false"/>
+   <property name="hashPTableSpaces" dataType="java.lang.String" defaultValue="" xmlName="hashPTableSpaces" xmlType="element" getter="getHashPTableSpaces" setter="setHashPTableSpaces" reffered="false" listOfRefs="true"/>
+   <property name="partitionType" dataType="java.lang.String" defaultValue="RANGE" xmlName="partitionType" xmlType="element" getter="getPartitionType" setter="setPartitionType" reffered="false"/>
+   <roproperty name="materializedView" dataType="oracle.dbtools.crest.model.design.storage.oracle.SnapshotOracle" getter="getSnapshot"/>
+   <property name="subPartitionsColumnIDs" dataType="java.lang.String" defaultValue="" xmlName="subPartitionsColumnIDs" xmlType="element" getter="getSubPartitionsColumnIDs" setter="setSubPartitionsColumnIDs" reffered="false" listOfRefs="true"/>
+   <roproperty name="subPartitionsColumnList" dataType="java.lang.String" getter="getSubPartitionsColumnList"/>
+   <property name="subPartitionsQuantity" dataType="int" defaultValue="1" xmlName="subPartitionsQuantity" xmlType="element" getter="getSubPartitionsQuantity" setter="setSubPartitionsQuantity" reffered="false"/>
+   <property name="subPartitionsTablespaces" dataType="java.lang.String" defaultValue="" xmlName="subPartitionsTablespaces" xmlType="element" getter="getSubPartitionsTableSpaces" setter="setSubPartitionsTableSpaces" reffered="false" listOfRefs="true"/>
+   <property name="subpartitionType" dataType="java.lang.String" defaultValue="" xmlName="subpartitionType" xmlType="element" getter="getSubpartitionType" setter="setSubpartitionType" reffered="false"/>
+   <roproperty name="table" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableProxyOracle" getter="getTable"/>
+   <roproperty name="allHashPTableSpaces" dataType="java.lang.String" getter="getAllHashPTableSpaces"/>
+   <roproperty name="allSubPartitionsTableSpaces" dataType="java.lang.String" getter="getAllSubPartitionsTableSpaces"/>
+   <bb_roproperty name="columnSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.PartitionListOracle$InlineList" getter="getColumnSet"/>
+   <bb_roproperty name="hashPartitionsTableSpacesSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.PartitionListOracle$InlineList" getter="getHashPartitionsTableSpacesSet"/>
+   <bb_roproperty name="subPartitionsColumnsset" dataType="oracle.dbtools.crest.model.design.storage.oracle.PartitionListOracle$InlineList" getter="getSubPartitionsColumnsSet"/>
+   <bb_roproperty name="subPartitionsTablespacesset" dataType="oracle.dbtools.crest.model.design.storage.oracle.PartitionListOracle$InlineList" getter="getSubPartitionsTableSpacesSet"/>
+</oracle.dbtools.crest.model.design.storage.oracle.PartitionListOracle>

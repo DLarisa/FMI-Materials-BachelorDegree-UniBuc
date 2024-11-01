@@ -1,0 +1,81 @@
+{
+    "device-name": "Rares Android",
+    "device-type": "IPCamera",
+    "buffers-count": 5,
+    "input-buffers":{
+        "1":{
+            "token-delimitators": "", //Symbol that separates the tokens in the buffer
+            "protocol": "HTTP", // The protocol used to communicate with this buffer
+            "prefix": "http://192.168.0.112:8080/", // The buffer requires that it is initialized with this content
+            "buffer-tokens":[// Description of each of the tokens that this buffer can receive. Think of them as the message's variables.
+            {
+                "name":"Camera command",
+                "description":"Input that selects command",
+                "token-type":"string", // What type of token should be fuzzed in this position of the buffer
+                "byte-size":256, //Maximum size of the token
+                "regex-rule": "[a-zA-Z]*", // Optional parameter to guide fuzzer generator
+                "optional": false // Can the fuzzer give a null value on this token?
+            },
+            {
+                "name":"Camera parameter",
+                "description": "Parameters for the command chosen",
+                "token-type":"string",
+                "byte-size":256,
+                "regex-rule": "=[a-zA-Z0-9]*",
+                "optional": true
+            }
+            ]
+        },
+
+    // So basically above, we actually have a generic way of telling the fuzzer that it is going to fuzz
+    // a HTTP Get request, with one parameter. The buffer tokens described could very well fit any
+    // type of system that takes input through the HTTP protocol. How would a buffer that takes a string
+    // and a Base64 image as input through SSH?
+
+        "2":{
+            "token-delimitators": " ",
+            "protocol": "SSH",
+            "prefix": "ssh user@192.168.0.112 -p securePass",
+            "buffer-tokens":[
+                {
+                    "name": "Program command",
+                    "description": "Program that is to be used",
+                    "token-type": "string",
+                    "byte-size":256,
+                    "regex-rule": "[a-z]*",
+                    "optional": "false",
+                },
+                {
+                    "name": "Image",
+                    "description": "A Base64 image",
+                    "token-type": "Base64",
+                    "byte-size":256,
+                    "regex-rule": "[^-A-Za-z0-9+/=]|=[^=]|={3,}$", // Stackoverflow approved
+                    "optional": false
+                }
+            ]
+        }
+    },
+    "output-buffers":{
+        "1":{
+            "token-delimitators": " ",
+            "protocol": "HTTP",
+            "prefix": "http://192.168.0.112:8080/", // The buffer requires that it is initialized with this content
+            "caller":"remote", // Remote or Local. The caller variable describes who runs this buffer. Either
+// your app sends the data (local), or the data is requested by another device (remote)
+            "buffer-tokens":[
+            {
+                "name":"Get image",
+                "description":"Command that returns an image",
+                "token-type":"string", // What type of token should be fuzzed in this position of the buffer
+                "byte-size":256,
+                "regex-rule": "/image", // Optional parameter to guide fuzzer generator
+                "optional": false // Can the fuzzer give a null value on this token?
+            }
+            ]
+        }
+    }
+}
+
+
+

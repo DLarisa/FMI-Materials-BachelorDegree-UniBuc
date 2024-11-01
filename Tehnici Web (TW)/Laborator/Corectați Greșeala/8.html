@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Fisier de baza</title>
+		<style>
+			#patrat{
+				margin-top:10px;
+				height:200px;
+				width:200px;
+				background: url("http://www.irinaciocan.ro/imagini/apa.png");
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var dv=document.getElementById("patrat");
+				dv.onclick=function() {
+					// alert("width="+this.style.width+" height="+this.style.height); stil inline
+					stil = getComputedStyle(this);
+					alert("width="+stil.width+" height="+stil.height);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p>Nota: in exercitiile de tip "corectati gresala", desi nu e recomandat, s-au pus css-ul si script-ul in fisierul html strict pentru simplitate (downloadarea unui singur fisier vs 3). Totusi retineti ca indicat este sa folositi fisiere externe in teme/proiecte/teste.</p>
+		<hr/>
+		<p>La click pe divul din pagina ar trebui sa se dea un alert cu dimensiunile lui (<i>width</i> si <i>height</i>). De ce nu se intampla asta? Corectati.</p>
+		<div id="patrat">Da un click.</div>
+	</body>
+</html>

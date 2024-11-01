@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.DataFileSqlServer parentClass="oracle.dbtools.crest.model.design.storage.sqlserver.AbstractStorageObjectSqlServer">
+   <roproperty name="fileGroup" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.FileGroupSqlServer" getter="getFileGroup"/>
+   <property name="fileName" dataType="java.lang.String" defaultValue="" xmlName="fileName" xmlType="element" getter="getFileName" setter="setFileName" reffered="false"/>
+   <property name="growthMethod" dataType="java.lang.String" defaultValue="In MegaBytes" xmlName="growthMethod" xmlType="element" getter="getGrowthMethod" setter="setGrowthMethod" reffered="false"/>
+   <property name="growthValue" dataType="int" defaultValue="0" xmlName="growthValue" xmlType="element" getter="getGrowthValue" setter="setGrowthValue" reffered="false"/>
+   <property name="initialSize" dataType="int" defaultValue="0" xmlName="initialSize" xmlType="element" getter="getInitialSize" setter="setInitialSize" reffered="false"/>
+   <property name="isUnlimited" dataType="boolean" defaultValue="true" xmlName="isUnlimited" xmlType="element" getter="getIsUnlimited" setter="setIsUnlimited" reffered="false"/>
+   <property name="maxSize" dataType="int" defaultValue="0" xmlName="maxSize" xmlType="element" getter="getMaxSize" setter="setMaxSize" reffered="false"/>
+   <roproperty name="database" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.DataBaseSqlServer" getter="getDatabase"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.DataFileSqlServer>

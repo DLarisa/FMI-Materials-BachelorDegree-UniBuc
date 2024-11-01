@@ -1,0 +1,41 @@
+﻿@model lab3_miercuri.Models.Book
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm(actionName: "Edit", controllerName: "Book"))
+{
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+
+    @Html.HiddenFor(b => b.BookId)
+    <br />
+
+    @Html.Label("Title", "Title:")
+    <br />
+    @Html.EditorFor(b => b.Title, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(b => b.Title, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("Author", "Author:")
+    <br />
+    @Html.EditorFor(b => b.Author, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(b => b.Author, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("Summary", "Summary:")
+    <br />
+    @Html.TextAreaFor(b => b.Summary, new { @class = "form-control", @rows = "10" })
+    @Html.ValidationMessageFor(b => b.Summary, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("BookType", "BookType:")
+    <br />
+    @Html.DropDownListFor(b => b.BookTypeId, new SelectList(Model.BookTypeList, "Value", "Text"), "Choose a book type", new { @class = "form-control" })
+    @Html.ValidationMessageFor(b => b.BookTypeId, "", new { @class = "text-danger" })
+    <br />
+    <br />
+
+    <button class="btn btn-primary" type="submit">Update</button>
+}

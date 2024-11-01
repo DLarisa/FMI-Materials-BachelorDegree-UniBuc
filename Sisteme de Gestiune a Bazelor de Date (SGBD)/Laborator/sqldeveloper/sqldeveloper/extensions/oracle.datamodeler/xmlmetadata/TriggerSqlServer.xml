@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.TriggerSqlServer parentClass="oracle.dbtools.crest.model.design.storage.Trigger">
+   <property name="encryption" dataType="java.lang.String" defaultValue="NO" xmlName="encryption" xmlType="element" getter="getEncription" setter="setEncription" reffered="false"/>
+   <property name="executionOrder" dataType="java.lang.String" defaultValue="NONE" xmlName="executionOrder" xmlType="element" getter="getExecutionOrder" setter="setExecutionOrder" reffered="false"/>
+   <property name="forReplication" dataType="java.lang.String" defaultValue="YES" xmlName="forReplication" xmlType="element" getter="getForReplication" setter="setForReplication" reffered="false"/>
+   <property name="owner" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.UserSqlServer" defaultValue="" xmlName="owner" xmlType="element" getter="getOwner" setter="setOwner" reffered="true"/>
+   <property name="schema" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.SchemaSqlServer" defaultValue="" xmlName="schema" xmlType="element" getter="getSchema" setter="setSchema" reffered="true"/>
+   <property name="table" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.TableProxySqlServer" defaultValue="" xmlName="table" xmlType="element" getter="getTable" setter="setTable" reffered="true"/>
+   <property name="view" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.TableViewProxySqlServer" defaultValue="" xmlName="view" xmlType="element" getter="getView" setter="setView" reffered="true"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.TriggerSqlServer>

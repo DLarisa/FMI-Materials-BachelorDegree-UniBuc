@@ -1,0 +1,86 @@
+#cerc
+{
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	background-color: yellow;
+	position: relative;
+}
+
+#spranceana_st
+{
+	background-color: brown;
+	position: absolute;
+	top: 70px;
+	right: 205px;
+	width: 8px;
+	height: 50px;
+	transform: rotate(45deg);
+	transition: transform 2s linear, background-color 2s linear;
+}
+#spranceana_dr
+{
+	background-color: brown;
+	position: absolute;
+	top: 70px;
+	right: 95px;
+	width: 8px;
+	height: 50px;
+	transform: rotate(-45deg);
+	transition: transform 2s linear, background-color 2s linear;
+}
+#cerc:hover #spranceana_st
+{
+	background-color: black;
+	transform: rotate(135deg);	
+}
+#cerc:hover #spranceana_dr
+{
+	background-color: black;
+	transform: rotate(-135deg);	
+}
+
+#ochi_st
+{
+	background-color: black;
+	position: absolute;
+	top: 120px;
+	right: 100px;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	transition: background 2s linear;
+}
+#ochi_dr
+{
+	background-color: black;
+	position: absolute;
+	top: 120px;
+	right: 180px;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	transition: background 2s linear;
+}
+#cerc:hover #ochi_st
+{
+	background: red;
+}
+#cerc:hover #ochi_dr
+{
+	background: red;
+}
+
+#mesaj
+{
+	position: absolute;
+	bottom: -21px;
+	left: 90px;
+	font-size: 18px;
+	display: none;
+	color: red;
+}
+#cerc:hover #mesaj
+{
+	display: block;
+}

@@ -1,0 +1,84 @@
+#include<iostream>
+
+class Nod
+{
+protected:
+    char value;
+    Nod* next;
+public:
+    Nod()
+    {
+        value = ' ';
+        next = NULL;
+    }
+
+    Nod* getNext()
+    {
+        return next;
+    }
+
+    void setNext(Nod* nod)
+    {
+        next = nod;
+    }
+
+    virtual void metodaMostenitaCeAfiseaza()
+    {
+        std::cout << "Clasa Nod" << std::endl;
+    }
+};
+
+class Nod_dublu : public Nod
+{
+public:
+    Nod_dublu() : Nod ()
+    {
+        ante = NULL;
+    }
+protected:
+    Nod* ante;
+};
+
+class Nod_prioritate : public Nod_dublu
+{
+public:
+    Nod_prioritate(int prio) : Nod_dublu ()
+    {
+        this->prio = prio;
+    }
+
+    int getPrio()
+    {
+        return prio;
+    }
+
+    void metodaMostenitaCeAfiseaza()
+    {
+        std::cout << "Clasa Nod_Prioritate" << std::endl;
+    }
+private:
+    int prio;
+};
+
+int main()
+{
+    Nod_prioritate* head = new Nod_prioritate(1);
+    head->setNext(new Nod_prioritate(2));
+
+   // Downcasting, adica intr-un pointer din clasa derivata punem un obiect din clasa de baza.
+   // Lucru general periculos daca nu este facut corect si cu grija deoarece un obiect din clasa de baza
+   // nu are toate lucrurile pe care le are un obiect derivat, doar inversul acestei afirmatii este adevarat.
+    Nod_prioritate* prioNod = (Nod_prioritate*)head->getNext();
+    std::cout << prioNod->getPrio(); // Afiseaza 2, deci downcasting-ul a fost facut bine.
+
+    std::cout << std::endl;
+
+    // Upcasting, adica un pointer din clasa de baza este folosit pentru a pointa catre un obiect din clasa derivata.
+    // Mult mai natural decat downcasting-ul deoarece clasa de baza nu are nimic in plus fata de clasa derivata.
+    // Ce au in comun desigur pot fi metode pe care clasa derivata le implementeaza din clasa de baza precum aceasta
+    // metoda de afisare. Incercati sa scoateti virtual pentru a vedea diferenta, daca nu va amintiti de la laborator.
+    // Fara virtual, se foloseste tipul pointerului pentru a decide ce metoda se cheama, adica cea din clasa de baza.
+    // Cu virtual, se uita la obiectul real din spatele pointerului, adica clasa derivata.
+    Nod* pointerNod = head;
+    pointerNod->metodaMostenitaCeAfiseaza();
+}

@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.FKProxySqlServer parentClass="oracle.dbtools.crest.model.design.storage.IndexProxy">
+   <property name="forReplication" dataType="java.lang.String" defaultValue="YES" xmlName="forReplication" xmlType="element" getter="getForReplication" setter="setForReplication" reffered="false"/>
+   <property name="onDelete" dataType="java.lang.String" defaultValue="NO ACTION" xmlName="onDelete" xmlType="element" getter="getOnDelete" setter="setOnDelete" reffered="false"/>
+   <property name="onUpdate" dataType="java.lang.String" defaultValue="NO ACTION" xmlName="onUpdate" xmlType="element" getter="getOnUpdate" setter="setOnUpdate" reffered="false"/>
+   <roproperty name="columns" dataType="java.lang.String" getter="getColumns"/>
+   <roproperty name="refColumns" dataType="[Loracle.dbtools.crest.model.design.relational.Column" getter="getRefColumns"/>
+   <roproperty name="referenceColumns" dataType="java.lang.String" getter="getReferenceColumns"/>
+   <roproperty name="referenceOwner" dataType="java.lang.String" getter="getReferenceOwner"/>
+   <roproperty name="referenceTable" dataType="java.lang.String" getter="getReferenceTable"/>
+   <roproperty name="tableName" dataType="java.lang.String" getter="getTableName"/>
+   <roproperty name="tableSchema" dataType="java.lang.String" getter="getTableSchema"/>
+   <roproperty name="tableUser" dataType="java.lang.String" getter="getTableUser"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.FKProxySqlServer>

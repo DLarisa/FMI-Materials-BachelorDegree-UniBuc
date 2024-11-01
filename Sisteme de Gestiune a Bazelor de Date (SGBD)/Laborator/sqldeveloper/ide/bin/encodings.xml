@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding="UTF-8"?>
+
+<!--
+ |  This XML file contains a list of mappings
+ |  from Sun JDK to IANA encoding names.
+ +-->
+<encodings>
+
+  <!--
+   |  The <sun-jdk> element represents mappings from JDK encoding names
+   |  to IANA encoding names.  The mapping to IANA should use the
+   |  preferred MIME name when possible.  Otherwise the mapping should
+   |  be to the IANA canonical name.  If the "iana" attribute is
+   |  missing, it means that there is no known mapping from the JDK
+   |  encoding name to IANA.  An optional <comment> element provides a
+   |  short description of the character set.
+   +-->
+  <sun-jdk>
+
+    <jdk2iana jdk="Cp037" iana="IBM037">
+      <comment>USA, Canada (Bilingual, French), Netherlands, Portugal, Brazil, Australia</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp273" iana="IBM273">
+      <comment>IBM Austria, Germany</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp277" iana="IBM277">
+      <comment>IBM Denmark, Norway</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp278" iana="IBM278">
+      <comment>IBM Finland, Sweden</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp280" iana="IBM280">
+      <comment>IBM Italy</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp284" iana="IBM284">
+      <comment>IBM Catalan/Spain, Spanish Latin America</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp285" iana="IBM285">
+      <comment>IBM United Kingdom, Ireland</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp297" iana="IBM297">
+      <comment>IBM France</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp420" iana="IBM420">
+      <comment>IBM Arabic</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp424" iana="IBM424">
+      <comment>IBM Hebrew</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp437" iana="IBM437">
+      <comment>MS-DOS United States, Australia, New Zealand, South Africa</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp500" iana="IBM500">
+      <comment>EBCDIC 500V1</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp775" iana="IBM775">
+      <comment>PC Baltic</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp850" iana="IBM850">
+      <comment>MS-DOS Latin-1</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp852" iana="IBM852">
+      <comment>MS-DOS Latin-2</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp855" iana="IBM855">
+      <comment>IBM Cyrillic</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp856" iana="IBM856">
+      <comment>IBM Hebrew</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp857" iana="IBM857">
+      <comment>IBM Turkish</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp860" iana="IBM860">
+      <comment>MS-DOS Portuguese</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp861" iana="IBM861">
+      <comment>MS-DOS Icelandic</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp862" iana="IBM862">
+      <comment>PC Hebrew</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp863" iana="IBM863">
+      <comment>MS-DOS Canadian French</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp864" iana="IBM864">
+      <comment>PC Arabic</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp865" iana="IBM865">
+      <comment>MS-DOS Nordic</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp866" iana="IBM866">
+      <comment>MS-DOS Russian</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp868" iana="IBM868">
+      <comment>MS-DOS Pakistan</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp869" iana="IBM869">
+      <comment>IBM Modern Greek</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp870" iana="IBM870">
+      <comment>IBM Multilingual Latin-2</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp871" iana="IBM871">
+      <comment>IBM Iceland</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp918" iana="IBM918">
+      <comment>IBM Pakistan (Urdu)</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp970" iana="EUC-KR">
+      <comment>AIX Korean</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp1026" iana="IBM1026">
+      <comment>IBM Latin-5, Turkey</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="Cp33722" iana="EUC-JP">
+      <comment>IBM-eucJP - Japanese (superset of 5050)</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="EUC_JP_LINUX" iana="EUC-JP"> 
+      <comment>JIS X 0201, 0208, EUC encoding, Japanese</comment> 
+    </jdk2iana> 
+
+    <jdk2iana jdk="ISO2022JP" iana="ISO-2022-JP">
+      <comment>JIS X 0201, 0208 in ISO 2022 form, Japanese</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="KOI8_R" iana="KOI8-R">
+      <comment>KOI8-R, Russian</comment>
+    </jdk2iana>
+
+    <!-- JDK 1.4.1 and later map MS932 to windows-31j
+         Before 1.4.1, MS932 had mapped to Shift_JIS -->
+    <!--<jdk2iana jdk="MS932" iana="Shift_JIS">-->
+    <jdk2iana jdk="MS932" iana="windows-31j">
+      <comment>Windows Japanese</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="MS936" iana="GBK">
+      <comment>Windows Simplified Chinese</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="MS949" iana="EUC-KR">
+      <comment>Windows Korean</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="MS950" iana="Big5">
+      <comment>Windows Traditional Chinese</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="MacRoman" iana="ISO-8859-1">
+      <comment>Macintosh Roman</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="UnicodeBigUnmarked" iana="UTF-16BE">
+      <comment>Sixteen-bit Unicode Transformation Format, big-endian byte order</comment>
+    </jdk2iana>
+
+    <jdk2iana jdk="UnicodeLittleUnmarked" iana="UTF-16LE">
+      <comment>Sixteen-bit Unicode Transformation Format, little-endian byte order</comment>
+    </jdk2iana>
+
+  </sun-jdk>
+
+</encodings>

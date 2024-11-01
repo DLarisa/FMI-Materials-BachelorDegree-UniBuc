@@ -1,0 +1,24 @@
+AFD Rezultat:
+
+Nr total de Stari: 3
+Nr Stari Initiale: 1
+       Starile Initiale: 0 
+Nr Stari Finale: 1
+       Starile Finale: 123, 
+
+Tranzitiile:
+Starea 0:
+       a: 12
+       b: Multime Vida
+       c: Multime Vida
+       d: Multime Vida
+Starea 12:
+       a: Multime Vida
+       b: 12
+       c: 12
+       d: 123
+Starea 123:
+       a: Multime Vida
+       b: 12
+       c: 12
+       d: 123

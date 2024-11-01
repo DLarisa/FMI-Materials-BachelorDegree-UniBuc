@@ -1,0 +1,1270 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<domain version="2.0">
+	<object type="Domain" id="DOM2022961" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>BigNumber</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2002-05-31 10:54:32</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<constraint type="check constraint">
+			<properties>
+				<parameter name="IBM DB2 (7.0)" value="%COLUMN% &gt; 1000" />
+			</properties>
+		</constraint>
+		<logicaltype oid="LOGDT011" name="Integer" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2024960" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>Binary</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-12-19 10:37:25</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT033" name="BINARY" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2024970" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>Bit</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-12-19 10:37:25</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+			<parameter name="size" value="1" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+			<parameter name="size" value="1" />
+		</parameters>
+		<logicaltype oid="LOGDT034" name="BIT" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2006400" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>Blob</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-02-25 12:38:11</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+			<parameter name="size" value="100" />
+		</parameters>
+		<logicaltype oid="LOGDT029" name="BLOB" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM10009" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>Clob</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2004-05-05 16:56:54</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT028" name="CLOB" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2022950" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>Code_Y_N</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2002-05-31 10:35:32</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="element.0" value="Y" />
+			<parameter name="element.1" value="N" />
+			<parameter name="element.2" value="n" />
+			<parameter name="element.3" value="y" />
+			<parameter name="object.existsinrepository" value="true" />
+			<parameter name="size" value="1" />
+		</parameters>
+		<constraint type="check constraint">
+			<properties>
+				<parameter name="Generic Constraint" value="" />
+			</properties>
+		</constraint>
+		<constraint type="enumerated String">
+			<properties>
+				<parameter name="element.0" value="N" desc="" />
+				<parameter name="element.2" value="n" desc="" />
+				<parameter name="element.3" value="y" desc="" />
+				<parameter name="element.1" value="Y" desc="" />
+			</properties>
+		</constraint>
+		<logicaltype oid="LOGDT025" name="CHAR" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2025220" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>DBURIType</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-12-19 10:37:25</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT054" name="DBURIType" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2024950" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>DataLink</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-03-05 10:37:25</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT030" name="DATALINK" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM3000001" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>Date</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2001-08-02 09:32:42</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<logicaltype oid="LOGDT007" name="Date" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2025100" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>Datetime</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-12-19 10:37:25</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT008" name="Datetime" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM10007" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>Decimal</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2004-04-20 16:42:18</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT026" name="DECIMAL" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM10004" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>Double</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2004-04-20 16:40:46</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT020" name="DOUBLE" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM3000007" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>Euro currency</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2001-07-05 10:53:56</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+			<parameter name="precision" value="9" />
+			<parameter name="scale" value="2" />
+		</parameters>
+		<logicaltype oid="LOGDT022" name="REAL" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM10005" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>Float</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2004-04-20 16:41:12</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT021" name="FLOAT" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2025190" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>HTTPURIType</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-12-19 10:37:25</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT052" name="HTTPURIType" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2005275" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>Image</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-02-19 15:44:37</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+			<parameter name="size" value="16336" />
+		</parameters>
+		<logicaltype oid="LOGDT010" name="Image" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2001277" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>LongText</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2001-10-26 14:28:32</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+			<parameter name="size" value="4096" />
+		</parameters>
+		<logicaltype oid="LOGDT024" name="VARCHAR" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2025070" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>Money</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-12-19 10:37:25</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT043" name="MONEY" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2022958" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>Month</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2002-05-31 10:42:24</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<constraint type="enumerated String">
+			<properties>
+				<parameter name="element.0" value="1:12" desc="" />
+			</properties>
+		</constraint>
+		<logicaltype oid="LOGDT011" name="Integer" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2024980" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>NChar</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-12-19 10:37:25</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT035" name="NCHAR" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2024990" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>NText</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-12-19 10:37:25</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT036" name="NTEXT" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2025000" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>NVarchar</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-12-19 10:37:25</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT037" name="NVARCHAR" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM10006" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>Numeric</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2004-04-20 16:41:35</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT019" name="NUMERIC" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM10008" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>ROWID</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2004-05-05 15:54:03</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT032" name="ROWID" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM10002" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>Real</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2004-04-20 16:38:01</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT022" name="REAL" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2025090" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>SQL_Variant</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-12-19 10:37:25</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT045" name="SQL_VARIANT" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2025675" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>Short Text</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2002-06-14 09:41:14</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+			<parameter name="size" value="25" />
+		</parameters>
+		<logicaltype oid="LOGDT025" name="CHAR" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM3000006" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>Small number</name>
+		<comment>Numbers designating integer amounts etc...</comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2001-07-05 10:53:01</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<logicaltype oid="LOGDT011" name="Integer" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2025010" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>SmallDateTime</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-12-19 10:37:25</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT038" name="SMALLDATETIME" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2025080" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>SmallMoney</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-12-19 10:37:25</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT044" name="SMALLMONEY" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2025020" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>SysName</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-12-19 10:37:25</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT039" name="SYSNAME" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM3000005" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>Text</name>
+		<comment>Use for free comment style text</comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2001-07-05 10:52:16</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+			<parameter name="size" value="256" />
+		</parameters>
+		<logicaltype oid="LOGDT025" name="CHAR" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM10003" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>Timestamp</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2004-04-20 16:38:08</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT015" name="Timestamp" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2025060" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>TinyInt</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-12-19 10:37:25</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT042" name="TINYINT" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2025170" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>UNIQUEIDENTIFIER</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-12-19 10:37:25</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT057" name="UNIQUEIDENTIFIER" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2025180" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>URIType</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-12-19 10:37:25</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT051" name="URIType" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2025050" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>VarBinary</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-12-19 10:37:25</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT041" name="VARBINARY" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+	<object type="Domain" id="DOM2025200" visible_in_main_view="false" synonym="" dimension="" file="defaultdomains" use_default_color="true" background_color="null" foreground_color="null">
+		<name>XDBURIType</name>
+		<comment></comment>
+		<notes></notes>
+		<alter type="created">
+			<user>Default user</user>
+			<timestamp>2003-12-19 10:37:25</timestamp>
+		</alter>
+		<alter type="changed">
+			<user>Default user</user>
+			<timestamp>2007-05-18 12:52:33</timestamp>
+		</alter>
+		<properties>
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</properties>
+		<avt>
+			<beginvalue></beginvalue>
+			<endvalue></endvalue>
+			<description></description>
+		</avt>
+		<parameters>
+<!-- Default values for named parameters, passed on to logical datatypes -->
+
+			<parameter name="design.owner" value="aab" />
+			<parameter name="object.existsinrepository" value="true" />
+		</parameters>
+		<logicaltype oid="LOGDT053" name="XDBURIType" />
+		<engineering>
+			<relational_design id="RelDesign-F9F40E77-16B9-BD22-9B17-C0CF104A4A7E" should="true" />
+		</engineering>
+		<des_obj_version version="1.0" />
+	</object>
+</domain>

@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.multidimensional.SelectionCriteria parentClass="oracle.dbtools.crest.model.design.multidimensional.AbstractMDObject">
+   <property name="entity" dataType="oracle.dbtools.crest.model.design.ContainerObject" defaultValue="" xmlName="entity" xmlType="element" getter="getEntity" setter="setEntity" reffered="true"/>
+   <property name="funcID" dataType="java.lang.String" defaultValue="" xmlName="funcID" xmlType="element" getter="getFuncID" setter="setFuncID" reffered="false"/>
+   <property name="measureID" dataType="java.lang.String" defaultValue="" xmlName="measureID" xmlType="element" getter="getMeasureID" setter="setMeasureID" reffered="false"/>
+   <aa_property name="measureWrapper" dataType="oracle.dbtools.crest.model.design.multidimensional.Slice$MeasureWrapper" defaultValue="" xmlName="measureWrapper" xmlType="element" getter="getMeasureWrapper" setter="setMeasureWrapper" reffered="true"/>
+   <property name="partition" dataType="java.lang.String" defaultValue="" xmlName="partition" xmlType="element" getter="getPartition" setter="setPartition" reffered="false"/>
+   <property name="selectionCriteria" dataType="java.lang.String" defaultValue="" xmlName="selectionCriteria" xmlType="element" getter="getSelectionCriteria" setter="setSelectionCriteria" reffered="false"/>
+   <roproperty name="measureWrappers" dataType="[Ljava.lang.Object" getter="getMeasureWrappers"/>
+</oracle.dbtools.crest.model.design.multidimensional.SelectionCriteria>

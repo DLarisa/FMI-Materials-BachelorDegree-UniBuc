@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.PartitionOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="dataSegmentCompression" dataType="java.lang.String" defaultValue="" xmlName="dataSegmentCompression" xmlType="element" getter="getDataSegmentCompression" setter="setDataSegmentCompression" reffered="false"/>
+   <property name="iotCompress" dataType="int" defaultValue="0" xmlName="iotCompress" xmlType="element" getter="getIOTCompress" setter="setIOTCompress" reffered="false"/>
+   <property name="iotOverflowSegment" dataType="oracle.dbtools.crest.model.design.storage.oracle.SegmentOracle" defaultValue="" xmlName="iotOverflowSegment" xmlType="element" getter="getIOTOverflowSegment" setter="setIOTOverflowSegment" reffered="true"/>
+   <property name="logging" dataType="java.lang.String" defaultValue="" xmlName="logging" xmlType="element" getter="getLogging" setter="setLogging" reffered="false"/>
+   <roproperty name="partitionList" dataType="oracle.dbtools.crest.model.design.storage.oracle.PartitionListOracle" getter="getPartitionList"/>
+   <property name="position" dataType="int" defaultValue="0" xmlName="position" xmlType="element" getter="getPosition" setter="setPosition" reffered="false"/>
+   <property name="segment" dataType="oracle.dbtools.crest.model.design.storage.oracle.SegmentOracle" defaultValue="" xmlName="segment" xmlType="element" getter="getSegment" setter="setSegment" reffered="true"/>
+   <property name="subPartitionsQuantity" dataType="int" defaultValue="0" xmlName="subPartitionsQuantity" xmlType="element" getter="getSubPartitionsQuantity" setter="setSubPartitionsQuantity" reffered="false"/>
+   <property name="subPartitionsTablespaces" dataType="java.lang.String" defaultValue="" xmlName="subPartitionsTablespaces" xmlType="element" getter="getSubPartitionsTableSpaces" setter="setSubPartitionsTableSpaces" reffered="false" listOfRefs="true"/>
+   <property name="tableSpace" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle" defaultValue="" xmlName="tableSpace" xmlType="element" getter="getTableSpace" setter="setTableSpace" reffered="true"/>
+   <property name="valueList" dataType="java.lang.String" defaultValue="" xmlName="valueList" xmlType="element" getter="getValueList" setter="setValueList" reffered="false"/>
+   <roproperty name="allSubPartitionsTableSpaces" dataType="java.lang.String" getter="getAllSubPartitionsTableSpaces"/>
+   <collection name="listSubpartitions" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="listSubpartitions" itemXmlName="ListPartition" getter="getListPartitions" createItem="createListSubpartition"/>
+   <collection name="lobs" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="lobs" itemXmlName="Lob" getter="getLobs" createItem="createLob"/>
+   <collection name="localIndexProperties" dataType="interface java.util.List" xmlName="localIndexProperties" itemXmlName="LocalIndexProperties" getter="getLocalIndexProperties" createItem="createLocalIndexProperties"/>
+   <collection name="hashSubpartitions" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="hashSubpartitions" itemXmlName="HashPartition" getter="getPartitions" createItem="createHashSubpartition"/>
+   <bb_roproperty name="subPartTsset" dataType="oracle.dbtools.crest.model.design.storage.oracle.PartitionOracle$InlineList" getter="getSubPartTSSet"/>
+</oracle.dbtools.crest.model.design.storage.oracle.PartitionOracle>

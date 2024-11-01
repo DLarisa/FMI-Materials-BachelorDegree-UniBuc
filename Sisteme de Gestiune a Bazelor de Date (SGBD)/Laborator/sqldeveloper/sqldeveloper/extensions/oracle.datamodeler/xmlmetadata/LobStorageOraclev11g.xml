@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v11g.LobStorageOraclev11g parentClass="oracle.dbtools.crest.model.design.storage.oracle.v10g.LobStorageOraclev10g">
+   <property name="lobStorageType" dataType="java.lang.String" defaultValue="" xmlName="lobStorageType" xmlType="element" getter="getLobStorageType" setter="setLobStorageType" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v11g.LobStorageOraclev11g>

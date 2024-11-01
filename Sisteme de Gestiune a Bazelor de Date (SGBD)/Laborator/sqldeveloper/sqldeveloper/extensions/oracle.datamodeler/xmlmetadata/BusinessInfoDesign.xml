@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign parentClass="oracle.dbtools.crest.model.design.DesignPart">
+   <collection external="true" name="Emails" dataType="oracle.dbtools.crest.model.businessinfo.BIEmailSet" xmlName="Emails" itemXmlName="Email" getter="getEmailSet" createItem="createEmail"/>
+   <collection external="true" name="Locations" dataType="oracle.dbtools.crest.model.businessinfo.BILocationSet" xmlName="Locations" itemXmlName="Location" getter="getLocationSet" createItem="createLocation"/>
+   <collection external="true" name="Phones" dataType="oracle.dbtools.crest.model.businessinfo.BIPhoneSet" xmlName="Phones" itemXmlName="Phone" getter="getPhoneSet" createItem="createPhone"/>
+   <collection external="true" name="ResourceLocators" dataType="oracle.dbtools.crest.model.businessinfo.BIResourceLocatorSet" xmlName="ResourceLocators" itemXmlName="ResourceLocator" getter="getUrlSet" createItem="createUrl"/>
+   <collection external="true" name="Contacts" dataType="oracle.dbtools.crest.model.businessinfo.BIContactSet" xmlName="Contacts" itemXmlName="Contact" getter="getContactSet" createItem="createContact"/>
+   <collection external="true" name="ResponsibleParties" dataType="oracle.dbtools.crest.model.businessinfo.BIResponsiblePartySet" xmlName="ResponsibleParties" itemXmlName="ResponsibleParty" getter="getResPartySet" createItem="createResParty"/>
+   <collection external="true" name="Documents" dataType="oracle.dbtools.crest.model.businessinfo.BIDocumentSet" xmlName="Documents" itemXmlName="Document" getter="getDocumentSet" createItem="createDocument"/>
+<!-- there are no diagrams however executeTasks method invocation can be useful -->   
+   <collection external="true" preProcessMethod="executeTasks" name="Diagrams" dataType="java.util.List" xmlName="Diagrams" itemXmlName="Diagram" getter="getListOfSubviews" createItem="createDesignPartSubView" getItemByID="getSubViewByID"/>
+   <roproperty name="contactSet" dataType="oracle.dbtools.crest.model.businessinfo.BIContactSet" getter="getContactSet"/>
+   <roproperty name="documentSet" dataType="oracle.dbtools.crest.model.businessinfo.BIDocumentSet" getter="getDocumentSet"/>
+   <roproperty name="emailSet" dataType="oracle.dbtools.crest.model.businessinfo.BIEmailSet" getter="getEmailSet"/>
+   <roproperty name="locationSet" dataType="oracle.dbtools.crest.model.businessinfo.BILocationSet" getter="getLocationSet"/>
+   <roproperty name="phoneSet" dataType="oracle.dbtools.crest.model.businessinfo.BIPhoneSet" getter="getPhoneSet"/>
+   <roproperty name="resPartySet" dataType="oracle.dbtools.crest.model.businessinfo.BIResponsiblePartySet" getter="getResPartySet"/>
+   <roproperty name="urlSet" dataType="oracle.dbtools.crest.model.businessinfo.BIResourceLocatorSet" getter="getUrlSet"/>
+</oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign>

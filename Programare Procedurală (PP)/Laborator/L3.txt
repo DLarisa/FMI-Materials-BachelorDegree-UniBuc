@@ -1,0 +1,78 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "cod.h"  //Ti le definesti singur
+
+int main()
+{
+    char c=getchar();
+    if(c>='A' && c<='Z')
+    {
+        c+=32;printf("%c", c);
+    }
+    else printf("%c", c);
+
+
+    return 0;
+}
+
+----------------------------------------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "cod.h"  //Ti le definesti singur
+
+int main()
+{
+    int a,b;
+    scanf("%d%d", &a, &b);
+    char o; scanf("\n%c", &o);
+    switch(o)
+    {
+        case '+': printf("%d\n",a+b); break;
+        case '-': printf("%d\n",a-b); break;
+        case '*': printf("%d\n",a*b); break;
+        case '%': printf("%d\n",a%b); break;
+        case '/':
+            if(b!=0) printf("%d\n",a/b);
+            else printf("b=0 ---> Imposibil de Executat.\n"); break;
+        default: printf("Nu a fost oferit un operator valid.\n"); break;
+    }
+
+
+    return 0;
+}
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "cod.h"  //Ti le definesti singur
+typedef struct
+{
+    int nr_leg, admis, buget;
+    char nume[100];
+    double nota_mate, nota_info, nota_bac, medie;
+} elev;
+elev e[100];
+#define fmi(a, b, c) (80*((a+b)/2))/100+20*c/100
+#define P 5
+void citire(int i)
+{
+    scanf("%d%d%d%d", &e[i].nr_leg, &e[i].nota_mate, &e[i].nota_info, &e[i].nota_bac);
+    fgets(e[i].nume, 100, stdin);
+}
+int main()
+{
+    int n, i;
+    scanf("%d", &n);
+    for(i=0; i<n ; i++)
+    {
+        citire(i);
+        e[i].medie=fmi(e[i].nota_mate,e[i].nota_info,e[i].nota_bac);
+        if(e[i].medie>=P) e[i].admis=1;
+        else e[i].admis=0;
+    }
+
+    return 0;
+}

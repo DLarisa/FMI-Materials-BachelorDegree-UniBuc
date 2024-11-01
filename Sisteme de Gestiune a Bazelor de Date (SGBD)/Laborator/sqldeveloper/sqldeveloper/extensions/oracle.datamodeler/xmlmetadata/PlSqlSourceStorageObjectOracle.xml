@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.PlSqlSourceStorageObjectOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="owner" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserOracle" defaultValue="" xmlName="owner" xmlType="element" getter="getOwner" setter="setOwner" reffered="true"/>
+   <property name="source" dataType="java.lang.String" defaultValue="" xmlName="source" xmlType="element" getter="getSource" setter="setSource" reffered="false"/>
+   <bb_roproperty name="prefix" dataType="java.lang.String" getter="getPrefix"/>
+   <bb_roproperty name="suffix" dataType="java.lang.String" getter="getSuffix"/>
+</oracle.dbtools.crest.model.design.storage.oracle.PlSqlSourceStorageObjectOracle>

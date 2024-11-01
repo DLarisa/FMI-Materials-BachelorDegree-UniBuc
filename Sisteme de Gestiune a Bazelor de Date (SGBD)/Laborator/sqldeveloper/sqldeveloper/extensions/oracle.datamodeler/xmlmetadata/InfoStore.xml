@@ -1,0 +1,28 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.process.InfoStore parentClass="oracle.dbtools.crest.model.design.process.AbstractProcessObject">
+   <property name="fieldSeparator" dataType="java.lang.String" defaultValue="" xmlName="fieldSeparator" xmlType="element" getter="getFieldSeparator" setter="setFieldSeparator" reffered="false"/>
+   <property name="fileName" dataType="java.lang.String" defaultValue="" xmlName="fileName" xmlType="element" getter="getFileName" setter="setFileName" reffered="false"/>
+   <property name="fileType" dataType="java.lang.String" defaultValue="" xmlName="fileType" xmlType="element" getter="getFileType" setter="setFileType" reffered="false"/>
+   <property name="implementationName" dataType="java.lang.String" defaultValue="" xmlName="implementationName" xmlType="element" getter="getImplementationName" setter="setImplementationName" reffered="false"/>
+   <property name="location" dataType="java.lang.String" defaultValue="" xmlName="location" xmlType="element" getter="getLocation" setter="setLocation" reffered="false"/>
+   <property name="objectType" dataType="java.lang.String" defaultValue="" xmlName="objectType" xmlType="element" getter="getObjectType" setter="setObjectType" reffered="false"/>
+   <property name="owner" dataType="java.lang.String" defaultValue="" xmlName="owner" xmlType="element" getter="getOwner" setter="setOwner" reffered="false"/>
+   <property name="rdbmsSite" dataType="java.lang.String" defaultValue="" xmlName="rdbmsSite" xmlType="element" getter="getRdbmsSite" setter="setRdbmsSite" reffered="false"/>
+   <property name="scope" dataType="java.lang.String" defaultValue="" xmlName="scope" xmlType="element" getter="getScope" setter="setScope" reffered="false"/>
+   <property name="selfDescribing" dataType="boolean" defaultValue="" xmlName="selfDescribing" xmlType="element" getter="isSelfDescribing" setter="setSelfDescribing" reffered="false"/>
+   <property name="skipRecords" dataType="int" defaultValue="" xmlName="skipRecords" xmlType="element" getter="getSkipRecords" setter="setSkipRecords" reffered="false"/>
+   <property name="source" dataType="java.lang.String" defaultValue="" xmlName="source" xmlType="element" getter="getSource" setter="setSource" reffered="false"/>
+   <property name="systemObjective" dataType="java.lang.String" defaultValue="" xmlName="systemObjective" xmlType="element" getter="getSystemObjective" setter="setSystemObjective" reffered="false"/>
+   <property name="textDelimiter" dataType="java.lang.String" defaultValue="" xmlName="textDelimiter" xmlType="element" getter="getTextDelimiter" setter="setTextDelimiter" reffered="false"/>
+   <property name="transfertype" dataType="java.lang.String" defaultValue="" xmlName="transfertype" xmlType="element" getter="getTransferType" setter="setTransferType" reffered="false"/>
+   <property name="type" dataType="java.lang.String" defaultValue="" xmlName="type" xmlType="element" getter="getType" setter="setType" reffered="false"/>
+   <collection name="extDatas" dataType="java.util.List" xmlName="extDatas" itemXmlName="extData" getter="getDatas" createItem="createExternalData" getItemByID="getExternalDataByID" removeItem="removeData" nativeList="true" orderTheList="true"/>
+   <roproperty name="attributes" dataType="interface java.util.List" getter="getAttributes"/>
+   <roproperty name="datas" dataType="interface java.util.List" getter="getDatas"/>
+   <roproperty name="editableFonts" dataType="interface java.util.List" getter="getEditableFonts"/>
+   <roproperty name="entityImpl" dataType="java.lang.Object" getter="getEntityImpl"/>
+   <roproperty name="entityImplementations" dataType="interface java.util.Map" getter="getEntityImplementations"/>
+   <roproperty name="fontObject" dataType="oracle.dbtools.crest.model.design.FontObject" getter="getFontObject"/>
+   <roproperty name="implementationsForEntity" dataType="interface java.util.List" getter="getImplementationsForEntity"/>
+   <roproperty name="processes" dataType="interface java.util.List" getter="getProcesses"/>
+</oracle.dbtools.crest.model.design.process.InfoStore>

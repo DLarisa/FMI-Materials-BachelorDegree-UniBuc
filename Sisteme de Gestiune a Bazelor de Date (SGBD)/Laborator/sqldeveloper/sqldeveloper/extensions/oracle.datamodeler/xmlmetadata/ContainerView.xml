@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.swingui.ContainerView parentClass_notUsed="oracle.dbtools.crest.swingui.TopView" isTopView="true">
+   <property name="bounds" dataType="java.awt.Rectangle" defaultValue="" xmlName="bounds" xmlType="element" getter="getActualBounds" setter="setActualBoundsRect" reffered="false"/>
+   <property name="generatorID" dataType="java.lang.String" defaultValue="" xmlName="generatorID" xmlType="element" getter="getGeneratorID" setter="setGeneratorID" reffered="false"/>
+   <property name="useCustomFormat" dataType="boolean" defaultValue="false" xmlName="useCustomFormat" xmlType="element" getter="useCustomFormat" setter="setUseCustomFormat" reffered="false"/>
+   <property name="useDefaultColor" dataType="boolean" defaultValue="true" xmlName="useDefaultColor" xmlType="element" getter="useDefaultColor" setter="setUseDefaultColor" reffered="false"/>
+   <property name="backgroundColor" dataType="java.awt.Color" defaultValue="" xmlName="backgroundColor" xmlType="element" getter="getBackgroundColor" setter="setBackgroundColor" reffered="false"/>
+   <property name="foregroundColor" dataType="java.awt.Color" defaultValue="" xmlName="foregroundColor" xmlType="element" getter="getForegroundColor" setter="setForegroundColor" reffered="false"/>
+   <for_lines_property name="lineWidth" dataType="int" defaultValue="" xmlName="lineWidth" xmlType="element" getter="getLineWidth" setter="setLineWidth" reffered="false"/>
+   <aa_property name="location" dataType="java.awt.Point" defaultValue="" xmlName="location" xmlType="element" getter="getLocation" setter="setLocation" reffered="false"/>
+   <processed_implicitly_property name="model" dataType="oracle.dbtools.crest.model.design.DesignObject" defaultValue="" xmlName="model" xmlType="element" getter="getModel" setter="setModel" reffered="true"/>
+   <aa_property name="size" dataType="java.awt.Dimension" defaultValue="" xmlName="size" xmlType="element" getter="getSize" setter="setSize" reffered="false"/>
+   <processed_implicitly_property name="viewID" dataType="java.lang.String" defaultValue="" xmlName="viewID" xmlType="element" getter="getViewID" setter="setViewID" reffered="false"/>
+   <aa_property name="viewNumber" dataType="int" defaultValue="" xmlName="viewNumber" xmlType="element" getter="getViewNumber" setter="setViewNumber" reffered="false"/>
+   <roproperty name="selected" dataType="boolean" getter="isSelected"/>
+</oracle.dbtools.crest.swingui.ContainerView>

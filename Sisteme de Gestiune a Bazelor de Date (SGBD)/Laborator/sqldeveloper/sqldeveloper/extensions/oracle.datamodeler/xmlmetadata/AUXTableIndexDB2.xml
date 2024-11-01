@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.db2.AUXTableIndexDB2 parentClass="oracle.dbtools.crest.model.design.storage.db2.AbstractStorageObjectDB2">
+   <aa_property name="auxTable" dataType="oracle.dbtools.crest.model.design.storage.db2.AUXTableDB2" defaultValue="" xmlName="auxTable" xmlType="element" getter="getAuxTable" setter="setAuxTable" reffered="true"/>
+   <property name="bufferPool" dataType="oracle.dbtools.crest.model.design.storage.db2.BufferPoolDB2" defaultValue="" xmlName="bufferPool" xmlType="element" getter="getBufferPool" setter="setBufferPool" reffered="true"/>
+   <property name="close" dataType="boolean" defaultValue="" xmlName="close" xmlType="element" getter="isClose" setter="setClose" reffered="false"/>
+   <property name="copy" dataType="boolean" defaultValue="" xmlName="copy" xmlType="element" getter="isCopy" setter="setCopy" reffered="false"/>
+   <property name="owner" dataType="oracle.dbtools.crest.model.design.storage.db2.Owner" defaultValue="" xmlName="owner" xmlType="element" getter="getOwner" setter="setOwner" reffered="true"/>
+   <property name="pieceSize" dataType="java.lang.String" defaultValue="" xmlName="pieceSize" xmlType="element" getter="getPieceSize" setter="setPieceSize" reffered="false"/>
+   <property name="storageTemplate" dataType="oracle.dbtools.crest.model.design.storage.db2.StorageTemplateDB2" defaultValue="" xmlName="storageTemplate" xmlType="element" getter="getStorageTemplate" setter="setStorageTemplate" reffered="true"/>
+   <roproperty name="unique" dataType="boolean" getter="isUnique"/>
+   <roproperty name="initialNumberUsedKB" dataType="long" getter="getInitialNumberUsedKB"/>
+   <roproperty name="initialNumberUsedPages" dataType="int" getter="getInitialNumberUsedPages"/>
+   <roproperty name="maxNumberUsedKB" dataType="long" getter="getMaxNumberUsedKB"/>
+   <roproperty name="maxNumberUsedPages" dataType="int" getter="getMaxNumberUsedPages"/>
+   <roproperty name="numParts" dataType="int" getter="getNumParts"/>
+   <roproperty name="numberOfDuplicates" dataType="int" getter="getNumberOfDuplicates"/>
+   <roproperty name="pieceSizeKB" dataType="int" getter="getPieceSizeKB"/>
+   <roproperty name="proposedpRIQTY" dataType="int" getter="getProposedPRIQTY"/>
+   <roproperty name="proposedQTY" dataType="int" getter="getProposedQTY"/>
+   <roproperty name="proposedQTYRemarks" dataType="java.lang.String" getter="getProposedQTYRemarks"/>
+   <roproperty name="proposedSECQTY" dataType="int" getter="getProposedSECQTY"/>
+   <roproperty name="tableProxy" dataType="oracle.dbtools.crest.model.design.storage.db2.TableProxyDB2" getter="getTableProxy"/>
+</oracle.dbtools.crest.model.design.storage.db2.AUXTableIndexDB2>

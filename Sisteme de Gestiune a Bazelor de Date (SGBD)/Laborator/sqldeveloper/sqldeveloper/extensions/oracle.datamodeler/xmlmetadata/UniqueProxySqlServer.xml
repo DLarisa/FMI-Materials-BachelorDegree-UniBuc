@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.UniqueProxySqlServer parentClass="oracle.dbtools.crest.model.design.storage.IndexProxy">
+   <property name="fileGroup" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.FileGroupSqlServer" defaultValue="" xmlName="fileGroup" xmlType="element" getter="getFilegroup" setter="setFilegroup" reffered="true"/>
+   <property name="fillFactor" dataType="int" defaultValue="0" xmlName="fillFactor" xmlType="element" getter="getFillFactor" setter="setFillFactor" reffered="false"/>
+   <roproperty name="uniqueConstraint" dataType="boolean" getter="isUniqueConstraint"/>
+   <roproperty name="tableName" dataType="java.lang.String" getter="getTableName"/>
+   <roproperty name="tableUser" dataType="java.lang.String" getter="getTableUser"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.UniqueProxySqlServer>

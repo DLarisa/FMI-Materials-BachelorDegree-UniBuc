@@ -1,0 +1,185 @@
+BODY {
+	PADDING-RIGHT: 0px; 
+	PADDING-LEFT: 0px; 
+	PADDING-BOTTOM: 0px; 
+	MARGIN: 0px; 
+	PADDING-TOP: 0px; 
+	font-family: Tahoma, Kalimati, FreeSans, Verdana, Arial, sans-serif;
+	text-decoration: none;
+}
+a {
+	cursor:pointer;
+}
+
+IMG {
+	PADDING-RIGHT: 0px; 
+	PADDING-LEFT: 0px; 
+	PADDING-BOTTOM: 0px; 
+	MARGIN: 0px; 
+	PADDING-TOP: 0px;
+}
+#main_Image{
+	background-image:url(welcomeImages/startpage_main.png);
+	background-repeat: none;
+	width: 495px;
+	height: 339px;
+}
+#home_image{
+	background-image:url(welcomeImages/welcome_r2_c2_f2_only.png);
+	background-repeat: none;
+}
+#frontPage {
+	background-image:url(welcomeImages/tile_2.png);
+	background-repeat: repeat-x;
+}
+#trainingPage {
+	background-image:url(welcomeImages/tile_1.png);
+	background-repeat: repeat-x;
+}
+#training_path {
+	color:#BFBFBF;
+	font-family:Garamond Premr Pro smbd, Garamond Premr Pro, Garamond, serif;
+	font-size:28px;
+	font-style:italic;
+	font-weight:bold;
+	width: 810px;
+	Z-INDEX: 50;
+	LEFT: 19px;
+	POSITION: absolute;
+	TOP: 39px;
+	height: 30px;
+}
+/*
+A.titleLink:link {
+	font-size: 15px;
+	color: #666666;
+	font-weight:bold;
+	text-decoration:none;
+}
+A.titleLink:visited {
+	font-size: 15px;
+	color: #999999;
+	font-weight:bold;
+	text-decoration:none;
+}
+A.titleLink:hover {
+	font-size: 15px;
+	color: #003399;
+	font-weight: bold;
+	text-decoration:none;
+}
+*/
+#description_box {
+	font-size: 13px;
+	color: #666666;
+}
+
+#seperator {
+	color:#ffffff; 
+	font-family:arial; 
+	font-size:10px;
+}
+
+#learn_how_to {
+	color:#BFBFBF;
+	font-family:Garamond Premr Pro smbd, Garamond Premr Pro, Garamond, serif;
+	font-size:28px;
+	font-style:italic;
+	font-weight:bold;
+	width: 810px;
+	Z-INDEX: 50;
+	LEFT: 369px;
+	POSITION: absolute;
+	TOP: 172px;
+	height: 30px;
+}
+
+/*#link_5_left {
+	background-image:url(welcomeImages/default_left.png);
+	height:22px;
+	width:9px;
+}
+
+#link_5_center{
+	background-image: url(welcomeImages/default_center.png);
+}
+
+#link_5_right {
+	background-image:url(welcomeImages/default_right.png);
+	width:10px;
+
+}*/
+
+.link_text_left {
+	background-image:url(welcomeImages/default_left.png);
+	width:9px;
+}
+
+.link_text_center {
+	font-weight:bold;
+	font-size: 14px;
+	color: #666666;
+	text-decoration:none;
+	height:22px;
+	background-image:url(welcomeImages/default_center.png);
+	
+}
+
+.link_text_right {
+	background-image:url(welcomeImages/default_right.png);
+	width:10px;
+}
+
+.link_text_over_center {
+	color: #003399;
+	font-weight:bold;
+	font-size: 14px;
+	background-image:url(welcomeImages/mouse_over_center.png);
+}
+
+.link_text_over_left {
+	background-image:url(welcomeImages/mouse_over_left.png);
+	height:22px;
+	width:9px;
+}
+
+.link_text_over_right {
+	background-image:url(welcomeImages/mouse_over_right.png);
+	width:10px;
+}
+
+
+.link_text_down_center {
+	color: #999999;
+	font-weight:bold;
+	font-size: 14px;
+	background-image:url(welcomeImages/mouse_down_center.png);
+}
+
+.link_text_down_left {
+	background-image:url(welcomeImages/mouse_down_left.png);
+	height:22px;
+	width:9px;
+}
+
+.link_text_down_right {
+	background-image:url(welcomeImages/mouse_down_right.png);
+	width:10px;
+}
+a:link {
+	color:#666666;
+	text-decoration:none;
+}
+
+a:hover {
+	color:#003399;
+	text-decoration:none;
+}
+a:focus {
+	color:#999999;
+	text-decoration:none;
+}
+a:active{
+	color:#999999;
+	text-decoration:none;	
+}

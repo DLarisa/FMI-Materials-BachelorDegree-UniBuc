@@ -1,0 +1,31 @@
+Afisare: 
+x=5
+y=7
+print(f'{x}<{y}')
+
+
+
+l=[1, 2]
+#la paranteze patrate - lista - poti sa modifici elemente
+#paranteze rotunde - tuplu - nu merge modificata
+a, b = l
+print(a)
+print(b)
+
+
+
+
+
+1.a.
+y_pred = [1, 1, 1, 0, 1, 0, 1, 1, 0, 0]
+y_true = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
+acc=0
+for tr, pr in zip(y_true, y_pred)
+		acc+=(tr==pr)
+
+acc/=len(y_true)
+return acc
+
+
+1.b.
+S

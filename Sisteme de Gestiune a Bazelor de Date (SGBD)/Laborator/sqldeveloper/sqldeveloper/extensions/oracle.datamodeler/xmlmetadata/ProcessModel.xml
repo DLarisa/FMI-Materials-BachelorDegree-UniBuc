@@ -1,0 +1,30 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.process.ProcessModel parentClass="oracle.dbtools.crest.model.design.DesignPart">
+   <collection external="true" name="RecordStructures" dataType="oracle.dbtools.crest.model.design.process.RecordStructureSet" xmlName="RecordStructures" itemXmlName="RecordStructure" getter="getRecordStructureSet" createItem="createRecordStructure"/>
+   <!-- stored in agent and recordStructure collection external="true" name="ExternalDatas" dataType="oracle.dbtools.crest.model.design.process.ExternalDataSet" xmlName="ExternalDatas" itemXmlName="ExternalData" getter="getExternalDataSet" createItem="createExternalData"/ -->
+   <collection external="true" name="Events" dataType="oracle.dbtools.crest.model.design.process.EventSet" xmlName="Events" itemXmlName="Event" getter="getEventSet" createItem="createEvent"/>
+   <collection external="true" name="InfoStructures" dataType="oracle.dbtools.crest.model.design.process.InfoStructureSet" xmlName="InfoStructures" itemXmlName="InfoStructure" getter="getInfoStructureSet" createItem="createInfoStructure"/>
+   <collection external="true" name="InfoStores" dataType="oracle.dbtools.crest.model.design.process.InfoStoreSet" xmlName="InfoStores" itemXmlName="InfoStore" getter="getInfoStoreSet" createItem="createInfoStore"/>
+   <collection external="true" name="Roles" dataType="oracle.dbtools.crest.model.design.process.RoleSet" xmlName="Roles" itemXmlName="Role" getter="getRoleSet" createItem="createRole"/>
+   <collection external="true" name="TransformationPackages" dataType="oracle.dbtools.crest.model.design.process.TransformationPackageSet" xmlName="TransformationPackages" itemXmlName="TransformationPackage" getter="getTransformationPackageSet" createItem="createTransformationPackage"/>
+   <collection external="true" createAllItemsFirst="true" name="DataFlowDesigns" dataType="oracle.dbtools.crest.model.design.process.DataFlowDesignSet" xmlName="DataFlowDesigns" itemXmlName="DataFlowDesign" getter="getDataFlowDesigns" createItem="addDataFlowDesign" removeItem="removeDataFlowDesign"/>
+   <!-- need to order data Flow designs before transforming to XML/Map - later they will be restored in correct order -->
+   <processing beforeTransformExt="orderDataFlowDesigns" />
+   <aa_property name="dataFlowdesign" dataType="oracle.dbtools.crest.model.design.process.DataFlowDesign" defaultValue="" xmlName="dataFlowdesign" xmlType="element" getter="getDataFlowDesign" setter="setDataFlowDesign" reffered="true"/>
+   <aa_property name="transformationPackage" dataType="oracle.dbtools.crest.model.design.process.TransformationPackage" defaultValue="" xmlName="transformationPackage" xmlType="element" getter="getTransformationPackage" setter="setTransformationPackage" reffered="true"/>
+   <aa_property name="transformationtask" dataType="oracle.dbtools.crest.model.design.process.TransformationTask" defaultValue="" xmlName="transformationtask" xmlType="element" getter="getTransformationTask" setter="setTransformationTask" reffered="true"/>
+   <roproperty name="allPrimitiveProcesses" dataType="interface java.util.List" getter="getAllPrimitiveProcesses"/>
+   <roproperty name="allPrimitiveProcessesConnectedToStore" dataType="interface java.util.List" getter="getAllPrimitiveProcessesConnectedToStore"/>
+   <roproperty name="allTransformationTasks" dataType="interface java.util.List" getter="getAllTransformationTasks"/>
+   <roproperty name="dataFlowdesigns" dataType="oracle.dbtools.crest.model.design.process.DataFlowDesignSet" getter="getDataFlowDesigns"/>
+   <roproperty name="eventSet" dataType="oracle.dbtools.crest.model.design.process.EventSet" getter="getEventSet"/>
+   <roproperty name="externalDataSet" dataType="oracle.dbtools.crest.model.design.process.ExternalDataSet" getter="getExternalDataSet"/>
+   <roproperty name="infoStoreSet" dataType="oracle.dbtools.crest.model.design.process.InfoStoreSet" getter="getInfoStoreSet"/>
+   <roproperty name="infoStructureSet" dataType="oracle.dbtools.crest.model.design.process.InfoStructureSet" getter="getInfoStructureSet"/>
+   <roproperty name="measurementSet" dataType="oracle.dbtools.crest.model.design.MeasurementSet" getter="getMeasurementSet"/>
+   <roproperty name="recordStructureSet" dataType="oracle.dbtools.crest.model.design.process.RecordStructureSet" getter="getRecordStructureSet"/>
+   <roproperty name="roleSet" dataType="oracle.dbtools.crest.model.design.process.RoleSet" getter="getRoleSet"/>
+   <roproperty name="transformationPackageSet" dataType="oracle.dbtools.crest.model.design.process.TransformationPackageSet" getter="getTransformationPackageSet"/>
+   <roproperty name="transformationtaskById" dataType="oracle.dbtools.crest.model.design.process.TransformationTask" getter="getTransformationTaskById"/>
+   <roproperty name="transformations" dataType="interface java.util.List" getter="getTransformations"/>
+</oracle.dbtools.crest.model.design.process.ProcessModel>

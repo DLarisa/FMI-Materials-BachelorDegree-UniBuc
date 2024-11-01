@@ -1,0 +1,77 @@
+
+Module 10. Exception Handling Exercises
+
+1.  On the blank line below write a statement that throws an
+InvalidInput object (with an empty parameter list) if the variable
+number is greater than 99.
+
+   class InvalidInput {...};
+
+   void factorial (int& facto, int number)
+   {
+   if (number > 99)
+     ____________________________________________________
+   else
+    {
+     facto = 1;
+     int n = 1;
+     while (++n <= number)
+       facto *= n;
+    }
+   }
+
+
+2.  Modify the last line below so that the block of code represented
+by { /*...*/ } is a Catch Handler for exceptions of type InvalidInput.
+
+   class InvalidInput {...};
+
+   void factorial (int& facto, int number)
+   {
+   if (number > 99)
+     throw InvalidInput ();
+   else
+    {
+     facto = 1;
+     int n = 1;
+     while (++n <= number)
+       facto *= n;
+    }
+   }
+     
+   void main()
+   {
+    int east, eastfact;
+    int west, westfact;
+    ...
+    cin >> east;
+    ...
+    cin >> west;
+    ...
+    try {
+    ...
+    factorial (eastfact, east);
+    ...
+    factorial (westfact, west);
+    ...
+    } // end of try block
+    { /*...*/ }
+   }
+
+
+3.  Modify the changeWeight prototype so that it specifies that
+function changeWeight may only throw an exception of type UnderWeight.
+
+   class UnderWeight {...}; //exception class
+
+   class ZooAnimal
+   {
+    private:
+      static int minWeight;
+      int weight;
+    public:
+      void changeMinWeight (int);
+      void changeWeight (int);
+   };
+
+

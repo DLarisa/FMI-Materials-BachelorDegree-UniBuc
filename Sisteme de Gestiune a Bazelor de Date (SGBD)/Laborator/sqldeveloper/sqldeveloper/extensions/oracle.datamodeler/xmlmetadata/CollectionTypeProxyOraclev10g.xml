@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v10g.CollectionTypeProxyOraclev10g parentClass="oracle.dbtools.crest.model.design.storage.oracle.v9i.CollectionTypeProxyOraclev9i">
+   <property name="globalOid" dataType="java.lang.String" defaultValue="" xmlName="globalOid" xmlType="element" getter="getGlobalOid" setter="setGlobalOid" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v10g.CollectionTypeProxyOraclev10g>

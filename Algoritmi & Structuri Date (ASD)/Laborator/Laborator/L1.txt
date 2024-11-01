@@ -1,0 +1,59 @@
+#include <iostream>
+#include <cstdio> //In-Out pt printf
+using namespace std;
+
+int a=1,b=2,c=3;
+int main()
+{
+    int *pa=&a, *pb=&b, *pc=&c; //Pointeri
+    *pb=15; // se schimba si valoarea lui b (avem acces la valoarea lui)
+    printf("%d\n%d\n%d\n\n", a,b,c); // \n - new line
+    printf("%p\n%p\n%p\n\n", &a,&b,&c); // & -  adresa din memorie
+    printf("%p\n%p\n%p\n\n", pa,pb,pc);  
+    // %p - formatare sub forma de pointeri (intregi sub forma de 16)
+    printf("%p\n%p\n%p\n\n", &pa,&pb,&pc);
+    int *p1=new int, *p2=new int;  //Aloca memorie libera
+    printf("%p\n%p\n\n", p1,p2);
+
+    /*int *a;
+    a=new int;
+    *a=15;
+    cout<<*a;*/
+    
+
+    return 0;
+}
+
+-----------------------------------------------------------------
+
+#include <iostream> // Structuri - Liste
+#include <cstdio>
+using namespace std;
+/*
+int a=4;
+    if(a==*(&a)) cout<<"wow"; //& - Adresa    * - Valoarea
+*/
+struct nod
+{
+    int info;
+    nod *next; //Adresa pt urmatorul nod
+};
+int main()
+{
+    nod a,b;
+    a.info=15;b.info=16;
+    a.next=&b;b.next=0;
+    nod *p=&a;
+    while(p!=0)
+    {
+        cout<<(*p).info<<" ";
+        p=(*p).next;
+    }
+
+    nod *s=new nod; nod *q=new nod;
+    (*s).info=15; (*q).info=16; //s->info;
+    (*s).next=q; (*q).next=0;
+
+
+    return 0;
+}

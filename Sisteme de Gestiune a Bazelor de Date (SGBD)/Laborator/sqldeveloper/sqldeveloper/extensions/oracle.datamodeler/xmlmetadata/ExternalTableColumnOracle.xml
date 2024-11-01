@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.ExternalTableColumnOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="datatype" dataType="java.lang.String" defaultValue="UNKNOWN" xmlName="datatype" xmlType="element" getter="getDatatype" setter="setDatatype" reffered="false"/>
+   <roproperty name="externalTable" dataType="oracle.dbtools.crest.model.design.storage.oracle.ExternalTableOracle" getter="getExternalTable"/>
+   <property name="precision" dataType="int" defaultValue="0" xmlName="precision" xmlType="element" getter="getPrecision" setter="setPrecision" reffered="false"/>
+   <property name="scale" dataType="int" defaultValue="0" xmlName="scale" xmlType="element" getter="getScale" setter="setScale" reffered="false"/>
+   <property name="size" dataType="int" defaultValue="0" xmlName="size" xmlType="element" getter="getSize" setter="setSize" reffered="false"/>
+   <property name="units" dataType="java.lang.String" defaultValue="" xmlName="units" xmlType="element" getter="getUnits" setter="setUnits" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.oracle.ExternalTableColumnOracle>

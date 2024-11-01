@@ -1,0 +1,26 @@
+e12/**//*"*/"*////////*"
+*/  /* lkj lkjlkokj 
+
+   ;lkjlj ;lj ;l 
+
+
+
+*//*
+
+
+  kjk*/  "/*lkjlkj'e'""/*"*/"
+
+
+
+/ * */
+void main(int argc,char *argv[]){
+"12e-25" if((e12.f+++=12e-3<<=12.3e-12+*ab12.ef)&&qwe.f.e/ *f+++++g){;}'0'
+;f();
+
+"ana
+are
+mere"
+
+return 0;
+}"as"
+

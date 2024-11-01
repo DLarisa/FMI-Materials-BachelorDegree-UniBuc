@@ -1,0 +1,42 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.SnapshotOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="action" dataType="java.lang.String" defaultValue="" xmlName="action" xmlType="element" getter="getAction" setter="setAction" reffered="false"/>
+   <property name="build" dataType="java.lang.String" defaultValue="IMMEDIATE" xmlName="build" xmlType="element" getter="getBuild" setter="setBuild" reffered="false"/>
+   <property name="cache" dataType="java.lang.String" defaultValue="NONE" xmlName="cache" xmlType="element" getter="getCache" setter="setCache" reffered="false"/>
+   <property name="cluster" dataType="oracle.dbtools.crest.model.design.storage.oracle.ClusterOracle" defaultValue="" xmlName="cluster" xmlType="element" getter="getCluster" setter="setCluster" reffered="true"/>
+   <property name="clustercolumns" dataType="java.lang.String" defaultValue="" xmlName="clustercolumns" xmlType="element" getter="getClusterColumns" setter="setClusterColumns" reffered="false"/>
+   <property name="columns" dataType="java.lang.String" defaultValue="" xmlName="columns" xmlType="element" getter="getColumns" setter="setColumns" reffered="false"/>
+   <property name="defaultSegment" dataType="java.lang.String" defaultValue="" xmlName="defaultSegment" xmlType="element" getter="getDefaultSegment" setter="setDefaultSegment" reffered="false"/>
+   <property name="degree" dataType="int" defaultValue="0" xmlName="degree" xmlType="element" getter="getDegree" setter="setDegree" reffered="false"/>
+   <property name="forUpdate" dataType="java.lang.String" defaultValue="NO" xmlName="forUpdate" xmlType="element" getter="getForUpdate" setter="setForUpdate" reffered="false"/>
+   <property name="indexSegment" dataType="oracle.dbtools.crest.model.design.storage.oracle.SegmentOracle" defaultValue="" xmlName="indexSegment" xmlType="element" getter="getIndexSegment" setter="setIndexSegment" reffered="true"/>
+   <property name="indexTablespace" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle" defaultValue="" xmlName="indexTablespace" xmlType="element" getter="getIndexTablespace" setter="setIndexTablespace" reffered="true"/>
+   <property name="lobStorage" dataType="oracle.dbtools.crest.model.design.storage.oracle.LobStorageOracle" defaultValue="" xmlName="lobStorage" xmlType="element" getter="getLobStorage" setter="setLobStorage" reffered="true"/>
+   <property name="logging" dataType="java.lang.String" defaultValue="NONE" xmlName="logging" xmlType="element" getter="getLogging" setter="setLogging" reffered="false"/>
+   <property name="nextDate" dataType="java.lang.String" defaultValue="" xmlName="nextDate" xmlType="element" getter="getNextDate" setter="setNextDate" reffered="false"/>
+   <property name="object" dataType="oracle.dbtools.crest.model.design.DesignObject" defaultValue="" xmlName="object" xmlType="element" getter="getObject" setter="setObject" reffered="true"/>
+   <property name="onPrebuiltTable" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableProxyOracle" defaultValue="" xmlName="onPrebuiltTable" xmlType="element" getter="getOnPrebuildTable" setter="setOnPrebuildTable" reffered="true"/>
+   <property name="parallelClause" dataType="java.lang.String" defaultValue="NO" xmlName="parallelClause" xmlType="element" getter="getParalelClause" setter="setParalelClause" reffered="false"/>
+   <property name="partitionList" dataType="oracle.dbtools.crest.model.design.storage.oracle.PartitionListOracle" defaultValue="" xmlName="partitionList" xmlType="element" getter="getPartitionList" setter="setPartitionList" createItem="createPartitionList" removeItem="clearPartitionList" reffered="false"/>
+   <property name="partitioned" dataType="java.lang.String" defaultValue="NO" xmlName="partitioned" xmlType="element" getter="getPartitioned" setter="setPartitioned" reffered="false"/>
+   <property name="queryRewrite" dataType="java.lang.String" defaultValue="DISABLE" xmlName="queryRewrite" xmlType="element" getter="getQueryRewrite" setter="setQueryRewrite" reffered="false"/>
+   <property name="reducedPrecision" dataType="java.lang.String" defaultValue="YES" xmlName="reducedPrecision" xmlType="element" getter="getReducedPrecision" setter="setReducedPrecision" reffered="false"/>
+   <property name="refresh" dataType="java.lang.String" defaultValue="NONE" xmlName="refresh" xmlType="element" getter="getRefresh" setter="setRefresh" reffered="false"/>
+   <property name="refreshType" dataType="java.lang.String" defaultValue="FAST" xmlName="refreshType" xmlType="element" getter="getRefreshType" setter="setRefreshType" reffered="false"/>
+   <property name="rollbackSegment" dataType="oracle.dbtools.crest.model.design.storage.oracle.RollbackSegmentOracle" defaultValue="" xmlName="rollbackSegment" xmlType="element" getter="getRollbackSegment" setter="setRollbackSegment" reffered="true"/>
+   <property name="segment" dataType="oracle.dbtools.crest.model.design.storage.oracle.SegmentOracle" defaultValue="" xmlName="segment" xmlType="element" getter="getSegment" setter="setSegment" reffered="true"/>
+   <property name="segmentType" dataType="java.lang.String" defaultValue="LOCAL" xmlName="segmentType" xmlType="element" getter="getSegmentType" setter="setSegmentType" reffered="false"/>
+   <property name="startDate" dataType="java.lang.String" defaultValue="" xmlName="startDate" xmlType="element" getter="getStartDate" setter="setStartDate" reffered="false"/>
+   <property name="subPartColumns" dataType="java.lang.String" defaultValue="" xmlName="subPartColumns" xmlType="element" getter="getSubPartColumns" setter="setSubPartColumns" reffered="false"/>
+   <property name="subquery" dataType="java.lang.String" defaultValue="" xmlName="subquery" xmlType="element" getter="getSubquery" setter="setSubquery" reffered="false"/>
+   <property name="tablespace" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle" defaultValue="" xmlName="tablespace" xmlType="element" getter="getTablespace" setter="setTablespace" reffered="true"/>
+   <property name="useIndex" dataType="java.lang.String" defaultValue="NONE" xmlName="useIndex" xmlType="element" getter="getUseIndex" setter="setUseIndex" reffered="false"/>
+   <property name="user" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserOracle" defaultValue="" xmlName="user" xmlType="element" getter="getUser" setter="setUser" reffered="true"/>
+   <property name="with" dataType="java.lang.String" defaultValue="PRIMARY KEY" xmlName="with" xmlType="element" getter="getWith" setter="setWith" reffered="false"/>
+   <roproperty name="implementedTable" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableProxyOracle" getter="getImplementedTable"/>
+   <roproperty name="lobs" dataType="interface java.util.List" getter="getLobs"/>
+   <collection name="lobsCollection" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="lobStorages" itemXmlName="LobStorage" getter="getLobsCollection" createItem="createLobStorage"/>
+   <roproperty name="partitions" dataType="interface java.util.List" getter="getPartitions"/>
+   <collection name="partitionsCollection" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="partitions" itemXmlName="Partition" getter="getPartitionsCollection" createItem="createPartitionOracle" />
+   <bb_roproperty name="propertyWrapperList" dataType="interface java.util.List" getter="getPropertyWrapperList"/>
+</oracle.dbtools.crest.model.design.storage.oracle.SnapshotOracle>

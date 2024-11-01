@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g parentClass="oracle.dbtools.crest.model.design.storage.oracle.v9i.UserOraclev9i">
+   <property name="temptSGroupName" dataType="java.lang.String" defaultValue="" xmlName="temptSGroupName" xmlType="element" getter="getTempTSGroupName" setter="setTempTSGroupName" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g>

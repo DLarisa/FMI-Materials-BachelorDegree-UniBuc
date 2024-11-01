@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v11g.ListPartitionOraclev11g parentClass="oracle.dbtools.crest.model.design.storage.oracle.v10g.ListPartitionOraclev10g">
+   <property name="subPartitionsQuantity" dataType="int" defaultValue="0" xmlName="subPartitionsQuantity" xmlType="element" getter="getSubPartitionsQuantity" setter="setSubPartitionsQuantity" reffered="false"/>
+   <property name="subPartitionsTablespaces" dataType="java.lang.String" defaultValue="" xmlName="subPartitionsTablespaces" xmlType="element" getter="getSubPartitionsTableSpaces" setter="setSubPartitionsTableSpaces" reffered="false" listOfRefs="true"/>
+   <collection name="hashSubpartitions" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="hashSubpartitions" itemXmlName="HashPartition" getter="getHashSubpartitions" createItem="createHashSubpartition"/>
+   <collection name="listSubpartitions" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="listSubpartitions" itemXmlName="ListPartition" getter="getListSubpartitions" createItem="createListSubpartition"/>
+   <collection name="rangeSubpartitions" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="rangeSubpartitions" itemXmlName="RangePartition" getter="getRangeSubpartitions" createItem="createRangeSubpartition"/>
+   <roproperty name="allSubPartitionsTableSpaces" dataType="java.lang.String" getter="getAllSubPartitionsTableSpaces"/>
+   <roproperty name="hashSubpartitions" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getHashSubpartitions"/>
+   <roproperty name="listSubpartitions" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getListSubpartitions"/>
+   <roproperty name="rangeSubpartitions" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getRangeSubpartitions"/>
+   <bb_roproperty name="subPartTsset" dataType="oracle.dbtools.crest.model.design.storage.oracle.v11g.ListPartitionOraclev11g$InlineList" getter="getSubPartTSSet"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v11g.ListPartitionOraclev11g>

@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v9i.RoleOraclev9i parentClass="oracle.dbtools.crest.model.design.storage.oracle.RoleOracle">
+   <property name="identifiedByPassword" dataType="java.lang.String" defaultValue="" xmlName="identifiedByPassword" xmlType="element" getter="getIdentifiedByPassword" setter="setIdentifiedByPassword" reffered="false"/>
+   <property name="pack" dataType="java.lang.String" defaultValue="" xmlName="pack" xmlType="element" getter="getPack" setter="setPack" reffered="false"/>
+   <property name="schema" dataType="java.lang.String" defaultValue="" xmlName="schema" xmlType="element" getter="getSchema" setter="setSchema" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v9i.RoleOraclev9i>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Fisier de baza</title>
+		<style>
+
+		</style>
+		<script>		
+			window.onload=function(){
+				var btn1=document.getElementById("adauga");
+
+				btn1.onclick=function(){
+					console.log(btn1.parentNode.innerHTML);
+					//btn1.parentNode.innerHTML+="a"
+					btn1.parentNode.appendChild(document.createTextNode("a"))
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p>Nota: in exercitiile de tip "corectati greseala", desi nu e recomandat, s-au pus css-ul si script-ul in fisierul html strict pentru simplitate (downloadarea unui singur fisier vs 3). Totusi retineti ca indicat este sa folositi fisiere externe in teme/proiecte/teste.</p>
+		<hr/>
+		<p>La fiecare click pe buton dorim sa se adauge cate un caracter "a" in divul container. Totusi nu se intampla asta. De ce? Observati ce se afiseaza in consola si corectati. </p>
+		<div id="container">
+			<button id="adauga">Adauga un caracter "a" in div</button>			
+		</div>
+	</body>
+</html>

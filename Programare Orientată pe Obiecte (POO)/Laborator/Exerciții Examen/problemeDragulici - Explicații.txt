@@ -1,0 +1,7 @@
+1. 11, 3, 1
+2. Eroare (la dynamic_cast)
+3. Eroare (la catch)
+4. Eroare (la cout)
+5. Eroare (la cout, la adunare a+b, NU la b+a)
+6. 4
+7. Eroare (pt ca nu a declarat in afara clasei variabila statica)

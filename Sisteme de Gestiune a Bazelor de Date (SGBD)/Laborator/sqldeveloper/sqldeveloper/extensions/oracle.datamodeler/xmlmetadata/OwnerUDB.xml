@@ -1,0 +1,5 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.udb.OwnerUDB parentClass="oracle.dbtools.crest.model.design.storage.db2.Owner">
+   <collection name="permissions" dataType="java.util.List" xmlName="permissions" itemXmlName="Permission" getter="getSortedByIDPermisions" createItem="createPermissionUDB"/>
+   <collection name="dbPrivileges" dataType="java.util.List" xmlName="schemaPrivileges" itemXmlName="PrivilegesDef" getter="getSortedByID_DBPrivileges" createItem="createDBPrivilegeUDB"/>
+</oracle.dbtools.crest.model.design.storage.udb.OwnerUDB>

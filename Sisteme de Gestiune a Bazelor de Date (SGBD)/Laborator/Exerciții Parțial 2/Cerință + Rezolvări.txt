@@ -1,0 +1,151 @@
+
+set serveroutput on;
+set echo off;
+set verify off;
+
+
+select *
+from subiecte;
+
+select *
+from client;
+select *
+from colet;
+select *
+from mijloc_transp;
+select *
+from transport;
+
+
+/* P1: Trigger -> Constrângere Integritate (pe ce tabel și ce constrângere)*/
+CREATE OR REPLACE TRIGGER t1
+BEFORE DELETE OR UPDATE OF cod ON mijloc_transp
+FOR EACH ROW
+BEGIN
+  if deleting then
+    delete from transport
+    where cod_vehicul = :old.cod;
+    dbms_output.put_line('delete');
+  end if;
+  
+  if updating and :old.cod != :new.cod then
+    update transport
+    set cod_vehicul = :new.cod
+    where cod_vehicul = :old.cod;
+    dbms_output.put_line('update');
+  end if;
+END t1;
+/
+
+
+delete from mijloc_transp
+where cod = 100;
+
+update mijloc_transp
+set cod = 700
+where cod = 100;
+
+rollback;
+drop trigger t1;
+
+-- Am implementat constrângerea de integritate UPDATE sau ON DELETE CASCADE
+-- Deci, dacă modific cheia primară sau șterg cu totul o înregistrare din tabelul
+-- 'Mijloc_transp', această modificare se va reflecta în tabelul 'Transport'.
+-- (FK din Transport, cod_vehicul, își modifică valoarea la update sau 
+-- toate transporturile care aveau un anumit mijloc de transp șters, vor fi și ele șterse.)
+
+
+
+
+/* P2: Un colet nu poate fi transportat în același timp de mai multe mașini.
+*/
+CREATE OR REPLACE TRIGGER t2
+FOR INSERT OR UPDATE ON transport
+COMPOUND TRIGGER
+-- Zona Declarativă
+TYPE pereche IS RECORD(plecare DATE, sosire DATE);
+-- vehicul(cod_vehicul) -> (plecare, sosire);
+TYPE vehicule IS TABLE OF pereche INDEX BY PLS_INTEGER;
+-- v(cod_colet) -> vehicul
+TYPE vector IS TABLE OF vehicule INDEX BY PLS_INTEGER;
+v      vector;
+poz    number;
+
+-- Înainte de LMD
+BEFORE STATEMENT IS 
+BEGIN
+  for i in (select cod_colet, cod_vehicul, data_ora_plecare, data_ora_sosire
+            from transport)
+  loop
+    v(i.cod_colet)(i.cod_vehicul).plecare := i.data_ora_plecare;
+    v(i.cod_colet)(i.cod_vehicul).sosire := i.data_ora_sosire;
+  end loop;
+END BEFORE STATEMENT;
+
+-- Înainte de fiecare rând (new/old)
+BEFORE EACH ROW IS
+BEGIN
+  if inserting then  --- la insert, tb sa am grijă să nu suprapun orele de p/s
+    poz := v(:new.cod_colet).first;
+    for i in 1..v(:new.cod_colet).count loop
+      if (:new.data_ora_plecare between v(:new.cod_colet)(poz).plecare and v(:new.cod_colet)(poz).sosire)
+       or (:new.data_ora_sosire between v(:new.cod_colet)(poz).plecare and v(:new.cod_colet)(poz).sosire)
+      then
+        raise_application_error(-20000, 'Inserare gresita!');
+      end if;
+      
+      poz := v(:new.cod_colet).next(poz);
+    end loop;
+  end if;
+END BEFORE EACH ROW;
+
+-- După fiecare rând (new/old)
+AFTER EACH ROW IS
+BEGIN
+  if updating then  --- aici, mai complicat
+    if v(:new.cod_colet).count = 1 then  -- la 1 înregistrare a colectului nu se poate suprapune
+      dbms_output.put_line('');
+    
+    else  -- dacă am mai mult de 2 înregistrări pe colet, atunci, când dau update la coloane data_sosire/plecare să nu se suprapună cu celelalte (deși, teoretic, nu are cum să ajungă vreodată)
+    poz := v(:new.cod_colet).first;
+    for i in 1..v(:new.cod_colet).count loop
+      if ((:new.data_ora_plecare between v(:new.cod_colet)(poz).plecare and v(:new.cod_colet)(poz).sosire)
+       or (:new.data_ora_sosire between v(:new.cod_colet)(poz).plecare and v(:new.cod_colet)(poz).sosire))
+       and :new.cod_vehicul != poz
+      then
+        raise_application_error(-20000, 'Updatare gresita!');
+      end if;
+      
+      poz := v(:new.cod_colet).next(poz);
+    end loop;
+    end if;
+    
+  end if;
+END AFTER EACH ROW;
+
+-- După LMD
+AFTER STATEMENT IS
+BEGIN
+  NULL;
+END AFTER STATEMENT;
+END t2;
+/
+
+insert into transport values(11, 100, 'Cluj', 'Baia Mare', to_date('16-01-2021', 'dd-mm-yyyy'), to_date('17-01-2021', 'dd-mm-yyyy'));
+
+update transport 
+set data_ora_plecare = to_date('12-01-2021', 'dd-mm-yyyy')
+where loc_sosire = 'Suceava';
+
+insert into transport values(11, 100, 'Cluj', 'Baia Mare', to_date('16-01-2021', 'dd-mm-yyyy'), to_date('25-01-2021', 'dd-mm-yyyy'));
+
+
+rollback;
+
+select *
+from subiecte;
+
+select *
+from transport;
+
+drop trigger t2;

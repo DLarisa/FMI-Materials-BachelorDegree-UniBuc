@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.StructuredTypeProxy parentClass="oracle.dbtools.crest.model.design.storage.RelationalObjectProxy">
+   <collection name="attributes" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="attributes" itemXmlName="Attribute" getter="getElements" proxyItem="true" />
+   <collection name="methods" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="methods" itemXmlName="Method" getter="getMethods" proxyItem="true" />
+   <roproperty name="parentType" dataType="oracle.dbtools.crest.model.design.storage.StructuredTypeProxy" getter="getParentType"/>
+   <roproperty name="structuredType" dataType="oracle.dbtools.crest.model.design.datatypes.StructuredType" getter="getStructuredType"/>
+</oracle.dbtools.crest.model.design.storage.StructuredTypeProxy>

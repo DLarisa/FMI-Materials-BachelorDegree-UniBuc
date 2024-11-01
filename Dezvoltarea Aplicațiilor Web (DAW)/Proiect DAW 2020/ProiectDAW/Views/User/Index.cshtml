@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<h2 style="text-align: center;
+        color: aquamarine;
+        font-family: Castellar;
+        border-bottom: 5px double aquamarine;
+">
+    @ViewBag.Title
+</h2>
+
+
+<table class="table table-striped table-hover ">
+    <thead class="panel panel-success">
+    <th>UserName</th>
+    <th>Email</th>
+    <th>Delete</th>
+    </thead>
+
+    <tbody>
+        @foreach (var l in ViewBag.UsersList)
+        {
+            <tr>
+                <td>@l.UserName</td>
+                <td>@l.Email</td>
+                <td>
+                    @using (Html.BeginForm(actionName: "Delete", controllerName: "User", method: FormMethod.Post, routeValues: new { id = l.Id }))
+                    {
+                        @Html.HttpMethodOverride(HttpVerbs.Delete)
+                        <button type="submit" class="btn btn-link col-lg-3">Delete</button>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<br />
+<br />

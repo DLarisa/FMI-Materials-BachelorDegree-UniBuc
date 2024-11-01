@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Publishers";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+<table class="table">
+    <thead>
+    <th>Name</th>
+    <th>Phone Number</th>
+    <th>Update</th>
+    <th>Details</th>
+    </thead>
+    <tbody>
+        @foreach (var publisher in ViewBag.Publishers)
+        {
+            <tr>
+                <td>@publisher.Name</td>
+                <td>@publisher.ContactInfo.PhoneNumber</td>
+                <td>@Html.ActionLink("Update", "Edit", new { id = publisher.PublisherId })</td>
+                <td>@Html.ActionLink("View More", "Details", new { id = publisher.PublisherId })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+@Html.ActionLink("Add publisher", "New", "Publisher")

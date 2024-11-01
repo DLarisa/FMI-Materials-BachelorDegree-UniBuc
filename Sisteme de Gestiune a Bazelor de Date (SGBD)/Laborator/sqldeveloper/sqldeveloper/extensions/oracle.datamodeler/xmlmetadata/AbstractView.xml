@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.AbstractView parentClass="oracle.dbtools.crest.model.SubsetCOMultiple">
+   <aa_property name="groupBy" dataType="java.lang.String" defaultValue="" xmlName="groupBy" xmlType="element" getter="getGroupBy" setter="setGroupBy" reffered="false"/>
+   <property name="having" dataType="java.lang.String" defaultValue="" xmlName="having" xmlType="element" getter="getHaving" setter="setHaving" reffered="false"/>
+   <aa_property name="tables" dataType="interface java.util.List" defaultValue="" xmlName="tables" xmlType="element" getter="getTables" setter="setTables" reffered="false"/>
+   <property name="userDefined" dataType="boolean" defaultValue="" xmlName="userDefined" xmlType="element" getter="getUserDefined" setter="setUserDefined" reffered="false"/>
+   <property name="userDefinedSQL" dataType="java.lang.String" defaultValue="" xmlName="userDefinedSQL" xmlType="element" getter="getUserDefinedSQL" setter="setUserDefinedSQL" reffered="false" mergeCompare="true"/>
+   <aa_property name="views" dataType="interface java.util.List" defaultValue="" xmlName="views" xmlType="element" getter="getViews" setter="setViews" reffered="false"/>
+   <property name="where" dataType="java.lang.String" defaultValue="" xmlName="where" xmlType="element" getter="getWhere" setter="setWhere" reffered="false" mergeCompare="true"/>
+   <property name="layoutSQL" dataType="java.lang.String" defaultValue="" xmlName="layoutSQL" xmlType="element" getter="getLayoutSQL" setter="setLayoutSQL" reffered="false"/>
+   <property name="validSQL" dataType="boolean" defaultValue="true" xmlName="validSQL" xmlType="element" getter="isValidSQL" setter="setValidSQL" reffered="false"/>
+   <property name="parsed" dataType="boolean" defaultValue="false" xmlName="parsed" xmlType="element" getter="isParsed" setter="setParsed" reffered="false"/>
+   <property name="incorrectSQL" dataType="boolean" defaultValue="false" xmlName="incorrectSQL" xmlType="element" getter="isIncorrectSQL" setter="setIncorrectSQL" reffered="false"/>
+   <property name="useObjectsOnlyFrom" dataType="java.lang.String" defaultValue="" xmlName="useObjectsOnlyFrom" xmlType="element" getter="getUseObjectsOnlyFrom" setter="setUseObjectsOnlyFrom" reffered="false"/>
+   <property name="syntaxProvider" dataType="java.lang.String" defaultValue="Oracle" xmlName="syntaxProvider" xmlType="element" getter="getSyntaxProvider" setter="setSyntaxProvider" reffered="false"/>
+   <roproperty name="caption" dataType="java.lang.String" getter="getCaption"/>
+   <roproperty name="containerHolderFor" dataType="oracle.dbtools.crest.model.design.AbstractView$ContainerHolder" getter="getContainerHolderFor"/>
+   <roproperty name="containerID" dataType="java.lang.String" getter="getContainerID"/>
+   <roproperty name="containerMap" dataType="interface java.util.Map" getter="getContainerMap"/>
+   <roproperty name="groupByList" dataType="interface java.util.List" getter="getGroupByList"/>
+   <roproperty name="orderByList" dataType="interface java.util.List" getter="getOrderByList"/>
+   <roproperty name="orderByMap" dataType="interface java.util.Map" getter="getOrderByMap"/>
+   <roproperty name="sortOrder" dataType="java.lang.String" getter="getSortOrder"/>
+   <roproperty name="tableSet" dataType="oracle.dbtools.crest.model.design.DesignObjectSet" getter="getTableSet"/>
+   <roproperty name="usedContainers" dataType="interface java.util.List" getter="getUsedContainers"/>
+   <roproperty name="viewsNotAdded" dataType="interface java.util.List" getter="getViewsNotAdded"/>
+   <collection name="usedContainers" dataType="java.util.List" xmlName="usedContainers" itemXmlName="container" getter="getContainersMaps" isMapItem="true" applyList="applyContainers"/>
+   <collection name="viewElements" dataType="java.util.Collection" xmlName="viewElements" itemXmlName="viewElement" getter="getElementsCollection" createItem="createViewElement" getItemByID="getElementByID" moveMethod="moveToIndex"/>
+   <collection name="groupByList" dataType="java.util.List" xmlName="groupByList" itemXmlName="elementID" getter="getGroupByList" itemIsRef="true" getItemByID="getElementByID" nativeList="true" orderTheList="true"/>
+   <collection name="orderByMaps" dataType="java.util.List" xmlName="orderByMaps" itemXmlName="orderByElement" getter="getOrderByMaps" isMapItem="true" applyList="applyOrderByMaps"/>
+   <collection name="usedObjects" dataType="java.util.List" xmlName="usedObjects" itemXmlName="UsedObject" getter="getUsedObjectsList" createItem="createSQLNameHelper" addItem="addUsedObject" getItemByID="getSQLNameHelperByID"/>
+</oracle.dbtools.crest.model.design.AbstractView>

@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper parentClass="java.lang.Object">
+   <property name="columnName" dataType="java.lang.String" defaultValue="" xmlName="columnName" xmlType="element" getter="getColumnName" setter="setColumnName" reffered="false"/>
+   <property name="isContainer" dataType="boolean" defaultValue="false" xmlName="container" xmlType="element" getter="isContainer" setter="setContainer" reffered="false"/>
+   <property name="id" dataType="java.lang.String" defaultValue="" xmlName="id" xmlType="attribute" getter="getID" setter="setID" reffered="false"/>
+   <property name="schema" dataType="java.lang.String" defaultValue="" xmlName="schema" xmlType="element" getter="getSchema" setter="setSchema" reffered="false"/>
+   <property name="tableName" dataType="java.lang.String" defaultValue="" xmlName="tableName" xmlType="element" getter="getTableName" setter="setTableName" reffered="false"/>
+   <property name="isView" dataType="boolean" defaultValue="false" xmlName="view" xmlType="element" getter="isView" setter="setView" reffered="false"/>
+   <roproperty name="fullName" dataType="java.lang.String" getter="getFullName"/>
+</oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper>

@@ -1,0 +1,48 @@
+.d1{
+	position:absolute;
+	width:100px;
+	border:1px solid black;
+	background-color:green;
+}
+
+#a{
+	top:150px;
+	left:440px;
+	height:100px;
+}
+
+#b{
+	top:230px;
+	left:5px;
+	height:40px;
+}
+
+#c{
+	top:140px;
+	left:305px;
+	height:50px;
+}
+
+#d{
+	top:300px;
+	left:245px;
+	height:170px;
+}
+
+#e{
+	top:0px;
+	left:50px;
+	height:40px;
+}
+
+#f{
+	top:30px;
+	left:215px;
+	height:37px;
+}
+
+#g{
+	top:20px;
+	left:400px;
+	height:55px;
+}

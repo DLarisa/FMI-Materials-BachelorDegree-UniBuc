@@ -1,0 +1,41 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.ContainedObjectWithDomain parentClass="oracle.dbtools.crest.model.design.ContainedObject">
+   <property name="allowSubtypeSubstitution" dataType="boolean" defaultValue="true" xmlName="allowSubtypeSubstitution" xmlType="element" getter="isAllowSubtypeSubstitution" setter="setAllowSubtypeSubstitution" reffered="false"/>
+   <property name="defaultValue" dataType="java.lang.String" defaultValue="" xmlName="defaultValue" xmlType="element" getter="getDefaultValue" setter="setDefaultValue" reffered="false"/>
+   <property name="use" dataType="short" defaultValue="" xmlName="use" xmlType="element" getter="getUse" setter="setUse" reffered="false" presentationName="Data Type Kind">
+    <codedEnum>
+	 <item code="0" value="Domain"/>
+	 <item code="1" value="Logical Type"/>
+	 <item code="2" value="Distinct Type"/>
+	 <item code="3" value="Structured Type"/>
+	 <item code="4" value="Collection type"/>
+	</codedEnum>
+   </property>
+   <property name="distinctType" dataType="oracle.dbtools.crest.model.design.datatypes.DistinctType" defaultValue="" xmlName="distinctType" xmlType="element" getter="getDistinctType" setter="setDistinctType" reffered="true"/>
+   <property name="logicalDatatype" dataType="oracle.dbtools.crest.model.design.LogicalDatatype" defaultValue="LOGDT017" xmlName="logicalDatatype" xmlType="element" getter="getLogicalDatatype" setter="setLogicalDatatype" reffered="true"/>
+   <property name="dataTypePrecision" dataType="java.lang.String" defaultValue="" xmlName="dataTypePrecision" xmlType="element" getter="getDataTypePrecision" setter="setDataTypePrecision" reffered="false"/>
+   <property name="dataTypeScale" dataType="java.lang.String" defaultValue="" xmlName="dataTypeScale" xmlType="element" getter="getDataTypeScale" setter="setDataTypeScale" reffered="false"/>
+   <property name="dataTypeSize" dataType="java.lang.String" defaultValue="" xmlName="dataTypeSize" xmlType="element" getter="getDataTypeSize" setter="setDataTypeSize" reffered="false"/>
+   <property name="domain" dataType="oracle.dbtools.crest.model.design.Domain" defaultValue="DOM3000004" xmlName="domain" xmlType="element" getter="getDomain" setter="setDomain" reffered="true"/>
+   <aa_property name="parameters" dataType="java.util.Map" defaultValue="" xmlName="parameters" xmlType="element" getter="getParameters" setter="setParameters" reffered="false"/>
+   <property name="reference" dataType="boolean" defaultValue="false" xmlName="reference" xmlType="element" getter="isReference" setter="setReference" reffered="false"/>
+   <property name="restrictedTypeSubstitution" dataType="boolean" defaultValue="false" xmlName="restrictedTypeSubstitution" xmlType="element" getter="isRestrictedTypeSubstitution" setter="setRestrictedTypeSubstitution" reffered="false"/>
+   <property name="usesDefaultValue" dataType="boolean" defaultValue="false" xmlName="usesDefaultValue" xmlType="element" getter="getUsesDefaultValue" setter="setUsesDefaultValue" reffered="false"/>
+   <property name="checkConstraint" dataType="oracle.dbtools.crest.model.design.constraint.CheckConstraint" isPropertyMap="true" xmlName="checkConstraint" xmlType="element" getter="getOwnCheck" setter="setOwnCheck" createPMap="createCheckConstraint" itemXmlName="implementationDef" keyXmlName="dbType" valueXmlName="definition" removeItem="clearOwnCheckConstraint"/>
+   <property name="listOfValues" dataType="oracle.dbtools.crest.model.design.constraint.ConstraintEnumeration" isPropertyMap="true" xmlName="listOfValues" xmlType="element" getter="getOwnValueList" setter="setOwnValueList" createPMap="createConstraintEnumeration" itemXmlName="valueDef" keyXmlName="value" valueXmlName="description" removeItem="clearOwnValueList"/>
+   <collection name="permittedStrTypes" dataType="java.util.List" xmlName="permittedStrTypes" itemXmlName="strTypeRef" getter="getPermittedSubTypes" itemIsRef="true" nativeList="true" orderTheList="true" />
+   <roproperty name="exactRefToStructuredType" dataType="boolean" getter="isExactRefToStructuredType"/>
+   <roproperty name="pkElement" dataType="boolean" getter="isPKElement"/>
+   <roproperty name="refToStructuredType" dataType="boolean" getter="isRefToStructuredType"/>
+   <roproperty name="constraintsText" dataType="java.lang.String" getter="getConstraintsText"/>
+   <roproperty name="containerWithKeyObject" dataType="oracle.dbtools.crest.model.design.ContainerWithKeyObject" getter="getContainerWithKeyObject"/>
+   <roproperty name="dataType" dataType="interface oracle.dbtools.crest.model.design.datatypes.Datatype" getter="getDataType"/>
+   <roproperty name="dataTypeParameter" dataType="java.lang.String" getter="getDataTypeParameter"/>
+   <roproperty name="datatypeString" dataType="java.lang.String" getter="getDatatypeString"/>
+   <roproperty name="genericDatatypeString" dataType="java.lang.String" getter="getGenericDatatypeString"/>
+   <roproperty name="permittedSubTypes" dataType="interface java.util.List" getter="getPermittedSubTypes"/>
+   <roproperty name="positionInpK" dataType="int" getter="getPositionInPK"/>
+   <roproperty name="precision" dataType="java.lang.String" getter="getPrecision"/>
+   <roproperty name="scale" dataType="java.lang.String" getter="getScale"/>
+   <roproperty name="units" dataType="java.lang.String" getter="getUnits"/>
+</oracle.dbtools.crest.model.design.ContainedObjectWithDomain>

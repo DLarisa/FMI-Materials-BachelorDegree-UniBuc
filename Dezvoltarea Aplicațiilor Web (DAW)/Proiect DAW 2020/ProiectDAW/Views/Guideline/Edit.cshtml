@@ -1,0 +1,37 @@
+﻿@model ProiectDAW.Models.Guideline
+@{
+    ViewBag.Title = "Editare Informații Age Restrictions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<h2 style="font-family: 'Adobe Devanagari';">@ViewBag.Title</h2>
+
+@using (Html.BeginForm(actionName: "Edit", controllerName: "Guideline", method: FormMethod.Post, htmlAttributes: new { style = "display:inline" }))
+{
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+    @Html.HiddenFor(f => f.Id)
+
+    @Html.Label("Varsta", "Vârstă Recomandată Film:")
+    @Html.EditorFor(f => f.Varsta, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(f => f.Varsta, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("Mesaj", "Observații:")
+    @Html.TextAreaFor(f => f.Mesaj, new { @class = "form-control", @rows = "10" })
+    @Html.ValidationMessageFor(f => f.Mesaj, "", new { @class = "text-danger" })
+    <br />
+
+
+
+    <button class="btn btn-success" type="submit">Update</button>
+}
+
+
+@using (Html.BeginForm(actionName: "Index", controllerName: "Guideline", method: FormMethod.Get, htmlAttributes: new { style = "display:inline; float: right" }))
+{
+    <button class="btn btn-primary">Înapoi</button>
+}

@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.FKProxyOracle parentClass="oracle.dbtools.crest.model.design.storage.IndexProxy">
+   <property name="deferrable" dataType="java.lang.String" defaultValue="NO" xmlName="deferrable" xmlType="element" getter="getDeferrable" setter="setDeferrable" reffered="false"/>
+   <property name="enable" dataType="java.lang.String" defaultValue="YES" xmlName="enable" xmlType="element" getter="getEnable" setter="setEnable" reffered="false"/>
+   <property name="exceptionsTable" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableProxyOracle" defaultValue="" xmlName="exceptionsTable" xmlType="element" getter="getExceptionsTable" setter="setExceptionsTable" reffered="true"/>
+   <property name="initially" dataType="java.lang.String" defaultValue="IMMEDIATE" xmlName="initially" xmlType="element" getter="getInitially" setter="setInitially" reffered="false"/>
+   <property name="rely" dataType="java.lang.String" defaultValue="NO" xmlName="rely" xmlType="element" getter="getRely" setter="setRely" reffered="false"/>
+   <property name="validate" dataType="java.lang.String" defaultValue="YES" xmlName="validate" xmlType="element" getter="getValidate" setter="setValidate" reffered="false"/>
+   <roproperty name="columns" dataType="java.lang.String" getter="getColumns"/>
+   <roproperty name="fkTable" dataType="oracle.dbtools.crest.model.design.relational.Table" getter="getFKTable"/>
+   <roproperty name="refColumns" dataType="[Loracle.dbtools.crest.model.design.relational.Column" getter="getRefColumns"/>
+   <roproperty name="referenceColumns" dataType="java.lang.String" getter="getReferenceColumns"/>
+   <roproperty name="referenceTable" dataType="java.lang.String" getter="getReferenceTable"/>
+</oracle.dbtools.crest.model.design.storage.oracle.FKProxyOracle>

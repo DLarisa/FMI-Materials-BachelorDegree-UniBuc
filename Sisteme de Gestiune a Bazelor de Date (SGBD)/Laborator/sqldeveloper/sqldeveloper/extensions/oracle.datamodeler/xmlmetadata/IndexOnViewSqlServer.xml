@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.IndexOnViewSqlServer parentClass="oracle.dbtools.crest.model.design.storage.sqlserver.AbstractStorageObjectSqlServer">
+   <property name="clustered" dataType="java.lang.String" defaultValue="YES" xmlName="clustered" xmlType="element" getter="getClustered" setter="setClustered" reffered="false"/>
+   <property name="cols" dataType="java.lang.String" defaultValue="" xmlName="cols" xmlType="element" getter="getCols" setter="setCols" reffered="false" listOfRefs="true"/>
+   <property name="filegroup" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.FileGroupSqlServer" defaultValue="" xmlName="filegroup" xmlType="element" getter="getFilegroup" setter="setFilegroup" reffered="true"/>
+   <property name="fillfactor" dataType="int" defaultValue="0" xmlName="fillfactor" xmlType="element" getter="getFillFactor" setter="setFillFactor" reffered="false"/>
+   <property name="ignoreDupKey" dataType="java.lang.String" defaultValue="NO" xmlName="ignoreDupKey" xmlType="element" getter="getIgnoreDupKey" setter="setIgnoreDupKey" reffered="false"/>
+   <property name="padIndex" dataType="java.lang.String" defaultValue="NO" xmlName="padIndex" xmlType="element" getter="getPadIndex" setter="setPadIndex" reffered="false"/>
+   <property name="props" dataType="java.lang.String" defaultValue="" xmlName="props" xmlType="element" getter="getProps" setter="setProps" reffered="false" listOfRefs="true"/>
+   <property name="recomputeStatistics" dataType="java.lang.String" defaultValue="AUTO" xmlName="recomputeStatistics" xmlType="element" getter="getRecomputeStatistics" setter="setRecomputeStatistics" reffered="false"/>
+   <property name="sortInTempDB" dataType="java.lang.String" defaultValue="NO" xmlName="sortInTempDB" xmlType="element" getter="getSortInTempDB" setter="setSortInTempDB" reffered="false"/>
+   <property name="unique" dataType="java.lang.String" defaultValue="YES" xmlName="unique" xmlType="element" getter="getUnique" setter="setUnique" reffered="false"/>
+   <roproperty name="view" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.TableViewProxySqlServer" getter="getView"/>
+   <bb_roproperty name="colSet" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.IndexOnViewSqlServer$InlineList" getter="getColSet"/>
+   <bb_roproperty name="extPropsSet" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.IndexOnViewSqlServer$InlineList" getter="getExtPropsSet"/>
+   <roproperty name="partKeySortOrder" dataType="java.lang.String" getter="getPartKeySortOrder"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.IndexOnViewSqlServer>

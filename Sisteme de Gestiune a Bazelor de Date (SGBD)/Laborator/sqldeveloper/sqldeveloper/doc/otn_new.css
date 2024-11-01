@@ -1,0 +1,65 @@
+
+<STYLE TYPE="text/css">
+//
+
+.betastuff { font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #000000; text-decoration: none }
+
+.bodylink {font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 14px; color: #000000;}  
+A:visited.bodylink {color:#999999;  text-decoration:underline;}  
+A:hover.bodylink {color:#FF0000; text-decoration:underline;} 
+A:link.bodylink {color:black; text-decoration:underline;}
+
+.bodycopy {font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 14px; color: #000000; text-decoration: none; visited: #000000;}
+
+.boldbodycopy {font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 14px; font-weight: bold; color: #000000 ; text-decoration: none; visited: #000000;}
+
+.boldbodycopy2 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 14px; font-weight: bold; color: #999999 ; text-decoration: none; visited: #999999;}
+
+.boldbodycopy3 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 14px; font-weight: bold; color: #666666 ; text-decoration: none; visited: #666666;}
+
+.boldbodylink {font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 14px; font-weight: bold; color: #000000;}  
+A:visited.bodylink {color:#999999;  text-decoration:underline;}  
+A:hover.bodylink {color:#FF0000; text-decoration:underline;} 
+A:link.bodylink {color:black; text-decoration:underline;}
+.gradient {filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr='#DDDDDD', endColorstr='#FFFFFF', gradientType='0'); }
+
+.italicbodycopy {font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 14px; font-style: italic; color: #000000 ; text-decoration: none; visited: #000000;}
+
+.legalese {font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: #000000; text-decoration: none; visited: #000000;}
+
+.navhead {font-family: Arial, Helvetica, Sans-serif; font-size: 11px; font-style: italic; font-weight: bold; color: #000000; text-decoration: none; visited: #000000;}
+
+.navheader { color: #336699; font-family: Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold; }
+
+.navlink {font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 14px; color: #000000;}   
+A:visited.navlink { color:#000000;  text-decoration:none;} 
+A:hover.navlink {color:#FF0000; text-decoration:none;}    
+A:link.navlink { color:black;  text-decoration:none;}
+
+.parahead1 {font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #000000; text-decoration: none; visited: #000000;}
+
+.parahead1Itali {font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-style: italic; font-weight: bold; color: #000000; text-decoration: none; visited: #000000;}
+
+.parahead2 {font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #666666; text-decoration: none; visited: #666666;}
+
+.parahead2Itali {font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-style: italic; font-weight: bold; color: #666666; text-decoration: none; visited: #666666;}
+
+.portletTitle {font-family: Arial, Helvetica, Sans-serif; font-size: 11px; font-weight: bold; color: #FFFFFF; text-decoration: none; visited: #FFFFFF;}
+
+.profile {font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: #FFFFFF; text-decoration: none; visited: #FFFFFF;}
+
+.tablink {font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #000000; text-decoration: none; visited: #000000;}
+
+.textA {font-family: Arial, Helvetica, sans-serif; font-size: 10px; line-height: 14px; color: #000000; text-decoration: none; visited: #000000;}
+
+.textB {font-family: Arial, Helvetica, Sans-serif; font-size: 11px; font-weight: bold; color: #000000; text-decoration: none; visited: #000000;}
+
+.textC {font-family: Arial, Helvetica, Sans-serif; font-size: 11px; font-weight: bold; color: #999999; text-decoration: none; visited: #999999;}
+
+.topstoryhead {font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; color: #000000; text-decoration: none; visited: #000000;}
+
+//
+</STYLE>
+
+
+<span class="navlink"></span>

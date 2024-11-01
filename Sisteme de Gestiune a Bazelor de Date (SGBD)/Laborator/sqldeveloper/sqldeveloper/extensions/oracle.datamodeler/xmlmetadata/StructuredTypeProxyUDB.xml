@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.udb.StructuredTypeProxyUDB parentClass="oracle.dbtools.crest.model.design.storage.StructuredTypeProxy">
+   <property name="inlineLength" dataType="java.lang.String" defaultValue="" xmlName="inlineLength" xmlType="element" getter="getInlineLength" setter="setInlineLength" reffered="false"/>
+   <property name="owner" dataType="oracle.dbtools.crest.model.design.storage.udb.OwnerUDB" defaultValue="" xmlName="owner" xmlType="element" getter="getOwner" setter="setOwner" reffered="true"/>
+   <property name="precision" dataType="int" defaultValue="0" xmlName="precision" xmlType="element" getter="getPrecision" setter="setPrecision" reffered="false"/>
+   <property name="ref2refTypeCastFunction" dataType="java.lang.String" defaultValue="" xmlName="ref2refTypeCastFunction" xmlType="element" getter="getRef2RefTypeCastFunction" setter="setRef2RefTypeCastFunction" reffered="false"/>
+   <property name="refType2refCastFunction" dataType="java.lang.String" defaultValue="" xmlName="refType2refCastFunction" xmlType="element" getter="getRefType2RefCastFunction" setter="setRefType2RefCastFunction" reffered="false"/>
+   <property name="reference" dataType="boolean" defaultValue="false" xmlName="reference" xmlType="element" getter="isReference" setter="setReference" reffered="false"/>
+   <property name="scale" dataType="int" defaultValue="0" xmlName="scale" xmlType="element" getter="getScale" setter="setScale" reffered="false"/>
+   <property name="schema" dataType="oracle.dbtools.crest.model.design.storage.udb.SchemaUDB" defaultValue="" xmlName="schema" xmlType="element" getter="getSchema" setter="setSchema" reffered="true"/>
+   <property name="size" dataType="java.lang.String" defaultValue="" xmlName="size" xmlType="element" getter="getSize" setter="setSize" reffered="false"/>
+   <property name="type" dataType="oracle.dbtools.crest.model.design.DesignObject" defaultValue="" xmlName="type" xmlType="element" getter="getType" setter="setType" reffered="true"/>
+   <property name="usingTypeID" dataType="java.lang.String" defaultValue="" xmlName="usingTypeID" xmlType="element" getter="getUsingTypeID" setter="setUsingTypeID" reffered="false"/>
+   <property name="withFunctionAccess" dataType="java.lang.String" defaultValue="NO" xmlName="withFunctionAccess" xmlType="element" getter="getWithFunctionAccess" setter="setWithFunctionAccess" reffered="false"/>
+   <roproperty name="dataType" dataType="java.lang.String" getter="getDataType"/>
+</oracle.dbtools.crest.model.design.storage.udb.StructuredTypeProxyUDB>

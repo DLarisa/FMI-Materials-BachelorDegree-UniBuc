@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rulesfile name="asp" version="0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="scanner.xsd"
+>
+  <ruleset name="ASP Calls" enable="true" type="SYBASE" description="xxxxxxxx"
+    source="asp" codetype="asp"
+  >
+    <required>
+      <regex>
+        <expression><![CDATA[ado]]></expression>
+      </regex>
+    </required>
+    <rules>
+      <regex name="Open DB" codetype="asp">
+        <example></example>
+        <expression><![CDATA[\.Open]]></expression>
+      </regex>
+      <regex name="CreateObject" description="" codetype="asp">
+        <expression><![CDATA[createObject]]></expression>
+      </regex>
+      <regex name="MoveNext" description="" codetype="asp">
+        <expression><![CDATA[\.MoveNext]]></expression>
+      </regex>
+    </rules>
+  </ruleset>
+</rulesfile>

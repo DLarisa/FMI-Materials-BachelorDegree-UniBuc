@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.ColumnProxy parentClass="oracle.dbtools.crest.model.design.storage.RelationalObjectProxy">
+   <property name="cachechanged" dataType="boolean" defaultValue="false" xmlName="cachechanged" xmlType="element" getter="isCacheChanged" setter="setCacheChanged" reffered="false"/>
+   <property name="cyclechanged" dataType="boolean" defaultValue="false" xmlName="cyclechanged" xmlType="element" getter="isCycleChanged" setter="setCycleChanged" reffered="false"/>
+   <property name="generateAlwaysChanged" dataType="boolean" defaultValue="false" xmlName="generateAlwaysChanged" xmlType="element" getter="isGenerateAlwaysChanged" setter="setGenerateAlwaysChanged" reffered="false"/>
+   <property name="incrementByChanged" dataType="boolean" defaultValue="false" xmlName="incrementByChanged" xmlType="element" getter="isIncrementByChanged" setter="setIncrementByChanged" reffered="false"/>
+   <property name="maxValueChanged" dataType="boolean" defaultValue="false" xmlName="maxValueChanged" xmlType="element" getter="isMaxValueChanged" setter="setMaxValueChanged" reffered="false"/>
+   <property name="minValueChanged" dataType="boolean" defaultValue="false" xmlName="minValueChanged" xmlType="element" getter="isMinValueChanged" setter="setMinValueChanged" reffered="false"/>
+   <property name="startWithChanged" dataType="boolean" defaultValue="false" xmlName="startWithChanged" xmlType="element" getter="isStartWithChanged" setter="setStartWithChanged" reffered="false"/>
+   <roproperty name="column" dataType="oracle.dbtools.crest.model.design.relational.Column" getter="getColumn"/>
+   <roproperty name="dataType" dataType="interface oracle.dbtools.crest.model.design.datatypes.Datatype" getter="getDataType"/>
+   <roproperty name="datatypeString" dataType="java.lang.String" getter="getDatatypeString"/>
+   <roproperty name="tableProxyR" dataType="oracle.dbtools.crest.model.design.storage.TableProxy" getter="getTableProxyR"/>
+</oracle.dbtools.crest.model.design.storage.ColumnProxy>

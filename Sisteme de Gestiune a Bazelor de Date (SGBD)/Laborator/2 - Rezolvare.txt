@@ -1,0 +1,789 @@
+-- Laboratorul 2
+
+set serveroutput on;
+set echo off;
+set verify off;
+
+
+-- EXERCIȚII REZOLVATE PDF --
+-- Ex1
+DECLARE
+  x    NUMBER(1) := 5;
+  y    x%TYPE    := NULL;
+BEGIN
+  IF x <> y THEN
+    DBMS_OUTPUT.PUT_LINE ('valoare <> null este = true');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE ('valoare <> null este != true');
+  END IF;
+  x   := NULL;
+  IF x = y THEN
+    DBMS_OUTPUT.PUT_LINE ('null = null este = true');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE ('null = null este != true');
+  END IF;
+END;
+/
+
+
+-- Ex2
+-- a)
+DECLARE
+  TYPE emp_record IS RECORD
+  (cod      employees.employee_id%TYPE,
+   salariu  employees.salary%TYPE,
+   job      employees.job_id%TYPE);
+    
+  v_ang emp_record;
+BEGIN
+  v_ang.cod     := 700;
+  v_ang.salariu := 9000;
+  v_ang.job     :='SA_MAN';
+  DBMS_OUTPUT.PUT_LINE ('Angajatul cu codul '|| v_ang.cod || 
+                        ' si jobul ' || v_ang.job || ' are salariul ' 
+                        || v_ang.salariu);
+END;
+/
+
+-- b)
+DECLARE
+  TYPE emp_record IS RECORD
+  (cod      employees.employee_id%TYPE,
+   salariu  employees.salary%TYPE,
+   job      employees.job_id%TYPE);
+    
+  v_ang emp_record;
+BEGIN
+  /******** In loc de ... 
+  SELECT employee_id, salary, job_id  
+  INTO v_ang.cod, v_ang.salariu, v_ang.job 
+  FROM employees 
+  WHERE employee_id = 101; 
+  *******************************/
+  SELECT employee_id, salary, job_id
+  INTO v_ang
+  FROM employees
+  WHERE employee_id = 101;
+  DBMS_OUTPUT.PUT_LINE ('Angajatul cu codul '|| v_ang.cod || 
+                        ' si jobul ' || v_ang.job || ' are salariul ' 
+                        || v_ang.salariu);
+END; 
+/
+
+-- c)
+DECLARE
+  TYPE emp_record IS RECORD
+  (cod      employees.employee_id%TYPE,
+   salariu  employees.salary%TYPE,
+   job      employees.job_id%TYPE);
+    
+  v_ang emp_record;
+BEGIN
+  DELETE FROM emp_lgd
+  WHERE employee_id = 100 
+  RETURNING employee_id, salary, job_id INTO v_ang;
+  
+  DBMS_OUTPUT.PUT_LINE ('Angajatul cu codul '|| v_ang.cod || 
+                        ' si jobul ' || v_ang.job || ' are salariul ' 
+                        || v_ang.salariu);
+END;
+/ 
+
+ROLLBACK;
+
+
+-- Ex3
+DECLARE 
+    V_ANG1 EMPLOYEES%ROWTYPE;
+    V_ANG2 EMPLOYEES%ROWTYPE;
+BEGIN
+    -- șterg angajatul 100 și mențin în variabilă linia ștearsă
+    DELETE FROM EMP_LGD
+    WHERE EMPLOYEE_ID = 100
+    RETURNING EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, 
+              HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, 
+              DEPARTMENT_ID 
+    INTO V_ANG1;
+    
+    -- inserez în tabel linia ștearsă
+    INSERT INTO EMP_LGD VALUES V_ANG1;
+    
+    -- șterg angajat 101
+    DELETE FROM EMP_LGD
+    WHERE EMPLOYEE_ID = 101
+    RETURNING EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, 
+              HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, 
+              DEPARTMENT_ID 
+    INTO V_ANG2;
+    
+    -- inserez o linie oarecare
+    INSERT INTO EMP_LGD VALUES (1000, 'FN', 'LN', 'E', null, SYSDATE, 
+                                'AD_VP', 1000, null, 100, 90);
+    
+    -- actualizez linia inserată anterior
+    UPDATE EMP_LGD
+    SET ROW = V_ANG2
+    WHERE EMPLOYEE_ID = 1000;
+END;
+/
+
+ROLLBACK;
+
+SELECT *
+FROM EMP_LGD;
+
+
+-- Ex4
+DECLARE
+  type tablou_indexat is table of number
+  index by pls_integer;
+  
+  v_tablou tablou_indexat;
+BEGIN
+  -- inserare elemente în tablou
+  for i in 1..10 loop
+    v_tablou(i) := i;
+  end loop;
+  
+  -- a)
+  dbms_output.put_line('Nr de elemente: ' || v_tablou.count);
+  for i in v_tablou.first..v_tablou.last loop
+    dbms_output.put_line(v_tablou(i));
+  end loop;
+  
+  -- b)
+  for i in 1..10 loop
+    if i mod 2 = 1 then
+      v_tablou(i) := null;
+    end if;
+  end loop;
+  
+  dbms_output.put_line('Nr de elemente: ' || v_tablou.count);
+  for i in v_tablou.first..v_tablou.last loop
+    dbms_output.put_line(v_tablou(i));
+  end loop;
+  
+  -- c)
+  v_tablou.delete(v_tablou.first); 
+  v_tablou.delete(v_tablou.last);
+  v_tablou.delete(5, 7);
+  
+  dbms_output.put_line('Primul element este ' || nvl(v_tablou(v_tablou.first), 0) 
+                       || ' si este pe pozitia ' || v_tablou.first);
+  dbms_output.put_line('Ultimul element este ' || nvl(v_tablou(v_tablou.last), 0) 
+                       || ' si este pe pozitia ' || v_tablou.last);
+  dbms_output.put_line('Nr elemente tablou nou: ' || v_tablou.count);
+  for i in v_tablou.first..v_tablou.last loop
+    if v_tablou.exists(i) then
+      dbms_output.put_line(nvl(v_tablou(i), 0));
+    end if;
+  end loop;
+  
+  -- d)
+  v_tablou.delete;
+  dbms_output.put_line('Nr elemente tablou ultima operatie: ' || v_tablou.count);
+END;
+/
+
+
+-- Ex5
+DECLARE
+  type tablou_indexat is table of emp_lgd%rowtype
+  index by binary_integer;
+  
+  t tablou_indexat;
+BEGIN
+  -- ștergere linii tabel original
+  delete from emp_lgd 
+  where rownum <= 2
+  returning employee_id, first_name, last_name, email, phone_number,
+            hire_date, job_id, salary, commission_pct, manager_id,
+            department_id 
+  bulk collect into t;
+  
+  -- afișare elemente tablou
+  for i in t.first..t.last loop
+    dbms_output.put_line(i || ': ' || t(i).employee_id || ' ' || t(i).last_name);
+  end loop;
+  
+  -- adăugare liniile șterse
+  for i in t.first..t.last loop
+    insert into emp_lgd values t(i);
+  end loop;
+END;
+/
+
+select *
+from emp_lgd
+where employee_id = 100;
+
+rollback;
+
+
+-- Ex6
+DECLARE
+  type tablou_imbricat is table of number;
+  
+  t tablou_imbricat := tablou_imbricat();
+BEGIN
+  -- inserare elemente în tablou
+  for i in 1..10 loop
+    t.extend;
+    t(i) := i;
+  end loop;
+  
+  -- a)
+  dbms_output.put_line('Nr de elemente: ' || t.count);
+  for i in t.first..t.last loop
+    dbms_output.put_line(t(i));
+  end loop;
+  
+  -- b)
+  for i in 1..10 loop
+    if i mod 2 = 1 then
+      t(i) := null;
+    end if;
+  end loop;
+  
+  dbms_output.put_line('Nr de elemente: ' || t.count);
+  for i in t.first..t.last loop
+    dbms_output.put_line(t(i));
+  end loop;
+  
+  -- c)
+  t.delete(t.first); 
+  t.delete(t.last);
+  t.delete(5, 7);
+  
+  dbms_output.put_line('Primul element este ' || nvl(t(t.first), 0) 
+                       || ' si este pe pozitia ' || t.first);
+  dbms_output.put_line('Ultimul element este ' || nvl(t(t.last), 0) 
+                       || ' si este pe pozitia ' || t.last);
+  dbms_output.put_line('Nr elemente tablou nou: ' || t.count);
+  for i in t.first..t.last loop
+    if t.exists(i) then
+      dbms_output.put_line(nvl(t(i), 0));
+    end if;
+  end loop;
+  
+  -- d)
+  t.delete;
+  dbms_output.put_line('Nr elemente tablou ultima operatie: ' || t.count);
+END;
+/
+
+
+-- Ex7
+DECLARE
+  type tablou_imbricat is table of char(1); -- char(1) inseamna char de 1 caracter; daca puneam char(10) fiecare indice avea 10 pozitii disponibile
+  t tablou_imbricat := tablou_imbricat('m', 'i', 'n', 'i', 'm');
+  i integer;
+BEGIN
+  -- afișare conținut tablou
+  dbms_output.put_line('Afisare 1: ');
+  i := t.first;
+  while i <= t.last loop
+    dbms_output.put_line(t(i));
+    i := t.next(i);
+  end loop;
+  dbms_output.new_line;
+  
+  -- afișare conținut tablou invers
+  dbms_output.put_line('Afisare 2: ');
+  for j in reverse t.first..t.last loop
+    dbms_output.put_line(t(j));
+  end loop;
+  dbms_output.new_line;
+  
+  -- ștergere elemente poz 2, 4
+  t.delete(2);
+  t.delete(4);
+  
+  -- afișare
+  dbms_output.put_line('Afisare 3: ');
+  i := t.last;
+  while i >= t.first loop
+    dbms_output.put_line(t(i));
+    i := t.prior(i);
+  end loop;
+END;
+/
+
+
+-- Ex8
+DECLARE
+  type vector is varray(15) of number;
+  
+  t vector := vector();
+BEGIN
+  -- inserare elemente în tablou
+  for i in 1..10 loop
+    t.extend;
+    t(i) := i;
+  end loop;
+  
+  -- a)
+  dbms_output.put_line('Nr de elemente: ' || t.count);
+  for i in t.first..t.last loop
+    dbms_output.put_line(t(i));
+  end loop;
+  
+  -- b)
+  for i in 1..10 loop
+    if i mod 2 = 1 then
+      t(i) := null;
+    end if;
+  end loop;
+  
+  dbms_output.put_line('Nr de elemente: ' || t.count);
+  for i in t.first..t.last loop
+    dbms_output.put_line(t(i));
+  end loop;
+  
+  -- c)
+  /*
+  DELETE(N); DELETE(M, N); -> NU sunt valabile pentru vectori.
+  */
+  
+  -- d)
+  t.delete;
+  dbms_output.put_line('Nr elemente tablou ultima operatie: ' || t.count);
+END;
+/
+
+
+-- Ex9
+create type subordonati_lgd as varray(10) of number; 
+/
+create table manageri_lgd (cod_mgr number(10) primary key,
+                           nume varchar(20), 
+                           lista subordonati_lgd); 
+
+DECLARE
+  v_sub   subordonati_lgd := subordonati_lgd(100, 200, 300);
+  v_lista manageri_lgd.lista%type;
+BEGIN
+  -- introduc 3 linii în tabel
+  insert into manageri_lgd values (1, 'Mgr 1', v_sub);
+  insert into manageri_lgd values (2, 'Mgr 2', null);
+  insert into manageri_lgd values (3, 'Mgr 3', subordonati_lgd(400, 500));
+END;
+/
+
+-- afișare info tabel
+select *
+from manageri_lgd;
+
+-- ștergere tabel + vector
+drop table manageri_lgd;
+drop type subordonati_lgd;
+
+
+-- Ex10
+-- creare structuri de date
+create table emp_test_lgd as
+(select employee_id, last_name
+ from employees);
+create type telefon is table of varchar(12);
+/
+
+-- adaug coloană nouă în tabel
+alter table emp_test_lgd 
+add nr_tel telefon
+nested table nr_tel store as tabel_nr_telefon;
+
+-- inserez o linie nouă în tabel
+insert into emp_test_lgd 
+values(500, 'XYZ', telefon('072XXX', '044YYY'));
+
+-- actualizez o linie din tabel
+update emp_test_lgd 
+set nr_tel = telefon('073XXX', '074YYY', '089QQQ')
+where employee_id = 100;
+
+-- afișare informații din tabel
+select *
+from emp_test_lgd;
+
+select a.*, b.*
+from emp_test_lgd a, table (a.nr_tel) b;
+
+-- eliminare
+drop table emp_test_lgd;
+drop type telefon;
+
+
+-- Ex11
+-- Varianta 1
+DECLARE
+  type coduri is varray(10) of number(3);
+  var coduri := coduri(205, 101, 100, 150);
+BEGIN
+  for i in var.first..var.last loop
+    delete from emp_lgd
+    where employee_id = var(i);
+  end loop;
+END;
+/
+
+select *
+from emp_lgd;
+
+rollback;
+
+-- Varianta 2
+DECLARE
+  type coduri is varray(10) of number(3);
+  var coduri := coduri(100, 101);
+BEGIN
+  forall i in var.first..var.last
+    delete from emp_lgd
+    where employee_id = var(i);
+END;
+/
+
+select *
+from emp_lgd;
+
+rollback;
+
+
+
+
+-- EXERCIȚII PROPUSE --
+-- Ex1
+DECLARE
+  type coduri is varray(5) of number(3);
+  var_cod coduri := coduri();
+  
+  type angajat is table of employees%rowtype index by binary_integer;
+  tabel angajat;
+  
+  salariu emp_lgd.salary%type;
+BEGIN
+  -- selectez toți angajații care nu câștigă comision
+  select *
+  bulk collect into tabel
+  from emp_lgd
+  where nvl(commission_pct, 0) = 0
+  order by salary asc;
+  
+  -- iau pe primii 5 cu salariul cel mai mic
+  for i in 1..5 loop
+    var_cod.extend();
+    var_cod(i) := tabel(i).employee_id;
+  end loop;
+  
+  for i in 1..5 loop
+    -- selectez salariul
+    select salary
+    into salariu
+    from emp_lgd
+    where employee_id = var_cod(i);
+    
+    -- afișez salariu vechi
+    dbms_output.put_line('Salariu Vechi: ' || salariu);
+    
+    -- updatez noul salariu
+    salariu := (salariu * 5) / 100 + salariu;
+    update emp_lgd
+    set salary = salariu
+    where employee_id = var_cod(i);
+    
+    -- afișez noul salariu
+    dbms_output.put_line('Salariu Nou: ' || salariu);
+    dbms_output.new_line();
+  end loop;
+END;
+/
+
+select *
+from emp_lgd
+where employee_id in (132, 136, 128, 135, 127);
+
+rollback;
+
+
+-- SAU
+DECLARE
+  TYPE T_VEC_ANGAJATI IS table OF EMP_LGD%ROWTYPE;
+  T T_VEC_ANGAJATI;
+  V_salary_temp EMP_LGD.salary%type;
+BEGIN
+  SELECT *
+  BULK COLLECT INTO T
+  FROM (SELECT * FROM 
+                      (SELECT * 
+                       FROM EMP_LGD
+                       ORDER BY SALARY)
+        WHERE ROWNUM <= 5);
+        
+  FOR I IN T.FIRST..T.LAST loop 
+    DBMS_OUTPUT.PUT_LINE('Salariu Initial pentru ' || I ||
+                         ' ' || T(I).SALARY);
+    
+    UPDATE EMP_LGD
+    SET SALARY = 1.05 * SALARY
+    WHERE EMPLOYEE_ID = T(I).EMPLOYEE_ID
+    RETURNING SALARY
+    INTO V_SALARY_TEMP;
+    
+    DBMS_OUTPUT.PUT_LINE('Salariu Actual pentru '|| I ||
+                         ' ' || V_SALARY_TEMP);
+    DBMS_OUTPUT.NEW_LINE;
+  end loop;
+END;
+/
+
+
+
+
+
+-- Ex2
+create or replace type tip_orase_lgd is varray(50) of varchar(30);
+/
+create table excursie_lgd (cod_excursie number(4) primary key,
+                           denumire varchar2(20), orase tip_orase_lgd,
+                           status varchar2(10));
+
+-- a)
+insert into excursie_lgd values (1, 'A', tip_orase_lgd('Viena',
+                                 'Roma', 'Budapesta', 'Paris'), 'Disponibil');
+insert into excursie_lgd values (2, 'B', tip_orase_lgd('Bucuresti',
+                                 'Ploiesti', 'Sinaia', 'Brasov', 'Buzau'), 
+                                 'Disponibil');    
+insert into excursie_lgd values (3, 'C', tip_orase_lgd('Seoul', 'Busan', 'Tokyo'), 
+                                 'Anulat');
+insert into excursie_lgd values (4, 'D', tip_orase_lgd('St Petersburg', 'Moscova',
+                                 'Varsovia'), 'Anulat');
+insert into excursie_lgd values (5, 'E', tip_orase_lgd('New York', 'Las Vegas'), 
+                                 'Disponibil');
+
+
+
+-- b)
+---- i)
+DECLARE
+  v_orase    excursie_lgd.orase%type;
+  v_cod      excursie_lgd.cod_excursie%type := &cod;
+  nume_oras  varchar2(30) := '&nume';
+  aux        varchar2(30);
+BEGIN
+  -- selectăm orașele excursiei introduse
+  select orase
+  into v_orase
+  from excursie_lgd
+  where cod_excursie = v_cod;
+  
+  -- add orașul nou (ultimul în listă)
+  v_orase.extend;
+  v_orase(v_orase.last) := nume_oras;
+  
+  -- update în tabel
+  update excursie_lgd 
+  set orase = v_orase
+  where cod_excursie = v_cod;
+END;
+/
+
+
+---- ii)
+DECLARE
+  v_orase    excursie_lgd.orase%type;
+  v_cod      excursie_lgd.cod_excursie%type := &cod;
+  nume_oras  varchar2(30) := '&nume';
+  aux        varchar2(30);
+BEGIN
+  -- selectăm orașele excursiei introduse
+  select orase
+  into v_orase
+  from excursie_lgd
+  where cod_excursie = v_cod;
+  
+  -- add orașul nou (pe a doua poziție)
+  v_orase.extend;
+  aux := v_orase(2);
+  v_orase(2) := nume_oras;
+  for i in 3..(v_orase.last) loop
+    nume_oras := v_orase(i);
+    v_orase(i) := aux;
+    aux := nume_oras;
+  end loop;
+  
+  -- update în tabel
+  update excursie_lgd 
+  set orase = v_orase
+  where cod_excursie = v_cod;
+END;
+/
+
+
+---- iii)
+DECLARE
+  v_orase     excursie_lgd.orase%type;
+  v_cod       excursie_lgd.cod_excursie%type := &cod;
+  nume_oras1  varchar2(30) := '&nume1';
+  nume_oras2  varchar2(30) := '&nume2';
+BEGIN
+  -- selectăm orașele excursiei introduse
+  select orase
+  into v_orase
+  from excursie_lgd
+  where cod_excursie = v_cod;
+  
+  -- facem inversare
+  for i in 1..v_orase.last loop
+    if v_orase(i) = nume_oras1 then
+      v_orase(i) := nume_oras2;
+    elsif v_orase(i) = nume_oras2 then
+      v_orase(i) := nume_oras1;
+    end if;
+  end loop;
+  
+  -- update în tabel
+  update excursie_lgd 
+  set orase = v_orase
+  where cod_excursie = v_cod;
+END;
+/
+
+
+---- iv)
+DECLARE
+  v_orase     excursie_lgd.orase%type;
+  orase_copie excursie_lgd.orase%type := tip_orase_lgd();
+  v_cod       excursie_lgd.cod_excursie%type := &cod;
+  nume_oras   varchar2(30) := '&nume';
+  pozitie     number;
+BEGIN
+  -- selectăm orașele excursiei introduse
+  select orase
+  into v_orase
+  from excursie_lgd
+  where cod_excursie = v_cod;
+  
+  -- luăm poziția orașului
+  for i in 1..v_orase.last loop
+    if v_orase(i) = nume_oras then
+      pozitie := i;
+    end if;
+  end loop;
+
+  -- copiem elementele dintr-un vector în altul, sărind peste oraș
+  for i in 1..(pozitie - 1) loop
+    orase_copie.extend;
+    orase_copie(i) := v_orase(i);
+  end loop;
+  for i in (pozitie + 1)..v_orase.last loop
+    orase_copie.extend;
+    orase_copie(i - 1) := v_orase(i);
+  end loop;
+  
+  -- update în tabel
+  update excursie_lgd 
+  set orase = orase_copie
+  where cod_excursie = v_cod;
+END;
+/
+
+
+
+-- c)
+DECLARE
+  v_orase    excursie_lgd.orase%type;
+  v_cod      excursie_lgd.cod_excursie%type := &cod;
+BEGIN
+  -- selectăm orașele excursiei introduse
+  select orase
+  into v_orase
+  from excursie_lgd
+  where cod_excursie = v_cod;
+  
+  dbms_output.put_line('Nr Orase Vizitate: ' || v_orase.count);
+  dbms_output.new_line;
+  
+  for i in v_orase.first..v_orase.last loop
+    dbms_output.put_line(v_orase(i));
+  end loop;
+END;
+/
+
+
+
+-- d)
+DECLARE
+  type vector is varray(30) of number(2);
+  
+  v_orase    excursie_lgd.orase%type;
+  v_ids      vector := vector();
+BEGIN
+  -- selectăm id-urile tuturor excursiilor
+  select cod_excursie
+  bulk collect into v_ids
+  from excursie_lgd;
+  
+  -- pt fiecare cod de excursie, afișez listă orașe
+  for i in v_ids.first..v_ids.last loop
+    select orase
+    into v_orase
+    from excursie_lgd
+    where cod_excursie = v_ids(i);
+    
+    for j in v_orase.first..v_orase.last loop
+      dbms_output.put_line(v_orase(j));
+    end loop;
+    
+    dbms_output.new_line;
+  end loop;
+END;
+/
+
+
+
+-- e)
+DECLARE
+  type vector is varray(30) of number(2);
+  
+  v_orase    excursie_lgd.orase%type;
+  v_ids      vector := vector();
+  ids_nou    vector := vector();
+  minim      number := 999999999;
+BEGIN
+  -- selectăm id-urile tuturor excursiilor
+  select cod_excursie
+  bulk collect into v_ids
+  from excursie_lgd;
+  
+  -- minimul de orașe vizitate
+  for i in 1..5 loop
+    select orase
+    into v_orase
+    from excursie_lgd
+    where cod_excursie = v_ids(i);
+    
+    if minim > v_orase.count then
+      minim := v_orase.count;
+    end if;
+  end loop;
+  
+  -- actualizez de la disponibil la anulat
+  for i in 1..5 loop
+    select orase
+    into v_orase
+    from excursie_lgd
+    where cod_excursie = v_ids(i);
+    
+    if minim = v_orase.count then
+      update excursie_lgd
+      set status = 'Anulat'
+      where cod_excursie = v_ids(i);
+    end if;
+  end loop;
+END;
+/
+
+select *
+from excursie_lgd;
+
+drop table excursie_lgd;
+drop type tip_oras_lgd;

@@ -1,0 +1,25 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.ColumnProxySqlServer parentClass="oracle.dbtools.crest.model.design.storage.ColumnProxy">
+   <property name="asIdentity" dataType="boolean" defaultValue="false" xmlName="asIdentity" xmlType="element" getter="getAsIdentity" setter="setAsIdentity" reffered="false"/>
+   <property name="asIdentityChanged" dataType="boolean" defaultValue="false" xmlName="asIdentityChanged" xmlType="element" getter="isAsIdentityChanged" setter="setAsIdentityChanged" reffered="false"/>
+   <property name="collation" dataType="java.lang.String" defaultValue="" xmlName="collation" xmlType="element" getter="getCollation" setter="setCollation" reffered="false"/>
+   <property name="computed" dataType="boolean" defaultValue="false" xmlName="computed" xmlType="element" getter="getComputed" setter="setComputed" reffered="false"/>
+   <property name="computedChanged" dataType="boolean" defaultValue="false" xmlName="computedChanged" xmlType="element" getter="isComputedChanged" setter="setComputedChanged" reffered="false"/>
+   <property name="defaultObject" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.DefaultSqlServer" defaultValue="" xmlName="defaultObject" xmlType="element" getter="getDefaultObject" setter="setDefaultObject" reffered="true"/>
+   <property name="defaultValue" dataType="java.lang.String" defaultValue="" xmlName="defaultValue" xmlType="element" getter="getDefaultValue" setter="setDefaultValue" reffered="false"/>
+   <property name="defineDefault" dataType="boolean" defaultValue="false" xmlName="defineDefault" xmlType="element" getter="getDefineDefault" setter="setDefineDefault" reffered="false"/>
+   <property name="formula" dataType="java.lang.String" defaultValue="" xmlName="formula" xmlType="element" getter="getFormula" setter="setFormula" reffered="false"/>
+   <property name="formulaChanged" dataType="boolean" defaultValue="false" xmlName="formulaChanged" xmlType="element" getter="isFormulaChanged" setter="setFormulaChanged" reffered="false"/>
+   <property name="identityForReplication" dataType="java.lang.String" defaultValue="NO" xmlName="identityForReplication" xmlType="element" getter="getIdentityForReplication" setter="setIdentityForReplication" reffered="false"/>
+   <property name="identityIncrement" dataType="int" defaultValue="1" xmlName="identityIncrement" xmlType="element" getter="getIdentityIncrement" setter="setIdentityIncrement" reffered="false"/>
+   <property name="identitySeed" dataType="java.lang.String" defaultValue="1" xmlName="identitySeed" xmlType="element" getter="getIdentitySeed" setter="setIdentitySeed" reffered="false"/>
+   <property name="props" dataType="java.lang.String" defaultValue="" xmlName="props" xmlType="element" getter="getProps" setter="setProps" reffered="false" listOfRefs="true"/>
+   <property name="rowGuidCol" dataType="java.lang.String" defaultValue="NO" xmlName="rowGuidCol" xmlType="element" getter="getRowGuidCol" setter="setRowGuidCol" reffered="false"/>
+   <roproperty name="colno" dataType="int" getter="getColno"/>
+   <roproperty name="comments" dataType="java.lang.String" getter="getComments"/>
+   <roproperty name="dataTypeName" dataType="java.lang.String" getter="getDataTypeName"/>
+   <bb_roproperty name="extPropsSet" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.ColumnProxySqlServer$InlineList" getter="getExtPropsSet"/>
+   <roproperty name="nullsAllowed" dataType="boolean" getter="getNullsAllowed"/>
+   <roproperty name="tableProxy" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.TableProxySqlServer" getter="getTableProxy"/>
+   <roproperty name="userDefinedType" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.UserDefinedTypeSqlServer" getter="getUserDefinedType"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.ColumnProxySqlServer>

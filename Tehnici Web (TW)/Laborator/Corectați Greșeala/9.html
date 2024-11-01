@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Fisier de baza</title>
+		<style>
+		</style>
+		<script>
+			function pa_pa(){
+				alert("Pa pa");
+			}
+			window.onload=function(){
+				var btn1=document.getElementById("b_1");
+				btn1.onclick= function() {alert("Salut");}
+				
+				var btn2=document.getElementById("b_2");
+				btn2.onclick=pa_pa;
+			}
+		</script>
+	</head>
+	<body>
+		<p>Nota: in exercitiile de tip "corectati gresala", desi nu e recomandat, s-au pus css-ul si script-ul in fisierul html strict pentru simplitate (downloadarea unui singur fisier vs 3). Totusi retineti ca indicat este sa folositi fisiere externe in teme/proiecte/teste.</p>
+		<hr/>
+		<p>La click pe butonul 1 dorim sa dea un alert cu textul "Salut" iar la click pe butonul 2 un alert cu textul "Pa pa". Totusi nu se intampla asta. De ce? Corectati. Rezolvarea trebuie sa includa folosirea functiei pa_pa() la click pe butonul 2.</p>
+		<button id="b_1">1</button>
+		<button id="b_2">2</button>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+﻿@model ProiectDAW.Models.Director
+@{
+    ViewBag.Title = "Detalii Director: ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /><br /><br /><br />
+<h2 style="font-family: 'Adobe Devanagari'; border-bottom: 5px double aquamarine; display:inline">@ViewBag.Title: @Model.Nume @Model.Prenume</h2>
+
+@using (Html.BeginForm(actionName: "Edit", controllerName: "Director", method: FormMethod.Get, routeValues: new { id = Model.DirectorId }, htmlAttributes: new { style = "display:inline; float: right;" }))
+{
+    <button class="btn btn-warning">Edit</button>
+}
+
+<br />
+<br />
+
+
+<div class="list-group">
+    <a class="list-group-item">
+        <h4 class="list-group-item-heading">@Html.Label("Nume", "Nume:")</h4>
+        <p class="list-group-item-text" style="color: white;">@Model.Nume</p>
+    </a>
+    <a class="list-group-item">
+        <h4 class="list-group-item-heading">@Html.Label("Prenume", "Prenume:")</h4>
+        <p class="list-group-item-text" style="color: white;">@Model.Prenume</p>
+    </a>
+    <a class="list-group-item">
+        <h4 class="list-group-item-heading">@Html.Label("DataNastere", "Data Nașterii:")</h4>
+        <p class="list-group-item-text" style="color: white;">@Model.DataNastere</p>
+    </a>
+    <a class="list-group-item">
+        <h4 class="list-group-item-heading">@Html.Label("Varsta", "Vârstă:")</h4>
+        <p class="list-group-item-text" style="color: white;">@Model.Varsta</p>
+    </a>
+</div>
+
+
+@using (Html.BeginForm(actionName: "Index", controllerName: "Director", method: FormMethod.Get, htmlAttributes: new { style = "display:inline" }))
+{
+    <button class="btn btn-primary">Înapoi</button>
+}
+@using (Html.BeginForm(actionName: "Delete", controllerName: "Director", method: FormMethod.Post, routeValues: new { id = Model.DirectorId }, htmlAttributes: new { style = "display:inline; float: right;" }))
+{
+    @Html.HttpMethodOverride(HttpVerbs.Delete)
+    <button class="btn btn-danger" type="submit">Delete</button>
+}

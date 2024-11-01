@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.multidimensional.Hierarchy parentClass="oracle.dbtools.crest.model.design.multidimensional.AbstractMDObject">
+   <property name="defaultHierarchy" dataType="boolean" defaultValue="" xmlName="defaultHierarchy" xmlType="element" getter="isDefaultHierarchy" setter="setDefaultHierarchy" reffered="false"/>
+   <aa_property name="dimension" dataType="oracle.dbtools.crest.model.design.multidimensional.Dimension" defaultValue="" xmlName="dimension" xmlType="element" getter="getDimension" setter="setDimension" reffered="true"/>
+   <property name="linkToDimension" dataType="oracle.dbtools.crest.model.design.multidimensional.Link" defaultValue="" xmlName="linkToDimension" xmlType="element" getter="getLinkToDimension" setter="applyLinkToDimension" reffered="true"/>
+   <collection name="usedLevels" dataType="java.util.List" xmlName="usedLevels" itemXmlName="usedLevel" itemIsRef="true" getter="getLevels" nativeList="true" orderTheList="true"/>
+   <collection name="usedLinks" dataType="java.util.List" xmlName="usedLinks" itemXmlName="usedLink" itemIsRef="true" getter="getLevels" nativeList="true" orderTheList="true"/>
+   <roproperty name="equalToLevelList" dataType="boolean" getter="isEqualToLevelList"/>
+   <roproperty name="last" dataType="boolean" getter="isLast"/>
+   <roproperty name="raggedHierarchy" dataType="boolean" getter="isRaggedHierarchy"/>
+   <roproperty name="valueBasedHierarchy" dataType="boolean" getter="isValueBasedHierarchy"/>
+   <roproperty name="levels" dataType="interface java.util.List" getter="getLevels"/>
+   <roproperty name="links" dataType="interface java.util.List" getter="getLinks"/>
+   <roproperty name="pathTo" dataType="interface java.util.List" getter="getPathTo"/>
+</oracle.dbtools.crest.model.design.multidimensional.Hierarchy>

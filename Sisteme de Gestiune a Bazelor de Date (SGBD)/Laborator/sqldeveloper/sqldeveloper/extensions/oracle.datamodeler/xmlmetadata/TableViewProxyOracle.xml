@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.TableViewProxyOracle parentClass="oracle.dbtools.crest.model.design.storage.TableViewProxy">
+   <property name="checkOptionName" dataType="java.lang.String" defaultValue="" xmlName="checkOptionName" xmlType="element" getter="getCheckOptionName" setter="setCheckOptionName" reffered="false"/>
+   <property name="force" dataType="java.lang.String" defaultValue="NO" xmlName="force" xmlType="element" getter="getForce" setter="setForce" reffered="false"/>
+   <aa_property name="oidAttributes" dataType="java.lang.String" defaultValue="" xmlName="oidAttributes" xmlType="element" getter="getOidAttributes" setter="setOidAttributes" reffered="false"/>
+   <property name="useOID" dataType="java.lang.String" defaultValue="" xmlName="useOID" xmlType="element" getter="getUseOID" setter="setUseOID" reffered="false"/>
+   <property name="user" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserOracle" defaultValue="" xmlName="user" xmlType="element" getter="getUser" setter="setUser" reffered="true"/>
+   <property name="readOnly" dataType="java.lang.String" defaultValue="NO" xmlName="readOnly" xmlType="element" getter="getViewReadOnly" setter="setViewReadOnly" reffered="false"/>
+   <roproperty name="basedOnStructuredType" dataType="java.lang.String" getter="getBasedOnStructuredType"/>
+   <roproperty name="columnProxyByName" dataType="oracle.dbtools.crest.model.design.storage.oracle.ColumnProxyOracle" getter="getColumnProxyByName"/>
+</oracle.dbtools.crest.model.design.storage.oracle.TableViewProxyOracle>

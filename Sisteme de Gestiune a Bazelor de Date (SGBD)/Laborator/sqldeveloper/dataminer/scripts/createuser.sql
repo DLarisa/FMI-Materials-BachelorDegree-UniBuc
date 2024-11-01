@@ -1,0 +1,27 @@
+-- Usage @createuser.sql <P1>
+--    P1: Create Dataminer User account
+-- Example: @createuser.sql dmuser dmuser
+
+SET SERVEROUTPUT ON;
+
+DEFINE USER_NAME = &&1
+DEFINE USER_PASS = &&2
+
+-- USER SQL
+CREATE USER "&USER_NAME" IDENTIFIED BY "&USER_PASS"
+DEFAULT TABLESPACE "DMUSER"
+TEMPORARY TABLESPACE "TEMP";
+
+-- ROLES
+GRANT "CONNECT" TO "&USER_NAME";
+
+-- SYSTEM PRIVILEGES
+
+-- QUOTAS
+ALTER USER "&USER_NAME" QUOTA UNLIMITED ON "DMUSER";
+
+@@usergrants.sql &USER_NAME
+
+commit;
+
+exit;

@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.ListStorageTemplatePartitionOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="dataSegmentCompression" dataType="java.lang.String" defaultValue="" xmlName="dataSegmentCompression" xmlType="element" getter="getDataSegmentCompression" setter="setDataSegmentCompression" reffered="false"/>
+   <roproperty name="partOfStorageTable" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableProxyOracle" getter="getPartOfStorageTable"/>
+   <roproperty name="subPartitionOf" dataType="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle" getter="getSubPartitionOf"/>
+   <property name="tablespace" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle" defaultValue="" xmlName="tablespace" xmlType="element" getter="getTablespace" setter="setTablespace" reffered="true"/>
+   <property name="valueList" dataType="java.lang.String" defaultValue="" xmlName="valueList" xmlType="element" getter="getValueList" setter="setValueList" reffered="false"/>
+   <collection name="lobs" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="lobs" itemXmlName="Lob" getter="getLobs" createItem="createLob"/>
+   <collection name="localIndexProperties" dataType="interface java.util.List" xmlName="localIndexProperties" itemXmlName="LocalIndexProperties" getter="getLocalIndexProperties" createItem="createLocalIndexProperties"/>
+</oracle.dbtools.crest.model.design.storage.oracle.ListStorageTemplatePartitionOracle>

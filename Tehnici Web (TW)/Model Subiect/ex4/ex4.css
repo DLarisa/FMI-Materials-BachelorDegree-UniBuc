@@ -1,0 +1,49 @@
+.d1{
+	position:absolute;
+	width:10px;
+	border:1px solid black;
+	background-color:green;
+}
+
+
+#a{
+	top:20px;
+	left:40px;
+	height:120px;
+}
+
+#b{
+	top:30px;
+	left:5px;
+	height:10px;
+}
+
+#c{
+	top:40px;
+	left:105px;
+	height:50px;
+}
+
+#d{
+	top:10px;
+	left:245px;
+	height:170px;
+}
+
+#e{
+	top:0px;
+	left:200px;
+	height:40px;
+}
+
+#f{
+	top:30px;
+	left:215px;
+	height:37px;
+}
+
+#g{
+	top:20px;
+	left:400px;
+	height:55px;
+}

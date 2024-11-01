@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.db2.v80.TableSpaceDB2v80 parentClass="oracle.dbtools.crest.model.design.storage.db2.TableSpaceDB2">
+   <property name="partTable" dataType="oracle.dbtools.crest.model.design.storage.db2.v80.TableProxyDB2v80" defaultValue="" xmlName="partTable" xmlType="element" getter="getPartTable" setter="setPartTable" reffered="true"/>
+</oracle.dbtools.crest.model.design.storage.db2.v80.TableSpaceDB2v80>

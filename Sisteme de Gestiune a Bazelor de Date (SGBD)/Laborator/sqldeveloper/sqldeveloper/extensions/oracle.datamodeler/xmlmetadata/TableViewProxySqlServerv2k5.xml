@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.TableViewProxySqlServerv2k5 parentClass="oracle.dbtools.crest.model.design.storage.sqlserver.TableViewProxySqlServer">
+   <collection name="synonyms" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="synonyms" itemXmlName="Synonym" getter="getSynonyms" createItem="createSynonym"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.TableViewProxySqlServerv2k5>

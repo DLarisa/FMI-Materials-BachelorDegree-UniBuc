@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.businessinfo.BIPhone parentClass="oracle.dbtools.crest.model.design.DesignObject">
+   <property name="phoneNumber" dataType="java.lang.String" defaultValue="" xmlName="phoneNumber" xmlType="element" getter="getPhoneNumber" setter="setPhoneNumber" reffered="false"/>
+   <property name="phoneType" dataType="java.lang.String" defaultValue="" xmlName="phoneType" xmlType="element" getter="getPhoneType" setter="setPhoneType" reffered="false"/>
+   <roproperty name="contacts" dataType="interface java.util.List" getter="getContacts"/>
+</oracle.dbtools.crest.model.businessinfo.BIPhone>

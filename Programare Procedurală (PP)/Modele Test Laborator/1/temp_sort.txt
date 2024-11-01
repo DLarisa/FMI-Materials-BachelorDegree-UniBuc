@@ -1,0 +1,7 @@
+Brasov 15.01
+Sinaia 20.10
+Bucuresti 22.71
+Campina 26.00
+Constanta 27.36
+Mamaia 27.36
+Ilfov 27.36

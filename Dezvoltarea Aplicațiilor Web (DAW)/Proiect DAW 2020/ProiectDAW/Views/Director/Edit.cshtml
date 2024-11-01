@@ -1,0 +1,46 @@
+﻿@model ProiectDAW.Models.Director
+@{
+    ViewBag.Title = "Editare Informații Director";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<h2 style="font-family: 'Adobe Devanagari';">@ViewBag.Title: @Model.Nume @Model.Prenume</h2>
+
+@using (Html.BeginForm(actionName: "Edit", controllerName: "Director", method: FormMethod.Post, htmlAttributes: new { style = "display:inline" }))
+{
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+    @Html.HiddenFor(f => f.DirectorId)
+
+
+    @Html.Label("Nume", "Nume Director:")
+    @Html.EditorFor(f => f.Nume, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(f => f.Nume, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("Prenume", "Prenume Director:")
+    @Html.EditorFor(f => f.Prenume, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(f => f.Prenume, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("DataNastere", "Data Nașterii:")
+    @Html.EditorFor(f => f.DataNastere, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(f => f.DataNastere, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("Varsta", "Vârstă:")
+    @Html.EditorFor(f => f.Varsta, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(f => f.Varsta, "", new { @class = "text-danger" })
+    <br />
+
+    <button class="btn btn-success" type="submit">Update</button>
+}
+
+
+@using (Html.BeginForm(actionName: "Index", controllerName: "Director", method: FormMethod.Get, htmlAttributes: new { style = "display:inline; float: right" }))
+{
+    <button class="btn btn-primary">Înapoi</button>
+}

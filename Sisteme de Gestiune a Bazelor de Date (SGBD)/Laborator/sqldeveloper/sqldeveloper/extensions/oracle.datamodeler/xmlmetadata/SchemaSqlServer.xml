@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.SchemaSqlServer parentClass="oracle.dbtools.crest.model.design.storage.sqlserver.AbstractStorageObjectSqlServer">
+   <property name="owner" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.UserSqlServer" defaultValue="" xmlName="owner" xmlType="element" getter="getOwner" setter="setOwner" reffered="true"/>
+   <property name="database" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.DataBaseSqlServer" defaultValue="" xmlName="database" xmlType="element" getter="getDatabase" setter="setDatabase" reffered="true"/>
+   <property name="uid" dataType="java.lang.String" defaultValue="" xmlName="uid" xmlType="element" getter="getUid" setter="setUid" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.SchemaSqlServer>

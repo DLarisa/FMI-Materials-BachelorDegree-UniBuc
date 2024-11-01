@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.db2.TableSpaceDB2 parentClass="oracle.dbtools.crest.model.design.storage.db2.DataBaseSpaceDB2">
+   <property name="ccsid" dataType="java.lang.String" defaultValue="" xmlName="ccsid" xmlType="element" getter="getCcsid" setter="setCcsid" reffered="false"/>
+   <property name="close" dataType="boolean" defaultValue="true" xmlName="close" xmlType="element" getter="isClose" setter="setClose" reffered="false"/>
+   <property name="clustered" dataType="java.lang.String" defaultValue="NO" xmlName="clustered" xmlType="element" getter="getClustered" setter="setClustered" reffered="false"/>
+   <property name="compress" dataType="boolean" defaultValue="false" xmlName="compress" xmlType="element" getter="isCompress" setter="setCompress" reffered="false"/>
+   <property name="compressionPercentage" dataType="int" defaultValue="0" xmlName="compressionPercentage" xmlType="element" getter="getCompressionPercentage" setter="setCompressionPercentage" reffered="false"/>
+   <property name="compressionRatio" dataType="int" defaultValue="0" xmlName="compressionRatio" xmlType="element" getter="getCompressionRatio" setter="setCompressionRatio" reffered="false"/>
+   <property name="dsSize" dataType="java.lang.String" defaultValue="" xmlName="dsSize" xmlType="element" getter="getDsSize" setter="setDsSize" reffered="false"/>
+   <property name="fragmentationPCT" dataType="int" defaultValue="10" xmlName="fragmentationPCT" xmlType="element" getter="getFragmentationPCT" setter="setFragmentationPCT" reffered="false"/>
+   <property name="grantOption" dataType="java.lang.String" defaultValue="NO" xmlName="grantOption" xmlType="element" getter="getGrantOption" setter="setGrantOption" reffered="false"/>
+   <property name="loblogging" dataType="boolean" defaultValue="true" xmlName="loblogging" xmlType="element" getter="isLobLogging" setter="setLobLogging" reffered="false"/>
+   <property name="lockMax" dataType="int" defaultValue="0" xmlName="lockMax" xmlType="element" getter="getLockMax" setter="setLockMax" reffered="false"/>
+   <property name="lockPart" dataType="boolean" defaultValue="false" xmlName="lockPart" xmlType="element" getter="isLockPart" setter="setLockPart" reffered="false"/>
+   <property name="lockSize" dataType="java.lang.String" defaultValue="ANY" xmlName="lockSize" xmlType="element" getter="getLockSize" setter="setLockSize" reffered="false"/>
+   <property name="maxRows" dataType="int" defaultValue="0" xmlName="maxRows" xmlType="element" getter="getMaxRows" setter="setMaxRows" reffered="false"/>
+   <property name="nactive" dataType="int" defaultValue="0" xmlName="nactive" xmlType="element" getter="getNactive" setter="setNactive" reffered="false"/>
+   <property name="numParts" dataType="int" defaultValue="0" xmlName="numParts" xmlType="element" getter="getNumParts" setter="setNumParts" reffered="false"/>
+   <property name="obid" dataType="int" defaultValue="0" xmlName="obid" xmlType="element" getter="getObid" setter="setObid" reffered="false"/>
+   <property name="pageSave" dataType="int" defaultValue="0" xmlName="pageSave" xmlType="element" getter="getPageSave" setter="setPageSave" reffered="false"/>
+   <property name="partIndex" dataType="oracle.dbtools.crest.model.design.storage.db2.IndexProxyDB2" defaultValue="" xmlName="partIndex" xmlType="element" getter="getPartIndex" setter="setPartIndex" reffered="true"/>
+   <property name="psid" dataType="int" defaultValue="0" xmlName="psid" xmlType="element" getter="getPsid" setter="setPsid" reffered="false"/>
+   <property name="segsize" dataType="java.lang.String" defaultValue="0" xmlName="segsize" xmlType="element" getter="getSegSize" setter="setSegSize" reffered="false"/>
+   <property name="storageTemplate" dataType="oracle.dbtools.crest.model.design.storage.db2.StorageTemplateDB2" defaultValue="" xmlName="storageTemplate" xmlType="element" getter="getStorageTemplate" setter="setStorageTemplate" reffered="true"/>
+   <property name="type" dataType="java.lang.String" defaultValue="REGULAR" xmlName="type" xmlType="element" getter="getType" setter="setType" reffered="false"/>
+   <property name="users" dataType="java.lang.String" defaultValue="" xmlName="users" xmlType="element" getter="getUsers" setter="setUsers" reffered="false" listOfRefs="true"/>
+   <collection name="tsPartitions" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="tsPartitions" itemXmlName="Partition" getter="getTSPartitions" createItem="createPartition" />
+   <roproperty name="partitioned" dataType="boolean" getter="isPartitioned"/>
+   <roproperty name="usedInOtherDefinitions" dataType="boolean" getter="isUsedInOtherDefinitions"/>
+   <roproperty name="initialNumberUsedKB" dataType="int" getter="getInitialNumberUsedKB"/>
+   <roproperty name="initialNumberUsedPages" dataType="int" getter="getInitialNumberUsedPages"/>
+   <roproperty name="maxNumberUsedKB" dataType="int" getter="getMaxNumberUsedKB"/>
+   <roproperty name="maxNumberUsedPages" dataType="int" getter="getMaxNumberUsedPages"/>
+   <roproperty name="partitionSet" dataType="oracle.dbtools.crest.model.design.storage.db2.PartitionSetDB2" getter="getPartitionSet"/>
+   <roproperty name="partitions" dataType="[Loracle.dbtools.crest.model.design.storage.db2.PartitionDB2" getter="getPartitions"/>
+   <roproperty name="partitionsList" dataType="interface java.util.List" getter="getPartitionsList"/>
+   <roproperty name="propertyWrapperList" dataType="interface java.util.List" getter="getPropertyWrapperList"/>
+   <roproperty name="proposedpRIQTY" dataType="int" getter="getProposedPRIQTY"/>
+   <roproperty name="proposedQTY" dataType="int" getter="getProposedQTY"/>
+   <roproperty name="proposedQTYRemarks" dataType="java.lang.String" getter="getProposedQTYRemarks"/>
+   <roproperty name="proposedSECQTY" dataType="int" getter="getProposedSECQTY"/>
+   <roproperty name="tsPartitions" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getTSPartitions"/>
+   <roproperty name="tables" dataType="java.util.ArrayList" getter="getTables"/>
+   <roproperty name="userSet" dataType="oracle.dbtools.crest.model.design.storage.db2.TableSpaceDB2$UserSet" getter="getUserSet"/>
+</oracle.dbtools.crest.model.design.storage.db2.TableSpaceDB2>

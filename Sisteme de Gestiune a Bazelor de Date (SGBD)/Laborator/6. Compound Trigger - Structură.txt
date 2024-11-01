@@ -1,0 +1,31 @@
+CREATE OR REPLACE TRIGGER compound_trigger_name
+FOR [INSERT|DELETE]UPDATE [OF column] ON table
+COMPOUND TRIGGER
+   -- Declarative Section (optional)
+   -- Variables declared here have firing-statement duration.
+     
+     --Executed before DML statement
+     BEFORE STATEMENT IS
+     BEGIN
+       NULL;
+     END BEFORE STATEMENT;
+   
+     --Executed before each row change- :NEW, :OLD are available
+     BEFORE EACH ROW IS
+     BEGIN
+       NULL;
+     END BEFORE EACH ROW;
+   
+     --Executed aftereach row change- :NEW, :OLD are available
+     AFTER EACH ROW IS
+     BEGIN
+       NULL;
+     END AFTER EACH ROW;
+   
+     --Executed after DML statement
+     AFTER STATEMENT IS
+     BEGIN
+       NULL;
+     END AFTER STATEMENT;
+
+END compound_trigger_name;

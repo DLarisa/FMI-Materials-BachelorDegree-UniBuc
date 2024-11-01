@@ -1,0 +1,52 @@
+﻿@model lab3_vineri.Models.Book
+
+@{
+    ViewBag.Title = "Details";
+    var summaryNotFoundMsg = "This book has no summary!";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@Html.Label("Title", "Title:")
+<br />
+<p>@Model.Title</p>
+
+@Html.Label("Author", "Author:")
+<br />
+<p>@Model.Author</p>
+@*
+    @Html.Display("Author")
+    @Html.DisplayFor(b => b.Author)
+*@
+
+@Html.Label("Publisher", "Publisher:")
+<br />
+<p>@Model.Publisher.Name</p>
+
+@Html.Label("Publisher", "Contact Info:")
+<br />
+<p>@Model.Publisher.ContactInfo.PhoneNumber</p>
+
+@Html.Label("Summary", "Summary:")
+@if (Model.Summary.IsEmpty())
+{
+    <p>@summaryNotFoundMsg</p>
+}
+else
+{
+    <br />
+    @Html.Display("Summary")
+    <br/>
+}
+
+@if (Model.Genres.Count > 0)
+{
+    @Html.Label("Genres", "Genres:")
+    <br />
+    <ul>
+        @foreach (var genre in Model.Genres)
+        {
+            <li>@genre.Name</li>
+        }
+    </ul>
+}

@@ -1,0 +1,27 @@
+% Problema Adevar / Fals (Cei 3 bastinasi)
+
+% 0=fals, 1=adevarat.
+% si = *.
+% X sau Y = X+Y-X*Y. 
+% not X = 1-X.
+% alta varianta: dam operatiile booleene prin tabelele lor; atunci lucram cu orice constante, nu neaparat 0 si 1
+
+% apartine(_,[]) :- fail.
+apartine(X,[X|_]).
+apartine(X,[_|T]) :- apartine(X,T).
+% nu doar testeaza apartenenta, ci genereaza in primul argument membrii listei din al doilea argument
+
+implica(X,Y,1) :- X=<Y.
+implica(1,0,0).
+
+echivalent(X,X,1).
+echivalent(X,Y,0) :- X=\=Y.
+
+aenunt(A,B,C) :- Y is B*C,echivalent(Y,C,X),echivalent(A,X,1).
+
+benunt(A,B,C) :- Y is A*C,Z is B*C,implica(Z,A,T),U is 1-T,implica(Y,U,X),echivalent(B,X,1).
+
+cenunt(A,B,C) :- Y is 1-B,Z is A+B-A*B,echivalent(Y,Z,X),echivalent(C,X,1).
+
+rezolv(A,B,C) :- apartine(A,[0,1]),apartine(B,[0,1]),apartine(C,[0,1]),aenunt(A,B,C),benunt(A,B,C),cenunt(A,B,C).
+

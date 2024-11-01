@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.TableProxySqlServerv2k5 parentClass="oracle.dbtools.crest.model.design.storage.sqlserver.TableProxySqlServer">
+   <property name="partitionScheme" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.PartitionSchemeSqlServerv2k5" defaultValue="" xmlName="partitionScheme" xmlType="element" getter="getPartitionScheme" setter="setPartitionScheme" reffered="true"/>
+   <property name="partitioningColumn" dataType="oracle.dbtools.crest.model.design.storage.ColumnProxy" defaultValue="" xmlName="partitioningColumn" xmlType="element" getter="getPartitioningColumn" setter="setPartitioningColumn" reffered="true"/>
+   <collection name="synonyms" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="synonyms" itemXmlName="Synonym" getter="getSynonyms" createItem="createSynonym"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.TableProxySqlServerv2k5>

@@ -1,0 +1,29 @@
+<search
+ name="search.oracle.com"
+ description="search.oracle.com powered by Oracle Secure Enterprise Search"
+ method="get"
+ action="http://search.oracle.com/search/search"
+ searchForm="http://search.oracle.com/search/search"
+ queryEncoding='UTF-8'
+ queryCharset='UTF-8'
+>
+
+<input name="keyword" user>
+<input name="default" value="true">
+<input name="start" value="1">
+<input name="nodeid" value="">
+<input name="fid" value="">
+<input name="showSimilarDoc" value="true">
+<input name="group" value="All">
+
+<interpret
+    browserResultType="result"
+    charset="UTF-8"
+    resultListStart='<td colspan="2" class="bodycopy">'
+    resultListEnd="</td>"
+    resultItemStart="<tr>"
+    resultItemEnd="<br>
+<br>"
+>
+
+</search>

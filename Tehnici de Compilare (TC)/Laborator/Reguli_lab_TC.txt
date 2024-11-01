@@ -1,0 +1,54 @@
+Reguli pentru desfasurarea activitatilor de laborator online
+la disciplinele Tehnici de compilare si Compilatoare si translatori:
+
+- Programele se vor scrie doar in limbajele C/C++, versiuni vechi
+    (ex. C++98).
+
+- Fiecare program va fi continut intr-un singur fisier;
+  numele fisierului va contine, separate prin "_":
+    (semi)grupa, nume, prenume, numarul temei; exemplu:
+
+    3412_ionescu_ion_tema2.cpp
+
+  La inceputul fisierului va fi inserat un comentariu cu
+   aceleasi informatii, descriind mai pe larg tema,
+   exemplu:
+
+   // sgr. 3412, Ionescu Ion, Tema2: I.4, Top down
+
+- Programul (fisierul sursa) va folosi doar bibliotecile
+   standard si se va putea compila printr-o comanda simpla,
+   exemplu (folosind gcc sub Linux):
+
+   $gcc -o program 3412_ionescu_ion_tema2.cpp
+
+- Datele de intrare se vor furniza printr-un fisier text
+   dat ca argument in linia de comanda.
+
+Exemplu de testare a temei 1 (folosind gcc sub Linux):
+
+  $gcc -o program 3412_ionescu_ion_tema1.cpp
+  $./program aici.txt
+   identificator: e12
+  literal string: "*////////*"
+  ...
+
+- In cazul temelor 2, pe langa codul sursa al programului
+  se va furniza inca un document (text, pdf, etc.) care sa
+  descrie:
+   * formatul datelor de intrare (structura fisierului text dat
+      ca argument in linia de comanda);
+   * algoritmul implementat in program si referinte privind
+      sursa acestuia (curs, carte, link, etc.).
+  numele documentului va fi identic cu cel al fisierului sursa,
+  mai putin extensia, de exemplu:
+
+    3412_ionescu_ion_tema2.pdf
+
+
+- Toate fisierele se vor trimite la adresa:
+
+   dragulicid@yahoo.com
+
+
+Daniel Dragulici, vineri 13 martie 2020

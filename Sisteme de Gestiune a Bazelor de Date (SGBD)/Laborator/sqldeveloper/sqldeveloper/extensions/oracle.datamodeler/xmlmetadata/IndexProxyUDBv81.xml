@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.udb.v81.IndexProxyUDBv81 parentClass="oracle.dbtools.crest.model.design.storage.udb.IndexProxyUDB">
+   <property name="collectStatistics" dataType="java.lang.String" defaultValue="NONE" xmlName="collectStatistics" xmlType="element" getter="getCollectStatistics" setter="setCollectStatistics" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.udb.v81.IndexProxyUDBv81>

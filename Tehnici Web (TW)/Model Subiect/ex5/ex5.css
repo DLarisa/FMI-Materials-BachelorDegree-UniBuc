@@ -1,0 +1,29 @@
+@keyframes miscare1{
+	100%{
+		top:0px;
+		left:0px;
+		transform:scale(0,0);
+		background:red;
+	}
+}
+
+
+@keyframes miscare2{
+	100%{
+		top:0px;
+		left:0px;
+		transform:rotate(360deg);
+		background:yellow;
+	}
+}
+
+.animat{
+	border:1px solid black;
+	background:blue;
+	width:50px;
+	height:50px;
+	animation-timing-function:linear;
+	animation-iteration-count:1;
+	animation-fill-mode:forwards;
+	animation-duration:7s;
+}

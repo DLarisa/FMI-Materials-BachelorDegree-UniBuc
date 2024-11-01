@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign parentClass="oracle.dbtools.crest.model.design.DesignPart" xmlName="relationalModel">
+   <aa_property name="importTo" dataType="oracle.dbtools.crest.model.design.relational.RelationalDesign" defaultValue="" xmlName="importTo" xmlType="element" getter="getImportTo" setter="setImportTo" reffered="true"/>
+   <property name="selectedRDBMSSite" dataType="oracle.dbtools.crest.model.design.storage.RDBMSSite" defaultValue="" xmlName="selectedRDBMSSite" xmlType="element" getter="getSelectedRDBMSSite" setter="setSelectedRDBMSSite" idTranslatable="true" reffered="true"/>
+   <aa_property name="subviewToNewDesign" dataType="boolean" defaultValue="" xmlName="subviewToNewDesign" xmlType="element" getter="isSubviewToNewDesign" setter="setSubviewToNewDesign" reffered="false"/>
+   <property name="rmExtendedMap" external="true" afterCollection="Diagrams" dataType="oracle.dbtools.crest.model.xtdmapping.RMExtendedMap" defaultValue="" xmlName="rmExtendedMap" xmlType="element" getter="getRMExtendedMap" createItem="getRMExtendedMap" removeItem="clearMappings" reffered="false"/>
+   <collection name="importConnectionStamps" dataType="java.util.List" xmlName="importConnectionStamps" itemXmlName="importConnectionStamp" getter="getImportConnectionStamps" createItem="createImportConnectionStamp"/>
+   <collection name="importDDLFileStamps" dataType="java.util.List" xmlName="importDDLFileStamps" itemXmlName="importDDLFileStamp" getter="getImportDDLFileStamps" createItem="createImportDDLFileStamp"/>
+   <collection external="true" name="Schemas" dataType="oracle.dbtools.crest.model.design.relational.SchemaObjectSet" xmlName="Schemas" itemXmlName="Schema" getter="getSchemaObjectSet" createItem="createSchemaObject"/>
+   <collection external="true" name="Tables" dataType="oracle.dbtools.crest.model.design.relational.TableSet" xmlName="Tables" itemXmlName="Table" getter="getTableSet" createItem="createTable"/>
+   <collection external="true" name="TableViews" dataType="oracle.dbtools.crest.model.design.relational.TableViewSet" xmlName="TableViews" itemXmlName="TableView" getter="getTableViewSet" createItem="createTableView"/>
+   <collection external="true" name="ForeignKeys" dataType="oracle.dbtools.crest.model.design.relational.FKIndexAssociationSet" xmlName="ForeignKeys" itemXmlName="ForeignKey" getter="getFKIndexAssociationSet" createItem="createForeignKey"/>
+   <collection external="true" name="FKArcs" dataType="oracle.dbtools.crest.model.design.relational.FKArcSet" xmlName="FKArcs" itemXmlName="FKArc" getter="getArcSet" createItem="createArc"/>
+   <collection external="true" name="NoteObjects" dataType="oracle.dbtools.crest.model.design.NoteSet" xmlName="NoteObjects" itemXmlName="NoteObject" getter="getNoteSet" createItem="createNote"/>
+   <collection external="true" preProcessMethod="executeTasks" name="Diagrams" dataType="java.util.List" xmlName="Diagrams" itemXmlName="Diagram" getter="getListOfSubviews" createItem="createDesignPartSubView" getItemByID="getSubViewByID"/>
+   <collection external="true" name="StorageDesigns" dataType="oracle.dbtools.crest.model.design.storage.StorageDesignSet" xmlName="StorageDesigns" itemXmlName="StorageDesign" getter="getSorageDesigns" physicalModelItem="true"/>
+   <processing beforeTransformExt="openRelationalModel" />   
+   <roproperty name="arcSet" dataType="oracle.dbtools.crest.model.design.relational.FKArcSet" getter="getArcSet"/>
+   <roproperty name="columnPlaceHolderSet" dataType="oracle.dbtools.crest.model.design.DesignObjectCollection" getter="getColumnPlaceHolderSet"/>
+   <roproperty name="columnSet" dataType="oracle.dbtools.crest.model.design.relational.ColumnSet" getter="getColumnSet"/>
+   <roproperty name="columnViewSet" dataType="oracle.dbtools.crest.model.design.relational.ColumnViewSet" getter="getColumnViewSet"/>
+   <roproperty name="dropableSets" dataType="interface java.util.List" getter="getDropableSets"/>
+   <roproperty name="fkIndexAssociationSet" dataType="oracle.dbtools.crest.model.design.relational.FKIndexAssociationSet" getter="getFKIndexAssociationSet"/>
+   <roproperty name="globalIndexSet" dataType="oracle.dbtools.crest.model.design.relational.GlobalIndexSet" getter="getGlobalIndexSet"/>
+   <roproperty name="indexOnlyPlaceHolderSet" dataType="oracle.dbtools.crest.model.design.DesignObjectCollection" getter="getIndexOnlyPlaceHolderSet"/>
+   <roproperty name="measurementSet" dataType="oracle.dbtools.crest.model.design.MeasurementSet" getter="getMeasurementSet"/>
+   <roproperty name="physicalDesignSubviews" dataType="oracle.dbtools.crest.model.SubViewObjectSet" getter="getPhysicalDesignSubviews"/>
+   <roproperty name="storageDesign" dataType="oracle.dbtools.crest.model.design.storage.StorageDesign" getter="getStorageDesign"/>
+   <roproperty name="storageDesignFactory" dataType="oracle.dbtools.crest.model.design.storage.StorageDesignFactory" getter="getStorageDesignFactory"/>
+   <roproperty name="tableSet" dataType="oracle.dbtools.crest.model.design.relational.TableSet" getter="getTableSet"/>
+   <roproperty name="tableSize" dataType="java.awt.Dimension" getter="getTableSize"/>
+   <roproperty name="tableViewSet" dataType="oracle.dbtools.crest.model.design.relational.TableViewSet" getter="getTableViewSet"/>
+   <roproperty name="tableViewSize" dataType="java.awt.Dimension" getter="getTableViewSize"/>
+   <roproperty name="typeSubstitutionSet" dataType="oracle.dbtools.crest.model.TypeSubstitutionSet" getter="getTypeSubstitutionSet"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

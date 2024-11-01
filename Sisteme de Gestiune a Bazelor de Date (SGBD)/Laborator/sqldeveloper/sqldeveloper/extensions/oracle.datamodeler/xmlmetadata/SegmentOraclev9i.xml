@@ -1,0 +1,2 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v9i.SegmentOraclev9i parentClass="oracle.dbtools.crest.model.design.storage.oracle.SegmentOracle"/>

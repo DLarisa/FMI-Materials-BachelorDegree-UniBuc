@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.db2.v80.ColumnIdentityDB2v80 parentClass="oracle.dbtools.crest.model.design.storage.db2.ColumnIdentityDB2">
+   <property name="order" dataType="java.lang.String" defaultValue="" xmlName="order" xmlType="element" getter="getOrder" setter="setOrder" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.db2.v80.ColumnIdentityDB2v80>

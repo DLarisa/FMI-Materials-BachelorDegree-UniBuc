@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<WorkflowProcess Version="11.2.0.1.9" xmlns="http://xmlns.oracle.com/odmr11">
+    <Nodes>
+        <DataSource Status="Complete" Name="CUSTOMERS" Id="10001">
+            <Icon SHAPE="RoundRectangle" YCOORD="118" XCOORD="82"></Icon>
+            <Messages/>
+            <CacheSettings GenerateCache="false" UseFullData="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10001" as (select /*+ inline */ "CUSTOMERS"."CUST_CREDIT_LIMIT", 
+"CUSTOMERS"."CUST_TOTAL", 
+"CUSTOMERS"."CUST_FIRST_NAME", 
+"CUSTOMERS"."CUST_INCOME_LEVEL", 
+"CUSTOMERS"."CUST_STREET_ADDRESS", 
+"CUSTOMERS"."CUST_CITY_ID", 
+"CUSTOMERS"."CUST_VALID", 
+"CUSTOMERS"."CUST_CITY", 
+"CUSTOMERS"."CUST_EFF_FROM", 
+"CUSTOMERS"."CUST_EFF_TO", 
+"CUSTOMERS"."CUST_LAST_NAME", 
+"CUSTOMERS"."CUST_SRC_ID", 
+"CUSTOMERS"."CUST_STATE_PROVINCE", 
+"CUSTOMERS"."COUNTRY_ID", 
+"CUSTOMERS"."CUST_MAIN_PHONE_NUMBER", 
+"CUSTOMERS"."CUST_STATE_PROVINCE_ID", 
+"CUSTOMERS"."CUST_ID", 
+"CUSTOMERS"."CUST_YEAR_OF_BIRTH", 
+"CUSTOMERS"."CUST_MARITAL_STATUS", 
+"CUSTOMERS"."CUST_TOTAL_ID", 
+"CUSTOMERS"."CUST_POSTAL_CODE", 
+"CUSTOMERS"."CUST_GENDER", 
+"CUSTOMERS"."CUST_EMAIL" 
+from "SH"."CUSTOMERS"  )</SQLExpression>
+            <Attributes>
+                <Attribute Status="Valid" DataType="NUMBER" Name="CUST_CREDIT_LIMIT"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="CUST_TOTAL"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="CUST_FIRST_NAME"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="CUST_INCOME_LEVEL"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="CUST_STREET_ADDRESS"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="CUST_CITY_ID"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="CUST_VALID"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="CUST_CITY"/>
+                <Attribute Status="Valid" DataType="DATE" Name="CUST_EFF_FROM"/>
+                <Attribute Status="Valid" DataType="DATE" Name="CUST_EFF_TO"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="CUST_LAST_NAME"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="CUST_SRC_ID"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="CUST_STATE_PROVINCE"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="COUNTRY_ID"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="CUST_MAIN_PHONE_NUMBER"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="CUST_STATE_PROVINCE_ID"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="CUST_YEAR_OF_BIRTH"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="CUST_MARITAL_STATUS"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="CUST_TOTAL_ID"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="CUST_POSTAL_CODE"/>
+                <Attribute Status="Valid" DataType="CHAR" Name="CUST_GENDER"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="CUST_EMAIL"/>
+            </Attributes>
+            <SourceTable Name="CUSTOMERS" Schema="SH"/>
+        </DataSource>
+        <DataSource Status="Complete" Name="SALES" Id="10002">
+            <Icon SHAPE="RoundRectangle" YCOORD="240" XCOORD="65"></Icon>
+            <Messages/>
+            <CacheSettings GenerateCache="false" UseFullData="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10002" as (select /*+ inline */ "SALES"."PROMO_ID", 
+"SALES"."TIME_ID", 
+"SALES"."CHANNEL_ID", 
+"SALES"."CUST_ID", 
+"SALES"."PROD_ID", 
+"SALES"."QUANTITY_SOLD", 
+"SALES"."AMOUNT_SOLD" 
+from "SH"."SALES"  )</SQLExpression>
+            <Attributes>
+                <Attribute Status="Valid" DataType="NUMBER" Name="PROMO_ID"/>
+                <Attribute Status="Valid" DataType="DATE" Name="TIME_ID"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="CHANNEL_ID"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="PROD_ID"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="QUANTITY_SOLD"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="AMOUNT_SOLD"/>
+            </Attributes>
+            <SourceTable Name="SALES" Schema="SH"/>
+        </DataSource>
+        <CreateTable AutoSpec="Yes" Table="true" TableName="OUTPUT_1_47" Status="Complete" Name="FAST_TABLE" Id="10008">
+            <Icon SHAPE="RoundRectangle" YCOORD="141" XCOORD="393"></Icon>
+            <Messages/>
+            <CacheSettings GenerateCache="false" UseFullData="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10008" AS ( SELECT /*+ inline */  "CUST_CREDIT_LIMIT" ,
+ "CUST_TOTAL" ,
+ "CUST_FIRST_NAME" ,
+ "CUST_INCOME_LEVEL" ,
+ "CUST_STREET_ADDRESS" ,
+ "CUST_CITY_ID" ,
+ "CUST_VALID" ,
+ "CUST_CITY" ,
+ "CUST_EFF_FROM" ,
+ "CUST_EFF_TO" ,
+ "CUST_LAST_NAME" ,
+ "CUST_SRC_ID" ,
+ "CUST_STATE_PROVINCE" ,
+ "COUNTRY_ID" ,
+ "CUST_MAIN_PHONE_NUMBER" ,
+ "CUST_STATE_PROVINCE_ID" ,
+ "CUST_ID" ,
+ "CUST_YEAR_OF_BIRTH" ,
+ "CUST_MARITAL_STATUS" ,
+ "CUST_TOTAL_ID" ,
+ "CUST_POSTAL_CODE" ,
+ "CUST_GENDER" ,
+ "CUST_EMAIL" ,
+ "CUST_ID1" ,
+ "QUANTITY_SOLD_SUM" ,
+ "AMOUNT_SOLD_SUM"  FROM "OUTPUT_1_47")</SQLExpression>
+            <DBAttributes>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="NUMBER" Name="CUST_CREDIT_LIMIT"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="VARCHAR2" Name="CUST_TOTAL"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="VARCHAR2" Name="CUST_FIRST_NAME"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="VARCHAR2" Name="CUST_INCOME_LEVEL"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="VARCHAR2" Name="CUST_STREET_ADDRESS"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="NUMBER" Name="CUST_CITY_ID"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="VARCHAR2" Name="CUST_VALID"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="VARCHAR2" Name="CUST_CITY"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="DATE" Name="CUST_EFF_FROM"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="DATE" Name="CUST_EFF_TO"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="VARCHAR2" Name="CUST_LAST_NAME"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="NUMBER" Name="CUST_SRC_ID"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="VARCHAR2" Name="CUST_STATE_PROVINCE"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="NUMBER" Name="COUNTRY_ID"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="VARCHAR2" Name="CUST_MAIN_PHONE_NUMBER"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="NUMBER" Name="CUST_STATE_PROVINCE_ID"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="NUMBER" Name="CUST_YEAR_OF_BIRTH"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="VARCHAR2" Name="CUST_MARITAL_STATUS"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="NUMBER" Name="CUST_TOTAL_ID"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="VARCHAR2" Name="CUST_POSTAL_CODE"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="CHAR" Name="CUST_GENDER"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="VARCHAR2" Name="CUST_EMAIL"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="NUMBER" Name="CUST_ID1"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="DM_NESTED_NUMERICALS" Name="QUANTITY_SOLD_SUM"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="DM_NESTED_NUMERICALS" Name="AMOUNT_SOLD_SUM"/>
+            </DBAttributes>
+        </CreateTable>
+        <Aggregation Status="Complete" Name="AggregateSALES" Id="10003">
+            <Icon SHAPE="RoundRectangle" YCOORD="255" XCOORD="188"></Icon>
+            <Messages/>
+            <CacheSettings GenerateCache="false" UseFullData="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10003" as (SELECT  t0."CUST_ID", 
+ t0."QUANTITY_SOLD_SUM", 
+ t0."AMOUNT_SOLD_SUM"
+FROM
+  (SELECT "CUST_ID", 
+	CAST(COLLECT(DM_Nested_Numerical(ID1, "QUANTITY_SOLD_SUM")) AS DM_Nested_Numericals  ) "QUANTITY_SOLD_SUM", 
+	CAST(COLLECT(DM_Nested_Numerical(ID1, "AMOUNT_SOLD_SUM")) AS DM_Nested_Numericals  ) "AMOUNT_SOLD_SUM"
+	FROM
+		(SELECT  /*+ NO_TRANSFORM_DISTINCT_AGG */  "CUST_ID",
+		("PROD_ID") ID1,
+		SUM("QUANTITY_SOLD") "QUANTITY_SOLD_SUM",
+		SUM("AMOUNT_SOLD") "AMOUNT_SOLD_SUM"
+		FROM {INPUT_SOURCE} 
+		GROUP BY "CUST_ID", (("PROD_ID")) )
+	GROUP BY "CUST_ID")  t0
+ )</SQLExpression>
+            <AggregationElements>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Status="Valid" DataType="NUMBER" Name="QUANTITY_SOLD"/>
+                        </Attributes>
+                    </Source>
+                    <Output Status="Valid" DataType="DM_NESTED_NUMERICALS" Name="QUANTITY_SOLD_SUM"/>
+                    <AggregationFunction>SUM()</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes>
+                            <Attribute Status="Valid" DataType="NUMBER" Name="PROD_ID"/>
+                        </Attributes>
+                    </SubGroupBy>
+                </AggregationElement>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Status="Valid" DataType="NUMBER" Name="AMOUNT_SOLD"/>
+                        </Attributes>
+                    </Source>
+                    <Output Status="Valid" DataType="DM_NESTED_NUMERICALS" Name="AMOUNT_SOLD_SUM"/>
+                    <AggregationFunction>SUM()</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes>
+                            <Attribute Status="Valid" DataType="NUMBER" Name="PROD_ID"/>
+                        </Attributes>
+                    </SubGroupBy>
+                </AggregationElement>
+            </AggregationElements>
+            <GroupingElement>
+                <Attributes>
+                    <Attribute Annotation="10003" Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+                </Attributes>
+            </GroupingElement>
+            <AutoSpec>Yes</AutoSpec>
+        </Aggregation>
+        <Join UseCartesian="false" Status="Complete" Name="Join" Id="10005">
+            <Icon SHAPE="RoundRectangle" YCOORD="145" XCOORD="280"></Icon>
+            <Messages/>
+            <CacheSettings GenerateCache="false" UseFullData="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10005" as (SELECT /*+ inline */
+"CUSTOMERS"."CUST_CREDIT_LIMIT"
+, "CUSTOMERS"."CUST_TOTAL"
+, "CUSTOMERS"."CUST_FIRST_NAME"
+, "CUSTOMERS"."CUST_INCOME_LEVEL"
+, "CUSTOMERS"."CUST_STREET_ADDRESS"
+, "CUSTOMERS"."CUST_CITY_ID"
+, "CUSTOMERS"."CUST_VALID"
+, "CUSTOMERS"."CUST_CITY"
+, "CUSTOMERS"."CUST_EFF_FROM"
+, "CUSTOMERS"."CUST_EFF_TO"
+, "CUSTOMERS"."CUST_LAST_NAME"
+, "CUSTOMERS"."CUST_SRC_ID"
+, "CUSTOMERS"."CUST_STATE_PROVINCE"
+, "CUSTOMERS"."COUNTRY_ID"
+, "CUSTOMERS"."CUST_MAIN_PHONE_NUMBER"
+, "CUSTOMERS"."CUST_STATE_PROVINCE_ID"
+, "CUSTOMERS"."CUST_ID"
+, "CUSTOMERS"."CUST_YEAR_OF_BIRTH"
+, "CUSTOMERS"."CUST_MARITAL_STATUS"
+, "CUSTOMERS"."CUST_TOTAL_ID"
+, "CUSTOMERS"."CUST_POSTAL_CODE"
+, "CUSTOMERS"."CUST_GENDER"
+, "CUSTOMERS"."CUST_EMAIL"
+, "AggregateSALES"."CUST_ID" "CUST_ID1"
+, "AggregateSALES"."QUANTITY_SOLD_SUM"
+, "AggregateSALES"."AMOUNT_SOLD_SUM"
+
+FROM
+{INPUT_SOURCE:10001} "CUSTOMERS"
+, {INPUT_SOURCE:10003} "AggregateSALES"
+
+WHERE
+"CUSTOMERS"."CUST_ID" = "AggregateSALES"."CUST_ID"
+ )</SQLExpression>
+            <KeyColumns AutoSpec="No">
+                <JoinColumn Type="Inner">
+                    <LeftColumn NodeName="CUSTOMERS" NodeId="10001" Key="Yes" Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+                    <RightColumn NodeName="AggregateSALES" NodeId="10003" Key="Yes" Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+                </JoinColumn>
+            </KeyColumns>
+            <OutputColumns AutoSpec="Yes">
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="NUMBER" Name="CUST_CREDIT_LIMIT"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="VARCHAR2" Name="CUST_TOTAL"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="VARCHAR2" Name="CUST_FIRST_NAME"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="VARCHAR2" Name="CUST_INCOME_LEVEL"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="VARCHAR2" Name="CUST_STREET_ADDRESS"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="NUMBER" Name="CUST_CITY_ID"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="VARCHAR2" Name="CUST_VALID"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="VARCHAR2" Name="CUST_CITY"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="DATE" Name="CUST_EFF_FROM"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="DATE" Name="CUST_EFF_TO"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="VARCHAR2" Name="CUST_LAST_NAME"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="NUMBER" Name="CUST_SRC_ID"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="VARCHAR2" Name="CUST_STATE_PROVINCE"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="NUMBER" Name="COUNTRY_ID"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="VARCHAR2" Name="CUST_MAIN_PHONE_NUMBER"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="NUMBER" Name="CUST_STATE_PROVINCE_ID"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="NUMBER" Name="CUST_YEAR_OF_BIRTH"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="VARCHAR2" Name="CUST_MARITAL_STATUS"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="NUMBER" Name="CUST_TOTAL_ID"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="VARCHAR2" Name="CUST_POSTAL_CODE"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="CHAR" Name="CUST_GENDER"/>
+                <RefDBColumn NodeName="CUSTOMERS" NodeId="10001" Status="Valid" DataType="VARCHAR2" Name="CUST_EMAIL"/>
+                <RefDBColumn NodeName="AggregateSALES" NodeId="10003" Alias="CUST_ID1" Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+                <RefDBColumn NodeName="AggregateSALES" NodeId="10003" Status="Valid" DataType="DM_NESTED_NUMERICALS" Name="QUANTITY_SOLD_SUM"/>
+                <RefDBColumn NodeName="AggregateSALES" NodeId="10003" Status="Valid" DataType="DM_NESTED_NUMERICALS" Name="AMOUNT_SOLD_SUM"/>
+            </OutputColumns>
+        </Join>
+        <ClassificationBuild Status="Complete" Name="PredictGender" Id="10014">
+            <Icon SHAPE="RoundRectangle" YCOORD="139" XCOORD="514"></Icon>
+            <Messages/>
+            <BuildDataSource SourceId="10008"/>
+            <CaseAttributes/>
+            <MiningAttributes>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_CREDIT_LIMIT"/>
+                <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_TOTAL"/>
+                <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_FIRST_NAME"/>
+                <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_INCOME_LEVEL"/>
+                <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_STREET_ADDRESS"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_CITY_ID"/>
+                <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_VALID"/>
+                <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_CITY"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="DATE" Name="CUST_EFF_FROM"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="DATE" Name="CUST_EFF_TO"/>
+                <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_LAST_NAME"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_SRC_ID"/>
+                <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_STATE_PROVINCE"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="COUNTRY_ID"/>
+                <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_MAIN_PHONE_NUMBER"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_STATE_PROVINCE_ID"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_YEAR_OF_BIRTH"/>
+                <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_MARITAL_STATUS"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_TOTAL_ID"/>
+                <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_POSTAL_CODE"/>
+                <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="CHAR" Name="CUST_GENDER"/>
+                <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_EMAIL"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_ID1"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="DM_NESTED_NUMERICALS" Name="QUANTITY_SOLD_SUM"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="DM_NESTED_NUMERICALS" Name="AMOUNT_SOLD_SUM"/>
+            </MiningAttributes>
+            <TestDataSource>
+                <SplitData TestPercent="40.0"/>
+            </TestDataSource>
+            <TargetAttribute Status="Valid" DataType="CHAR" Name="CUST_GENDER"/>
+            <Models>
+                <NaiveBayesModel UseForOutput="true" CreationDate="2011-03-08T12:20:43.000000" Status="Complete" Name="CLAS_NB_1_47" Id="10010">
+                    <InputMiningData MiningUsage="AUTO" DataUsage="AUTO">
+                        <MiningAttributes>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_CREDIT_LIMIT"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_TOTAL"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_FIRST_NAME"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_INCOME_LEVEL"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_STREET_ADDRESS"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_CITY_ID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_VALID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_CITY"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="DATE" Name="CUST_EFF_FROM"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="DATE" Name="CUST_EFF_TO"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_LAST_NAME"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_SRC_ID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_STATE_PROVINCE"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="COUNTRY_ID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_MAIN_PHONE_NUMBER"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_STATE_PROVINCE_ID"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_YEAR_OF_BIRTH"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_MARITAL_STATUS"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_TOTAL_ID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_POSTAL_CODE"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="CHAR" Name="CUST_GENDER"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_EMAIL"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_ID1"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="DM_NESTED_NUMERICALS" Name="QUANTITY_SOLD_SUM"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="DM_NESTED_NUMERICALS" Name="AMOUNT_SOLD_SUM"/>
+                        </MiningAttributes>
+                    </InputMiningData>
+                    <Performance>
+                        <Balanced WeightsTable="ODMR$12_19_24_922360XOJEWNH"/>
+                    </Performance>
+                    <Tuning>
+                        <None/>
+                    </Tuning>
+                    <NaiveBayesAlgo>
+                        <NABS_PAIRWISE_THRESHOLD>0.0</NABS_PAIRWISE_THRESHOLD>
+                        <NABS_SINGLETON_THRESHOLD>0.0</NABS_SINGLETON_THRESHOLD>
+                    </NaiveBayesAlgo>
+                </NaiveBayesModel>
+                <DecisionTreeModel UseForOutput="true" CreationDate="2011-03-08T12:20:31.000000" Status="Complete" Name="CLAS_DT_1_47" Id="10011">
+                    <InputMiningData MiningUsage="AUTO" DataUsage="AUTO">
+                        <MiningAttributes>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_CREDIT_LIMIT"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_TOTAL"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_FIRST_NAME"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_INCOME_LEVEL"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_STREET_ADDRESS"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_CITY_ID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_VALID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_CITY"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="DATE" Name="CUST_EFF_FROM"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="DATE" Name="CUST_EFF_TO"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_LAST_NAME"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_SRC_ID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_STATE_PROVINCE"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="COUNTRY_ID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_MAIN_PHONE_NUMBER"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_STATE_PROVINCE_ID"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_YEAR_OF_BIRTH"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_MARITAL_STATUS"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_TOTAL_ID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_POSTAL_CODE"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="CHAR" Name="CUST_GENDER"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_EMAIL"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_ID1"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="DM_NESTED_NUMERICALS" Name="QUANTITY_SOLD_SUM"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="DM_NESTED_NUMERICALS" Name="AMOUNT_SOLD_SUM"/>
+                        </MiningAttributes>
+                    </InputMiningData>
+                    <Performance>
+                        <Balanced WeightsTable="ODMR$12_19_24_877924GIQSTWW"/>
+                    </Performance>
+                    <Tuning>
+                        <None/>
+                    </Tuning>
+                    <DecisionTreeAlgo>
+                        <TREE_IMPURITY_METRIC>TREE_IMPURITY_GINI</TREE_IMPURITY_METRIC>
+                        <TREE_TERM_MAX_DEPTH>7</TREE_TERM_MAX_DEPTH>
+                        <TREE_TERM_MINPCT_NODE>0.05</TREE_TERM_MINPCT_NODE>
+                        <TREE_TERM_MINPCT_SPLIT>0.1</TREE_TERM_MINPCT_SPLIT>
+                        <TREE_TERM_MINREC_NODE>10</TREE_TERM_MINREC_NODE>
+                        <TREE_TERM_MINREC_SPLIT>20</TREE_TERM_MINREC_SPLIT>
+                    </DecisionTreeAlgo>
+                </DecisionTreeModel>
+                <CSupportVectorMachineModel UseForOutput="true" CreationDate="2011-03-08T12:20:04.000000" Status="Complete" Name="CLAS_SVM_1_47" Id="10012">
+                    <InputMiningData MiningUsage="AUTO" DataUsage="AUTO">
+                        <MiningAttributes>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_CREDIT_LIMIT"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_TOTAL"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_FIRST_NAME"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_INCOME_LEVEL"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_STREET_ADDRESS"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_CITY_ID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_VALID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_CITY"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="DATE" Name="CUST_EFF_FROM"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="DATE" Name="CUST_EFF_TO"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_LAST_NAME"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_SRC_ID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_STATE_PROVINCE"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="COUNTRY_ID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_MAIN_PHONE_NUMBER"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_STATE_PROVINCE_ID"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_YEAR_OF_BIRTH"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_MARITAL_STATUS"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_TOTAL_ID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_POSTAL_CODE"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="CHAR" Name="CUST_GENDER"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_EMAIL"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_ID1"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="DM_NESTED_NUMERICALS" Name="QUANTITY_SOLD_SUM"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="DM_NESTED_NUMERICALS" Name="AMOUNT_SOLD_SUM"/>
+                        </MiningAttributes>
+                    </InputMiningData>
+                    <Performance>
+                        <Balanced WeightsTable="ODMR$12_19_25_059678GDNBVNV"/>
+                    </Performance>
+                    <Tuning>
+                        <None/>
+                    </Tuning>
+                    <CSupportVectorMachineAlgo>
+                        <SVMS_ACTIVE_LEARNING>SVMS_AL_ENABLE</SVMS_ACTIVE_LEARNING>
+                        <SVMS_CONV_TOLERANCE>0.0010</SVMS_CONV_TOLERANCE>
+                    </CSupportVectorMachineAlgo>
+                </CSupportVectorMachineModel>
+                <CGeneralizedLinearModel UseForOutput="true" CreationDate="2011-03-08T12:20:21.000000" Status="Complete" Name="CLAS_GLM_1_47" Id="10013">
+                    <InputMiningData MiningUsage="AUTO" DataUsage="AUTO">
+                        <MiningAttributes>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_CREDIT_LIMIT"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_TOTAL"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_FIRST_NAME"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_INCOME_LEVEL"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_STREET_ADDRESS"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_CITY_ID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_VALID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_CITY"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="DATE" Name="CUST_EFF_FROM"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="DATE" Name="CUST_EFF_TO"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_LAST_NAME"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_SRC_ID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_STATE_PROVINCE"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="COUNTRY_ID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_MAIN_PHONE_NUMBER"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_STATE_PROVINCE_ID"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_YEAR_OF_BIRTH"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_MARITAL_STATUS"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_TOTAL_ID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_POSTAL_CODE"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="CHAR" Name="CUST_GENDER"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_EMAIL"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_ID1"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="DM_NESTED_NUMERICALS" Name="QUANTITY_SOLD_SUM"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="DM_NESTED_NUMERICALS" Name="AMOUNT_SOLD_SUM"/>
+                        </MiningAttributes>
+                    </InputMiningData>
+                    <Performance>
+                        <Balanced WeightsTable="ODMR$12_19_25_181245UHLXFIN"/>
+                    </Performance>
+                    <Tuning>
+                        <None/>
+                    </Tuning>
+                    <CGeneralizedLinearAlgo>
+                        <GLMS_CONF_LEVEL>0.95</GLMS_CONF_LEVEL>
+                    </CGeneralizedLinearAlgo>
+                </CGeneralizedLinearModel>
+            </Models>
+            <TestSettings>
+                <TopNTargets Value="100"/>
+            </TestSettings>
+            <Results>
+                <ClassificationResult Status="Complete" ModelId="10011" CreationDate="2011-03-08T12:21:04.000000" Name="CLAS_DT_1_47">
+                    <TestMetrics CreationDate="2011-03-08T12:21:00.000000" Name="ODMR$12_21_00_419176ENAAYTC"/>
+                    <ConfusionMatrix CreationDate="2011-03-08T12:21:00.000000" Name="ODMR$12_21_00_498056EAKQKEU"/>
+                    <Lifts>
+                        <Lift TargetValue="M" CreationDate="2011-03-08T12:21:00.000000" Name="ODMR$12_21_00_737864WOINLAD"/>
+                        <Lift TargetValue="F" CreationDate="2011-03-08T12:21:01.000000" Name="ODMR$12_21_00_979392CQJTVGB"/>
+                    </Lifts>
+                    <ROCs>
+                        <ROC TargetValue="M" CreationDate="2011-03-08T12:21:02.000000" Name="ODMR$12_21_01_378308DRGJWJY"/>
+                        <ROC TargetValue="F" CreationDate="2011-03-08T12:21:04.000000" Name="ODMR$12_21_02_510941UWPNRAT"/>
+                        <AreaUnderCurve TargetValue="M" Area="0.5656599402427673"/>
+                        <AreaUnderCurve TargetValue="F" Area="0.5656599402427673"/>
+                    </ROCs>
+                </ClassificationResult>
+                <ClassificationResult Status="Complete" ModelId="10010" CreationDate="2011-03-08T12:21:05.000000" Name="CLAS_NB_1_47">
+                    <TestMetrics CreationDate="2011-03-08T12:21:01.000000" Name="ODMR$12_21_01_620936INMCIBK"/>
+                    <ConfusionMatrix CreationDate="2011-03-08T12:21:01.000000" Name="ODMR$12_21_01_652187QXPCCYN"/>
+                    <Lifts>
+                        <Lift TargetValue="M" CreationDate="2011-03-08T12:21:01.000000" Name="ODMR$12_21_01_833959AEJVXHN"/>
+                        <Lift TargetValue="F" CreationDate="2011-03-08T12:21:02.000000" Name="ODMR$12_21_01_940549ATYWSFR"/>
+                    </Lifts>
+                    <ROCs>
+                        <ROC TargetValue="M" CreationDate="2011-03-08T12:21:03.000000" Name="ODMR$12_21_02_037377MDCEUYR"/>
+                        <ROC TargetValue="F" CreationDate="2011-03-08T12:21:04.000000" Name="ODMR$12_21_03_494802CDSFOEL"/>
+                        <AreaUnderCurve TargetValue="M" Area="0.5656599402427673"/>
+                        <AreaUnderCurve TargetValue="F" Area="0.5656599402427673"/>
+                    </ROCs>
+                </ClassificationResult>
+                <ClassificationResult Status="Complete" ModelId="10012" CreationDate="2011-03-08T12:21:07.000000" Name="CLAS_SVM_1_47">
+                    <TestMetrics CreationDate="2011-03-08T12:21:06.000000" Name="ODMR$12_21_06_114000DIIRYBD"/>
+                    <ConfusionMatrix CreationDate="2011-03-08T12:21:06.000000" Name="ODMR$12_21_06_154810FNDKPTP"/>
+                    <Lifts>
+                        <Lift TargetValue="M" CreationDate="2011-03-08T12:21:06.000000" Name="ODMR$12_21_06_362228AWJCGAK"/>
+                        <Lift TargetValue="F" CreationDate="2011-03-08T12:21:06.000000" Name="ODMR$12_21_06_466123PHRTWQD"/>
+                    </Lifts>
+                    <ROCs>
+                        <ROC TargetValue="M" CreationDate="2011-03-08T12:21:07.000000" Name="ODMR$12_21_06_564170HWFRUVU"/>
+                        <ROC TargetValue="F" CreationDate="2011-03-08T12:21:07.000000" Name="ODMR$12_21_07_167972LWZJBZV"/>
+                        <AreaUnderCurve TargetValue="M" Area="0.5541094541549683"/>
+                        <AreaUnderCurve TargetValue="F" Area="0.5543683767318726"/>
+                    </ROCs>
+                </ClassificationResult>
+                <ClassificationResult Status="Complete" ModelId="10013" CreationDate="2011-03-08T12:21:11.000000" Name="CLAS_GLM_1_47">
+                    <TestMetrics CreationDate="2011-03-08T12:21:09.000000" Name="ODMR$12_21_09_630399CZEFSQY"/>
+                    <ConfusionMatrix CreationDate="2011-03-08T12:21:10.000000" Name="ODMR$12_21_09_667608TZIBUJX"/>
+                    <Lifts>
+                        <Lift TargetValue="M" CreationDate="2011-03-08T12:21:10.000000" Name="ODMR$12_21_10_174847ELMISTH"/>
+                        <Lift TargetValue="F" CreationDate="2011-03-08T12:21:10.000000" Name="ODMR$12_21_10_279505ZUQJZBG"/>
+                    </Lifts>
+                    <ROCs>
+                        <ROC TargetValue="M" CreationDate="2011-03-08T12:21:11.000000" Name="ODMR$12_21_10_372820EELVCSU"/>
+                        <ROC TargetValue="F" CreationDate="2011-03-08T12:21:11.000000" Name="ODMR$12_21_11_075002CGJHQOK"/>
+                        <AreaUnderCurve TargetValue="M" Area="0.5545544624328613"/>
+                        <AreaUnderCurve TargetValue="F" Area="0.5548163056373596"/>
+                    </ROCs>
+                </ClassificationResult>
+            </Results>
+        </ClassificationBuild>
+    </Nodes>
+    <Links>
+        <Link Label="From &quot;SALES&quot; to &quot;AggregateSALES&quot;" Name="Link" To="10003" From="10002" Id="10004">
+            <ConnectorGraphicsInfo>
+                <Coordinates YCoordinate="0.0" XCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Label="From &quot;CUSTOMERS&quot; to &quot;Join&quot;" Name="Link" To="10005" From="10001" Id="10006">
+            <ConnectorGraphicsInfo>
+                <Coordinates YCoordinate="0.0" XCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Label="From &quot;AggregateSALES&quot; to &quot;Join&quot;" Name="Link" To="10005" From="10003" Id="10007">
+            <ConnectorGraphicsInfo>
+                <Coordinates YCoordinate="0.0" XCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Label="From &quot;Join&quot; to &quot;FAST_TABLE&quot;" Name="Link" To="10008" From="10005" Id="10009">
+            <ConnectorGraphicsInfo>
+                <Coordinates YCoordinate="0.0" XCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Label="From &quot;FAST_TABLE&quot; to &quot;PredictGender&quot;" Name="Link" To="10014" From="10008" Id="10015">
+            <ConnectorGraphicsInfo>
+                <Coordinates YCoordinate="0.0" XCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+    </Links>
+</WorkflowProcess>

@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.FileGroupSqlServer parentClass="oracle.dbtools.crest.model.design.storage.sqlserver.AbstractStorageObjectSqlServer">
+   <property name="state" dataType="java.lang.String" defaultValue="Read/Write" xmlName="state" xmlType="element" getter="getState" setter="setState" reffered="false"/>
+   <collection name="dataFiles" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="dataFiles" itemXmlName="DataFile" getter="getDatafiles" createItem="createDatafile"/>
+   <roproperty name="database" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.DataBaseSqlServer" getter="getDatabase"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.FileGroupSqlServer>

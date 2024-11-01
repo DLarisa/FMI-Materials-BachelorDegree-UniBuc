@@ -1,0 +1,54 @@
+#container1
+{             
+	text-align: center;                /*centrarea div-ului pe orizontala*/
+	line-height: 200px;                /*centrarea div-ului pe verticala*/
+}
+
+#container2
+{
+	display: flex;        
+	vertical-align: middle;     /*centrarea div-ului pe verticala*/
+	line-height: 200px;
+}
+
+#container3
+{
+	display: flex; 
+	justify-content: center;      /*centrarea div-ului*/
+	align-items: center;
+}
+
+#c0
+{
+	display: inline-block;
+	text-align: center;    /*centrarea textului pe orizontala*/
+	vertical-align: middle;   /*centrarea textului pe verticala*/
+	line-height: 100px;
+}
+
+#c1
+{
+	margin: auto;       /*centrarea div-ului pe orizontala*/
+	top: 25%;           /*centrarea div-ului pe verticala*/
+	position: relative;
+	
+	text-align: center;   /*centrarea textului pe orizontala*/
+	vertical-align: middle;
+	line-height: 100px;     /*centrarea textului pe verticala*/
+	
+}
+
+#c2
+{
+	margin: auto;                   /*centrarea div-ului pe orizontala*/
+	text-align: center;           /*centrarea textului pe orizontala*/
+	vertical-align: middle;        /*centrarea textului pe verticala*/
+	line-height: 100px;
+}
+
+#c3
+{
+	display: flex;
+	justify-content: center;   /*centrarea textului*/
+	align-items: center;	
+}

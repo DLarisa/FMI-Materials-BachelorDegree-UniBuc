@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.udb.v81.ColumnProxyUDBv81 parentClass="oracle.dbtools.crest.model.design.storage.udb.ColumnProxyUDB">
+   <property name="compressSystemDefault" dataType="java.lang.String" defaultValue="NO" xmlName="compressSystemDefault" xmlType="element" getter="getCompressSystemDefault" setter="setCompressSystemDefault" reffered="false"/>
+   <property name="cycle" dataType="java.lang.String" defaultValue="NO" xmlName="cycle" xmlType="element" getter="getCycle" setter="setCycle" reffered="false"/>
+   <property name="maxValue" dataType="java.lang.String" defaultValue="" xmlName="maxValue" xmlType="element" getter="getMaxValue" setter="setMaxValue" reffered="false"/>
+   <property name="minValue" dataType="java.lang.String" defaultValue="" xmlName="minValue" xmlType="element" getter="getMinValue" setter="setMinValue" reffered="false"/>
+   <property name="order" dataType="java.lang.String" defaultValue="NO" xmlName="order" xmlType="element" getter="getOrder" setter="setOrder" reffered="false"/>
+   <property name="queryOptimization" dataType="java.lang.String" defaultValue="ENABLE" xmlName="queryOptimization" xmlType="element" getter="getQueryOptimization" setter="setQueryOptimization" reffered="false"/>
+   <property name="validation" dataType="java.lang.String" defaultValue="ENFORCED" xmlName="validation" xmlType="element" getter="getValidation" setter="setValidation" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.udb.v81.ColumnProxyUDBv81>

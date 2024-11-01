@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>setInterval, setTimeout</title>
+		<style>
+			#coloane{
+				display:flex;
+				width:100%;
+			}
+			#coloane div{
+				margin-left:1em;
+				margin-right:1em;
+				border:1px solid green;
+				width:20%;
+				min-width:150px;
+			}
+			#coloane .continut{
+				border:1px solid grey;
+				overflow:auto;
+				height:300px;
+				margin-top:1em;
+			}
+		</style>
+		<script src="ex_js_timeout_interval.js"></script>
+	</head>
+	<body>
+		<div id="coloane">
+			<div id="interval">
+				<button class="incepe">Incepe</button><button class="opreste">Opreste</button>
+				<div class="continut"></div>
+			</div>
+			<div id="timeout">
+				<button class="incepe">Incepe</button><button class="opreste">Opreste</button>
+				<div class="continut"></div>
+			</div>
+			<div id="timeout_rec">
+				<button class="incepe">Incepe</button><button class="opreste">Opreste</button>
+				<div class="continut"></div>
+			</div>
+		</div>
+	</body>
+</html>

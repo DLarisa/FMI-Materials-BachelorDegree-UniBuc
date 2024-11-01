@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.datatypes.DTReference parentClass="oracle.dbtools.crest.model.design.datatypes.DTRelation">
+   <property name="typeElement" dataType="oracle.dbtools.crest.model.design.datatypes.TypeElement" defaultValue="" xmlName="typeElement" xmlType="element" getter="getTypeElement" setter="setTypeElement" reffered="true"/>
+</oracle.dbtools.crest.model.design.datatypes.DTReference>

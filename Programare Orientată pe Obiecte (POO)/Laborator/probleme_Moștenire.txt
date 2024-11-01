@@ -1,0 +1,290 @@
+
+Module 6. Inheritance Exercises
+
+1.  Make the necessary changes below to indicate that the class
+LargeAnimal is derived from the base class ZooAnimal.  Specify that
+the base class is public.
+
+   class ZooAnimal  
+   {
+    private:
+      char* name;
+      int cageNumber;
+      int weightDate;
+      int weight;
+    public:
+      ZooAnimal (char*, int, int, int); // constructor function
+      inline ~ZooAnimal () { delete [] name; }; // destructor function
+      void changeWeight (int pounds);
+      char* reptName ();
+      int reptWeight ();
+      int daysSinceLastWeighed (int today);
+   };
+
+   class LargeAnimal
+   {
+    private:
+      char* species;
+      float cageMinimumVolume;
+    public:
+      LargeAnimal (char*, int, int, int, float); // constructor function
+      inline ~LargeAnimal () { delete [] species; }; // destructor function
+      float reptCageMinimumVolume ();
+   };
+
+
+2.  On the cout statement for gonzo (last statement below), since the
+gonzo object is of type class LargeAnimal, gonzo's species will be
+returned by the LargeAnimal class' reptName member function.  Make the
+necessary changes so that gonzo's name will be returned instead by the
+ZooAnimal class' reptName member function.
+
+   class ZooAnimal  
+   {
+    private:
+      char* name;
+      int cageNumber;
+      int weightDate;
+      int weight;
+    public:
+      ZooAnimal (char*, int, int, int); // constructor function
+      inline ~ZooAnimal () { delete [] name; }; // destructor function
+      void changeWeight (int pounds);
+      char* reptName ();
+      int reptWeight ();
+      int daysSinceLastWeighed (int today);
+   };
+
+   // -------- member function to return the animal's name
+   char* ZooAnimal::reptName ()
+   {
+    return name;
+   }
+   
+   class LargeAnimal : public ZooAnimal  
+   {
+    private:
+      char* species;
+      float cageMinimumVolume;
+    public:
+      LargeAnimal (char*, int, int, int, char*, float); // constructor function
+      inline ~LargeAnimal () { delete [] species; }; // destructor function
+      float reptCageMinimumVolume ();
+      char* reptName ();
+   };
+
+   // -------- member function to return the large animal's species
+   char* LargeAnimal::reptName ()
+   {
+    return species;
+   }
+   
+   // ========== an application to use the LargeAnimal class
+   void main ()
+   {
+    ZooAnimal bozo;
+    LargeAnimal gonzo;
+    ...
+    cout << bozo.reptName () << endl;
+    cout << gonzo.reptName () << endl;
+   }
+
+
+3.  Make the necessary changes below so that all calls to the
+ZooAnimal member function reptName are passed to the matching function
+in the derived type when called for an object of the derived type.
+
+   class ZooAnimal  
+   {
+    private:
+      char* name;
+      int cageNumber;
+      int weightDate;
+      int weight;
+    public:
+      ZooAnimal (char*, int, int, int); // constructor function
+      inline ~ZooAnimal () { delete [] name; }; // destructor function
+      void changeWeight (int pounds);
+      char* reptName ();
+      int reptWeight ();
+      int daysSinceLastWeighed (int today);
+   };
+
+   // -------- member function to return the animal's name
+   char* ZooAnimal::reptName ()
+   {
+    return name;
+   }
+   
+   class LargeAnimal : public ZooAnimal  
+   {
+    private:
+      char* species;
+      float cageMinimumVolume;
+    public:
+      LargeAnimal (char*, int, int, int, char*, float); // constructor function
+      inline ~LargeAnimal () { delete [] species; }; // destructor function
+      float reptCageMinimumVolume ();
+      char* reptName ();
+   };
+
+   // -------- member function to return the large animal's species
+   char* LargeAnimal::reptName ()
+   {
+    return species;
+   }
+
+
+4.  Make the necessary changes to indicate that the class LargeAnimal
+is a derived class of the base classes ZooAnimal and Mammal (in that
+order).  Specify that the base classes are public.
+
+   class ZooAnimal  
+   {
+    protected:
+      char* name;
+      int cageNumber;
+      int weightDate;
+      int weight;
+    public:
+      ZooAnimal (char*, int, int, int); // constructor function
+      inline ~ZooAnimal () { delete [] name; }; // destructor function
+      void changeWeight (int pounds);
+      char* reptName ();
+      int reptWeight ();
+      int daysSinceLastWeighed (int today);
+   };
+
+   class Mammal  
+   {
+    protected:
+      float minimumVolume;
+      int minimumWeight;
+    public:
+      Mammal (float, int); // constructor function
+      inline ~Mammal () {}; // destructor function
+      float reptminimumVolume ();
+      int reptminimumWeight ();
+   };
+
+   class LargeAnimal
+   {
+    protected:
+      char* species;
+      float cageMinimumVolume;
+    public:
+      LargeAnimal (char*, int, int, int, float, float, int); // constructor
+      inline ~LargeAnimal () { delete [] species; }; // destructor function
+      float reptCageMinimumVolume ();
+   };
+
+
+5.  In the reptCageMinimumVolume function below, the reference to the
+data name weight is ambiguous.  Make the necessary changes to indicate
+that the weight to be used is the one from the Mammal base class.
+
+   class ZooAnimal  
+   {
+    protected:
+      char* name;
+      int cageNumber;
+      int weightDate;
+      int weight;
+    public:
+      ZooAnimal (char*, int, int, int); // constructor function
+      inline ~ZooAnimal () { delete [] name; }; // destructor function
+      void changeWeight (int pounds);
+      char* reptName ();
+      int reptWeight ();
+      int daysSinceLastWeighed (int today);
+   };
+
+   class Mammal  
+   {
+    protected:
+      float minimumVolume;
+      int weight;
+    public:
+      Mammal (float, int); // constructor function
+      inline ~Mammal () {}; // destructor function
+      float reptminimumVolume ();
+      int reptWeight ();
+   };
+
+   class LargeAnimal : public ZooAnimal, public Mammal
+   {
+    protected:
+      char* species;
+      float cageMinimumVolume;
+    public:
+      LargeAnimal (char*, int, int, int, float, float, int); // constructor
+      inline ~LargeAnimal () { delete [] species; }; // destructor function
+      float reptCageMinimumVolume ();
+   };
+
+   // -------- member function to return the minimum cage volume
+   // -------- needed for this large animal
+   float LargeAnimal::reptCageMinimumVolume ()
+   {
+    if (weight < 500)
+       return cageMinimumVolume;
+    else
+       return reptminimumVolume ();
+   }
+   
+
+6.  In the reptCageMinimumVolume function below, the reference to the
+function name reptWeight is ambiguous.  Make the necessary changes to
+indicate that the reptWeight function to be used is the one from the
+ZooAnimal base class.
+
+   class ZooAnimal  
+   {
+    protected:
+      char* name;
+      int cageNumber;
+      int weightDate;
+      int weight;
+    public:
+      ZooAnimal (char*, int, int, int); // constructor function
+      inline ~ZooAnimal () { delete [] name; }; // destructor function
+      void changeWeight (int pounds);
+      char* reptName ();
+      int reptWeight ();
+      int daysSinceLastWeighed (int today);
+   };
+
+   class Mammal  
+   {
+    protected:
+      float minimumVolume;
+      int weight;
+    public:
+      Mammal (float, int); // constructor function
+      inline ~Mammal () {}; // destructor function
+      float reptminimumVolume ();
+      int reptWeight ();
+   };
+
+   class LargeAnimal : public ZooAnimal, public Mammal
+   {
+    protected:
+      char* species;
+      float cageMinimumVolume;
+    public:
+      LargeAnimal (char*, int, int, int, float, float, int); // constructor
+      inline ~LargeAnimal () { delete [] species; }; // destructor function
+      float reptCageMinimumVolume ();
+   };
+
+   // -------- member function to return the minimum cage volume
+   // -------- needed for this large animal
+   float LargeAnimal::reptCageMinimumVolume ()
+   {
+    if (Mammal::weight < 500)
+       return cageMinimumVolume;
+    else
+       return reptWeight ();
+   }
+
+

@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.ExternalTableOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="accessDriverType" dataType="java.lang.String" defaultValue="oracle_loader" xmlName="accessDriverType" xmlType="element" getter="getAccessDriverType" setter="setAccessDriverType" reffered="false"/>
+   <property name="accessParametersType" dataType="java.lang.String" defaultValue="Opaque Format Spec" xmlName="accessParametersType" xmlType="element" getter="getAccessParametersType" setter="setAccessParametersType" reffered="false"/>
+   <property name="clobSubquery" dataType="java.lang.String" defaultValue="" xmlName="clobSubquery" xmlType="element" getter="getClobSubquery" setter="setClobSubquery" reffered="false"/>
+   <property name="defaultdir" dataType="oracle.dbtools.crest.model.design.storage.oracle.DirectoryOracle" defaultValue="" xmlName="defaultdir" xmlType="element" getter="getDefaultDir" setter="setDefaultDir" reffered="true"/>
+   <property name="location" dataType="java.lang.String" defaultValue="" xmlName="location" xmlType="element" getter="getLocation" setter="setLocation" reffered="false"/>
+   <property name="opaqueFormatSpec" dataType="java.lang.String" defaultValue="" xmlName="opaqueFormatSpec" xmlType="element" getter="getOpaqueFormatSpec" setter="setOpaqueFormatSpec" reffered="false"/>
+   <property name="owner" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserOracle" defaultValue="" xmlName="owner" xmlType="element" getter="getOwner" setter="setOwner" reffered="true"/>
+   <property name="parallel" dataType="java.lang.String" defaultValue="NOPARALLEL" xmlName="parallel" xmlType="element" getter="getParallel" setter="setParallel" reffered="false"/>
+   <property name="parallelNum" dataType="int" defaultValue="0" xmlName="parallelNum" xmlType="element" getter="getParallelNum" setter="setParallelNum" reffered="false"/>
+   <property name="rejectLimit" dataType="java.lang.String" defaultValue="UNLIMITED" xmlName="rejectLimit" xmlType="element" getter="getRejectLimit" setter="setRejectLimit" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.oracle.ExternalTableOracle>

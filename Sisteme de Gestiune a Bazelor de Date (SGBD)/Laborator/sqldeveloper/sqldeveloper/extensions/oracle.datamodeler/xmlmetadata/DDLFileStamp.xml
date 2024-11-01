@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.imports.DDLFileStamp>
+   <property name="fileName" dataType="java.lang.String" defaultValue="" xmlName="fileName" xmlType="element" getter="getFileName" setter="setFileName" reffered="false"/>
+   <property name="pathName" dataType="java.lang.String" defaultValue="" xmlName="pathName" xmlType="element" getter="getPathName" setter="setPathName" reffered="false"/>
+   <property name="dbType" dataType="int" defaultValue="-1" xmlName="dbType" xmlType="element" getter="getDBType" setter="setDBType" reffered="false"/>
+</oracle.dbtools.crest.imports.DDLFileStamp>

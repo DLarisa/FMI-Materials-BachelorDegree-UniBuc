@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.xtdmapping.RMExtendedMap parentClass="oracle.dbtools.crest.model.xtdmapping.ExtendedMapBase">
+   <collection name="mappings" dataType="java.util.List" xmlName="mappings" itemXmlName="CM" getter="getContainerMappings" createItem="createContainerMapping" getItemByID="getContainerMappingByID" addItem="addContainerMapping" orderImportant="false"/>
+</oracle.dbtools.crest.model.xtdmapping.RMExtendedMap>

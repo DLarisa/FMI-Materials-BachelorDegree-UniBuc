@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Lumea Filmelor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<div class="jumbotron">
+    <img src="../../Content/Images/2.jpg" / style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
+    <h1 style="text-align: center;">@ViewBag.Title</h1>
+    <p style="text-align: center;">Bine ați Venit! Creați-vă un cont pentru a putea beneficia de toate funcționalitățile site-ului! :)</p>
+    <div class="btn-group btn-group-justified" style="left: 37%;">
+
+        @using (Html.BeginForm(actionName: "Register", controllerName: "Account", method: FormMethod.Get, htmlAttributes: new { style = "display:inline" }))
+        {
+            <button class="btn btn-success btn-lg">Register</button>
+        }
+
+        @using (Html.BeginForm(actionName: "Login", controllerName: "Account", method: FormMethod.Get, htmlAttributes: new { style = "display:inline" }))
+        {
+            <button class="btn btn-success btn-lg">Login</button>
+        }
+
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.process.Event parentClass="oracle.dbtools.crest.model.design.process.AbstractProcessObject">
+   <property name="atTime" dataType="boolean" defaultValue="" xmlName="atTime" xmlType="element" getter="isAtTime" setter="setAtTime" reffered="false"/>
+   <property name="dayOfMonth" dataType="int" defaultValue="" xmlName="dayOfMonth" xmlType="element" getter="getDayOfMonth" setter="setDayOfMonth" reffered="false"/>
+   <property name="dayOfWeek" dataType="java.lang.String" defaultValue="" xmlName="dayOfWeek" xmlType="element" getter="getDayOfWeek" setter="setDayOfWeek" reffered="false"/>
+   <property name="eventType" dataType="int" defaultValue="" xmlName="eventType" xmlType="element" getter="getEventType" setter="setEventType" reffered="false"/>
+   <property name="fiscal" dataType="boolean" defaultValue="" xmlName="fiscal" xmlType="element" getter="isFiscal" setter="setFiscal" reffered="false"/>
+   <property name="flow" dataType="oracle.dbtools.crest.model.design.process.Flow" defaultValue="" xmlName="flow" xmlType="element" getter="getFlow" setter="setFlow" reffered="true"/>
+   <property name="frequency" dataType="int" defaultValue="" xmlName="frequency" xmlType="element" getter="getFrequency" setter="setFrequency" reffered="false"/>
+   <property name="hour" dataType="int" defaultValue="" xmlName="hour" xmlType="element" getter="getHour" setter="setHour" reffered="false"/>
+   <property name="minute" dataType="int" defaultValue="" xmlName="minute" xmlType="element" getter="getMinute" setter="setMinute" reffered="false"/>
+   <property name="months" dataType="java.lang.String" defaultValue="" xmlName="months" xmlType="element" getter="getMonths" setter="setMonths" reffered="false"/>
+   <property name="onDay" dataType="boolean" defaultValue="" xmlName="onDay" xmlType="element" getter="isOnDay" setter="setOnDay" reffered="false"/>
+   <property name="quarter" dataType="int" defaultValue="" xmlName="quarter" xmlType="element" getter="getQuarter" setter="setQuarter" reffered="false"/>
+   <property name="text" dataType="java.lang.String" defaultValue="" xmlName="text" xmlType="element" getter="getText" setter="setText" reffered="false"/>
+   <property name="timeFreq" dataType="int" defaultValue="" xmlName="timeFreq" xmlType="element" getter="getTimeFreq" setter="setTimeFreq" reffered="false"/>
+   <property name="timesWhenRun" dataType="int" defaultValue="" xmlName="timesWhenRun" xmlType="element" getter="getTimesWhenRun" setter="setTimesWhenRun" reffered="false"/>
+   <property name="year" dataType="int" defaultValue="" xmlName="year" xmlType="element" getter="getYear" setter="setYear" reffered="false"/>
+   <roproperty name="processTriggered" dataType="interface java.util.List" getter="getProcessTriggered"/>
+</oracle.dbtools.crest.model.design.process.Event>

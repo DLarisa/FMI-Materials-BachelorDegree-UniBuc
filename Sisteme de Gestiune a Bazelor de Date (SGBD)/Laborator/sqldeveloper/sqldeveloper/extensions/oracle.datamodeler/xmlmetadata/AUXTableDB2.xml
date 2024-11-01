@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.db2.AUXTableDB2 parentClass="oracle.dbtools.crest.model.design.storage.db2.AbstractStorageObjectDB2">
+   <property name="column" dataType="oracle.dbtools.crest.model.design.storage.db2.ColumnProxyDB2" defaultValue="" xmlName="column" xmlType="element" getter="getColumn" setter="setColumn" reffered="true"/>
+   <property name="owner" dataType="oracle.dbtools.crest.model.design.storage.db2.Owner" defaultValue="" xmlName="owner" xmlType="element" getter="getOwner" setter="setOwner" reffered="true"/>
+   <property name="partNumber" dataType="int" defaultValue="" xmlName="partNumber" xmlType="element" getter="getPartNumber" setter="setPartNumber" reffered="false"/>
+   <property name="table" dataType="oracle.dbtools.crest.model.design.storage.db2.TableProxyDB2" defaultValue="" xmlName="table" xmlType="element" getter="getTable" setter="setTable" reffered="true"/>
+   <property name="tableSpace" dataType="oracle.dbtools.crest.model.design.storage.db2.TableSpaceDB2" defaultValue="" xmlName="tableSpace" xmlType="element" getter="getTableSpace" setter="setTableSpace" reffered="true"/>
+   <collection name="auxIndexes" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="auxIndexes" itemXmlName="AUXIndex" getter="getAUXTableIndexes" createItem="createAUXTableIndex"/>
+   <roproperty name="auxIndexes" dataType="interface java.util.List" getter="getAuxIndexes"/>
+   <roproperty name="database" dataType="oracle.dbtools.crest.model.design.storage.db2.DataBaseDB2" getter="getDatabase"/>
+</oracle.dbtools.crest.model.design.storage.db2.AUXTableDB2>

@@ -1,0 +1,19 @@
+﻿@model lab3_miercuri.Models.Publisher
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm(actionName: "Edit", controllerName: "Publisher"))
+{
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+
+    @Html.HiddenFor(p => p.PublisherId)
+    <br />
+    <br />
+
+    @*TEMA - de completat*@
+    <br />
+    <button class="btn btn-primary" type="submit">Update</button>
+}

@@ -1,0 +1,11 @@
+#container{
+	border:1px solid lightgray;
+	width:70%;
+	padding:5px;
+	height:400px;
+}
+#container div{
+	border:1px solid black;
+	box-sizing:border-box;
+	padding:0px;
+}

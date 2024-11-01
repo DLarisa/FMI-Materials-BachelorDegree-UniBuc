@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.DirectoryOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="dirPath" dataType="java.lang.String" defaultValue="" xmlName="dirPath" xmlType="element" getter="getDirPath" setter="setDirPath" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.oracle.DirectoryOracle>

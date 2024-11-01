@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "---  Index Filme  ---";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<h2 style="text-align: center;
+        color: aquamarine;
+        font-family: Castellar;
+        border-bottom: 5px double aquamarine;
+">
+    @ViewBag.Title
+</h2>
+
+
+@if (ViewBag.Filme.Count == 0)
+{
+    <p>Nu există filme momentan.</p>
+}
+else
+{
+    foreach (var film in ViewBag.Filme)
+    {
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                @Html.Label("Titlu", "Titlu Film: ")
+                <h3 class="panel-title" style="color: black; text-shadow: 2px 2px #947fff; font-style: italic">
+                    @film.Nume
+                </h3>
+            </div>
+
+            <div class="panel-body">
+                <ul style="list-style-type:disc;">
+                    <li>
+                        An Apariție:
+                        <p style="color: white; text-shadow: 2px 2px #947fff; font-style: italic; display: inline;">@film.An</p>
+                    </li>
+
+                    <li>
+                        Număr Premii:
+                        <p style="color: white; text-shadow: 2px 2px #947fff; font-style: italic; display: inline;">@film.NrPremii</p>
+                    </li>
+
+                    <li>
+                        Limbă Film:
+                        <p style="color: white; text-shadow: 2px 2px #947fff; font-style: italic; display: inline;">@film.LimbaFilm.Nume</p>
+                    </li>
+                </ul>
+
+                @using (Html.BeginForm(actionName: "Detalii", controllerName: "Film", method: FormMethod.Get, routeValues: new { id = film.FilmId }))
+                {
+                    <button style="margin-right:5px" class="btn btn-primary" type="submit">Detalii</button>
+                }
+            </div>
+        </div>
+    }
+}
+
+@if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+{
+    <button class="btn btn-primary col-lg-1" type="submit">@Html.ActionLink("Add Film", "New")</button>
+}
+
+<br />
+<br />

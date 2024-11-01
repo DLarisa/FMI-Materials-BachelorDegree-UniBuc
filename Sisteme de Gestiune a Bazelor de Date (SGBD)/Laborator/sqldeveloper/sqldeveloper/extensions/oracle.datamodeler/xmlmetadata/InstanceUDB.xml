@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.udb.InstanceUDB parentClass="oracle.dbtools.crest.model.design.storage.db2.AbstractStorageObjectDB2">
+   <property name="authenticationType" dataType="java.lang.String" defaultValue="" xmlName="authenticationType" xmlType="element" getter="getAuthenticationType" setter="setAuthenticationType" reffered="false"/>
+   <property name="clusterName" dataType="java.lang.String" defaultValue="" xmlName="clusterName" xmlType="element" getter="getClusterName" setter="setClusterName" reffered="false"/>
+   <property name="fencedId" dataType="java.lang.String" defaultValue="" xmlName="fencedId" xmlType="element" getter="getFencedId" setter="setFencedId" reffered="false"/>
+   <property name="hostName" dataType="java.lang.String" defaultValue="" xmlName="hostName" xmlType="element" getter="getHostName" setter="setHostName" reffered="false"/>
+   <property name="operatingSystem" dataType="java.lang.String" defaultValue="" xmlName="operatingSystem" xmlType="element" getter="getOperatingSystem" setter="setOperatingSystem" reffered="false"/>
+   <property name="password" dataType="java.lang.String" defaultValue="" xmlName="password" xmlType="element" getter="getPassword" setter="setPassword" reffered="false"/>
+   <property name="portName" dataType="java.lang.String" defaultValue="" xmlName="portName" xmlType="element" getter="getPortName" setter="setPortName" reffered="false"/>
+   <property name="portRange" dataType="java.lang.String" defaultValue="" xmlName="portRange" xmlType="element" getter="getPortRange" setter="setPortRange" reffered="false"/>
+   <property name="profilepath" dataType="java.lang.String" defaultValue="" xmlName="profilepath" xmlType="element" getter="getProfilePath" setter="setProfilePath" reffered="false"/>
+   <property name="type" dataType="java.lang.String" defaultValue="" xmlName="type" xmlType="element" getter="getType" setter="setType" reffered="false"/>
+   <property name="userName" dataType="java.lang.String" defaultValue="" xmlName="userName" xmlType="element" getter="getUserName" setter="setUserName" reffered="false"/>
+   <property name="wordwidth" dataType="int" defaultValue="" xmlName="wordwidth" xmlType="element" getter="getWordWidth" setter="setWordWidth" reffered="false"/>
+   <roproperty name="dataBases" dataType="[Loracle.dbtools.crest.model.design.storage.udb.DataBaseUDB" getter="getDataBases"/>
+</oracle.dbtools.crest.model.design.storage.udb.InstanceUDB>

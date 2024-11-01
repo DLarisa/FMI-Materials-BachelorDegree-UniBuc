@@ -1,0 +1,5 @@
+e12/**/"\
+ \ 
+"/*
+
+// EROARE linia 3 (comentariu neînchis)

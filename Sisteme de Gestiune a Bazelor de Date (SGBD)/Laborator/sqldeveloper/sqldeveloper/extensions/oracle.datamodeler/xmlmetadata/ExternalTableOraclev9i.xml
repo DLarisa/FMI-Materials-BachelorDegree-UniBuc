@@ -1,0 +1,5 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v9i.ExternalTableOraclev9i parentClass="oracle.dbtools.crest.model.design.storage.oracle.ExternalTableOracle">
+   <collection name="columns" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="columns" itemXmlName="Column" getter="getColumns" createItem="createColumn"/>
+   <roproperty name="columns" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getColumns"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v9i.ExternalTableOraclev9i>

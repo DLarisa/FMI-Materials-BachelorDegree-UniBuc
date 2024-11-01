@@ -1,0 +1,121 @@
+select *
+from subiecte;
+
+
+
+set serveroutput on;
+set echo off;
+set verify off;
+
+
+-- Ex1: Să se returneze id-ul echipei și numele acesteia care a câștigat un nr de premii mai mare sau egal cu o variabilă dată de la tastatură, 
+-- cunoscându-se id-ul antrenorului (dat de la tastatură).
+DECLARE
+  v_id   echipe.id_echipa%type;
+  v_nume echipe.denumire%type;
+
+  -- cursor care primește un nr de premii și întoarce id-urile echipelor care au câștigat acel nr de premii sau mai multe
+  CURSOR c(nr_premii number) IS
+    select id_echipa id, count(premiu) nr
+    from antrenori join echipe using(id_antrenor)
+    join trofee using(id_echipa)
+    group by id_echipa
+    having count(premiu) >= nr_premii;
+    
+  -- subprogram care returnează id_echipă și numele acesteia, având dat un anumit cod de antrenor
+  PROCEDURE p(id OUT echipe.id_echipa%type, nume OUT echipe.denumire%type) IS
+    v_nr    number(2) := &nr_de_premii;
+    v_cod   antrenori.id_antrenor%type := &codul_antrenorului;
+    aux     antrenori.id_antrenor%type;
+  BEGIN
+    for i in c(v_nr) loop
+    
+      select id_antrenor
+      into aux
+      from echipe
+      where id_echipa = i.id;
+      
+      if aux = v_cod then
+        select id_echipa, denumire
+        into id, nume
+        from echipe
+        where id_antrenor = aux;
+        
+      end if;
+    end loop;
+  END p;
+  
+BEGIN
+  p(v_id, v_nume);
+  if nvl(v_id, 0) = 0 then
+    dbms_output.put_line('Nu exista o astfel de echipa');
+  else dbms_output.put_line('Id Echipa: ' || v_id || ', Nume: ' || v_nume);
+  end if;
+END;
+/
+
+
+
+
+
+
+select *
+from subiecte;
+
+-- Ex2
+
+-- nr de premii câștigate de o echipă
+CREATE OR REPLACE TYPE nr_premii IS OBJECT(nr number);
+-- suma în bani a premiilor câștigate de o echipă
+CREATE OR REPLACE TYPE suma_bani IS OBJECT(suma number);
+CREATE OR REPLACE TYPE pereche IS OBJECT (tip1 nr_premii, tip2 suma_bani);
+
+-- adaug coloana Premii la tabelul echipe
+ALTER TABLE ECHIPE 
+ADD PREMII PERECHE;
+
+-- bloc stocat, actualizez coloana adaugata cu info relevante 
+CREATE OR REPLACE PROCEDURE p2 IS
+  CURSOR C is
+    select count(*) nr, sum(premiu) sum_aux, id_echipa id
+    from trofee
+    group by id_echipa;
+
+
+  v_nr_premii     number(2);
+  v_suma          number(6);
+  v_id            echipe.id_echipa%type;
+  
+  aux1           nr_premii;
+  aux2           suma_bani;
+BEGIN
+  for i in c loop
+    v_nr_premii := i.nr;
+    v_suma := i.sum_aux;
+    
+    aux1 := nr_premii(nvl(v_nr_premii, 0));
+    aux2 := suma_bani(nvl(v_suma, 0));
+    
+    update echipe
+    set premii = pereche(aux1, aux2)
+    where id_echipa = i.id;
+    
+  end loop;
+END p2;
+/
+
+execute p2;
+
+select *
+from echipe;
+
+
+
+
+----
+select count(*), sum(premiu), id_echipa
+from trofee
+group by id_echipa;
+  
+select *
+from trofee;

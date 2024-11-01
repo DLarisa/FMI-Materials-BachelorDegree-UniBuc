@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v10g.TableSpaceOraclev10g parentClass="oracle.dbtools.crest.model.design.storage.oracle.v9i.TableSpaceOraclev9i">
+   <property name="dsCompression" dataType="java.lang.String" defaultValue="" xmlName="dsCompression" xmlType="element" getter="getDSCompression" setter="setDSCompression" reffered="false"/>
+   <property name="fileType" dataType="java.lang.String" defaultValue="" xmlName="fileType" xmlType="element" getter="getFileType" setter="setFileType" reffered="false"/>
+   <property name="flashBack" dataType="java.lang.String" defaultValue="ON" xmlName="flashBack" xmlType="element" getter="getFlashBack" setter="setFlashBack" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v10g.TableSpaceOraclev10g>

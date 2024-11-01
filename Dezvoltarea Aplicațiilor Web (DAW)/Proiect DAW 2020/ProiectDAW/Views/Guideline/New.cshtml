@@ -1,0 +1,37 @@
+﻿@model ProiectDAW.Models.GenGuidelineViewModel
+@{
+    ViewBag.Title = "Adăugare Age Restriction Nou";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm(actionName: "New", controllerName: "Guideline", method: FormMethod.Post, htmlAttributes: new { style = "display:inline" }))
+{
+    @Html.Label("Nume", "Nume: ");
+    @Html.TextBoxFor(f => f.Nume, null, new { placeholder = "Scrie Genul Filmului...", @class = "form-control" });
+    @Html.ValidationMessageFor(f => f.Nume, "", new { @class = "text-danger" });
+    <br />
+
+    @Html.LabelFor(f => f.Varsta, "Vârstă Recomandată: ");
+    @Html.TextBoxFor(f => f.Varsta, null, new { placeholder = "Scrie Vârsta Recomandată pt Film...", @class = "form-control" });
+    @Html.ValidationMessageFor(f => f.Varsta, "", new { @class = "text-danger" });
+    <br />
+
+    @Html.LabelFor(f => f.Mesaj, "Observații: ");
+    @Html.TextAreaFor(f => f.Mesaj, new { @class = "form-control", @rows = "10" })
+    @Html.ValidationMessageFor(f => f.Varsta, "", new { @class = "text-danger" });
+    <br />
+
+    <button class="btn btn-primary" type="submit">Create</button>
+}
+
+
+@using (Html.BeginForm(actionName: "Index", controllerName: "Guideline", method: FormMethod.Get, htmlAttributes: new { style = "display:inline; float: right;" }))
+{
+    <button class="btn btn-primary">Înapoi</button>
+}

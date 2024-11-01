@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.db2.DataBaseSpaceDB2 parentClass="oracle.dbtools.crest.model.design.storage.db2.AbstractStorageObjectDB2">
+   <property name="bufferPool" dataType="oracle.dbtools.crest.model.design.storage.db2.BufferPoolDB2" defaultValue="" xmlName="bufferPool" xmlType="element" getter="getBufferPool" setter="setBufferPool" reffered="true"/>
+   <property name="calculatePrimaryQuantity" dataType="boolean" defaultValue="true" xmlName="calculatePrimaryQuantity" xmlType="element" getter="getCalculatePrimaryQuantity" setter="setCalculatePrimaryQuantity" reffered="false"/>
+   <property name="calculateSecondaryQuantity" dataType="boolean" defaultValue="true" xmlName="calculateSecondaryQuantity" xmlType="element" getter="getCalculateSecondaryQuantity" setter="setCalculateSecondaryQuantity" reffered="false"/>
+   <property name="dataBase" dataType="oracle.dbtools.crest.model.design.storage.db2.DataBaseDB2" defaultValue="" xmlName="dataBase" xmlType="element" getter="getDataBase" setter="setDataBase" reffered="true"/>
+   <property name="dataSetInfoErase" dataType="boolean" defaultValue="false" xmlName="dataSetInfoErase" xmlType="element" getter="getDataSetInfoErase" setter="setDataSetInfoErase" reffered="false"/>
+   <property name="define" dataType="boolean" defaultValue="true" xmlName="define" xmlType="element" getter="getDefine" setter="setDefine" reffered="false"/>
+   <property name="freePage" dataType="int" defaultValue="0" xmlName="freePage" xmlType="element" getter="getFreePage" setter="setFreePage" reffered="false"/>
+   <property name="maintenanceInterval" dataType="int" defaultValue="0" xmlName="maintenanceInterval" xmlType="element" getter="getMaintenanceInterval" setter="setMaintenanceInterval" reffered="false"/>
+   <property name="percentageFree" dataType="int" defaultValue="5" xmlName="percentageFree" xmlType="element" getter="getPercentageFree" setter="setPercentageFree" reffered="false"/>
+   <property name="primaryQuantity" dataType="int" defaultValue="12" xmlName="primaryQuantity" xmlType="element" getter="getPrimaryQuantity" setter="setPrimaryQuantity" reffered="false"/>
+   <property name="secondaryQuantity" dataType="int" defaultValue="0" xmlName="secondaryQuantity" xmlType="element" getter="getSecondaryQuantity" setter="setSecondaryQuantity" reffered="false"/>
+   <property name="space" dataType="int" defaultValue="0" xmlName="space" xmlType="element" getter="getSpace" setter="setSpace" reffered="false"/>
+   <property name="spaceAllocationInterval" dataType="int" defaultValue="0" xmlName="spaceAllocationInterval" xmlType="element" getter="getSpaceAllocationInterval" setter="setSpaceAllocationInterval" reffered="false"/>
+   <property name="storageGroup" dataType="oracle.dbtools.crest.model.design.storage.db2.StorageGroupDB2" defaultValue="" xmlName="storageGroup" xmlType="element" getter="getStorageGroup" setter="setStorageGroup" reffered="true"/>
+   <property name="vcat" dataType="oracle.dbtools.crest.model.design.storage.db2.VCatDB2" defaultValue="" xmlName="vcat" xmlType="element" getter="getVCat" setter="setVCat" reffered="true"/>
+   <property name="vcatName" dataType="java.lang.String" defaultValue="" xmlName="vcatName" xmlType="element" getter="getVCatName" setter="setVCatName" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.db2.DataBaseSpaceDB2>

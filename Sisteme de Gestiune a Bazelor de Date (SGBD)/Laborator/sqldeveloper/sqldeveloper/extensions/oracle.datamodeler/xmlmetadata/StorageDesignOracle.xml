@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.StorageDesignOracle parentClass="oracle.dbtools.crest.model.design.storage.StorageDesign">
+   <collection external="true" name="OraclePackages" dataType="oracle.dbtools.crest.model.design.storage.oracle.PackageSetOracle" xmlName="OraclePackages" itemXmlName="OraclePackage" getter="getPackageSet" createItem="createPackageOracle"/>
+   <collection external="true" name="OracleFunctions" dataType="oracle.dbtools.crest.model.design.storage.oracle.FunctionSetOracle" xmlName="OracleFunctions" itemXmlName="OracleFunction" getter="getFunctionSet" createItem="createFunctionOracle"/>
+   <collection external="true" name="OracleStructuredTypes" dataType="oracle.dbtools.crest.model.design.storage.oracle.StructuredTypeProxySetOracle" xmlName="OracleStructuredTypes" itemXmlName="OracleStructuredType" getter="getStructuredTypeProxySet"  proxyItem="true"/>
+   <collection external="true" name="OracleCollectionTypes" dataType="oracle.dbtools.crest.model.design.storage.CollectionTypeProxySet" xmlName="OracleCollectionTypes" itemXmlName="OracleCollectionType" getter="getCollectionTypeProxySet"  proxyItem="true"/>
+   <collection external="true" name="OracleDatabases" dataType="oracle.dbtools.crest.model.design.storage.oracle.DataBaseSetOracle" xmlName="OracleDatabases" itemXmlName="OracleDatabase" getter="getDataBaseSet"  createItem="createDataBaseOracle"/>
+   <collection external="true" name="OracleTableSpaces" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceSetOracle" xmlName="OracleTableSpaces" itemXmlName="OracleTableSpace" getter="getTableSpaceSet"  createItem="createTableSpaceOracle"/>
+   <collection external="true" name="OracleTemporaryTableSpaces" dataType="oracle.dbtools.crest.model.design.storage.oracle.TemporaryTablespaceSetOracle" xmlName="OracleTemporaryTableSpaces" itemXmlName="OracleTemporaryTableSpace" getter="getTemporaryTablespaceSet"  createItem="createTemporaryTablespaceOracle"/>
+   <collection external="true" name="OracleUndoTableSpaces" dataType="oracle.dbtools.crest.model.design.storage.oracle.UndoTablespaceSetOracle" xmlName="OracleUndoTableSpaces" itemXmlName="OracleUndoTableSpace" getter="getUndoTablespaceSet"  createItem="createUndoTablespaceOracle"/>
+   <collection external="true" name="OracleUsers" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserSetOracle" xmlName="OracleUsers" itemXmlName="OracleUser" getter="getUserSet"  createItem="createUserOracle"/>
+   <collection external="true" name="OracleTables" dataType="oracle.dbtools.crest.model.design.storage.TableProxySet" xmlName="OracleTables" itemXmlName="OracleTable" getter="getTableProxySet"  proxyItem="true"/>
+   <collection external="true" name="OracleExternalTables" dataType="oracle.dbtools.crest.model.design.storage.oracle.ExternalTableSetOracle" xmlName="OracleExternalTables" itemXmlName="OracleExternalTable" getter="getExternalTableSet"  createItem="createExternalTableOracle"/>
+   <collection external="true" name="OracleClusters" dataType="oracle.dbtools.crest.model.design.storage.oracle.ClusterSetOracle" xmlName="OracleClusters" itemXmlName="OracleCluster" getter="getClusterSet"  createItem="createClusterOracle"/>
+   <collection external="true" name="OracleSegments" dataType="oracle.dbtools.crest.model.design.storage.oracle.SegmentSetOracle" xmlName="OracleSegments" itemXmlName="OracleSegment" getter="getSegmentSet"  createItem="createSegmentOracle"/>
+   <collection external="true" name="OracleRollbackSegments" dataType="oracle.dbtools.crest.model.design.storage.oracle.RollbackSegmentSetOracle" xmlName="OracleRollbackSegments" itemXmlName="OracleRollbackSegment" getter="getRollbackSegmentSet"  createItem="createUserOracle"/>
+   <collection external="true" name="OracleSnapshots" dataType="oracle.dbtools.crest.model.design.storage.oracle.SnapshotSetOracle" xmlName="OracleSnapshots" itemXmlName="OracleSnapshot" getter="getSnapshotSet"  createItem="createSnapshotOracle"/>
+   <collection external="true" name="OracleRoles" dataType="oracle.dbtools.crest.model.design.storage.oracle.RoleSetOracle" xmlName="OracleRoles" itemXmlName="OracleRole" getter="getRoleSet"  createItem="createRoleOracle"/>
+   <collection external="true" name="OracleViews" dataType="oracle.dbtools.crest.model.design.storage.TableViewProxySet" xmlName="OracleViews" itemXmlName="OracleView" getter="getTableViewProxySet"  proxyItem="true"/>
+   <collection external="true" name="OracleSequences" dataType="oracle.dbtools.crest.model.design.storage.oracle.SequenceSetOracle" xmlName="OracleSequences" itemXmlName="OracleSequence" getter="getSequenceSet"  createItem="createSequenceOracle"/>
+   <collection external="true" name="OracleSynonyms" dataType="oracle.dbtools.crest.model.design.storage.oracle.SynonymSetOracle" xmlName="OracleSynonyms" itemXmlName="OracleSynonym" getter="getSynonymSet"  createItem="createSynonymOracle"/>
+   <collection external="true" name="OracleDirectories" dataType="oracle.dbtools.crest.model.design.storage.oracle.DirectorySetOracle" xmlName="OracleDirectories" itemXmlName="OracleDirectory" getter="getDirectorySet"  createItem="createDirectoryOracle"/>
+   <collection external="true" name="OracleTriggers" dataType="oracle.dbtools.crest.model.design.storage.oracle.TriggerSetOracle" xmlName="OracleTriggers" itemXmlName="OracleTrigger" getter="getTriggerSet"  createItem="createTriggerOracle"/>
+   <collection external="true" name="OracleStoredProcedures" dataType="oracle.dbtools.crest.model.design.storage.oracle.StoredProcedureSetOracle" xmlName="OracleStoredProcedures" itemXmlName="OracleStoredProcedure" getter="getStoredProcedureSet"  createItem="createStoredProcedureOracle"/>
+   <collection external="true" name="OracleDimensions" dataType="oracle.dbtools.crest.model.design.storage.oracle.DimensionSetOracle" xmlName="OracleDimensions" itemXmlName="OracleDimension" getter="getDimensionSet"  createItem="createDimensionOracle"/>
+   <collection external="true" name="OracleContexts" dataType="oracle.dbtools.crest.model.design.storage.oracle.ContextSetOracle" xmlName="OracleContexts" itemXmlName="OracleContext" getter="getContextSet"  createItem="createContextOracle"/>
+   <roproperty name="seededRole" dataType="boolean" getter="isSeededRole"/>
+   <roproperty name="bitmapJoinIndexSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.BitmapJoinIndexSetOracle" getter="getBitmapJoinIndexSet"/>
+   <roproperty name="clustercolumnSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.ClusterColumnSetOracle" getter="getClusterColumnSet"/>
+   <roproperty name="clusterIndexSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.ClusterIndexSetOracle" getter="getClusterIndexSet"/>
+   <roproperty name="clusterSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.ClusterSetOracle" getter="getClusterSet"/>
+   <roproperty name="contextSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.ContextSetOracle" getter="getContextSet"/>
+   <roproperty name="dataBaseSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.DataBaseSetOracle" getter="getDataBaseSet"/>
+   <roproperty name="dataFileSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.DataFileSetOracle" getter="getDataFileSet"/>
+   <roproperty name="defaultTableSpace" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle" getter="getDefaultTableSpace"/>
+   <roproperty name="defaultUser" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserOracle" getter="getDefaultUser"/>
+   <roproperty name="dimensionAttributeSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.DimensionAttributeSetOracle" getter="getDimensionAttributeSet"/>
+   <roproperty name="dimensionSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.DimensionSetOracle" getter="getDimensionSet"/>
+   <roproperty name="directorySet" dataType="oracle.dbtools.crest.model.design.storage.oracle.DirectorySetOracle" getter="getDirectorySet"/>
+   <roproperty name="fkProxySet" dataType="oracle.dbtools.crest.model.design.storage.oracle.FKProxySetOracle" getter="getFKProxySet"/>
+   <roproperty name="formatedSubname" dataType="java.lang.String" getter="getFormatedSubname"/>
+   <roproperty name="formattedNameList" dataType="java.lang.String" getter="getFormattedNameList"/>
+   <roproperty name="functionSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.FunctionSetOracle" getter="getFunctionSet"/>
+   <roproperty name="hashPartitionLobItemSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.HashPartitionLobItemSetOracle" getter="getHashPartitionLobItemSet"/>
+   <roproperty name="hashPartitionSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.HashPartitionSetOracle" getter="getHashPartitionSet"/>
+   <roproperty name="hierarchySet" dataType="oracle.dbtools.crest.model.design.storage.oracle.HierarchySetOracle" getter="getHierarchySet"/>
+   <roproperty name="indexGlobalPartitionSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.IndexGlobalPartitionSetOracle" getter="getIndexGlobalPartitionSet"/>
+   <roproperty name="indexGlobalPartitionsListSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.IndexGlobalPartitionsListSetOracle" getter="getIndexGlobalPartitionsListSet"/>
+   <roproperty name="levelSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.LevelSetOracle" getter="getLevelSet"/>
+   <roproperty name="listPartitionSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.ListPartitionSetOracle" getter="getListPartitionSet"/>
+   <roproperty name="listStorageTemplatePartitionSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.ListStorageTemplatePartitionSetOracle" getter="getListStorageTemplatePartitionSet"/>
+   <roproperty name="lobStorageSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.LobStorageSetOracle" getter="getLobStorageSet"/>
+   <roproperty name="localIndexPropertiesSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.LocalIndexPropertiesSet" getter="getLocalIndexPropertiesSet"/>
+   <roproperty name="nnC_ColumnsWithExceptionsTableForDDL" dataType="interface java.util.List" getter="getNNC_ColumnsWithExceptionsTableForDDL"/>
+   <roproperty name="notnullConstraintSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.NotNullConstraintSetOracle" getter="getNotNullConstraintSet"/>
+   <roproperty name="pkproxySet" dataType="oracle.dbtools.crest.model.design.storage.oracle.PKProxySetOracle" getter="getPKProxySet"/>
+   <roproperty name="packageSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.PackageSetOracle" getter="getPackageSet"/>
+   <roproperty name="partitionListSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.PartitionListSetOracle" getter="getPartitionListSet"/>
+   <roproperty name="partitionSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.PartitionSetOracle" getter="getPartitionSet"/>
+   <roproperty name="permissionsSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.PermissionsSetOracle" getter="getPermissionsSet"/>
+   <roproperty name="quotaItemSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.QuotaItemSetOracle" getter="getQuotaItemSet"/>
+   <roproperty name="redoLogGroupSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.RedoLogGroupSetOracle" getter="getRedoLogGroupSet"/>
+   <roproperty name="roleSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.RoleSetOracle" getter="getRoleSet"/>
+   <roproperty name="rollbackSegmentSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.RollbackSegmentSetOracle" getter="getRollbackSegmentSet"/>
+   <roproperty name="segmentset" dataType="oracle.dbtools.crest.model.design.storage.oracle.SegmentSetOracle" getter="getSegmentSet"/>
+   <roproperty name="sequenceset" dataType="oracle.dbtools.crest.model.design.storage.oracle.SequenceSetOracle" getter="getSequenceSet"/>
+   <roproperty name="snapshotset" dataType="oracle.dbtools.crest.model.design.storage.oracle.SnapshotSetOracle" getter="getSnapshotSet"/>
+   <roproperty name="storedProcedureset" dataType="oracle.dbtools.crest.model.design.storage.oracle.StoredProcedureSetOracle" getter="getStoredProcedureSet"/>
+   <roproperty name="synonymset" dataType="oracle.dbtools.crest.model.design.storage.oracle.SynonymSetOracle" getter="getSynonymSet"/>
+   <roproperty name="tableCheckConstraintSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableCheckConstraintSetOracle" getter="getTableCheckConstraintSet"/>
+   <roproperty name="tableSpaceSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceSetOracle" getter="getTableSpaceSet"/>
+   <roproperty name="temporarytablespaceSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.TemporaryTablespaceSetOracle" getter="getTemporaryTablespaceSet"/>
+   <roproperty name="triggerSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.TriggerSetOracle" getter="getTriggerSet"/>
+   <roproperty name="uniqueSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.UniqueSetOracle" getter="getUniqueSet"/>
+   <roproperty name="userSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserSetOracle" getter="getUserSet"/>
+</oracle.dbtools.crest.model.design.storage.oracle.StorageDesignOracle>

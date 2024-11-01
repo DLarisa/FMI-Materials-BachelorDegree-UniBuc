@@ -1,0 +1,22 @@
+<script> </script> --- in head sau body
+<script>
+	document.write("ceva"); document.write("<p>hey</p>");
+</script>
+
+
+Preferabil in head declaram functiile (toate functiile de JavaScript au numar variabil de variabile):
+function f(a=3, b) 
+{
+	c=3; //variabila globala se creeaza (cand scriu pur si simplu direct numele)
+	let c=3; (local, in functie) -> nu merge sa il folosesc do{let c=...;}while(c!=3) pt ca nu il vede 
+	for(let i=0; i<n; i++) //neaparat let
+}
+
+
+Clase in JavaScript -> Obiecte
+o={
+	p: "ceva";
+}
+delete o.p;
+
+var -> variabila

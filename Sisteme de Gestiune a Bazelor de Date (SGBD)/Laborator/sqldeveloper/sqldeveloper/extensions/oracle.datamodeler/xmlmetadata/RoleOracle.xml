@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.RoleOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="adminOption" dataType="java.lang.String" defaultValue="NO" xmlName="adminOption" xmlType="element" getter="getAdminOption" setter="setAdminOption" reffered="false"/>
+   <property name="authType" dataType="java.lang.String" defaultValue="BY_PASSWORD" xmlName="authType" xmlType="element" getter="getAuthType" setter="setAuthType" reffered="false"/>
+   <property name="identified" dataType="java.lang.String" defaultValue="NO" xmlName="identified" xmlType="element" getter="getIdentified" setter="setIdentified" reffered="false"/>
+   <property name="password" dataType="java.lang.String" defaultValue="" xmlName="password" xmlType="element" getter="getPassword" setter="setPassword" reffered="false"/>
+   <property name="privileges" dataType="java.lang.String" defaultValue="" xmlName="privileges" xmlType="element" getter="getPrivileges" setter="setPrivileges" reffered="false" listOfRefs="false"/>
+   <property name="privilegesWithAdminOption" dataType="java.lang.String" defaultValue="" xmlName="privilegesWithAdminOption" xmlType="element" getter="getPrivilegesWithAdminOption" setter="setPrivilegesWithAdminOption" reffered="false" listOfRefs="false"/>
+   <property name="public" dataType="java.lang.String" defaultValue="NO" xmlName="public" xmlType="element" getter="getPublic" setter="setPublic" reffered="false"/>
+   <property name="roles" dataType="java.lang.String" defaultValue="" xmlName="roles" xmlType="element" getter="getRoles" setter="setRoles" reffered="false" listOfRefs="true"/>
+   <property name="rolesWithAdminOption" dataType="java.lang.String" defaultValue="" xmlName="rolesWithAdminOption" xmlType="element" getter="getRolesWithAdminOption" setter="setRolesWithAdminOption" reffered="false" listOfRefs="true"/>
+   <collection name="permissions" dataType="interface java.util.List" xmlName="permissions" itemXmlName="Permission" getter="getPermissions" createItem="createPermission"/>
+   <bb_roproperty name="privilegesSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.RoleOracle$InlineList" getter="getPrivilegesSet"/>
+   <bb_roproperty name="privilegesWithAdminOptionSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.RoleOracle$InlineList" getter="getPrivilegesWithAdminOptionSet"/>
+   <roproperty name="rolesNames" dataType="java.lang.String" getter="getRolesNames"/>
+   <bb_roproperty name="rolesSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.RoleOracle$InlineList" getter="getRolesSet"/>
+   <roproperty name="rolesWithAdminOptionNames" dataType="java.lang.String" getter="getRolesWithAdminOptionNames"/>
+   <bb_roproperty name="rolesWithAdminOptionSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.RoleOracle$InlineList" getter="getRolesWithAdminOptionSet"/>
+</oracle.dbtools.crest.model.design.storage.oracle.RoleOracle>

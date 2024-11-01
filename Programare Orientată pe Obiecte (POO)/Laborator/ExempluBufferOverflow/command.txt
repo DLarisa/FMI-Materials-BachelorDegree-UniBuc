@@ -1,0 +1,19 @@
+Compilare gcc:
+gcc -o exempluBufferOverflow exempluBufferOverflow.cpp 
+
+Compilare gcc, fara protectie:
+gcc -fno-stack-protector -o exempluBufferOverflow exempluBufferOverflow.cpp 
+
+Compilare cu toate fisierele generate, fara protectie implicita:
+gcc -fno-stack-protector -save-temps -fverbose-asm exempluBufferOverflowNoProt.cpp
+
+Compilare cu toate fisierele generate, cu protectie implicita:
+gcc -save-temps -fverbose-asm exempluBufferOverflow.cpp
+
+
+READ MORE:
+
+https://en.wikipedia.org/wiki/Stack_buffer_overflow
+https://en.wikipedia.org/wiki/Buffer_overflow_protection
+
+https://gabrieletolomei.wordpress.com/miscellanea/operating-systems/virtual-memory-paging-and-swapping/

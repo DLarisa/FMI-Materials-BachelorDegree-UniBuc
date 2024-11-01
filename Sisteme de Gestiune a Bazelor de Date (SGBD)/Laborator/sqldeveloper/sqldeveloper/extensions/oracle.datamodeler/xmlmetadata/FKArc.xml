@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.FKArc parentClass="oracle.dbtools.crest.model.design.ContainerObject">
+   <property name="mandatory" dataType="boolean" defaultValue="" xmlName="mandatory" xmlType="element" getter="isMandatory" setter="setMandatory" reffered="false"/>
+   <aa_property name="sizeIndex" dataType="int" defaultValue="" xmlName="sizeIndex" xmlType="element" getter="getSizeIndex" setter="setSizeIndex" reffered="false"/>
+   <property name="table" dataType="oracle.dbtools.crest.model.design.relational.Table" defaultValue="" xmlName="table" xmlType="element" getter="getTable" setter="setTable" reffered="true"/>
+   <collection name="fkeys" dataType="java.util.List" xmlName="fkeys" itemXmlName="fkeyID" getter="getFkeys" itemIsRef="true" removeItem="removeFkey" addItem="addFkey" nativeList="true" orderTheList="true"/>
+   <roproperty name="fkeys" dataType="interface java.util.List" getter="getFkeys"/>
+</oracle.dbtools.crest.model.design.relational.FKArc>

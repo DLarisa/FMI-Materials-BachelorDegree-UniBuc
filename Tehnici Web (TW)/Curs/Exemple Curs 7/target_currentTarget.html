@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p{
+width:100px; 
+height:50px; 
+border:1px solid blue;}
+</style>
+
+<body>
+
+<p>Paragraful 1</p>
+<p>Paragraful 2</p>
+<p>Paragraful 3</p>
+<p>Paragraful 4</p>
+
+
+<script>
+
+function hide(e){
+  e.currentTarget.style.visibility = "hidden";
+  alert("e.currentTarget: " + e.currentTarget.nodeName + '\n' + "e.target: " + e.target.nodeName);
+  }
+
+var ps = document.getElementsByTagName('p');
+
+for(var i = 0; i < ps.length; i++){ 
+  ps[i].addEventListener('click', hide, false);
+}
+
+document.body.addEventListener('click', hide, false);
+
+
+</script>
+
+</body>
+</html>
+

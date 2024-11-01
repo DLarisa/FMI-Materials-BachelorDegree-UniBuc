@@ -1,0 +1,64 @@
+#footer{
+	height: 45px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color:#FFFFFF;
+	font-size: 13px;
+}
+
+#footer_content{
+	background-color:#A5AbB4;
+	height: 33px;
+	vertical-align: middle;
+}
+#links{
+	margin-top: 10px;
+	width: 700px;
+	margin-left: 7px;
+}
+#copyRight_block {
+	background-color:#FFFFFF;
+	margin-top:5px;
+	height:20px;
+	font-family: Tahoma, Kalimati, FreeSans, Verdana, Arial, sans-serif;
+}
+A.bottomBannerItem{
+	font-size: 12px;
+	color: #ffffff;
+	text-decoration:none;
+	font-family: Tahoma, Kalimati, FreeSans, Verdana, Arial, sans-serif;
+}
+A.bottomBannerItem:hover {
+	font-size: 12px;
+	color: #003399;
+	text-decoration:none;
+	font-family: Tahoma, Kalimati, FreeSans, Verdana, Arial, sans-serif;
+}
+A.bottomBannerItem:focus {
+	font-size: 12px;
+	color: #003399;
+	text-decoration:none;
+	font-family: Tahoma, Kalimati, FreeSans, Verdana, Arial, sans-serif;
+}
+
+A.copyRight:link{
+	color: #333333;
+	font-size:9px;
+	text-decoration:none;
+	margin-left: 7px;
+	font-family: Tahoma, Kalimati, FreeSans, Verdana, Arial, sans-serif;
+}
+A.copyRight:hover{
+	color: #003399;
+	font-size:9px;
+	text-decoration:none;
+	font-family: Tahoma, Kalimati, FreeSans, Verdana, Arial, sans-serif;
+}
+A.copyRight:focus{
+	color: #003399;
+	font-size:9px;
+	text-decoration:none;
+	font-family: Tahoma, Kalimati, FreeSans, Verdana, Arial, sans-serif;
+}

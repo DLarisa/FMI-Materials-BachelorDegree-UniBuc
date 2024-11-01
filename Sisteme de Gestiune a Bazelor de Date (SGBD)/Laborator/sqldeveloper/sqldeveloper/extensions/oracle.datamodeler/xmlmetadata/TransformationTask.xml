@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.process.TransformationTask parentClass="oracle.dbtools.crest.model.design.DesignPart">
+   <aa_property name="inputParamsObjectID" dataType="java.lang.String" defaultValue="" xmlName="inputParamsObjectID" xmlType="element" getter="getInputParObjectID" setter="setInputParObjectID" reffered="false"/>
+   <aa_property name="ouputParamsObjectID" dataType="java.lang.String" defaultValue="" xmlName="ouputParamsObjectID" xmlType="element" getter="getOutputParObjectID" setter="setOutputParObjectID" reffered="false"/>
+   <property name="process" dataType="oracle.dbtools.crest.model.design.process.Process" defaultValue="" xmlName="process" xmlType="element" getter="getProcess" setter="setProcess" reffered="true"/>
+   <property name="processModel" dataType="oracle.dbtools.crest.model.design.process.ProcessModel" defaultValue="" xmlName="processModel" xmlType="element" getter="getProcessModel" setter="setProcessModel" reffered="true"/>
+   <property name="topLevel" dataType="boolean" defaultValue="" xmlName="topLevel" xmlType="element" getter="isTopLevel" setter="setTopLevel" reffered="false"/>
+   <property name="inputParamsObject" dataType="oracle.dbtools.crest.model.design.process.InOutParams" xmlName="inputParamsObject" xmlType="element" getter="getInputParamsObject" createItem="getInputParamsObject" reffered="false"/>
+   <property name="outputParamsobject" dataType="oracle.dbtools.crest.model.design.process.InOutParams" xmlName="outputParamsObject" xmlType="element" getter="getOutputParamsObject" createItem="getOutputParamsObject" reffered="false"/>
+   <collection name="sources" dataType="java.util.List" xmlName="sources" itemXmlName="sourceStore" getter="getSources" itemIsRef="true" listOfRefs="true" refsXMLName="selectedSources" nativeList="true" orderTheList="true"/>
+   <collection name="targets" dataType="java.util.List" xmlName="targets" itemXmlName="targetStore" getter="getTargets" itemIsRef="true" listOfRefs="true" refsXMLName="selectedTargets" nativeList="true" orderTheList="true"/>
+   <collection external="true" name="Transformations" dataType="oracle.dbtools.crest.model.design.process.TransformationSet" xmlName="Transformations" itemXmlName="Transformation" getter="getTransformationSet" createItem="createTransformation"/>
+   <collection external="true" name="TransformationFlows" dataType="oracle.dbtools.crest.model.design.process.TransformationFlowSet" xmlName="TransformationFlows" itemXmlName="TransformationFlow" getter="getFlowSet" createItem="createFlow"/>
+   <collection external="true" name="NoteObjects" dataType="oracle.dbtools.crest.model.design.NoteSet" xmlName="NoteObjects" itemXmlName="NoteObject" getter="getNoteSet" createItem="createNote"/>
+   <roproperty name="agents" dataType="oracle.dbtools.crest.model.design.DesignObjectCollection" getter="getAgents"/>
+   <roproperty name="externalDataSet" dataType="oracle.dbtools.crest.model.design.process.ExternalDataSet" getter="getExternalDataSet"/>
+   <roproperty name="flowSet" dataType="oracle.dbtools.crest.model.design.process.TransformationFlowSet" getter="getFlowSet"/>
+   <roproperty name="flowsforProcessObject" dataType="interface java.util.Collection" getter="getFlowsForProcessObject"/>
+   <roproperty name="inOutParamsObjectByid" dataType="oracle.dbtools.crest.model.design.process.InOutParams" getter="getInOutParamsObjectById"/>
+   <roproperty name="infoStoreSet" dataType="oracle.dbtools.crest.model.design.process.InfoStoreSet" getter="getInfoStoreSet"/>
+   <roproperty name="inputParameters" dataType="interface java.util.List" getter="getInputParameters"/>
+   <roproperty name="inputParamsObject" dataType="oracle.dbtools.crest.model.design.process.InOutParams" getter="getInputParamsObject"/>
+   <roproperty name="localIDGenerator" dataType="oracle.dbtools.crest.model.IDGenerator" getter="getLocalIDGenerator"/>
+   <roproperty name="outputParameters" dataType="interface java.util.List" getter="getOutputParameters"/>
+   <roproperty name="outputParamsobject" dataType="oracle.dbtools.crest.model.design.process.InOutParams" getter="getOutputParamsObject"/>
+   <roproperty name="parameterObjectById" dataType="oracle.dbtools.crest.model.design.process.ParameterObject" getter="getParameterObjectById"/>
+   <roproperty name="parentDataFlowdesign" dataType="oracle.dbtools.crest.model.design.process.TransformationTask" getter="getParentDataFlowdesign"/>
+   <roproperty name="sources" dataType="interface java.util.List" getter="getSources"/>
+   <roproperty name="stores" dataType="oracle.dbtools.crest.model.design.DesignObjectCollection" getter="getStores"/>
+   <roproperty name="targets" dataType="interface java.util.List" getter="getTargets"/>
+   <roproperty name="transformationPackage" dataType="oracle.dbtools.crest.model.design.process.TransformationPackage" getter="getTransformationPackage"/>
+   <roproperty name="transformationSet" dataType="oracle.dbtools.crest.model.design.process.TransformationSet" getter="getTransformationSet"/>
+</oracle.dbtools.crest.model.design.process.TransformationTask>

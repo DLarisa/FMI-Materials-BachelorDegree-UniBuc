@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.RoleSqlServerv2k5 parentClass="oracle.dbtools.crest.model.design.storage.sqlserver.RoleSqlServer">
+   <property name="defaultSchema" dataType="java.lang.String" defaultValue="" xmlName="defaultSchema" xmlType="element" getter="getDefaultSchema" setter="setDefaultSchema" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.RoleSqlServerv2k5>

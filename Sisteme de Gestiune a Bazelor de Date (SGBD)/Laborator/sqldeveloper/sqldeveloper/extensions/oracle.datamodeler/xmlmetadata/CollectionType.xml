@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.datatypes.CollectionType parentClass="oracle.dbtools.crest.model.design.datatypes.AbstractDTObject">
+   <property name="dataTypeDescr" dataType="oracle.dbtools.crest.model.design.datatypes.CollectionType$DataTypeWrapper" defaultValue="" xmlName="dataTypeDescr" xmlType="element" getter="getDataTypeWrapper" createItem="getDataTypeWrapper" reffered="false"/>
+   <property name="maxElement" dataType="int" defaultValue="" xmlName="maxElement" xmlType="element" getter="getMaxElement" setter="setMaxElement" reffered="false"/>
+   <property name="type" dataType="java.lang.String" defaultValue="" xmlName="type" xmlType="element" getter="getType" setter="setType" reffered="false"/>
+   <roproperty name="arrayType" dataType="boolean" getter="isArrayType"/>
+   <roproperty name="byteSize" dataType="int" getter="getByteSize"/>
+   <roproperty name="dataType" dataType="oracle.dbtools.crest.model.design.DesignObject" getter="getDataType"/>
+   <roproperty name="size" dataType="java.lang.String" getter="getSize"/>
+</oracle.dbtools.crest.model.design.datatypes.CollectionType>

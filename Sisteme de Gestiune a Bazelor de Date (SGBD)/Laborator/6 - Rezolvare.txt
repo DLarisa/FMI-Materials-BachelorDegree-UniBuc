@@ -1,0 +1,552 @@
+-- Laboratorul 6
+
+set serveroutput on;
+set echo off;
+set verify off;
+
+
+-- EXERCIȚII REZOLVATE PDF --
+-- Ex1 -> Trigger LMD Tabel (Instrucțiune)
+CREATE OR REPLACE TRIGGER t1
+BEFORE INSERT OR UPDATE OR DELETE 
+ON emp_lgd
+BEGIN
+  if to_char(sysdate, 'd') = 1 or 
+     (to_char(sysdate, 'hh24') not between 8 and 20)
+    then raise_application_error(-20000, 'Tabelul nu poate fi actualizat.');
+  end if;
+END t1;
+/
+
+update emp_lgd
+set employee_id = 1000;
+rollback;
+
+drop trigger t1;
+
+
+-- Ex2 -> Trigger LMD Tabel (Linie)
+--- Varianta 1
+CREATE OR REPLACE TRIGGER t2 
+BEFORE UPDATE OF salary ON emp_lgd
+FOR EACH ROW
+BEGIN 
+  if(:new.salary < :old.salary) then
+    raise_application_error(-20000, 'Salariul nu poate fi micsorat.');
+  end if;
+END t2;
+/
+
+update emp_lgd
+set salary = salary - 100;
+
+drop trigger t2;
+
+--- Varianta 2
+CREATE OR REPLACE TRIGGER t2 
+BEFORE UPDATE OF salary ON emp_lgd
+FOR EACH ROW
+WHEN (new.salary < old.salary)
+BEGIN 
+  raise_application_error(-20000, 'Salariul nu poate fi micsorat.');
+END t2;
+/
+
+update emp_lgd
+set salary = salary - 100;
+
+drop trigger t2;
+
+
+-- Ex3
+create table job_grades_lgd as select * from job_grades;
+
+CREATE OR REPLACE TRIGGER t3
+BEFORE UPDATE OF lowest_sal, highest_sal 
+ON job_grades_lgd
+FOR EACH ROW
+DECLARE
+  v_min_sal emp_lgd.salary%TYPE; 
+  v_max_sal emp_lgd.salary%TYPE;
+  exceptie  EXCEPTION;
+BEGIN
+  SELECT MIN(salary), MAX(salary) 
+  INTO v_min_sal, v_max_sal 
+  FROM emp_lgd;
+  
+  IF (:OLD.grade_level = 1) AND (v_min_sal < :NEW.lowest_sal) THEN
+    RAISE exceptie;
+  END IF;
+  
+  IF (:OLD.grade_level = 7) AND (v_max_sal > :NEW.highest_sal) THEN
+    RAISE exceptie;
+  END IF;
+  
+EXCEPTION
+  WHEN exceptie THEN
+    RAISE_APPLICATION_ERROR (-20000, 'Exista salarii care se gasesc in afara intervalului');
+END t3;
+/
+
+UPDATE job_grades_lgd 
+SET lowest_sal = 3000 
+WHERE grade_level = 1;
+
+UPDATE job_grades_lgd 
+SET highest_sal = 20000 
+WHERE grade_level = 7;
+
+drop trigger t3;
+drop table job_grades_lgd;
+
+
+-- Ex4
+--- a)
+create table info_dept_lgd(id number(10) primary key, nume_dept varchar2(25), 
+                           plati number(8, 2));
+
+--- b)
+INSERT INTO info_dept_lgd
+SELECT department_id, department_name, SUM(salary)
+FROM employees JOIN departments USING(department_id)
+GROUP BY department_id, department_name;
+
+select *
+from info_dept_lgd;
+
+--- c)
+-- Procedură Auxiliară Pentru a Modifica Tabelul
+CREATE OR REPLACE PROCEDURE modific_plati(cod info_dept_lgd.id%type,
+                                          v_plati info_dept_lgd.plati%type) IS
+BEGIN
+  update info_dept_lgd
+  set plati = nvl(plati, 0) + v_plati
+  where id = cod;
+END modific_plati;
+/
+
+CREATE OR REPLACE TRIGGER t4
+AFTER DELETE OR INSERT OR UPDATE OF salary
+ON emp_lgd
+FOR EACH ROW
+BEGIN
+  if deleting then
+    -- ștergere angajat
+    modific_plati(:old.department_id, -1 * :old.salary);
+  elsif updating then
+    -- update salariu
+    modific_plati(:old.department_id, :new.salary - :old.salary);
+  else
+    -- adaug angajat
+    modific_plati(:old.salary, :new.salary);
+  end if;
+END;
+/
+
+select *
+from info_dept_lgd
+where id = 90;
+
+INSERT INTO emp_lgd (employee_id, last_name, email, hire_date, job_id, salary, department_id)
+                    VALUES (300, 'N1', 'n1@g.com', sysdate, 'SA_REP', 2000, 90);
+
+UPDATE emp_lgd 
+SET salary = salary + 1000 
+WHERE employee_id = 300;
+
+DELETE FROM emp_lgd 
+WHERE employee_id = 300;
+
+drop procedure modific_plati;
+drop trigger t4;
+drop table info_dept_lgd;
+
+
+-- Ex5
+--- a) + b)
+CREATE TABLE info_emp_lgd (id, nume, prenume, salariu, id_dept) AS 
+SELECT employee_id, last_name, first_name, salary, department_id
+FROM employees;
+
+ALTER TABLE info_emp_lgd
+ADD CONSTRAINT einfo_emp_pk PRIMARY KEY(id);
+
+ALTER TABLE info_emp_lgd
+ADD CONSTRAINT einfo_emp_dept_fk FOREIGN KEY(id_dept) REFERENCES info_dept_lgd(id);
+
+drop table info_emp_lgd;
+
+--- c)
+CREATE OR REPLACE VIEW v_info_lgd AS
+SELECT e.id, e.nume, e.prenume, e.salariu, e.id_dept,
+       d.nume_dept, d.plati
+FROM info_emp_lgd e JOIN info_dept_lgd d 
+ON e.id_dept = d.id;
+
+drop view v_info_lgd;
+
+--- d) Pt a Vedea Caracteristicile Vizualizării
+SELECT * 
+FROM user_updatable_columns 
+WHERE table_name = UPPER('v_info_lgd');
+
+--- e) Trigger LMD Vizualizare
+CREATE OR REPLACE TRIGGER t5
+INSTEAD OF DELETE OR INSERT OR UPDATE ON v_info_lgd
+FOR EACH ROW
+BEGIN
+  -- Insert Angajat (Departamentul Există - presupun)
+  if inserting then
+    insert into info_emp_lgd values(:new.id, :new.nume, :new.prenume,
+                                    :new.salariu, :new.id_dept);
+    
+    update info_dept_lgd 
+    set plati = plati + :new.salariu
+    where id = :new.id_dept;
+    
+  -- Delete Angajat
+  elsif deleting then
+    delete from info_emp_lgd where id = :old.id;
+    
+    update info_dept_lgd
+    set plati = plati - :old.salariu
+    where id = :old.id_dept;
+    
+  -- Modificare Salariu Angajat
+  elsif updating('salariu') then
+    update info_emp_lgd 
+    set salariu = :new.salariu
+    where id = :old.id;
+    
+    update info_dept_lgd
+    set plati = nvl(plati, 0) + (:new.salariu - :old.salariu)
+    where id = :old.id_dept;
+    
+  -- Modific Departamentul unui Angajat
+  elsif updating('id_dept') then
+    update info_emp_lgd
+    set id_dept = :new.id_dept
+    where id = :old.id;
+    
+    update info_dept_lgd
+    set plati = plati - :old.salariu
+    where id = :old.id_dept;
+    
+    update info_dept_lgd
+    set plati = plati + :old.salariu
+    where id = :new.id_dept;
+  end if;
+END t5;
+/
+
+-- Acum s-au modificat câteva rânduri care înainte nu puteau fi modificate
+SELECT * 
+FROM user_updatable_columns 
+WHERE table_name = UPPER('v_info_lgd');
+
+-- f)
+--- Insert Angajat
+SELECT * 
+FROM info_dept_lgd
+WHERE id = 10;
+
+INSERT INTO v_info_lgd VALUES (400, 'N1', 'P1', 3000, 10, 'Nume dept', 0);
+
+SELECT * 
+FROM info_emp_lgd 
+WHERE id = 400;
+
+SELECT * 
+FROM info_dept_lgd 
+WHERE id = 10;
+
+--- Modificare Salariu Angajat
+UPDATE v_info_lgd
+SET salariu = salariu + 1000 
+WHERE id = 400;
+
+--- Modificare Departament Angajat
+SELECT * 
+FROM info_dept_lgd 
+WHERE id = 90;
+
+UPDATE v_info_lgd 
+SET id_dept = 90 
+WHERE id = 400;
+
+SELECT * FROM info_emp_lgd WHERE id = 400;
+SELECT * FROM info_dept_lgd WHERE id IN (10,90);
+
+--- Delete Angajat 
+DELETE FROM v_info_lgd WHERE id = 400;
+SELECT * FROM info_emp_lgd WHERE id = 400;
+SELECT * FROM info_dept_lgd WHERE id = 90;
+
+drop trigger t5;
+
+
+-- Ex6
+CREATE OR REPLACE TRIGGER t6
+BEFORE DELETE ON emp_lgd
+BEGIN
+  if user = upper('grupa123') then
+    raise_application_error(-20000, 'Nu ai voie sa stergi!');
+  end if;
+END;
+/
+
+drop trigger t6;
+
+
+-- Ex7
+--- a)
+CREATE TABLE audit_lgd (utilizator varchar2(30), nume_bd varchar2(50),
+                        eveniment varchar2(20), nume_obiect varchar2(30),
+                        data date);
+drop table audit_lgd;
+
+--- b) Trigger Sistem
+CREATE OR REPLACE TRIGGER t7
+AFTER CREATE OR ALTER OR DROP ON SCHEMA
+BEGIN
+  insert into audit_lgd values(sys.login_user, sys.database_name, sys.sysevent,
+                               sys.dictionary_obj_name, sysdate);
+END;
+/
+
+create index ind_lgd on emp_lgd(first_name);
+drop index ind_lgd;
+select * from audit_lgd;
+
+drop trigger t7;
+
+
+-- Ex8
+CREATE OR REPLACE PACKAGE pachet_lgd AS
+  smin emp_lgd.salary%type;
+  smax emp_lgd.salary%type;
+  smed emp_lgd.salary%type;
+END pachet_lgd;
+/
+
+-- Trigger pt Pachet
+CREATE OR REPLACE TRIGGER trig81_lgd 
+BEFORE UPDATE OF salary ON emp_lgd 
+BEGIN
+  SELECT MIN(salary), AVG(salary), MAX(salary)
+  INTO pachet_lgd.smin, pachet_lgd.smed, pachet_lgd.smax
+  FROM emp_lgd;
+END;
+/
+
+-- Trigger pt Tabele
+CREATE OR REPLACE TRIGGER trig82_lgd 
+BEFORE UPDATE OF salary ON emp_lgd 
+FOR EACH ROW 
+BEGIN 
+  IF (:OLD.salary = pachet_lgd.smin) AND (:NEW.salary > pachet_lgd.smed) 
+    THEN RAISE_APPLICATION_ERROR(-20001, 'Acest salariu depaseste valoarea medie');
+  ELSIF (:OLD.salary = pachet_lgd.smax) AND (:NEW.salary < pachet_lgd.smed) 
+    THEN RAISE_APPLICATION_ERROR(-20001, 'Acest salariu este sub valoarea medie');
+  END IF;
+END;
+/
+
+SELECT AVG(salary) 
+FROM emp_lgd;
+
+UPDATE emp_lgd
+SET salary = 10000
+WHERE salary = (SELECT MIN(salary) 
+                FROM emp_lgd);
+                
+UPDATE emp_lgd 
+SET salary = 1000 
+WHERE salary = (SELECT MAX(salary) 
+                FROM emp_lgd);
+                
+DROP PACKAGE pachet_lgd;               
+DROP TRIGGER trig81_lgd;
+DROP TRIGGER trig82_lgd;
+
+
+
+
+
+-- EXERCIȚII PROPUSE --
+-- Ex1
+CREATE OR REPLACE TRIGGER t1
+BEFORE DELETE ON dept_lgd
+BEGIN
+  if user != 'SCOTT' then
+    raise_application_error(-20000, 'Nu aveti permisiunea de a sterge!');
+  end if;
+END;
+/
+
+delete from dept_lgd
+where manager_id = 100; 
+
+drop trigger t1;
+
+
+
+-- Ex2
+CREATE OR REPLACE TRIGGER t2
+BEFORE UPDATE OF commission_pct ON emp_lgd
+FOR EACH ROW
+BEGIN
+  if :new.commission_pct > 0.5 then
+    raise_application_error(-20000, 'Nu se poate mari comisionul!');
+  end if;
+END;
+/
+
+update emp_lgd
+set commission_pct = 0.7;
+
+drop trigger t2;
+
+
+
+-- Ex3
+--- a)
+create table info_dept_lgd as select * from departments;
+alter table info_dept_lgd add Numar number(4);
+
+update info_dept_lgd d
+set numar = (select count(*)
+             from employees e
+             where e.department_id = d.department_id);
+
+select *
+from info_dept_lgd;
+
+drop table info_dept_lgd;
+
+
+--- b)
+CREATE OR REPLACE TRIGGER t3
+AFTER DELETE OR INSERT OR UPDATE OF department_id
+ON emp_lgd
+FOR EACH ROW
+BEGIN
+  if deleting then
+    update info_dept_lgd
+    set numar = numar - 1
+    where department_id = :old.department_id;
+  elsif inserting then
+    update info_dept_lgd
+    set numar = numar + 1
+    where department_id = :new.department_id;
+  else
+    update info_dept_lgd
+    set numar = numar - 1
+    where department_id = :old.department_id;
+    
+    update info_dept_lgd
+    set numar = numar + 1
+    where department_id = :new.department_id;
+  end if;
+END;
+/
+
+insert into emp_lgd values(7000, 'a1', 'a1', 'aa', null, sysdate, 'AD_VP', 10000, 0.4, 100, 2);
+
+delete from emp_lgd
+where department_id = 50;
+
+update emp_lgd
+set department_id = 2
+where employee_id = 200;
+
+rollback;
+drop trigger t3;
+
+
+
+-- Ex4
+CREATE OR REPLACE TRIGGER t4
+BEFORE INSERT OR UPDATE OF department_id 
+ON emp_lgd
+FOR EACH ROW
+DECLARE
+  nr_ang    number;
+BEGIN
+  select count(*)
+  into nr_ang
+  from emp_lgd
+  where department_id = :new.department_id;
+    
+  if nr_ang + 1 > 45 then
+    raise_application_error(-20000, 'Nu se poate insera angajatul in acel departament!');
+  end if;
+END;
+/
+
+-- merge
+insert into emp_lgd values(123565, 'Prenume', 'Nume', 'e', 't', SYSDATE, 'IT_PROG', 10000, 0.9, 100, 50);
+
+-- eroare -> Mutable Table
+update emp_lgd
+set department_id = 50
+where employee_id = 206;
+rollback;
+
+drop trigger t4;
+
+
+-- Trigger Nou care Merge -> Mutable Table Error
+CREATE OR REPLACE PACKAGE aux IS
+  TYPE tablou IS TABLE OF dept_lgd.department_id%TYPE
+    INDEX BY BINARY_INTEGER;
+
+  v_cod_dep           tablou;
+  v_NrIntrari         BINARY_INTEGER := 0;
+END aux;
+/
+
+-- Trigger care numără departamentele și pune codul lor în vector
+CREATE OR REPLACE TRIGGER t41
+BEFORE INSERT OR UPDATE OF department_id
+ON emp_lgd
+FOR EACH ROW
+BEGIN
+  aux.v_NrIntrari := aux.v_NrIntrari + 1;
+  aux.v_cod_dep(aux.v_NrIntrari) := :NEW.department_id;
+END t41;
+/
+
+CREATE OR REPLACE TRIGGER t42
+BEFORE INSERT OR UPDATE OF department_id
+ON emp_lgd
+DECLARE
+  v_Max_emp        CONSTANT NUMBER := 45;
+  v_emp_curent     NUMBER;
+  v_cod_dep        dept_lgd.department_id%TYPE;
+BEGIN
+  /* Parcurge fiecare departament inserat sau actualizat si
+     verifica daca se incadreaza in limita stabilita */
+  FOR v_LoopIndex IN 1..aux.v_NrIntrari LOOP
+    v_cod_dep := aux.v_cod_dep(v_LoopIndex);
+    
+    SELECT COUNT(*)
+    INTO v_emp_curent
+    FROM emp_lgd
+    WHERE department_id = v_cod_dep;
+
+    IF v_emp_curent >= v_Max_emp THEN
+      RAISE_APPLICATION_ERROR(-20000, 'Prea multi angajati in departamentul 
+                              avand codul: ' || v_cod_dep);
+    END IF;
+  END LOOP;
+  
+  /* Reseteaza contorul deoarece urmatoarea executie
+  va folosi date noi */
+  aux.v_NrIntrari := 0;
+END t42;
+/
+
+drop package aux;
+drop trigger t41;
+drop trigger t42;

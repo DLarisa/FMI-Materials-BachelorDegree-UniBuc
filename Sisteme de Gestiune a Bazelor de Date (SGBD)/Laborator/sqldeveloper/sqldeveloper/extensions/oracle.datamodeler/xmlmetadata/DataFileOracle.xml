@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.DataFileOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="autoextend" dataType="java.lang.String" defaultValue="UNDEFINED" xmlName="autoextend" xmlType="element" getter="getAutoextend" setter="setAutoextend" reffered="false"/>
+   <roproperty name="dataBase" dataType="oracle.dbtools.crest.model.design.storage.oracle.DataBaseOracle" getter="getDataBase"/>
+   <property name="fileName" dataType="java.lang.String" defaultValue="" xmlName="fileName" xmlType="element" getter="getFileName" setter="setFileName" reffered="false"/>
+   <property name="maxSize" dataType="java.lang.String" defaultValue="UNLIMITED" xmlName="maxSize" xmlType="element" getter="getMaxSize" setter="setMaxSize" reffered="false"/>
+   <property name="measureUnit" dataType="java.lang.String" defaultValue="K" xmlName="measureUnit" xmlType="element" getter="getMeasureUnit" setter="setMeasureUnit" reffered="false"/>
+   <property name="nextBlockSize" dataType="int" defaultValue="1" xmlName="nextBlockSize" xmlType="element" getter="getNextBlockSize" setter="setNextBlockSize" reffered="false"/>
+   <property name="reuse" dataType="java.lang.String" defaultValue="YES" xmlName="reuse" xmlType="element" getter="getReuse" setter="setReuse" reffered="false"/>
+   <property name="size" dataType="long" defaultValue="0" xmlName="size" xmlType="element" getter="getSize" setter="setSize" reffered="false"/>
+   <roproperty name="tableSpace" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle" getter="getTableSpace"/>
+</oracle.dbtools.crest.model.design.storage.oracle.DataFileOracle>

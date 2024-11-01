@@ -1,0 +1,9 @@
+Chi-squared test on RGB channels for peppers.bmp:
+R:  529917.10
+G:  606801.97
+B: 1053070.31
+
+Chi-squared test on RGB channels for enc_peppers_ok.bmp:
+R: 286.68  
+G: 250.71  
+B: 226.36

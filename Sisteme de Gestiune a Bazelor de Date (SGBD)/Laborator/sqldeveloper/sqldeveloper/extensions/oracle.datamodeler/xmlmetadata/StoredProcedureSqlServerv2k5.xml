@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.StoredProcedureSqlServerv2k5 parentClass="oracle.dbtools.crest.model.design.storage.sqlserver.StoredProcedureSqlServer">
+   <collection name="synonyms" dataType="interface java.util.List" xmlName="synonyms" itemXmlName="Synonym" getter="getSynonyms" createItem="createSynonym"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.StoredProcedureSqlServerv2k5>

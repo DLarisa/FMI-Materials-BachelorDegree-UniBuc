@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.EntityView parentClass="oracle.dbtools.crest.model.design.AbstractView">
+   <property name="viewType" dataType="java.lang.String" defaultValue="" xmlName="viewType" xmlType="element" getter="getViewType" setter="setViewType" reffered="false"/>
+   <roproperty name="attributeByObjectID" dataType="oracle.dbtools.crest.model.design.logical.AttributeView" getter="getAttributeByObjectID"/>
+   <roproperty name="attributeViewByLongName" dataType="oracle.dbtools.crest.model.design.logical.AttributeView" getter="getAttributeViewByLongName"/>
+   <roproperty name="attributeViewByName" dataType="oracle.dbtools.crest.model.design.logical.AttributeView" getter="getAttributeViewByName"/>
+   <roproperty name="attributeViewSet" dataType="oracle.dbtools.crest.model.design.logical.AttributeViewSet" getter="getAttributeViewSet"/>
+   <roproperty name="deletedMapping" dataType="oracle.dbtools.crest.model.xtdmapping.XtdMapping" getter="getDeletedMapping"/>
+   <roproperty name="editableFonts" dataType="interface java.util.List" getter="getEditableFonts"/>
+   <roproperty name="engTableView" dataType="oracle.dbtools.crest.model.design.relational.TableView" getter="getEngTableView"/>
+   <roproperty name="entitySet" dataType="oracle.dbtools.crest.model.design.DesignObjectSet" getter="getEntitySet"/>
+   <roproperty name="fontObject" dataType="oracle.dbtools.crest.model.design.FontObject" getter="getFontObject"/>
+   <roproperty name="refColumns" dataType="interface java.util.List" getter="getRefColumns"/>
+</oracle.dbtools.crest.model.design.logical.EntityView>

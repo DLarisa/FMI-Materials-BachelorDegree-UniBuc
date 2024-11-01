@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1546583775 source:c:\users\larisa\desktop\proiect\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

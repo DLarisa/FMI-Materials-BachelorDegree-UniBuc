@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.PartitionFunctionSqlServer parentClass="oracle.dbtools.crest.model.design.storage.sqlserver.AbstractStorageObjectSqlServer">
+   <aa_property name="bvaluesSet" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.PartitionFunctionSqlServer$InlineList" defaultValue="" xmlName="bvaluesSet" xmlType="element" getter="getBValuesSet" setter="setBValuesSet" reffered="true"/>
+   <property name="boundaryValues" dataType="java.lang.String" defaultValue="" xmlName="boundaryValues" xmlType="element" getter="getBoundaryValues" setter="setBoundaryValues" reffered="false" listOfRefs="true"/>
+   <property name="inputType" dataType="java.lang.String" defaultValue="" xmlName="inputType" xmlType="element" getter="getInputType" setter="setInputType" reffered="false"/>
+   <property name="rangeType" dataType="java.lang.String" defaultValue="LEFT" xmlName="rangeType" xmlType="element" getter="getRangeType" setter="setRangeType" reffered="false"/>
+   <collection name="partitionScheme" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="partitionScheme" itemXmlName="PartitionScheme" getter="getPartitionScheme" createItem="createPartitionScheme"/>
+   <property name="database" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.DataBaseSqlServer" defaultValue="" xmlName="database" xmlType="element" getter="getDatabase" setter="setDatabase" reffered="true"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.PartitionFunctionSqlServer>

@@ -1,0 +1,240 @@
+-- RECAPITULARE
+
+
+-- Ex3
+select last_name||' '||first_name, department_id
+from employees
+where department_id in (10, 30)
+order by last_name;
+
+
+-- Ex4
+select sysdate
+from dual;
+
+
+-- Ex5
+-- Var 1
+select last_name, hire_date
+from employees
+where hire_date like ('%87%');
+
+-- Var 2
+select last_name, hire_date
+from employees
+where to_char(hire_date, 'yyyy') = 1987;
+
+-- Var 3 !!! EXTRACT
+select last_name, hire_date
+from employees
+where EXTRACT (year from hire_date) = 1987;
+
+
+-- Ex6
+-- Var 1
+select last_name, job_id
+from employees
+where manager_id is null;
+
+-- Var 2
+select last_name, job_id
+from employees
+where nvl(manager_id, 0) = 0;
+
+
+-- Ex7
+select last_name, salary, commission_pct
+from employees
+where nvl(commission_pct, 0) != 0
+order by salary desc, commission_pct desc;
+
+
+-- Ex8
+select last_name, salary, commission_pct
+from employees
+order by salary desc, commission_pct desc;
+
+
+-- Ex9
+select last_name
+from employees
+where lower(last_name) like '__a%';
+
+
+-- Ex10
+select last_name||' '||first_name, department_id, manager_id
+from employees
+where manager_id = 102 or 
+     (department_id = 30 and lower(last_name||first_name) like '%l%l%');
+
+
+-- Ex11
+select last_name, job_id, salary
+from employees
+where salary not in (1000, 2000, 3000) and
+     (lower(job_id) like '%clerk%' or lower(job_id) like '%rep%');
+     
+
+-- Ex12
+select last_name, department_name
+from employees left join departments using (department_id);
+
+
+-- Ex13
+select department_name, last_name
+from departments left join employees using (department_id);
+
+
+-- Ex14
+select ang.employee_id Ang_Cod, ang.last_name Ang_Nume,
+       sef.employee_id Sef_Cod, sef.last_name Sef_Nume
+from employees ang join employees sef on ang.manager_id=sef.employee_id;
+
+
+-- Ex15
+select ang.employee_id Ang_Cod, ang.last_name Ang_Nume,
+       sef.employee_id Sef_Cod, sef.last_name Sef_Nume
+from employees ang left join employees sef on ang.manager_id=sef.employee_id;
+
+
+-- Ex16
+-- Var 1
+(select department_id
+from departments)
+minus
+(select unique department_id
+from employees);
+
+-- Var 2
+select department_id
+from departments 
+where department_id not in 
+      (select nvl(department_id, 0)
+       from employees);
+
+
+-- Ex17
+select round(max(salary), 2) Maxim, round(min(salary), 2) Minim, 
+       round(sum(salary), 2) Suma, round(avg(salary), 2) Media
+from employees;
+
+
+-- Ex18
+select job_id, max(salary) Max, min(salary) Min, round(avg(salary), 2) Medie
+from employees
+group by job_id;
+
+
+-- Ex19
+select job_id, count(employee_id) Nr_Ang
+from employees
+group by job_id;
+
+
+-- Ex20
+select department_name, city Oras, 
+       count(employee_id) Nr_Ang, round(avg(salary), 2) Medie
+from employees join departments using (department_id)
+join locations using (location_id)
+group by(department_name), city;
+
+
+-- Ex21
+select employee_id, last_name
+from employees 
+where salary > (select round(avg(salary), 2)
+                from employees)
+order by salary desc;
+
+
+-- Ex22
+select min((min_salary + max_salary) / 2) 
+from jobs;
+
+
+-- Ex23
+select min((min_salary + max_salary) / 2), job_id
+from jobs
+group by job_id;
+
+
+-- Ex24
+-- a)
+select department_id, department_name, count(employee_id) nr
+from departments join employees using (department_id)
+group by department_id, department_name
+having count(employee_id) < 4;
+
+-- b)
+select department_id, department_name, count(employee_id) nr
+from departments join employees using (department_id)
+group by department_id, department_name
+having count(employee_id) = (select max(count(employee_id))
+                             from employees
+                             group by department_id);
+
+
+-- Ex25
+select count(count(department_id)) nr
+from employees
+group by department_id
+having count(*) >= 15;
+
+
+-- Ex26
+select employee_id, last_name, hire_date
+from employees
+where to_char(hire_date, 'dd') = 
+(select to_char(hire_date, 'dd') zi
+from employees
+group by to_char(hire_date, 'dd')
+having count(employee_id) = (select max(count(employee_id))
+                             from employees
+                             group by to_char(hire_date, 'dd')));
+
+-- SAU
+SELECT employee_id, last_name, TO_CHAR(hire_date, 'dd')
+FROM employees
+WHERE TO_CHAR(hire_date,'dd') IN (SELECT TO_CHAR(hire_date,'dd')
+                                  FROM employees
+                                  GROUP BY TO_CHAR(hire_date,'dd')
+HAVING COUNT(*) = (SELECT MAX(COUNT(*))
+                   FROM employees
+                   GROUP BY TO_CHAR(hire_date,'dd')));
+
+
+-- Ex27
+select last_name, salary
+from employees
+where (salary, department_id) in (select min(salary), department_id
+                                  from employees
+                                  group by department_id);
+
+-- SAU
+SELECT last_name, salary
+FROM employees e1
+WHERE salary = (SELECT min(salary)
+                FROM employees 
+                WHERE department_id = e1.department_id);
+                
+                
+-- Ex28
+select *
+from (select employee_id, last_name, salary
+      from employees
+      order by salary desc)
+where rownum <= 10;
+
+
+-- Ex29
+select department_id, department_name, sum(salary) suma
+from employees join departments using (department_id)
+group by department_id, department_name;
+
+
+-- Ex30
+select last_name, department_id, salary
+from employees e1
+where salary >= (select avg(salary)
+            	   from employees
+            	   where e1.department_id = department_id);

@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.db2.TableProxyDB2 parentClass="oracle.dbtools.crest.model.design.storage.TableProxy">
+   <property name="activeGroupData" dataType="float" defaultValue="0.0" xmlName="activeGroupData" xmlType="element" getter="getActiveGroupData" setter="setActiveGroupData" reffered="false"/>
+   <property name="activeGroupDelete" dataType="float" defaultValue="0.0" xmlName="activeGroupDelete" xmlType="element" getter="getActiveGroupDelete" setter="setActiveGroupDelete" reffered="false"/>
+   <property name="activeGroupInsert" dataType="float" defaultValue="0.0" xmlName="activeGroupInsert" xmlType="element" getter="getActiveGroupInsert" setter="setActiveGroupInsert" reffered="false"/>
+   <property name="annualUpdateRateDelete" dataType="float" defaultValue="0.0" xmlName="annualUpdateRateDelete" xmlType="element" getter="getAnnualUpdateRateDelete" setter="setAnnualUpdateRateDelete" reffered="false"/>
+   <property name="annualUpdateRateInsert" dataType="float" defaultValue="0.0" xmlName="annualUpdateRateInsert" xmlType="element" getter="getAnnualUpdateRateInsert" setter="setAnnualUpdateRateInsert" reffered="false"/>
+   <property name="audit" dataType="java.lang.String" defaultValue="NONE" xmlName="audit" xmlType="element" getter="getAudit" setter="setAudit" reffered="false"/>
+   <property name="calculatePrimaryQuantity" dataType="boolean" defaultValue="true" xmlName="calculatePrimaryQuantity" xmlType="element" getter="getCalculatePrimaryQuantity" setter="setCalculatePrimaryQuantity" reffered="false"/>
+   <property name="calculateSecondaryQuantity" dataType="boolean" defaultValue="true" xmlName="calculateSecondaryQuantity" xmlType="element" getter="getCalculateSecondaryQuantity" setter="setCalculateSecondaryQuantity" reffered="false"/>
+   <property name="ccsid" dataType="java.lang.String" defaultValue="" xmlName="ccsid" xmlType="element" getter="getCcsid" setter="setCcsid" reffered="false"/>
+   <property name="clusterType" dataType="boolean" defaultValue="false" xmlName="clusterType" xmlType="element" getter="getClusterType" setter="setClusterType" reffered="false"/>
+   <property name="dataCapture" dataType="boolean" defaultValue="false" xmlName="dataCapture" xmlType="element" getter="getDataCapture" setter="setDataCapture" reffered="false"/>
+   <property name="dropRestrict" dataType="boolean" defaultValue="false" xmlName="dropRestrict" xmlType="element" getter="getDropRestrict" setter="setDropRestrict" reffered="false"/>
+   <property name="editProc" dataType="java.lang.String" defaultValue="" xmlName="editProc" xmlType="element" getter="getEditProc" setter="setEditProc" reffered="false"/>
+   <property name="excludeFreepage" dataType="boolean" defaultValue="false" xmlName="excludeFreepage" xmlType="element" getter="getExcludeFreepage" setter="setExcludeFreepage" reffered="false"/>
+   <property name="freepageExcluded" dataType="boolean" defaultValue="false" xmlName="freepageExcluded" xmlType="element" getter="getFreepageExcluded" setter="setFreepageExcluded" reffered="false"/>
+   <property name="growthHorizon" dataType="int" defaultValue="0" xmlName="growthHorizon" xmlType="element" getter="getGrowthHorizon" setter="setGrowthHorizon" reffered="false"/>
+   <property name="growthMethod" dataType="java.lang.String" defaultValue="Random" xmlName="growthMethod" xmlType="element" getter="getGrowthMethod" setter="setGrowthMethod" reffered="false"/>
+   <property name="initialRowNumber" dataType="long" defaultValue="0" xmlName="initialRowNumber" xmlType="element" getter="getInitialRowNumber" setter="setInitialRowNumber" reffered="false"/>
+   <property name="initialRowNumberChanged" dataType="boolean" defaultValue="false" xmlName="initialRowNumberChanged" xmlType="element" getter="getInitialRowNumberChanged" setter="setInitialRowNumberChanged" reffered="false"/>
+   <property name="insertMethod" dataType="java.lang.String" defaultValue="SQL Insert" xmlName="insertMethod" xmlType="element" getter="getInsertMethod" setter="setInsertMethod" reffered="false"/>
+   <property name="label" dataType="java.lang.String" defaultValue="" xmlName="label" xmlType="element" getter="getLabel" setter="setLabel" reffered="false"/>
+   <property name="maxRowNumber" dataType="long" defaultValue="9999999" xmlName="maxRowNumber" xmlType="element" getter="getMaxRowNumber" setter="setMaxRowNumber" reffered="false"/>
+   <property name="maxRowNumberChanged" dataType="boolean" defaultValue="false" xmlName="maxRowNumberChanged" xmlType="element" getter="getMaxRowNumberChanged" setter="setMaxRowNumberChanged" reffered="false"/>
+   <property name="numberOfPages" dataType="int" defaultValue="0" xmlName="numberOfPages" xmlType="element" getter="getNumberOfPages" setter="setNumberOfPages" reffered="false"/>
+   <property name="numberOfRows" dataType="long" defaultValue="-1" xmlName="numberOfRows" xmlType="element" getter="getNumberOfRows" setter="setNumberOfRows" reffered="false"/>
+   <property name="obid" dataType="int" defaultValue="0" xmlName="obid" xmlType="element" getter="getObid" setter="setObid" reffered="false"/>
+   <property name="owner" dataType="oracle.dbtools.crest.model.design.storage.db2.Owner" defaultValue="" xmlName="owner" xmlType="element" getter="getOwner" setter="setOwner" reffered="true"/>
+   <property name="pctFilling" dataType="int" defaultValue="66" xmlName="pctFilling" xmlType="element" getter="getPctFilling" setter="setPctFilling" reffered="false"/>
+   <property name="percentageOfpages" dataType="int" defaultValue="0" xmlName="percentageOfpages" xmlType="element" getter="getPercentageOfPages" setter="setPercentageOfPages" reffered="false"/>
+   <property name="primaryQuantity" dataType="int" defaultValue="0" xmlName="primaryQuantity" xmlType="element" getter="getPrimaryQuantity" setter="setPrimaryQuantity" reffered="false"/>
+   <property name="recordLength" dataType="int" defaultValue="0" xmlName="recordLength" xmlType="element" getter="getRecordLength" setter="setRecordLength" reffered="false"/>
+   <property name="secondaryQuantity" dataType="int" defaultValue="0" xmlName="secondaryQuantity" xmlType="element" getter="getSecondaryQuantity" setter="setSecondaryQuantity" reffered="false"/>
+   <property name="tableSpace" dataType="oracle.dbtools.crest.model.design.storage.db2.TableSpaceDB2" defaultValue="" xmlName="tableSpace" xmlType="element" getter="getTableSpace" setter="setTableSpace" reffered="true"/>
+   <property name="usePCTFilling" dataType="boolean" defaultValue="false" xmlName="usePCTFilling" xmlType="element" getter="isUsePCTFilling" setter="setUsePCTFilling" reffered="false"/>
+   <property name="validProc" dataType="java.lang.String" defaultValue="" xmlName="validProc" xmlType="element" getter="getValidProc" setter="setValidProc" reffered="false"/>
+   <collection name="synonyms" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="synonyms" itemXmlName="Synonym" getter="getSynonyms" createItem="createSynonym" />
+   <collection name="instanceDescriptorCols" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="instanceDescriptorCols" itemXmlName="InstanceDescriptorColumn" getter="getInstDescriptorCols" createItem="createInstanceDescriptorColumn" />
+   <roproperty name="annualUpdateRateNetGrowth" dataType="float" getter="getAnnualUpdateRateNetGrowth"/>
+   <roproperty name="averageRecordLength" dataType="long" getter="getAverageRecordLength"/>
+   <roproperty name="column" dataType="oracle.dbtools.crest.model.design.storage.db2.ColumnProxyDB2" getter="getColumn"/>
+   <roproperty name="dataBase" dataType="oracle.dbtools.crest.model.design.storage.db2.DataBaseDB2" getter="getDataBase"/>
+   <roproperty name="initialNumberUsedPages" dataType="int" getter="getInitialNumberUsedPages"/>
+   <roproperty name="initialStorageKB" dataType="int" getter="getInitialStorageKB"/>
+   <roproperty name="instDescriptorCols" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getInstDescriptorCols"/>
+   <roproperty name="intindexes" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getIntIndexes"/>
+   <roproperty name="integrityindexes" dataType="interface java.util.List" getter="getIntegrityIndexes"/>
+   <roproperty name="maxNumberUsedPages" dataType="int" getter="getMaxNumberUsedPages"/>
+   <roproperty name="maxStorageKB" dataType="int" getter="getMaxStorageKB"/>
+   <roproperty name="numberRecordsPerPage" dataType="int" getter="getNumberRecordsPerPage"/>
+   <roproperty name="pageSize" dataType="int" getter="getPageSize"/>
+   <roproperty name="pctfree" dataType="int" getter="getPctfree"/>
+   <roproperty name="propertyWrapperList" dataType="interface java.util.List" getter="getPropertyWrapperList"/>
+   <roproperty name="synonyms" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getSynonyms"/>
+   <roproperty name="triggers" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getTriggers"/>
+   <roproperty name="usablePageSize" dataType="int" getter="getUsablePageSize"/>
+</oracle.dbtools.crest.model.design.storage.db2.TableProxyDB2>

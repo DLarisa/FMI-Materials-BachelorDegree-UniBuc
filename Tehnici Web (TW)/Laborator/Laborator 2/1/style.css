@@ -1,0 +1,143 @@
+/* 5 - dacă punem style.css după <style> se modifică culoarea paragrafelor */
+p
+{
+	color: green;
+	/* Fontul rămâne pt că nu e definit nicăieri în style altul */
+	font-family: "Comic Sans MS", Arial;
+}
+/* 6 */
+h1
+{
+	color: red;
+	text-decoration: underline;
+}
+/* 8 */
+h3 + p
+{
+	border-color: blue;
+	border-style: dotted;
+	border-width: 2px;
+	/* sau border: 2px, dotted, blue; */
+	color: green;
+	background-image: url("http://irinaciocan.ro/tehnici_web/imagini/backgr_pas3.png");
+	background-attachment: fixed;
+}
+/* 9 */
+.c1
+{
+	background-color: purple;
+}
+/* 10 */
+.c2
+{
+	font-style: italic;
+	/* 11 */
+	text-decoration: line-through;
+}
+p.c3
+{
+	font-variant: small-caps;
+	/* 11 */
+	text-decoration: overline;
+}
+/* 12 */
+.c2.c3
+{
+	font-style: normal;
+	color: rgb(220, 20, 60);
+}
+/* 13 */
+#pat
+{
+	color: orange;
+	text-decoration: overline underline;
+	font-weight: bold;
+}
+/* 14 */
+section#abc p
+{
+	box-shadow: 10px 15px red;
+}
+/* 15 */
+section#abc>p
+{
+	box-shadow: 10px 15px green;
+	text-shadow: 5px 5px red;
+}
+/* 16 */
+ol li
+{
+	list-style-type: lower-roman;
+	border: 4px ridge purple;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+/* 17 */
+p[title]:first-letter
+{
+	font-size: 20px;
+}
+/* 18 */
+p[title=altceva]:hover
+{
+	background-color: pink;
+}
+/* 20 */
+p+p
+{
+	text-indent: 25px;
+}
+/* 21 */
+body>section:first-of-type
+{
+	border-top: 4px dashed green;
+	border-left: 4px dashed green;
+}
+/* 22 */
+section :first-child:after
+{
+	content: " primul";
+}
+/* 23 */
+h1:before, h2:before, h3:before
+{
+	content: url("http://www.irinaciocan.ro/imagini/foarte_zambaret.png");
+}
+/* 24 */
+p:not([class]):not([id])
+{
+	cursor: crosshair;
+}
+/* 25 */
+* /* totul */
+{
+	outline: 1px dashed blue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

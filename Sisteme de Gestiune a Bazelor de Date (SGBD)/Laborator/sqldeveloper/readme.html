@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+<!-- content goes here -->
+<title>What You See Is What You Get Element</title>
+<table width="100%" cellspacing="10" cellpadding="0" border="0" class="otn01v0">
+    <tbody>
+        <tr>
+            <td>
+            <p><img align="left" width="48" vspace="5" src="icon.png" alt=" " /></p>
+            <h2>Oracle SQL Developer 3.2 Release Notes</h2>
+            <p>&nbsp;</p>
+            <p><strong>Date: Aug 2012</strong><strong><br />
+            </strong></p>
+            <p><a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html" target="_blank">SQL            Developer on OTN</a> | <a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/sqldev-newfeatures32-1731840.html" target="_blank">New Features</a>            | <a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html" target="_blank">Downloads</a>            | <a href="http://www.oracle.com/pls/topic/lookup?ctx=sqldev32&id=homepage" target="_blank">Documentation</a>            | <a href="http://sqldeveloper.oracle.com" target="_blank">Exchange</a>            | <a href="http://forums.oracle.com/forums/forum.jspa?forumID=260" target="_blank">Forum</a></p>
+            <strong> </strong>
+            <p><strong>&nbsp;</strong></p>
+            <strong> <strong>These release notes contain the following:<br />
+            <br />
+            </strong> </strong>
+            <ol>           <strong> <strong><strong> </strong></strong> </strong>
+                <li><strong><a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/sqldev-newfeatures32-1731840.html">New Features in SQL Developer 3.2</a></strong></li>
+                <strong> </strong>
+                <li><strong><a href="#sec1">Before You Start</a></strong></li>
+                <strong> </strong>
+                <li><strong><a href="#support">Support</a></strong></li>
+                <strong> </strong>
+                <li><strong><a href="#feed">Feedback</a></strong></li>
+                <li><strong><a href="#comment">General Comments</a></strong></li>
+                <li><a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/sqldev32-bugsfixed-1734505.html" target=""><strong>Bugs Fixed</strong></a></li>
+            </ol>
+            </td>
+        </tr>
+        <tr>
+            <td><a id="sec1" name="sec1"></a><strong>Before You Start </strong>
+            <ul>
+                <li><strong> <span>Platform Support</span> </strong>
+                <ul>
+                    <li><span>Oracle SQL Developer 3.2 is available for Windows XP ,                  Vista (including 64-bit), Windows 7 (including 64-bit), and Windows                  Server 2008, Linux or Mac OS X. (See <a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/certification-096745.html">Certification</a>)                  </span><span><br />
+                    </span></li>
+                </ul>
+                </li>
+                <li><span> <strong>JDK Support</strong> </span>
+                <ul>
+                    <li><span>Oracle SQL Developer 3.2 release is shipped with JDK 1.6.0_11.                  You can use the embedded JDK download or connect to an installed JDK. SQL Developer supports a minimum java version of               1.6.0_04 to a maximum java version less than 1.7.</span></li>
+                </ul>
+                </li>
+                <li><span> <strong>64-Bit Windows Support</strong> </span>
+                <ul>
+                    <li><span>There is a separate download for the 64-bit environment.                  Download the full 64-bit install and unzip into a new, empty directory                  as described for other platforms. Execute the sqldeveloper.exe.                  You need to download and install the 64-bit JDK for your platform.</span></li>
+                </ul>
+                </li>
+                <li><strong>Installing or Upgrading</strong>
+                <ul>
+                    <li>The Check for Updates option to upgrade between releases of                  SQL Developer is not supported. This utility is provided to install                  third party extensions, this includes the third party drivers                  required for migrations and to add additional version control                  extensions.</li>
+                    <li>All new releases of SQL Developer require a full installation.                  Download and unzip the file into an empty folder. Ensure the &quot;Use                  folder names&quot; checkbox is checked when unzipping the file.</li>
+                </ul>
+                </li>
+                <li><span> <strong>Migrating from Previous Releases</strong> <br />
+                </span> <span>After you have installed the product you are asked if              you want to migrate from a previous release. This migrates previously              set preferences and connections created:</span>
+                <ul>
+                    <li><span>By default the Confirm Import Preferences dialog that                  is displayed selects the latest installation. Select Yes to migrate                  the settings from that release or click the <strong>Show All Installations</strong>                  button to browse to an earlier installation. You can migrate settings                  from SQL Developer 1.2.1 and above. </span> <span>If you are migrating                  from a release earlier than SQL Developer 1.5.x:</span>
+                    <ul>
+                        <li><span>Select the magnifying glass to browse to the <em>                      <strong>sqldeveloper\sqldeveloper\system folder</strong> </em>                      </span></li>
+                        <li><span>Click Select. This closes the browse dialog.</span></li>
+                        <li>Note: the selection is not added to the list displayed in                      the Confirm Import Preferences dialog.</li>
+                        <li>Click Yes, to migrate the Connections and settings from                      the selected release.</li>
+                        <li>Note: If you are using Oracle SQL Developer 1.1.3 as part                      of the Oracle Database 11gR1 installation, search for the                      [ORACLE_HOME] \product\11.1.0\db_1\sqldeveloper\sqldeveloper\system                      folder</li>
+                    </ul>
+                    </li>
+                    <li>NOTE: If you install a release later than 1.1.3, this does not                  replace the menu item in your Start Programs list. You can add                  your own menu option here or a shortcut on the desktop.</li>
+                </ul>
+                </li>
+                <li><span> <strong>User Defined Reports, Snippets and SQL History</strong>              </span>
+                <ul>
+                    <li><span>User-defined reports, SQL History and user-defined snippets                  files are located in the <em>\Documents and Settings\&lt;your_user&gt;\Application                  Data\SQL Developer</em> folder. These are also migrated. </span></li>
+                </ul>
+                </li>
+                <li><strong>Folders</strong>
+                <ul>
+                    <li>If you created folders in release 1.5.1 or above, these are                  automatically included in the migration. If you choose not to                  migrate your settings between releases, then you can import your                  old connections. This does not include folders.</li>
+                </ul>
+                </li>
+                <li><strong> <span>JDBC Drivers</span> </strong>
+                <ul>
+                    <li><span>The JDBC drivers shipped are Oracle Database 11g Release                  1. To connect to earlier version of the database using the Thick                  Driver, you need to install an 11g client.&nbsp; The 11g client is not required for                  the Basic Connection.</span></li>
+                </ul>
+                </li>
+                <li><strong>Debug Log Window</strong>
+                <ul>
+                    <li>This is now set off by default. If you want to see the SQL Developer                  debug log window information by default, then include the line <strong>                 <em>&quot;IncludeConfFile sqldeveloper-debug.conf &quot;</em></strong> in the sqldeveloper.conf                  file.</li>
+                    <li>To start up the debug log window in the product while you are                  working, enter <em><strong>&quot;setloglevel oracle.dbtools ALL&quot;</strong></em> in the                  SQL Worksheet. This will stay on while you are working, but won't                  reopen the log window if you stop and restart the product.</li>
+                </ul>
+                </li>
+                <li><strong>Third Party Databases</strong>
+                <ul>
+                    <li><span>SQL Developer supports IBM DB2 UDB LUW , Microsoft SQL Server and Microsoft Access, MySQL, Sybase Adaptive Server and Teradata. See <a target="" href="[!--$wcmUrl('link','086703','otnen_sqldeveloper')--]">Supported Platforms</a> for details on all third party database releases supported.</span></li>
+                    <li><span>You will not see any third party tabs in the connections                  dialog until you have installed the drivers. Read this <a href="http://www.oracle.com/technetwork/database/migration/omwb-getstarted-093461.html">Getting                  Started</a> document to show you how. </span></li>
+                    <li><span>You can also download and include the third-party database                  drivers manually. See the <a href="http://www.oracle.com/technetwork/database/migration/omwb-getstarted-093461.html">existing                  documentation</a> for that on OTN. Alternatively y</span>ou can                  use <strong>Check for Updates</strong> to setup these drivers.</li>
+                    <li><em>Do not</em> use the latest MySQL driver 5.1. Use the 5.0.x                  drivers for MySQL.</li>
+                </ul>
+                </li>
+                <li><strong>TimesTen and In-Memory Database Cache</strong>
+                <ul>
+                    <li>Before you can use SQL Developer to connect to TimesTen:
+                    <ul>
+                        <li><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Normal</w:View>
+  <w:Zoom>0</w:Zoom>
+  <w:TrackMoves />
+  <w:TrackFormatting />
+  <w:PunctuationKerning />
+  <w:ValidateAgainstSchemas />
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF />
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables />
+   <w:SnapToGridInCell />
+   <w:WrapTextWithPunct />
+   <w:UseAsianBreakRules />
+   <w:DontGrowAutofit />
+   <w:SplitPgBreakAndParaMark />
+   <w:DontVertAlignCellWithSp />
+   <w:DontBreakConstrainedForcedTables />
+   <w:DontVertAlignInTxbx />
+   <w:Word11KerningPairs />
+   <w:CachedColBalance />
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math" />
+   <m:brkBin m:val="before" />
+   <m:brkBinSub m:val="&#45;-" />
+   <m:smallFrac m:val="off" />
+   <m:dispDef />
+   <m:lMargin m:val="0" />
+   <m:rMargin m:val="0" />
+   <m:defJc m:val="centerGroup" />
+   <m:wrapIndent m:val="1440" />
+   <m:intLim m:val="subSup" />
+   <m:naryLim m:val="undOvr" />
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal" />
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1" />
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2" />
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3" />
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4" />
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5" />
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6" />
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7" />
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8" />
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9" />
+  <w:LsdException Locked="false" Priority="39" Name="toc 1" />
+  <w:LsdException Locked="false" Priority="39" Name="toc 2" />
+  <w:LsdException Locked="false" Priority="39" Name="toc 3" />
+  <w:LsdException Locked="false" Priority="39" Name="toc 4" />
+  <w:LsdException Locked="false" Priority="39" Name="toc 5" />
+  <w:LsdException Locked="false" Priority="39" Name="toc 6" />
+  <w:LsdException Locked="false" Priority="39" Name="toc 7" />
+  <w:LsdException Locked="false" Priority="39" Name="toc 8" />
+  <w:LsdException Locked="false" Priority="39" Name="toc 9" />
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption" />
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title" />
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font" />
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle" />
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong" />
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis" />
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid" />
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text" />
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing" />
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading" />
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List" />
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid" />
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1" />
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2" />
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1" />
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2" />
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1" />
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2" />
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3" />
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List" />
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading" />
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List" />
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid" />
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1" />
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1" />
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1" />
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1" />
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1" />
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1" />
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision" />
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph" />
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote" />
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote" />
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1" />
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1" />
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1" />
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1" />
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1" />
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1" />
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1" />
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1" />
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2" />
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2" />
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2" />
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2" />
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2" />
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2" />
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2" />
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2" />
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2" />
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2" />
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2" />
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2" />
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2" />
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2" />
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3" />
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3" />
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3" />
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3" />
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3" />
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3" />
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3" />
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3" />
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3" />
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3" />
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3" />
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3" />
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3" />
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3" />
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4" />
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4" />
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4" />
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4" />
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4" />
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4" />
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4" />
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4" />
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4" />
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4" />
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4" />
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4" />
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4" />
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4" />
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5" />
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5" />
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5" />
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5" />
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5" />
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5" />
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5" />
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5" />
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5" />
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5" />
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5" />
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5" />
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5" />
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5" />
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6" />
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6" />
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6" />
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6" />
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6" />
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6" />
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6" />
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6" />
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6" />
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6" />
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6" />
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6" />
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6" />
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6" />
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis" />
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis" />
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference" />
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference" />
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title" />
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography" />
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading" />
+ </w:LatentStyles>
+</xml><![endif]--><!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+</style>
+<![endif]--><span style="font-size: 10pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; color: black;">Install TimesTen 11.2.2 (11.2.2.0.0 or greater) or TimesTen 11.2.1 (11.2.1.4.0 or greater) of the server or client on the same machine as SQL Developer</span>.</li>
+                        <li>On Linux systems, source the shell script TimesTen_install_dir/bin/ttenv.csh                      or TimesTen_install_dir/bin/ttenv.sh to set up the TimesTen                      environment variables before launching SQL Developer. On Windows,                      use the TimesTen_install_dir\bin\ttenv.bat script.</li>
+                        <li>Make sure the CLASSPATH environment variable is pointing                      to the TimesTen JDBC driver (TimesTen_install_dir/lib/ttjdbc6.jar).</li>
+                        <li>Read these more detailed <a target="" href="http://docs.oracle.com/cd/E25259_01/doc.31/e25285/toc.htm">release                      notes</a> on TimesTen.</li>
+                    </ul>
+                    </li>
+                </ul>
+                </li>
+                <li><strong>Table Filters</strong>
+                <ul>
+                    <li>The list of tables displayed includes generated tables, AQ's                  and others not previously included in the list. <em>By default</em>                  there is a filter on the Tables node to exclude objects from the                  recycle bin.</li>
+                </ul>
+                </li>
+                <li><strong>Code Templates/Snippets</strong>
+                <ul>
+                    <li>Code insight contains a comprehensive database of code fragments fetched from SQL and PL/SQL reference manuals. Upon a user entering a keyword prefix in SQL Developer, code insight brings up the list of code fragments syntactically valid within the user source context. Each list entry is amended with a button referring to the documentation web page. In a similar venue, SQL Developer suggests query fragments fetched from SQL history.</li>
+                </ul>
+                </li>
+                <li><strong>Version Control</strong>
+                <ul>
+                    <li>Subversion is installed by default with SQL Developer 3.2. To                  install CVS, Perforce and Serena Dimensions, please use <strong>Help                  &gt; Check for Updates</strong>.</li>
+                </ul>
+                </li>
+                <li><strong>Subversion</strong>
+                <ul>
+                    <li>If you create a local Subversion repository, ensure there are                  no spaces in the path.</li>
+                </ul>
+                </li>
+                <li><strong>CVS</strong>
+                <ul>
+                    <li>If you use a local repository. You must use an external CVS                  client and set the CVS versioning properties to point to the external                  client.</li>
+                </ul>
+                </li>
+                <li><strong>Fonts</strong>
+                <ul>
+                    <li>The font setting for the Code Editor now also increases the                  font size for the script output window and all data grids. This                  is in addition to increasing the font size for the SQL Worksheet                  and PL/SQL Code Editors. Select <strong>Tools | Preferences |                  Code Editor | Fonts</strong> and set the font size.</li>
+                </ul>
+                </li>
+                <li><strong>Data Miner</strong>
+                <ul>
+                    <li>Oracle Data Miner requires Oracle Database 11g Release 2 (11.2.0.1)                  or higher. More information can be found in the <a target="" href="/technetwork/database/options/advanced-analytics/odm/dataminer-31-relnotes-489144.html">Data Miner Release Notes</a>.&nbsp;</li>
+                </ul>
+                </li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><a id="support" name="support"></a> <strong>Support</strong>
+            <ul>
+                <li>You are supported by Oracle Support under your current database              Support license for SQL Developer production releases. Log SQL Developer              bugs and issues using <a href="http://support.oracle.com">My Oracle              Support</a> for the product.</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a name="feed" id="feed"></a> <strong>Feedback</strong></p>
+            <p>There are a number of different forums supporting the features in SQL            Developer. When using the forums, be sure to use clear subject lines            to initiate a thread and try to avoid using old, unrelated threads for            a new issue.</p>
+            <ul>
+                <li>You can discuss features on the <a href="http://forums.oracle.com/forums/forum.jspa?forumID=260">Oracle              SQL Developer</a> forum</li>
+                <li>For all Data Mining related queries, please use the<a href="http://forums.oracle.com/forums/forum.jspa?forumID=55">              Data Mining</a> forum</li>
+                <li>For all TimesTen related queries, please use the <a href="http://forums.oracle.com/forums/forum.jspa?forumID=244">TimesTen              forum</a> forum</li>
+                <li>For all Data Modeler related queries, please use the <a href="http://forums.oracle.com/forums/forum.jspa?forumID=1317">Data              Modeler </a>forum</li>
+                <li>For all Database Migration related queries, please use the <a href="http://forums.oracle.com/forums/forum.jspa?forumID=1">Migrations</a>              forum</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><a name="comment" id="comment"></a><strong> General Comments</strong>
+            <ul>
+                <li>Features not yet supported in this release can be added to the <strong>Feature              Requests</strong> section on the <a href="http://sqldeveloper.oracle.com">Oracle              SQL Developer Exchange.</a></li>
+                <li>Please review current <a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/certification-096745.html">certification</a>              status for platform and database certification queries.</li>
+                <li>Support for TimesTen In-Memory Database is included in SQL Developer              3.2. You will not see the TimesTen Connection node unless you have              TimesTen installed and configured (see TimesTen section above).</li>
+                <li>Support for TimesTen In-Memory Database includes support for Oracle              In-Memory Database Cache and TimesTen In-Memory Database Release 11.2.1.4              and later.</li>
+                <li>If you did not migrate your connections from a previous release,              you can import them afterwards. Invoke the earlier release of SQL              Developer, export the required connections and import them in the              new release.</li>
+                <li>Expired password: When a password expires, an error message is raised              to alter the user. To reset the password, right-click the connection              and select Reset Password.</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.udb.v81.SequenceUDBv81 parentClass="oracle.dbtools.crest.model.design.storage.udb.SequenceUDB">
+   <property name="usedByPublic" dataType="java.lang.String" defaultValue="NO" xmlName="usedByPublic" xmlType="element" getter="getUsedByPublic" setter="setUsedByPublic" reffered="false"/>
+   <roproperty name="propertyWrapperList" dataType="interface java.util.List" getter="getPropertyWrapperList"/>
+</oracle.dbtools.crest.model.design.storage.udb.v81.SequenceUDBv81>

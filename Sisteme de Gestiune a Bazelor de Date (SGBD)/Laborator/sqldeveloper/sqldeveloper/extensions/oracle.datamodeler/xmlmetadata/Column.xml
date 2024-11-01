@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.Column parentClass="oracle.dbtools.crest.model.design.ContainedObjectWithDomain">
+   <property name="abbreviation" dataType="java.lang.String" defaultValue="" xmlName="abbreviation" xmlType="element" getter="getAbbreviation" setter="setAbbreviation" reffered="false"/>
+   <property name="computed" dataType="java.lang.Boolean" defaultValue="false" xmlName="computed" xmlType="element" getter="isComputed" setter="setComputed" reffered="false"/>
+   <property name="containsPII" dataType="java.lang.Boolean" defaultValue="" xmlName="containsPII" xmlType="element" getter="isContainsPII" setter="setContainsPII" reffered="false"/>
+   <property name="containsSensitiveInformation" dataType="java.lang.Boolean" defaultValue="" xmlName="containsSensitiveInformation" xmlType="element" getter="isContainsSensitiveInformation" setter="setContainsSensitiveInformation" reffered="false"/>
+   <property name="defaultdisplayAs" dataType="java.lang.String" defaultValue="Text" xmlName="defaultdisplayAs" xmlType="element" getter="getDefaultDisplayAs" setter="setDefaultDisplayAs" reffered="false"/>
+   <property name="defaultdisplayedOnForms" dataType="boolean" defaultValue="true" xmlName="defaultdisplayedOnForms" xmlType="element" getter="isDefaultDisplayedOnForms" setter="setDefaultDisplayedOnForms" reffered="false"/>
+   <property name="defaultdisplayedOnReports" dataType="boolean" defaultValue="true" xmlName="defaultdisplayedOnReports" xmlType="element" getter="isDefaultDisplayedOnReports" setter="setDefaultDisplayedOnReports" reffered="false"/>
+   <property name="defaultFormdisplayWidth" dataType="java.lang.Integer" defaultValue="" xmlName="defaultFormdisplayWidth" xmlType="element" getter="getDefaultFormDisplayWidth" setter="setDefaultFormDisplayWidth" reffered="false"/>
+   <property name="defaultFormHeight" dataType="java.lang.Integer" defaultValue="" xmlName="defaultFormHeight" xmlType="element" getter="getDefaultFormHeight" setter="setDefaultFormHeight" reffered="false"/>
+   <property name="defaultFormMaximumWidth" dataType="java.lang.Integer" defaultValue="" xmlName="defaultFormMaximumWidth" xmlType="element" getter="getDefaultFormMaximumWidth" setter="setDefaultFormMaximumWidth" reffered="false"/>
+   <property name="defaultFormatMask" dataType="java.lang.String" defaultValue="" xmlName="defaultFormatMask" xmlType="element" getter="getDefaultFormatMask" setter="setDefaultFormatMask" reffered="false"/>
+   <property name="defaultHelpText" dataType="java.lang.String" defaultValue="" xmlName="defaultHelpText" xmlType="element" getter="getDefaultHelpText" setter="setDefaultHelpText" reffered="false"/>
+   <property name="defaultLabel" dataType="java.lang.String" defaultValue="" xmlName="defaultLabel" xmlType="element" getter="getDefaultLabel" setter="setDefaultLabel" reffered="false"/>
+   <property name="defaultReadOnly" dataType="boolean" defaultValue="false" xmlName="defaultReadOnly" xmlType="element" getter="isDefaultReadOnly" setter="setDefaultReadOnly" reffered="false"/>
+   <property name="delegate" dataType="oracle.dbtools.crest.model.design.relational.Column" defaultValue="" xmlName="delegate" xmlType="element" getter="getDelegate" setter="setDelegate" reffered="true"/>
+   <aa_property name="engAttributeID" dataType="java.lang.String" defaultValue="" xmlName="engAttributeID" xmlType="element" getter="getEngAttributeID" setter="setEngAttributeID" reffered="false"/>
+   <property name="maskData" dataType="java.lang.Boolean" defaultValue="" xmlName="maskData" xmlType="element" getter="isMaskData" setter="setMaskData" reffered="false"/>
+   <property name="previousColumn" dataType="boolean" defaultValue="true" xmlName="previousColumn" xmlType="element" getter="isPreviousColumn" setter="setPreviousColumn" reffered="false"/>
+   <property name="autoIncrementColumn" dataType="boolean" defaultValue="false" xmlName="autoIncrementColumn" xmlType="element" getter="isAutoIncrementColumn" setter="setAutoIncrementColumn" reffered="false"/>
+   <property name="identityColumn" dataType="boolean" defaultValue="false" xmlName="identityColumn" xmlType="element" getter="isIdentityColumn" setter="setIdentityColumn" reffered="false"/>
+   <property name="autoIncrementGenerateAlways" dataType="boolean" defaultValue="false" xmlName="autoIncrementGenerateAlways" xmlType="element" getter="isAutoIncrementGenerateAlways" setter="setAutoIncrementGenerateAlways" reffered="false"/>
+   <property name="autoIncrementStartWith" dataType="java.lang.String" defaultValue="1" xmlName="autoIncrementStartWith" xmlType="element" getter="getAutoIncrementStartWith" setter="setAutoIncrementStartWith" reffered="false"/>
+   <property name="autoIncrementIncrementBy" dataType="java.lang.Integer" defaultValue="1" xmlName="autoIncrementIncrementBy" xmlType="element" getter="getAutoIncrementIncrementBy" setter="setAutoIncrementIncrementBy" reffered="false"/>
+   <property name="autoIncrementMinValue" dataType="java.lang.String" defaultValue="" xmlName="autoIncrementMinValue" xmlType="element" getter="getAutoIncrementMinValue" setter="setAutoIncrementMinValue" reffered="false"/>
+   <property name="autoIncrementMaxValue" dataType="java.lang.String" defaultValue="" xmlName="autoIncrementMaxValue" xmlType="element" getter="getAutoIncrementMaxValue" setter="setAutoIncrementMaxValue" reffered="false"/>
+   <property name="autoIncrementCycle" dataType="boolean" defaultValue="true" xmlName="autoIncrementCycle" xmlType="element" getter="isAutoIncrementCycle" setter="setAutoIncrementCycle" reffered="false"/>
+   <property name="autoIncrementDisableCache" dataType="boolean" defaultValue="true" xmlName="autoIncrementDisableCache" xmlType="element" getter="isAutoIncrementDisableCache" setter="setAutoIncrementDisableCache" reffered="false"/>
+   <property name="autoIncrementCache" dataType="java.lang.Integer" defaultValue="" xmlName="autoIncrementCache" xmlType="element" getter="getAutoIncrementCache" setter="setAutoIncrementCache" reffered="false"/>
+   <property name="autoIncrementOrder" dataType="boolean" defaultValue="true" xmlName="autoIncrementOrder" xmlType="element" getter="isAutoIncrementOrder" setter="setAutoIncrementOrder" reffered="false"/>
+   <property name="autoIncrementSequenceName" dataType="java.lang.String" defaultValue="" xmlName="autoIncrementSequenceName" xmlType="element" getter="getAutoIncrementSequenceName" setter="setAutoIncrementSequenceName" reffered="false"/>
+   <property name="autoIncrementTriggerName" dataType="java.lang.String" defaultValue="" xmlName="autoIncrementTriggerName" xmlType="element" getter="getAutoIncrementTriggerName" setter="setAutoIncrementTriggerName" reffered="false"/>
+   <property name="autoIncrementGenerateTrigger" dataType="boolean" defaultValue="true" xmlName="autoIncrementGenerateTrigger" xmlType="element" getter="isAutoIncrementGenerateTrigger" setter="setAutoIncrementGenerateTrigger" reffered="false"/>
+   <property name="notNullConstraintName" dataType="java.lang.String" defaultValue="" xmlName="notNullConstraintName" xmlType="element" getter="getNotNullConstraintName" setter="setNotNullConstraintName" reffered="false"/>
+   <collection name="associations" dataType="java.util.List" xmlName="associations" itemXmlName="colAssociation" getter="getFKAssociationMaps" isMapItem="true" applyList="addFKAssociationMaps"/>
+   <roproperty name="adapter" dataType="boolean" getter="isAdapter"/>
+   <roproperty name="adapterLoaded" dataType="boolean" getter="isAdapterLoaded"/>
+   <roproperty name="fkColumn" dataType="boolean" getter="isFKColumn"/>
+   <roproperty name="fkPlaceHolderColumn" dataType="boolean" getter="isFKPlaceHolderColumn"/>
+   <roproperty name="inFKinArc" dataType="boolean" getter="isInFKinArc"/>
+   <roproperty name="inOptionalFK" dataType="boolean" getter="isInOptionalFK"/>
+   <roproperty name="partOfFKIndexAssociation" dataType="boolean" getter="isPartOfFKIndexAssociation"/>
+   <roproperty name="referingTo" dataType="boolean" getter="isReferingTo"/>
+   <roproperty name="avTString" dataType="java.lang.String" getter="getAVTString"/>
+   <roproperty name="allDelegatesandFK" dataType="interface java.util.List" getter="getAllDelegatesAndFK"/>
+   <roproperty name="allFKs" dataType="interface java.util.List" getter="getAllFKs"/>
+   <roproperty name="assocToColumn" dataType="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" getter="getAssocToColumn"/>
+   <roproperty name="associationsCount" dataType="int" getter="getAssociationsCount"/>
+   <roproperty name="datatypeText" dataType="java.lang.String" getter="getDatatypeText"/>
+   <roproperty name="engAttribute" dataType="oracle.dbtools.crest.model.design.logical.Attribute" getter="getEngAttribute"/>
+   <roproperty name="fkAssociationsforDelegate" dataType="interface java.util.Collection" getter="getFKAssociationsForDelegate"/>
+   <roproperty name="fkIndexAssociation" dataType="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" getter="getFKIndexAssociation"/>
+   <roproperty name="mappingFor" dataType="oracle.dbtools.crest.model.xtdmapping.XtdMapping" getter="getMappingFor"/>
+   <roproperty name="mappingsFor" dataType="interface java.util.List" getter="getMappingsFor"/>
+   <roproperty name="optionalFK" dataType="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" getter="getOptionalFK"/>
+   <roproperty name="originatingColumn" dataType="oracle.dbtools.crest.model.design.relational.Column" getter="getOriginatingColumn"/>
+   <roproperty name="refColAndAssocIDs" dataType="interface java.util.Collection" getter="getRefColAndAssocIDs"/>
+   <roproperty name="referencedColumn" dataType="oracle.dbtools.crest.model.design.relational.Column" getter="getReferencedColumn"/>
+</oracle.dbtools.crest.model.design.relational.Column>

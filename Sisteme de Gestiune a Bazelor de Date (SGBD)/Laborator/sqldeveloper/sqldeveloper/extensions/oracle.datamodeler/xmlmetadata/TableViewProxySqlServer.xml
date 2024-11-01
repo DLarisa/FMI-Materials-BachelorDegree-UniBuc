@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.TableViewProxySqlServer parentClass="oracle.dbtools.crest.model.design.storage.TableViewProxy">
+   <property name="dataBase" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.DataBaseSqlServer" defaultValue="" xmlName="dataBase" xmlType="element" getter="getDataBase" setter="setDataBase" reffered="true"/>
+   <property name="encryption" dataType="java.lang.String" defaultValue="NO" xmlName="encryption" xmlType="element" getter="getEncryption" setter="setEncryption" reffered="false"/>
+   <property name="props" dataType="java.lang.String" defaultValue="" xmlName="props" xmlType="element" getter="getProps" setter="setProps" reffered="false" listOfRefs="true"/>
+   <property name="schema" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.SchemaSqlServer" defaultValue="" xmlName="schema" xmlType="element" getter="getSchema" setter="setSchema" reffered="true"/>
+   <property name="schemaBinding" dataType="java.lang.String" defaultValue="NO" xmlName="schemaBinding" xmlType="element" getter="getSchemaBinding" setter="setSchemaBinding" reffered="false"/>
+   <property name="user" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.UserSqlServer" defaultValue="" xmlName="user" xmlType="element" getter="getUser" setter="setUser" reffered="true"/>
+   <property name="viewMetaData" dataType="java.lang.String" defaultValue="NO" xmlName="viewMetaData" xmlType="element" getter="getViewMetaData" setter="setViewMetaData" reffered="false"/>
+   <roproperty name="columnProxyByName" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.ColumnProxySqlServer" getter="getColumnProxyByName"/>
+   <bb_roproperty name="extPropsSet" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.TableViewProxySqlServer$InlineList" getter="getExtPropsSet"/>
+   <collection name="indexesOnView" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="indexesOnView" itemXmlName="IndexOnView" getter="getIndexesOnView" createItem="createIndexOnView"/>
+   <roproperty name="triggers" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getTriggers"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.TableViewProxySqlServer>

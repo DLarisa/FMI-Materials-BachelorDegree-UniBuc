@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v9i.PartitionListOraclev9i parentClass="oracle.dbtools.crest.model.design.storage.oracle.PartitionListOracle">
+   <property name="iotOverflowHashPTS" dataType="java.lang.String" defaultValue="" xmlName="iotOverflowHashPTS" xmlType="element" getter="getIOTOverflowHashPTS" setter="setIOTOverflowHashPTSSet" reffered="false" listOfRefs="true"/>
+   <property name="useSubpartStorageTemplate" dataType="java.lang.String" defaultValue="NO" xmlName="useSubpartStorageTemplate" xmlType="element" getter="getUseSubpartStorageTemplate" setter="setUseSubpartStorageTemplate" reffered="false"/>
+   <roproperty name="allIOTOverflowHashPTS" dataType="java.lang.String" getter="getAllIOTOverflowHashPTS"/>
+   <bb_roproperty name="ioToverflowHashPTS" dataType="java.lang.String" getter="getIOTOverflowHashPTS"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v9i.PartitionListOraclev9i>

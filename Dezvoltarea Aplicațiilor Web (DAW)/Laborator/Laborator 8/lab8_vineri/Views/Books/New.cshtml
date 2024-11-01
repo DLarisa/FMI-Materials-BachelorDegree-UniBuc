@@ -1,0 +1,46 @@
+﻿@model lab7_vineri.Models.Book
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+@Html.Label("Title", "Title:")
+<br />
+@Html.TextBoxFor(b => b.Title, null, new { placeholder = "Type in the book's title", @class = "form-control" })
+@Html.ValidationMessageFor(b => b.Title, "", new { @class = "text-danger" })
+<br />
+
+@Html.Label("Author", "Author:")
+<br />
+@Html.TextBoxFor(b => b.Author, null, new { placeholder = "Type in the book's author", @class = "form-control" })
+@Html.ValidationMessageFor(b => b.Author, "", new { @class = "text-danger" })
+<br />
+
+<button class="btn btn-primary" id="bt-add">Create</button>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#bt-add").on("click", function () {
+                if (confirm("Are you sure?")) {
+                    $.ajax({
+                        url: "/api/books",
+                        method: "POST",
+                        data: JSON.stringify({
+                            Title: $("#Title").val(),
+                            Author: $("#Author").val()
+                        }),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function () {
+                            window.location.href = "/Books/Index";
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

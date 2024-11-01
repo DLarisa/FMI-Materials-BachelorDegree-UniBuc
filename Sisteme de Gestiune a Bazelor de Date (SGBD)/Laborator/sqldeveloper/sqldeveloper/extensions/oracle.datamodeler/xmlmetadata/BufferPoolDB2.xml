@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.db2.BufferPoolDB2 parentClass="oracle.dbtools.crest.model.design.storage.StorageObject">
+   <property name="allBufferpools" dataType="java.lang.String" defaultValue="" xmlName="allBufferpools" xmlType="element" getter="getAllBufferpools" setter="setAllBufferpools" reffered="false"/>
+   <property name="grantOption" dataType="java.lang.String" defaultValue="" xmlName="grantOption" xmlType="element" getter="getGrantOption" setter="setGrantOption" reffered="false"/>
+   <property name="maxBuffers" dataType="int" defaultValue="0" xmlName="maxBuffers" xmlType="element" getter="getMaxBuffers" setter="setMaxBuffers" reffered="false"/>
+   <property name="minBuffers" dataType="int" defaultValue="0" xmlName="minBuffers" xmlType="element" getter="getMinBuffers" setter="setMinBuffers" reffered="false"/>
+   <property name="users" dataType="java.lang.String" defaultValue="" xmlName="users" xmlType="element" getter="getUsers" setter="setUsers" reffered="false" listOfRefs="true"/>
+   <roproperty name="userSet" dataType="oracle.dbtools.crest.model.design.storage.db2.BufferPoolDB2$UserSet" getter="getUserSet"/>
+</oracle.dbtools.crest.model.design.storage.db2.BufferPoolDB2>

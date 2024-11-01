@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v9i.TypeElementProxyOraclev9i parentClass="oracle.dbtools.crest.model.design.storage.oracle.TypeElementProxyOracle">
+   <property name="sqlJAttr" dataType="java.lang.String" defaultValue="" xmlName="sqlJAttr" xmlType="element" getter="getSqlJAttr" setter="setSqlJAttr" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v9i.TypeElementProxyOraclev9i>

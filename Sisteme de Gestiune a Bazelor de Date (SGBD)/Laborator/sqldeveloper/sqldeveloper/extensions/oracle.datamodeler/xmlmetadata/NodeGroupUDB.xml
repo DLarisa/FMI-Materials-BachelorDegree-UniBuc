@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.udb.NodeGroupUDB parentClass="oracle.dbtools.crest.model.design.storage.db2.AbstractStorageObjectDB2">
+   <property name="nodenumbers" dataType="java.lang.String" defaultValue="" xmlName="nodenumbers" xmlType="element" getter="getNodeNumbers" setter="setNodeNumbers" reffered="false"/>
+   <property name="scope" dataType="java.lang.String" defaultValue="" xmlName="scope" xmlType="element" getter="getScope" setter="setScope" reffered="false"/>
+   <roproperty name="systemNodeGroup" dataType="boolean" getter="isSystemNodeGroup"/>
+</oracle.dbtools.crest.model.design.storage.udb.NodeGroupUDB>

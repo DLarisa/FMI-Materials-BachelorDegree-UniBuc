@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.businessinfo.BIResponsibleParty parentClass="oracle.dbtools.crest.model.design.DesignObject">
+   <property name="responsibility" dataType="java.lang.String" defaultValue="" xmlName="responsibility" xmlType="element" getter="getResponsibility" setter="setResponsibility" reffered="false"/>
+   <property name="parentParty" dataType="oracle.dbtools.crest.model.businessinfo.BIResponsibleParty" defaultValue="" xmlName="parentParty" xmlType="element" getter="getParentParty" setter="setParentParty" reffered="true"/>
+   <collection name="contacts" dataType="java.util.List" xmlName="contacts" itemXmlName="contact" itemIsRef="true" getter="getContacts" addItem="addContact" nativeList="true" orderTheList="true"/>
+   <roproperty name="contacts" dataType="interface java.util.List" getter="getContacts"/>
+   <roproperty name="elements" dataType="interface java.util.List" getter="getElements"/>
+</oracle.dbtools.crest.model.businessinfo.BIResponsibleParty>

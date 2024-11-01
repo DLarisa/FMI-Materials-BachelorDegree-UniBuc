@@ -1,0 +1,60 @@
+1. Care este precizia unui clasificator daca etichetele corecte sunt y = [0, 1, 1, 1, 0, 0, 0, 0] si cele prezise sunt y_hat = [0, 0, 0, 1, 0, 0, 1, 1]?
+A. 0.5
+B. 0.99
+C. 0.33
+D. 0.45
+
+2. Cat este valoarea functiei de pierdere data de media patratelor erorilor daca etichetele corecte sunt y = [100, -25, 0.5] si etichetele prezise sunt y_hat = [101, -23, 0]?
+A. 1.7
+B. 1.16
+C. 1.1
+D. 1.75
+
+3. Fie urmatoarele probabilitati pentru evenimentele A, B, P(A)=0.3 P(B)=0.5 P(A|B)=0.33, care este valoarea P(B|A)?
+A. 0.45
+B. 0.75
+C. 0.65
+D. 0.55
+
+4. Care este eticheta unui exemplu de testare t = [5, 3, 8] daca aplicam metoda celor mai apropiati vecini cu k = 1 si distanta L1 avand datele de antrenare X = [[1, 4, 1], [5, 4, 8], [2, 30, 5], [1, 1, 9]], Y = [1, 2, 3, 2]?
+A. 2
+B. 3
+C. 1
+D. 0
+
+5. Ce tip de metrica poate obtine 100% acuratete pe datele de antrenare pentru urmatorul set de puncte 2D [([3, 3], 1), ([5, 8], 0), ([5, 5], 0), ([2, 2], 1), ([0, 1], 1), ([5, 9], 0)] considerand un clasificator KNN cu un singur vecin?
+A. Cosinus
+B. L1
+C. L2
+D. Niciunul dintre raspunsuri
+
+6. Fiind date etichitele (1, 2, 1, 1, 2, 1, 1, 1) si predictiile (1, 2, 1, 2, 2, 2, 1, 2), care sunt acuratetea si scorul f1?
+A. acc = 0.5 f1 = 0.66
+B. acc = 0.62 f1 = 0.75
+C. acc = 0.62 f1 = 0.66
+D. acc = 0.75 f1 = 0.75
+
+7. Care sunt valorile urmatoarelor exemple de antrenare dupa aplicarea normalizarii L1: E_1 = [-5, -10, -10], E_2 = [-3, -2, 0] ?
+A. E1 = [0.2, 0.4, 0.4], E2 = [0.6, 0.4, 0]
+B. E1 = [-0.2, -0.4, -0.4], E2 = [-0.6, -0.4, 0]
+C. E1 = [-0.5, -0.1, -0.1], E2 = [-0.2, -0.3, 0]
+D. E1 = [-2.2, -4.4, -2.4], E2 = [-2.6, -1.4, 0]
+
+8. Care este acuratetea unui clasificator daca etichetele corecte sunt y = [0, 1, 1, 0, 0, 0, 1, 1] si cele prezise sunt y_hat = [1, 0, 1, 0, 0, 1, 1, 1]?
+A. 1
+B. 0.625
+C. 0.6
+D. 0.6
+
+9. Care este valoarea functiei de pierdere MSE pentru urmatoarele valori prezise y_pred = [0.7, 0.1, 0.7, 0.8] si urmatoarele etichete y=[1, 0, 1, 1]?
+A. 0.3315
+B. 0.2875
+C. 0.0575
+D. 0.0715
+
+10. Care dintre urmatoarele este o tehnica folosita pentru SVM in contextul a mai mult de doua clase?
+A. One versus all
+B. Split group classification
+C. N way split
+D. All versus all
+

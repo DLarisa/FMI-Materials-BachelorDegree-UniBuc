@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.StorageObjectPlaceHolder parentClass="oracle.dbtools.crest.model.design.storage.StorageObject">
+   <property name="object" dataType="java.lang.Object" defaultValue="" xmlName="object" xmlType="element" getter="getObject" setter="setObject" reffered="false"/>
+   <roproperty name="designLevelAccessibleObject" dataType="boolean" getter="isDesignLevelAccessibleObject"/>
+   <roproperty name="storageObject" dataType="oracle.dbtools.crest.model.design.storage.StorageObject" getter="getStorageObject"/>
+</oracle.dbtools.crest.model.design.storage.StorageObjectPlaceHolder>

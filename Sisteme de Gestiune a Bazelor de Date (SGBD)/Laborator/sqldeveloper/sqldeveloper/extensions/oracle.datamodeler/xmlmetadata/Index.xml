@@ -1,0 +1,26 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.Index parentClass="oracle.dbtools.crest.model.design.KeyObject">
+   <property name="dimensionsNumber" dataType="int" defaultValue="2" xmlName="dimensionsNumber" xmlType="element" getter="getDimensionsNumber" setter="setDimensionsNumber" reffered="false"/>
+   <property name="geodetic" dataType="java.lang.String" defaultValue="YES" xmlName="geodetic" xmlType="element" getter="getGeodetic" setter="setGeodetic" reffered="false"/>
+   <property name="idOfRecoveredintegrityindex" dataType="java.lang.String" defaultValue="" xmlName="idOfRecoveredintegrityindex" xmlType="element" getter="getIdOfRecoveredIntegrityIndex" setter="setIdOfRecoveredIntegrityIndex" reffered="false"/>
+   <property name="indexExpression" dataType="java.lang.String" defaultValue="" xmlName="indexExpression" xmlType="element" getter="getIndexExpression" setter="setIndexExpression" reffered="false"/>
+   <property name="indexState" dataType="java.lang.String" defaultValue="Plain Index" xmlName="indexState" xmlType="element" getter="getIndexState" setter="setIndexState" reffered="false"/>
+   <property name="layerType" dataType="java.lang.String" defaultValue="" xmlName="layerType" xmlType="element" getter="getLayerType" setter="setLayerType" reffered="false"/>
+   <!-- property is set at spatialColumnDefiniton object(s) for table -->
+   <aa_property name="spatialColumnDefiniton" dataType="oracle.dbtools.crest.model.design.relational.SpatialColumnDefObject" defaultValue="" xmlName="spatialColumnDefiniton" xmlType="element" getter="getSpatialColumnDefiniton" setter="setSpatialColumnDefiniton" reffered="true"/>
+   <property name="spatialIndex" dataType="boolean" defaultValue="false" xmlName="spatialIndex" xmlType="element" getter="isSpatialIndex" setter="setSpatialIndex" reffered="false"/>
+    <!-- property is set after indexState in order to get index type, it'll allow index and PK,UK,FK constraint to have same name -->
+   <propertyDependency propDef="name" dependOnProperty="indexState" />	
+   <roproperty name="sortOrderColumnsAscending" dataType="boolean" getter="isSortOrderColumnsAscending"/>
+   <roproperty name="byteSize" dataType="int" getter="getByteSize"/>
+   <roproperty name="columnSet" dataType="oracle.dbtools.crest.model.design.relational.ColumnSet" getter="getColumnSet"/>
+   <roproperty name="columnSortOrder" dataType="java.lang.String" getter="getColumnSortOrder"/>
+   <roproperty name="engCandidateKey" dataType="oracle.dbtools.crest.model.design.logical.CandidateKey" getter="getEngCandidateKey"/>
+   <roproperty name="indexMemento" dataType="oracle.dbtools.crest.model.design.undo.relational.memento.IndexMemento" getter="getIndexMemento"/>
+   <roproperty name="mappingFor" dataType="oracle.dbtools.crest.model.xtdmapping.XtdMapping" getter="getMappingFor"/>
+   <roproperty name="mappingsFor" dataType="interface java.util.List" getter="getMappingsFor"/>
+   <roproperty name="sortOrderColumnsstring" dataType="java.lang.String" getter="getSortOrderColumnsString"/>
+   <roproperty name="table" dataType="oracle.dbtools.crest.model.design.relational.Table" getter="getTable"/>
+   <collection name="indexColumnUsage" dataType="java.util.List" xmlName="indexColumnUsage" itemXmlName="colUsage" getter="getIndexColumnUsageList" isMapItem="true" applyList="applyIndexColumnUsageList"/>
+   <property_moved_to_ContainerObject name="schemaObject" dataType="oracle.dbtools.crest.model.design.relational.SchemaObject" defaultValue="" xmlName="schemaObject" xmlType="element" getter="getSchemaObject" setter="setSchemaObject" reffered="true"/>
+</oracle.dbtools.crest.model.design.relational.Index>

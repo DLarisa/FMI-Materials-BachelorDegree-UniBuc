@@ -1,0 +1,28 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.BitmapJoinIndexOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="compress" dataType="int" defaultValue="0" xmlName="compress" xmlType="element" getter="getCompress" setter="setCompress" reffered="false"/>
+   <property name="computeStatistics" dataType="java.lang.String" defaultValue="NO" xmlName="computeStatistics" xmlType="element" getter="getComputeStatistics" setter="setComputeStatistics" reffered="false"/>
+   <property name="degree" dataType="java.lang.String" defaultValue="" xmlName="degree" xmlType="element" getter="getDegree" setter="setDegree" reffered="false"/>
+   <property name="dimensionKeys" dataType="java.lang.String" defaultValue="" xmlName="dimensionKeys" xmlType="element" getter="getDimensionKeys" setter="setDimensionKeys" reffered="false" listOfRefs="true"/>
+   <property name="hashSubPartitionsTableSpaces" dataType="java.lang.String" defaultValue="" xmlName="hashSubPartitionsTableSpaces" xmlType="element" getter="getHashSubPartitionsTableSpaces" setter="setHashSubPartitionsTableSpaces" reffered="false" listOfRefs="true"/>
+   <property name="indexColumns" dataType="java.lang.String" defaultValue="" xmlName="indexColumns" xmlType="element" getter="getIndexColumns" setter="setIndexColumns" reffered="false" listOfRefs="true"/>
+   <property name="joinColumns" dataType="java.lang.String" defaultValue="" xmlName="joinColumns" xmlType="element" getter="getJoinColumns" setter="setJoinColumns" reffered="false" listOfRefs="true"/>
+   <property name="localPartitioning" dataType="java.lang.String" defaultValue="NO" xmlName="localPartitioning" xmlType="element" getter="getLocalPartitioning" setter="setLocalPartitioning" reffered="false"/>
+   <property name="logging" dataType="java.lang.String" defaultValue="" xmlName="logging" xmlType="element" getter="getLogging" setter="setLogging" reffered="false"/>
+   <property name="online" dataType="java.lang.String" defaultValue="NO" xmlName="online" xmlType="element" getter="getOnline" setter="setOnline" reffered="false"/>
+   <property name="parallel" dataType="java.lang.String" defaultValue="NO" xmlName="parallel" xmlType="element" getter="getParallel" setter="setParallel" reffered="false"/>
+   <property name="segment" dataType="oracle.dbtools.crest.model.design.storage.oracle.SegmentOracle" defaultValue="" xmlName="segment" xmlType="element" getter="getSegment" setter="setSegment" reffered="true"/>
+   <property name="sortedRows" dataType="java.lang.String" defaultValue="NO" xmlName="sortedRows" xmlType="element" getter="getSortedRows" setter="setSortedRows" reffered="false"/>
+   <roproperty name="table" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableProxyOracle" getter="getTable"/>
+   <property name="tablespace" dataType="java.lang.String" defaultValue="Default" xmlName="tablespace" xmlType="element" getter="getTablespace" setter="setTablespace" reffered="false"/>
+   <property name="user" dataType="oracle.dbtools.crest.model.design.storage.oracle.UserOracle" defaultValue="" xmlName="user" xmlType="element" getter="getUser" setter="setUser" reffered="true"/>
+   <roproperty name="allHashSubPartitionsTableSpaces" dataType="java.lang.String" getter="getAllHashSubPartitionsTableSpaces"/>
+   <roproperty name="columnSortOrder" dataType="java.lang.String" getter="getColumnSortOrder"/>
+   <roproperty name="dimensionKey" dataType="oracle.dbtools.crest.model.design.storage.IndexProxy" getter="getDimensionKey"/>
+   <bb_roproperty name="dimensionKeySet" dataType="oracle.dbtools.crest.model.design.storage.oracle.BitmapJoinIndexOracle$InlineList" getter="getDimensionKeySet"/>
+   <roproperty name="dimensionTables" dataType="[Ljava.lang.Object" getter="getDimensionTables"/>
+   <bb_roproperty name="hashPartitionsTableSpacesSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.BitmapJoinIndexOracle$InlineList" getter="getHashPartitionsTableSpacesSet"/>
+   <bb_roproperty name="indexColumnSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.BitmapJoinIndexOracle$InlineList" getter="getIndexColumnSet"/>
+   <roproperty name="joinColumn" dataType="oracle.dbtools.crest.model.design.storage.oracle.ColumnProxyOracle" getter="getJoinColumn"/>
+   <bb_roproperty name="joinColumnSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.BitmapJoinIndexOracle$InlineList" getter="getJoinColumnSet"/>
+</oracle.dbtools.crest.model.design.storage.oracle.BitmapJoinIndexOracle>

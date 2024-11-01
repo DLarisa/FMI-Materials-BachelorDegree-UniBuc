@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.Attribute parentClass="oracle.dbtools.crest.model.design.ContainedObjectWithDomain">
+   <aa_property name="connection" dataType="oracle.dbtools.crest.model.design.logical.Relation$Connection" defaultValue="" xmlName="connection" xmlType="element" getter="getConnection" setter="setConnection" reffered="true"/>
+   <aa_property name="delegate" dataType="oracle.dbtools.crest.model.design.logical.Attribute" defaultValue="" xmlName="delegate" xmlType="element" getter="getDelegate" setter="setDelegate" reffered="true"/>
+   <property name="preferredAbbreviation" dataType="java.lang.String" defaultValue="" xmlName="preferredAbbreviation" xmlType="element" getter="getPreferredAbbreviation" setter="setPreferredAbbreviation" reffered="false"/>
+   <property name="source" dataType="java.lang.String" defaultValue="" xmlName="source" xmlType="element" getter="getSource" setter="setSource" reffered="false"/>
+   <!-- description properties are overridden here in order to consider dm.PropagateFKAttributeDescription setting in DM conf file, other getters are used -->
+   <property name="comment" dataType="java.lang.String" defaultValue="" xmlName="comment" xmlType="element" getter="getCommentToStore" setter="setComment" reffered="false" mergeCompare="true"/>
+   <property name="commentInRDBMS" dataType="java.lang.String" defaultValue="" xmlName="commentInRDBMS" xmlType="element" getter="getCommentInRDBMStoStore" setter="setCommentInRDBMS" reffered="false" mergeCompare="true"/>
+   <property name="notes" dataType="java.lang.String" defaultValue="" xmlName="notes" xmlType="element" getter="getNotesToStore" setter="setNotes" reffered="false" mergeCompare="true"/>
+   <roproperty name="fkAttribute" dataType="boolean" getter="isFKAttribute"/>
+   <roproperty name="valid" dataType="boolean" getter="isValid"/>
+   <roproperty name="alldelegates" dataType="interface java.util.List" getter="getAlldelegates"/>
+   <roproperty name="engColumn" dataType="oracle.dbtools.crest.model.design.relational.Column" getter="getEngColumn"/>
+   <roproperty name="logicalRepresentationName" dataType="java.lang.String" getter="getLogicalRepresentationName"/>
+   <roproperty name="originatingAttribute" dataType="oracle.dbtools.crest.model.design.logical.Attribute" getter="getOriginatingAttribute"/>
+   <roproperty name="positionInRelation" dataType="int" getter="getPositionInRelation"/>
+   <roproperty name="relation" dataType="oracle.dbtools.crest.model.design.logical.Relation" getter="getRelation"/>
+</oracle.dbtools.crest.model.design.logical.Attribute>

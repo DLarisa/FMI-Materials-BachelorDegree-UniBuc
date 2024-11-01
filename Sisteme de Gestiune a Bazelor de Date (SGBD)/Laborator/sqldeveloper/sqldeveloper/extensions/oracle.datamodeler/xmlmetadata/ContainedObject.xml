@@ -1,0 +1,34 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.ContainedObject parentClass="oracle.dbtools.crest.model.design.DesignObject">
+   <property name="avTSortOrder" dataType="int" defaultValue="0" xmlName="avTSortOrder" xmlType="element" getter="getAVTSortOrder" setter="setAVTSortOrder" reffered="false"/>
+   <aa_property name="check" dataType="oracle.dbtools.crest.model.design.constraint.CheckConstraint" defaultValue="" xmlName="check" xmlType="element" getter="getCheck" setter="setCheck" reffered="true"/>
+   <property name="collectionType" dataType="oracle.dbtools.crest.model.design.datatypes.CollectionType" defaultValue="" xmlName="collectionType" xmlType="element" getter="getCollectionType" setter="setCollectionType" reffered="true"/>
+   <property name="constraintName" dataType="java.lang.String" defaultValue="" xmlName="constraintName" xmlType="element" getter="getConstraintName" setter="setConstraintName" reffered="false"/>
+   <aa_property name="container" dataType="oracle.dbtools.crest.model.design.ContainerObject" defaultValue="" xmlName="container" xmlType="element" getter="getContainer" setter="setContainer" reffered="true"/>
+   <property name="formulaDesc" dataType="java.lang.String" defaultValue="" xmlName="formulaDesc" xmlType="element" getter="getFormulaDesc" setter="setFormulaDesc" reffered="false"/>
+   <property name="nullsAllowed" dataType="boolean" defaultValue="false" xmlName="nullsAllowed" xmlType="element" getter="getNullsAllowed" setter="setNullsAllowed" reffered="false"/>
+   <property name="oid" dataType="boolean" defaultValue="false" xmlName="oid" xmlType="element" getter="isOid" setter="setOid" reffered="false"/>
+   <aa_property name="parentObject" dataType="oracle.dbtools.crest.model.design.ContainedObject" defaultValue="" xmlName="parentObject" xmlType="element" getter="getParentObject" setter="setParentObject" reffered="true"/>
+   <property name="referedAttribute" dataType="java.lang.String" defaultValue="" xmlName="referedAttribute" xmlType="element" getter="getReferedAttribute" setter="setReferedAttribute" reffered="false"/>
+   <property name="scopeId" dataType="java.lang.String" defaultValue="" xmlName="scopeId" xmlType="element" getter="getScopeId" setter="setScopeId" reffered="false"/>
+   <property name="sourceType" dataType="java.lang.String" defaultValue="" xmlName="sourceType" xmlType="element" getter="getSourceType" setter="setSourceType" reffered="false"/>
+   <property name="structAttributeID" dataType="java.lang.String" defaultValue="" xmlName="structAttributeID" xmlType="element" getter="getStructAttributeID" setter="setStructAttributeID" reffered="false"/>
+   <property name="structuredType" dataType="oracle.dbtools.crest.model.design.datatypes.StructuredType" defaultValue="" xmlName="structuredType" xmlType="element" getter="getStructuredType" setter="setStructuredType" reffered="true"/>
+   <property name="synonym" dataType="java.lang.String" defaultValue="" xmlName="synonym" xmlType="element" getter="getSynonym" setter="setSynonym" reffered="false"/>
+   <aa_property name="unique" dataType="boolean" defaultValue="" xmlName="unique" xmlType="element" getter="isUnique" setter="setUnique" reffered="false"/>
+   <property name="useDomainConstraints" dataType="boolean" defaultValue="true" xmlName="useDomainConstraints" xmlType="element" getter="getUseDomainConstraints" setter="setUseDomainConstraints" reffered="false"/>
+   <moved_to_COWD_property name="checkConstraint" dataType="oracle.dbtools.crest.model.design.constraint.CheckConstraint" isPropertyMap="true" xmlName="checkConstraint" xmlType="element" getter="getCheck" setter="setCheck" createPMap="" itemXmlName="implementationDef" keyXmlName="dbType" valueXmlName="definition"/>
+   <moved_to_COWD_property name="listOfValues" dataType="oracle.dbtools.crest.model.design.constraint.ConstraintEnumeration" isPropertyMap="true" xmlName="listOfValues" xmlType="element" getter="getValueList" setter="setValueList" createPMap="" itemXmlName="valueDef" keyXmlName="value" valueXmlName="description"/>
+   <collection name="listOfRanges" dataType="java.util.List" xmlName="listOfRanges" itemXmlName="rangeDef" getter="getAVTList" createItem="createAVT" applyList="applyAVTList"/>
+   <roproperty name="atomic" dataType="boolean" getter="isAtomic"/>
+   <roproperty name="fkElement" dataType="boolean" getter="isFKElement"/>
+   <roproperty name="nested" dataType="boolean" getter="isNested"/>
+   <roproperty name="avTs" dataType="interface java.util.Set" getter="getAVTs"/>
+   <roproperty name="delegateElement" dataType="oracle.dbtools.crest.model.design.ContainedObject" getter="getDelegateElement"/>
+   <roproperty name="deletedMapping" dataType="oracle.dbtools.crest.model.xtdmapping.XtdMapping" getter="getDeletedMapping"/>
+   <roproperty name="index" dataType="int" getter="getIndex"/>
+   <roproperty name="nestedObjects" dataType="interface java.util.List" getter="getNestedObjects"/>
+   <roproperty name="positionInContainerOneBased" dataType="int" getter="getPositionInContainerOneBased"/>
+   <roproperty name="scope" dataType="oracle.dbtools.crest.model.design.ContainerObject" getter="getScope"/>
+   <roproperty name="size" dataType="java.lang.String" getter="getSize"/>
+</oracle.dbtools.crest.model.design.ContainedObject>

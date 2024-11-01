@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v9i.PermissionsOraclev9i parentClass="oracle.dbtools.crest.model.design.storage.oracle.PermissionsOracle">
+   <property name="hierarchyOption" dataType="java.lang.String" defaultValue="NO" xmlName="hierarchyOption" xmlType="element" getter="getHierarchyOption" setter="setHierarchyOption" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v9i.PermissionsOraclev9i>

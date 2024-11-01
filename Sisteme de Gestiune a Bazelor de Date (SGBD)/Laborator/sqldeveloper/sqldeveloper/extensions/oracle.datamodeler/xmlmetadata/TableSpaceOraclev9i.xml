@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v9i.TableSpaceOraclev9i parentClass="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle">
+   <property name="blockSize" dataType="int" defaultValue="0" xmlName="blockSize" xmlType="element" getter="getBlockSize" setter="setBlockSize" reffered="false"/>
+   <property name="forceLogging" dataType="java.lang.String" defaultValue="NO" xmlName="forceLogging" xmlType="element" getter="getForceLogging" setter="setForceLogging" reffered="false"/>
+   <property name="segmentManagement" dataType="java.lang.String" defaultValue="" xmlName="segmentManagement" xmlType="element" getter="getSegmentManagement" setter="setSegmentManagement" reffered="false"/>
+   <roproperty name="managedFiles" dataType="java.lang.String" getter="getManagedFiles"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v9i.TableSpaceOraclev9i>

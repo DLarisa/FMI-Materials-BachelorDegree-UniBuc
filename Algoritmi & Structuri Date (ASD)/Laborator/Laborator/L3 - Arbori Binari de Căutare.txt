@@ -1,0 +1,71 @@
+Arbori Binari de Cãutare (ABC)
+
+        a
+       / \
+      b   c
+     (b<=a<c)
+
+Ex: 2,5,1,4,3,7,6
+                2
+               / \
+	      1   5
+                 / \
+                4   7
+               /   /
+              3   6
+--------------------------------------------------------------------------------------------------------- 
+#include <iostream>
+using namespace std;
+/*
+                2
+               / \
+	      1   5
+                 / \
+                4   7
+               /   /
+              3   6
+*/
+struct arb
+{
+   int info;
+   arb *st, *dr;
+} *rad;
+void ins(arb *&r, int x)
+{
+   if(r==NULL)
+   {
+      r=new arb;
+      r->info=x;
+      r->st=r->dr=NULL;
+   }
+   else
+   {
+     if(r->info>=x) ins(r->st,x);
+     else ins(r->dr,x);
+   }
+}
+void afis1(arb *r)  //RSD(preordine)    2,1,5,4,3,7,6
+{
+    if(r!=NULL)
+    {
+        cout<<r->info<<" ";
+        afis1(r->st);
+        afis1(r->dr);
+    }
+}
+void afis2(arb *r)  //SRD(inordine)     1,2,3,4,5,6,7
+{
+    if(r!=NULL)
+    {
+        afis2(r->st);
+        cout<<r->info<<" ";
+        afis2(r->dr);
+    }
+}
+int main()
+{
+    ins(rad,2);ins(rad,5);ins(rad,1);ins(rad,4);ins(rad,3);ins(rad,7);ins(rad,6);
+    afis1(rad);cout<<endl;afis2(rad);
+
+    return 0;
+}

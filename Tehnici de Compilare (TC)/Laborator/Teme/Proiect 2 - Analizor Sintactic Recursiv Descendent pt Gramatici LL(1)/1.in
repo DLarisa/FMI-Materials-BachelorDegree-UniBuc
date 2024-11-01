@@ -1,0 +1,14 @@
+10
+E->TA
+A->+TA
+A->-TA
+A->&
+T->FB
+B->*FB
+B->/FB
+B->&
+F->(E)
+F->n
+E T A F B #
+n + - * / ( ) #
+(n+n)*n-n/n

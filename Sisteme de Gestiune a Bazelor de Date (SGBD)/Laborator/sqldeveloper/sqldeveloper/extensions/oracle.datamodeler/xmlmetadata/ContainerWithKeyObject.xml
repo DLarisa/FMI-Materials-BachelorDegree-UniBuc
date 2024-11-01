@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.ContainerWithKeyObject parentClass="oracle.dbtools.crest.model.design.ContainerObject">
+   <aa_property name="pk" dataType="oracle.dbtools.crest.model.design.KeyObject" defaultValue="" xmlName="primaryKey" xmlType="element" getter="getPK" setter="setPK" reffered="false"/>
+   <property name="pkName" dataType="java.lang.String" defaultValue="" xmlName="pkName" xmlType="element" getter="getPKName" setter="setPKName" reffered="false"/>
+   <property name="typeID" dataType="java.lang.String" defaultValue="" xmlName="typeID" xmlType="element" getter="getTypeID" setter="setTypeID" reffered="false"/>
+   <roproperty name="valid" dataType="boolean" getter="isValid"/>
+   <roproperty name="firstfK" dataType="oracle.dbtools.crest.model.design.KeyObject" getter="getFirstFK"/>
+   <roproperty name="keyArrayPrototype" dataType="[Loracle.dbtools.crest.model.design.KeyObject" getter="getKeyArrayPrototype"/>
+   <roproperty name="keyGeneratedBy" dataType="oracle.dbtools.crest.model.design.KeyObject" getter="getKeyGeneratedBy"/>
+   <roproperty name="keyObject" dataType="oracle.dbtools.crest.model.design.KeyObject" getter="getKeyObject"/>
+   <roproperty name="keySet" dataType="oracle.dbtools.crest.model.design.KeyObjectSet" getter="getKeySet"/>
+   <roproperty name="keys" dataType="[Loracle.dbtools.crest.model.design.KeyObject" getter="getKeys"/>
+   <roproperty name="keysWith" dataType="[Loracle.dbtools.crest.model.design.KeyObject" getter="getKeysWith"/>
+   <roproperty name="numberOfKeys" dataType="int" getter="getNumberOfKeys"/>
+   <roproperty name="oidKey" dataType="oracle.dbtools.crest.model.design.KeyObject" getter="getOidKey"/>
+   <roproperty name="pkorUnique" dataType="oracle.dbtools.crest.model.design.KeyObject" getter="getPKorUnique"/>
+</oracle.dbtools.crest.model.design.ContainerWithKeyObject>

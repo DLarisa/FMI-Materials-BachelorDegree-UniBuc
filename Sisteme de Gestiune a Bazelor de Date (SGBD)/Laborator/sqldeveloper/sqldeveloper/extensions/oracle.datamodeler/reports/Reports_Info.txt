@@ -1,0 +1,88 @@
+Data Modeler reports
+==============================
+
+Data Modeler reports generation uses XSL transformation to produce reports from source XML file.
+
+When creating reports with Data Modeler following files are involved:
+   - report_data.xml    - This is the source XML file, containing all gathered data for concrete report.
+                          File is created when there is report generation from loaded model inside Data Modeler and 
+                          is overwritten = on every run. 
+   - report_data_rs.xml - Same as above, but file is created when report is ran against reporting schema (repository).
+   - templates files    - In directory /datamodeler/reports/xslt/ there two subdirectories - 10 and 20. 
+                          Accordingly, there are  XSLT 1.0 and XSLT 2.0 templates for each report type and output format.
+   - fop.xconf          - Apache FOP configuration file
+
+Reports generation has two modes:
+1. Default mode
+   XSLT 1.0 templates are used. The disadvantage is that in some cases for bigger reports, especially PDF the process could 
+   consume too much memory and at the end an out of memory exception might be thrown and no report will be generated.
+2. Using Saxon
+   Additionally Saxon XSLT processor can be used. It is not shipped with Data Modeler and it must be downloaded separately 
+   from http://saxon.sourceforge.net/. Archive must be extracted in some directory and Saxon jar file must be specified 
+   inside Data Modeler: Tools->Preferences->Data Modeler->Path to Saxon XSLT 2.0 JAR file.
+   XSLT 2.0 templates are used. This mode can produce much bigger reports, especially PDF.
+
+Multibyte characters support
+-----------------------------
+By default all reports for all output formats (HTML and RTF) are UTF8 encoded, using font Tahoma.
+Usually this is enough to show most of the characters. This however is not enough to display multibyte character sets. 
+Especially CJK (Chinese, Japanese, Korean) character sets.
+
+Multibyte characters support table
+
+                                  HTML | PDF | RTF
+                                --------------------
+Default  (XSLT 1.0) generation     Y   |  Y  |  N
+Saxon    (XSLT 2.0) generation     Y   |  Y  |  Y
+
+1. HTML
+   As seen from table all reports with all character sets are displayed normally in HTML format. No additional settings are required.
+
+2. RTF
+   If default (XSLT 1.0) report generation is used multibyte characters WILL NOT be displayed properly in RTF report. Saxon must be 
+   used in order multibyte characters to be readable. Appropriate font has to be installed on file system.
+
+3. PDF
+   PDF reports are generated with Apache FOP v0.95 and PDF report by default WILL NOT render multibyte characters properly.
+   
+   To be able to see multibyte characters one have to do following:
+   3.1. Appropriate font for displaying multibyte characters should be present somewhere on file system. It is not necessary to 
+        be in system fonts directory.
+   3.2. In current directory (/reports) there is XML file named fop.xconf which is used for Apache FOP customization. 
+        This file contains only default settings.
+        Find section <fonts>. By default it contains <auto-detect/> which means that fonts will be taken from default system 
+        fonts directory. To be able to use extra font(s) you have to add following:
+   				
+   				<font embed-url="file:///<directory-path>/<font-file-name>" kerning="yes" >
+            <font-triplet name="custom-font-alias" style="normal" weight="normal"/>
+          </font>
+
+        Replace <directory-path> with full path where additional font is.
+        Replace <font-file-name> with font file name.
+        String custom-font-alias could be anything meaningful.
+
+        Example:
+				  <font embed-url="file:///C:/custom_fonts/Fuente Japonesa - epmgobld.ttf" kerning="yes" >
+              <font-triplet name="MyFont" style="normal" weight="normal"/>
+          </font>
+
+        This will embed custom font in PDF for portability i.e. reader of the PDF report is not obligated to have this specific font 
+        to be able to read the report.
+
+   3.3. In directory /datamodeler/reports/xslt/ there two subdirectories - 10 and 20, containing XSL templates.
+        All templates are named according to report type and output format for instance AllTablesDetails_pdf.xslt is template, 
+        producing All Tables Details PDF report.
+        Find PDF report template that has to contain multibyte characters and open it with any text editor. Find the single line, 
+        containing: 'font-family="Tahoma"' (without apostrophes). Replace 'font-family="Tahoma"' with 'font-family="custom-font-alias"' 
+        (without apostrophes). The string custom-font-alias is exactly same custom-font-alias from previous paragraph.
+   
+   3.4. Generate PDF report. It will contain multibyte characters.
+   
+   Note: It is possible to use non-multibyte and multibyte characters in single PDF file for instance English and Chinese, Cyrillic 
+         and Japanese.
+         In general it is not possible to use two different multibyte characters sets for instance Chinese and Korean in single PDF file. 
+         However there are fonts that contain symbols from two or more multibyte characters sets for instance some specific font is covering 
+         Japanese and Chinese characters sets.
+
+More information can be found on http://xmlgraphics.apache.org/fop/
+More details on fonts configuration is provided at http://xmlgraphics.apache.org/fop/0.95/fonts.html

@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.multidimensional.MeasureFolder parentClass="oracle.dbtools.crest.model.design.multidimensional.AbstractMDObject">
+   <property name="measures" dataType="java.util.List" defaultValue="" xmlName="measures" xmlType="element" getter="getMeasures" setter="setMeasures" reffered="false"/>
+   <property name="parentFolderID" dataType="java.lang.String" defaultValue="" xmlName="parentFolderID" xmlType="element" getter="getParentFolderID" setter="setParentFolderID" reffered="false"/>
+   <aa_property name="parentFolder" dataType="oracle.dbtools.crest.model.design.multidimensional.MeasureFolder" defaultValue="" xmlName="parentFolder" xmlType="element" getter="getParentFolder" setter="setParentFolder" reffered="true"/>
+   <collection name="usedMeasures" dataType="java.util.List" xmlName="usedMeasures" itemXmlName="usedMeasure" getter="getMeasureWrapperMaps" isMapItem="true" applyList="applyMeasureWrapperMaps"/>
+   <property name="subfolders" dataType="java.util.List" defaultValue="" xmlName="subfolders" xmlType="element" getter="getSubfolders" setter="setSubfolders" reffered="false"/>
+   <roproperty name="availableMeasures" dataType="interface java.util.List" getter="getAvailableMeasures"/>
+   <roproperty name="onlyMeasureWrapper" dataType="interface java.util.List" getter="getOnlyMeasureWrapper"/>
+   <roproperty name="onlyMeasures" dataType="interface java.util.List" getter="getOnlyMeasures"/>
+</oracle.dbtools.crest.model.design.multidimensional.MeasureFolder>

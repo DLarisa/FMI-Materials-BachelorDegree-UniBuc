@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.DimensionAttributeOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="columns" dataType="java.lang.String" defaultValue="" xmlName="columns" xmlType="element" getter="getColumns" setter="setColumns" reffered="false" listOfRefs="true"/>
+   <roproperty name="dimension" dataType="oracle.dbtools.crest.model.design.storage.oracle.DimensionOracle" getter="getDimension"/>
+   <property name="level" dataType="oracle.dbtools.crest.model.design.storage.oracle.LevelOracle" defaultValue="" xmlName="level" xmlType="element" getter="getLevel" setter="setLevel" reffered="true"/>
+   <bb_roproperty name="columnSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.DimensionAttributeOracle$InlineList" getter="getColumnSet"/>
+</oracle.dbtools.crest.model.design.storage.oracle.DimensionAttributeOracle>

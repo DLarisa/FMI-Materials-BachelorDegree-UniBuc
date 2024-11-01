@@ -1,0 +1,216 @@
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\ProiectDAW.dll.config
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\ProiectDAW.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\ProiectDAW.pdb
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\csc.exe
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\csc.exe.config
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\csc.rsp
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\csi.exe
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\csi.exe.config
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\csi.rsp
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.AppContext.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.Console.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.IO.Compression.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.Net.Http.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.ValueTuple.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\vbc.exe
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\vbc.exe.config
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\vbc.rsp
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\VBCSCompiler.exe
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Antlr3.Runtime.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\EntityFramework.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\EntityFramework.SqlServer.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Newtonsoft.Json.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Owin.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\System.Web.Helpers.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\System.Web.Mvc.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\System.Web.Optimization.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\System.Web.Razor.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\System.Web.WebPages.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\System.Web.WebPages.Razor.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\WebGrease.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\System.Web.Helpers.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\System.Web.Mvc.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\System.Web.Optimization.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\System.Web.Razor.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\System.Web.WebPages.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\System.Web.WebPages.Razor.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Newtonsoft.Json.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Antlr3.Runtime.pdb
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\EntityFramework.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\EntityFramework.SqlServer.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.csprojAssemblyReference.cache
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.csproj.CoreCompileInputs.cache
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.csproj.CopyComplete
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.dll
+C:\Users\Larisa\Desktop\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.pdb
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\ProiectDAW.dll.config
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\ProiectDAW.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\ProiectDAW.pdb
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\csc.exe
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\csc.exe.config
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\csc.rsp
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\csi.exe
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\csi.exe.config
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\csi.rsp
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.AppContext.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.Console.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.IO.Compression.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.Net.Http.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.ValueTuple.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\vbc.exe
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\vbc.exe.config
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\vbc.rsp
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\VBCSCompiler.exe
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Antlr3.Runtime.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\EntityFramework.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\EntityFramework.SqlServer.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Newtonsoft.Json.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Owin.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\System.Web.Helpers.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\System.Web.Mvc.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\System.Web.Optimization.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\System.Web.Razor.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\System.Web.WebPages.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\System.Web.WebPages.Razor.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\WebGrease.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\System.Web.Helpers.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\System.Web.Mvc.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\System.Web.Optimization.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\System.Web.Razor.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\System.Web.WebPages.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\System.Web.WebPages.Razor.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Newtonsoft.Json.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Antlr3.Runtime.pdb
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\EntityFramework.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\EntityFramework.SqlServer.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.csprojAssemblyReference.cache
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.csproj.CoreCompileInputs.cache
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.csproj.CopyComplete
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.dll
+C:\Users\Larisa\OneDrive\FMI 2018-2021\Anul III (2020 - 2021)\Sem I\Dezvoltarea Aplicațiilor Web\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.pdb

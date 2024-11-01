@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.AbstractStorageObjectSqlServer parentClass="oracle.dbtools.crest.model.design.storage.StorageObject">
+   <bb_roproperty name="database" dataType="oracle.dbtools.crest.model.design.storage.sqlserver.DataBaseSqlServer" getter="getDatabase"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.AbstractStorageObjectSqlServer>

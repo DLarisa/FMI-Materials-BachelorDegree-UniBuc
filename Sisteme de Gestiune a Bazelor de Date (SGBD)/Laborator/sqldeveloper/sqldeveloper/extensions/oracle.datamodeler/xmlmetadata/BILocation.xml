@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.businessinfo.BILocation parentClass="oracle.dbtools.crest.model.design.DesignObject">
+   <property name="address" dataType="java.lang.String" defaultValue="" xmlName="address" xmlType="element" getter="getAddress" setter="setAddress" reffered="false"/>
+   <property name="area" dataType="java.lang.String" defaultValue="" xmlName="area" xmlType="element" getter="getArea" setter="setArea" reffered="false"/>
+   <property name="city" dataType="java.lang.String" defaultValue="" xmlName="city" xmlType="element" getter="getCity" setter="setCity" reffered="false"/>
+   <property name="country" dataType="java.lang.String" defaultValue="" xmlName="country" xmlType="element" getter="getCountry" setter="setCountry" reffered="false"/>
+   <property name="locationType" dataType="java.lang.String" defaultValue="" xmlName="locationType" xmlType="element" getter="getLocationType" setter="setLocationType" reffered="false"/>
+   <property name="postCode" dataType="java.lang.String" defaultValue="" xmlName="postCode" xmlType="element" getter="getPostCode" setter="setPostCode" reffered="false"/>
+   <roproperty name="contacts" dataType="interface java.util.List" getter="getContacts"/>
+</oracle.dbtools.crest.model.businessinfo.BILocation>

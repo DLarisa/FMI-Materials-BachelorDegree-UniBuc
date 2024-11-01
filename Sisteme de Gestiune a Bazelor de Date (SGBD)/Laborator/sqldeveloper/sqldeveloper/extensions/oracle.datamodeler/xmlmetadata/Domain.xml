@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.Domain parentClass="oracle.dbtools.crest.model.design.DesignObject">
+   <property name="avTSortOrder" dataType="int" defaultValue="" xmlName="avTSortOrder" xmlType="element" getter="getAVTSortOrder" setter="setAVTSortOrder" reffered="false"/>
+   <aa_property name="check" dataType="oracle.dbtools.crest.model.design.constraint.CheckConstraint" defaultValue="" xmlName="check" xmlType="element" getter="getCheck" setter="setCheck" reffered="true"/>
+   <aa_property name="dataType" dataType="interface oracle.dbtools.crest.model.datatype.MDDataType" defaultValue="" xmlName="dataType" xmlType="element" getter="getDataType" setter="setDataType" reffered="false"/>
+   <property name="dataTypePrecision" dataType="java.lang.String" defaultValue="" xmlName="dataTypePrecision" xmlType="element" getter="getDataTypePrecision" setter="setDataTypePrecision" reffered="false"/>
+   <property name="dataTypeScale" dataType="java.lang.String" defaultValue="" xmlName="dataTypeScale" xmlType="element" getter="getDataTypeScale" setter="setDataTypeScale" reffered="false"/>
+   <property name="dataTypeSize" dataType="java.lang.String" defaultValue="" xmlName="dataTypeSize" xmlType="element" getter="getDataTypeSize" setter="setDataTypeSize" reffered="false"/>
+   <property name="defaultValue" dataType="java.lang.String" defaultValue="" xmlName="defaultValue" xmlType="element" getter="getDefaultValue" setter="setDefaultValue" reffered="false"/>
+   <property name="dimension" dataType="java.lang.String" defaultValue="" xmlName="dimension" xmlType="element" getter="getDimension" setter="setDimension" reffered="false"/>
+   <property name="fileName" dataType="java.lang.String" defaultValue="" xmlName="fileName" xmlType="element" getter="getFileName" setter="setFileName" reffered="false"/>
+   <property name="logicalDatatype" dataType="oracle.dbtools.crest.model.design.LogicalDatatype" defaultValue="" xmlName="logicalDatatype" xmlType="element" getter="getLogicalDatatype" setter="setLogicalDatatype" reffered="true"/>
+   <property name="synonym" dataType="java.lang.String" defaultValue="" xmlName="synonym" xmlType="element" getter="getSynonym" setter="setSynonym" reffered="false"/>
+   <property name="unitOfMeasure" dataType="java.lang.String" defaultValue="" xmlName="unitOfMeasure" xmlType="element" getter="getUnitOfMeasure" setter="setUnitOfMeasure" reffered="false"/>
+   <aa_property name="valueList" dataType="oracle.dbtools.crest.model.design.constraint.ConstraintEnumeration" defaultValue="" xmlName="valueList" xmlType="element" getter="getValueList" setter="setValueList" reffered="true"/>
+   <property name="checkConstraint" dataType="oracle.dbtools.crest.model.design.constraint.CheckConstraint" isPropertyMap="true" xmlName="checkConstraint" xmlType="element" getter="getCheck" setter="setCheck" createPMap="createCheckConstraint" itemXmlName="implementationDef" keyXmlName="dbType" valueXmlName="definition" removeItem="clearCheckConstraint"/>
+   <property name="listOfValues" dataType="oracle.dbtools.crest.model.design.constraint.ConstraintEnumeration" isPropertyMap="true" xmlName="listOfValues" xmlType="element" getter="getValueList" setter="setValueList" createPMap="createConstraintEnumeration" itemXmlName="valueDef" keyXmlName="value" valueXmlName="description" removeItem="clearValueList"/>
+   <collection name="listOfRanges" dataType="java.util.List" xmlName="listOfRanges" itemXmlName="rangeDef" getter="getAVTList" createItem="createAVT" applyList="applyAVTList"/>
+   <roproperty name="default" dataType="boolean" getter="isDefault"/>
+   <roproperty name="persisted" dataType="boolean" getter="isPersisted"/>
+   <roproperty name="avTString" dataType="java.lang.String" getter="getAVTString"/>
+   <roproperty name="avTs" dataType="interface java.util.Set" getter="getAVTs"/>
+   <roproperty name="availableLogicalDatatypes" dataType="[Loracle.dbtools.crest.model.design.LogicalDatatype" getter="getAvailableLogicalDatatypes"/>
+   <roproperty name="dataTypeParameter" dataType="java.lang.String" getter="getDataTypeParameter"/>
+   <roproperty name="dataTypeParameterNames" dataType="interface java.util.Iterator" getter="getDataTypeParameterNames"/>
+   <roproperty name="logicalRepresentationName" dataType="java.lang.String" getter="getLogicalRepresentationName"/>
+   <roproperty name="precision" dataType="java.lang.String" getter="getPrecision"/>
+   <roproperty name="requiredParametersNames" dataType="[Ljava.lang.String" getter="getRequiredParametersNames"/>
+   <roproperty name="requiredParametersrepresentation" dataType="java.lang.String" getter="getRequiredParametersRepresentation"/>
+   <roproperty name="scale" dataType="java.lang.String" getter="getScale"/>
+   <roproperty name="size" dataType="java.lang.String" getter="getSize"/>
+   <roproperty name="units" dataType="java.lang.String" getter="getUnits"/>
+</oracle.dbtools.crest.model.design.Domain>

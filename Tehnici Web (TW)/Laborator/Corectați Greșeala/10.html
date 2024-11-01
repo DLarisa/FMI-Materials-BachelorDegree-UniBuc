@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Fisier de baza</title>
+		<style>
+		</style>
+		<script>
+			function delete1() {
+				var par=document.getElementById("pgf");
+				if(par)
+				{
+					par.parentNode.removeChild(par);
+				}
+			}
+			
+			window.onload=function(){
+				var btn=document.getElementById("bt");
+				btn.onclick=delete1;
+				<!--delete este un cuvant rezervat-->
+			}
+		</script>
+	</head>
+	<body>
+		<p>Nota: in exercitiile de tip "corectati gresala", desi nu e recomandat, s-au pus css-ul si script-ul in fisierul html strict pentru simplitate (downloadarea unui singur fisier vs 3). Totusi retineti ca indicat este sa folositi fisiere externe in teme/proiecte/teste.</p>
+		<hr/>
+		<p>La click pe butonul din pagina dorim sa se stearga paragraful cu id-ul "pgf" (daca acesta exista). Totusi nu se intampla asta. De ce? Corectati. Rezolvarea trebuie sa includa atribuirea unei referinte de functie proprietatii onclick (a butonului).</p>
+		<button id="bt">Da un click!</button>
+		<p id="pgf">Paragraful cu id-ul pgf.</p>
+	</body>
+</html>

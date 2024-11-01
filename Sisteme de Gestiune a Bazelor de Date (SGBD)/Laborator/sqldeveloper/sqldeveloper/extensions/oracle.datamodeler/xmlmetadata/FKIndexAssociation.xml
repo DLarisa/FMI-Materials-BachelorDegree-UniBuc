@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.FKIndexAssociation parentClass="oracle.dbtools.crest.model.design.DesignObject">
+   <property name="arc" dataType="oracle.dbtools.crest.model.design.relational.FKArc" defaultValue="" xmlName="arc" xmlType="element" getter="getArc" setter="setArc" reffered="true"/>
+   <property name="containerWithKeyObject" dataType="oracle.dbtools.crest.model.design.ContainerWithKeyObject" defaultValue="" xmlName="containerWithKeyObject" xmlType="element" getter="getContainerWithKeyObject" setter="setContainerWithKeyObject" reffered="true"/>
+   <property name="deleteRule" dataType="java.lang.String" defaultValue="" xmlName="deleteRule" xmlType="element" getter="getDeleteRule" setter="setDeleteRule" reffered="false"/>
+   <property name="localFKIndex" dataType="oracle.dbtools.crest.model.design.relational.Index" defaultValue="" xmlName="localFKIndex" xmlType="element" getter="getLocalFKIndex" setter="setLocalFKIndex" reffered="true"/>
+   <property name="keyObject" dataType="oracle.dbtools.crest.model.design.KeyObject" defaultValue="" xmlName="keyObject" xmlType="element" getter="getKeyObject" setter="setKeyObject" reffered="true"/>
+   <property name="mandatory" dataType="boolean" defaultValue="" xmlName="mandatory" xmlType="element" getter="isMandatory" setter="setMandatory" reffered="false"/>
+   <aa_property name="originatingSourceTVTable" dataType="oracle.dbtools.crest.swingui.relational.TVTable" defaultValue="" xmlName="originatingSourceTVTable" xmlType="element" getter="getOriginatingSourceTVTable" setter="setOriginatingSourceTVTable" reffered="true"/>
+   <aa_property name="originatingTargetTVTable" dataType="oracle.dbtools.crest.swingui.relational.TVTable" defaultValue="" xmlName="originatingTargetTVTable" xmlType="element" getter="getOriginatingTargetTVTable" setter="setOriginatingTargetTVTable" reffered="true"/>
+   <aa_property name="sourceTVTable" dataType="oracle.dbtools.crest.swingui.relational.TVTable" defaultValue="" xmlName="sourceTVTable" xmlType="element" getter="getSourceTVTable" setter="setSourceTVTable" reffered="true"/>
+   <aa_property name="sourceTopView" dataType="oracle.dbtools.crest.swingui.TopView" defaultValue="" xmlName="sourceTopView" xmlType="element" getter="getSourceTopView" setter="setSourceTopView" reffered="true"/>
+   <aa_property name="targettVtable" dataType="oracle.dbtools.crest.swingui.relational.TVTable" defaultValue="" xmlName="targettVtable" xmlType="element" getter="getTargetTVTable" setter="setTargetTVTable" reffered="true"/>
+   <aa_property name="targettopView" dataType="oracle.dbtools.crest.swingui.TopView" defaultValue="" xmlName="targettopView" xmlType="element" getter="getTargetTopView" setter="setTargetTopView" reffered="true"/>
+   <property name="transferable" dataType="boolean" defaultValue="" xmlName="transferable" xmlType="element" getter="isTransferable" setter="setTransferable" reffered="false"/>
+   <propertyDependency propDef="name" dependOnProperty="localFKIndex" />
+   <propertyDependency propDef="markedGenerate" dependOnProperty="localFKIndex" />
+   <processing afterInit="addToTable" />
+   <roproperty name="backupFK" dataType="boolean" getter="isBackupFK"/>
+   <roproperty name="inArc" dataType="boolean" getter="isInArc"/>
+   <roproperty name="allTVRelations" dataType="interface java.util.List" getter="getAllTVRelations"/>
+   <roproperty name="allViews" dataType="interface java.util.List" getter="getAllViews"/>
+   <roproperty name="automaticallyRemovedcolumns" dataType="interface java.util.List" getter="getAutomaticallyRemovedcolumns"/>
+   <roproperty name="columnForDelegate" dataType="oracle.dbtools.crest.model.design.relational.Column" getter="getColumnForDelegate"/>
+   <roproperty name="columns" dataType="[Loracle.dbtools.crest.model.design.relational.Column" getter="getColumns"/>
+   <roproperty name="compatiblecolumns" dataType="[Loracle.dbtools.crest.model.design.relational.Column" getter="getCompatibleColumns"/>
+   <roproperty name="dpVInfoFor" dataType="oracle.dbtools.crest.model.design.relational.FKIndexAssociation$dpvInfo" getter="getDPVInfoFor"/>
+   <roproperty name="deleteRuleChoices" dataType="[Ljava.lang.String" getter="getDeleteRuleChoices"/>
+   <roproperty name="deletedMapping" dataType="oracle.dbtools.crest.model.xtdmapping.XtdMapping" getter="getDeletedMapping"/>
+   <roproperty name="engInheritanceRelation" dataType="oracle.dbtools.crest.model.design.logical.InheritanceRelation" getter="getEngInheritanceRelation"/>
+   <roproperty name="engRelation" dataType="oracle.dbtools.crest.model.design.logical.Relation" getter="getEngRelation"/>
+   <roproperty name="fkConnection" dataType="oracle.dbtools.crest.model.design.relational.FKIndexAssociation$FKConnection" getter="getFKConnection"/>
+   <roproperty name="fkMemento" dataType="oracle.dbtools.crest.model.design.relational.FKIndexAssociation$FKMemento" getter="getFKMemento"/>
+   <roproperty name="object" dataType="oracle.dbtools.crest.model.design.DesignObject" getter="getObject"/>
+   <roproperty name="originalContainer" dataType="oracle.dbtools.crest.model.design.ContainerObject" getter="getOriginalContainer"/>
+   <roproperty name="originatingFK" dataType="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" getter="getOriginatingFK"/>
+   <roproperty name="remoteIndex" dataType="oracle.dbtools.crest.model.design.relational.Index" getter="getRemoteIndex"/>
+   <roproperty name="remoteTable" dataType="oracle.dbtools.crest.model.design.relational.Table" getter="getRemoteTable"/>
+   <roproperty name="sourceObject" dataType="oracle.dbtools.crest.model.design.DesignObject" getter="getSourceObject"/>
+   <roproperty name="sourceTV" dataType="oracle.dbtools.crest.swingui.relational.TVTable" getter="getSourceTV"/>
+   <roproperty name="substitudeCaption" dataType="java.lang.String" getter="getSubstitudeCaption"/>
+   <roproperty name="table" dataType="oracle.dbtools.crest.model.design.relational.Table" getter="getTable"/>
+   <roproperty name="targetObject" dataType="oracle.dbtools.crest.model.design.DesignObject" getter="getTargetObject"/>
+   <roproperty name="targettV" dataType="oracle.dbtools.crest.swingui.relational.TVTable" getter="getTargetTV"/>
+   <roproperty name="viewFor" dataType="oracle.dbtools.crest.swingui.TopView" getter="getViewFor"/>
+</oracle.dbtools.crest.model.design.relational.FKIndexAssociation>

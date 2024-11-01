@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.udb.IndexProxyUDB parentClass="oracle.dbtools.crest.model.design.storage.IndexProxy">
+   <property name="cluster" dataType="boolean" defaultValue="false" xmlName="cluster" xmlType="element" getter="getCluster" setter="setCluster" reffered="false"/>
+   <property name="columnList" dataType="java.lang.String" defaultValue="" xmlName="columnList" xmlType="element" getter="getColumnList" setter="setColumnList" reffered="false" listOfRefs="true"/>
+   <property name="groups" dataType="java.lang.String" defaultValue="" xmlName="groups" xmlType="element" getter="getGroups" setter="setGroups" reffered="false"/>
+   <property name="minimumPercentageUsed" dataType="int" defaultValue="0" xmlName="minimumPercentageUsed" xmlType="element" getter="getMinimumPercentageUsed" setter="setMinimumPercentageUsed" reffered="false"/>
+   <property name="owner" dataType="oracle.dbtools.crest.model.design.storage.udb.OwnerUDB" defaultValue="" xmlName="owner" xmlType="element" getter="getOwner" setter="setOwner" reffered="true"/>
+   <property name="percentageFree" dataType="int" defaultValue="10" xmlName="percentageFree" xmlType="element" getter="getPercentageFree" setter="setPercentageFree" reffered="false"/>
+   <property name="reverseScanSupport" dataType="boolean" defaultValue="false" xmlName="reverseScanSupport" xmlType="element" getter="getReverseScanSupport" setter="setReverseScanSupport" reffered="false"/>
+   <property name="schema" dataType="oracle.dbtools.crest.model.design.storage.udb.SchemaUDB" defaultValue="" xmlName="schema" xmlType="element" getter="getSchema" setter="setSchema" reffered="true"/>
+   <property name="users" dataType="java.lang.String" defaultValue="" xmlName="users" xmlType="element" getter="getUsers" setter="setUsers" reffered="false" listOfRefs="true"/>
+   <roproperty name="uniqueConstraint" dataType="boolean" getter="isUniqueConstraint"/>
+   <roproperty name="columnSet" dataType="oracle.dbtools.crest.model.design.storage.udb.IndexProxyUDB$ColumnSet" getter="getColumnSet"/>
+   <roproperty name="propertyWrapperList" dataType="interface java.util.List" getter="getPropertyWrapperList"/>
+   <roproperty name="userGroupSet" dataType="oracle.dbtools.crest.model.design.storage.udb.IndexProxyUDB$UserSet" getter="getUserGroupSet"/>
+   <roproperty name="userSet" dataType="oracle.dbtools.crest.model.design.storage.udb.IndexProxyUDB$UserSet" getter="getUserSet"/>
+</oracle.dbtools.crest.model.design.storage.udb.IndexProxyUDB>

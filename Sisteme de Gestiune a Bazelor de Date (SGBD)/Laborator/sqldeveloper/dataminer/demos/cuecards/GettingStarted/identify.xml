@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<WorkflowProcess Version="11.2.0.1.9" xmlns="http://xmlns.oracle.com/odmr11">
+    <Nodes>
+        <DataSource Status="Complete" Name="MINING_DATA_BUILD_V" Id="10001">
+            <Icon SHAPE="RoundRectangle" YCOORD="176" XCOORD="104"></Icon>
+            <Messages/>
+            <CacheSettings GenerateCache="false" UseFullData="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10001" as (select /*+ inline */ "MINING_DATA_BUILD_V"."AGE", 
+"MINING_DATA_BUILD_V"."OCCUPATION", 
+"MINING_DATA_BUILD_V"."CUST_INCOME_LEVEL", 
+"MINING_DATA_BUILD_V"."FLAT_PANEL_MONITOR", 
+"MINING_DATA_BUILD_V"."YRS_RESIDENCE", 
+"MINING_DATA_BUILD_V"."HOME_THEATER_PACKAGE", 
+"MINING_DATA_BUILD_V"."HOUSEHOLD_SIZE", 
+"MINING_DATA_BUILD_V"."BULK_PACK_DISKETTES", 
+"MINING_DATA_BUILD_V"."Y_BOX_GAMES", 
+"MINING_DATA_BUILD_V"."AFFINITY_CARD", 
+"MINING_DATA_BUILD_V"."CUST_ID", 
+"MINING_DATA_BUILD_V"."PRINTER_SUPPLIES", 
+"MINING_DATA_BUILD_V"."CUST_MARITAL_STATUS", 
+"MINING_DATA_BUILD_V"."EDUCATION", 
+"MINING_DATA_BUILD_V"."CUST_GENDER", 
+"MINING_DATA_BUILD_V"."COUNTRY_NAME", 
+"MINING_DATA_BUILD_V"."OS_DOC_SET_KANJI", 
+"MINING_DATA_BUILD_V"."BOOKKEEPING_APPLICATION" 
+from "MINER"."MINING_DATA_BUILD_V"  )</SQLExpression>
+            <Attributes>
+                <Attribute Status="Valid" DataType="NUMBER" Name="AGE"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="OCCUPATION"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="CUST_INCOME_LEVEL"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="FLAT_PANEL_MONITOR"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="YRS_RESIDENCE"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="HOME_THEATER_PACKAGE"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="HOUSEHOLD_SIZE"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="BULK_PACK_DISKETTES"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="Y_BOX_GAMES"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="AFFINITY_CARD"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="PRINTER_SUPPLIES"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="CUST_MARITAL_STATUS"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="EDUCATION"/>
+                <Attribute Status="Valid" DataType="CHAR" Name="CUST_GENDER"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="COUNTRY_NAME"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="OS_DOC_SET_KANJI"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="BOOKKEEPING_APPLICATION"/>
+            </Attributes>
+            <SourceTable Name="MINING_DATA_BUILD_V" Schema=""/>
+        </DataSource>
+        <DataSource Status="Complete" Name="MINING_DATA_APPLY_V" Id="10009">
+            <Icon SHAPE="RoundRectangle" YCOORD="290" XCOORD="416"></Icon>
+            <Messages/>
+            <CacheSettings GenerateCache="false" UseFullData="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10009" as (select /*+ inline */ "MINING_DATA_APPLY_V"."AGE", 
+"MINING_DATA_APPLY_V"."OCCUPATION", 
+"MINING_DATA_APPLY_V"."CUST_INCOME_LEVEL", 
+"MINING_DATA_APPLY_V"."FLAT_PANEL_MONITOR", 
+"MINING_DATA_APPLY_V"."YRS_RESIDENCE", 
+"MINING_DATA_APPLY_V"."HOME_THEATER_PACKAGE", 
+"MINING_DATA_APPLY_V"."HOUSEHOLD_SIZE", 
+"MINING_DATA_APPLY_V"."BULK_PACK_DISKETTES", 
+"MINING_DATA_APPLY_V"."Y_BOX_GAMES", 
+"MINING_DATA_APPLY_V"."AFFINITY_CARD", 
+"MINING_DATA_APPLY_V"."CUST_ID", 
+"MINING_DATA_APPLY_V"."PRINTER_SUPPLIES", 
+"MINING_DATA_APPLY_V"."CUST_MARITAL_STATUS", 
+"MINING_DATA_APPLY_V"."EDUCATION", 
+"MINING_DATA_APPLY_V"."CUST_GENDER", 
+"MINING_DATA_APPLY_V"."COUNTRY_NAME", 
+"MINING_DATA_APPLY_V"."OS_DOC_SET_KANJI", 
+"MINING_DATA_APPLY_V"."BOOKKEEPING_APPLICATION" 
+from "MINER"."MINING_DATA_APPLY_V"  )</SQLExpression>
+            <Attributes>
+                <Attribute Status="Valid" DataType="NUMBER" Name="AGE"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="OCCUPATION"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="CUST_INCOME_LEVEL"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="FLAT_PANEL_MONITOR"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="YRS_RESIDENCE"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="HOME_THEATER_PACKAGE"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="HOUSEHOLD_SIZE"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="BULK_PACK_DISKETTES"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="Y_BOX_GAMES"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="AFFINITY_CARD"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="PRINTER_SUPPLIES"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="CUST_MARITAL_STATUS"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="EDUCATION"/>
+                <Attribute Status="Valid" DataType="CHAR" Name="CUST_GENDER"/>
+                <Attribute Status="Valid" DataType="VARCHAR2" Name="COUNTRY_NAME"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="OS_DOC_SET_KANJI"/>
+                <Attribute Status="Valid" DataType="NUMBER" Name="BOOKKEEPING_APPLICATION"/>
+            </Attributes>
+            <SourceTable Name="MINING_DATA_APPLY_V" Schema=""/>
+        </DataSource>
+        <CreateTable AutoSpec="Yes" Table="true" TableName="OUTPUT_1_45" Status="Complete" Name="PREDICTIONS" Id="10014">
+            <Icon SHAPE="RoundRectangle" YCOORD="178" XCOORD="574"></Icon>
+            <Messages/>
+            <CacheSettings GenerateCache="false" UseFullData="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10014" AS ( SELECT /*+ inline */  "CLAS_NB_1_45_PRED" ,
+ "CLAS_NB_1_45_PROB" ,
+ "CUST_ID"  FROM "OUTPUT_1_45")</SQLExpression>
+            <DBAttributes>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="NUMBER" Name="CLAS_NB_1_45_PRED"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="NUMBER" Name="CLAS_NB_1_45_PROB"/>
+                <DBAttribute Index="No" Key="No" Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+            </DBAttributes>
+        </CreateTable>
+        <ClassificationBuild Status="Complete" Name="ClassBuild" Id="10006">
+            <Icon SHAPE="RoundRectangle" YCOORD="173" XCOORD="291"></Icon>
+            <Messages/>
+            <BuildDataSource SourceId="10001"/>
+            <CaseAttributes/>
+            <MiningAttributes>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="AFFINITY_CARD"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="AGE"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="BOOKKEEPING_APPLICATION"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="BULK_PACK_DISKETTES"/>
+                <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="COUNTRY_NAME"/>
+                <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="CHAR" Name="CUST_GENDER"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+                <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_INCOME_LEVEL"/>
+                <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_MARITAL_STATUS"/>
+                <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="EDUCATION"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="FLAT_PANEL_MONITOR"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="HOME_THEATER_PACKAGE"/>
+                <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="HOUSEHOLD_SIZE"/>
+                <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="OCCUPATION"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="OS_DOC_SET_KANJI"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="PRINTER_SUPPLIES"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="YRS_RESIDENCE"/>
+                <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="Y_BOX_GAMES"/>
+            </MiningAttributes>
+            <TestDataSource>
+                <SplitData TestPercent="40.0"/>
+            </TestDataSource>
+            <TargetAttribute Status="Valid" DataType="NUMBER" Name="AFFINITY_CARD"/>
+            <Models>
+                <NaiveBayesModel UseForOutput="true" CreationDate="2011-03-08T11:41:50.000000" Status="Complete" Name="CLAS_NB_1_45" Id="10002">
+                    <InputMiningData MiningUsage="AUTO" DataUsage="AUTO">
+                        <MiningAttributes>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="AGE"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="OCCUPATION"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_INCOME_LEVEL"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="FLAT_PANEL_MONITOR"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="YRS_RESIDENCE"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="HOME_THEATER_PACKAGE"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="HOUSEHOLD_SIZE"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="BULK_PACK_DISKETTES"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="Y_BOX_GAMES"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="AFFINITY_CARD"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="PRINTER_SUPPLIES"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_MARITAL_STATUS"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="EDUCATION"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="CHAR" Name="CUST_GENDER"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="COUNTRY_NAME"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="OS_DOC_SET_KANJI"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="BOOKKEEPING_APPLICATION"/>
+                        </MiningAttributes>
+                    </InputMiningData>
+                    <Performance>
+                        <Balanced WeightsTable="ODMR$11_41_05_357220XLEHSXD"/>
+                    </Performance>
+                    <Tuning>
+                        <None/>
+                    </Tuning>
+                    <NaiveBayesAlgo>
+                        <NABS_PAIRWISE_THRESHOLD>0.0</NABS_PAIRWISE_THRESHOLD>
+                        <NABS_SINGLETON_THRESHOLD>0.0</NABS_SINGLETON_THRESHOLD>
+                    </NaiveBayesAlgo>
+                </NaiveBayesModel>
+                <DecisionTreeModel UseForOutput="false" CreationDate="2011-03-08T11:41:37.000000" Status="Complete" Name="CLAS_DT_1_45" Id="10003">
+                    <InputMiningData MiningUsage="AUTO" DataUsage="AUTO">
+                        <MiningAttributes>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="AGE"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="OCCUPATION"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_INCOME_LEVEL"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="FLAT_PANEL_MONITOR"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="YRS_RESIDENCE"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="HOME_THEATER_PACKAGE"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="HOUSEHOLD_SIZE"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="BULK_PACK_DISKETTES"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="Y_BOX_GAMES"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="AFFINITY_CARD"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="PRINTER_SUPPLIES"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_MARITAL_STATUS"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="EDUCATION"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="CHAR" Name="CUST_GENDER"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="COUNTRY_NAME"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="OS_DOC_SET_KANJI"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="BOOKKEEPING_APPLICATION"/>
+                        </MiningAttributes>
+                    </InputMiningData>
+                    <Performance>
+                        <Balanced WeightsTable="ODMR$11_41_04_662943CJKPRET"/>
+                    </Performance>
+                    <Tuning>
+                        <None/>
+                    </Tuning>
+                    <DecisionTreeAlgo>
+                        <TREE_IMPURITY_METRIC>TREE_IMPURITY_GINI</TREE_IMPURITY_METRIC>
+                        <TREE_TERM_MAX_DEPTH>7</TREE_TERM_MAX_DEPTH>
+                        <TREE_TERM_MINPCT_NODE>0.05</TREE_TERM_MINPCT_NODE>
+                        <TREE_TERM_MINPCT_SPLIT>0.1</TREE_TERM_MINPCT_SPLIT>
+                        <TREE_TERM_MINREC_NODE>10</TREE_TERM_MINREC_NODE>
+                        <TREE_TERM_MINREC_SPLIT>20</TREE_TERM_MINREC_SPLIT>
+                    </DecisionTreeAlgo>
+                </DecisionTreeModel>
+                <CSupportVectorMachineModel UseForOutput="false" CreationDate="2011-03-08T11:41:30.000000" Status="Complete" Name="CLAS_SVM_1_45" Id="10004">
+                    <InputMiningData MiningUsage="AUTO" DataUsage="AUTO">
+                        <MiningAttributes>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="AGE"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="OCCUPATION"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_INCOME_LEVEL"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="FLAT_PANEL_MONITOR"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="YRS_RESIDENCE"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="HOME_THEATER_PACKAGE"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="HOUSEHOLD_SIZE"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="BULK_PACK_DISKETTES"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="Y_BOX_GAMES"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="AFFINITY_CARD"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="PRINTER_SUPPLIES"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_MARITAL_STATUS"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="EDUCATION"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="CHAR" Name="CUST_GENDER"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="COUNTRY_NAME"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="OS_DOC_SET_KANJI"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="BOOKKEEPING_APPLICATION"/>
+                        </MiningAttributes>
+                    </InputMiningData>
+                    <Performance>
+                        <Balanced WeightsTable="ODMR$11_41_05_837803JOZZNDQ"/>
+                    </Performance>
+                    <Tuning>
+                        <None/>
+                    </Tuning>
+                    <CSupportVectorMachineAlgo>
+                        <SVMS_ACTIVE_LEARNING>SVMS_AL_ENABLE</SVMS_ACTIVE_LEARNING>
+                        <SVMS_CONV_TOLERANCE>0.0010</SVMS_CONV_TOLERANCE>
+                    </CSupportVectorMachineAlgo>
+                </CSupportVectorMachineModel>
+                <CGeneralizedLinearModel UseForOutput="false" CreationDate="2011-03-08T11:41:44.000000" Status="Complete" Name="CLAS_GLM_1_45" Id="10005">
+                    <InputMiningData MiningUsage="AUTO" DataUsage="AUTO">
+                        <MiningAttributes>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="AGE"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="OCCUPATION"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_INCOME_LEVEL"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="FLAT_PANEL_MONITOR"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="YRS_RESIDENCE"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="HOME_THEATER_PACKAGE"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="HOUSEHOLD_SIZE"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="BULK_PACK_DISKETTES"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="Y_BOX_GAMES"/>
+                            <MiningAttribute Input="Yes" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="AFFINITY_CARD"/>
+                            <MiningAttribute Input="No" MiningType="Numerical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+                            <MiningAttribute Input="No" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="PRINTER_SUPPLIES"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="CUST_MARITAL_STATUS"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="EDUCATION"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="CHAR" Name="CUST_GENDER"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="VARCHAR2" Name="COUNTRY_NAME"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="OS_DOC_SET_KANJI"/>
+                            <MiningAttribute Input="Yes" MiningType="Categorical" AutoPrep="Yes" Status="Valid" DataType="NUMBER" Name="BOOKKEEPING_APPLICATION"/>
+                        </MiningAttributes>
+                    </InputMiningData>
+                    <Performance>
+                        <Balanced WeightsTable="ODMR$11_41_06_293686NAVYGLX"/>
+                    </Performance>
+                    <Tuning>
+                        <None/>
+                    </Tuning>
+                    <CGeneralizedLinearAlgo>
+                        <GLMS_CONF_LEVEL>0.95</GLMS_CONF_LEVEL>
+                    </CGeneralizedLinearAlgo>
+                </CGeneralizedLinearModel>
+            </Models>
+            <TestSettings>
+                <TopNTargets Value="100"/>
+            </TestSettings>
+            <Results>
+                <ClassificationResult Status="Complete" ModelId="10002" CreationDate="2011-03-08T11:42:14.000000" Name="CLAS_NB_1_45">
+                    <TestMetrics CreationDate="2011-03-08T11:42:07.000000" Name="ODMR$11_42_07_472444YLKIEQI"/>
+                    <ConfusionMatrix CreationDate="2011-03-08T11:42:08.000000" Name="ODMR$11_42_07_786754YZEEFFD"/>
+                    <Lifts>
+                        <Lift TargetValue="0" CreationDate="2011-03-08T11:42:09.000000" Name="ODMR$11_42_08_961347ZIKLONH"/>
+                        <Lift TargetValue="1" CreationDate="2011-03-08T11:42:10.000000" Name="ODMR$11_42_09_746673YLLQHRP"/>
+                    </Lifts>
+                    <ROCs>
+                        <ROC TargetValue="0" CreationDate="2011-03-08T11:42:12.000000" Name="ODMR$11_42_10_206601AKBTCSH"/>
+                        <ROC TargetValue="1" CreationDate="2011-03-08T11:42:14.000000" Name="ODMR$11_42_12_513357VFIRLGV"/>
+                        <AreaUnderCurve TargetValue="0" Area="0.8588442802429199"/>
+                        <AreaUnderCurve TargetValue="1" Area="0.8596987724304199"/>
+                    </ROCs>
+                </ClassificationResult>
+                <ClassificationResult Status="Complete" ModelId="10003" CreationDate="2011-03-08T11:42:15.000000" Name="CLAS_DT_1_45">
+                    <TestMetrics CreationDate="2011-03-08T11:42:08.000000" Name="ODMR$11_42_08_609119DVKLHTD"/>
+                    <ConfusionMatrix CreationDate="2011-03-08T11:42:09.000000" Name="ODMR$11_42_09_102421NJVSSTG"/>
+                    <Lifts>
+                        <Lift TargetValue="0" CreationDate="2011-03-08T11:42:09.000000" Name="ODMR$11_42_09_561511BWRRCXU"/>
+                        <Lift TargetValue="1" CreationDate="2011-03-08T11:42:10.000000" Name="ODMR$11_42_09_868757QVBTYFZ"/>
+                    </Lifts>
+                    <ROCs>
+                        <ROC TargetValue="0" CreationDate="2011-03-08T11:42:12.000000" Name="ODMR$11_42_10_125710BGLNPAU"/>
+                        <ROC TargetValue="1" CreationDate="2011-03-08T11:42:14.000000" Name="ODMR$11_42_12_416473JSGBDMO"/>
+                        <AreaUnderCurve TargetValue="0" Area="0.8423108458518982"/>
+                        <AreaUnderCurve TargetValue="1" Area="0.8423108458518982"/>
+                    </ROCs>
+                </ClassificationResult>
+                <ClassificationResult Status="Complete" ModelId="10005" CreationDate="2011-03-08T11:42:17.000000" Name="CLAS_GLM_1_45">
+                    <TestMetrics CreationDate="2011-03-08T11:42:08.000000" Name="ODMR$11_42_08_658174AYTMQEJ"/>
+                    <ConfusionMatrix CreationDate="2011-03-08T11:42:09.000000" Name="ODMR$11_42_08_908166KTWABLT"/>
+                    <Lifts>
+                        <Lift TargetValue="0" CreationDate="2011-03-08T11:42:10.000000" Name="ODMR$11_42_09_929899ZVNWGND"/>
+                        <Lift TargetValue="1" CreationDate="2011-03-08T11:42:11.000000" Name="ODMR$11_42_10_942586KVJCZTO"/>
+                    </Lifts>
+                    <ROCs>
+                        <ROC TargetValue="0" CreationDate="2011-03-08T11:42:14.000000" Name="ODMR$11_42_11_359826LMEYWUJ"/>
+                        <ROC TargetValue="1" CreationDate="2011-03-08T11:42:17.000000" Name="ODMR$11_42_14_989422HHUAZCZ"/>
+                        <AreaUnderCurve TargetValue="0" Area="0.8639103174209595"/>
+                        <AreaUnderCurve TargetValue="1" Area="0.8657261729240417"/>
+                    </ROCs>
+                </ClassificationResult>
+                <ClassificationResult Status="Complete" ModelId="10004" CreationDate="2011-03-08T11:42:24.000000" Name="CLAS_SVM_1_45">
+                    <TestMetrics CreationDate="2011-03-08T11:42:18.000000" Name="ODMR$11_42_18_541934BYHZTOM"/>
+                    <ConfusionMatrix CreationDate="2011-03-08T11:42:19.000000" Name="ODMR$11_42_18_755435EINWNWR"/>
+                    <Lifts>
+                        <Lift TargetValue="0" CreationDate="2011-03-08T11:42:19.000000" Name="ODMR$11_42_19_548414REXMABJ"/>
+                        <Lift TargetValue="1" CreationDate="2011-03-08T11:42:20.000000" Name="ODMR$11_42_19_852595ATPXGKE"/>
+                    </Lifts>
+                    <ROCs>
+                        <ROC TargetValue="0" CreationDate="2011-03-08T11:42:22.000000" Name="ODMR$11_42_20_099620LGSPQUX"/>
+                        <ROC TargetValue="1" CreationDate="2011-03-08T11:42:24.000000" Name="ODMR$11_42_22_072302BQWNOBA"/>
+                        <AreaUnderCurve TargetValue="0" Area="0.8646199107170105"/>
+                        <AreaUnderCurve TargetValue="1" Area="0.8666951656341553"/>
+                    </ROCs>
+                </ClassificationResult>
+            </Results>
+        </ClassificationBuild>
+        <Apply ColumnOutputOrder="SupplementalColumns" Status="Complete" Name="PredictHigh" Id="10008">
+            <Icon SHAPE="RoundRectangle" YCOORD="179" XCOORD="457"></Icon>
+            <Messages/>
+            <CacheSettings GenerateCache="false" UseFullData="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10008" as (SELECT /*+ inline */
+"CUST_ID"
+, PREDICTION("MINER"."CLAS_NB_1_45" USING *) "CLAS_NB_1_45_PRED"
+, PREDICTION_PROBABILITY("MINER"."CLAS_NB_1_45" USING *) "CLAS_NB_1_45_PROB"
+ FROM {INPUT_SOURCE} )</SQLExpression>
+            <SupplementalAttributes AutoSpec="No">
+                <Attribute Status="Valid" DataType="NUMBER" Name="CUST_ID"/>
+            </SupplementalAttributes>
+            <OutputColumns AutoSpec="Yes">
+                <OutputColumn>
+                    <Model NodeId="10006" IsModelBuilt="true" ModelId="10002" UseForOutput="true" Status="Valid" MiningAlgorithm="NAIVE_BAYES" MiningFunction="CLASSIFICATION" Name="CLAS_NB_1_45" Schema=""/>
+                    <Prediction>
+                        <CostOption>
+                            <None/>
+                        </CostOption>
+                        <Column Name="CLAS_NB_1_45_PRED"/>
+                    </Prediction>
+                </OutputColumn>
+                <OutputColumn>
+                    <Model NodeId="10006" IsModelBuilt="true" ModelId="10002" UseForOutput="true" Status="Valid" MiningAlgorithm="NAIVE_BAYES" MiningFunction="CLASSIFICATION" Name="CLAS_NB_1_45" Schema=""/>
+                    <PredictionProbability>
+                        <Column Name="CLAS_NB_1_45_PROB"/>
+                    </PredictionProbability>
+                </OutputColumn>
+            </OutputColumns>
+        </Apply>
+        <ModelDetails Status="Complete" Name="AttributeProbabilities" Id="10012">
+            <Icon SHAPE="RoundRectangle" YCOORD="47" XCOORD="363"></Icon>
+            <Messages/>
+            <CacheSettings GenerateCache="false" UseFullData="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10012" as (select "MODEL_SCHEMA",
+"MODEL_NAME",
+"TARGET_ATTRIBUTE_NAME",
+"TARGET_ATTRIBUTE_STR_VALUE",
+"TARGET_ATTRIBUTE_NUM_VALUE",
+"PRIOR_PROBABILITY",
+"ATTRIBUTE_SUBNAME",
+"ATTRIBUTE_STR_VALUE",
+"ATTRIBUTE_NUM_VALUE",
+"CONDITIONAL_PROBABILITY" from (SELECT 'MINER' as "MODEL_SCHEMA",
+  'CLAS_NB_1_45' as "MODEL_NAME",  
+   T.TARGET_ATTRIBUTE_NAME as "TARGET_ATTRIBUTE_NAME",
+   T.TARGET_ATTRIBUTE_STR_VALUE as "TARGET_ATTRIBUTE_STR_VALUE",
+   T.TARGET_ATTRIBUTE_NUM_VALUE as "TARGET_ATTRIBUTE_NUM_VALUE",
+   T.PRIOR_PROBABILITY as "PRIOR_PROBABILITY",
+   C.ATTRIBUTE_NAME as "&lt;ATTRIBUTE_NAME&gt;",
+   C.ATTRIBUTE_SUBNAME as "ATTRIBUTE_SUBNAME",
+   C.ATTRIBUTE_STR_VALUE as "ATTRIBUTE_STR_VALUE",
+   C.ATTRIBUTE_NUM_VALUE as "ATTRIBUTE_NUM_VALUE",
+   C.CONDITIONAL_PROBABILITY as "CONDITIONAL_PROBABILITY" 
+FROM TABLE(DBMS_DATA_MINING.GET_MODEL_DETAILS_NB('"MINER"."CLAS_NB_1_45"')) T,
+TABLE(T.conditionals) C) )</SQLExpression>
+            <ModelDetailsOutput AutoSpec="Yes" MiningAlgorithm="NAIVE_BAYES" MiningFunction="CLASSIFICATION" Type="NBPairProbabilities">
+                <Models>
+                    <Model NodeId="10006" IsModelBuilt="true" ModelId="10002" UseForOutput="true" Status="Valid" MiningAlgorithm="NAIVE_BAYES" MiningFunction="CLASSIFICATION" Name="CLAS_NB_1_45" Schema=""/>
+                </Models>
+                <Attributes>
+                    <Attribute Status="Valid" DataType="VARCHAR2" Name="MODEL_SCHEMA"/>
+                    <Attribute Status="Valid" DataType="VARCHAR2" Name="MODEL_NAME"/>
+                    <Attribute Status="Valid" DataType="VARCHAR2" Name="TARGET_ATTRIBUTE_NAME"/>
+                    <Attribute Status="Valid" DataType="VARCHAR2" Name="TARGET_ATTRIBUTE_STR_VALUE"/>
+                    <Attribute Status="Valid" DataType="NUMBER" Name="TARGET_ATTRIBUTE_NUM_VALUE"/>
+                    <Attribute Status="Valid" DataType="VARCHAR2" Name="PRIOR_PROBABILITY"/>
+                    <Attribute Status="Valid" DataType="VARCHAR2" Name="ATTRIBUTE_SUBNAME"/>
+                    <Attribute Status="Valid" DataType="VARCHAR2" Name="ATTRIBUTE_STR_VALUE"/>
+                    <Attribute Status="Valid" DataType="NUMBER" Name="ATTRIBUTE_NUM_VALUE"/>
+                    <Attribute Status="Valid" DataType="NUMBER" Name="CONDITIONAL_PROBABILITY"/>
+                </Attributes>
+            </ModelDetailsOutput>
+        </ModelDetails>
+    </Nodes>
+    <Links>
+        <Link Label="From &quot;MINING_DATA_BUILD_V&quot; to &quot;ClassBuild&quot;" Name="Link" To="10006" From="10001" Id="10007">
+            <ConnectorGraphicsInfo>
+                <Coordinates YCoordinate="0.0" XCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Label="From &quot;ClassBuild&quot; to &quot;PredictHigh&quot;" Name="Link" To="10008" From="10006" Id="10010">
+            <ConnectorGraphicsInfo>
+                <Coordinates YCoordinate="0.0" XCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Label="From &quot;MINING_DATA_APPLY_V&quot; to &quot;PredictHigh&quot;" Name="Link" To="10008" From="10009" Id="10011">
+            <ConnectorGraphicsInfo>
+                <Coordinates YCoordinate="0.0" XCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Label="From &quot;ClassBuild&quot; to &quot;AttributeProbabilities&quot;" Name="Link" To="10012" From="10006" Id="10013">
+            <ConnectorGraphicsInfo>
+                <Coordinates YCoordinate="0.0" XCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Label="From &quot;PredictHigh&quot; to &quot;PREDICTIONS&quot;" Name="Link" To="10014" From="10008" Id="10015">
+            <ConnectorGraphicsInfo>
+                <Coordinates YCoordinate="0.0" XCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+    </Links>
+</WorkflowProcess>

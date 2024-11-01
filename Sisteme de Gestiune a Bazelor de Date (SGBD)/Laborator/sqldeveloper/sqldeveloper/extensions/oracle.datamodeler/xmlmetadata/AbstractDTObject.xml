@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.datatypes.AbstractDTObject parentClass="oracle.dbtools.crest.model.design.DesignObject">
+   <property name="predefined" dataType="boolean" defaultValue="" xmlName="predefined" xmlType="element" getter="isPredefined" setter="setPredefined" reffered="false"/>
+   <roproperty name="nullInstance" dataType="boolean" getter="isNullInstance"/>
+   <roproperty name="affectedDPVs" dataType="interface java.util.Collection" getter="getAffectedDPVs"/>
+   <roproperty name="allLinks" dataType="[Loracle.dbtools.crest.model.design.datatypes.DTRelation$Connection" getter="getAllLinks"/>
+   <roproperty name="allViews" dataType="interface java.util.Collection" getter="getAllViews"/>
+   <roproperty name="allViewsWithCellViews" dataType="interface java.util.List" getter="getAllViewsWithCellViews"/>
+   <roproperty name="anotherView" dataType="oracle.dbtools.crest.swingui.TopView" getter="getAnotherView"/>
+</oracle.dbtools.crest.model.design.datatypes.AbstractDTObject>

@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v10g.FailGroupOraclev10g parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <roproperty name="diskGroup" dataType="oracle.dbtools.crest.model.design.storage.oracle.v10g.DiskGroupOraclev10g" getter="getDiskGroup"/>
+   <collection name="asmDiskCollection" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="asmDisks" itemXmlName="ASMDisk" getter="getASMDiskCollection" createItem="createASMDisk"/>
+   <roproperty name="asmDisks" dataType="interface java.util.List" getter="getASMDisks"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v10g.FailGroupOraclev10g>

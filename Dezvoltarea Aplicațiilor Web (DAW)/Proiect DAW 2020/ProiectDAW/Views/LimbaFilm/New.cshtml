@@ -1,0 +1,27 @@
+﻿@model ProiectDAW.Models.LimbaFilm
+@{
+    ViewBag.Title = "Adăugare Limbă Film Nouă";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm(actionName: "New", controllerName: "LimbaFilm", method: FormMethod.Post, htmlAttributes: new { style = "display:inline" }))
+{
+    @Html.Label("Nume", "Nume: ");
+    @Html.TextBoxFor(f => f.Nume, null, new { placeholder = "Scrie Limba Filmului...", @class = "form-control" });
+    @Html.ValidationMessageFor(f => f.Nume, "", new { @class = "text-danger" });
+    <br />
+
+    <button class="btn btn-primary" type="submit">Create</button>
+}
+
+
+@using (Html.BeginForm(actionName: "Index", controllerName: "LimbaFilm", method: FormMethod.Get, htmlAttributes: new { style = "display:inline; float: right;" }))
+{
+    <button class="btn btn-primary">Înapoi</button>
+}

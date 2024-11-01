@@ -1,0 +1,267 @@
+1,Bucuresti,Bucuresti,1921751
+2,Iasi,Iasi,32158
+3,Cluj-Napoca,Cluj,318027
+4,Timisoara,Timis,317651
+5,Constanta,Constanta,310526
+6,Craiova,Dolj,302622
+7,Galati,Galati,298584
+8,Brasov,Brasov,283901
+9,Ploiesti,Prahova,232452
+10,Braila,Braila,216929
+11,Oradea,Bihor,206527
+12,Bacau,Bacau,175921
+13,Arad,Arad,172824
+14,Pitesti,Arges,168756
+15,Sibiu,Sibiu,155045
+16,Targu Mures,Mures,149577
+17,Baia Mare,Maramures,137976
+18,Buzau,Buzau,133116
+19,Satu Mare,Satu Mare,11563
+20,Botosani,Botosani,115344
+21,Ramnicu Valcea,Valcea,107656
+22,Suceava,Suceava,106138
+23,Piatra Neamt,Neamt,105499
+24,Drobeta-Turnu Severin,Mehedinti,104035
+25,Focsani,Vrancea,103219
+26,Targu Jiu,Gorj,96562
+27,Tulcea,Tulcea,92762
+28,Targoviste,Dambovita,89429
+29,Resita,Caras-Severin,83985
+30,Bistrita,Bistrita-Nasaud,81467
+31,Slatina,Olt,79171
+32,Hunedoara,Hunedoara,7138
+33,Calarasi,Calarasi,71046
+34,Vaslui,Vaslui,70267
+35,Giurgiu,Giurgiu,69587
+36,Roman,Neamt,69483
+37,Deva,Hunedoara,6939
+38,Barlad,Vaslui,69183
+39,Alba Iulia,Alba,66369
+40,Zalau,Salaj,63305
+41,Sfantu Gheorghe,Covasna,61512
+42,Turda,Cluj,5577
+43,Medias,Sibiu,55203
+44,Slobozia,Ialomita,52677
+45,Onesti,Bacau,51681
+46,Alexandria,Teleorman,50591
+47,Petrosani,Hunedoara,45447
+48,Lugoj,Timis,44571
+49,Medgidia,Constanta,43867
+50,Pascani,Iasi,42172
+51,Tecuci,Galati,42012
+52,Miercurea Ciuc,Harghita,41852
+53,Sighetu Marmatiei,Maramures,41246
+54,Mangalia,Constanta,40037
+55,Ramnicu Sarat,Buzau,38805
+56,Campina,Prahova,38758
+57,Dej,Cluj,38478
+58,Campulung,Arges,38285
+59,Odorheiu Secuiesc,Harghita,36926
+60,Reghin,Mures,36023
+61,Mioveni,Arges,35849
+62,Fagaras,Brasov,35759
+63,Caracal,Olt,34603
+64,Fetesti,Ialomita,33197
+65,Curtea de Arges,Arges,32626
+66,Navodari,Constanta,324
+67,Sighisoara,Mures,32287
+68,Rosiori de Vede,Teleorman,31873
+69,Dorohoi,Botosani,31073
+70,Turnu Magurele,Teleorman,30187
+71,Falticeni,Suceava,33867
+72,Husi,Vaslui,3332
+73,Vulcan,Hunedoara,33186
+74,Radauti,Suceava,32151
+75,Oltenita,Calarasi,31434
+76,Lupeni,Hunedoara,31409
+77,Caransebes,Caras-Severin,31199
+78,Cugir,Alba,30244
+79,Sacele,Brasov,29967
+80,Campia Turzii,Cluj,29852
+81,Tarnaveni,Mures,29828
+82,Sebes,Alba,29475
+83,Aiud,Alba,28909
+84,Petrila,Hunedoara,28742
+85,Borsa,Maramures,27247
+86,Zarnesti,Brasov,2652
+87,Comanesti,Bacau,26237
+88,Motru,Gorj,2586
+89,Carei,Satu Mare,2559
+90,Moinesti,Bacau,25532
+91,Codlea,Brasov,24814
+92,Orastie,Hunedoara,24354
+93,Gherla,Cluj,24232
+94,Bals,Olt,23147
+95,Moreni,Dambovita,22868
+96,Targu Neamt,Neamt,22634
+97,Dragasani,Valcea,22499
+98,Targu Secuiesc,Covasna,22251
+99,Bailesti,Dolj,22231
+100,Buhusi,Bacau,21993
+101,Corabia,Olt,21932
+102,Campulung Moldovenesc,Suceava,21862
+103,Blaj,Alba,21819
+104,Gheorgheni,Harghita,21245
+105,Calafat,Dolj,21227
+106,Adjud,Vrancea,20776
+107,Cernavoda,Constanta,20514
+108,Baicoi,Prahova,20234
+109,Filiasi,Dolj,20159
+110,Salonta,Bihor,20006
+111,Buftea,Ilfov,19617
+112,Urziceni,Ialomita,19088
+113,Bocsa,Caras-Severin,19023
+114,Breaza,Prahova,18863
+115,Marghita,Bihor,1865
+116,Ludus,Mures,18647
+117,Viseu de Sus,Maramures,18444
+118,Brad,Hunedoara,18075
+119,Vatra Dornei,Suceava,17864
+120,Cisnadie,Sibiu,17204
+121,Mizil,Prahova,17075
+122,Simleu Silvaniei,Salaj,17053
+123,Toplita,Harghita,16839
+124,Zimnicea,Teleorman,16787
+125,Gura Humorului,Suceava,1674
+126,Gaesti,Dambovita,16598
+127,Pucioasa,Dambovita,16489
+128,Negresti-Oas,Satu Mare,16356
+129,Rasnov,Brasov,16242
+130,Avrig,Sibiu,16215
+131,Baia Sprie,Maramures,15735
+132,Ocna Mures,Alba,15697
+133,Orsova,Mehedinti,15379
+134,Oravita,Caras-Severin,15222
+135,Moldova Noua,Caras-Severin,15112
+136,Calan,Hunedoara,14714
+137,Sinaia,Prahova,14636
+138,Tandarei,Ialomita,14591
+139,Simeria,Hunedoara,14571
+140,Darmanesti,Bacau,14232
+141,Targu Ocna,Bacau,14184
+142,Targu Lapus,Maramures,14139
+143,Valenii de Munte,Prahova,13898
+144,Targu Frumos,Iasi,13763
+145,Scornicesti,Olt,13751
+146,Comarnic,Prahova,13532
+147,Ovidiu,Constanta,13458
+148,Draganesti-Olt,Olt,13181
+149,Otelu Rosu,Caras-Severin,13128
+150,Marasesti,Vrancea,1307
+151,Sannicolau Mare,Timis,13007
+152,Ianca,Braila,12886
+153,Nehoiu,Buzau,1265
+154,Rovinari,Gorj,12603
+155,Strehaia,Mehedinti,12564
+156,Hateg,Hunedoara,12507
+157,Videle,Teleorman,12498
+158,Covasna,Covasna,12306
+159,Jibou,Salaj,12283
+160,Harlau,Iasi,1226
+161,Sovata,Mures,12219
+162,Uricani,Hunedoara,12177
+163,Agnita,Sibiu,12115
+164,Costesti,Arges,12091
+165,Beius,Bihor,12089
+166,Beclean,Bistrita-Nasaud,12033
+167,Darabani,Botosani,12002
+168,Bumbesti-Jiu,Gorj,11882
+169,Urlati,Prahova,11858
+170,Macin,Tulcea,11803
+171,Busteni,Prahova,11787
+172,Boldesti-Scaeni,Prahova,11505
+173,Lipova,Arad,11491
+174,Bolintin-Vale,Giurgiu,11464
+175,Nasaud,Bistrita-Nasaud,11365
+176,Cristuru Secuiesc,Harghita,11291
+177,Harsova,Constanta,11198
+178,Basarabi,Constanta,1107
+179,Victoria,Brasov,10896
+180,Babadag,Tulcea,10878
+181,Alesd,Bihor,10852
+182,Titu,Dambovita,10711
+183,Sangeorz-Bai,Bistrita-Nasaud,10702
+184,Valea lui Mihai,Bihor,10665
+185,Anina,Caras-Severin,10594
+186,Otopeni,Ilfov,10515
+187,Jimbolia,Timis,10497
+188,Negresti,Vaslui,10481
+189,Baraolt,Covasna,10464
+190,Ineu,Arad,10416
+191,Topoloveni,Arges,10329
+192,Tasnad,Satu Mare,10188
+193,Plopeni,Prahova,10083
+194,Siret,Suceava,10003
+195,Huedin,Cluj,9955
+196,Panciu,Vrancea,9834
+197,Iernut,Mures,9833
+198,Curtici,Arad,9762
+199,Budesti,Calarasi,9596
+200,Stei,Bihor,9466
+201,Seini,Maramures,9439
+202,Targu Carbunesti,Gorj,9338
+203,Balan,Harghita,9295
+204,Eforie,Constanta,9294
+205,Zlatna,Alba,9254
+206,Talmaciu,Sibiu,9147
+207,Intorsura Buzaului,Covasna,9081
+208,Calimanesti-Caciulata,Valcea,8923
+209,Bicaz,Neamt,8911
+210,Dumbraveni,Sibiu,8812
+211,Chisineu-Cris,Arad,8724
+212,Segarcea,Dolj,8704
+213,Saveni,Botosani,8685
+214,Campeni,Alba,8587
+215,Cehu Silvaniei,Salaj,8468
+216,Nadlac,Arad,8422
+217,Dealu,Giurgiu,8336
+218,Buzias,Timis,8128
+219,Fieni,Dambovita,8092
+220,Targu Bujor,Galati,8044
+221,Odobesti,Vrancea,7985
+222,Pogoanele,Buzau,7614
+223,Brezoi,Valcea,7589
+224,Tismana,Gorj,7578
+225,Faget,Timis,7519
+226,Insuratei,Braila,7501
+227,Horezu,Valcea,7446
+228,Pancota,Arad,7418
+229,Vlahita,Harghita,7392
+230,Techirghiol,Constanta,7388
+231,Teius,Alba,7338
+232,Slanic,Prahova,7249
+233,Mihailesti,Giurgiu,7161
+234,Vanju Mare,Mehedinti,7074
+235,Deta,Timis,7059
+236,Sebis,Arad,6829
+237,Abrud,Alba,6803
+238,Predeal,Brasov,6735
+239,Lehliu Gara,Calarasi,6667
+240,Piatra Olt,Olt,6583
+241,Geoagiu,Hunedoara,629
+242,Rupea,Brasov,6246
+243,Fundulea,Calarasi,6217
+244,Novaci,Gorj,6151
+245,Azuga,Prahova,6119
+246,Aninoasa,Hunedoara,6108
+247,Baile Herculane,Caras-Severin,6051
+248,Baia de Arama,Mehedinti,5724
+249,Isaccea,Tulcea,5614
+250,Negru Voda,Constanta,5529
+251,Cavnic,Maramures,5494
+252,Slanic Moldova,Bacau,5375
+253,Ticleni,Gorj,5205
+254,Copsa Mica,Sibiu,5157
+255,Sulina,Tulcea,514
+256,Baia de Aries,Alba,4877
+257,Baile Olanesti,Valcea,4814
+258,Solca,Suceava,4687
+259,Faurei,Braila,4626
+260,Ocna Sibiului,Sibiu,4184
+261,Beresti,Galati,3926
+262,Ocnele Mari,Valcea,3591
+263,Baile Govora,Valcea,3147
+264,Borsec,Harghita,3109
+265,Vascau,Bihor,3032
+266,Nucet,Bihor,2851
+267,Baile Tusnad,Harghita,1802

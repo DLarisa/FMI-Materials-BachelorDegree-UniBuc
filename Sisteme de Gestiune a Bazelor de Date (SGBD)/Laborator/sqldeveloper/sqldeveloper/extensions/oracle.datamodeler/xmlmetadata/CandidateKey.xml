@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.CandidateKey parentClass="oracle.dbtools.crest.model.design.KeyObject">
+   <aa_property name="keyState" dataType="java.lang.String" defaultValue="" xmlName="keyState" xmlType="element" getter="getKeyState" setter="setKeyState" reffered="false"/>
+   <property name="synonym" dataType="java.lang.String" defaultValue="" xmlName="synonym" xmlType="element" getter="getSynonym" setter="setSynonym" reffered="false"/>
+   <collection name="usedAttributes" dataType="java.util.Collection" xmlName="usedAttributes" itemXmlName="attributeRef" getter="getElementsCollection" itemIsRef="true" removeItem="remove" addItem="add" getItemByID="getRequestByID" />
+   <roproperty name="engIndex" dataType="oracle.dbtools.crest.model.design.relational.Index" getter="getEngIndex"/>
+   <roproperty name="mappingFor" dataType="oracle.dbtools.crest.model.xtdmapping.XtdMapping" getter="getMappingFor"/>
+   <roproperty name="mappingsFor" dataType="interface java.util.List" getter="getMappingsFor"/>
+   <roproperty name="newElementsCollection" dataType="interface java.util.List" getter="getNewElementsCollection"/>
+   <roproperty name="relations" dataType="interface java.util.List" getter="getRelations"/>
+</oracle.dbtools.crest.model.design.logical.CandidateKey>

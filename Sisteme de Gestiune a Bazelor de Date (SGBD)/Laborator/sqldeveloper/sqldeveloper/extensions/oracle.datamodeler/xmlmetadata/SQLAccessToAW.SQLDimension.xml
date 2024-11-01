@@ -1,0 +1,28 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.multidimensional.SQLAccessToAW.SQLDimension parentClass="java.lang.Object" innerClass="true">
+   <property name="dimension" dataType="oracle.dbtools.crest.model.design.multidimensional.Dimension" defaultValue="" xmlName="dimension" xmlType="element" getter="getDimension" setter="setDimension" reffered="true"/>
+   <aa_property name="dimensionId" dataType="java.lang.String" defaultValue="" xmlName="dimensionId" xmlType="element" getter="getDimensionID" setter="setDimensionID" reffered="false"/>
+   <property name="selectedDimensionID" dataType="boolean" defaultValue="" xmlName="selectedDimensionID" xmlType="element" getter="isSelectedDimensionID" setter="setSelectedDimensionID" reffered="false"/>
+   <property name="selectedEndDate" dataType="boolean" defaultValue="" xmlName="selectedEndDate" xmlType="element" getter="isSelectedEndDate" setter="setSelectedEndDate" reffered="false"/>
+   <property name="selectedLevelNameAttr" dataType="boolean" defaultValue="" xmlName="selectedLevelNameAttr" xmlType="element" getter="isSelectedLevelNameAttr" setter="setSelectedLevelNameAttr" reffered="false"/>
+   <property name="selectedLongDescAttr" dataType="boolean" defaultValue="" xmlName="selectedLongDescAttr" xmlType="element" getter="isSelectedLongDescAttr" setter="setSelectedLongDescAttr" reffered="false"/>
+   <property name="selectedshortDescAttr" dataType="boolean" defaultValue="" xmlName="selectedshortDescAttr" xmlType="element" getter="isSelectedShortDescAttr" setter="setSelectedShortDescAttr" reffered="false"/>
+   <property name="selectedTimespan" dataType="boolean" defaultValue="" xmlName="selectedTimespan" xmlType="element" getter="isSelectedTimeSpan" setter="setSelectedTimeSpan" reffered="false"/>
+   <collection name="selectedAttributes" dataType="java.util.List" xmlName="selectedAttributes" itemXmlName="selectedAttribute" getter="getAllSelectedAttributes" createItem="createSQLAttribute" applyList="applySQLAttributes" nativeList="true" orderTheList="true"/>
+   <collection name="selectedSQLHierarhies" dataType="java.util.List" xmlName="selectedSQLHierarhies" itemXmlName="selectedSQLHierarhy" getter="getSelectedSQLHierarhies" createItem="createSQLHierarchy" nativeList="true" orderTheList="true"/>
+   <roproperty name="allDescriptiveattributes" dataType="interface java.util.List" getter="getAllDescriptiveAttributes"/>
+   <roproperty name="allSQLHierarchies" dataType="interface java.util.List" getter="getAllSQLHierarchies"/>
+   <roproperty name="allSelectedattributes" dataType="interface java.util.List" getter="getAllSelectedAttributes"/>
+   <roproperty name="dimension" dataType="oracle.dbtools.crest.model.design.multidimensional.Dimension" getter="getDimension"/>
+   <roproperty name="dimensionGIdAttr" dataType="oracle.dbtools.crest.model.design.multidimensional.SQLAttribute" getter="getDimensionGIDAttr"/>
+   <roproperty name="dimensionIdAttr" dataType="oracle.dbtools.crest.model.design.multidimensional.SQLAttribute" getter="getDimensionIDAttr"/>
+   <roproperty name="endDateAttr" dataType="oracle.dbtools.crest.model.design.multidimensional.SQLAttribute" getter="getEndDateAttr"/>
+   <roproperty name="levelNameAttr" dataType="oracle.dbtools.crest.model.design.multidimensional.SQLAttribute" getter="getLevelNameAttr"/>
+   <roproperty name="longDescAttr" dataType="oracle.dbtools.crest.model.design.multidimensional.SQLAttribute" getter="getLongDescAttr"/>
+   <roproperty name="name" dataType="java.lang.String" getter="getName"/>
+   <roproperty name="selectedDescriptiveAttributes" dataType="interface java.util.List" getter="getSelectedDescriptiveAttributes"/>
+   <roproperty name="selectedsQLHierarhies" dataType="interface java.util.List" getter="getSelectedSQLHierarhies"/>
+   <roproperty name="shortDescAttr" dataType="oracle.dbtools.crest.model.design.multidimensional.SQLAttribute" getter="getShortDescAttr"/>
+   <roproperty name="sqlawObject" dataType="oracle.dbtools.crest.model.design.multidimensional.SQLAccessToAW" getter="getSqlawObject"/>
+   <roproperty name="timeSpanAttr" dataType="oracle.dbtools.crest.model.design.multidimensional.SQLAttribute" getter="getTimeSpanAttr"/>
+</oracle.dbtools.crest.model.design.multidimensional.SQLAccessToAW.SQLDimension>

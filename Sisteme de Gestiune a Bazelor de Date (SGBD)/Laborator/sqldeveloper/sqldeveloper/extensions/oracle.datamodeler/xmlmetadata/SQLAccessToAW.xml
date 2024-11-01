@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.multidimensional.SQLAccessToAW parentClass="oracle.dbtools.crest.model.design.multidimensional.AbstractMDObject">
+   <property name="awName" dataType="java.lang.String" defaultValue="" xmlName="awName" xmlType="element" getter="getAWName" setter="setAWName" reffered="false"/>
+   <property name="cube" dataType="oracle.dbtools.crest.model.design.multidimensional.Cube" defaultValue="" xmlName="cube" xmlType="element" getter="getCube" setter="setCube" reffered="true"/>
+   <property name="generategIDs" dataType="boolean" defaultValue="" xmlName="generategIDs" xmlType="element" getter="isGenerateGIDs" setter="setGenerateGIDs" reffered="false"/>
+   <property name="objectADTName" dataType="java.lang.String" defaultValue="" xmlName="objectADTName" xmlType="element" getter="getObjectADTName" setter="setObjectADTName" reffered="false"/>
+   <property name="slice" dataType="oracle.dbtools.crest.model.design.multidimensional.Slice" defaultValue="" xmlName="slice" xmlType="element" getter="getSlice" setter="setSlice" reffered="true"/>
+   <property name="tableADtName" dataType="java.lang.String" defaultValue="" xmlName="tableADtName" xmlType="element" getter="getTableADTName" setter="setTableADTName" reffered="false"/>
+   <property name="useModelClause" dataType="boolean" defaultValue="" xmlName="useModelClause" xmlType="element" getter="isUseModelClause" setter="setUseModelClause" reffered="false"/>
+   <property name="useObjectType" dataType="boolean" defaultValue="" xmlName="useObjectType" xmlType="element" getter="isUseObjectType" setter="setUseObjectType" reffered="false"/>
+   <property name="useRowToCellColumn" dataType="boolean" defaultValue="" xmlName="useRowToCellColumn" xmlType="element" getter="isUseRowToCellColumn" setter="setUseRowToCellColumn" reffered="false"/>
+   <collection name="usedMeasures" dataType="java.util.List" xmlName="usedMeasures" itemXmlName="usedMeasure" itemIsRef="true" getter="getMeasures" nativeList="true" orderTheList="true"/>
+   <collection name="usedMeasureWrappers" dataType="java.util.List" xmlName="usedMeasureWrappers" itemXmlName="usedMeasureWrapper" getter="getMeasureWrapperMaps" isMapItem="true" applyList="applyMeasureWrapperMaps"/>
+   <collection name="outAttributes" dataType="java.util.List" xmlName="outAttributes" itemXmlName="outAttribute" getter="getOtherOutAttributes" createItem="createSQLAttribute" nativeList="true" orderTheList="true"/>
+   <collection name="usedDimensions" dataType="java.util.List" xmlName="usedDimensions" itemXmlName="usedDimension" getter="getSqlDimensionDefinitions" createItem="createSQLDimension" nativeList="true" orderTheList="true"/>
+   <processing beforeTransform="verifyDefinitions" />
+   <roproperty name="allMeasureWrappers" dataType="interface java.util.List" getter="getAllMeasureWrappers"/>
+   <roproperty name="allMeasures" dataType="interface java.util.List" getter="getAllMeasures"/>
+   <roproperty name="allSQLDimensions" dataType="interface java.util.List" getter="getAllSQLDimensions"/>
+   <roproperty name="measureWrappers" dataType="interface java.util.List" getter="getMeasureWrappers"/>
+   <roproperty name="measures" dataType="interface java.util.List" getter="getMeasures"/>
+   <roproperty name="outSQLAttributes" dataType="interface java.util.List" getter="getOutSQLAttributes"/>
+   <roproperty name="sqLText" dataType="java.lang.String" getter="getSQLText"/>
+   <roproperty name="selectedsQLMeasureWrappers" dataType="interface java.util.List" getter="getSelectedSQLMeasureWrappers"/>
+   <roproperty name="selectedsQLMeasures" dataType="interface java.util.List" getter="getSelectedSQLMeasures"/>
+   <roproperty name="sqlDimensionDefinitions" dataType="interface java.util.List" getter="getSqlDimensionDefinitions"/>
+</oracle.dbtools.crest.model.design.multidimensional.SQLAccessToAW>

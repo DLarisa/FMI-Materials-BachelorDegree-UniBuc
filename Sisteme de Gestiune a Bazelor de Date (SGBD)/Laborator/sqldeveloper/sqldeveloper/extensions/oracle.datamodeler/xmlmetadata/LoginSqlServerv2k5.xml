@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.LoginSqlServerv2k5 parentClass="oracle.dbtools.crest.model.design.storage.sqlserver.LoginSqlServer">
+   <property name="beforeDefaults" dataType="boolean" defaultValue="true" xmlName="beforeDefaults" xmlType="element" getter="getBeforeDefaults" setter="setBeforeDefaults" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.LoginSqlServerv2k5>

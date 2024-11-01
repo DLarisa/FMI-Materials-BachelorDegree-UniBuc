@@ -1,0 +1,23 @@
+<search
+ version="7.1"
+ name="AskTom"
+ description="asktom.oracle.com, run by Tom Kyte"
+ method="get"
+ action="http://asktom.oracle.com/pls/asktom/asktom.search"
+ searchForm="http://asktom.oracle.com/pls/asktom/"
+ queryEncoding='UTF-8'
+ queryCharset='UTF-8'
+>
+
+<input name="p_string" user>
+
+<interpret
+ browserResultType='result'
+ resultListStart='<!-- Results Start -->'
+ resultListEnd='<!-- Results Finish -->'
+ resultItemStart='<tr>'
+ resultItemEnd='</tr>'
+ charset='UTF-8'
+ >
+
+</search>

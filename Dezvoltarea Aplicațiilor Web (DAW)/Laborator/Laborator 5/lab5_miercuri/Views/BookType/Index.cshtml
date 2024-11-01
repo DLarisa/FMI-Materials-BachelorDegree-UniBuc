@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Book Types";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table class="table">
+    <thead>
+        <th>Name</th>
+        <th>Update/Remove</th>
+    </thead>
+    <tbody>
+        @foreach (var bookType in ViewBag.BookTypes)
+        {
+            <tr>
+                <td>@bookType.Name</td>
+                <td>
+                    @using (Html.BeginForm(actionName: "Edit", controllerName: "BookType", method: FormMethod.Get,
+                        routeValues: new { id = bookType.BookTypeId }))
+                    {
+                        <button type="submit" class="btn btn-link col-lg-3">Update</button>
+                    }
+
+                    @using (Html.BeginForm(actionName: "Delete", controllerName: "BookType", method: FormMethod.Post,
+                        routeValues: new { id = bookType.BookTypeId }))
+                    {
+                        @Html.HttpMethodOverride(HttpVerbs.Delete)
+                        <button type="submit" class="btn btn-link col-lg-3">Remove</button>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+
+@Html.ActionLink("Add book type", "New")

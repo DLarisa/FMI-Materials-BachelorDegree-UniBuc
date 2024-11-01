@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.process.ParameterObject >
+   <property name="name" dataType="java.lang.String" defaultValue="" xmlName="name" xmlType="attribute" getter="getName" setter="setName" reffered="false"/>
+   <property name="objectID" dataType="java.lang.String" defaultValue="" xmlName="id" xmlType="attribute" getter="getObjectID" setter="setObjectID" reffered="false"/>
+   <property name="logicalDatatype" dataType="oracle.dbtools.crest.model.design.LogicalDatatype" defaultValue="" xmlName="logicalDatatype" xmlType="element" getter="getLogicalDatatype" setter="setLogicalDatatype" reffered="true"/>
+   <aa_collection name="fonts" dataType="java.util.List" xmlName="fonts" itemXmlName="FontObject" getter="getFontObjectWrappers" createItem="createFontObjectWr" addItem="addFontObjectWrapper" />
+</oracle.dbtools.crest.model.design.process.ParameterObject>

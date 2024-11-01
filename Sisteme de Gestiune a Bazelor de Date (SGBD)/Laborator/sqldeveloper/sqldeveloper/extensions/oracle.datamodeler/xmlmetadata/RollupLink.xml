@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.multidimensional.RollupLink parentClass="oracle.dbtools.crest.model.design.multidimensional.AbstractMDObject">
+   <property name="childLevel" dataType="oracle.dbtools.crest.model.design.multidimensional.AbstractMDObject" defaultValue="" xmlName="childLevel" xmlType="element" getter="getChildLevel" setter="setChildLevel" reffered="true"/>
+   <property name="defaultAggregationOperator" dataType="java.lang.String" defaultValue="" xmlName="defaultAggregationOperator" xmlType="element" getter="getDefaultAggregationOperator" setter="setDefaultAggregationOperator" reffered="false"/>
+   <property name="factEntity" dataType="oracle.dbtools.crest.model.design.ContainerObject" defaultValue="" xmlName="factEntity" xmlType="element" getter="getFactEntity" setter="setFactEntity" reffered="true"/>
+   <property name="parentLevel" dataType="oracle.dbtools.crest.model.design.multidimensional.AbstractMDObject" defaultValue="" xmlName="parentLevel" xmlType="element" getter="getParentLevel" setter="setParentLevel" reffered="true"/>
+   <property name="rolePlaying" dataType="boolean" defaultValue="" xmlName="rolePlaying" xmlType="element" getter="isRolePlaying" setter="setRolePlaying" reffered="false"/>
+   <property name="sparseDimension" dataType="boolean" defaultValue="" xmlName="sparseDimension" xmlType="element" getter="isSparseDimension" setter="setSparseDimension" reffered="false"/>
+   <property name="link" dataType="oracle.dbtools.crest.model.design.multidimensional.Link" defaultValue="" xmlName="link" xmlType="element" getter="getLink" createItem="getOrCreateLink" reffered="false"/>
+   <collection name="childToParentAttributes" dataType="java.util.List" xmlName="childToParentAttributes" itemXmlName="joinAttribute" itemIsRef="true" getter="getChildToParentAttributes" nativeList="true" orderTheList="true"/>
+   <roproperty name="childToParentAttributes" dataType="interface java.util.List" getter="getChildToParentAttributes"/>
+   <roproperty name="link" dataType="oracle.dbtools.crest.model.design.multidimensional.Link" getter="getLink"/>
+</oracle.dbtools.crest.model.design.multidimensional.RollupLink>

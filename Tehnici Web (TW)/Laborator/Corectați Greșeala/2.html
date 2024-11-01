@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Fisier de baza</title>
+		<style>
+		</style>
+		<script>
+		var vect_nume=["Ionel", "Gigel", "Costel", "Dorel", "Danel", "Tudorel", "Bobel", "Zozel", "Georgel", "Popel"];
+		window.onload= function(){
+			for (var i=0;i<vect_nume.length;i++)
+			{
+				var btn=document.createElement("button");
+				document.body.appendChild(btn);
+				btn.innerHTML=vect_nume[i];
+				btn.onclick=function(){
+					alert(`Buna ziua, sunt ${this.innerHTML}. Cu ce va pot ajuta?`);
+				}
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<p>Nota: in exercitiile de tip "corectati gresala", desi nu e recomandat, s-au pus css-ul si script-ul in fisierul html strict pentru simplitate (downloadarea unui singur fisier vs 3). Totusi retineti ca indicat este sa folositi fisiere separate in teme/proiecte/teste.</p>
+		
+	</body>
+</html>

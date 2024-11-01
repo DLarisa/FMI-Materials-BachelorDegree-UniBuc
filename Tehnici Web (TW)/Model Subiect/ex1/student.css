@@ -1,0 +1,32 @@
+li p
+{
+	color:green;
+}
+
+
+p#xyz~.ceva, p#xyz~* .ceva
+{
+	font-size:2em;
+}
+
+
+p:after
+{
+	display:inline-block;
+	width:10px;
+	height:10px;
+	content:"";
+	background:blue;
+}
+
+
+li:nth-of-type(even)
+{
+	transition:background 2s linear;
+}
+li:nth-of-type(even):hover
+{
+	background:red;
+}
+
+

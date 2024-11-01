@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v9i.MethodProxyOraclev9i parentClass="oracle.dbtools.crest.model.design.storage.oracle.MethodProxyOracle">
+   <property name="agentArguments" dataType="java.lang.String" defaultValue="" xmlName="agentArguments" xmlType="element" getter="getAgentArguments" setter="setAgentArguments" reffered="false"/>
+   <aa_property name="constructor" dataType="java.lang.String" defaultValue="NO" xmlName="constructor" xmlType="element" getter="getConstructor" setter="setConstructor" reffered="false"/>
+   <property name="copySelf" dataType="java.lang.String" defaultValue="YES" xmlName="copySelf" xmlType="element" getter="getCopySelf" setter="setCopySelf" reffered="false"/>
+   <property name="deterministic" dataType="java.lang.String" defaultValue="NO" xmlName="deterministic" xmlType="element" getter="getDeterministic" setter="setDeterministic" reffered="false"/>
+   <property name="instantiable" dataType="java.lang.String" defaultValue="YES" xmlName="instantiable" xmlType="element" getter="getInstantiable" setter="setInstantiable" reffered="false"/>
+   <property name="isFinal" dataType="java.lang.String" defaultValue="NO" xmlName="isFinal" xmlType="element" getter="getIsFinal" setter="setIsFinal" reffered="false"/>
+   <aa_property name="overriding" dataType="java.lang.String" defaultValue="NO" xmlName="overriding" xmlType="element" getter="getOverriding" setter="setOverriding" reffered="false"/>
+   <property name="parallel" dataType="java.lang.String" defaultValue="NO" xmlName="parallel" xmlType="element" getter="getParallel" setter="setParallel" reffered="false"/>
+   <property name="partitioningAndStreaming" dataType="java.lang.String" defaultValue="" xmlName="partitioningAndStreaming" xmlType="element" getter="getPartitioningAndStreaming" setter="setPartitioningAndStreaming" reffered="false"/>
+   <property name="pipeliningAndAggregation" dataType="java.lang.String" defaultValue="" xmlName="pipeliningAndAggregation" xmlType="element" getter="getPipeliningAndAggregation" setter="setPipeliningAndAggregation" reffered="false"/>
+   <property name="pipeliningAndAggregationImpl" dataType="java.lang.String" defaultValue="" xmlName="pipeliningAndAggregationImpl" xmlType="element" getter="getPipeliningAndAggregationImpl" setter="setPipeliningAndAggregationImpl" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v9i.MethodProxyOraclev9i>

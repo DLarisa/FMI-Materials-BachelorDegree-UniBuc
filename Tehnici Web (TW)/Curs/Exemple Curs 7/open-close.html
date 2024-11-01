@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var myWindow; // globala pt a fi vazuta si la apelul close()
+function openWin() 
+{ myWindow = window.open("http://fmi.unibuc.ro/ro/");
+  myWindow.blur();
+}
+
+function closeWin() 
+{ myWindow.close();
+}
+</script>
+</head>
+<body>
+<button onclick="openWin()">Open "myWindow"</button>
+<button onclick="closeWin()">Close "myWindow"</button>
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿@model lab3_miercuri.Models.Publisher
+
+<h2>@Model.Name</h2>
+<table>
+    <tbody>
+        <tr>
+            <td>@Html.LabelFor(p => p.ContactInfo.PhoneNumber, "Phone number:", new { style = "margin-right:10px" })</td>
+            <td>@Html.DisplayFor(p => p.ContactInfo.PhoneNumber)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(p => p.ContactInfo.CNP, "CNP:", new { style = "margin-right:10px" })</td>
+            <td>@Html.DisplayFor(p => p.ContactInfo.CNP)</td>
+        </tr>
+        <tr>
+            <td><label style="margin-right:10px">Birth date:</label></td>
+            <td>@Html.DisplayFor(p => p.ContactInfo.BirthDay).@Html.DisplayFor(p => p.ContactInfo.BirthMonth).@Html.DisplayFor(p => p.ContactInfo.BirthYear)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(p => p.ContactInfo.GenderType, "Gender:", new { style = "margin-right:10px" })</td>
+            <td>@Html.DisplayFor(p => p.ContactInfo.GenderType)</td>
+        </tr>
+        <tr>
+            <td><label style="margin-right:10px">Region:</label></td>
+            <td>@ViewBag.Region</td>
+        </tr>
+        <tr>
+            <td><label style="margin-right:10px">Resident:</label></td>
+            @if (Model.ContactInfo.Resident)
+            {
+                <td>Is Resident</td>
+            }
+            else
+            {
+                <td>Is not a resident</td>
+            }
+
+        </tr>
+    </tbody>
+</table>
+
+<br />
+<br />
+@using (Html.BeginForm(actionName: "Edit", controllerName: "Publisher", method: FormMethod.Get, routeValues: new { id = Model.PublisherId }))
+{
+    <button style="margin-right:5px" class="btn btn-primary col-lg-1" type="submit">Update</button>
+}
+
+@using (Html.BeginForm(actionName: "Delete", controllerName: "Publisher", method: FormMethod.Post, routeValues: new { id = Model.PublisherId }))
+{
+    @Html.HttpMethodOverride(HttpVerbs.Delete)
+    <button style="margin-right:5px" class="btn btn-primary col-lg-1" type="submit">Delete</button>
+}

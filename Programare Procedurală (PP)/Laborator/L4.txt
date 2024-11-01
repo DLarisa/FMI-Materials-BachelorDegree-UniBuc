@@ -1,0 +1,96 @@
+#include <stdio.h>
+#include <stdlib.h>
+typedef union
+{
+    short int x; //int x:16 --- bitfields
+    unsigned char b[2];
+} Biti;
+Biti a;
+int main()
+{
+    int i, aux;
+    scanf("%hd", &a.x);
+    aux=a.b[0];a.b[0]=a.b[1];a.b[1]=aux; //swap nu exista in C
+    for(i=0;i<2;i++)
+        printf("%u ", a.b[i]);
+
+    return 0;
+}
+--------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+typedef struct
+{
+    char adresa[100];
+    char tip[30];
+    int s, nr_cam;
+    union
+    {
+        int b;
+        char d, casa[20];
+    } model;
+} locuinta;
+locuinta l[100];
+int main()
+{
+    int n, i, max=0, p=0;
+    printf("Nr locuinte: ");
+    scanf("%d", &n);
+    for(i=0; i<n; i++)
+    {
+        printf("Suprafata si nr_camere %d: ",i+1);
+        scanf("%d%d", &l[i].s, &l[i].nr_cam);
+        printf("Tip locuinta %d este: ",i+1);
+        scanf("\n");
+        fgets(l[i].tip,30,stdin);
+        printf("Adresa locuinta %d este: ",i+1);
+        scanf("\n");
+        fgets(l[i].adresa,100,stdin);
+        if(strcmp(l[i].tip,"garsoniera\n")==0)
+        {printf("Balcon,0/1?: ");scanf("%d", &l[i].model.b);}
+        else if(strcmp(l[i].tip,"apartament\n")==0)
+        {printf("Decomandat,D/N?: ");scanf("%c", &l[i].model.d);}
+             else {printf("Casa?: ");scanf("\n");fgets(l[i].model.casa,20,stdin);}
+    }
+    for(i=0;i<n;i++)
+    {
+        if(strcmp(l[i].tip,"garsoniera\n")==0 && l[i].model.b==1)
+          if(max<l[i].s) max=l[i].s,p=i;
+    }
+    printf("%d\n",max);
+    puts(l[p].adresa);
+
+    return 0;
+}
+
+-----------------------------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+typedef struct
+{
+    char nume[30], job[20], cnp[14];
+    int ani;
+}angajat;
+angajat a[100];
+int main()
+{
+    printf("%d\n", sizeof(angajat));
+    int n,i;
+    printf("Nr angajati= ");scanf("%d", &n);
+    for(i=0; i<n; i++)
+    {
+        printf("Nume angajat %d: ", i+1);scanf("\n");fgets(a[i].nume,30,stdin);
+        printf("Job angajat %d: ", i+1);scanf("\n");fgets(a[i].job,20,stdin);
+        printf("CNP angajat %d: ", i+1);scanf("\n");fgets(a[i].cnp,14,stdin);
+        printf("Varsta angajat %d: ", i+1);scanf("%d", &a[i].ani);
+    }
+    for(i=0; i<n; i++)
+    {
+
+    }
+
+    return 0;
+}

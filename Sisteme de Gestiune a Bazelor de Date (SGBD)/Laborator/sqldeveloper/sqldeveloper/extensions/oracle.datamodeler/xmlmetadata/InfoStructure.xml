@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.process.InfoStructure parentClass="oracle.dbtools.crest.model.design.process.AbstractProcessObject">
+   <property name="growthRatePercent" dataType="int" defaultValue="" xmlName="growthRatePercent" xmlType="element" getter="getGrowthRatePercent" setter="setGrowthRatePercent" reffered="false"/>
+   <property name="growthRateUnit" dataType="java.lang.String" defaultValue="" xmlName="growthRateUnit" xmlType="element" getter="getGrowthRateUnit" setter="setGrowthRateUnit" reffered="false"/>
+   <property name="volume" dataType="int" defaultValue="" xmlName="volume" xmlType="element" getter="getVolume" setter="setVolume" reffered="false"/>
+   <collection name="used_attributes" dataType="java.util.List" xmlName="used_attributes" itemXmlName="attributeRef" getter="getAttributes" itemIsRef="true" listOfRefs="false" refsXMLName="used_attributes" removeItem="removeAttribute" addItem="addAttribute" getItemByID="getAttributeByID" nativeList="true" orderTheList="true"/>
+   <roproperty name="attributes" dataType="interface java.util.List" getter="getAttributes"/>
+   <roproperty name="infoFlows" dataType="interface java.util.List" getter="getInfoFlows"/>
+   <roproperty name="processes" dataType="interface java.util.List" getter="getProcesses"/>
+</oracle.dbtools.crest.model.design.process.InfoStructure>

@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.multidimensional.SlowChangingAttribute parentClass="java.lang.Object">
+   <property name="attribute" dataType="oracle.dbtools.crest.model.design.ContainedObject" defaultValue="" xmlName="attribute" xmlType="element" getter="getAttribute" setter="setAttribute" reffered="true"/>
+   <property name="classification" dataType="java.lang.String" defaultValue="" xmlName="classification" xmlType="element" getter="getClassification" setter="setClassification" reffered="false"/>
+   <property name="indexed" dataType="boolean" defaultValue="" xmlName="indexed" xmlType="element" getter="isIndexed" setter="setIndexed" reffered="false"/>
+   <property name="name" dataType="java.lang.String" defaultValue="" xmlName="name" xmlType="attribute" getter="getName" setter="setName" reffered="false"/>
+   <property name="objectID" dataType="java.lang.String" defaultValue="" xmlName="id" xmlType="attribute" getter="getObjectID" setter="setObjectID" reffered="false"/>
+   <property name="type" dataType="java.lang.String" defaultValue="" xmlName="type" xmlType="element" getter="getType" setter="setType" reffered="false"/>
+   <collection name="historyAttributes" dataType="java.util.List" xmlName="historyAttributes" itemXmlName="attribute" itemIsRef="true" getter="getHistoryAttributes" nativeList="true" orderTheList="true"/>
+   <roproperty name="historyAttributes" dataType="interface java.util.List" getter="getHistoryAttributes"/>
+</oracle.dbtools.crest.model.design.multidimensional.SlowChangingAttribute>

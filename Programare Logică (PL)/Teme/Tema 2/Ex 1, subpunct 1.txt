@@ -1,0 +1,81 @@
+connect((1,1),(1,2)).
+connect((1,1),(2,1)).
+connect((2,1),(2,2)).
+connect((2,2),(3,2)).
+connect((3,2),(3,3)).
+connect((3,3),(4,3)).
+connect((3,5),(4,5)).
+connect((4,3),(4,4)).
+connect((4,4),(4,5)).
+connect((4,5),(4,6)).
+connected(X,Y) :- connect(X,Y);connect(Y,X).
+aux(_, 0, _).
+%H e celula pentru care vrem sa punem steluta
+%aux(H,N,K) :-H is (O,P), undercellstar(O, P, ),N>0, M is N-1, drawmaze(M,K), nl, mazeline(N,K). 
+drawmaze(0,_).
+drawmaze(N,K) :- N>0,M is N-1,drawmaze(M,K),nl,mazeline(N,K). 
+mazeline(_,0).
+mazeline(N,K) :- K>0,H is K-1,mazeline(N,H),drawcell(N,K).
+drawcell(N,K) :- M is N+1,H is K+1, undercell(N,K,M), rightcell(N,K,H).
+undercell(N,K,M) :- connected((N,K),(M,K)),write(' ').
+undercell(N,K,M) :- not(connected((N,K),(M,K))),write('_').
+%rightcell scrie : sau | intre celule in functie de faptul daca acestea sunt conectate sau nu
+rightcell(N,K,H) :- connected((N,K),(N,H)),write(':').
+rightcell(N,K,H) :- not(connected((N,K),(N,H))),write('|').
+path(X,Y,Path) :- mazepath(X,Y,[X,Y],Path),write(Path).   %x si y sunt celule/tupluri
+%path calculeaza drumul intre 2 celule- Path e lista de celule/drumul calculat
+% in al treilea argument al lui mazepath retinem celulele vizitate pe drumul curent
+mazepath(X,Y,_,[X,Y]) :- connected(X,Y).    %[x,y] e lista cu toate celulele parcurse, in final
+%y fiind prima celula si x ultima
+mazepath(X,Y,L,[X|T]) :- not(connected(X,Y)),connected(X,Z),not(member(Z,L)),mazepath(Z,Y,[Z|L],T).
+%daca este sau nu membru al listei
+member(_,[]) :- fail.
+member(H,[H|_]).
+member(X,[H|T]) :- H\=X,member(X,T).
+%y e prima celula, x e celula de final, L e lista cu toate celulele parcurse de la inceput
+%la sfarsit, retinuta in sens invers 
+%N si K sunt coordonatele celulei curente
+%drawpath(N,K,X,Y) :- path(X,Y,L),nl,drawmazestar(N,K,L).
+%drawpath(N,K,X,Y) :- path(X,Y,L),nl, reverse(L, [H|T]), aux(H,N,K,T).
+drawpath(N,K,X,Y) :- path(X,Y,[H|T]),nl, aux(H,N,K,T).
+aux(H,N,K,[]):-write("Pozitia curenta "), write(H),nl,
+    drawmazestar2(H,N,K),nl.
+aux(H,N,K,[Head]):-write("Pozitia curenta "), write(H),nl,
+    drawmazestar2(H,N,K),nl,aux(Head,N,K,[]).
+aux(H,N,K,[Head|T]):-write("Pozitia curenta "), write(H),nl,
+    drawmazestar2(H,N,K),nl,write("Next Round"),nl,aux(Head,N,K,T).
+%R e lista inversa a lui L
+drawmazestar2(_,0,_).
+drawmazestar2(H,N,K) :- N>0,M is N-1,drawmazestar2(H,M,K),nl,mazelinestar2(H,N,K). 
+mazelinestar2(_,_,0).
+mazelinestar2(H2,N,K) :- K>0,H is K-1,mazelinestar2(H2,N,H),drawcellstar2(H2,N,K).
+drawcellstar2(H2,N,K) :- M is N+1,H is K+1,undercellstar2(H2,N,K,M),rightcell(N,K,H).
+undercellstar2((N,K),N,K,_) :- write('*').
+undercellstar2(H2,N,K,M) :- H2 \=(N,K), connected((N,K),(M,K)),write(' ').   %2 celule, una sub alta, sunt conectate
+undercellstar2(H2,N,K,M) :- H2\=(N,K),not(connected((N,K),(M,K))),write('_').
+concat([], L, L).
+concat([H|T], L, [H|M]):-concat(T, L, M).
+reverse([],[]).
+reverse([H|T], L):-reverse(T, M), concat(M, [H], L).
+drawpathfile(N,K,X,Y) :- tell('d:\\temporar\\mazefile.txt'),path(X,Y,L),nl,drawmazestar(N,K,L),told.
+drawmazestar(0,_,_).
+drawmazestar(N,K,L) :- N>0,M is N-1,drawmazestar(M,K,L),nl,mazelinestar(N,K,L). 
+mazelinestar(_,0,_).
+mazelinestar(N,K,L) :- K>0,H is K-1,mazelinestar(N,H,L),drawcellstar(N,K,L).
+%mazelinestar(N,K,L) :- K>0,H is K-1,drawcellstar(N,K,L).
+%H=coloana din dreapta
+%M=randul de jos;
+drawcellstar(N,K,L) :- M is N+1,H is K+1,undercellstar(N,K,M,L),rightcell(N,K,H).
+%N si K sunt coordonatele unei celule, L este lista de celule parcurse
+undercellstar(N,K,_,L) :- member((N,K),L),write('*').
+undercellstar(N,K,M,L) :- not(member((N,K),L)),connected((N,K),(M,K)),write(' ').   %2 celule, una sub alta, sunt conectate
+undercellstar(N,K,M,L) :- not(member((N,K),L)),not(connected((N,K),(M,K))),write('_').
+%2 celule sunt conectate<=> celula : celula
+%2 celule nu sunt conectate <=> celula | celula
+/* Dati interogarile:
+?- drawmaze(4,6).   %deseneaza un labirint cu 4 linii si 6 coloane
+?- drawpath(4,6,(1,1),(4,6)).
+?- drawpath(4,6,(1,1),(3,5)).
+?- drawpathfile(4,6,(1,1),(4,6)).
+?- drawpathfile(4,6,(1,1),(3,5)).
+*/

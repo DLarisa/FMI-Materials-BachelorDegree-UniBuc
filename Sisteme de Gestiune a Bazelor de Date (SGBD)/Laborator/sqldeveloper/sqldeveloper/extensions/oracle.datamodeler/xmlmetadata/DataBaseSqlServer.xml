@@ -1,0 +1,31 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.sqlserver.DataBaseSqlServer parentClass="oracle.dbtools.crest.model.design.storage.sqlserver.AbstractStorageObjectSqlServer">
+   <property name="ansiNulls" dataType="java.lang.String" defaultValue="OFF" xmlName="ansiNulls" xmlType="element" getter="getAnsiNulls" setter="setAnsiNulls" reffered="false"/>
+   <property name="ansiPadding" dataType="java.lang.String" defaultValue="" xmlName="ansiPadding" xmlType="element" getter="getAnsiPadding" setter="setAnsiPadding" reffered="false"/>
+   <property name="ansiWarnings" dataType="java.lang.String" defaultValue="" xmlName="ansiWarnings" xmlType="element" getter="getAnsiWarnings" setter="setAnsiWarnings" reffered="false"/>
+   <property name="arithabort" dataType="java.lang.String" defaultValue="" xmlName="arithabort" xmlType="element" getter="getArithabort" setter="setArithabort" reffered="false"/>
+   <property name="autoClose" dataType="java.lang.String" defaultValue="ON" xmlName="autoClose" xmlType="element" getter="getAutoClose" setter="setAutoClose" reffered="false"/>
+   <property name="autoCreateStatistics" dataType="java.lang.String" defaultValue="ON" xmlName="autoCreateStatistics" xmlType="element" getter="getAutoCreateStatistics" setter="setAutoCreateStatistics" reffered="false"/>
+   <property name="autoShrink" dataType="java.lang.String" defaultValue="ON" xmlName="autoShrink" xmlType="element" getter="getAutoShrink" setter="setAutoShrink" reffered="false"/>
+   <property name="autoUpdateStatistics" dataType="java.lang.String" defaultValue="ON" xmlName="autoUpdateStatistics" xmlType="element" getter="getAutoUpdateStatistics" setter="setAutoUpdateStatistics" reffered="false"/>
+   <property name="collationName" dataType="java.lang.String" defaultValue=" " xmlName="collationName" xmlType="element" getter="getCollationName" setter="setCollationName" reffered="false"/>
+   <property name="concatNullYieldsNull" dataType="java.lang.String" defaultValue="" xmlName="concatNullYieldsNull" xmlType="element" getter="getConcatNullYieldsNull" setter="setConcatNullYieldsNull" reffered="false"/>
+   <property name="cursorCloseOnCommit" dataType="java.lang.String" defaultValue="ON" xmlName="cursorCloseOnCommit" xmlType="element" getter="getCursorCloseOnCommit" setter="setCursorCloseOnCommit" reffered="false"/>
+   <property name="cursorDefault" dataType="java.lang.String" defaultValue="GLOBAL" xmlName="cursorDefault" xmlType="element" getter="getCursorDefault" setter="setCursorDefault" reffered="false"/>
+   <property name="numericRoundabort" dataType="java.lang.String" defaultValue="" xmlName="numericRoundabort" xmlType="element" getter="getNumericRoundabort" setter="setNumericRoundabort" reffered="false"/>
+   <property name="quotedIdentifier" dataType="java.lang.String" defaultValue="OFF" xmlName="quotedIdentifier" xmlType="element" getter="getQuotedIdentifier" setter="setQuotedIdentifier" reffered="false"/>
+   <property name="recovery" dataType="java.lang.String" defaultValue="FULL" xmlName="recovery" xmlType="element" getter="getRecovery" setter="setRecovery" reffered="false"/>
+   <property name="recursiveTriggers" dataType="java.lang.String" defaultValue="" xmlName="recursiveTriggers" xmlType="element" getter="getRecursiveTriggers" setter="setRecursiveTriggers" reffered="false"/>
+   <property name="tornPageDetection" dataType="java.lang.String" defaultValue="ON" xmlName="tornPageDetection" xmlType="element" getter="getTornPageDetection" setter="setTornPageDetection" reffered="false"/>
+   <property name="userState" dataType="java.lang.String" defaultValue="MULTI_USER" xmlName="userState" xmlType="element" getter="getUserState" setter="setUserState" reffered="false"/>
+   <roproperty name="defaults" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getDefaults"/>
+   <collection name="fileGroups" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="fileGroups" itemXmlName="FileGroup" getter="getFilegroups" createItem="createFilegroup"/>
+   <roproperty name="procedures" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getProcedures"/>
+   <roproperty name="roles" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getRoles"/>
+   <roproperty name="rules" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getRules"/>
+   <roproperty name="schemas" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getSchemas"/>
+   <roproperty name="tables" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getTables"/>
+   <collection name="transactionLogs" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="transactionLogs" itemXmlName="TransactionLog" getter="getTransactionLogs" createItem="createTransactionLog"/>
+   <roproperty name="users" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getUsers"/>
+   <roproperty name="views" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getViews"/>
+</oracle.dbtools.crest.model.design.storage.sqlserver.DataBaseSqlServer>

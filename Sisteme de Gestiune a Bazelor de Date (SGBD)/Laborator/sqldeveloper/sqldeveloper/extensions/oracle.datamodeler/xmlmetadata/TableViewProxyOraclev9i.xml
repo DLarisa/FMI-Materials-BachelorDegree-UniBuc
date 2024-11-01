@@ -1,0 +1,5 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v9i.TableViewProxyOraclev9i parentClass="oracle.dbtools.crest.model.design.storage.oracle.TableViewProxyOracle">
+   <roproperty name="longSuperViewName" dataType="java.lang.String" getter="getLongSuperViewName"/>
+   <roproperty name="superViewName" dataType="java.lang.String" getter="getSuperViewName"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v9i.TableViewProxyOraclev9i>

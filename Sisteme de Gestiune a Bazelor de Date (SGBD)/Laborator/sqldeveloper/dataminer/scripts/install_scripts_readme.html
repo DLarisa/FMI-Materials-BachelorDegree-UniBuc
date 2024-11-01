@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=ISO-8859-1">
+    <title>Oracle Data Miner Installation</title>
+  </head>
+  <body>
+    <h1>Installing Oracle Data Miner</h1>
+    <p>The scripts described in this document are available to manage
+      the
+      Oracle Data Miner Repository.
+      These scripts are also integrated with Oracle SQL Developer&nbsp;
+      to
+      allow users to manage the repository through SQL Developer as
+      well.</p>
+    <p>It is not necessary to install SQL Developer to run the
+      installation
+      scripts for Oracle Data Miner.</p>
+    <p> Download the scripts directly from the <a
+href="http://www.oracle.com/technetwork/database/options/odm/odminer-097463.html">Oracle
+Data
+Miner
+page
+at
+Oracle
+Technology
+        Network</a>.</p>
+    <p>Download the file and unzip it.</p>
+    <p>Using SQL*Plus, log in as SYS, and run the appropriate script.</p>
+    <h2>Installing the Oracle Data Miner Repository</h2>
+    <p>installodmr.sql installs the Oracle Data Miner Repository; use it
+      as
+      follows:</p>
+    <pre><code>set serveroutput on<br>@installodmr.sql <i>&lt;default_tablespace</i>&gt; &lt;temp_<i>tablespace&gt;</i>
+</code>
+</pre>
+    <p>Example: <code>@installodmr.sql USER TEMP</code>
+    </p>
+    <p>The initial space requirement for the Data Miner Repository can
+      range from 200MB to 700MB depending on the tablespace setting;
+      however, the repository will grow as metadata is added.</p>
+    <p>The script will take approximately 10 minutes to run for remote
+      database installation and 2 minutes for local database
+      installation.</p>
+    <p>See <a href="#scripts">Loading and Dropping Sample Tables</a> to
+      load sample data. </p>
+    <h2>Granting a User the Rights to Access the Repository</h2>
+    <p>usergrants.sql <i>user account</i> grants the specified user
+      account the rights required by Oracle Data Miner to use the Oracle
+      Data
+      Miner Repository. For example,</p>
+    <pre><code>@usergrants.sql MININGACCT</code></pre>
+    <p>dropusergrants.sql <i>user account</i> revokes all of these
+      grants.
+      For example,</p>
+    <pre><code>@dropusergrants.sql MININGACCT</code></pre>
+    <p>See <a href="#scripts">Loading and Dropping Sample Tables</a> to
+      load sample data. </p>
+    <h2>Dropping the Oracle Data Miner Repository</h2>
+    <p>dropRepositoryAndUserObjects.sql drops the Repository and the
+      user
+      objects.&nbsp; </p>
+    <pre><code>@dropRepositoryAndUserObjects.sql</code> &lt;session_disconnect&gt;<br><br>For example:<br><br>@dropRepositoryAndUserObjects.sql DR<br>&nbsp;</pre>
+    <p>To avoid session locks that can block the drop repository
+      process, the drop repository script has an option to disconnect
+      sessions connected that have the ODMRUSER role privilege.&nbsp;
+      The session_disconnect parameter allows the user to disconnect
+      such sessions automatically or to just report on any instances of
+      such sessions. If any sessions are detected but not automatically
+      disconnected, the drop repository process is aborted.<br>
+    </p>
+    <p>The session_disconnect parameter has the following options:</p>
+    <p style="margin-left: 40px;">R = report only, do not disconnect any
+      sessions<br>
+      D = disconnect only, displays disconnect&nbsp; only<br>
+      DR or RD = disconnect and report<br>
+    </p>
+    All workflows and internal tables will be dropped.
+    Models created by Oracle Data Miner will not be dropped. Tables
+    created
+    by the Create Table node will not be dropped.
+    <p>See <a href="#scripts">Loading and Dropping Sample Tables</a> to
+      drop sample data.<br>
+    </p>
+    <h2>Migrating the Oracle Data Miner Repository</h2>
+    <p>migrateodmr.sql migrates the Data Miner Repository from an
+      earlier
+      version to the current version. All workflows created by users are
+      preserved; only the repository software is updated.&nbsp;&nbsp; <br>
+    </p>
+    <pre><code>@migrateodmr.sql</code> &lt;session_disconnect&gt;<br><br>For example:<br><br><code>@migrateodmr.sql DR</code><br></pre>
+    To avoid session locks that can block the migrate repository
+    process, the migrate repository script has an option to disconnect
+    sessions connected that have the ODMRUSER role privilege.&nbsp; The
+    session_disconnect parameter allows the user to disconnect such
+    sessions automatically or to just report on any instances of such
+    sessions. If any sessions are detected but not automatically
+    disconnected, the drop repository process is aborted.<br>
+    <p>The session_disconnect parameter has the following options:</p>
+    <p style="margin-left: 40px;">R = report only, do not disconnect any
+      sessions<br>
+      D = disconnect only, displays disconnect&nbsp; only<br>
+      DR or RD = disconnect and report</p>
+    <br>
+    <h2><a name="scripts"></a>Loading and Dropping Sample Tables</h2>
+    <p>These scripts load and remove the sample data used in the Cue
+      Cards
+      and in the Oracle by Example (OBE) for Oracle Data Miner:</p>
+    <ul>
+      <li>instDemoData.sql <i>user account</i> prepares demo data for
+        user. The script
+        grants user access to SH schema, creates mining_data_* views in
+        user
+        account based on SH schema, and .
+        load insurance data into table in user account.
+        <p>Example: <code>@instDemoData.sql MYUSER</code></p>
+      </li>
+      <li>dropDemoData.sql <i>user account</i> drops the demo data
+        prepared by
+        instDemoData.sql.
+        <p>Example: <code>@dropDemoData.sql MYUSER</code></p>
+      </li>
+    </ul>
+  </body>
+</html>

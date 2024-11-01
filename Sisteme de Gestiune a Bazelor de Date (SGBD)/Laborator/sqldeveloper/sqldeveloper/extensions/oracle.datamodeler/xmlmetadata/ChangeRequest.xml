@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.ChangeRequest parentClass="oracle.dbtools.crest.model.design.DesignObject">
+   <property name="completed" dataType="boolean" defaultValue="false" xmlName="completed" xmlType="element" getter="isCompleted" setter="setCompleted" reffered="false"/>
+   <property name="completionDate" dataType="java.lang.String" defaultValue="" xmlName="completionDate" xmlType="element" getter="getCompletionDate" setter="setCompletionDate" reffered="false"/>
+   <property name="implDescription" dataType="java.lang.String" defaultValue="" xmlName="implDescription" xmlType="element" getter="getImplDescription" setter="setImplDescription" reffered="false"/>
+   <property name="reason" dataType="java.lang.String" defaultValue="" xmlName="reason" xmlType="element" getter="getReason" setter="setReason" reffered="false"/>
+   <property name="requestDate" dataType="java.lang.String" defaultValue="" xmlName="requestDate" xmlType="element" getter="getRequestDate" setter="setRequestDate" reffered="false"/>
+   <property name="status" dataType="java.lang.String" defaultValue="" xmlName="status" xmlType="element" getter="getStatus" setter="setStatus" reffered="false"/>
+   <roproperty name="objects" dataType="java.util.ArrayList" getter="getObjects"/>
+</oracle.dbtools.crest.model.ChangeRequest>

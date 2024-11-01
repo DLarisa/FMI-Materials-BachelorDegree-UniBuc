@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.TableProxy parentClass="oracle.dbtools.crest.model.design.storage.RelationalContainerProxy">
+   <aa_property name="backupOption" dataType="java.lang.String" defaultValue="Rename" xmlName="backupOption" xmlType="element" getter="getBackupOption" setter="setBackupOption" reffered="false"/>
+   <aa_property name="generatePK" dataType="boolean" defaultValue="true" xmlName="generatePK" xmlType="element" getter="getGeneratePK" setter="setGeneratePK" reffered="false"/>
+   <aa_property name="pkName" dataType="java.lang.String" defaultValue="" xmlName="pkName" xmlType="element" getter="getPKName" setter="setPKName" reffered="false"/>
+   <aa_property name="restoreOption" dataType="java.lang.String" defaultValue="Restore" xmlName="restoreOption" xmlType="element" getter="getRestoreOption" setter="setRestoreOption" reffered="false"/>
+   <aa_property name="userSchema" dataType="oracle.dbtools.crest.model.design.storage.StorageObject" defaultValue="" xmlName="userSchema" xmlType="element" getter="getUserSchema" setter="setUserSchema" reffered="true"/>
+   <collection name="columnProxies" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="columnProxies" itemXmlName="ColumnProxy" getter="getColumns" proxyItem="true" />
+   <collection name="indexProxies" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="indexProxies" itemXmlName="IndexProxy" getter="getIndexes" proxyItem="true" />
+   <roproperty name="unload" dataType="boolean" getter="isUnload"/>
+   <roproperty name="unloadPerPartition" dataType="boolean" getter="isUnloadPerPartition"/>
+   <roproperty name="columnProxies" dataType="[Loracle.dbtools.crest.model.design.storage.ColumnProxy" getter="getColumnProxies"/>
+   <roproperty name="columnProxy" dataType="oracle.dbtools.crest.model.design.storage.ColumnProxy" getter="getColumnProxy"/>
+   <roproperty name="columnProxyByName" dataType="oracle.dbtools.crest.model.design.storage.ColumnProxy" getter="getColumnProxyByName"/>
+   <roproperty name="columnsSortedByID" dataType="interface java.util.List" getter="getColumnsSortedByID"/>
+   <roproperty name="indexProxies" dataType="[Loracle.dbtools.crest.model.design.storage.IndexProxy" getter="getIndexProxies"/>
+   <roproperty name="indexes" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getIndexes"/>
+   <roproperty name="saC_storageObjects" dataType="interface java.util.List" getter="getSAC_StorageObjects"/>
+</oracle.dbtools.crest.model.design.storage.TableProxy>

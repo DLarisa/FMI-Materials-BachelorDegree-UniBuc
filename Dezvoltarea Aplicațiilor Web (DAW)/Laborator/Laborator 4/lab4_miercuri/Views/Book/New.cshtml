@@ -1,0 +1,36 @@
+﻿@model lab3_miercuri.Models.Book
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm(actionName: "New", controllerName: "Book", method: FormMethod.Post))
+{
+    @Html.Label("Title", "Title:")
+    <br />
+    @Html.TextBoxFor(b => b.Title, null, new { placeholder = "Type in the book's title", @class = "form-control" })
+    @Html.ValidationMessageFor(b => b.Title, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("Author", "Author:")
+    <br />
+    @Html.TextBoxFor(b => b.Author, null, new { placeholder = "Type in the book's author", @class = "form-control" })
+    @Html.ValidationMessageFor(b => b.Author, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("Summary", "Summary:")
+    <br />
+    @Html.TextArea("Summary", null, new { placeholder = "Type in the book's summary", @class = "form-control", @rows = "10" })
+    @Html.ValidationMessageFor(b => b.Summary, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("BookType", "BookType:")
+    <br />
+    @Html.DropDownListFor(b => b.BookTypeId, new SelectList(Model.BookTypeList, "Value", "Text"), "Choose a book type", new { @class = "form-control" })
+    @Html.ValidationMessageFor(b => b.BookTypeId, "", new { @class = "text-danger" })
+    <br />
+    <br />
+    <button class="btn btn-primary" type="submit">Create</button>
+}
+

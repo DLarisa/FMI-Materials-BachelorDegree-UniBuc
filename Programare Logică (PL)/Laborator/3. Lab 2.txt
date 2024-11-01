@@ -1,0 +1,108 @@
+concat([], L, L).
+concat([H|T], L, [H|M]) :- concat(T,L,M).
+
+inversa([],[]).
+inversa([H|T],L) :- inversa(T,M), concat(M,[H],L).
+
+/* pt rulare:
+ * inversa([a,b,c], Cat)
+ * inversa(Cui, [a,b,c]) */
+
+%sortarea prin insertie directa
+%daca e mai mic decat capul listei, adauga la cap lista
+%daca nu, insereaza recursiv
+inserare(X,[],[X]).
+inserare(X,[H|T],[X,H|T]) :- X=<H.
+inserare(X,[H|T],[H|M]) :- X>H, inserare(X,T,M).
+
+/* la rulare presunem lista sortata:
+ * inserare(3,[-1,0,2,2,3,4,5],Cat) 
+ * 
+ * Exemplu recursivitate: inserare(3,[0,1,3,5],L)
+ * devine inserare(3,[1,3,5],L1), L va fi [0|L1]
+ * inserare(3,[3,5],L2), L1 va fi [1|L2] etc. apoi
+ * aplica cazul cand nu e mai mare decat capul si il adauga*/
+
+inssort([],[]).
+inssort([H|T],L) :- inssort(T,M), inserare(H,M,L).
+%inssort([3,0,-1,0,3,2],S)
+
+%X is 15 mod 6 = 3
+%X is 15 div 6 = 2
+
+listacifre(N,[N]) :- N<10.
+listacifre(N,[H|T]) :- N>=10, H is N mod 10, K is N div 10,
+    listacifre(K,T).
+
+listacifrelor(N,L) :- listacifre(N,M), inversa(M,L).
+%listacifrelor(12345,L)
+
+palindrom(N) :- listacifre(N,L), inversa(L,L).
+%palindrom(1233421)
+
+%sortare prin interclasare
+%predicat auxiliar sa taiem vector in doua, definit
+taie([],[],[]).
+taie([H],[H],[]).
+taie([H,K|T],[H|L],[K|M]) :- taie(T,L,M).
+
+intercls([],L,L).
+intercls(L,[],L).
+intercls([H|L],[K|M],[H|T]) :- H=<K, intercls(L,[K|M],T).
+intercls([H|L],[K|M],[K|T]) :- H>K, intercls([H|L],M,T).
+
+mergesort([H],[H]).
+mergesort([],[]).
+mergesort([H,K|T],L) :- taie([H,K|T],M,N), mergesort(M,R),
+    mergesort(N,S), intercls(R,S,L). %sa avem cel putin 2 elem
+
+%mergesort([5,1,7,-3,2],L)
+
+%Quick sort (taiere cu pivot)
+qsort([],[]).
+qsort([P|T],L) :- taiere(P,T,S,D), qsort(S,S1), qsort(D,D1),
+    concat(S1,[P|D1],L).
+
+taiere(_,[],[],[]).
+taiere(P,[H|T],[H|TS],D) :- H<P, taiere(P,T,TS,D).
+taiere(P,[H|T],S,[H|TD]) :- H>=P, taiere(P,T,S,TD).
+%qsort([5,1,7,-3,2],L)
+
+%permutari circulare
+
+shiftare([],[]).
+shiftare([H|T],L) :- concat(T,[H],L).
+
+%predicat care face astfel de permutari pana ajungem 
+%la lista initiala
+
+permcirc(L,M,[M|LP]) :- L\=M, shiftare(M,N), permcirc(L,N,LP).
+permcirc(L,L,[L]).
+permutcirc(L,LP) :- shiftare(L,M), permcirc(L,M,LP).
+%permutcirc([1,2,3,1,2,3],LP)
+
+%toate permutarile: 
+%3 predicate: findall, bagof, setof
+h(a).
+h(b).
+%findall(X,h(X),L). da L=[a,b]
+
+apartine(_,[]) :- fail.
+apartine(X,[X|_]).
+apartine(X,[_|T]) :- apartine(X,T).
+
+%bagof(X,apartine(X,[1,0,0,1,2]),L) = 1 0 0 1 2, la fel findall
+%fara duplicate avem setof... = 0 1 2
+
+permutari([],[[]]).
+permutari(L,LP) :- setof(P,perm(L,P),LP).
+
+perm([],[]).
+perm([H|T],P) :- perm(T,Q), sterge(H,P,Q).
+
+sterge(_,[],[]).
+sterge(X,[X|T],T).
+sterge(X,[H|T],[H|M]) :- sterge(X,T,M).
+
+%permutari([1,2,3],LP)
+%sterge(3,P,[3,0,2,1]), P poate fi 33021, 30321, 30231, 30213

@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html lang="ro"> 
+<head> 
+<meta charset="utf-8">
+<title>Evenimente</title>
+<style>
+
+.rosu{background-color:red;}
+.galben{background-color:yellow;}
+.verde{background-color:green;}
+
+div{border:2px solid green;
+    width:300px; height:300px;
+   }    
+p  {
+    border: 3px solid black;
+   }
+
+</style>
+
+<script>
+window.onload=function()
+{
+var bunic=document.body;
+var parinte=document.getElementById("parinte");
+var copil=document.getElementById("copil");
+bunic.addEventListener("click",function(event){alert("BODY");bunic.className="rosu";},true);
+parinte.addEventListener("click",function(event){alert("DIV");parinte.className="galben";});
+copil.addEventListener("click",function(event){alert("Prima functie");copil.className="verde";});   
+copil.addEventListener("click",function(event){event.stopImmediatePropagation();alert("A doua functie");});   
+copil.addEventListener("click",function(event){alert("A treia functie");});   
+}
+</script>
+</head>
+<body id="bunic">
+<div id="parinte">Div
+<p id="copil">Paragraf</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.RDBMSSite>
+   <property name="name" dataType="java.lang.String" defaultValue="false" xmlName="name" xmlType="attribute" getter="getName" setter="setName" reffered="false"/>
+   <property name="designLevel" dataType="boolean" defaultValue="false" xmlName="designLevel" xmlType="attribute" getter="isDesignLevel" setter="setDesignLevel" reffered="false"/>
+   <property name="isDefault" dataType="boolean" defaultValue="true" xmlName="isDefault" xmlType="attribute" getter="getIsDefault" setter="setIsDefault" reffered="false"/>
+   <property name="id" dataType="java.lang.String" defaultValue="" xmlName="id" xmlType="attribute" getter="getObjectID" setter="setObjectID" reffered="false"/>
+   <property name="pathID" dataType="int" defaultValue="" xmlName="pathID" xmlType="attribute" getter="getPathID" setter="setPathID" reffered="false"/>
+   <!--  replaced  with typeID-->
+   <aa_property name="type" dataType="oracle.dbtools.crest.model.design.storage.RDBMSType" defaultValue="" xmlName="type" xmlType="attribute" getter="getType" setter="setType" reffered="true"/>
+   <property name="typeID" dataType="int" defaultValue="" xmlName="type" xmlType="attribute" getter="getTypeID" setter="setTypeID" reffered="false"/>
+   <roproperty name="pathIDString" dataType="java.lang.String" getter="getPathIDString"/>
+   <roproperty name="shortObjectID" dataType="java.lang.String" getter="getShortObjectID"/>
+</oracle.dbtools.crest.model.design.storage.RDBMSSite>

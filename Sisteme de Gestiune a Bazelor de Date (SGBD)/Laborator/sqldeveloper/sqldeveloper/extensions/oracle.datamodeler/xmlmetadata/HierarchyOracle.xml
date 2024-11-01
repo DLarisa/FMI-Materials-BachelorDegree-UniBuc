@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.HierarchyOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <roproperty name="dimension" dataType="oracle.dbtools.crest.model.design.storage.oracle.DimensionOracle" getter="getDimension"/>
+   <property name="joins" dataType="java.lang.String" defaultValue="" xmlName="joins" xmlType="element" getter="getJoins" setter="setJoins" reffered="false" listOfRefs="true"/>
+   <property name="levels" dataType="java.lang.String" defaultValue="" xmlName="levels" xmlType="element" getter="getLevels" setter="setLevels" reffered="false" listOfRefs="true"/>
+   <bb_roproperty name="joinSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.HierarchyOracle$InlineList" getter="getJoinSet"/>
+   <bb_roproperty name="levelSet" dataType="oracle.dbtools.crest.model.design.storage.oracle.HierarchyOracle$InlineList" getter="getLevelSet"/>
+</oracle.dbtools.crest.model.design.storage.oracle.HierarchyOracle>

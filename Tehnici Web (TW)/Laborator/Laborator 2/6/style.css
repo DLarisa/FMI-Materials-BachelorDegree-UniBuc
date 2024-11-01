@@ -1,0 +1,11 @@
+div
+{
+	width: 200px;
+	height: 125px;
+	background-color: hsl(132, 64.54%, 97.79%);
+	border: 8px dotted;
+	border-color: rgba(228, 125, 212, 0.88);
+	border-radius: 30px 25px 15px 15px;
+	outline: 4px solid blue;
+	background-image: url("http://www.irinaciocan.ro/tehnici_web/imagini/puncte/lab10_9.png");
+}

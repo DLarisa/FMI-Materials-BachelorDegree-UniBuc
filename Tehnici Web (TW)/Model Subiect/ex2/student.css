@@ -1,0 +1,26 @@
+#container
+{
+	display: grid;
+	grid-template-columns: auto auto auto;
+}
+
+#d1, #d2
+{
+	grid-row: 1/4;
+}
+
+@media screen and (max-width:500px)
+{
+	#container
+	{
+		display: block;
+	}
+	#container div
+	{
+		width: 50vw;
+	}
+	#d3
+	{
+		display: none;
+	}
+}

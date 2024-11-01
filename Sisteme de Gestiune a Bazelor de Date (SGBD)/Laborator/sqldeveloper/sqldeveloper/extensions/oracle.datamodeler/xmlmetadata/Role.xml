@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.process.Role parentClass="oracle.dbtools.crest.model.design.process.AbstractProcessObject">
+   <property name="description" dataType="java.lang.String" defaultValue="" xmlName="description" xmlType="element" getter="getDescription" setter="setDescription" reffered="false"/>
+   <property name="processesRefs" dataType="java.lang.String" defaultValue="" xmlName="processesRefs" xmlType="element" getter="getProcessesRefs" setter="setProcessesRefs" reffered="false" listOfRefs="true"/>
+   <roproperty name="entities" dataType="interface java.util.List" getter="getEntities"/>
+   <roproperty name="processes" dataType="interface java.util.List" getter="getProcesses"/>
+</oracle.dbtools.crest.model.design.process.Role>

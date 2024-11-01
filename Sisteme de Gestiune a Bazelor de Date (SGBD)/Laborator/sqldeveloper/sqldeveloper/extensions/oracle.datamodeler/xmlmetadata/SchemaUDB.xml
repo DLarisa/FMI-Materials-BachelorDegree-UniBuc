@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.udb.SchemaUDB parentClass="oracle.dbtools.crest.model.design.storage.db2.AbstractStorageObjectDB2">
+   <property name="owner" dataType="oracle.dbtools.crest.model.design.storage.udb.OwnerUDB" defaultValue="" xmlName="owner" xmlType="element" getter="getOwner" setter="setOwner" reffered="true"/>
+</oracle.dbtools.crest.model.design.storage.udb.SchemaUDB>

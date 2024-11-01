@@ -1,0 +1,17 @@
+myuniquestring
+
+Hello this is an example file.
+
+It is a simple text file
+
+The lines that come back are recognized by the rules.
+
+
+Can you see the patterns? Hello?
+
+See rules directory for more details.  The rules file for
+this example is called specialized.xml
+
+It is also added to the sample recognizers in recognizers.xml
+
+

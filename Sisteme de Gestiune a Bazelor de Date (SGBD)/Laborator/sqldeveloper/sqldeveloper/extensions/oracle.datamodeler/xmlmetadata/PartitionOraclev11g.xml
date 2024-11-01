@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v11g.PartitionOraclev11g parentClass="oracle.dbtools.crest.model.design.storage.oracle.v10g.PartitionOraclev10g">
+   <roproperty name="partOfStorageTable" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableProxyOracle" getter="getPartOfStorageTable"/>
+   <roproperty name="subPartitionOf" dataType="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle" getter="getSubPartitionOf"/>
+   <collection name="rangeSubpartitions" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="rangeSubpartitions" itemXmlName="RangePartition" getter="getRangeSubpartitions" createItem="createRangeSubpartition"/>
+   <roproperty name="rangeSubpartitions" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getRangeSubpartitions"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v11g.PartitionOraclev11g>

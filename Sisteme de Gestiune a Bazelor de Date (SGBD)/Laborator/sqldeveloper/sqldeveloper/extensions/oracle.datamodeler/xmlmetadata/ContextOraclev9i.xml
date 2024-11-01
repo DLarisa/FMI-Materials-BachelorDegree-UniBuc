@@ -1,0 +1,5 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v9i.ContextOraclev9i parentClass="oracle.dbtools.crest.model.design.storage.oracle.ContextOracle">
+   <property name="accessedGlobally" dataType="java.lang.String" defaultValue="NO" xmlName="accessedGlobally" xmlType="element" getter="getAccessedGlobally" setter="setAccessedGlobally" reffered="false"/>
+   <property name="initialized" dataType="java.lang.String" defaultValue="NONE" xmlName="initialized" xmlType="element" getter="getInitialized" setter="setInitialized" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v9i.ContextOraclev9i>

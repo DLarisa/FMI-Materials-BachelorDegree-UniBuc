@@ -1,0 +1,42 @@
+﻿@model ProiectDAW.Models.Director
+@{
+    ViewBag.Title = "Adăugare Director Nou";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm(actionName: "New", controllerName: "Director", method: FormMethod.Post, htmlAttributes: new { style = "display:inline" }))
+{
+    @Html.Label("Nume", "Nume: ");
+    @Html.TextBoxFor(f => f.Nume, null, new { placeholder = "Scrie Numele Directorului...", @class = "form-control" });
+    @Html.ValidationMessageFor(f => f.Nume, "", new { @class = "text-danger" });
+    <br />
+
+    @Html.Label("Prenume", "Prenume:");
+    @Html.TextBoxFor(f => f.Prenume, null, new { placeholder = "Scrie Prenumele Directorului...", @class = "form-control" });
+    @Html.ValidationMessageFor(f => f.Prenume, "", new { @class = "text-danger" });
+    <br />
+
+    @Html.Label("DataNasterii", "Data Nașterii:");
+    @Html.TextBoxFor(f => f.DataNastere, null, new { placeholder = "dd/mm/yyyy; d.m.yy; dd-m-yyyy;", @class = "form-control" })
+    @Html.ValidationMessageFor(f => f.DataNastere, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("Varsta", "Vârstă:");
+    @Html.TextBoxFor(f => f.Varsta, null, new { placeholder = "Scrie Vârsta Directorului...", @class = "form-control" });
+    @Html.ValidationMessageFor(f => f.Varsta, "", new { @class = "text-danger" });
+    <br />
+
+    <button class="btn btn-primary" type="submit">Create</button>
+}
+
+
+@using (Html.BeginForm(actionName: "Index", controllerName: "Director", method: FormMethod.Get, htmlAttributes: new { style = "display:inline; float: right;" }))
+{
+    <button class="btn btn-primary">Înapoi</button>
+}

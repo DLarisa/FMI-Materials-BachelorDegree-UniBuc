@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://xmlns.oracle.com/jdeveloper/updatebundle"
+            xmlns:u="http://xmlns.oracle.com/jdeveloper/update"
+            targetNamespace="http://xmlns.oracle.com/jdeveloper/updatebundle"
+            elementFormDefault="qualified">
+  <xsd:import schemaLocation="update.xsd"
+              namespace="http://xmlns.oracle.com/jdeveloper/update"/>
+  <xsd:element name="update-bundle">
+    <xsd:annotation>
+      <xsd:documentation>
+        A sample element
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="update" type="u:updateType"/>
+      </xsd:sequence>
+      <xsd:attribute name="version" use="required" fixed="1.0"/>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

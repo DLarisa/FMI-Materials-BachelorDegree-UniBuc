@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+h1
+{
+text-shadow: 2px 2px #ff0000;
+}
+
+
+div
+{
+width:200px;
+height:300px;
+background-color:red;
+box-shadow: 10px 10px 5px #888888; 
+/* Rotate div */
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(7deg); /* Opera, Chrome, and Safari */
+-webkit-animation:myfirst 5s infinite; /* Safari and Chrome */
+animation:myfirst 5s infinite; /*Firefox*/
+-o-animation:myfirst infinite 5s; /*Firefox*/
+}
+
+
+@keyframes myfirst
+{
+from {background:red;}
+to {background:yellow;}
+}
+
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+from {background:red;}
+to {background:yellow;}
+}
+
+
+body
+{
+background: #999; /* for non-css3 browsers */
+background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#000)); /* for webkit browsers */
+background: -moz-linear-gradient(top,  #ccc,  #000); /* for firefox 3.6+ */
+}
+
+
+</style>
+</head>
+<body>
+<h1> CSS3 tests</h1>
+<div>Hello</div>
+
+</body>
+</html>

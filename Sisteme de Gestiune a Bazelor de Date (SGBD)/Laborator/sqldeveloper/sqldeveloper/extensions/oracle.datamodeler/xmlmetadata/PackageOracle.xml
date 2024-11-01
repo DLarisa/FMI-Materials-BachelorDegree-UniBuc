@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.PackageOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.PlSqlSourceStorageObjectOracle">
+   <property name="body" dataType="oracle.dbtools.crest.model.design.storage.oracle.PackageBodyOracle" defaultValue="" xmlName="body" xmlType="element" getter="getBody" setter="setBody" createItem="createBody" removeItem="clearBody" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.oracle.PackageOracle>

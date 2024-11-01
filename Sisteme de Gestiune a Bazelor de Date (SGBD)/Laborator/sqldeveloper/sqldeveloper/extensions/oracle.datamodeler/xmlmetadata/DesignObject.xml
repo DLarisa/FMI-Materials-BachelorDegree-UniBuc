@@ -1,0 +1,34 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.DesignObject parentClass="oracle.dbtools.crest.model.ModelIDObject">
+   <aa_property name="backup" dataType="boolean" defaultValue="" xmlName="backup" xmlType="element" getter="isBackup" setter="setBackup" reffered="false"/>
+   <aa_property name="designObjectSet" dataType="oracle.dbtools.crest.model.design.DesignObjectSet" defaultValue="" xmlName="designObjectSet" xmlType="element" getter="getDesignObjectSet" setter="setDesignObjectSet" reffered="true"/>
+   <aa_property name="designPart" dataType="oracle.dbtools.crest.model.design.DesignPart" defaultValue="" xmlName="designPart" xmlType="element" getter="getDesignPart" setter="setDesignPart" reffered="true"/>
+   <aa_property name="importedDesign" dataType="oracle.dbtools.crest.model.design.Design" defaultValue="" xmlName="importedDesign" xmlType="element" getter="getImportedDesign" setter="setImportedDesign" reffered="true"/>
+   <property name="importedID" dataType="java.lang.String" defaultValue="" xmlName="importedID" xmlType="element" getter="getImportedId" setter="setImportedId" reffered="false"/>
+   <property name="lineWidth" dataType="int" defaultValue="1" xmlName="lineWidth" xmlType="element" getter="getLineWidth" setter="setLineWidth" reffered="false"/>
+   <property name="engineerTo" dataType="java.util.Map" xmlName="engineerTo" xmlType="element" getter="getEngineerTo"/>
+   <aa_property name="loadedVersion" dataType="float" defaultValue="" xmlName="loadedVersion" xmlType="element" getter="getLoadedVersion" setter="setLoadedVersion" reffered="false"/>
+   <aa_property name="selected" dataType="boolean" defaultValue="" xmlName="selected" xmlType="element" getter="isSelected" setter="setSelected" reffered="false"/>
+   <aa_property name="topView" dataType="oracle.dbtools.crest.swingui.TopView" defaultValue="" xmlName="topView" xmlType="element" getter="getTopView" setter="setTopView" reffered="true"/>
+   <property name="visible" dataType="boolean" defaultValue="true" xmlName="visible" xmlType="element" getter="isVisible" setter="setVisible" reffered="false"/>
+   <collection name="fonts" dataType="java.util.List" xmlName="fonts" itemXmlName="FontObject" getter="getFontObjectWrappers" createItem="createFontObjectWr" addItem="addFontObjectWrapper"/>
+   <collection name="measurements" dataType="java.util.List" xmlName="measurements" itemXmlName="Measurement" getter="getMeasurements" createItem="createMeasurement" removeItem="removeMeasurement" getItemByID="getMeasurementByID" />
+   <collection name="documents" dataType="java.util.List" xmlName="documents" itemXmlName="Document" getter="getDocuments" itemIsRef="true" listOfRefs="true" refsXMLName="usedDucuments" removeItem="removeDocument" addItem="addDocument" getItemByID="getDocumentByID" nativeList="true" orderTheList="true"/>
+   <collection name="changeRequests" dataType="java.util.List" xmlName="changeRequests" itemXmlName="requestID" getter="getRequests" itemIsRef="true" refsXMLName="requests" removeItem="removeRequest" addItem="addRequest" getItemByID="getRequestByID" nativeList="true" orderTheList="true"/>
+   <collection name="responsibleParties" dataType="java.util.List" xmlName="responsibleParties" itemXmlName="party" getter="getResponsibleParties" itemIsRef="true" refsXMLName="parties" removeItem="removeResponsibleParty" addItem="addResponsibleParty" getItemByID="getPartyByID" nativeList="true" orderTheList="true"/>
+   <roproperty name="containedObject" dataType="boolean" getter="isContainedObject"/>
+   <roproperty name="designLevelAccessibleObject" dataType="boolean" getter="isDesignLevelAccessibleObject"/>
+   <roproperty name="designPartId" dataType="java.lang.String" getter="getDesignPartId"/>
+   <bb_roproperty name="documents" dataType="interface java.util.List" getter="getDocuments"/>
+   <roproperty name="firstViewforDPV" dataType="oracle.dbtools.crest.swingui.TopView" getter="getFirstViewForDPV"/>
+   <roproperty name="generatorLongName" dataType="java.lang.String" getter="getGeneratorLongName"/>
+   <roproperty name="isBeingRemoved" dataType="boolean" getter="getIsBeingRemoved"/>
+   <bb_roproperty name="measurements" dataType="java.util.ArrayList" getter="getMeasurements"/>
+   <bb_roproperty name="requests" dataType="java.util.ArrayList" getter="getRequests"/>
+   <bb_roproperty name="responsibleParties" dataType="interface java.util.List" getter="getResponsibleParties"/>
+   <roproperty name="topViewsCount" dataType="int" getter="getTopViewsCount"/>
+   <roproperty name="version" dataType="float" getter="getVersion"/>
+   <roproperty name="viewNumber" dataType="int" getter="getViewNumber"/>
+   <roproperty name="viewsCountForDPv" dataType="int" getter="getViewsCountForDPV"/>
+   <roproperty name="viewsForDPv" dataType="oracle.dbtools.crest.model.TopViewCollection" getter="getViewsForDPV"/>
+</oracle.dbtools.crest.model.design.DesignObject>

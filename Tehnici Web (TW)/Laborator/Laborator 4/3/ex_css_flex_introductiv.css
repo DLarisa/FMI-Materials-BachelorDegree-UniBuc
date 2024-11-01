@@ -1,0 +1,114 @@
+html
+{
+	font-size:12px;
+}
+
+.buton
+{
+	border:2px brown ridge;
+	background: #ffc37a;
+	font-weight:bold;
+	color:white;
+	text-shadow:0px 0px 4px black,0px 0px 3px black,0px 0px 2px black,0px 0px 2px black;
+	box-shadow:0px -3px 2px grey;
+	height:2em;
+	line-height:2em;
+	width:120px;
+	text-align:center;
+	display:inline-block;
+	font-size:0.9em;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+}
+
+.buton:hover
+{
+	background:orange;
+}
+
+#coloane>section
+{
+	border: 1px solid green;
+	padding:2px;
+	min-width:100px;
+}
+
+div#coloane
+{
+	border-top: 3px inset #BBB;
+}
+
+#coloane
+{
+	display: flex;
+    flex-direction: row;
+}
+	
+.item_flex
+{
+	flex-grow: 1;
+	flex-basis: 0%;
+}
+
+#ord_dr_s:hover ~ #coloane
+{
+	flex-direction: row-reverse;
+}
+
+#ord_3124:hover ~ #coloane #prima
+{
+	order: 2;
+}
+
+#ord_3124:hover ~ #coloane #doi
+{
+	order: 3;
+	flex-shrink: 4;
+}
+
+#ord_3124:hover ~ #coloane #trei
+{
+	order: 1;
+}
+
+#ord_3124:hover ~ #coloane #s_imag
+{
+	order: 4;
+	flex-grow: 4;
+}
+
+#imagini
+{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+#img_invers:hover ~ #coloane #s_imag #imagini
+{
+	align-items: flex-end;
+	flex-direction: column-reverse;
+}
+
+#img_invers:hover ~ #coloane #s_imag #imagini h3
+{
+	order: 1;
+	align-self: flex-start;
+}
+
+
+@media screen and (max-width: 780px)
+{
+	
+	#coloane
+	{
+		flex-wrap: wrap;
+		display: flex;
+	}
+	
+	.item_flex
+	{
+		flex-grow: 1;
+	}
+	
+}

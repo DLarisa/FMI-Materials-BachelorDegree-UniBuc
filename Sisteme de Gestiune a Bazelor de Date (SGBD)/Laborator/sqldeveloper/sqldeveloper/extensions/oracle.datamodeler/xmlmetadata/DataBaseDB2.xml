@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.db2.DataBaseDB2 parentClass="oracle.dbtools.crest.model.design.storage.StorageObject">
+   <property name="bufferPool" dataType="oracle.dbtools.crest.model.design.storage.db2.BufferPoolDB2" defaultValue="" xmlName="bufferPool" xmlType="element" getter="getBufferPool" setter="setBufferPool" reffered="true"/>
+   <property name="ccsid" dataType="java.lang.String" defaultValue="" xmlName="ccsid" xmlType="element" getter="getCcsid" setter="setCcsid" reffered="false"/>
+   <property name="indexBufferPool" dataType="oracle.dbtools.crest.model.design.storage.db2.BufferPoolDB2" defaultValue="" xmlName="indexBufferPool" xmlType="element" getter="getIndexBufferPool" setter="setIndexBufferPool" reffered="true"/>
+   <property name="member" dataType="java.lang.String" defaultValue="" xmlName="member" xmlType="element" getter="getMember" setter="setMember" reffered="false"/>
+   <property name="storageGroup" dataType="oracle.dbtools.crest.model.design.storage.db2.StorageGroupDB2" defaultValue="" xmlName="storageGroup" xmlType="element" getter="getStorageGroup" setter="setStorageGroup" reffered="true"/>
+   <property name="type" dataType="java.lang.String" defaultValue="" xmlName="type" xmlType="element" getter="getType" setter="setType" reffered="false"/>
+   <roproperty name="systemDatabase" dataType="boolean" getter="isSystemDatabase"/>
+   <roproperty name="tablespaces" dataType="interface java.util.List" getter="getTablespaces"/>
+</oracle.dbtools.crest.model.design.storage.db2.DataBaseDB2>

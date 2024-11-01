@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.db2.StorageGroupDB2 parentClass="oracle.dbtools.crest.model.design.storage.db2.AbstractStorageObjectDB2">
+   <property name="grantOption" dataType="java.lang.String" defaultValue="" xmlName="grantOption" xmlType="element" getter="getGrantOption" setter="setGrantOption" reffered="false"/>
+   <property name="smsmanaged" dataType="boolean" defaultValue="" xmlName="smsmanaged" xmlType="element" getter="isSMSManaged" setter="setSMSManaged" reffered="false"/>
+   <property name="smsVolumes" dataType="int" defaultValue="" xmlName="smsVolumes" xmlType="element" getter="getSMSVolumes" setter="setSMSVolumes" reffered="false"/>
+   <property name="users" dataType="java.lang.String" defaultValue="" xmlName="users" xmlType="element" getter="getUsers" setter="setUsers" reffered="false" listOfRefs="true"/>
+   <property name="vcat" dataType="oracle.dbtools.crest.model.design.storage.db2.VCatDB2" defaultValue="" xmlName="vcat" xmlType="element" getter="getVCat" setter="setVCat" reffered="true"/>
+   <property name="volumes" dataType="java.lang.String" defaultValue="" xmlName="volumes" xmlType="element" getter="getVolumes" setter="setVolumes" reffered="false" listOfRefs="true"/>
+   <roproperty name="asteriskVolumes" dataType="java.lang.String" getter="getAsteriskVolumes"/>
+   <roproperty name="userNames" dataType="java.lang.String" getter="getUserNames"/>
+   <roproperty name="userSet" dataType="oracle.dbtools.crest.model.design.storage.db2.StorageGroupDB2$UserSet" getter="getUserSet"/>
+   <roproperty name="volumeSet" dataType="oracle.dbtools.crest.model.design.storage.db2.StorageGroupDB2$VolumeSet" getter="getVolumeSet"/>
+   <roproperty name="volumesNames" dataType="java.lang.String" getter="getVolumesNames"/>
+</oracle.dbtools.crest.model.design.storage.db2.StorageGroupDB2>

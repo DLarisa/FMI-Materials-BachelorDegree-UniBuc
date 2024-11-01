@@ -1,0 +1,37 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.datatypes.StructuredType parentClass="oracle.dbtools.crest.model.design.datatypes.AbstractDTObject">
+   <property name="final" dataType="boolean" defaultValue="" xmlName="final" xmlType="element" getter="isFinal" setter="setFinal" reffered="false"/>
+   <property name="inheritanceRelation" dataType="oracle.dbtools.crest.model.design.datatypes.DTInheritance" defaultValue="" xmlName="inheritanceRelation" xmlType="element" getter="getInheritanceRelation" setter="setInheritanceRelation" reffered="true"/>
+   <property name="instantiable" dataType="boolean" defaultValue="" xmlName="instantiable" xmlType="element" getter="isInstantiable" setter="setInstantiable" reffered="false"/>
+   <aa_property name="parentType" dataType="oracle.dbtools.crest.model.design.datatypes.StructuredType" defaultValue="" xmlName="parentType" xmlType="element" getter="getParentType" setter="setParentType" reffered="true"/>
+   <property name="parentTypeID" dataType="java.lang.String" defaultValue="" xmlName="parentTypeID" xmlType="element" getter="getParentTypeID" setter="setParentTypeID" reffered="false"/>
+   <collection name="attributes" dataType="java.util.List" xmlName="attributes" itemXmlName="Attribute" getter="getAttributesList" createItem="createTypeElement" getItemByID="getElementByID" moveMethod="moveElementToIndex"/>
+   <collection name="methods" dataType="java.util.List" xmlName="methods" itemXmlName="Method" getter="getMethodsList" createItem="createMethod" getItemByID="getMethodByID" moveMethod="moveMethodToIndex"/>
+   <roproperty name="parentOf" dataType="boolean" getter="isParentOf"/>
+   <roproperty name="allElements" dataType="interface java.util.List" getter="getAllElements"/>
+   <roproperty name="allElementsInHierarchy" dataType="interface java.util.List" getter="getAllElementsInHierarchy"/>
+   <roproperty name="allInstantiableSubTypes" dataType="interface java.util.List" getter="getAllInstantiableSubTypes"/>
+   <roproperty name="allMethods" dataType="interface java.util.List" getter="getAllMethods"/>
+   <roproperty name="allSubTypes" dataType="interface java.util.List" getter="getAllSubTypes"/>
+   <roproperty name="byteSize" dataType="int" getter="getByteSize"/>
+   <roproperty name="childElements" dataType="interface java.util.List" getter="getChildElements"/>
+   <roproperty name="containedclass" dataType="java.lang.Class" getter="getContainedClass"/>
+   <roproperty name="editableFonts" dataType="interface java.util.List" getter="getEditableFonts"/>
+   <roproperty name="elementByID" dataType="oracle.dbtools.crest.model.design.datatypes.TypeElement" getter="getElementByID"/>
+   <roproperty name="elementByName" dataType="oracle.dbtools.crest.model.design.datatypes.TypeElement" getter="getElementByName"/>
+   <roproperty name="elements" dataType="[Loracle.dbtools.crest.model.design.datatypes.TypeElement" getter="getElements"/>
+   <roproperty name="fontObject" dataType="oracle.dbtools.crest.model.design.FontObject" getter="getFontObject"/>
+   <roproperty name="localIDGenerator" dataType="oracle.dbtools.crest.model.IDGenerator" getter="getLocalIDGenerator"/>
+   <roproperty name="method" dataType="oracle.dbtools.crest.model.design.datatypes.Method" getter="getMethod"/>
+   <roproperty name="methodByID" dataType="oracle.dbtools.crest.model.design.datatypes.Method" getter="getMethodByID"/>
+   <roproperty name="methodByName" dataType="oracle.dbtools.crest.model.design.datatypes.Method" getter="getMethodByName"/>
+   <roproperty name="methodClass" dataType="java.lang.Class" getter="getMethodClass"/>
+   <roproperty name="methodIDGenerator" dataType="oracle.dbtools.crest.model.IDGenerator" getter="getMethodIDGenerator"/>
+   <roproperty name="methodSet" dataType="oracle.dbtools.crest.model.design.datatypes.MethodSet" getter="getMethodSet"/>
+   <roproperty name="methods" dataType="[Loracle.dbtools.crest.model.design.datatypes.Method" getter="getMethods"/>
+   <roproperty name="parentAndChildElements" dataType="interface java.util.List" getter="getParentAndChildElements"/>
+   <roproperty name="parentElements" dataType="interface java.util.List" getter="getParentElements"/>
+   <roproperty name="parentType" dataType="oracle.dbtools.crest.model.design.datatypes.StructuredType" getter="getParentType"/>
+   <roproperty name="size" dataType="java.lang.String" getter="getSize"/>
+   <roproperty name="typeElementSet" dataType="oracle.dbtools.crest.model.design.datatypes.TypeElementSet" getter="getTypeElementSet"/>
+</oracle.dbtools.crest.model.design.datatypes.StructuredType>

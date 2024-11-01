@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.IndexGlobalPartitionOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <roproperty name="indexGlobalPartList" dataType="oracle.dbtools.crest.model.design.storage.oracle.IndexGlobalPartitionsListOracle" getter="getIndexGlobalPartList"/>
+   <property name="logging" dataType="java.lang.String" defaultValue="" xmlName="logging" xmlType="element" getter="getLogging" setter="setLogging" reffered="false"/>
+   <property name="position" dataType="int" defaultValue="0" xmlName="position" xmlType="element" getter="getPosition" setter="setPosition" reffered="false"/>
+   <property name="segment" dataType="oracle.dbtools.crest.model.design.storage.oracle.SegmentOracle" defaultValue="" xmlName="segment" xmlType="element" getter="getSegment" setter="setSegment" reffered="true"/>
+   <property name="tableSpace" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle" defaultValue="" xmlName="tableSpace" xmlType="element" getter="getTableSpace" setter="setTableSpace" reffered="true"/>
+   <property name="valueList" dataType="java.lang.String" defaultValue="" xmlName="valueList" xmlType="element" getter="getValueList" setter="setValueList" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.oracle.IndexGlobalPartitionOracle>

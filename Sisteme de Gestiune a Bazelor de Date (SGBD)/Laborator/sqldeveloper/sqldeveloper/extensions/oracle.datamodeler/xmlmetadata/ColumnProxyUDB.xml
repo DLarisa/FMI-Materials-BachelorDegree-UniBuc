@@ -1,0 +1,28 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.udb.ColumnProxyUDB parentClass="oracle.dbtools.crest.model.design.storage.ColumnProxy">
+   <property name="cache" dataType="java.lang.String" defaultValue="NO" xmlName="cache" xmlType="element" getter="getCache" setter="setCache" reffered="false"/>
+   <property name="compact" dataType="java.lang.String" defaultValue="NO" xmlName="compact" xmlType="element" getter="getCompact" setter="setCompact" reffered="false"/>
+   <property name="default" dataType="boolean" defaultValue="false" xmlName="default" xmlType="element" getter="getDefault" setter="setDefault" reffered="false"/>
+   <property name="defaultValue" dataType="java.lang.String" defaultValue="" xmlName="defaultValue" xmlType="element" getter="getDefaultValue" setter="setDefaultValue" reffered="false"/>
+   <property name="defaultValueConstant" dataType="java.lang.String" defaultValue="" xmlName="defaultValueConstant" xmlType="element" getter="getDefaultValueConstantString" setter="setDefaultValueConstant" reffered="false"/>
+   <property name="forBitData" dataType="boolean" defaultValue="false" xmlName="forBitData" xmlType="element" getter="isForBitData" setter="setForBitData" reffered="false"/>
+   <property name="generate" dataType="java.lang.String" defaultValue="ALWAYS" xmlName="generate" xmlType="element" getter="getGenerate" setter="setGenerate" reffered="false"/>
+   <property name="generationExpression" dataType="java.lang.String" defaultValue="" xmlName="generationExpression" xmlType="element" getter="getGenerationExpression" setter="setGenerationExpression" reffered="false"/>
+   <property name="generationExpressionChanged" dataType="boolean" defaultValue="false" xmlName="generationExpressionChanged" xmlType="element" getter="isGenerationExpressionChanged" setter="setGenerationExpressionChanged" reffered="false"/>
+   <property name="incrementBy" dataType="int" defaultValue="1" xmlName="incrementBy" xmlType="element" getter="getIncrementBy" setter="setIncrementBy" reffered="false"/>
+   <property name="linkControl" dataType="java.lang.String" defaultValue="NO" xmlName="linkControl" xmlType="element" getter="getLinkControl" setter="setLinkControl" reffered="false"/>
+   <property name="logging" dataType="java.lang.String" defaultValue="NOT LOGGED" xmlName="logging" xmlType="element" getter="getLogging" setter="setLogging" reffered="false"/>
+   <property name="onUnlink" dataType="java.lang.String" defaultValue="RESTORE" xmlName="onUnlink" xmlType="element" getter="getOnUnlink" setter="setOnUnlink" reffered="false"/>
+   <property name="readPermission" dataType="java.lang.String" defaultValue="FS" xmlName="readPermission" xmlType="element" getter="getReadPermission" setter="setReadPermission" reffered="false"/>
+   <property name="recovery" dataType="java.lang.String" defaultValue="NO" xmlName="recovery" xmlType="element" getter="getRecovery" setter="setRecovery" reffered="false"/>
+   <property name="startWith" dataType="java.lang.String" defaultValue="1" xmlName="startWith" xmlType="element" getter="getStartWith" setter="setStartWith" reffered="false"/>
+   <property name="useIdentity" dataType="boolean" defaultValue="false" xmlName="useIdentity" xmlType="element" getter="getUseIdentity" setter="setUseIdentity" reffered="false"/>
+   <property name="useIdentityChanged" dataType="boolean" defaultValue="false" xmlName="useIdentityChanged" xmlType="element" getter="isUseIdentityChanged" setter="setUseIdentityChanged" reffered="false"/>
+   <property name="writePermission" dataType="java.lang.String" defaultValue="FS" xmlName="writePermission" xmlType="element" getter="getWritePermission" setter="setWritePermission" reffered="false"/>
+   <roproperty name="numericDataType" dataType="boolean" getter="isNumericDataType"/>
+   <roproperty name="pkElement" dataType="boolean" getter="isPKElement"/>
+   <roproperty name="dataTypeName" dataType="java.lang.String" getter="getDataTypeName"/>
+   <roproperty name="nullsAllowed" dataType="boolean" getter="getNullsAllowed"/>
+   <roproperty name="tableProxy" dataType="oracle.dbtools.crest.model.design.storage.TableProxy" getter="getTableProxy"/>
+   <roproperty name="withDefault" dataType="java.lang.String" getter="getWithDefault"/>
+</oracle.dbtools.crest.model.design.storage.udb.ColumnProxyUDB>

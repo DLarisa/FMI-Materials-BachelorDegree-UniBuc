@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.udb.v81.DataBaseUDBv81 parentClass="oracle.dbtools.crest.model.design.storage.udb.DataBaseUDB">
+   <property name="adminProperty" dataType="java.lang.String" defaultValue="BOTH" xmlName="adminProperty" xmlType="element" getter="getAdminProperty" setter="setAdminProperty" reffered="false"/>
+   <property name="applyChanges" dataType="java.lang.String" defaultValue="" xmlName="applyChanges" xmlType="element" getter="getApplyChanges" setter="setApplyChanges" reffered="false"/>
+   <property name="autoConfigure" dataType="boolean" defaultValue="false" xmlName="autoConfigure" xmlType="element" getter="getAutoConfigure" setter="setAutoConfigure" reffered="false"/>
+   <property name="bpResizeable" dataType="java.lang.String" defaultValue="YES" xmlName="bpResizeable" xmlType="element" getter="getBpResizeable" setter="setBpResizeable" reffered="false"/>
+   <property name="isolation" dataType="java.lang.String" defaultValue="RR" xmlName="isolation" xmlType="element" getter="getIsolation" setter="setIsolation" reffered="false"/>
+   <property name="memPercent" dataType="int" defaultValue="25" xmlName="memPercent" xmlType="element" getter="getMemPercent" setter="setMemPercent" reffered="false"/>
+   <property name="numLocalApps" dataType="int" defaultValue="0" xmlName="numLocalApps" xmlType="element" getter="getNumLocalApps" setter="setNumLocalApps" reffered="false"/>
+   <property name="numRemoteApps" dataType="int" defaultValue="100" xmlName="numRemoteApps" xmlType="element" getter="getNumRemoteApps" setter="setNumRemoteApps" reffered="false"/>
+   <property name="numStmts" dataType="int" defaultValue="25" xmlName="numStmts" xmlType="element" getter="getNumStmts" setter="setNumStmts" reffered="false"/>
+   <property name="tpm" dataType="int" defaultValue="60" xmlName="tpm" xmlType="element" getter="getTpm" setter="setTpm" reffered="false"/>
+   <property name="useAdminProperty" dataType="boolean" defaultValue="false" xmlName="useAdminProperty" xmlType="element" getter="getUseAdminProperty" setter="setUseAdminProperty" reffered="false"/>
+   <property name="useBpResizeable" dataType="boolean" defaultValue="false" xmlName="useBpResizeable" xmlType="element" getter="getUseBpResizeable" setter="setUseBpResizeable" reffered="false"/>
+   <property name="useIsolation" dataType="boolean" defaultValue="false" xmlName="useIsolation" xmlType="element" getter="getUseIsolation" setter="setUseIsolation" reffered="false"/>
+   <property name="useMemPercent" dataType="boolean" defaultValue="false" xmlName="useMemPercent" xmlType="element" getter="getUseMemPercent" setter="setUseMemPercent" reffered="false"/>
+   <property name="useNumLocalApps" dataType="boolean" defaultValue="false" xmlName="useNumLocalApps" xmlType="element" getter="getUseNumLocalApps" setter="setUseNumLocalApps" reffered="false"/>
+   <property name="useNumRemoteApps" dataType="boolean" defaultValue="false" xmlName="useNumRemoteApps" xmlType="element" getter="getUseNumRemoteApps" setter="setUseNumRemoteApps" reffered="false"/>
+   <property name="useNumStmts" dataType="boolean" defaultValue="false" xmlName="useNumStmts" xmlType="element" getter="getUseNumStmts" setter="setUseNumStmts" reffered="false"/>
+   <property name="useTpm" dataType="boolean" defaultValue="false" xmlName="useTpm" xmlType="element" getter="getUseTpm" setter="setUseTpm" reffered="false"/>
+   <property name="useWorkloadType" dataType="boolean" defaultValue="false" xmlName="useWorkloadType" xmlType="element" getter="getUseWorkloadType" setter="setUseWorkloadType" reffered="false"/>
+   <property name="workloadType" dataType="java.lang.String" defaultValue="MIXED" xmlName="workloadType" xmlType="element" getter="getWorkloadType" setter="setWorkloadType" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.udb.v81.DataBaseUDBv81>

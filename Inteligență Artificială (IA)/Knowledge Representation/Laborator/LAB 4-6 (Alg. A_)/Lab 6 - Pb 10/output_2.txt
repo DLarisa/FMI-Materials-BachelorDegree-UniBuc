@@ -1,0 +1,27 @@
+Input 2
+
+
+Euristica 1 (Nu e Admisibilă):
+Nu există Rezolvare.
+
+
+Algoritmul A* s-a terminat în: 0.01 secunde.
+
+
+
+Euristica 2:
+Nu există Rezolvare.
+
+
+Algoritmul A* s-a terminat în: 0.0 secunde.
+
+
+
+Euristica 3:
+Nu există Rezolvare.
+
+
+Algoritmul A* s-a terminat în: 0.0 secunde.
+
+
+

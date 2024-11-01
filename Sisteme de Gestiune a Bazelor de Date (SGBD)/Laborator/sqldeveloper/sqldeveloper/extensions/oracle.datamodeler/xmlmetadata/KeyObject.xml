@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.KeyObject parentClass="oracle.dbtools.crest.model.SubsetCO">
+   <aa_property name="fkAssociation" dataType="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" defaultValue="" xmlName="fkAssociation" xmlType="element" getter="getFKAssociation" setter="setFKAssociation" reffered="true"/>
+   <property name="oidKey" dataType="boolean" defaultValue="false" xmlName="oidKey" xmlType="element" getter="isOidKey" setter="setOidKey" reffered="false"/>
+   <property name="pk" dataType="boolean" defaultValue="false" xmlName="pk" xmlType="element" getter="isPK" setter="setPK" reffered="false"/>
+   <aa_property name="unique" dataType="boolean" defaultValue="false" xmlName="unique" xmlType="element" getter="isUnique" setter="setUnique" reffered="false"/>
+   <roproperty name="fk" dataType="boolean" getter="isFK"/>
+   <roproperty name="validPK" dataType="boolean" getter="isValidPK"/>
+   <roproperty name="containerWithKeyObject" dataType="oracle.dbtools.crest.model.design.ContainerWithKeyObject" getter="getContainerWithKeyObject"/>
+   <roproperty name="deletedMapping" dataType="oracle.dbtools.crest.model.xtdmapping.XtdMapping" getter="getDeletedMapping"/>
+   <roproperty name="fkAttribute" dataType="oracle.dbtools.crest.model.design.logical.Attribute" getter="getFKAttribute"/>
+</oracle.dbtools.crest.model.design.KeyObject>

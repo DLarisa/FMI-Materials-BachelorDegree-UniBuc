@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="contents" dataType="java.lang.String" defaultValue="PERMANENT" xmlName="contents" xmlType="element" getter="getContents" setter="setContents" reffered="false"/>
+   <property name="dsInitialExtent" dataType="long" defaultValue="0" xmlName="dsInitialExtent" xmlType="element" getter="getDSInitialExtent" setter="setDSInitialExtent" reffered="false"/>
+   <property name="dsMaxExtents" dataType="java.lang.String" defaultValue="UNLIMITED" xmlName="dsMaxExtents" xmlType="element" getter="getDSMaxExtents" setter="setDSMaxExtents" reffered="false"/>
+   <property name="dsMinExtents" dataType="int" defaultValue="1" xmlName="dsMinExtents" xmlType="element" getter="getDSMinExtents" setter="setDSMinExtents" reffered="false"/>
+   <property name="dsNextExtent" dataType="long" defaultValue="0" xmlName="dsNextExtent" xmlType="element" getter="getDSNextExtent" setter="setDSNextExtent" reffered="false"/>
+   <property name="dsPctIncrease" dataType="int" defaultValue="0" xmlName="dsPctIncrease" xmlType="element" getter="getDSPctIncrease" setter="setDSPctIncrease" reffered="false"/>
+   <property name="defaultForTable" dataType="java.lang.String" defaultValue="" xmlName="defaultForTable" xmlType="element" getter="getDefaultForTable" setter="setDefaultForTable" reffered="false"/>
+   <property name="emLocalSubtype" dataType="java.lang.String" defaultValue="AUTOALLOCATE" xmlName="emLocalSubtype" xmlType="element" getter="getEMLocalSubtype" setter="setEMLocalSubtype" reffered="false"/>
+   <property name="emUniformSize" dataType="int" defaultValue="1024" xmlName="emUniformSize" xmlType="element" getter="getEMUniformSize" setter="setEMUniformSize" reffered="false"/>
+   <property name="extentManagement" dataType="java.lang.String" defaultValue="DICTIONARY" xmlName="extentManagement" xmlType="element" getter="getExtentManagement" setter="setExtentManagement" reffered="false"/>
+   <property name="logging" dataType="java.lang.String" defaultValue="LOGGING" xmlName="logging" xmlType="element" getter="getLogging" setter="setLogging" reffered="false"/>
+   <property name="minExtLen" dataType="int" defaultValue="0" xmlName="minExtLen" xmlType="element" getter="getMinExtLen" setter="setMinExtLen" reffered="false"/>
+   <property name="status" dataType="java.lang.String" defaultValue="ONLINE" xmlName="status" xmlType="element" getter="getStatus" setter="setStatus" reffered="false"/>
+   <roproperty name="defaultFor" dataType="boolean" getter="isDefaultFor"/>
+   <roproperty name="dataFiles" dataType="interface java.util.List" getter="getDataFiles"/>
+   <collection name="dataFiles" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="dataFiles" itemXmlName="DataFile" getter="getDfiles" createItem="createDataFile"/>
+   <bb_roproperty name="propertyWrapperList" dataType="interface java.util.List" getter="getPropertyWrapperList"/>
+   <roproperty name="tabcoll" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" getter="getTabcoll"/>
+</oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle>

@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.UndoTablespaceOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <property name="fileType" dataType="java.lang.String" defaultValue="" xmlName="fileType" xmlType="element" getter="getFileType" setter="setFileType" reffered="false"/>
+   <property name="oracleManagesFiles" dataType="java.lang.String" defaultValue="NO" xmlName="oracleManagesFiles" xmlType="element" getter="getOracleManagesFiles" setter="setOracleManagesFiles" reffered="false"/>
+   <property name="retention" dataType="java.lang.String" defaultValue="NOGUARANTEE" xmlName="retention" xmlType="element" getter="getRetention" setter="setRetention" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.oracle.UndoTablespaceOracle>

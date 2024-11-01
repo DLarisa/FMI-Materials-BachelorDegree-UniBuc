@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v9i.IndexProxyOraclev9i parentClass="oracle.dbtools.crest.model.design.storage.oracle.IndexProxyOracle">
+   <property name="batchSize" dataType="int" defaultValue="1000" xmlName="batchSize" xmlType="element" getter="getBatchSize" setter="setBatchSize" reffered="false"/>
+   <property name="nonLeaf" dataType="java.lang.String" defaultValue="NO" xmlName="nonLeaf" xmlType="element" getter="getNonLeaf" setter="setNonLeaf" reffered="false"/>
+   <property name="workTablespace" dataType="oracle.dbtools.crest.model.design.storage.oracle.TableSpaceOracle" defaultValue="" xmlName="workTablespace" xmlType="element" getter="getWorkTablespace" setter="setWorkTablespace" reffered="true"/>
+   <roproperty name="dimensionsNumber" dataType="java.lang.String" getter="getDimensionsNumber"/>
+   <roproperty name="layerType" dataType="java.lang.String" getter="getLayerType"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v9i.IndexProxyOraclev9i>

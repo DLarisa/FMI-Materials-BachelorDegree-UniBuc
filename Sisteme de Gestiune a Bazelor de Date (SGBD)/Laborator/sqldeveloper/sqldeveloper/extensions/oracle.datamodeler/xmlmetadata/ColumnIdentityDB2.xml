@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.db2.ColumnIdentityDB2 parentClass="oracle.dbtools.crest.model.design.storage.db2.AbstractStorageObjectDB2">
+   <property name="cache" dataType="int" defaultValue="" xmlName="cache" xmlType="element" getter="getCache" setter="setCache" reffered="false"/>
+   <property name="column" dataType="oracle.dbtools.crest.model.design.storage.db2.ColumnProxyDB2" defaultValue="" xmlName="column" xmlType="element" getter="getColumn" setter="setColumn" reffered="true"/>
+   <property name="cycle" dataType="boolean" defaultValue="" xmlName="cycle" xmlType="element" getter="isCycle" setter="setCycle" reffered="false"/>
+   <property name="generate" dataType="java.lang.String" defaultValue="" xmlName="generate" xmlType="element" getter="getGenerate" setter="setGenerate" reffered="false"/>
+   <property name="incrementBy" dataType="int" defaultValue="" xmlName="incrementBy" xmlType="element" getter="getIncrementBy" setter="setIncrementBy" reffered="false"/>
+   <property name="maxValue" dataType="java.lang.String" defaultValue="" xmlName="maxValue" xmlType="element" getter="getMaxValue" setter="setMaxValue" reffered="false"/>
+   <property name="minValue" dataType="java.lang.String" defaultValue="" xmlName="minValue" xmlType="element" getter="getMinValue" setter="setMinValue" reffered="false"/>
+   <property name="startWith" dataType="java.lang.String" defaultValue="" xmlName="startWith" xmlType="element" getter="getStartWith" setter="setStartWith" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.db2.ColumnIdentityDB2>

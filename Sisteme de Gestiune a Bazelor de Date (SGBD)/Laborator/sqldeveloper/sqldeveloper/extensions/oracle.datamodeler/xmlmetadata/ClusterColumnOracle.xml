@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.ClusterColumnOracle parentClass="oracle.dbtools.crest.model.design.storage.oracle.AbstractStorageObjectOracle">
+   <roproperty name="cluster" dataType="oracle.dbtools.crest.model.design.storage.oracle.ClusterOracle" getter="getCluster"/>
+   <property name="dataType" dataType="java.lang.String" defaultValue="UNKNOWN" xmlName="dataType" xmlType="element" getter="getDataType" setter="setDataType" reffered="false"/>
+   <property name="lengthPrecision" dataType="java.lang.String" defaultValue="" xmlName="lengthPrecision" xmlType="element" getter="getLengthPrecision" setter="setLengthPrecision" reffered="false"/>
+   <property name="position" dataType="int" defaultValue="1" xmlName="position" xmlType="element" getter="getPosition" setter="setPosition" reffered="false"/>
+   <property name="scale" dataType="int" defaultValue="0" xmlName="scale" xmlType="element" getter="getScale" setter="setScale" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.oracle.ClusterColumnOracle>

@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.Measurement parentClass="oracle.dbtools.crest.model.design.DesignObject">
+   <property name="creationDate" dataType="java.lang.String" defaultValue="" xmlName="creationDate" xmlType="element" getter="getCreationDate" setter="setCreationDate" reffered="false"/>
+   <property name="effectiveDate" dataType="java.lang.String" defaultValue="" xmlName="effectiveDate" xmlType="element" getter="getEffectiveDate" setter="setEffectiveDate" reffered="false"/>
+   <aa_property name="object" dataType="oracle.dbtools.crest.model.design.DesignObject" defaultValue="" xmlName="object" xmlType="element" getter="getObject" setter="setObject" reffered="true"/>
+   <property name="type" dataType="java.lang.String" defaultValue="" xmlName="type" xmlType="element" getter="getType" setter="setType" reffered="false"/>
+   <property name="unit" dataType="java.lang.String" defaultValue="" xmlName="unit" xmlType="element" getter="getUnit" setter="setUnit" reffered="false"/>
+   <property name="value" dataType="java.lang.String" defaultValue="" xmlName="value" xmlType="element" getter="getValue" setter="setValue" reffered="false"/>
+</oracle.dbtools.crest.model.design.Measurement>

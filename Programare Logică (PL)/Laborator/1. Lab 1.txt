@@ -1,0 +1,36 @@
+% Calculare n Factorial
+fact(0, 1).            % 0! = 1
+fact(X, Y) :- X > 0, Z is X-1, fact(Z, T), Y is T*X.
+
+
+% Suma Elemente Lista
+suma([], 0).
+suma([H|T], S) :- suma(T, A), S is A+H.
+
+
+% Daca Elementele sunt Egale
+egale().
+egale([]).
+egale([X, Y | T]) :- X=Y, egale(Y | T).
+
+
+
+
+
+% Daca o lista e ordonata crescator
+cresc([]).
+cresc([_]).
+cresc([X, Y | T]) :- X =< Y, cresc([Y | T]).
+
+
+% BubbleSort
+bubble([], []).
+bubble([X], [X]).
+bubble([X, Y | T], [X | U]) :- X =< Y, bubble([Y | T], U).
+bubble([X, Y | T], [Y | U]) :- X > Y, bubble([X | T], U).
+
+
+bsort([], []).
+bsort([X], [X]).
+bsort([X, Y | T], S) :- bubble([X, Y | T], S), cresc(S).
+bsort([X, Y | T], L) :- bubble([X, Y | T], S), not(cresc(S)), bsort(S, L).

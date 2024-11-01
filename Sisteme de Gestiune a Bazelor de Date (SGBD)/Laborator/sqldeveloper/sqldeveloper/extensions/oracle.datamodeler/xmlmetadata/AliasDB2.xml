@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.db2.AliasDB2 parentClass="oracle.dbtools.crest.model.design.storage.db2.AbstractStorageObjectDB2">
+   <property name="anotheralias" dataType="oracle.dbtools.crest.model.design.storage.db2.AliasDB2" defaultValue="" xmlName="anotheralias" xmlType="element" getter="getAnotherAlias" setter="setAnotherAlias" reffered="true"/>
+   <property name="owner" dataType="oracle.dbtools.crest.model.design.storage.db2.Owner" defaultValue="" xmlName="owner" xmlType="element" getter="getOwner" setter="setOwner" reffered="true"/>
+   <property name="table" dataType="oracle.dbtools.crest.model.design.storage.db2.TableProxyDB2" defaultValue="" xmlName="table" xmlType="element" getter="getTable" setter="setTable" reffered="true"/>
+   <property name="view" dataType="oracle.dbtools.crest.model.design.storage.db2.TableViewProxyDB2" defaultValue="" xmlName="view" xmlType="element" getter="getView" setter="setView" reffered="true"/>
+   <roproperty name="synonyms" dataType="interface java.util.List" getter="getSynonyms"/>
+   <collection name="synonyms" dataType="oracle.dbtools.crest.model.design.storage.StorageObjectCollection" xmlName="synonyms" itemXmlName="Synonym" getter="getSynonymsCollection" createItem="createSynonym" />
+</oracle.dbtools.crest.model.design.storage.db2.AliasDB2>

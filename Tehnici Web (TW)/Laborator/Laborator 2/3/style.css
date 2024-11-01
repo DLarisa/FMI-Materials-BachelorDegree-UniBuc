@@ -1,0 +1,14 @@
+#ex1
+{
+	box-sizing: border-box;
+	padding: 12px;
+	width: 50px;
+	border: 2px solid blue;
+}
+#ex2
+{
+	box-sizing: content-box;
+	padding: 12px;
+	width: 50px;
+	border: 2px solid red;
+}

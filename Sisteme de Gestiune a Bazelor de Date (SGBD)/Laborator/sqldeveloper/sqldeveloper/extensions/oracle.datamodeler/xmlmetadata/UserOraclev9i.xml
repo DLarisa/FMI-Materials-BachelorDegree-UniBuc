@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v9i.UserOraclev9i parentClass="oracle.dbtools.crest.model.design.storage.oracle.UserOracle">
+   <property name="identifiedByPassword" dataType="java.lang.String" defaultValue="" xmlName="identifiedByPassword" xmlType="element" getter="getIdentifiedByPassword" setter="setIdentifiedByPassword" reffered="false"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v9i.UserOraclev9i>

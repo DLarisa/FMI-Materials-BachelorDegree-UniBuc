@@ -1,0 +1,8 @@
+﻿
+
+cat nume_fișier = afișează în terminal conținutul fișierului
+cat nume_fișier_inițial > nume_fișier_copie = copiază conținutul fișierului inițial în copie și crează automat copia
+cat nume_fișier | grep cuvânt = afișează în terminal zona din fișier care conține cuvântul dat (pot fi mai multe grep, separate prin | )
+ls -l = afișează tot ce avem în folder.  
+        (aka drwx-rwx-rwx -> d=directory /* Doar dacă e folder, altfel lipsește*/, r=read, w=write, x=execute, primul triplet 
+		pentru owner, al doilea pt group, al 3-lea pt other), nr octeți, ultima dată a editării ...

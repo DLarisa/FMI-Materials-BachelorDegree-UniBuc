@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Fisier de baza</title>
+		<style>
+
+		</style>
+		<script>		
+			window.onload=function(){
+				document.getElementById("btn").onclick=function(){
+					var nr=parseInt(document.getElementById("inp1").value)
+					for(var i=1; i<=nr;i++)
+					{
+						var p=document.createElement("p");
+						p.innerHTML=i;
+						document.body.appendChild(p);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p>Nota: in exercitiile de tip "corectati greseala", desi nu e recomandat, s-au pus css-ul si script-ul in fisierul html strict pentru simplitate (downloadarea unui singur fisier vs 3). Totusi retineti ca indicat este sa folositi fisiere externe in teme/proiecte/teste.</p>
+		<hr/>
+		<p>La fiecare click pe buton dorim sa se adauge atatea paragrafe cate sunt specificate in input (vom nota numarul din input cu n) si paragrafele sa aiba ca text fiecare cate un numar i (corespunzator paragrafului i), unde i este intre 1 si n inclusiv. De ce? Corectati. </p>
+		<form id = "f">
+			<input type="number" id="inp1" />
+			<button id="btn">Numere</button>
+			<!--nu se modifica pentru ca butonul este intr-un formular, luam cu get..id si dam-->
+		</form>
+
+	</body>
+</html>

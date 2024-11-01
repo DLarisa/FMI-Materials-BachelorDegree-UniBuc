@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.Label>
+   <aa_property name="connectorSelected" dataType="boolean" defaultValue="" xmlName="connectorSelected" xmlType="element" getter="isConnectorSelected" setter="setConnectorSelected" reffered="false"/>
+   <aa_property name="lastPos" dataType="java.awt.geom.Point2D" defaultValue="" xmlName="lastPos" xmlType="element" getter="getLastPos" setter="setLastPos" reffered="false"/>
+   <property name="site" dataType="int" defaultValue="" xmlName="site" xmlType="element" getter="getSite" setter="setSite" reffered="false"/>
+   <property name="useDefaultColor" dataType="boolean" defaultValue="true" xmlName="useDefaultColor" xmlType="element" getter="useDefaultColor" setter="setUseDefaultColor" reffered="false"/>
+   <property name="backgroundColor" dataType="java.awt.Color" defaultValue="" xmlName="backgroundColor" xmlType="element" getter="getBackgroundColor" setter="setBackgroundColor" reffered="false"/>
+   <property name="foregroundColor" dataType="java.awt.Color" defaultValue="" xmlName="foregroundColor" xmlType="element" getter="getForegroundColor" setter="setForegroundColor" reffered="false"/>
+   <property name="labelBounds" dataType="java.awt.Rectangle" defaultValue="" xmlName="labelBounds" xmlType="element" getter="getBounds" setter="setBounds" reffered="false"/>
+   <aa_property name="tvConnector" dataType="oracle.dbtools.crest.swingui.TVConnector" defaultValue="" xmlName="tvConnector" xmlType="element" getter="getTVConnector" setter="setTVConnector" reffered="true"/>
+   <aa_property name="text" dataType="java.lang.String" defaultValue="" xmlName="text" xmlType="element" getter="getText" setter="setText" reffered="false"/>
+   <roproperty name="editableFonts" dataType="interface java.util.List" getter="getEditableFonts"/>
+   <roproperty name="fontObject" dataType="oracle.dbtools.crest.model.design.FontObject" getter="getFontObject"/>
+   <collection name="fonts" dataType="java.util.List" xmlName="fonts" itemXmlName="FontObject" getter="getFontObjectWrappers" createItem="createFontObjectWr" addItem="addFontObjectWrapper" />
+</oracle.dbtools.crest.model.design.Label>
